@@ -1,0 +1,1957 @@
+\def\year{2021}\relax
+%File: formatting-instructions-latex-2021.tex
+%release 2021.1
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage{aaai21}  % DO NOT CHANGE THIS
+\usepackage{times}  % DO NOT CHANGE THIS
+\usepackage{helvet} % DO NOT CHANGE THIS
+\usepackage{courier}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing  % DO NOT CHANGE THIS
+\setlength{\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
+\setlength{\pdfpageheight}{11in}  % DO NOT CHANGE THIS
+
+
+\usepackage[linesnumbered,boxed]{algorithm2e}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amstext}
+\usepackage{amssymb}
+
+%\nocopyright
+%PDF Info Is REQUIRED.
+% For /Author, add all authors within the parentheses, separated by commas. No accents or commands.
+% For /Title, add Title in Mixed Case. No accents or commands. Retain the parentheses.
+\pdfinfo{
+/Title (AAAI Press Formatting Instructions for Authors Using LaTeX -- A Guide)
+/Author (AAAI Press Staff, Pater Patel Schneider, Sunil Issar, J. Scott Penberthy, George Ferguson, Hans Guesgen, Francisco Cruz, Marc Pujol-Gonzalez)
+/TemplateVersion (2021.1)
+} %Leave this
+% /Title ()
+% Put your actual complete title (no codes, scripts, shortcuts, or LaTeX commands) within the parentheses in mixed case
+% Leave the space between \Title and the beginning parenthesis alone
+% /Author ()
+% Put your actual complete list of authors (no codes, scripts, shortcuts, or LaTeX commands) within the parentheses in mixed case.
+% Each author should be only by a comma. If the name contains accents, remove them. If there are any LaTeX commands,
+% remove them.
+
+% DISALLOWED PACKAGES
+% \usepackage{authblk} -- This package is specifically forbidden
+% \usepackage{balance} -- This package is specifically forbidden
+% \usepackage{color (if used in text)
+% \usepackage{CJK} -- This package is specifically forbidden
+% \usepackage{float} -- This package is specifically forbidden
+% \usepackage{flushend} -- This package is specifically forbidden
+% \usepackage{fontenc} -- This package is specifically forbidden
+% \usepackage{fullpage} -- This package is specifically forbidden
+% \usepackage{geometry} -- This package is specifically forbidden
+% \usepackage{grffile} -- This package is specifically forbidden
+% \usepackage{hyperref} -- This package is specifically forbidden
+% \usepackage{navigator} -- This package is specifically forbidden
+% (or any other package that embeds links such as navigator or hyperref)
+% \indentfirst} -- This package is specifically forbidden
+% \layout} -- This package is specifically forbidden
+% \multicol} -- This package is specifically forbidden
+% \nameref} -- This package is specifically forbidden
+% \usepackage{savetrees} -- This package is specifically forbidden
+% \usepackage{setspace} -- This package is specifically forbidden
+% \usepackage{stfloats} -- This package is specifically forbidden
+% \usepackage{tabu} -- This package is specifically forbidden
+% \usepackage{titlesec} -- This package is specifically forbidden
+% \usepackage{tocbibind} -- This package is specifically forbidden
+% \usepackage{ulem} -- This package is specifically forbidden
+% \usepackage{wrapfig} -- This package is specifically forbidden
+% DISALLOWED COMMANDS
+% \nocopyright -- Your paper will not be published if you use this command
+% \addtolength -- This command may not be used
+% \balance -- This command may not be used
+% \baselinestretch -- Your paper will not be published if you use this command
+% \clearpage -- No page breaks of any kind may be used for the final version of your paper
+% \columnsep -- This command may not be used
+% \newpage -- No page breaks of any kind may be used for the final version of your paper
+% \pagebreak -- No page breaks of any kind may be used for the final version of your paperr
+% \pagestyle -- This command may not be used
+% \tiny -- This is not an acceptable font size.
+% \vspace{- -- No negative value may be used in proximity of a caption, figure, table, section, subsection, subsubsection, or reference
+% \vskip{- -- No negative value may be used to alter spacing above or below a caption, figure, table, section, subsection, subsubsection, or reference
+
+\setcounter{secnumdepth}{0} %May be changed to 1 or 2 if section numbers are desired.
+
+% The file aaai21.sty is the style file for AAAI Press
+% proceedings, working notes, and technical reports.
+%
+
+% Title
+
+% Your title must be in mixed case, not sentence case.
+% That means all verbs (including short verbs like be, is, using,and go),
+% nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
+% articles, conjunctions, and prepositions are lower case unless they
+% directly follow a colon or long dash
+
+\title{A Resolution Calculus for Forgetting in \CTL}
+\author{
+
+    %Authors
+    % All authors must be in the same font size and format.
+}
+\affiliations{
+    %Afiliations
+
+ %   \textsuperscript{\rm 1}Association for the Advancement of Artificial Intelligence\\
+    %If you have multiple authors and multiple affiliations
+    % use superscripts in text and roman font to identify them.
+    %For example,
+
+    % Sunil Issar, \textsuperscript{\rm 2}
+    % J. Scott Penberthy, \textsuperscript{\rm 3}
+    % George Ferguson,\textsuperscript{\rm 4}
+    % Hans Guesgen, \textsuperscript{\rm 5}.
+    % Note that the comma should be placed BEFORE the superscript for optimum readability
+
+ %   2275 East Bayshore Road, Suite 160\\
+  %  Palo Alto, California 94303\\
+  % email address must be in roman text type, not monospace or sans serif
+   % publications21@aaai.org
+
+    % See more examples next
+}
+\iffalse
+%Example, Single Author, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\title{My Publication Title --- Single Author}
+\author {
+    % Author
+    Author Name \\
+}
+
+\affiliations{
+    Affiliation \\
+    Affiliation Line 2 \\
+    name@example.com
+}
+\fi
+
+\iffalse
+%Example, Multiple Authors, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\title{My Publication Title --- Multiple Authors}
+\author {
+    % Authors
+
+        First Author Name,\textsuperscript{\rm 1}
+        Second Author Name, \textsuperscript{\rm 2}
+        Third Author Name \textsuperscript{\rm 1} \\
+}
+\affiliations {
+    % Affiliations
+    \textsuperscript{\rm 1} Affiliation 1 \\
+    \textsuperscript{\rm 2} Affiliation 2 \\
+    firstAuthor@affiliation1.com, secondAuthor@affilation2.com, thirdAuthor@affiliation1.com
+}
+\fi
+\begin{document}
+ \newcommand{\tuple}[1]{{\langle{#1}\rangle}}
+\newcommand{\Mod}{\textit{Mod}}
+\newcommand\ie{{\it i.e. }}
+\newcommand\eg{{\it e.g.}}
+%\newcommand\st{{\it s.t. }}
+\newtheorem{definition}{Definition}
+\newtheorem{examp}{Example}
+\newenvironment{example}{\begin{examp}\rm}{\end{examp}}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+%\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}\\ }
+\newcommand{\rto}{\rightarrow}
+\newcommand{\lto}{\leftarrow}
+\newcommand{\lrto}{\leftrightarrow}
+\newcommand{\Rto}{\Rightarrow}
+\newcommand{\Lto}{\Leftarrow}
+\newcommand{\LRto}{\Leftrightarrow}
+\newcommand{\Var}{\textit{Var}}
+\newcommand{\Forget}{\textit{Forget}}
+\newcommand{\KForget}{\textit{KForget}}
+\newcommand{\TForget}{\textit{TForget}}
+%\newcommand{\forget}{\textit{forget}}
+\newcommand{\Fst}{\textit{Fst}}
+\newcommand{\dep}{\textit{dep}}
+\newcommand{\term}{\textit{term}}
+\newcommand{\literal}{\textit{literal}}
+
+\newcommand{\Atom}{\mathcal{A}}
+\newcommand{\SFive}{\textbf{S5}}
+\newcommand{\MPK}{\textsc{k}}
+\newcommand{\MPB}{\textsc{b}}
+\newcommand{\MPT}{\textsc{t}}
+\newcommand{\MPA}{\forall}
+\newcommand{\MPE}{\exists}
+
+\newcommand{\DNF}{\textit{DNF}}
+\newcommand{\CNF}{\textit{CNF}}
+
+\newcommand{\degree}{\textit{degree}}
+\newcommand{\sunfold}{\textit{sunfold}}
+
+\newcommand{\Pos}{\textit{Pos}}
+\newcommand{\Neg}{\textit{Neg}}
+\newcommand\wrt{{\it w.r.t.}}
+\newcommand{\Hm} {{\cal M}}
+\newcommand{\Hw} {{\cal W}}
+\newcommand{\Hr} {{\cal R}}
+\newcommand{\Hb} {{\cal B}}
+\newcommand{\Ha} {{\cal A}}
+
+\newcommand{\Dsj}{\triangledown}
+
+\newcommand{\wnext}{\widetilde{\bigcirc}}
+\newcommand{\nex}{\bigcirc}
+\newcommand{\ness}{\square}
+\newcommand{\qness}{\boxminus}
+\newcommand{\wqnext}{\widetilde{\circleddash}}
+\newcommand{\qnext}{\circleddash}
+\newcommand{\may}{\lozenge}
+\newcommand{\qmay}{\blacklozenge}
+\newcommand{\unt} {{\cal U}}
+\newcommand{\since} {{\cal S}}
+\newcommand{\SNF} {\textit{SNF$_C$}}
+\newcommand{\start}{\textbf{start}}
+\newcommand{\Elm}{\textit{Elm}}
+\newcommand{\simp}{\textbf{simp}}
+\newcommand{\nnf}{\textbf{nnf}}
+
+\newcommand{\CTL}{\textrm{CTL}}
+\newcommand{\Ind}{\textrm{Ind}}
+\newcommand{\Tran}{\textrm{Tran}}
+\newcommand{\Sub}{\textrm{Sub}}
+\newcommand{\NI}{\textrm{NI}}
+\newcommand{\Inst}{\textrm{Inst}}
+\newcommand{\Com}{\textrm{Com}}
+\newcommand{\Rp}{\textrm{Rp}}
+\newcommand{\forget}{{\textsc{f}_\CTL}}
+\newcommand{\ALL}{\textsc{a}}
+\newcommand{\EXIST}{\textsc{e}}
+\newcommand{\NEXT}{\textsc{x}}
+\newcommand{\FUTURE}{\textsc{f}}
+\newcommand{\UNTIL}{\textsc{u}}
+\newcommand{\GLOBAL}{\textsc{g}}
+\newcommand{\UNLESS}{\textsc{w}}
+\newcommand{\Def}{\textrm{def}}
+\newcommand{\IR}{\textrm{IR}}
+\newcommand{\Tr}{\textrm{Tr}}
+\newcommand{\dis}{\textrm{dis}}
+\def\PP{\ensuremath{\textbf{PP}}}
+\def\NgP{\ensuremath{\textbf{NP}}}
+\def\W{\ensuremath{\textbf{W}}}
+\newcommand{\Pre}{\textrm{Pre}}
+\newcommand{\Post}{\textrm{Post}}
+
+
+\newcommand{\CTLsnf}{{\textsc{SNF}_{\textsc{ctl}}^g}}
+\newcommand{\ResC}{{\textsc{R}_{\textsc{ctl}}^{\succ, S}}}
+\newcommand{\CTLforget}{{\textsc{F}_{\textsc{ctl}}}}
+\newcommand{\Refine}{\textsc{Refine}}
+\newcommand{\cf}{\textrm{cf.}}
+\newcommand{\NEXP}{\textmd{\rm NEXP}}
+\newcommand{\EXP}{\textmd{\rm EXP}}
+\newcommand{\coNEXP}{\textmd{\rm co-NEXP}}
+\newcommand{\NP}{\textmd{\rm NP}}
+\newcommand{\coNP}{\textmd{\rm co-NP}}
+\newcommand{\Pol}{\textmd{\rm P}}
+\newcommand{\BH}[1]{\textmd{\rm BH}_{#1}}
+\newcommand{\coBH}[1]{\textmd{\rm co-BH}_{#1}}
+\newcommand{\Empty}{\emptyset}%\varnothing}
+\newcommand{\NLOG}{\textmd{\rm NLOG}}
+\newcommand{\DeltaP}[1]{\Delta_{#1}^{p}}
+\newcommand{\PIP}[1]{\Pi_{#1}^{p}}
+\newcommand{\SigmaP}[1]{\Sigma_{#1}^{p}}
+
+
+\newif\ifcolors\colorstrue
+% activate next line to remove colors
+%\colorsfalse
+
+\ifcolors
+\newcommand{\mycomment}[2]{{#1}{{\textcolor{red}{#2}}}} 
+\else
+\newcommand{\mycomment}[2]{#2} 
+\fi
+
+\maketitle
+
+\begin{abstract}
+Computation Tree Logic (\CTL) is a well-known logical formalism in computer science with a wide range of applications; it is used  in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning.  Orthogonal to this, \emph{forgetting} is the field of study which concerns about removing information that is deemed irrelevant or obsolete from a knowledge base in a principled way.
+
+In this paper, we present a resolution-based approach to perform forgetting in \CTL.
+%As we show, having such an approach let us perform forgetting while avoiding undesirable complications that arise from handling it on the semantic level.
+% More specifically, we develop a calculus which extends earlier work (\CTL\ with \emph{index} i.e., $\CTLsnf$) with additional rules i.e., EF-implication which connects \emph{next\ state} and \emph{future\ state}. 
+Our technical contribution is manifolded. We provide a bisimulation between \CTL\ formulae and $\CTLsnf$ clauses. We introduce techniques for eliminating undesired atoms. Moreover, we show the termination of our approach and analyse its computational complexity. 
+\end{abstract}
+
+\noindent Computation Tree Logic (\CTL)~\cite{clarke1981design} is one of the central logical formalisms in computer science with a wide range of applications; it is used mostly in formal verification in the context of representing and reasoning about high-level system information (or \emph{specification}), but also in other domains e.g., planning~\cite{giunchiglia1999planning,dal2002planning,akintunde2017planning}.
+%In those cases, as the system or planning domain has been updated-some of the elements previously considered are no longer considered-if we have had those specifications, we do not need to reproduce the specifications that different from the original one only in that the latter using lesser atoms. Besides, with the size of the system or planning domain growing, not only the number of available (proposition) increased considerably, but also those specifications are often large in size and becoming more complex. This leads to the specification being difficult to maintain and modify, and costly to reuse for later processing, where only a specific part of an specification is of interest. All of this working directly on the whole of the original specification and building a new sub-specification are inadvisable. Therefore, a strong demand for techniques and automated tools for obtaining the specific sub-specification.
+Both in planning and verification updates are required where, e.g., some of the elements previously considered are no longer required. In these cases it is desirable to update the specifications such that they contain only the relevant vocabulary without the need to fully reproduce them. Moreover, with increasing size of the systems or planning domains the formalization becomes prohibitively large in size and complexity. As a consequence specifications become overly difficult to maintain, modify and re-use for later processing overly costly, even if only a specific part of a specification is of interest. Therefore, techniques and automated tools for obtaining sub-specification based on restricted vocabularies are required.
+
+Moreover, for the resolution-based satisfiability solver \CTL-RP~\footnote{https://sourceforge.net/projects/ctlrp/.} of \CTL\ formulae,  if we can eliminate some atoms of a formula in advance or  have fewer $\CTLsnf$ clauses (Separated Normal Form with Global Clauses for \CTL)~\cite{zhang2014resolution}, then it will be faster to decide the satisfiability of a formula. 
+
+
+\emph{Forgetting}, a technique for extracting knowledge and ensuring its satisfability, addresses these issues. 
+It was first formally defined
+in propostional and first order-logics by Lin and Reiter~\cite{lin1994forget} and extended to other logic systems~\cite{eiter2019brief}. %, including the bounded \CTL, i.e. the formulae have a bounded size~\cite{renyansfirstpaper}.
+
+% \emph{Forgetting}, the task of distilling a reduced knowledge base that is relevant to a subset of the signature, addresses these issues. 
+% As a logical notion, \emph{forgetting} was first formally defined
+% in propostional and first order-logics by Lin and Reiter~\cite{lin1994forget} and extended to other logic systems~\cite{eiter2019brief}, including the bounded \CTL, i.e. the formulae have a bounded size~\cite{renyansfirstpaper}.
+% Another important property of forgetting is that forgetting some atoms from a given formula do not effect the satisfiability of this formula. This means that if we can eliminate some atoms of a formula in advance, then theoretically speaking, it can speed up the determination of satisfiability to a certain extent. In particular, in the solver \CTL-RP~\footnote{https://sourceforge.net/projects/ctlrp/.}, if we have fewer $\CTLsnf$ clauses, then it will be faster to decide the satisfiability of a formula.
+
+% \emph{Forgetting}, the task of distilling a reduced knowledge base that is relevant to a subset of the signature, addresses these issues.
+
+
+
+The forgetting in bounded \CTL, i.e. the formulae have a bounded size, and  its theoretical properties have been studied in~\cite{renyansfirstpaper}. In this paper we will study the forgetting in the whole \CTL, abbreviated as \CTL. Moreover, in~\cite{renyansfirstpaper}, the authors have explored a model-based approach to compute the forgetting under bounded \CTL. It is show that the result of forgetting a set $V$ of atoms from a \CTL\ $\varphi$ is the disjunction of the characterizing formulas of all the possible model $\Hm$ with $\Hm$ is bisimilar with some model $\Hm'$ of $\varphi$ on $V$ and $\Hm$ is bounded on a size. However, it is impossible for considering the infinite models and the whole \CTL. Therefore, we will explore a resolution based approach to compute the forgetting in \CTL.
+
+
+The resolution based methods for propositional logic~\cite{lin1994forget,Yisong:2015:arx} and Ackermann-based approach in description logic~\cite{Zhao:2017:IJCAI} require a specific normal form which does not exist in \CTL.
+While any \CTL\ formula can be transformed into a set of $\CTLsnf$ clauses, which is a variant of \CTL\ for which such a normal form does exist, it introduces \emph{indices} and extra atoms. Both these two problems will have to be addressed.
+
+In this paper, we give the definition of forgetting in \CTL\ from the semantic forgetting point of view and explore a \emph{Second-Order Quantifier Elimination} (SOQE)~\cite{gabbay2008second} based method to compute it. In particular, we extend the Resolution Calculus in~\cite{zhang2014resolution} to eliminate the elements that need to be forgotten and the Ackermann's Lemma to 
+ eliminate the atoms introduced in the transformation process as possible %and combining the \CTL\ with $\CTLsnf$
+by using a \emph{binary bisimulation relation} (one on the set of atoms, one on indices).
+Such a bisimulation relation is an extension of the set-based bisimulation introduced in \cite{renyansfirstpaper} by taking \emph{index} into account.
+
+The rest of the paper is organised as follows. %Next section reports about the related work. 
+In Section 2  we introduce the notation and technical preliminaries.
+In Section 3 we give a more precise definition of the forgetting problem.
+As key contributions, Section 4, introduces the resolution-based approach, as well as the termination and complexity of our algorithm.
+We conclude the paper with some related and future work, as well as a brief discussion. Due to space restrictions and to avoid hindering the flow of content, some of the proves are moved to the supplementary material~\footnote{https://github.com/fengrenyan/Resolution-proof-CTL.git}.
+
+
+
+
+\section{Background Knowledge and Notation} \label{preliminaries}
+We start with some technical and notational preliminaries. Throughout this paper we fix a set $\Ha$ of propositional variables (or atoms), and use $V$, $V'$ for subsets of $\Ha$.
+% In the following several parts, we will introduce the structure we will use for \CTL, syntax and semantic of \CTL\ and the normal form $\CTLsnf$ (Separated Normal Form with Global Clauses for \CTL) of \CTL~\cite{zhang2009refined}.
+\subsection{Kripke structure in \CTL}
+ In general, a transition system
+%\footnote{According to \cite{Baier:PMC:2008},
+%a {\em transition system} TS is a tuple $(S, Act,\rto,I, AP, L)$ where
+%(1) $S$ is a set of states,
+%(2) $\textrm{Act}$ is a set of actions,
+%(3) $\rto\subseteq S\times \textrm{Act}\times S$ is a transition relation,
+%(4) $I\subseteq S$ is a set of initial states,
+%(5) $\textrm{AP}$ is a set of atomic propositions, and
+%(6) $L:S\rto 2^{\textrm{AP}}$ is a labeling function.}
+ can be described by a  \emph{Kripke \ structure} (see~\cite{Baier:PMC:2008} for details). A Kripke structure is a triple $\Hm=(S,R,L)$, where
+  $S$ is a nonempty set of states, % \footnote{Indeed, every state is identified by a configuration of atoms i.e., which holds in that state.},
+ $R\subseteq S\times S$ and, for each $s\in S$, there
+  is $s'\in S$ such that $(s,s')\in R$,
+and $L: S\rto 2^{\cal A}$ is a labeling function.
+%We call a Kripke structure $\Hm$ on a set $V$ of atoms if $L: S \rto 2^V$, i.e., the labelling function $L$ map every state to $V$ (not the $\Ha$).
+Given a Kripke structure $\Hm=(S,R,L)$, a \emph{path} $\pi_{s_i}$ starting from $s_i$ of $\Hm$ is an infinite sequence of states $\pi_{s_i}=(s_i, s_{i+1} s_{i+2},\dots)$, where for each $j$ ($0\leq i\leq j$), $(s_j, s_{j+1}) \in R$. By $s'\in \pi_{s_i}$ we mean that $s'$ is a state  occurring in the path $\pi_{s_i}$.
+A state $s\in S$ is {\em initial} if for any state $s'\in S$, there is a path $\pi_s$ s.t $s'\in \pi_s$.
+If $s_0$ is an initial state of $\Hm$, then we denote this Kripke structure $\Hm$ as $(S,R,L,s_0)$ and call it an \emph{initial structure}.
+
+% For a given Kripke structure $\Hm=(S,R,L,s_0)$ and $s\in S$,
+% the {\em computation tree}
+% $\Tr_n^{\cal M}(s)$ of $\cal M$ (or simply $\Tr_n(s)$), that has depth $n \ge 0$ and is rooted at $s$, is recursively defined \cite{DBLP:journals/tcs/BrowneCG88} as follows:
+% \begin{itemize}
+%   \item $\Tr_0(s)$ consists of a single node $s$ with label $s$.
+%   \item $\Tr_{n+1}(s)$ has as its root a node $m$ with label  $s$, and
+%   if $(s,s')\in R$ then the node $m$ has a subtree $\Tr_n(s')$.
+%  % \footnote{Though
+% %  some nodes of the tree may have the same label, they are different nodes in the tree.}.
+% \end{itemize}
+% %By $s_n$ we mean a $n$th level node of tree $\Tr_m(s)$ $(m \geq n)$.
+
+A {\em \MPK-structure} (or {\em \MPK-interpretation}) $\mathcal{K}$ consists of an initial structure 
+${\cal M}=(S, R, L, s_0)$ and a state $s\in S$, i.e.,  $\mathcal{K} = (\mathcal{M}, s)$. 
+If in addition $s=s_0$ (i.e., $\mathcal{K} = (\mathcal{M}, s_0)$), then the \MPK-structure is called an {\em initial} \MPK-structure.
+
+
+
+\subsection{Syntax and Semantics of \CTL}
+In the following, we briefly review the usual basic syntax and semantics
+of the \CTL~\cite{DBLP:journals/toplas/ClarkeES86}.
+The {\em signature} of the language $\cal L$ of \CTL\ includes:
+  a finite set $\cal A$ of Boolean variables, called {\em atoms} of $\cal L$: ;
+   constant symbols $\bot$ and $\top$;
+  the classical connectives $\lor$ and $\neg$;
+  %\item the propositional constants: $\bot$;
+ the path quantifiers $\ALL$ and $\EXIST$;
+  the temporal operators \NEXT, \FUTURE, \GLOBAL\ and \UNTIL, that
+  means `neXt state', `some Future state', `all future states (Globally)' and `Until', respectively;
+ and parentheses: "(" and ")".
+The priorities for the \CTL\ connectives are the same with that in~\cite{renyansfirstpaper}.
+Then the {\em (existential normal form or ENF in short) formulas} of
+$\cal L$ are inductively defined via a Backus Naur form:
+\begin{equation}\label{def:CTL:formulas}
+  \phi ::=  \bot \mid \top \mid p \mid\neg\phi \mid \phi\lor\phi \mid
+    \EXIST \NEXT \phi \mid
+    %\EXIST \FUTURE \phi \mid
+    \EXIST \GLOBAL \phi \mid
+    \EXIST (\phi\ \UNTIL\ \phi)%.% \mid
+    %\ALL \NEXT \phi \mid
+%    \ALL \FUTURE \phi \mid
+%    \ALL \GLOBAL \phi \mid
+%    \ALL [\phi\ \UNTIL\ \phi]
+\end{equation}
+where $p\in\cal A$. The formulas $\phi\land\psi$ and $\phi\supset \psi$
+are defined in the usual way.
+Other formulas in $\cal L$ are abbreviated
+using the forms in (\ref{def:CTL:formulas}).
+For convenience, throughout this article we identify a finite set $\Pi$ of formulas as the formula $\bigwedge\Pi$ whenever the context is clear.
+
+%Notice that, according to the
+%above definition for formulas of \CTL,
+%each of the \CTL\ {\em temporal connectives} has the form $XY$
+%where $X\in \{\ALL,\EXIST\}$ and  $Y\in\{\NEXT, \FUTURE, \GLOBAL, \UNTIL\}$.
+%The priorities for the \CTL\ connectives are assumed to be (from the highest to the lowest):
+%\begin{equation*}
+ % \neg, \EXIST\NEXT, \EXIST\FUTURE, \EXIST\GLOBAL, \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL
+ % \prec \land \prec \lor \prec \EXIST\UNTIL, \ALL\UNTIL, \EXIST \UNLESS, \ALL \UNLESS, \rto.
+%\end{equation*}
+
+Next, the usual CTL Semantics is defined as follows.
+Let ${\cal M}=(S,R,L,s_0)$ be a Kripke structure, $s\in S$ and $\phi \in \cal L$.
+The {\em satisfiability} relation between $({\cal M},s)$ and $\phi$,
+written $({\cal M},s)\models\phi$, is inductively defined on the structure of $\phi$ as follows:
+  $({\cal M},s)\not\models\bot$ \ and\  $({\cal M},s)\models\top$;
+ $({\cal M},s)\models p$ iff $p\in L(s)$;
+  $({\cal M},s)\models \phi_1\lor\phi_2$ iff
+    $({\cal M},s)\models \phi_1$ or $({\cal M},s)\models \phi_2$;
+ $({\cal M},s)\models \neg\phi$ iff  $({\cal M},s)\not\models\phi$;
+   $({\cal M},s)\models \EXIST\NEXT\phi$ iff
+    $({\cal M},s_1)\models\phi$ for some $(s,s_1)\in R$;
+  $({\cal M},s)\models \EXIST\GLOBAL\phi$ iff
+    $\cal M$ has a path $(s_1=s,s_2,\ldots)$ such that
+    $({\cal M},s_i)\models\phi$ for each $i\ge 1$;
+ $({\cal M},s)\models \EXIST(\phi_1\UNTIL\phi_2)$ iff
+    $\cal M$ has a path $(s_1=s,s_2,\ldots)$ such that, for some $i\ge 1$,
+    $({\cal M},s_i)\models\phi_2$ and
+    $({\cal M},s_j)\models\phi_1$ for each $j~(1\leq j<i)$.
+
+Similar to the work in \cite{browne1988characterizing,Bolotov:1999:JETAI},
+only initial \MPK-structures are considered to be candidate models
+in the following, unless otherwise noted. Formally,
+an initial \MPK-structure $\cal K$ is a {\em model} of a formula $\phi$
+whenever ${\cal K}\models\phi$.
+We denote $\Mod(\phi)$ the set of models of $\phi$.
+The formula
+$\phi$  is {\em satisfiable}
+if $\Mod(\phi)\neq\emptyset$.
+Given two formulas $\phi_1$ and $\phi_2$,  by $\phi_1\models\phi_2$ we mean $\Mod(\phi_1)\subseteq\Mod(\phi_2)$, by $\phi_1\equiv\phi_2$ we mean $\phi_1\models\phi_2$ and $\phi_2\models\phi_1$.
+In this case, $\phi_1$ is {\em equivalent} to $\phi_2$.
+The set of atoms occurring in $\phi_1$ is denoted by $\Var(\phi_1)$.
+The formula $\phi_1$ is {\em irrelevant to} the atoms in a set $V$ (or simply $V$-{\em irrelevant}), written $\IR(\phi_1,V)$,
+if there is a formula $\psi$ with
+$\Var(\psi)\cap V=\emptyset$ such that $\phi_1\equiv\psi$.
+% Similar to the work in \cite{DBLP:journals/tcs/BrowneCG88,Bolotov:1999:JETAI},
+% only initial \MPK-structures are considered to be candidate models
+% in the following, unless otherwise noted. Formally,
+% an initial \MPK-structure $\cal K$ is a {\em model} of a formula $\phi$
+% whenever ${\cal K}\models\phi$.
+% %Let $\Pi$ be a set of formulae, ${\cal K} \models \Pi$ if for each $\phi\in \Pi$ there is $\cal K \models \phi$.
+% We denote $\Mod(\phi)$ the set of models of $\phi$.
+% The formula $\phi$  is {\em satisfiable}
+% iff $\Mod(\phi)\neq\emptyset$.
+% Given two formulas $\phi_1$ and $\phi_2$, by $\phi_1\models\phi_2$, we mean $\Mod(\phi_1)\subseteq\Mod(\phi_2)$, and
+% by $\phi_1\equiv\phi_2$, we mean $\phi_1\models\phi_2$ and $\phi_2\models\phi_1$.
+% In this case, $\phi_1$ is {\em equivalent} to $\phi_2$.
+% The set of atoms occurring in $\phi_1$, is denoted by $\Var(\phi_1)$. We say that
+%  $\phi_1$ is $V$-{\em irrelevant}, and write $\IR(\phi_1,V)$,
+% if there is a formula $\psi$ with
+% $\Var(\psi)\cap V=\emptyset$ such that $\phi_1\equiv\psi$.
+
+
+\subsection{The Normal Form of \CTL}
+Any \CTL\ formula $\varphi$ can be transformed into a set $T_\varphi$ of $\CTLsnf$ clauses in polynomial time such that $\varphi$ is satisfiable iff $T_\varphi$ is satisfiable~\cite{zhang2008first}.
+An important difference between \CTL\ formulae and $\CTLsnf$ is that $\CTLsnf$ is an extension of the syntax of \CTL\ to use indices. These indices can be used to preserve a particular path context. The language of $\CTLsnf$ clauses is defined over an extension of \CTL. That is, the language is based on: (1) the language of CTL; (2) a propositional constant $\start$; (3) a countably infinite index set $\Ind$; and (4) temporal operators: $\EXIST_{\tuple{ind}} \NEXT$, $\EXIST_{\tuple{ind}} \FUTURE$, $\EXIST_{\tuple{ind}} \GLOBAL$, $\EXIST_{\tuple{ind}} \UNTIL$, and $\EXIST_{\tuple{ind}} \UNLESS$  with $ind \in \Ind$.
+
+%The priorities for the $\CTLsnf$\ connectives are assumed to be (from the highest to the lowest):
+%\begin{align*}
+%  &\neg, (\EXIST\NEXT,\EXIST_{\tuple{ind}}\NEXT), (\EXIST\FUTURE ,\EXIST_{\tuple{ind}}\FUTURE), (\EXIST\GLOBAL,\EXIST_{\tuple{ind}} \GLOBAL), \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL \\
+%  &\prec \land \prec \lor \prec (\EXIST\UNTIL,\EXIST_{\tuple{ind}} \UNTIL), \ALL\UNTIL, (\EXIST \UNLESS, ,\EXIST_{\tuple{ind}}\UNLESS), \ALL \UNLESS, \rto.
+%\end{align*}
+%Where the operators in the same brackets have the same priority.
+
+%The $\CTLsnf$ clauses consists of formulae of the following forms: $\ALL \GLOBAL(\start \supset \bigvee_{j=1}^k m_j)$ (initial clause), $\ALL \GLOBAL(true \supset \bigvee_{j=1}^k m_j)$ (global clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \NEXT \bigvee_{j=1}^k m_j)$ (\ALL-step clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_\tuple{ind} \NEXT \bigvee_{j=1}^k m_j)$ (\EXIST-step clause), $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \FUTURE l)$ (\ALL-sometime clause) and $\ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_{\tuple{ind}} \FUTURE l)$ (\EXIST-sometime clause),
+%We introduce the $\CTLsnf$ clauses at first, and then we will talk about its semantics.
+A $\CTLsnf$ clause is a formula with one of the following forms. 
+\begin{align*}
+& \ALL \GLOBAL(\start \supset \bigvee_{j=1}^k m_j) && (initial\ clause) \\
+& \ALL \GLOBAL(true \supset \bigvee_{j=1}^k m_j) && (global\ clause) \\
+& \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \NEXT \bigvee_{j=1}^k m_j) && (\ALL-step\ clause)\\
+& \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_\tuple{ind} \NEXT \bigvee_{j=1}^k m_j) && (\EXIST-step\ clause)\\
+& \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \ALL \FUTURE l) && (\ALL-sometime\ clause)
+\end{align*}
+\begin{align*}
+& \ALL \GLOBAL(\bigwedge_{i=1}^n l_i \supset \EXIST_{\tuple{ind}} \FUTURE l) && (\EXIST-sometime\ clause).
+\end{align*}
+where $k \ge 0$, $n > 0$, $\start$ is a propositional constant, $l_i$ ($1 \le i \le n$), $m_j$ ($1 \le j \le k$) and $l$ are literals, that is, atomic propositions or their negation, and $ind\in \Ind$. %(Ind is a countably infinite index set).
+By a clause, we mean the classical clause or the $\CTLsnf$ clause unless explicitly stated.
+As all clauses are of the form $\ALL \GLOBAL(P \supset D)$ , we often simply write $P \supset D$ instead.
+ %A set $T$ of $\CTLsnf$ clauses is satisfiable if there is a model $\Hm=(S, R, L, [\_], s_0)$ \st\ for all clause $C\in T$, $(\Hm, s_0) \models C$.
+
+Formulae of $\CTLsnf$ over $\Ha$ are interpreted in \Ind-Kripke structure $\Hm=(S,R,L, [\_], s_0)$, where $S$, $R$, $L$ and $s_0$ is the same as our initial structure talked above and $[\_]: \Ind \rto 2^{(S\times S)}$ maps every index $ind \in \Ind$ to a successor function $[ind]$   such that for every $s\in S$ there exists exactly a state $s'\in S$ such that $(s,s')\in [ind] \cap R$.
+%In this paper we do not need a strict tree Kripke structure as in~\cite{zhang2009refined}, that is we do not those restrictions on $s_0$ due to that only for simplifying the proof but do not impact the satisfiability of a formula~\cite{zhang2009refined}.
+An path $\pi_{s_i}^{\tuple{ind}}$ is an infinite sequence of states $s_i, s_{i+1}, s_{i+2},\dots$ such that for every $j\geq i$, $(s_j, s_{j+1})\in [ind]$.
+%https://www.overleaf.com/project/5f3bcc3285156d0001b683f9
+%Let $\pi$ be a path in \Ind-Kripke structure $\Hm$, by $s\in \pi$ we mean that $s$ is a state in the path $\pi$.
+
+Similarly, an {\em \Ind-structure} (or {\em \Ind-interpretation}) is an \Ind-Kripke structure
+${\cal M}=(S, R, L, [\_], s_0)$ associating
+with a state $s\in S$, which is simplified as $({\cal M},s)$ for convenience in the following.
+In the case that $s$ is an initial state of $\cal M$, the \Ind-structure is {\em initial}.
+
+%The semantics of $\CTLsnf$ is an extension of the semantics of \CTL\ defined in Section 2.2 except using the \Ind-Kripke structure $\Hm=(S,R,L,[\_],s_0)$ replace Kripke structure, $({\cal M},s_i) \models \start$ iff $s_i=s_0$ and for all $\EXIST_{\tuple{ind}} \Gamma$ are explained in the path $\pi_{s_i}^{\tuple{ind}}$, where $\Gamma\in \{\NEXT, \GLOBAL, \UNTIL,\UNLESS\}$.
+The semantics of $\CTLsnf$ is then
+defined as an extension of the semantics of \CTL. 
+% Let $\varphi$ and $\psi$ be two $\CTLsnf$ formulae, $\Hm=(S,R,L,[\_],s_0)$ be an \Ind-Kripke structure and $s_i \in S$. The relation ``$\models$" between $\CTLsnf$ formulae and $(\Hm,s_i)$ is defined recursively as follows:
+Let ${\cal M}=(S,R,L,[\_],s_0)$ be an \Ind-Kripke structure, $s\in S$ and $\psi$ a $\CTLsnf$ formulae.
+The {\em satisfiability} relation between $({\cal M},s)$ and $\psi$,
+written $({\cal M},s)\models\psi$, is inductively defined on the structure of $\psi$ as follows:
+\begin{itemize}
+  \item $({\cal M},s) \models \start$ iff $s=s_0$;
+  \item $({\cal M},s)\models \EXIST_{\tuple{ind}} \NEXT \psi$ iff for the path $\pi_{s}^{\tuple{ind}}$, $(\Hm, s')\models \psi$ with $(s, s') \in [ind]$;
+  \item $({\cal M},s)\models \EXIST_{\tuple{ind}}\GLOBAL\psi$ iff
+    for every $s'$ occurring in $\pi_{s}^{\tuple{ind}}$,
+    $(\Hm,s') \models \psi$;
+  \item $({\cal M},s)\models \EXIST_{\tuple{ind}}[\psi_1\UNTIL\psi_2]$ iff
+      there exists $s'$ occurring in $ \pi_{s}^{\tuple{ind}}$ such that $(\Hm,s') \models \psi_2$ and for every $s_k \in \pi_{s}^{\tuple{ind}}$, if $i\leq k < j$, then $(\Hm,s_k) \models \psi_1$;
+  \item $(\Hm,s) \models \EXIST_{\tuple{ind}} \FUTURE \psi$ iff $(\Hm,s) \models \EXIST_{\tuple{ind}}[\top \UNTIL\psi]$.
+  \item $({\cal M},s)\models \EXIST_{\tuple{ind}}[\varphi\UNLESS\psi]$ iff $(\Hm,s) \models \EXIST_{\tuple{ind}}\GLOBAL \varphi$ or $({\cal M},s)\models \EXIST_{\tuple{ind}}[\varphi\UNTIL\psi]$.
+\end{itemize}
+The semantics of the remaining operators are analogous to that of \CTL\ given previously.
+%but in the extended \Ind-Kripke structure ${\cal M}=(S, R, L, [\_],s_0)$.
+A $\CTLsnf$ formula $\varphi$ is satisfiable, iff for some \Ind-Kripke structure $\Hm=(S,R,L,[\_],s_0)$, $(\Hm,s_0)\models \varphi$, and unsatisfiable otherwise. And if $(\Hm,s_0)\models \varphi$ then $(\Hm,s_0)$ is called an \Ind-model of $\varphi$, and we say that $(\Hm,s_0)$ satisfies $\varphi$.
+By $T \wedge \varphi$ we mean $\bigwedge_{\psi\in T} \psi \wedge \varphi$, where $T$ is a finite set of formulae.
+Other terminologies are similar with those in \CTL\  subsection.
+
+
+
+
+\section{Problem Definition}\label{problem}
+% In this section we will introduce forgetting based on the notion of $V$-bisimulation.
+% Intuitively, bisimulation relates states that mutually mimic all individual transitions~\cite{Baier:PMC:2008}. While the $V$-bisimulation relates states that mutually mimic all individual transitions on $\Ha - V$, this is close with forgetting some set $V$ of atoms.
+The concept of semantic forgetting in bounded \CTL\ is formally introduced  in~\cite{renyansfirstpaper}. In this section, we follow this work and give  the necessary definitions. 
+
+We start with extending the notion of $V$-bisimulation between two $\MPK$-structures to $V$-bisimulation between two $\Ind$-structures. 
+
+
+For convenience, in the following we denote
+$\Hm'=(S',R',L',s_0')$, $\Hm_i=(S_i, R_i,L_i, s_0^i)$ (or 
+$\Hm'=(S',R',L', [\_],s_0')$, $\Hm_i=(S_i, R_i,L_i, [\_], s_0^i)$) and ${\cal K}_i=(\Hm_i, s_i)$ with $s_i \in S_i$
+and $i \in \mathbb{N}$.
+
+Let
+${\cal K}_i=({\cal M}_i,s_i)$ with $i\in\{1,2\}$,
+\begin{itemize}
+  \item $({\cal K}_1,{\cal K}_2)\in\Hb_0$ if $L_1(s_1)- V=L_2(s_2)- V$;  % and ${\cal K}'=(\tuple{S', R',L'},s')$;
+  \item for $n\ge 0$, $({\cal K}_1,{\cal K}_2)\in\Hb_{n+1}$ if:
+  \begin{itemize}
+    \item $({\cal K}_1,{\cal K}_2)\in\Hb_0$,
+    \item for every $(s_i,s_i')$ occurring in $R_i$, there is a $(s_{(i \mod 2)+1}, s_{(i \mod 2)+1}')\in R_{(i \mod 2)+1})$
+    such that $({\cal K}_1',{\cal K}_2')\in \Hb_n$,
+    % \item for every $(s_2,s_2')\in R_2$, there is a $(s_1,s_1')\in R_1$
+    % such that $({\cal K}_1',{\cal K}_2')\in \Hb_n$,
+  \end{itemize}
+  where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+\end{itemize}
+
+Now, we define the notion of $V$-bisimulation between \MPK-structures (\Ind-structures):
+\begin{definition}[$V$-bisimulation] %~\cite{renyansfirstpaper}
+  \label{def:V-bisimulation}
+   Let $V\subseteq\cal A$. Two \MPK-structures (or \Ind-structures) ${\cal K}_1$ and ${\cal K}_2$ are $V$-{\em bisimilar},  denoted ${\cal K}_1 \lrto_V {\cal K}_2$, 
+ if and only if $({\cal K}_1,{\cal K}_2)\in {\Hb_i}\mbox{ for all }i\ge 0.$ Moreover, two paths $\pi_i=(s_{i,1},s_{i,2},\ldots)$ of $\Hm_i$ with $i\in \{1,2\}$
+ are $V$-{\em bisimilar} if
+$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}\mbox { for every $j\ge 1$ }$
+ where ${\cal K}_{i,j}=(\Hm_i,s_{i,j})$.
+\end{definition}
+
+%It is  apparent that $\lrto_V$ is a binary relation.
+ In the sequel, we abbreviate ${\cal K}_1 \lrto_V {\cal K}_2$
+ by $s_1 \lrto_V s_2 $
+ whenever the underlying initial structures (\Ind-Kripke structures) of states $s_1$ and $s_2$ are clear from the context.
+
+% In order to define our problem, \ie forgetting in \CTL, we give the definition of $V$-bisimulation at first. %(read ?? for more detials).
+% \begin{definition}\label{def:Vbi}
+% Let $V\subseteq\cal A$
+% %${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be Kripke structures
+% and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures (Ind-structures).
+% Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+%   \begin{enumerate}[(i)]
+%     \item $L_1(s_1)- V = L_2(s_2)-V$,
+%     \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+%     such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+%     \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+% %    such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+%   \end{enumerate}
+%  where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+% \end{definition}
+
+%  In the sequel, we abbreviate ${\cal K}_1 \lrto_V {\cal K}_2$
+%  by $s_1 \lrto_V s_2 $
+%  whenever the underlying Kripke structures of states $s_1$ and $s_2$ are clear from the context.
+
+%  \begin{lemma}\label{lem:equive}~\cite{renyansfirstpaper}
+%   The relation $\lrto_V$ is an equivalence relation.
+% \end{lemma}
+
+%Besides, we have the following properties:
+
+% It's shown in Proposition 1 of~\cite{renyansfirstpaper} that if a \MPK-structure (or an Ind-structure) is $V_1$ and $V_2$-bisimilar with the other two \MPK-structures (or Ind-structures) respectively, then those two \MPK-structures (or Ind-structures) are $V_1 \cup V_2$-bisimilar. This is important for forgetting since this laid the foundation of resolving atoms in $V$ one by one in the resolution process later.
+% Moreover, the $V_1$-bisimulation between two \MPK-structures (Ind-structures) implies that these two \MPK-structure (Ind-structures) are $V_2$-bisimilar for each $V_2$ with $V_1 \subseteq V_2 \subseteq \Ha$.
+% %Formally,
+
+% \begin{proposition}\label{div}~\cite{renyansfirstpaper}
+% Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$ 
+% %$s_i'$s be two states and
+% %  $\pi_i'$s be two pathes,
+% and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2,3)$ be \MPK-structures (Ind-structures)
+%  such that
+% ${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
+%  Then:
+%  \begin{enumerate}[(i)]
+%   % \item $s_1'\lrto_{V_i}s_2'~(i=1,2)$ implies $s_1'\lrto_{V_1\cup V_2}s_2'$;
+% %   \item $\pi_1'\lrto_{V_i}\pi_2'~(i=1,2)$ implies $\pi_1'\lrto_{V_1\cup V_2}\pi_2'$;
+% %   \item for each path $\pi_{s_1}$ of $\Hm_1$ there is a path $\pi_{s_2}$  of $\Hm_2$ such that $\pi_{s_1} \lrto_{V_1} \pi_{s_2}$, and vice versa;
+%   \item ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$;
+%   \item If $V_1 \subseteq V_2$ then ${\cal K}_1 \lrto_{V_2} {\cal K}_2$.
+%  \end{enumerate}
+% \end{proposition}
+
+% Intuitively, if two \MPK-structures are $V$-bisimilar, then they satisfy the same formula $\varphi$ that does not contain any atoms in $V$, \ie $\IR(\varphi, V)$.
+% \begin{theorem}\label{thm:V-bisimulation:EQ}~\cite{renyansfirstpaper}
+%   Let $V\subseteq\cal A$, ${\cal K}_i~(i=1,2)$ be two \MPK-structures such that
+%   ${\cal K}_1\lrto_V{\cal K}_2$ and $\phi$ a formula with $\IR(\phi,V)$. Then
+%   ${\cal K}_1\models\phi$ if and only if ${\cal K}_2\models\phi$.
+% \end{theorem}
+% \begin{proof}(sketch) See~\cite{renyansfirstpaper}.
+% This can be proved by induction on the structures of $\phi$. % and supposing $\Var(\phi) \cap V = \Empty$ due to $\IR(\phi,V)$.
+% For instance, let $\phi = \psi_1 \vee \psi_2$, the induction hypothesis is ${\cal K}_1 \models \psi_i$ iff ${\cal K}_2 \models \psi_i$ with $i\in \{1,2\}$. Then we can see that ${\cal K}_1 \models \phi$ iff ${\cal K}_1 \models \psi_1$ or ${\cal K}_1 \models \psi_2$ iff ${\cal K}_2 \models \psi_1$ or ${\cal K}_2 \models \psi_2$ by induction hypothesis.
+% %Other cases can be proved similarly.
+% \end{proof}
+
+%Now we give the formal definition of forgetting in \CTL\ from the semantic forgetting point view.
+Based on the notion of $V$-bisimulation, we can now introduce forgetting in \CTL\ from the semantic forgetting point view, which is similar with that in~\cite{renyansfirstpaper}.
+% This means that the result of forgetting the atoms in the set $V$ of atoms from \CTL\ formula $\varphi$ is a formula which shares the same models as $\varphi$ and models that are $V$-bisimilar to one of the models of $\varphi$.
+\begin{definition}[Forgetting]\label{def:V:forgetting}
+  Let $V\subseteq\cal A$ and $\phi$ a \CTL\ formula.
+A \CTL\ formula $\psi$ with $\Var(\psi)\cap V=\emptyset$
+is a {\em result of forgetting $V$ from} $\phi$ (denoted as $\CTLforget(\phi,V)$), if
+\begin{equation*}
+  \Mod(\psi)=\{{\cal K}\mbox{ is initial}\mid \exists {\cal K}'\in\Mod(\phi)\ \&\ {\cal K}'\lrto_V{\cal K}\},
+\end{equation*}
+where $\cal K$ and ${\cal K}'$ are $\MPK$-structures.
+\end{definition}
+Note that if both $\psi$ and $\psi'$ are results of forgetting $V$ from $\phi$ then
+$\Mod(\psi)=\Mod(\psi')$, \ie, $\psi$ and $\psi'$ have the same models. In other words,  the forgetting result is unique (up to equivalence).
+
+
+In order to bridge the gap between \CTL\ and $\CTLsnf$ and compute the forgetting in \CTL, %which uses indices for existential quantifiers,
+%Similar with the $V$-bisimulation between \MPK-structures,
+we define the $\tuple{V,I}$-bisimulation between \Ind-structures as follows:
+\begin{definition}[Binary bisimulation relation] \label{def:VInd:bisimulation}
+%\textbf{($\tuple{V,I}$-bisimulation)}
+Let $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$ be two \Ind-structures, $V$ be a set of atoms and $I \subseteq Ind$. The $\tuple{V,I}$-bisimulation $\beta_{\tuple{V,I}}$ between initial \Ind-structures is a set that satisfy $((\Hm_1, s_0^1), (\Hm_2, s_0^2)) \in \beta_{\tuple{V,I}}$  if and only if $(\Hm_1, s_0^1) \lrto_V (\Hm_2, s_0^2)$ and $\forall j \in (\Ind-I)$ there is: for each $(s, s_1)\in [j]_i$ there exists $(s',s_1')\in [j]_{(i\mod 2)+1}$ such that $s\lrto_V s'$ and $s_1 \lrto_V s_1'$.
+% \begin{enumerate}[ ]
+%   \item for each $(s, s_1)\in [j]_i$ there exists $(s',s_1')\in [j]_{(i\mod 2)+1}$ such that $s\lrto_V s'$ and $s_1 \lrto_V s_1'$.
+%  % \item for each $(s', s_1')\in [j]_2$ there exists $(s,s_1)\in [j]_1$ such that $s\lrto_V s'$ and $s_1 \lrto_V s_1'$.
+% \end{enumerate}
+%$\forall j \notin I$ there is $[j]_1 = [j]_2$.
+\end{definition}
+We call this relation as \emph{binary bisimulation relation}, also denoted as $\lrto_{\tuple{V,I}}$. This definition is similar to the concept of $V$-bisimulation except that  $\tuple{V,I}$-bisimulation takes index into account.
+Clearly, the $\lrto_{\tuple{V,I}}$ will degenerate into $\lrto_V$ when the considered formula is a \CTL\ formula since we do not need to consider the index anymore, that is for any two $\Hm_i=(S_i, R_i, L_i, [\_]_i, s_0^i)$ with $i\in \{1, 2\}$, if $(\Hm_1, s_0^1) \lrto_{\tuple{V,I}} (\Hm_2, s_0^2)$ then we have $(\Hm_1', s_0^1) \lrto_V (\Hm_2', s_0^2)$ under \CTL, where $\Hm_i'=(S_i, R_i, L_i, s_0^i)$ with $i\in \{1, 2\}$. Similar with that in Proposition 1 of~\cite{renyansfirstpaper}, we have the following results.
+%This new type of bisimulation will later be used to show the \emph{equivalence} between a \CTL\ formula and a $\CTLsnf$ formula.
+%Besides, it is not difficult to prove $\tuple{V,I}$-bisimulation possess those properties (talked-above) possessed by $V$-bisimulation.
+
+% It's shown in Proposition 1 of~\cite{renyansfirstpaper} that if a \MPK-structure (or an Ind-structure) is $V_1$ and $V_2$-bisimilar with the other two \MPK-structures (or Ind-structures) respectively, then those two \MPK-structures (or Ind-structures) are $V_1 \cup V_2$-bisimilar. This is important for forgetting since this laid the foundation of resolving atoms in $V$ one by one in the resolution process later.
+% Moreover, the $V_1$-bisimulation between two \MPK-structures (Ind-structures) implies that these two \MPK-structure (Ind-structures) are $V_2$-bisimilar for each $V_2$ with $V_1 \subseteq V_2 \subseteq \Ha$.
+% %Formally,
+
+
+
+\begin{proposition}\label{pro:VI:div}
+Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$, $I_1, I_2 \subseteq \Ind$
+and ${\cal K}_i=({\cal M}_i,s_0^i)~(i=1,2,3)$ be initial Ind-structures
+ such that
+${\cal K}_1\lrto_{\tuple{V_1, I_1}}{\cal K}_2$ and ${\cal K}_2\lrto_{\tuple{V_2,I_2}}{\cal K}_3$.
+ Then:
+ \begin{enumerate}[(i)]
+  % \item $s_1'\lrto_{V_i}s_2'~(i=1,2)$ implies $s_1'\lrto_{V_1\cup V_2}s_2'$;
+%   \item $\pi_1'\lrto_{V_i}\pi_2'~(i=1,2)$ implies $\pi_1'\lrto_{V_1\cup V_2}\pi_2'$;
+%   \item for each path $\pi_{s_1}$ of $\Hm_1$ there is a path $\pi_{s_2}$  of $\Hm_2$ such that $\pi_{s_1} \lrto_{V_1} \pi_{s_2}$, and vice versa;
+   \item ${\cal K}_1\lrto_{\tuple{V_1\cup V_2, I_1 \cup I_2}}{\cal K}_3$;
+   \item If $V_1 \subseteq V_2$ and $I_1 \subseteq I_2$ then ${\cal K}_1 \lrto_{\tuple{V_2, I_2}} {\cal K}_2$.
+ \end{enumerate}
+\end{proposition}
+% \begin{proof}
+% %This can be proved similarly with Proposition~\ref{div}.
+% (i) By Proposition~\ref{div} we have ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$. For (i) of Definition~\ref{def:VInd:bisimulation} we can prove it as follows:
+% for all $(s,s_1) \in [j]_1$ there is a $(s', s_1') \in [j]_2$ such that $s\lrto_{V_1} s'$ and $s_1 \lrto_{V_1} s_1'$ and there is a $(s'', s_1'') \in [j]_3$ such that $s'\lrto_{V_2} s''$ and $s_1' \lrto_{V_2} s_1''$,  then we have for all $(s,s_1) \in [j]_1$ there is a $(s'', s_1'') \in [j]_3$ such that $s  \lrto_{V_1\cup V_2} s''$ and $s_1 \lrto_{V_1\cup V_2} s_1''$. The (ii) of Definition~\ref{def:VInd:bisimulation} can be proved similarly.
+
+% (ii) This can be proved from (ii) of Proposition~\ref{div}.
+% \end{proof}
+%Apparently, this Proposition contain the same meaning with Proposition~\ref{div} except the index have been take into consider in this result.
+Obviously, this proposition has the same meaning with that in Proposition 1 of~\cite{renyansfirstpaper}, except that indices are now taken into account.
+We are now ready to introduce our resolution calculus for forgetting. 
+
+
+\section{The Calculus}\label{resolution}
+\emph{Resolution} in \CTL\ is a method to decide the satisfiability of a \CTL\ formula.
+In this section, we shall extend it to compute forgetting in \CTL.
+We use the transformation rules Trans(1) to Trans(8), Trans(10) and Trans(11) in Table~\ref{tab:trans} and resolution rules (SRES1), \dots, (SRES8), (RW1), (RW2), (ERES1), (ERES2) in Table~\ref{tab:res}, which are from~\cite{zhang2014resolution}. 
+
+\begin{table*}[]
+    \centering
+    \footnotesize
+    \begin{tabular}{l l}
+    \hline
+   $\textbf{Trans(1)}\  q \supset \EXIST T \varphi \rto q\supset \EXIST_{\tuple{ind}} T \varphi$  & \textbf{Trans(2)}\  $q \supset \EXIST (\varphi_1 \UNTIL \varphi_2) \rto q\supset \EXIST_{\tuple{ind}} (\varphi_1 \UNTIL \varphi_2)$  \\
+   
+   \textbf{Trans(3)}\  $$ q\supset \varphi_1 \wedge \varphi_2 \rto \left\{
+\begin{aligned}
+& q\supset \varphi_1 \\
+& q\supset \varphi_2
+\end{aligned}
+\right.
+$$  &
+\textbf{Trans(4)} 
+$$ q\supset \varphi_1 \vee \varphi_2 \rto \left\{
+\begin{aligned}
+& q\supset \varphi_1 \vee p, && \hbox{if $\varphi_2$ is not a disjunct}\\
+& p\supset \varphi_2
+\end{aligned}
+\right.
+$$    \\
+\textbf{Trans(5)} 
+$$ \left\{
+\begin{aligned}
+& q\supset D \rto \top \supset \neg q \vee D\\
+& q\supset \perp\rto \top \supset \neg q \\
+& q \supset \top \rto \{\}
+\end{aligned}
+\right.
+ $$ & \textbf{Trans(6)} 
+ $$ q\supset Q\NEXT \varphi \rto \left\{
+ \begin{aligned}
+ & q\supset Q\NEXT p, && \hbox{if $\varphi$ is not a disjunct}\\
+ & p\supset \varphi
+ \end{aligned} 
+ \right.
+ $$\\
+ 
+ \textbf{Trans(7)} 
+ $$ q\supset Q\FUTURE \varphi\rto \left\{
+ \begin{aligned}
+& q\supset Q\FUTURE p, && \hbox{if $\varphi$ is not}\\
+ & \qquad  \hbox{a literal}\\
+ & p\supset \varphi  
+ \end{aligned}
+  \right.
+  $$&  \textbf{Trans(8)} $$ q\supset Q(\varphi_1 \UNTIL \varphi_2) \rto \left\{
+ \begin{aligned}
+ & q\supset Q(\varphi_1 \UNTIL p), && \hbox{if $\varphi_2$ is not}\\
+ & \qquad \hbox{a literal} \\
+ & p\supset \varphi_2, 
+    \end{aligned} 
+  \right.$$ \\
+  
+  \textbf{Trans(10)} $$ q\supset Q\GLOBAL \varphi \rto  \left\{
+ \begin{aligned}
+ & q \supset  p\\
+ & p\supset \varphi\\
+ & p\supset Q\NEXT p
+   \end{aligned} 
+   \right.
+  $$ & \textbf{Trans(11)} $$ q\supset Q(\varphi \UNTIL l) \rto  \left\{
+ \begin{aligned}
+  & q \supset l\vee p\\
+  & p\supset \varphi\\
+  & p\supset Q\NEXT(l\vee p)\\
+  & q\supset Q \FUTURE l
+   \end{aligned} 
+   \right.
+  $$\\
+  \hline
+    \end{tabular}
+    \caption{Transformation Rules}
+    \label{tab:trans}
+    Where $T\in \{\NEXT, \GLOBAL, \FUTURE\}$, 
+    %$T'\in \{\UNTIL, \UNLESS\}$, 
+    $ind$ is a new index and $Q\in \{\ALL, \EXIST_{\tuple{ind}}\}$. Besides, $q$ is an atom, $l$ is a literal, $D$ is a disjunction of literals (possible consisting of a single literal) and $\varphi$, $\varphi_1$, and $\varphi_2$ be \CTL\ formulae.
+\end{table*}
+
+% \begin{align*}
+%     & \textbf{Trans(1)}
+% \end{align*}
+
+%The set $Trans$ of transformation rules~\cite{zhang2009refined} we will use is as follows:
+% \begin{table*}[]
+%     \centering
+%     %\footnotesize
+%     \begin{tabular}{l  l l}
+%     %\specialrule{0em}{2pt}{2pt}
+%     \hline
+%         $\textbf{Trans(1)} \frac{\scriptstyle q \supset \EXIST T \varphi}{q\supset \EXIST_{\tuple{ind}} T \varphi}$ &  $\textbf{Trans(2)} \frac{q \supset \EXIST (\varphi_1 T' \varphi_2)}{q\supset \EXIST_{\tuple{ind}} (\varphi_1 T' \varphi_2)}$ &  $\textbf{Trans(3)} \frac{q\supset \varphi_1 \wedge \varphi_2}{\scriptsize \begin{array}{ll}
+%   q\supset \varphi_1\\
+%   q\supset \varphi_2
+%   \end{array} }$   \\
+
+
+%     $\textbf{Trans(4)} \frac{q\supset \varphi_1 \vee \varphi_2}{ \scriptsize \begin{array}{ll}
+%   q\supset \varphi_1 \vee p,\ & \hbox{if $\varphi_2$ is not}\\
+%   p\supset \varphi_2,\ & \hbox{a disjunct}
+%   \end{array} }$     &  $\textbf{Trans(5)} 
+%   \begin{array}{ll}
+%   \frac{q\supset D}{\top \supset \neg q \vee D}\\
+%   \frac{q\supset \perp}{\top \supset \neg q}\\
+%   \frac{q \supset \top}{\{\}}
+%   \end{array} $
+% &  $\textbf{Trans(6)} \frac{q\supset Q\NEXT \varphi}{ \scriptsize \begin{array}{ll}
+%   q\supset Q\NEXT p,\ & \hbox{if $\varphi$ is not}\\
+%   p\supset \varphi,\ & \hbox{a disjunct}
+%   \end{array}  }$ \\
+
+
+% $\textbf{Trans(7)} \frac{q\supset Q\FUTURE \varphi}{\scriptsize \begin{array}{ll}
+%   q\supset Q\FUTURE p,\ & \hbox{if $\varphi$ is not}\\
+%   p\supset \varphi,\ & \hbox{a literal}
+%   \end{array}   }$ & 
+% $\textbf{Trans(8)} \frac{q\supset Q(\varphi_1 \UNTIL \varphi_2)}{\scriptsize  \begin{array}{ll}
+%   q\supset Q(\varphi_1 \UNTIL p),\ & \hbox{if $\varphi_2$ is not}\\
+%   p\supset \varphi_2,\ & \hbox{a literal}
+%   \end{array}   }$
+% &   $\textbf{Trans(9)} \frac{q\supset Q(\varphi_1 \UNLESS \varphi_2)}{\scriptsize \begin{array}{ll}
+%   q\supset Q(\varphi_1 \UNLESS p),\ & \hbox{if $\varphi_2$ is not}\\
+%   p\supset \varphi_2,\ & \hbox{a literal}
+%   \end{array}  }$ \\
+
+
+
+% $\textbf{Trans(10)} \frac{q\supset Q\GLOBAL \varphi}{\scriptsize \begin{array}{ll}
+%   q \supset  p\\
+%   p\supset \varphi\\
+%   p\supset Q\NEXT p
+%   \end{array}  }$    & 
+% $\textbf{Trans(11)} \frac{q\supset Q(\varphi \UNTIL l)}{\scriptsize \begin{array}{ll}
+%   q \supset l\vee p\\
+%   p\supset \varphi\\
+%   p\supset Q\NEXT(l\vee p)\\
+%   q\supset Q \FUTURE l
+%   \end{array}  }$
+% &   $\textbf{Trans(12)} \frac{q\supset Q(\varphi \UNLESS l)}{\scriptsize \begin{array}{ll}
+%   q \supset l\vee p\\
+%   p\supset \varphi\\
+%   p\supset Q\NEXT(l\vee p)
+%   \end{array}  }$\\
+% \hline
+%     \end{tabular}
+%     \caption{Transformation Rules}
+%     \label{tab:trans}
+%     Where $T\in \{\NEXT, \GLOBAL, \FUTURE\}$, $T'\in \{\UNTIL, \UNLESS\}$, $ind$ is a new index and $Q\in \{\ALL, \EXIST_{\tuple{ind}}\}$. Besides, $q$ is an atom, $l$ is a literal, $D$ is a disjunction of literals (possible consisting of a single literal) and $\varphi$, $\varphi_1$, and $\varphi_2$ be \CTL\ formulae.
+% \end{table*}
+
+\begin{table*}[h]
+\centering
+\footnotesize
+    \begin{tabular}{l}
+    \hline
+    $$
+\begin{aligned}
+& \textbf{(SRES1)}\frac{P\supset \ALL\NEXT(C\vee l), Q\supset \ALL\NEXT(D\vee \neg l)}{P\wedge \ALL\NEXT(C\vee D)}; &&
+    \textbf{(SRES2)} \frac{P\supset \EXIST_{\tuple{ind}} \NEXT(C\vee l), Q\supset \ALL\NEXT(D\vee \neg l)}{P\wedge Q \supset \EXIST_{\tuple{ind}}\NEXT(C\vee D)};\\
+& \textbf{(SRES3)} \frac{P\supset \EXIST_{\tuple{ind}}\NEXT(C\vee l), Q \supset \EXIST_{\tuple{ind}}\NEXT(D\vee \neg l)}{P\wedge Q\supset\EXIST_{\tuple{ind}}\NEXT(C\vee D)};  &&
+    \textbf{(SRES4)} \frac{\start \supset C\vee l, \start \supset D \vee \neg l}{\start \supset C\vee D}; \\
+& \textbf{(SRES5)} \frac{\top \supset C\vee l, \start \supset D \vee \neg l}{\start \supset C \vee D}; &&
+  \textbf{(SRES6)} \frac{\top \supset C \vee l, Q \supset \ALL\NEXT(D \vee \neg l}{Q\supset \ALL \NEXT(C\vee D)}; \\
+& \textbf{(SRES7)} \frac{\top \supset C \vee l, Q \supset \EXIST_{\tuple{ind}} \NEXT(D \vee \neg l)}{Q\supset \EXIST_{\tuple{ind}}\NEXT(C\vee D)}; &&
+  \textbf{(SRES8)} \frac{\top \supset C\vee l, \top \supset D \vee \neg l}{\top \supset C \vee D};\\
+& \textbf{(RW1)} \frac{\bigwedge_{i=1}^n m_i \supset \ALL\NEXT \perp}{\top \supset \bigvee_{i=1}^n \neg m};  && \textbf{(RW2)} \frac{\bigwedge_{i=1}^n m_i \supset \EXIST_{\tuple{ind}}\NEXT \perp}{\top \supset \bigvee_{i=1}^n \neg m}; \\
+&\textbf{(ERES1)} \frac{\Lambda \supset \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\GLOBAL l, Q \supset \ALL \FUTURE \neg l}{Q \supset \ALL(\neg \Lambda \UNLESS \neg l)};  &&  \textbf{(ERES2)} \frac{\Lambda \supset \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\GLOBAL l, Q \supset \EXIST_{\tuple{ind}} \FUTURE \neg l}{Q \supset \EXIST_{\tuple{ind}}(\neg \Lambda \UNLESS \neg l)}.
+\end{aligned}
+$$\\
+\hline
+ \end{tabular}
+    \caption{Resolution Rules}
+    Where $P$, $Q$ are conjunction of literals, $C$, $D$ are disjunction of literals and $l$ is a literal. Besides, $\Lambda=\bigvee_{i=1}^n \bigwedge_{i=1}^{m_i}P_j^i$ and $P_j^i$ are conjunction of literals for all $1\leq i\leq n$ and $1\leq j\leq m$. Note that the resolvent of both $\textbf{(ERES1)}$ and $\textbf{(ERES2)}$ can be translated into a set of $\CTLsnf$ clauses, see~\cite{zhang2014resolution} for more detail. In this paper we assume all the results are the set of $\CTLsnf$ clauses.
+    \label{tab:res}
+\end{table*}
+
+% \begin{table*}[h]
+%     \centering
+%     \begin{tabular}{l l}
+%         $\textbf{(SRES1)}\frac{P\supset \ALL\NEXT(C\vee l), Q\supset \ALL\NEXT(D\vee \neg l)}{P\wedge \ALL\NEXT(C\vee D)}$ & $\textbf{(SRES2)} \frac{P\supset \EXIST_{\tuple{ind}} \NEXT(C\vee l), Q\supset \ALL\NEXT(D\vee \neg l)}{P\wedge Q \supset \EXIST_{\tuple{ind}}\NEXT(C\vee D)}$  \\
+%         $\textbf{(SRES3)} \frac{P\supset \EXIST_{\tuple{ind}}\NEXT(C\vee l), Q \supset \EXIST_{\tuple{ind}}\NEXT(D\vee \neg l)}{P\wedge Q\supset\EXIST_{\tuple{ind}}\NEXT(C\vee D)}$ & $\textbf{(SRES4)} \frac{\start \supset C\vee l, \start \supset D \vee \neg l}{\start \supset C\vee D}$ \\
+%         $\textbf{(SRES5)} \frac{\top \supset C\vee l, \start \supset D \vee \neg l}{\start \supset C \vee D}$  & $\textbf{(SRES6)} \frac{\top \supset C \vee l, Q \supset \ALL\NEXT(D \vee \neg l}{Q\supset \ALL \NEXT(C\vee D)}$ \\
+%         $\textbf{(SRES7)} \frac{\top \supset C \vee l, Q \supset \EXIST_{\tuple{ind}} \NEXT(D \vee \neg l)}{Q\supset \EXIST_{\tuple{ind}}\NEXT(C\vee D)}$ &  $\textbf{(SRES8)} \frac{\top \supset C\vee l, \top \supset D \vee \neg l}{\top \supset C \vee D}$\\
+%         $\textbf{(RW1)} \frac{\bigwedge_{i=1}^n m_i \supset \ALL\NEXT \perp}{\top \supset \bigvee_{i=1}^n \neg m}$  & $\textbf{(RW2)} \frac{\bigwedge_{i=1}^n m_i \supset \EXIST_{\tuple{ind}}\NEXT \perp}{\top \supset \bigvee_{i=1}^n \neg m}$ \\
+%         $\textbf{(ERES1)} \frac{\Lambda \supset \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\GLOBAL l, Q \supset \ALL \FUTURE \neg l}{Q \supset \ALL(\neg \Lambda \UNLESS \neg l)}$  &  $\textbf{(ERES2)} \frac{\Lambda \supset \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\GLOBAL l, Q \supset \EXIST_{\tuple{ind}} \FUTURE \neg l}{Q \supset \EXIST_{\tuple{ind}}(\neg \Lambda \UNLESS \neg l)}$.
+%     \end{tabular}
+%     \caption{Resolution Rules}
+%     Where $P$, $Q$ are conjunction of literals, $C$, $D$ are disjunction of literals and $l$ is a literal. Besides, $\Lambda=\bigvee_{i=1}^n \bigwedge_{i=1}^{m_i}P_j^i$ and $P_j^i$ are conjunction of literals for all $1\leq i\leq n$ and $1\leq j\leq m$. Note that the resolutions of both $\textbf{(ERES1)}$ and $\textbf{(ERES2)}$ can be translated into a set of $\CTLsnf$ clauses, see~\cite{zhang2009refined} for more detail. In this paper we assume all the results are the set of $\CTLsnf$ clauses.
+%     \label{tab:res}
+% \end{table*}
+
+% \begin{align*}
+% & \textbf{(SRES1)}\frac{P\supset \ALL\NEXT(C\vee l), Q\supset \ALL\NEXT(D\vee \neg l)}{P\wedge \ALL\NEXT(C\vee D)}\\
+% & \textbf{(SRES2)} \frac{P\supset \EXIST_{\tuple{ind}} \NEXT(C\vee l), Q\supset \ALL\NEXT(D\vee \neg l)}{P\wedge Q \supset \EXIST_{\tuple{ind}}\NEXT(C\vee D)}\\
+% & \textbf{(SRES3)} \frac{P\supset \EXIST_{\tuple{ind}}\NEXT(C\vee l), Q \supset \EXIST_{\tuple{ind}}\NEXT(D\vee \neg l)}{P\wedge Q\supset\EXIST_{\tuple{ind}}\NEXT(C\vee D)} \\
+% & \textbf{(SRES4)} \frac{\start \supset C\vee l, \start \supset D \vee \neg l}{\start \supset C\vee D} \\
+% & \textbf{(SRES5)} \frac{\top \supset C\vee l, \start \supset D \vee \neg l}{\start \supset C \vee D} \\
+% &  \textbf{(SRES6)} \frac{\top \supset C \vee l, Q \supset \ALL\NEXT(D \vee \neg l}{Q\supset \ALL \NEXT(C\vee D)}\\
+% & \textbf{(SRES7)} \frac{\top \supset C \vee l, Q \supset \EXIST_{\tuple{ind}} \NEXT(D \vee \neg l)}{Q\supset \EXIST_{\tuple{ind}}\NEXT(C\vee D)} \\
+% & \textbf{(SRES8)} \frac{\top \supset C\vee l, \top \supset D \vee \neg l}{\top \supset C \vee D}\\
+% & \textbf{(RW1)} \frac{\bigwedge_{i=1}^n m_i \supset \ALL\NEXT \perp}{\top \supset \bigvee_{i=1}^n \neg m} \\
+% & \textbf{(RW2)} \frac{\bigwedge_{i=1}^n m_i \supset \EXIST_{\tuple{ind}}\NEXT \perp}{\top \supset \bigvee_{i=1}^n \neg m}\\
+% % \end{align*}
+% % \begin{align*}
+% & \textbf{(ERES1)} \frac{\Lambda \supset \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\GLOBAL l, Q \supset \ALL \FUTURE \neg l}{Q \supset \ALL(\neg \Lambda \UNLESS \neg l)} \\
+% & \textbf{(ERES2)} \frac{\Lambda \supset \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\GLOBAL l, Q \supset \EXIST_{\tuple{ind}} \FUTURE \neg l}{Q \supset \EXIST_{\tuple{ind}}(\neg \Lambda \UNLESS \neg l)}.
+% \end{align*}
+% Where $P$, $Q$ are conjunction of literals, $C$, $D$ are disjunction of literals and $l$ is a literal. Besides, $\Lambda=\bigvee_{i=1}^n \bigwedge_{i=1}^{m_i}P_j^i$ and $P_j^i$ are conjunction of literals for all $1\leq i\leq n$ and $1\leq j\leq m$.
+
+The key problems of this method include: (1) How to fill in  the gap between \CTL\ and $\CTLsnf$ since there are indices for existential quantifiers in $\CTLsnf$; and (2) How to eliminate the irrelevant atoms; both those we want to forget and those that introduced by these rules.
+We will resolve both problems by $\tuple{V,I}$-bisimulation and a new \emph{eliminate} operator, respectively.
+For convenience, we use $V\subseteq \Ha$ to denote the set we want to forget, and $V' \subseteq \Ha$, with $V \cap V'={\O}$,  to denote the set of atoms introduced in the computation.  Moreover, let $\varphi$  be the \CTL\ formula, $T_{\varphi}$ be the set of $\CTLsnf$ clauses obtained from $\varphi$ by applying transformation rules on it  and $\Hm=(S,R,L,[\_], s_0)$ unless explicitly stated otherwise.
+ Let $T$ and $T'$ be formulae, $I$ a set of indexes introduced in the transformation and $V''\subseteq \Ha$, by $T\equiv_{\tuple{V'', I}} T'$ we mean that $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V'', I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$ and vice versa.
+
+% \begin{definition}[\tuple{V,I}-Equation]\label{def:BisimEqu}
+%  Let $T$, $T'$ be two formulae (or sets of formulae), $I$ a set of indexes introduced in the transformation and $V\subseteq \Ha$. We say $T$ is \tuple{V,I}\-Equation, written $T\equiv_{\tuple{V, I}} T'$, if
+%  \begin{enumerate}
+%      \item $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V, I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$, and
+%      \item $\forall (\Hm', s_0') \in \Mod(T')$ there is a $(\Hm, s_0)$ such that $(\Hm,s_0) \lrto_{\tuple{V, I}} (\Hm',s_0')$ and $(\Hm, s_0) \models T'$.
+%  \end{enumerate}
+% %  we mean that $\forall (\Hm, s_0) \in \Mod(T)$ there is a $(\Hm', s_0')$ such that $(\Hm,s_0) \lrto_{\tuple{V'', I}} (\Hm',s_0')$ and $(\Hm', s_0') \models T'$ and vice versa.
+% \end{definition}
+
+
+
+
+
+
+
+Algorithm~\ref{alg:compute:forgetting:by:Resolution} computes forgetting in \CTL.
+The main idea is, first, turning the \CTL\ formula into a set of $\CTLsnf$ clauses (the \emph{Transform process}), and then computing all the possible resolutions on the specified set of atoms (the \emph{Resolution process}). Third, eliminating all the irrelevant atoms in $V$, i.e. \emph{Removing\_atoms} process. % which does not be eliminated by the resolution.
+% We will describe this process, which include \emph{Instantiate}, \emph{Connect} and \emph{Removing\_atoms} sub-processes, in detail below.
+As a final step, in order to change the obtained result into a \CTL\ formula, we need to go through two sub-processes: \emph{Removing\_index} (removing the index in the formula) and $T_\CTL$ (removing the $\start$ in $T$).
+To describe our algorithm clearly, we illustrate it with the following example.
+\begin{example}\label{main:examp}
+Let $\varphi=\ALL((p\wedge q) \UNTIL (f\vee m)) \wedge r$ and $V=\{p,r\}$.
+\end{example}
+In the following, we will show how to compute the $\CTLforget(\varphi, V)$ step by step using our algorithm.
+
+
+\begin{algorithm}[!h]
+\caption{Computing forgetting - A resolution-based method}% ??????
+\label{alg:compute:forgetting:by:Resolution}
+%\LinesNumbered %?????????
+\KwIn{A CTL formula $\varphi$ and a set $V$ of atoms}% ????????
+\KwOut{$\emph{ERes}(\varphi, V)$}  %esult of forgetting $V$ from $\varphi$% ????
+$T_{\varphi}\lto {\O}$ // the initial set of $\CTLsnf$ clauses of $\varphi$ \;
+%$T_{\NI} \lto {\O}$ // the set of $\CTLsnf$ clauses without index\;
+$V'\lto {\O}$ // the initial set of atoms introduced in the Transform process\;
+
+
+$T_{\varphi}, V' \lto \emph{Transform}(\varphi)$\;
+
+$Res \lto \emph{Resolution}(T_{\varphi}, V\cup V')$ \;
+
+% $\Inst_{V'} \lto \emph{Instantiate}(Res, V')$ \;
+% $\Com_{\EXIST\FUTURE} \lto \emph{Connect}(\Inst_{V'})$  \;
+$\emph{RemA} \lto \emph{Removing\_atoms}(Res, V)$ \;
+$\NI \lto \emph{Removing\_index}(\emph{RemA})$ \; %Remove the index and start
+%$\Rp \lto \emph{Replacing\_atoms}(\NI)$\;
+
+
+\Return $\bigwedge_{\psi \in \NI_{\CTL}} \psi$\;
+\end{algorithm}
+
+%\begin{figure}
+%  \centering
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[width=7cm]{lct.png}\\
+%  \caption{The block diagram of the algorithm}\label{Fig:lct}
+%\end{figure}
+
+
+
+\subsection{The Transform Process}
+The \emph{Transform} process, denoted as $\emph{Transform}(\varphi)$, transforms the \CTL\ formula into a set of $\CTLsnf$ clauses by using  the transformation rules and returns a set $V'$ of atoms.
+
+The \emph{transformation} of any \CTL\ formula $\varphi$ into the set $T_{\varphi}$ is a sequence $T_0, T_1,\dots, T_n=T_{\varphi}$ of sets of formulae with $T_0=\{\ALL \GLOBAL(\start \supset p), \ALL \GLOBAL(p \supset \simp(\nnf(\varphi)))\}$~\footnote{$\nnf$ is a function that transform a \CTL\ formula into a negation normal form (nnf), i.e. negative operations only appear before atoms, and $\simp$ a function that using the simplification rules in~\cite{zhang2014resolution} to simplify the formula.} such that for every $i$ ($0 \leq i< n$), $T_{i+1} = (T_i \setminus \{\psi\}) \cup R_i$~\cite{zhang2014resolution}) and all the formulae in $T_{\varphi}$ are $\CTLsnf$ clauses, where $p$ is a new atom not appearing in $\varphi$, $\psi$ is a formula in $T_i$ which is not in $\CTLsnf$ clause and $R_i$ is the result set of applying a matching transformation rule to $\psi$. Note that throughout the transformation, formulae are kept in negation normal form (nnf).
+
+%It has been shown in~\cite{zhang2009refined} that the transformation always exists for any \CTL\ formula. Moreover, t
+% The following proposition shows that any \CTL\ formula $\varphi$ can be transformed into a set $T_{\varphi}$ of $\CTLsnf$ clauses without effecting its satisfiability, and $\varphi$ is only different with $T_{\varphi}$ on set $V'$ of atoms and set $I$ of indexes.
+The following proposition shows that any \CTL\ formula $\varphi$ is only different with $T_{\varphi}$ on set $V'$ of atoms and set $I$ of indexes.
+
+\begin{proposition}\label{pro:TranE}
+ Let $\varphi$ be a \CTL\ formula, then $\varphi \equiv_{\tuple{V', I}} T_{\varphi}$.
+\end{proposition}
+% \begin{proof} (sketch)
+% This can be proved from $T_i$ to $T_{i+1}$ $(0\leq i < n)$ by using one of the transformation rules on $T_i$.
+% We show $\varphi \equiv_{\tuple{\{p\}, {\O}}} T_0$.  Other cases are similar.
+
+% First, for every (\Hm_1,s_1) \in \Mod(\varphi)$, \ie $(\Hm_1,s_1) \models \varphi$. We can construct an initial \Ind-Kripke structure $\Hm_2$ which is identical to $\Hm_1$ except $L_2(s_2) = L_1(s_1) \cup \{p\}$. It is apparent that $(\Hm_2,s_2) \models T_0$ and $(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$.
+
+% Second, for all $(\Hm_1,s_1) \in \Mod(T_0)$, it is apparent that $(\Hm_1,s_1) \models \varphi$ by the semantic of $\start$.
+
+% %We will prove this proposition from the following several aspects:
+% %
+% % (1) $\varphi \equiv_{\tuple{\{p\}, {\O}}} T_0$.
+
+% % $(\Rto)$ $\forall (\Hm_1,s_1) \in \Mod(\varphi)$, \ie $(\Hm_1,s_1) \models \varphi$. We can construct an \Ind-Kripke structure $\Hm_2$ is identical to $\Hm_1$ except $L_2(s_2) = L_1(s_1) \cup \{p\}$. It is apparent that $(\Hm_2,s_2) \models T_0$ and $(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$.
+% %
+% % $(\Lto)$ $\forall (\Hm_1,s_1) \in \Mod(T_0)$, it is apparent that $(\Hm_1,s_1) \models \varphi$ by the sematic of $\start$.
+% %
+% %By $\psi \rto_t R_i$ we mean using transformation rules $t$ on formula $\psi$ (the formulae $\psi$ as the
+% %premises of rule $t$) and obtaining the set  $R_i$ of transformation results. Let $X$ be a set of formulas
+% %we will show $T_i \equiv_{\tuple{V',I}} T_{i+1}$ by using the transformation rule $t$. Where $T_i= X \cup \{\psi\}$, $T_{i+1}=X \cup R_i$, $V'$ is the set of atoms introduced by $t$ and $I$ is the set of indexes introduced by $t$. (We will prove this result in $t\in \{$Trans(1), Trans(4), Trans(6)$\}$, other cases can be proved similarly.)
+% %
+% %(2) For $t$=Trans(1):\\
+% % $(\Rto)$ $\forall (\Hm_1,s_1) \in \Mod(T_i)$ \ie $(\Hm_1, s_1) \models X \wedge \ALL\GLOBAL(q \supset \EXIST \NEXT \varphi)$\\
+% % $\Rto$ $(\Hm_1,s_1)\models X$ and for every $\pi$ starting from $s_1$ and every state $s_1^j \in \pi$, $(\Hm,s_1^j) \models \neg q$ or there exists a path $\pi'$ starting from $s_1^j$ such that there exists a state $s_1^{j+1}$ such that $(s_1^j,s_1^{j+1})\in R_1$ and $(\Hm,s_1^{j+1})\models \varphi$\\
+% % We can construct an \Ind-Kripke structure $\Hm_2$ is identical to $\Hm_1$ except  $[ind]_2= \bigcup_{s\in S} R_s \cup R_y$, where $R_{s_1^{j}}=\{(s_1^{j},s_1^{j+1}), (s_1^{j+1}, s_1^{j+2}),\dots\}$ and $R_y=\{(s_x,s_y)| \forall s_x \in S$ if $\forall (s_1',s_2')\in \bigcup_{s\in S} R_s, s_1'\neq s_x$ then find a unique $s_y\in S$ such that $(s_x,s_y)\in R\}$. It is apparent that $(\Hm_1, s_1) \lrto_{\tuple{{\O}, \{ind\}}} (\Hm_2, s_2)$ (let $s_2=s_1$).\\
+% % $\Rto$ for every path starting from $s_1$ and every state $s_1^j$ in this path, $(\Hm_2, s_1^j) \models \neg q$ or $(\Hm_2, s_1^j)\models \EXIST \NEXT \varphi_{\tuple{ind}}$ \hfill (by the semantic of $\EXIST \NEXT$)\\
+% % $\Rto$ $(\Hm_2, s_1) \models \ALL \GLOBAL(q \supset \EXIST_{\tuple{ind}} \NEXT \varphi )$\\
+% % $\Rto$ $(\Hm_2, s_1) \models X \wedge \ALL \GLOBAL(q \supset \EXIST_{\tuple{ind}} \NEXT \varphi )$
+% %
+% % $(\Lto)$ $\forall (\Hm_1,s_1) \in \Mod(T_{i+1})$ \ie $(\Hm_1,s_1) \models X \wedge \ALL \GLOBAL(q \supset \EXIST_{\tuple{ind}} \NEXT \varphi )$\\
+% % $\Rto$ $(\Hm_1,s_1) \models X$ and $(\Hm_1,s_1) \models \ALL \GLOBAL(q \supset \EXIST_{\tuple{ind}} \NEXT \varphi)$\\
+% % $\Rto$ for every path starting from $s_1$ and every state $s_1^j$ in this path, $(\Hm_1, s_1^j) \models \neg q$ or there exits a state $s'$ such that $(s_1^j, s')\in [ind]_1$ and $(\Hm_1, s') \models \varphi$ \hfill (by the semantic of $\EXIST_{\tuple{ind}} \NEXT$)\\
+% % $\Rto$ for every path starting from $s_1$ and every state $s_1^j$ in this path, $(\Hm_1, s_1^j) \models \neg q$ or $(\Hm_1, s_1^j) \models \EXIST \NEXT \varphi$ \hfill (by the semantic of $\EXIST \NEXT$)\\
+% % $\Rto$ $(\Hm_1,s_1) \models \ALL\GLOBAL(q \supset \EXIST \NEXT \varphi)$\\
+% % $\Rto$ $(\Hm_1, s_1) \models X \wedge \ALL\GLOBAL(q \supset \EXIST \NEXT \varphi)$\\
+% % It is apparent that $(\Hm_1, s_1) \lrto_{\tuple{{\O}, \{ind\}}} (\Hm_1, s_1)$.
+% %
+% %(3) For $t$=Trans(4):\\
+% % $(\Rto)$ $\forall (\Hm_1,s_1) \in \Mod(T_i)$, \ie $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q \supset \varphi_1 \vee \varphi_2)$ \\
+% % $\Rto$ $(\Hm_1,s_1) \models X$ and $\forall s_1'\in S, (\Hm_1,s_1') \models q \supset \varphi_1 \vee \varphi_2$\\
+% % $\Rto$ $(\Hm_1,s_1') \models \neg q$ or $(\Hm_1,s_1') \models \varphi_1 \vee \varphi_2$\\
+% % The we can construct an \Ind-Kripke structure $\Hm_2$ as follows. $\Hm_2$ is the same with $\Hm_1$ when $(\Hm_1,s_1') \models \neg q$. When $(\Hm_1,s_1') \models q$, $\Hm_2$ is identical to $\Hm_1$ except if $(\Hm_1,s_1') \models \varphi_1$ then $L_2(s_1')= L_1(s_1')$ else $L_2(s_1') = L_1(s_1') \cup \{p\}$. It is apparent that $(\Hm_2,s_1') \models (q\supset \varphi_1 \vee p) \wedge (p \supset \varphi_2)$, then $(\Hm_2,s_1) \models T_{i+1}$ and $(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$.
+% %
+% % $(\Lto)$ $\forall (\Hm_1, s_1) \in \Mod(T_{i+1})$, \ie $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q\supset \varphi_1 \vee p) \wedge \ALL\GLOBAL(p \supset \varphi_2)$. It is apparent that $(\Hm_1, s_1) \models T_i$.
+% %
+% %
+% %(4) For $t$=Trans(6):\\
+% %We prove for $\EXIST_{\tuple{ind}} \NEXT$, while for the $\ALL \NEXT$ can be proved similarly.
+% %
+% % $(\Rto)$ $\forall (\Hm_1,s_1) \in \Mod(T_i)$, \ie $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \supset \EXIST_{\tuple{ind}}\NEXT \varphi)$\\
+% % $\Rto$ $(\Hm_1,s_1) \models X$ and $\forall s_1'\in S, (\Hm_1,s_1') \models q \supset \EXIST_{\tuple{ind}} \NEXT \varphi$\\
+% % $\Rto$ $(\Hm_1,s_1') \models \neg q$ or there exists a state $s'$ such that $(s_1', s') \in [ind]$ and $(\Hm_1,s') \models \varphi$ \\
+% % We can construct an \Ind-Kripke structure $\Hm_2$ as follows. $\Hm_2$ is the same with $\Hm_1$ when $(\Hm_1,s_1') \models \neg q$. When $(\Hm_1,s_1') \models q$, $\Hm_2$ is identical to $\Hm_1$ except for $s'$ there is $L_2(s') = L_1(s') \cup \{p\}$. It is apparent that $(\Hm_2,s_1) \models \ALL\GLOBAL(q\supset \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \supset \varphi)$, $(\Hm_2,s_2) \models T_{i+1}$ and $(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$ ($s_2=s_1$).
+% %
+% %  $(\Lto)$ $\forall (\Hm_1, s_1) \in \Mod(T_{i+1})$, \ie $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q\supset \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \supset \varphi)$. It is apparent that $(\Hm_1, s_1) \models T_i$.
+
+% \end{proof}
+
+%This means that models of $\varphi$ and $T_{\varphi}$ are $\tuple{V', I}$-bisimular.
+%, i.e. except that the label function for those atoms in $V'$ and the relations $[i]$ with $i\in I$ may be different in those models.
+
+% \begin{algorithm}[!h]
+% \caption{$\emph{Transform}(\varphi)$}% ??????
+% \label{alg:compute:transformation}
+% %\LinesNumbered %?????????
+% \KwIn{A CTL formula $\varphi$}% ????????
+% \KwOut{A set $T_{\varphi}$ of $\CTLsnf$ clauses and a set $V'$ of atoms}% ????
+% $T_{\varphi}\lto {\O}$ // the initial set of $\CTLsnf$ clauses of $\varphi$ \;
+% $OldT\lto \{\start \supset z, z \supset \simp(\nnf(\varphi))\}$\;
+% $V'\lto \{z\}$\;
+% \While {$true$} {
+%     $R\lto {\O}$\;
+%     $X\lto {\O}$\;
+%     \If {Chose a formula $\psi\in OldT$ that does not a $\CTLsnf$ clause}{
+%     Using a match rule $Rl$ to transform $\psi$ into a set $R$ of $\CTLsnf$ clauses\;
+%     $X$ is the set of atoms introduced by using $Rl$\;
+%     $V' \lto V' \cup X$\;
+%     $T_{\varphi}\lto OldT\setminus \{\psi\} \cup R$\;
+%     }
+%     \Else {\bf break\;} 
+%     $OldT\lto T_{\varphi}$\;
+% }
+% \Return $T_{\varphi}$, $V'$\;
+% \end{algorithm}
+
+\begin{example}\label{examp:Tran}
+By the \emph{Transform} process, the result $T_{\varphi}$ of the Example~\ref{main:examp} can be listed as follows:
+\begin{align*}
+& 1. \start\supset z && 2. \top \supset \neg z \vee r && 3.\top \supset \neg x\vee f \vee m\\
+& 4. \top \supset \neg z \vee x \vee y && 5.\top \supset \neg y \vee p && 6.\top \supset \neg y \vee q\\
+& 7. z \supset \ALL \FUTURE x && 8. y \supset \ALL \NEXT(x\vee y).
+\end{align*}
+Besides, the set of new atoms introduced in this process is $V'=\{x, y,z, w\}$ with $w$ is a new atom related to $z \supset \ALL \FUTURE x$~\footnote{Note that in this paper we will generate a new atoms for each $T$-sometime clause with $T\in \{\EXIST, \ALL\}$ when this clause is produced during the transform process.}. %~\cite{zhang2014resolution}.
+\end{example}
+
+
+
+
+\subsection{The Resolution Process}
+The \emph{Resolution} process consists of computing all the possible resolutions of $T_{\varphi}$ on $V\cup V'$, denoted as $\emph{Resolution}(T_{\varphi}, V\cup V')$.
+Let $C$ and $C'$ be two formulae, we say $C$ and $C'$ are resolvable if there is a resolution rule using $C$ and $C'$ as the premises on some given atom. 
+% In this way, if $C$ and $C'$ are resolvable, then $res(C,C')$ is a set of $\CTLsnf$ clauses obtained by using the matching resolution rule on $C$, $C'$ and the given atom.
+
+A \emph{derivation} on a set $V\cup V'$ of atoms and $T_{\varphi}$ is a sequence $T_0=T_{\varphi}, T_1, T_2$, $\dots$, $T_n=Res$ of sets of $\CTLsnf$ clauses such that $T_{i+1} = T_i \cup R_i$ for all $0\leq i < n$ and no two formulae in $Res$ are resolvable, where $R_i$ is a set of clauses obtained as the conclusion of the application of a resolution rule to premises in $T_i$.
+Note that all $T_i$ ($0 \leq i \leq n$) are set of $\CTLsnf$ clauses. 
+% It has also been shown in~\cite{zhang2014resolution} that the derivation on any set of atoms always exists for any given set of $\CTLsnf$ clauses. 
+And if there is a $T_i$ containing $\start\supset \perp$ or $\top\supset \perp$, then we can easily check that $\CTLforget(\varphi, V)\equiv\perp$.
+%The pseudocode of the \emph{Resolution} process is  shown in Algorithm~\ref{alg:compute:Res}.
+
+% Let $C$ be a clause and $C'$ be a clause or set of clauses. If $C$ and $C'$ are resolvable, then $res(C,C')$ is a set of $\CTLsnf$ clauses, i.e., if there is a resolution rule using $C$ and $C'$ as the premises on some given atom.
+
+\begin{proposition}\label{pro:ResE}
+ Let $\varphi$ be a \CTL\ formula,
+ %and $W$ be the set of new atoms introduced by resolution rules \textbf{(ERES1)} and \textbf{(ERES2)} (if any),
+ then $T_{\varphi} \equiv_{\tuple{V \cup V', {\O}}} Res$.
+\end{proposition}
+% \begin{proof}(sketch)
+% This can be proved from $T_i$ to $T_{i+1}$ $(0\leq i < n)$ by using one resolution rule on $T_i$.
+% For instance, if we can use the resolution rule (SRES1) on $\psi\subseteq T_i$ and obtain the result $R$, then we can prove $T_i \equiv T_{i+1}$ with $T_{i+1} = T_i \cup R$ as follows.
+
+% On the one hand, it is apparent that $\psi \models R$ and then $T_i \models T_{i+1}$. On the other hand, $T_i\subseteq T_{i+1}$ and then $T_{i+1} \models T_i$.
+
+% % By $\psi \rto_r R_i$ we mean using resolution rules $r$ on set $\psi$ (the formulae in $\psi$ as the premises of rule $r$) and obtaining the set $R_i$ of resolution results.
+% % we will show $T_i \equiv_{\tuple{V,I}} T_{i+1}$ by using the resolution rule $r$. Where $T_i= X \cup \psi$, $T_{i+1}=X \cup R_i$, $X$ be a set of $\CTLsnf$ clauses, $p$ be the proposition corresponding with literal $l$ used to do resolution in $r$.
+
+% % (1) If $\psi \rto_r R_i$ by an application of $r\in \{\textbf{(SRES1)}, \dots, \textbf{(SRES8)}, \textbf{RW1}, \textbf{RW2}\}$, then $T_i \equiv_{\tuple{\{p\}, {\O}}} T_{i+1}$.
+
+
+% % On one hand, it is apparent that $\psi \models R_i$ and then $T_i \models T_{i+1}$. On the other hand, $T_i\subseteq T_{i+1}$ and then $T_{i+1} \models T_i$.
+% %
+% % (2) If $\psi \rto_r R_i$ by an application of $r=$\textbf{(ERES1)},
+% % then $T_i \equiv_{\tuple{\{l, w_{\neg l}^{\ALL}\}, {\O}}} T_{i+1}$.
+
+% % It has been proved that $\psi \models R_i$ in~\cite{bolotov2000clausal}, then there is $T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL}$ and  then $\forall (\Hm_1,s_1) \in \Mod(T_i= X \cup \psi)$ there is a $(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$ s.t. $(\Hm_1, s_1) \lrto_{\tuple{\{p, w_{\neg l}^{\ALL}\}, {\O}}} (\Hm_2, s_2)$ and vice versa by Proposition~\ref{pro:TranE}.
+% %
+% %For rule \textbf{(ERES2)} we have the same result.
+
+% \end{proof}
+
+Proposition~\ref{pro:TranE} and Proposition~\ref{pro:ResE} mean that $\varphi \equiv_{\tuple{V \cup V', I}} Res$, i.e. for any formula $\psi$ if $\IR(\psi, V\cup V')$ then $\varphi \models \psi$ iff $Res \models \psi$.
+%, this resolves a part of the problem (1), i.e. connect the \CTL\ formula with $\CTLsnf$ formula. 
+More clearly, it means that $\varphi$ is different with $Res$ on $V \cup V'$ and $I'$. This gives us a guidance to compute forgetting $V$ from $\varphi$, that is we need to eliminate the atoms in $V \cup V'$ and indexes in $I'$. 
+%In the following subsections we will show how to do this, and before that let's see the resolvent of Example~\ref{examp:Res}. % by using Algorithm~\ref{alg:compute:Res}.
+
+% \begin{algorithm}[!h]
+% \caption{$\emph{Resolution}(T,V \cup V')$}% ??????
+% \label{alg:compute:Res}
+% %\LinesNumbered %?????????
+% \KwIn{A set $T_{\varphi}$ of $\CTLsnf$ clauses and a set $V\cup V'$ of atoms}% ????????
+% \KwOut{A set $Res$ of $\CTLsnf$ clauses}% ????
+
+% $S\lto \{C | C\in T_{\varphi}$ and $\Var(C) \cap (V\cup V')= {\O}\}$\;
+% $\Pi\lto T\setminus S$ \;
+% \For {($p\in V\cup V')$} {
+%     $\Pi'\lto \{C \in \Pi| p\in \Var(C)\}$ \;
+%     $\Sigma \lto \Pi \setminus \Pi'$\;
+%     \For {($C\in \Pi'$ s.t. $p$ appearing in  $C$ positively)} {
+%         \For {($C'\in\Pi'$ s.t. $p$ appearing in  $C'$ negatively and $C$, $C'$ are resolvable)}{
+%             $\Sigma \lto \Sigma \cup res(C,C')$\;
+%             $\Pi' \lto \Pi' \cup \{C''\in res(C,C') | p\in \Var(C'')\}$\;
+%         }
+%     }
+%     $\Pi\lto \Sigma$\;
+% }
+
+% $Res\lto \Pi \cup S$\;
+% \Return $Res$\;
+% \end{algorithm}
+
+
+\begin{example}\label{examp:Res}
+The resolvent of $T_{\varphi}$ obtained from Example~\ref{examp:Tran} on $V\cup V'$ are clauses in Example~\ref{examp:Tran} with the following clauses:
+\begin{align*}
+&(1)\ \start \supset r && (1,2,SRES 5)\\
+&(2)\ \start \supset x \vee y && (1,4,SRES 5)\\
+&(3)\ \top \supset \neg z \vee y \vee f \vee m && (3, 4, SRES 8)\\
+&(4)\ y \supset \ALL\NEXT(f\vee m\vee y) && (3,8, SRES 6)\\
+&(5)\ \top \supset \neg z \vee x \vee p && (4,5, SRES 8)\\
+% \end{align*}
+%  \begin{align*}
+&(6)\ \top \supset \neg z \vee x \vee q && (4,6, SRES 8)\\
+&(7)\ y \supset \ALL\NEXT(x\vee p) && (5, 8, SRES 6)\\
+\end{align*}
+\begin{align*}
+&(8)\ y \supset \ALL\NEXT(x\vee q) && (6, 8, SRES 6)\\
+&(9)\ \start \supset f\vee m \vee y && (3,(2), SRES 5) \\
+% \end{align*}
+% \begin{align*}
+&(10)\ \start \supset x \vee p && (5,(2),SRES 5) \\
+&(11)\ \start \supset x \vee q && (6,(2), SRES 5)\\
+% \end{align*}
+% \begin{align*}
+& (12)\ \top \supset p \vee \neg z \vee f \vee m && (5,(3), SRES 8)\\
+& (13)\ \top \supset q \vee \neg z \vee f \vee m && (6,(3), SRES 8)\\
+&(14)\ y \supset \ALL\NEXT(p \vee f\vee m) && (5, (4), SRES 6) \\
+&(15)\ y \supset \ALL\NEXT(q \vee f\vee m) && (6, (4), SRES 6) \\
+% \end{align*}
+% \begin{align*}
+&(16)\ \start \supset f\vee m \vee p && (5, (9), SRES 5) \\
+&(17)\ \start \supset f\vee m \vee q && (6, (9), SRES 5)
+\end{align*}
+\end{example}
+
+\subsection{The Elimination Process}
+Given a formula, in which all the implies ($\supset$) are written as disjuncitons ($\vee$), we say that an atom appears in the formula positively if it is preceded by an even number of negative connectives, otherwise it appears negatively. Moreover, a formula $\varphi$ is positive w.r.t. $p$ if all $p$ appear in $\varphi$ positively. Similarly, a formula $\varphi$ is negative w.r.t. $p$ if all $p$ appear in $\varphi$ negatively.
+For solving problem (2), we should pay focus on the following properties that are obtained from the transformation and resolution rules:
+\begin{itemize}
+  \item \textbf{(GNA)} For each atom $p \in  \Var(\varphi)$, $p$ does not positively appear on the left of the $\CTLsnf$ clause;
+  %\item \textbf{(CNI)} for each global clause, there must be an atom $p\in V'$ appearing in the right hand negatively;
+  \item \textbf{(PI)} For each atom $p\in V'$, if $p$ appears on the left of a $\CTLsnf$ clause, then $p$ appears positively.
+\end{itemize}
+
+% The \emph{Elimination} process includes two sub-processes \emph{Removing\_index}. We  describe them in the follows.
+
+
+For eliminating those irrelevant atoms in $V$, we define the following \emph{Removing\_atoms} operator.
+
+\begin{definition}[Removing\_atoms]\label{def:Elm}
+%\textbf{(Elimination)}
+Let $C$ be a $\CTLsnf$ clause and $V$ a set of atoms, then the \emph{Removing\_atoms} operator is defined as:
+$$ \emph{Removing\_atoms}(C, V)=\left\{
+\begin{aligned}
+\top, && if\ \Var(C) \cap V \neq \emptyset \\
+C, && else.
+\end{aligned}
+\right.
+$$
+\end{definition}
+Intuitively, if $C$ contains at least one of atoms in $V$ then let Removing\_atoms$(C, V)$ be true, else be $C$ itself.
+For convenience, for any set $T$ of formulas we have Removing\_atoms$(T, V) = \{$Removing\_atoms$(r, V) | r \in T\}$.
+
+\begin{proposition}\label{pro:remove}
+Let $V''=V \cup V'$, then we have
+ \[
+   Res \equiv_{V''}  \emph{Removing\_atoms}(Res, V).
+ \]
+\end{proposition}
+This means that the Removing\_atoms process do not effect the consequences of $Res$ on $\Ha - V''$, i.e. for each formula $\varphi$ if $\IR(\varphi, V'')$ then $Res \models \varphi$ iff Removing\_atoms$(Res, V)\models \varphi$.
+% \begin{proof}
+% For convenience, we let $V=\{p\}$, i.e. $V$ contain only one element $p$, $C_i$ is a classical clause and $l$ is $p$ or $\neg p$.
+% It is evident that $Res \models \emph{Removing\_atoms}(Res, V)$, hence we only need to prove that for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ with $\Hm=(S, R, L, s)$ there is an initial structure ${\cal K}'=(\Hm', s')$ such that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models Res$. 
+
+% As we can see that the $p$ can only appear in the right of a clause, we will prove this proposition from the following several points.
+
+% (1) We consider there are global clauses in $Res$ (the other cases are sub-cases of this one), then for each $C=\top\supset C_1 \vee l \in Res$:
+
+% (a) If there does not exist a clause $C'\in Res$ such that $C$ and $C'$ are resolvable on $p$, this means there is no other clauses in $Res$ except $Pt$-sometime clauses $C'$ containing $\neg l$ with $Pt\in \{\ALL, \EXIST\}$. 
+
+% If $p\not \in \Var(C')$, for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we can construct $(\Hm',s')$ as follows: Let $\Hm'= (S, R, L',s)$ (i.e. $s'=s$) in which $L'$ is the same as $L$ except for each $s_1\in S$, if $(\Hm, s_1) \not \models C_1 \vee l$ then let $L'(s_1) = L(s_1) \cup \{p\}$ if $l=p$ else $L'(s_1) = L(s_1) - \{p\}$.
+
+% If $C'= Q\supset Pt \FUTURE \neg l$, without loss of generality, we assume $l=p$  for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we construct $(\Hm',s')$ as follows: let $\Hm'=(S', R', L', s')$ with $S'=S$, $R'=R$, $s'=s$ and $L'=L$ except that for each $s\in S'$ we have $L'(s) = L(s) - \{Q\}$ if $Q$ is an atom (if $Q$ is a term then we can delete the atoms which appearing in $Q$ positively and add the atoms which appearing in $Q$ negatively) and $L'(s) = L(s) \cup \{p\}$ if $(\Hm, s) \not \models C_1$ else $L'(s) = L(s)$. 
+% It is easy to check that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models Res$. 
+
+% (b) If there are some clauses $C'\in Res$ such that $C$ and $C'$ are resolvable on $p$:
+% \begin{enumerate}[(i)]
+%     \item If $C'= Q\supset Pt \NEXT (C_2 \vee \neg l)$ (we let $Pt=\GLOBAL$, we can prove similarly for $Pt = \EXIST$) then we have $Q\supset \GLOBAL \NEXT(C_1 \vee C_2) \in Res$, then for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we construct $(\Hm',s')$ as follows: Let $\Hm'= (S, R, L',s)$ (i.e. $s'=s$) in which $L'$ is the same as $L$ except for each $s_1\in S$ if $(\Hm, s_1) \not \models Q$ then for each $(s_1, s_2) \in R$ if $(\Hm, s_2) \not \models C_1$ then let $L'(s_2) = L(s_2) \cup \{p\}$ if $l=p$ else $L'(s_2) = L(s_2) - \{p\}$, else if $(\Hm, s_2) \models  C_1 \wedge \neg C_2$ then let $L'(s_2) = L(s_2) - \{p\}$ if $l=p$ else $L'(s_2) = L(s_2) \cup \{p\}$; else if $(\Hm, s_2) \models \neg C_1 \wedge C_2$ then let $L'(s_2) = L(s_2) \cup \{p\}$ if $l=p$ else $L'(s_2) = L(s_2) - \{p\}$. It is easy to check that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models C' \wedge C$.
+%     \item If $C' =  Q\supset Pt \FUTURE \neg l$. Without loss of generality, we assume $l=p$ for convenience. In order to make $C$ and $C'$ are resolvable on $p$, there must be a set of $\CTLsnf$ clauses $\{P_1^1 \supset * C_1^1$, \dots, $P_{m_1}^1 \supset * C_{m_1}^1$, $P_1^n \supset * C_1^n$, \dots, $P_{m_n}^1 \supset * C_{m_n}^1 \}$ such that $*$ is either empty or
+% an operator in $\{\GLOBAL \NEXT, \EXIST_{\tuple{ind}} \NEXT\}$, which include $\neg C_1 \supset l$, such that $\bigvee_{i=1}^n \bigwedge_{j=1}^{m_i} P_j^i \supset \EXIST \NEXT \EXIST \GLOBAL l$. Therefore, we get a clause $C''=\top \supset \neg Q \vee \neg p \vee C_1$ by using ERES1 (similar for ERES2) and then $\top \supset \neg Q \vee C_1$ by using SRES8 on $C$ and $C''$. In this case, for any ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we construct $(\Hm',s')$ as follows: Let $\Hm'= (S, R, L',s)$ (i.e. $s'=s$) in which $L'$ is the same as $L$ except for each $s_1\in S$ if $(\Hm, s_1) \models Q$ then let $L'(s_1) = L(s_1) - \{p\}$, else $L'(s_1) = L(s_1) \cup \{p\}$. It is easy to check that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models C' \wedge C$.   
+%     \item We can consider other clauses similarly, and obtained that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models Res$. 
+% \end{enumerate}
+ 
+% (2) We consider the $Pt$-step clauses, let $C\in Res$ is $Q \supset \GLOBAL \NEXT(C_1 \vee \neg l)$. Without loss of generality, we assume there are some clauses $C'\in Res$ such that $C$ and $C'$ are resolvable on $p$ and $l=p$.
+
+% If $C'= Q_1\supset Pt \NEXT (C_2 \vee \neg l)$ (we let $Pt=\EXIST_{ind}$, we can prove similarly for $Pt = \GLOBAL$) then we have $Q \wedge Q_1 \supset \EXIST_{ind} \NEXT(C_1 \vee C_2) \in Res$, then for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we construct $(\Hm',s')$ as follows: Let $\Hm'= (S, R, L',s)$ (i.e. $s'=s$) in which $L'$ is the same as $L$ except for each $s_1\in S$
+% \begin{enumerate}[(i)]
+%     \item if $(\Hm, s_1) \not \models Q \wedge Q_1$ then ``if $(\Hm, s_1) \models \neg Q \wedge Q_1$ then (if $(\Hm, s_2') \not \models C_2$ for $(s_1, s_2') \in \pi_s^{\tuple{ind}}$ then let $L'(s_2') = L(s_2') - \{p\}$ else $L'(s_2') = L(s_2')$), else if $(\Hm, s_1) \models Q \wedge \neg Q_1$ then for each $(s_1, s_2) \in R$ (if $(\Hm, s_2) \not \models C_1$ then let $L'(s_2) = L(s_2) \cup \{p\}$ else $L'(s_2') = L(s_2')$), else let $L'(s_2') = L(s_2')$".
+%     \item else if $(\Hm, s_1) \models Q \wedge Q_1$ then we have $(\Hm,s_2') \models C_1 \vee C_2$ for $(s_1, s_2) \in \pi_s^{\tuple{ind}}$. Therefore, if $(\Hm, s_2') \models C_1 \wedge \neg C_2$ then $L'(s_2') = L(s_2') - \{p\}$, else if  $(\Hm, s_2') \models \neg C_1 \wedge C_2$ then let $L'(s_2) = L(s_2) \cup \{p\}$ else $L'(s_2') = L(s_2')$. For other state $s_2$ with $(s_1, s_2) \in R$ and $s_2 \not = s_2'$, if $(\Hm, s_1) \models Q$ and $(\Hm, s_2) \models \neg C_1$ then let $L'(s_2) = L(s_2) \cup \{p\}$ else $L'(s_2') = L(s_2')$.
+% \end{enumerate}
+% It is easy to check that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models C' \wedge C$, in which ${\cal K}' = (\Hm',s')$.  
+% \end{proof}
+
+
+\begin{example}\label{examp:remA}
+After removing the clauses that include atoms in $V=\{p\}$, the following clauses are left:
+\begin{align*}
+& \start\supset z &&  \top \supset q \vee \neg z \vee f \vee m \\
+& \top \supset \neg x\vee f \vee m &&  \top \supset \neg z \vee x \vee y \\
+&  \start \supset f\vee m \vee q &&  \top \supset \neg y \vee q\\
+&  z \supset \ALL \FUTURE x &&   y \supset \ALL \NEXT(x\vee y) \\
+& y \supset \ALL\NEXT(q \vee f\vee m)  && \start \supset x \vee y \\
+& \top \supset \neg z \vee y \vee f \vee m && y \supset \ALL\NEXT(f\vee m\vee y)\\
+& \top \supset \neg z \vee x \vee q && y \supset \ALL\NEXT(x\vee q) \\
+&  \start \supset f\vee m \vee y && \start \supset x \vee q \\
+%& \start \supset f\vee m \vee q
+\end{align*}
+\end{example}
+
+% In this case, if we do not specify $l$, $C_2$, $C_3$  and $C_4$ are instantiate formulae of  $\Sub(Res, V')$, it is easy to check that all results including  $P\supset \EXIST_{\tuple{ind}}\NEXT (\neg l \vee C_2 \vee C_4)$ and $P\supset \ALL \NEXT (\neg l \vee C_2 \vee C_4)$ obtained from the \emph{Connect} process will be deleted in the Removing\_atoms process.
+
+\subsection{Remove the Index and Start}
+%The $\emph{Removing\_index}(\Gamma)$ process is to change the set $\Gamma$ of formulas into a set of formulas without the index by using the equations in Proposition~\ref{pro:In2NI}.
+%The following proposition is important for our algorithm since ... .
+The $\emph{Removing\_index}(\emph{RemA})$ process is to change the set $\emph{RemA}$ obtained above into a set of formulas without the indexes by using the equations in Proposition~\ref{pro:In2NI}. Before that, let's see the following important proposition, which is the key to eliminate the indexes in the set of clauses.
+\begin{proposition}\label{pro:Ind:EF}
+Let $\EXIST_{\tuple{ind}} \FUTURE \varphi$ be a $\CTLsnf$ formula, then we have 
+\[
+\EXIST_{\tuple{ind}} \FUTURE \varphi \equiv \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi.
+\]
+\end{proposition}
+% \begin{proof}
+% ($\Rto$) Let $(\Hm, s_0) \in \Mod(\EXIST_{\tuple{ind}} \FUTURE \varphi)$, then there exists a path $\pi_{s_0}^{\tuple{ind}}$ such that $(\Hm, s_j) \models \varphi$ for some $s_j \in \pi_s^{\tuple{ind}}$ with $0 \leq j$. In this case, we can see either $j=0$ or $j > 0$, then we have $(\Hm, s_0) \models  \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi$.
+
+% ($\Lto$) Let $(\Hm, s_0) \in \Mod(\varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi)$, then we have $(\Hm,s_0) \models \varphi$ or there exists a path $\pi_{s_0}^{\tuple{ind}} = (s_0, s_1, \dots)$ such that $(\Hm, s_1) \models \EXIST_{\tuple{ind}}\FUTURE \varphi$. Therefore, we have $(\Hm, s_0) \models \EXIST_{\tuple{ind}} \FUTURE \varphi$ by the semantic of $\EXIST_{\tuple{ind}}\FUTURE$.
+% \end{proof}
+
+By the transformation rules in Table~\ref{tab:trans} we know that there are no two $\CTLsnf$ clauses,  $\EXIST$-step and $\EXIST$-sometime clauses respectively, have the same index during the transform process. Moreover, no two $\EXIST$-sometime clauses have the same index, and the Resolution process will do not produce any $\EXIST$-sometime clauses. 
+Therefore, we can use Proposition~\ref{pro:Ind:EF} to transform a $\EXIST$-sometime clause into a similar $\EXIST$-step clause at first, and then use the following proposition to eliminate the indices.
+
+%The following proposition is important for our algorithm since ... .
+\begin{proposition}\label{pro:In2NI}
+Let $P$, $P_i$ and $\varphi_i$ be \CTL\ formulas, then
+\begin{enumerate}[(i)]
+  \item $\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$,
+  \item $\bigwedge_{i=1}^n (P_i\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i) \equiv_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{1,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\supset \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$,
+  \item $\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$, where $(j_1, \dots, j_n)$ is a sequence of all elements in $\{1, \dots, n\}$,
+  \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \wedge P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \equiv_{\tuple{\emptyset, \{ind\}}} P \supset ((C \wedge \EXIST \NEXT \varphi_2) \vee \EXIST \NEXT (\varphi_1 \wedge \varphi_2))$,
+  \item $(P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1)) \vee (P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2) \equiv_{\tuple{\emptyset, \{ind\}}} P \supset (C \vee \EXIST \NEXT (\varphi_1 \vee \varphi_2))$.
+\end{enumerate}
+\end{proposition}
+% \begin{proof}
+% (i)  For all $(\Hm, s_0) \in \Mod(\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i))$ there exists $(s_0, s_1)\in [ind]$ such that $(\Hm, s_1) \models \varphi_1$, \dots, $(\Hm, s_1) \models \varphi_n$, then there is $(s_0, s_1)\in R$ s.t. $(\Hm, s_1) \models \bigwedge_{i=1}^n \varphi_i$, i.e. $(\Hm, s_0) \models P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$.
+
+% For each $(\Hm, s_0) \in \Mod(P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i)$, we suppose there is $(s_0, s_1)\in R$ s.t. $(\Hm, s_1) \models \bigwedge_{i=1}^n \varphi_i$. It is easy to construct an initial \Ind-model $(\Hm', s_0)$ such that $(\Hm', s_0)$ is identical to $(\Hm, s_0)$ except the $(s_0, s_1) \in [ind]$, i.e. $(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$.
+
+% (ii) (If part) For any model $(\Hm,s_0)$ of the left side of the equation if there is $(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$ with $j_i \in \{1, \dots, n\}$ and $1\leq m \leq n$, then there is a next state $s_1$ of $s_0$ with $(s_0, s_1) \in [ind]$ such that $(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$. By the definition of $[ind]$, we have $(s_0, s_1) \in R$ and then $(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \supset \EXIST \NEXT (\bigwedge_{i=1}^m P_{j_i} \varphi_{j_i})$. The other side can be similarly proved as (i).
+
+% (iii) (Only if part) For any model $(\Hm,s_0)$ of the right side of the equation if there is $(\Hm,s_0) \models P$ then there exists a path $\pi_{s_0}$ such that $\varphi_i \in \pi_{s_0}$ ($1\leq i \leq n$). This means we can construct an initial \Ind-model $(\Hm', s_0)$ such that $(\Hm', s_0)$ is identical to $(\Hm, s_0)$ except for each $(s_j, s_{j+1})$ of $\pi_{s_0}$ there is $(s_j, s_{j+1}) \in [ind]$ $(0\leq j)$. It is easy to check $(\Hm', s_0) \models \bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i)$ and  $(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$.  The other side can be shown similarly as in (ii).
+
+% Other results can be proved similarly.
+% \end{proof}
+
+After using the equivalence in Proposition~\ref{pro:Ind:EF} to transform the $\EXIST_{\tuple{ind}} \FUTURE$ into the form on the right-hand side, we can combine all the $\EXIST_{\tuple{ind}} \NEXT$ clauses by using (i) and (ii) in Proposition~\ref{pro:In2NI}, 
+and then remove all the $\tuple{ind}$.
+Therefore, we can easily obtain the following proposition.
+
+\begin{proposition}\label{lem:No:Ind}
+\textbf{(NI-BRemain)}
+Let $I$ be the set of indexes appearing in $\emph{RemA}$, then
+we have $\emph{RemA}\equiv_{\tuple{{\O}, I}} \emph{Removing\_index}(\emph{RemA})$.
+\end{proposition}
+% \begin{proof}
+% It is easy checking that from the definition of $\emph{Removing\_index}$ and Proposition~\ref{pro:In2NI}.
+% \end{proof}
+Proposition~\ref{lem:No:Ind} means that we can transform the set clauses $\emph{RemA}$ into a set of formulae without indexes.
+As we can see that we do not need such  process in our Example~\ref{examp:remA} since there is no index in the set of formulae.
+
+ 
+
+In order to transform the result obtained above into a \CTL\ formula, the only thing we should do is to ``remove" the $\start$. Let $T$ be a set of formulae, then we define the following operator:
+\begin{align*}
+&T_{\CTL} = \{C|C'\in T\ \mbox{and}\ C\ \mbox{is}\ D \ \mbox{if}\ C' \mbox{is the form}\\
+& \ALL\GLOBAL(\start\supset D), \mbox{else}\ C\ \mbox{is}\  C' \ \mbox{itself}\}.
+\end{align*}
+In this case, we can easily check that $T \equiv T_{\CTL}$ by $\varphi \equiv \ALL \GLOBAL (\start \supset \varphi)$~\cite{bolotov2000clausal}.
+
+In this way, we know that for any $\psi$ and $V$ if $\IR(\psi, V \cup V')$ then $\varphi \models \psi$ iff $\emph{ERes}(\varphi,V) \models \psi$, in which $\emph{ERes}(\varphi,V)$ is the result of Algorithm~\ref{alg:compute:forgetting:by:Resolution}. 
+
+% The last step of our algorithm is to eliminate all the atoms in $V'$ which has been introduced in the \emph{Transform} process.
+
+% Let $\Gamma=\emph{Instantiate}(Res, V')$ and $\Gamma_1=\emph{Removing\_atoms} (\emph{Connect}(\Gamma))$, then $\emph{Replacing\_atoms}(\emph{Removing\_index}(\Gamma_1))$ is obtained from $\emph{Removing\_index}(\Gamma_1)$ by doing the following three steps for each $p\in (V'\setminus \Gamma)$:
+% \begin{itemize}
+%   \item replacing each $p\supset \varphi_1\vee \dots \vee p \supset \varphi_n$ with $p \supset \bigvee_{i=1}^n \varphi_i$;
+%   \item replacing $p\supset \varphi_{1}\wedge \dots \wedge p \supset \varphi_{m}$ with $\varphi_j$ are instantiate formulae of  $\Gamma$ $(j \in \{1,\dots, m\})$ with $p \supset \psi$, where $\psi=\bigwedge_{j=1}^{m} \varphi_{j}$ and $p$ do not appear in $\varphi_j$, .
+%   \item For any formula $C\in \Gamma_1$, replacing every $p$ in $C$ with $\psi$.
+% \end{itemize}
+% %Where $\NI(S)$ means do $\NI(e)$ for each $e\in S$ with $S$ is a set of sets of $\CTLsnf$ clause.
+% Recall that any atom in $V'$ introduced in the Transform process is a name of the sub-formula of $\varphi$~\cite{bolotov2000clausal}. Apparently, this process is just a process of replacing each atom with an equivalent formula. Then we have:
+% \begin{proposition}\label{pro:replaceA}
+% Let $\Gamma_1=\emph{Instantiate}(Res, V')$, $\Gamma_2 =\emph{Removing\_atoms}$ $(\emph{Connect}(\Gamma_1), \Gamma_1)$ and $\Gamma_3 = \emph{Replacing\_atoms}(\emph{Removing\_index}(\Gamma_2))$, then $\Gamma_2  \equiv_{\tuple{V'\setminus \Gamma_1, I}} \Gamma_3$ and $\varphi \equiv_{\tuple{V\cup V', \emptyset}}$ $(\Gamma_3)_{CTL}$.
+% \end{proposition}
+% %\begin{proof}
+% %For each $p$ talked above is a name of the formula $\psi$. %, \ie $p \lrto \psi$.
+% %Then $\Gamma_2  \equiv_{\tuple{(V'\setminus \Gamma_1), {\O}}} \Gamma_3$, and then $\Gamma_2 \equiv_{\tuple{V\cup V', I}} \Gamma_3$  by (V) of Proposition~\ref{div}.
+% %
+% %Therefore, $\varphi \equiv_{\tuple{V\cup V',{\O}}} (\Gamma_3)_{CTL}$ by Proposition~\ref{pro:elm} and the definitions of $\emph{Removing\_index}$ and $T_{\CTL}$.
+% %\end{proof}
+
+
+% \begin{example}\label{exa:replace:sub}
+% By using the \emph{Replacing\_atoms} process on result of Example~\ref{examp:remA} directly since there is no index in those clauses, we obtain that $x$ is replaced by $f\vee m$. Then $y$ is replaced by $q \wedge \ALL\NEXT(q \vee f\vee m)$ and $z$ is replaced by $r\wedge (f\vee m \vee q) \wedge (f\vee m \vee (q\wedge \ALL\NEXT(f\vee m\vee q))) \wedge \ALL\FUTURE(f \vee m)$.
+% \end{example}
+
+
+
+% \subsection{An Example for the Connect Process}
+% In order to show the necessity of the Connect process, we give the following example.
+% \begin{example}
+% Let $\psi=\ALL\FUTURE(p \wedge q) \wedge \EXIST \NEXT \neg p$ and $V=\{p\}$.
+% By the processes Transform and Resolution, we can obtain $V'=\{f,z,w\}$ and the following set $Res$ of $\CTLsnf$ clauses.
+% \begin{align*}
+% & \start \supset z && z \supset \ALL\FUTURE f && z \supset  \EXIST_{\tuple{ind}} \NEXT \neg p \\
+% & \top \supset \neg f \vee p && \top \supset \neg f \vee q && z \supset \EXIST_{\tuple{ind}} \NEXT \neg f
+% \end{align*}
+
+%  According to our Algorithm~\ref{alg:compute:forgetting:by:Resolution}, we have $\emph{Instantiate}(Res,V')=\{p,w\}$ since $f$ can be instantiated by $q$ and $z$ can be instantiated by $\ALL\FUTURE f$.
+
+% On the one hand, in the \emph{Connect} process, by using \textbf{(EF1)} rule on the $Res$ we have $\alpha=z \supset (\neg q \supset  (\EXIST_{\tuple{ind}}\NEXT (q \supset \ALL\NEXT \ALL\FUTURE q )))$ and replace $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \in Res$ with $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \vee \alpha$ since $l$, $C_2$, $C_3$ and $C_4$, which are $f$, $\Empty$, $q$ and $\Empty$ respectively ($\Empty$ express that there is not such clause), are instantiate formulae.
+% Apparently, $z \supset \EXIST_{\tuple{ind}} \NEXT \neg f \vee \alpha \equiv z \supset q \vee \EXIST_{\tuple{ind}} \NEXT(\neg f \vee \neg q \vee \ALL\NEXT \ALL\FUTURE q)$.
+
+% After the \emph{Removing\_atoms} process, we have the following set \emph{RemA} of formulae:
+% \begin{align*}
+% & \start \supset z && z \supset \ALL\FUTURE f \\
+% &  \top \supset \neg f \vee q && z \supset q \vee \EXIST_{\tuple{ind}} \NEXT(\neg f \vee \neg q \vee \ALL\NEXT \ALL\FUTURE q)
+% \end{align*}
+
+% Removing the indexes appearing in the \emph{RemA}, we obtain the following set $\NI$:
+%  \begin{align*}
+% & \start \supset z && z \supset \ALL\FUTURE f \\
+% &  \top \supset \neg f \vee q && z \supset q \vee \EXIST \NEXT(\neg f \vee \neg q \vee \ALL\NEXT \ALL\FUTURE q)
+% \end{align*}
+
+% Replacing the atoms in $V'$ that have been instantiated, i.e. $f$ is replaced with $q$ and $z$ is  replaced with $\ALL\FUTURE q \wedge (q \vee \EXIST \NEXT(\neg q \vee \ALL\NEXT \ALL\FUTURE q))$, we have
+% \[
+% \emph{Rp}= \{\start \supset  \ALL\FUTURE q \wedge (q \vee \EXIST \NEXT(\neg q \vee \ALL\NEXT \ALL\FUTURE q))\}.
+% \]
+
+% As all the formulas $\cal F$ in the $T_{\varphi}$ are the form $\ALL\GLOBAL \cal F$, hence we have:
+% \[
+% \emph{Rp}_{\CTL} = \{\ALL\FUTURE q \wedge (q \vee \EXIST \NEXT(\neg q \vee \ALL\NEXT \ALL\FUTURE q))\}
+% \]
+% i.e. $\emph{ERes}(\varphi, V) = \ALL\FUTURE q \wedge (q \vee \EXIST \NEXT(\neg q \vee \ALL\NEXT \ALL\FUTURE q))$.
+% In this case, we can easily check that $\emph{ERes}(\varphi, V) \equiv_{\tuple{V, \emptyset}} \varphi$.
+
+
+% On the other hand, if we do not using the \emph{Connect} process, we can easily obtain the result of $\emph{ERes}$, i.e. $\emph{ERes}(\varphi, V) = \ALL\FUTURE q \wedge  \EXIST \NEXT(\neg q)$.
+% It is apparent that $\emph{ERes}(\varphi, V) \not\equiv_{\tuple{V, \emptyset}} \varphi$. This can proved by model $(\Hm,s_0)$ as in Figure~\ref{Fig:models} since $(\Hm, s_0) \models \varphi$ and $(\Hm, s_0) \not \models \emph{ERes}(\varphi, V)$.
+% \begin{figure}[ht!]
+%   \centering
+%   %Requires \usepackage{graphicx}
+%   \includegraphics[width=5cm]{models.png}\\
+%   \caption{A model $(\Hm, s_0)$ of $\varphi$}\label{Fig:models}
+% \end{figure}
+% \end{example}
+
+% This example shows why we introduce the \textbf{EF}-implication rules. Intuitively, the result of replacing the atoms that have been instantiated in $V'$ with an instantiate formula is stronger than our method, because by the \emph{Removing\_atoms} process, we have removed some clauses, such as $C= \top \supset \neg f \vee p$, that contain $f$. The original one is $f \supset p \wedge q$, but after removing $C$ we only obtain  $f \supset q$. In this example, there is a clause $z \supset \EXIST \NEXT \neg f \in Res$, after replacing $f$ with $q$, we obtain $z \supset \EXIST \NEXT \neg q$. However, if we do not remove $C$ (i.e. $f \supset p \wedge q$), then we have $z \supset \EXIST \NEXT (\neg q \vee \neg p)$, this is weaker than $z \supset \EXIST \NEXT \neg q$.
+% In fact, for any model $(\Hm, s_0)$ of $\varphi$, it might be the case that $q \in L(s)$ for all next states $s$ of $s_0$ and if there is $q \in L(s)$ for all next states s, then there must be a next state $s$ of $s_0$ with $p \not \in L(s)$ s.t. for all next state $s'$ of $s$ there is $(\Hm, s')\models \ALL\FUTURE q$ (see Fig.~\ref{Fig:models}).
+%This is what the meaning of the \emph{Connect} process.
+
+\subsection{Termination and Complexity of the Algorithm}
+
+
+% \begin{proposition}
+% Given a \CTL\ formula and any set $V$ of atoms, the Algorithm~\ref{alg:compute:forgetting:by:Resolution} will terminate.
+% \end{proposition}
+% \begin{proof}
+% We can know that the Transform and Resolution can terminate from~\cite{zhang2009refined}. Moreover, the Remove\_atoms and the Remove\_index (inclue $T_{\CTL}$) can also terminate because the set of clauses obtained from the Resolution process is finite. 
+% \end{proof}
+
+
+
+We can know that the Transform and Resolution processes can terminate for each \CTL\ formula from~\cite{zhang2014resolution}. Moreover, the Remove\_atoms and the Remove\_index (include $T_{\CTL}$) processes can also terminate because the set of clauses obtained from the Resolution process is finite. Therefore, given a \CTL\ formula and any set $V$ of atoms, we have the Algorithm~\ref{alg:compute:forgetting:by:Resolution} will terminate. 
+The time complexity of this algorithm is as follows.
+
+
+\begin{proposition}\label{pro:complexity}
+Let $\varphi$ be a CTL formula and $V \subseteq \Ha$.
+The time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$ where $|\Var(\varphi)|=n$, $|V'|=n'$ ($V'$ is the set of atoms introduced in the Transform process) and $m$ is the number of indices introduced during transformation.
+\end{proposition}
+% \begin{proof}
+% It follows from the lines 19-31 of the algorithm~\ref{alg:compute:forgetting:by:Resolution}, which is to compute all the possible resolution.
+% The possible number of $\CTLsnf$ clauses under the give $V$, $V'$ and $Ind$ is $(m+1)2^{4(n+n')}+(m*(n+n')+n+n'+1)2^{2(n+n')+1})$.
+% \end{proof}
+
+Indeed, $m$ is at most the number of  temporal  operators in $\varphi$.
+That is, the computational complexity of our algorithm only depends on the number of atoms and temporal operators in $\varphi$. 
+Although it is exponential, it is more efficient than that of the model-based algorithm in~\cite{renyansfirstpaper}, which not only depends on the number of atoms in $\Ha$ but also the number of states.
+
+
+
+\subsection{Eliminate the atoms in $V'$}
+
+Recall that we have eliminate the atoms in $V$, the atoms in $V'$ introduced in the Transform process still in the formulas, however. In order to eliminate the atoms in $V'$ to the greatest extent possible, we use the following Generalised Ackermann Lemma before the we remove the $\start$.
+% \begin{lemma}[Ackermann-Lemma~\cite{szalas2002second}]\label{lem:ackl}
+% Let $X$ be a relation variable and $\alpha(\overline{x}, \overline{z})$, $\beta(X)$ be classical first-order formulas, where the number of distinct variables in $\overline{x}$ is equal to the arity of $X$. Let $\alpha$ contain no occurrences of $X$.
+% \begin{enumerate}[(i)]
+%     \item If $\beta(X)$ is positive w.r.t. $X$, then
+%     \[
+%         \exists X\{\forall\overline{x}[X(\overline{x}) \rto \alpha(\overline{x}, \overline{z})] \wedge \beta(X)\} \equiv \beta(X)_{\alpha(\overline{x}, \overline{z})}^{X(\overline{x})}.
+%     \]
+%     \item  If $\beta(X)$ is negative w.r.t. $X$, then
+%     \[
+%         \exists X\{\forall\overline{x}[\alpha(\overline{x}, \overline{z}) \rto X(\overline{x})] \wedge \beta(X)\} \equiv \beta(X)_{\alpha(\overline{x}, \overline{z})}^{X(\overline{x})}.
+%     \]
+% \end{enumerate}
+% \end{lemma}
+
+\begin{theorem}[Generalised Ackermann’s Lemma] \label{thm:Aclm}
+  Let $\Gamma$ be a set of $\CTLsnf$ clauses that contains the set $\Delta = \{\top \supset \neg x \vee C_1$, \dots, $\top \supset \neg x \vee C_n, x \supset B_1, \dots, x \supset B_m\}$ of clauses, where $x \in V'$ is a atom introduced in the Transform process, the $C_i$ $(1 \leq i \leq n)$ are Classical propositional clauses that do not contain $x$, and $B_j$ ($1 \leq j \leq m$) are formulas of the form $Qt {\cal T} C$ with $Qt \in \{\ALL, \EXIST_{\tuple{ind}}\}$, ${\cal T}\in \{\NEXT, \FUTURE\}$ and $C$ is a classical clause that also do not contain $x$. If $\Gamma'= \Gamma - \Delta$ is positive w.r.t. $x$, i.e. each clause in $\Gamma'$ is positive w.r.t. $x$, then $\Gamma'[x/\varphi] \equiv_{\tuple{\{x\}, \emptyset}} \Gamma$ with $\varphi = \bigwedge_{i=1}^n C_i \wedge \bigwedge_{j=1}^m B_j$. Where $\Gamma'[x/\varphi]$ is obtained from $\Gamma'$ by replacing all $x$ with $\varphi$.
+\end{theorem}
+% \begin{proof}
+% Without loss of generality, we suppose there are only A-step clauses in $\Gamma'$, other cases can be proved similarly. 
+
+% $(\Rto)$ For any model $(\Hm, s_0)$ of $\Gamma$, it is obvious that $(\Hm, s_0) \models \Gamma'$.
+
+% $(\Lto)$ For any models $(\Hm, s_0)$ of $\Gamma'$ with $\Hm = (S, R, L, s_0)$, we can construct an \Ind-initial structure $\Hm'=(S', R', L', s_0')$ with $S'=S$, $R'=R$, $s_0'= s_0$ and $L'$ is the same with $L$ except that for each $s'\in S'$ if $(\Hm', s') \models x \wedge \vaprhi$ then let $L'(s') = L(s) - \{x\}$, else let $L'(s') = L(s)$.
+
+% It is easy to check that $(\Hm,s_0) \lrto_{\tuple{\{x\}, \emptyset}} (\Hm', s_0')$ and $(\Hm',s_0') \models \Gamma'$.
+% \end{proof}
+
+Recall that all the $\CTLsnf$ clauses are of the form $\ALL\GLOBAL(\psi_1 \supset \psi_2)$, in this case, the result of Example~\ref{examp:remA}, after using this theorem on $x$ (i.e. $\Delta = \{\top \supset \neg x \vee f \vee m\}$, supposing the set of clauses in Example~\ref{examp:remA} is $\Gamma$), can be expressed as follows:
+\begin{align*}
+& \start\supset z &&  \start \supset f \vee m \vee y \\
+&  \top \supset \neg z \vee f \vee m \vee q &&  \top \supset \neg z \vee f \vee m \vee y \\
+&  \start \supset f\vee m \vee q &&  \top \supset \neg y \vee q\\
+&  z \supset \ALL \FUTURE (f \vee m) &&   y \supset \ALL \NEXT(f \vee m \vee y) \\
+& y \supset \ALL\NEXT(f \vee m\vee q) &&  \\
+%& \start \supset f\vee m \vee q
+\end{align*}
+
+Similarly, we can use this Theorem~\ref{thm:Aclm} on $z$ with $\Delta=\{\top \supset \neg z \vee f \vee m \vee y, \top \supset \neg z \vee f \vee m\vee q, \top \supset \neg z \vee \ALL \FUTURE (f \vee m)\}$, we have the following set $\NI$ of clauses:
+\begin{align*}
+ & \start\supset (f \vee m \vee y) \wedge (f \vee m\vee q) \wedge \ALL \FUTURE (f \vee m) && \\
+ &  \start \supset f\vee m \vee q \qquad \top \supset \neg y \vee q\\
+ & y \supset \ALL \NEXT(f \vee m \vee y) \qquad \start \supset f \vee m \vee y \\
+&  y \supset \ALL\NEXT(f \vee m\vee q) \qquad   \\
+\end{align*}
+
+In this way, only $y\in V'$ do not be eliminated. 
+Clearly, if all atoms in $V'$ are eliminated, then we can see that the result obtained from our algorithm is the result of forgetting.
+We can also see that if we need to forget many atoms then this process will help us to eliminate many clauses while do not affect the satisfiability of the original formula.
+%Moreover, this process is helpful in transforming the result obtained after the Remove\_atoms process. 
+This means that if we only want to decide the satisfiability of forgetting $V$ from $\varphi$ by \CTL-RP, we do not need to do the Ackermann-Lemma and $T_{\CTL}$ processes since the \CTL-RP always need to transform a \CTL\ into a set of $\CTLsnf$ clauses. 
+
+% In particular, if a \CTL\ formula is in NNF and do not contain the modal operators $Pt \GLOBAL$ and $Pt \UNTIL$ with $Pt \in \{\ALL, \EXIST\}$, then we can easily prove that we can eliminate all the introduced atoms in $V'$. The following example illustrates this point well.
+% \begin{example}
+
+% \end{example}
+
+% Then it is clearly the $\bigwedge_{\psi\in \NI_{\CTL}} \psi$ is as follows:
+% \begin{align*}
+%     & r \wedge (f \vee m \vee y) \wedge (f \vee m\vee q) \wedge \ALL \FUTURE (f \vee m) \wedge \\
+%     & \ALL \GLOBAL( (\neg y \vee q) \wedge (y \supset \ALL\NEXT((f \vee m\vee q) \wedge (f \vee m \vee y)))).
+% \end{align*}
+
+\section{Related work and Discussion}
+In this part, we will give a brief introduction of the forgetting, the resolution-based satisfiability and also their connection.
+\subsection{Forgetting}
+As a logical notion, \emph{forgetting} was first formally defined
+in propostional and first order-logics by Lin and Reiter~\cite{lin1994forget}, and then used to compute the strongest necessary and weakest sufficient conditions in planning \cite{DBLP:journals/ai/Lin01}.
+Over the last twenty years, not only have researchers developed forgetting notions and theories in propositional and first-order logic, but also in other logic systems~\cite{eiter2019brief}, 
+such as in logic programs under answer set/stable model semantics~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013}, forgetting in description logic to create restricted views of ontologies~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role}  and in modal logic~\cite{Yan:AIJ:2009,Kaile:JAIR:2009,Yongmei:IJCAI:2011,fang2019forgetting}. 
+Moreover, forgetting has also been used in  conflict solving \cite{Lang2010Reasoning,Zhang2005Solving} and 
+strongest and weakest definitions \cite{Lang2008On}.
+%knowledge compilation \cite{Zhang2009Knowledge,Bienvenu2010Knowledge},
+%creating restricted views of ontologies~\cite{zhao2017role},
+%{ZhaoSchmidt18a},
+% strongest and weakest definitions \cite{Lang2008On}, SNC (WSC) \cite{DBLP:journals/ai/Lin01} and others.
+
+\subsection{Resolution-based satisfiability  in \CTL}
+Deciding satisfiability with resolution calculus in Propositional Linear Temporal Logic (PLTL) was introduced in~\cite{fisher1991resolution} and further discussed in~\cite{fisher1997normal,fisher2001clausal}. 
+% The main idea is to transform PLTL formulas into the a normal form, called Separated Normal Form (SNF) by introducing a new connective \start\ that holds only at the beginning of time.
+
+Later,  resolution-based satisfiability in \CTL\ was proposed by Bolotov in~\cite{bolotov2000clausal}  and then further refined by Zhang in~\cite{zhang2014resolution}.
+In those papers, the main idea is also to transform \CTL\ formulas into a normal form $\CTLsnf$.
+But as \CTL\ is a kind of branching time temporal logic, they introduce ``indices" besides \start\ for that purpose. All in all, a complete set of transformation and resolution rules had been proposed for both PLTL and \CTL. It has been shown that this transformation is satisfiability-preserving, which also holds for the result obtained from using the resolution rules on the normal form.
+
+\subsection{Using Resolution to Compute Forgetting}
+Other resolution procedures have been used to compute the forgetting or uniform interpretation in propositional logic~\cite{Yisong:2015:arx} and Modal logic~\cite{herzig2008uniform}. In those case, the formula is required to be in a particular form-``CNF" (the definition of CNF in Modal logic can be found in~\cite{herzig2008uniform}).
+
+% As aforementioned, the normal form used here for resolution is an extension of \CTL\ with \start\ and ``index". 
+ %In this article, we propose $\tuple{V,I}$-bisimulation to deal with the ``index" problem.
+%In order to eliminate those atoms introduced in the transformation, we proposed the four EF-implication rules.
+
+As aforementioned, the normal form used here for resolution is an extension of \CTL\ with \start\ and ``index". 
+As the case in~\cite{zhao2018automated}, our algorithm also introduces the new atoms and we can not guarantee the $\emph{ERes}(\varphi,V)$ exactly equivalence with the result of forgetting $V$ from $\varphi$, denoted as $\CTLforget(\varphi, V)$, however we will see that the atoms in $V$ can be all forgotten and if the atoms in $V'$ are all eliminated then $\emph{ERes}(\varphi,V) \equiv \CTLforget(\varphi, V)$, in which $\emph{ERes}(\varphi,V)$ is the result of Algorithm~\ref{alg:compute:forgetting:by:Resolution}. In this sense we can improve the process of deciding the satisfiability of a \CTL\ formula in using the solver CTL-RP since we have removed some clauses which containn atoms in $V$ without changing the satisfiability of $\varphi$.
+
+
+
+\section{Conclusion and Future Work}
+This paper proposed a resolution-based algorithm to compute the forgetting in \CTL.
+Our method extend the resolution calculus in~\cite{zhang2014resolution} by adding processes that remove  irrelevant atoms and which transforming the result back into \CTL\ formula.
+For this purpose, a new type of binary bisimulation relation, called $\tuple{V,I}$-bisimulation, has been defined to bridge the gap between \CTL\ and $\CTLsnf$. Besides, for eliminating the irrelevant atoms we proposed the Removing\_atoms operator and the generalised Ackermann’s Lemma. The Removing\_atoms operator can exactly eliminate all atom in $V$, and the generalised Ackermann’s Lemma make us can eliminate the atoms in $V'$ as possible.
+Finally, we proved that our algorithm will terminate, and if all the atoms in $V'$ can be eliminated then our algorithm will return the result of forgetting $V$ from a \CTL\ formula.
+%, and the time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$.
+Examples show how to compute forgetting using our algorithm.
+Moreover, our resolution-based method is more efficient than that of model-base in~\cite{renyansfirstpaper}.
+
+%In the future we will implement this algorithm (part of it has been implemented actually).
+As for the future research, a Prolog implementation is currently under development, and we are planning to evaluate its practical aspects.\footnote{https://github.com/fengrenyan/Resolution-proof-CTL/blob/master/main-code.pl.} 
+Moreover, as for the theory, we are planning to carry out a parameterised complexity analysis on our resolution calculus.
+%Besides, applying the defined methods to similar formalism.
+
+%\section*{Acknowledgments}
+
+
+\clearpage
+
+\bibliographystyle{aaai21}
+\bibliography{Ref}
+
+
+\clearpage
+\appendix
+\section{Supplementary Material: Proof Appendix}
+
+% \begin{lemma}\label{lem:B:relations}
+%   Let  $\Hb_0, \Hb_1,\ldots$ be the ones in the definition of section 3.1.
+%   Then,  for each $i\ge 0$,
+%   \begin{enumerate}[(i)]
+%      \item $\Hb_{i+1}\subseteq \Hb_i$;
+%      \item there is a (smallest) $k\ge 0$ such that $\Hb_{k+1}=\Hb_k$;
+%      \item $\Hb_i$ is reflexive, symmetric and transitive.
+%   \end{enumerate}
+% \end{lemma}
+% \begin{proof}
+% See~\cite{renyansfirstpaper}.
+% %   (i)
+% %   Base: it is clear for $i=0$ by the above definition.
+
+% %   Step: suppose it holds for $i=n$, i.e., $\Hb_{n+1}\subseteq\Hb_n$. \\
+% %   $(s,s')\in\Hb_{n+2}$\\
+% %   $\Rto$ (a) $(s,s')\in  \Hb_0$,
+% %     (b) for every $(s,s_1)\in R$, there is $(s',s_1')\in R'$
+% %      such that $(s_1,s_1')\in \Hb_{n+1}$, and
+% %     (c)  for every $(s',s_1')\in R'$, there is $(s,s_1)\in R$
+% %     such that $(s_1,s_1')\in \Hb_{n+1}$\\
+% %   $\Rto$ (a) $(s,s')\in  \Hb_0$,
+% %   (b) for every $(s,s_1)\in R$, there is $(s',s_1')\in R'$
+% %      such that $(s_1,s_1')\in \Hb_{n}$ by inductive assumption, and
+% %   (c)  for every $(s',s_1')\in R'$, there is $(s,s_1)\in R$
+% %     such that $(s_1,s_1')\in \Hb_{n}$ by inductive assumption\\
+% %   $\Rto$ $(s,s')\in \Hb_{n+1}$.
+
+% %   (ii) and (iii) are evident from (i) and the definition of $\Hb_i$.
+% \end{proof}
+
+
+% \noindent\textbf{Lemma}~\ref{lem:equive}  The relation $\lrto_V$ is an equivalence relation.
+% \begin{proof}
+% See~\cite{renyansfirstpaper}.
+% % It is clear from Lemma~\ref{lem:B:relations} (ii) such that there is a $k \geq $ 0 where $\Hb_k = \Hb_{k+1}$ which is  $\lrto_V$, and it is reflexive, symmetric and transitive by (iii).
+% \end{proof}
+
+
+% \noindent\textbf{Proposition}~\ref{div}
+% Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$ 
+% and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2,3)$ be \MPK-structures (Ind-structures)
+%  such that
+% ${\cal K}_1\lrto_{V_1}{\cal K}_2$ and ${\cal K}_2\lrto_{V_2}{\cal K}_3$.
+%  Then:
+%  \begin{enumerate}[(i)]
+%   \item ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$;
+%   \item If $V_1 \subseteq V_2$ then ${\cal K}_1 \lrto_{V_2} {\cal K}_2$.
+%  \end{enumerate}
+% \begin{proof}
+% See~\cite{renyansfirstpaper}.
+% % In order to distinguish the relations $\Hb_0, \Hb_1, \dots$ for different set $V \subseteq \Ha$, by $\Hb_i^V$ we mean the relation $\Hb_1, \Hb_2, \dots$ for $V \subseteq \Ha$.
+% % Denote as $\Hb_0, \Hb_1, \dots$ when the underlying set $V$ is clear from the context. Moreover, for the ease of notation, we will refer to $\lrto_V$ by $\Hb$ (i.e., without subindex).
+
+% % The following property show our result directly.
+% % Let $V\subseteq\cal A$
+% % %${\cal M}_i=(S_i,R_i,L_i,s_0^i)~(i=1,2)$ be Kripke structures
+% % and ${\cal K}_i=({\cal M}_i,s_i)~(i=1,2)$ be \MPK-structures.
+% % Then $({\cal K}_1,{\cal K}_2)\in\cal B$ if and only if
+% %   \begin{enumerate}[(a)]
+% %     \item $L_1(s_1)- V = L_2(s_2)- V$,
+% %     \item for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+% %     such that $({\cal K}_1',{\cal K}_2')\in \Hb$, and
+% %     \item for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+% %     such that $({\cal K}_1',{\cal K}_2')\in \Hb$,
+% %   \end{enumerate}
+% %  where ${\cal K}_i'=({\cal M}_i,s_i')$ with $i\in\{1,2\}$.
+
+% %  We prove it from the following two aspects:
+
+% %  $(\Rto)$
+% % (a) It is apparent that $L_1(s_1)- V = L_2(s_2)- V$;
+% % (b) %We will show that for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+% % $({\cal K}_1, {\cal K}_2) \in \Hb$ iff $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$, then for each $(s_1, s_1') \in R_1$, there is a $(s_2, s_2')\in R_2$  such that  $({\cal K}_1', {\cal K}_2') \in \Hb_{i-1}$ for all $i > 0$ and then $L_1(s_1')- V = L_2(s_2')- V$. Therefore, $({\cal K}_1', {\cal K}_2') \in \Hb$.
+% % (c) %We will show that for each $(s_2, s_2') \in R_1$, there is a $(s_1, s_1')\in R_2$ such that $({\cal K}_1', {\cal K}_2') \in \Hb$.
+% %  This is similar with (b).
+
+% % $(\Lto)$ Apparently, $L_1(s_1)- V = L_2(s_2)- V$ implies that $(s_1, s_2) \in \Hb_0$;
+% % (b) implies that for every $(s_1,s_1')\in R_1$, there is $(s_2,s_2')\in R_2$
+% %     such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$;
+% % (c) implies that for every $(s_2,s_2')\in R_2$, there is $(s_1,s_1')\in R_1$
+% %     such that $({\cal K}_1',{\cal K}_2')\in \Hb_i$ for all $i \geq 0$\\
+% % $\Rto$ $({\cal K}_1, {\cal K}_2) \in \Hb_i$ for all $i \geq 0$\\
+% % $\Rto$ $({\cal K}_1,{\cal K}_2)\in\cal B$.
+
+% % (i) Let ${\cal M}_i=(S_i,R_i,L_i,s_i)~(i=1,2,3)$, $s_1 \lrto_{V_1} s_2$ via a binary relation $\Hb$, and $s_2 \lrto_{V_2} s_3$ via a binary relation $\Hb''$. Let $\Hb' = \{(w_1, w_3)| (w_1, w_2)\in \Hb$ and $(w_2, w_3)\in \Hb_2\}$. It's apparent that $(s_1, s_3) \in \Hb'$. We prove $\Hb'$ is a $V_1 \cup V_2$-bisimulation containing $(s_1, s_3)$ from the (a), (b) and (c) of the previous steps of $X$-bisimulation (where $X$ is a set of atoms). For all $(w_1, w_3) \in \Hb'$:
+% % \begin{enumerate}[(a)]
+% %   \item there is $w_2 \in S_2$ such that $(w_1,w_2)\in \Hb$ and $(w_2, w_3)\in \Hb''$, and $\forall q \notin V_1$, $q \in L_1(w_1)$ iff $q \in L_2(w_2)$ by $w_1 \lrto_{V_1} w_2$ and $\forall q' \notin V_2$, $q'\in L_2(w_2)$ iff $q'\in L_3(w_3)$ by $w_2 \lrto_{V_2} w_3$. Then we have $\forall r\notin V_1 \cup V_2$, $r \in L_1(w_1)$ iff $r \in L_3(w_3)$.
+% %   \item if $(w_1, u_1) \in \Hr_1$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_1,u_2)\in \Hb$ (due to $(w_1,w_2)\in \Hb$ and $(w_2, w_3) \in \Hb''$ by the definition of $\Hb'$); and then $\exists u_3 \in S_3$ such that $(w_3, u_3) \in \Hr_3$ and $(u_2, u_3) \in \Hb''$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.
+% %   \item if $(w_3, u_3) \in \Hr_3$, then $\exists u_2\in S_2$ such that $(w_2, u_2) \in \Hr_2$ and $(u_2, u_3) \in \Hb_2$; and then $\exists u_1 \in S_1$ such that $(w_1, u_1) \in \Hr_1$ and $(u_1, u_2) \in \Hb$, hence $(u_1, u_3) \in \Hb'$ by the definition of $\Hb'$.
+% % \end{enumerate}
+
+% % (ii)  Let ${\cal K}_{i, j}=(\Hm_i, s_{i,j})$ and $(s_{i, k}, s_{i, k+1}) \in R_i$ mean that $s_{i, k+1}$ is the $(k+2)$-th node in the path
+% %  $(s_i, s_{i, 1}, s_{i,2}, \dots , s_{i, k+1}, \dots)$ ($i=1,2$).
+% % We will show that $({\cal K}_1, {\cal K}_2) \in \Hb_n^{V_2}$ for all $n \ge 0$ inductively.
+
+% % Base: $L_1(s_1) - V_1 = L_2(s_2) - V_1$\\
+% % $\Rto$ $\forall q \in {\cal A} - V_1$ there is $q \in L_1(s_1)$ iff $q \in L_2(s_2)$\\
+% % $\Rto$ $\forall q \in {\cal A} - V_2$ there is $q \in L_1(s_1)$ iff $q \in L_2(s_2)$ due to $V_1 \subseteq V_2$\\
+% % $\Rto$ $L_1(s_1) - V_2 = L_2(s_2) - V_2$, i.e.,\ $({\cal K}_1, {\cal K}_2) \in \Hb_0^{V_2}$.
+
+% % Step: Supposing that $({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_2}$ for all $0 \leq i \leq k$ ($k > 0)$, we will show $({\cal K}_1, {\cal K}_2) \in \Hb_{k+1}^{V_2}$.
+% % \begin{enumerate} [(a)]
+% %   \item It is apparent that $L_1(s_1) - V_2 = L_2(s_2) - V_2$ by base.
+% %   \item $\forall (s_1, s_{1,1}) \in R_1$, we will show that there is a $(s_2, s_{2, 1}) \in R_2$ s.t.\ $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_k^{V_2}$. $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k-1}^{V_2}$ by inductive assumption, we need only to prove the following points:\\
+% %       (a) $\forall (s_{1, k}, s_{1, k+1}) \in R_1$ there is a $(s_{2, k}, s_{2, k+1})\in R_2$ s.t.\ $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$ due to $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k}^{V_1}$. It is easy to see that $L_1(s_{1, k+1}) - V_1 = L_1(s_{2, k+1}) - V_1$, then there is $L_1(s_{1, k+1})- V_2 = L_1(s_{2, k+1}) - V_2$. Therefore, $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$.\\
+% %       (b) $\forall (s_{2, k}, s_{2, k+1}) \in R_1$ there is a $(s_{1, k}, s_{1, k+1}) \in R_1$ s.t.\ $({\cal K}_{1,k+1}, {\cal K}_{2,k+1})\in \Hb_0^{V_2}$ due to $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_{k}^{V_1}$. This can be proved as (a).
+% %   \item $\forall (s_2, s_{2,1}) \in R_1$, we will show that there is a $(s_1, s_{1, 1}) \in R_2$ s.t.\ $({\cal K}_{1,1}, {\cal K}_{2,1})\in \Hb_k^{V_2}$. This can be proved as (ii).
+% % \end{enumerate}
+% \end{proof}
+
+
+% \noindent\textbf{Theorem}\ref{thm:V-bisimulation:EQ}
+% Let $V\subseteq\cal A$, ${\cal K}_i~(i=1,2)$ be two \MPK-structures such that
+%   ${\cal K}_1\lrto_V{\cal K}_2$ and $\phi$ a formula with $\IR(\phi,V)$. Then
+%   ${\cal K}_1\models\phi$ if and only if ${\cal K}_2\models\phi$.
+% \begin{proof}
+% See~\cite{renyansfirstpaper}.
+% % This theorem can be proved by inducting on the formula $\phi$ and supposing $\Var(\phi) \cap V = \Empty$.
+% % Let ${\cal K}_1 = (\Hm, s)$ and ${\cal K}_2 = (\Hm', s')$.
+
+% % %Here we only prove the only-if direction. The other direction can be similarly proved.
+
+% % \textbf{Case} $\phi = p$ where $p \in \Ha - V$:\\
+% % $(\Hm, s) \models \phi$ iff $p\in L(s)$  \hfill  (by the definition of satisfiability) \\
+% % $\LRto$ $p \in L'(s')$ \hfill ($s \lrto_V s'$)\\
+% % $\LRto$ $(\Hm', s') \models \phi$
+
+% % \textbf{Case} $\phi = \neg \psi$:\\
+% % $(\Hm, s) \models \phi$ iff $(\Hm, s) \nvDash \psi$ \\
+% % $\LRto$ $(\Hm', s') \nvDash \psi$  \hfill   (induction hypothesis)\\
+% % $\LRto$ $(\Hm', s') \models \phi$
+
+% % \textbf{Case} $\phi = \psi_1 \vee \psi_2$:\\
+% % $(\Hm, s) \models \phi$\\
+% % $\LRto$ $(\Hm, s) \models \psi_1$ or $(\Hm, s) \models \psi_2$\\
+% % $\LRto$ $(\Hm', s') \models \psi_1$ or $(\Hm', s') \models \psi_2$   \hfill  (induction hypothesis)\\
+% % $\LRto$ $(\Hm', s') \models \phi$
+
+% % \textbf{Case} $\phi = \EXIST \NEXT \psi$:\\
+% % %By Lemma~\ref{V_path}, we assume there are two paths $\pi = s, s_1, ...$ and $\pi' = s', s_1', ...$ such that $\pi \lrto_V \pi'$.\\
+% % $\Hm, s \models \phi$ \\
+% % $\LRto$ There is a path $\pi = (s, s_1, ...)$ such that $\Hm, s_1 \models \psi$\\
+% % $\LRto$ There is a path $\pi' = (s', s_1', ...)$ such that $\pi \lrto_V \pi'$ \hfill   ($s \lrto_V s'$, Proposition~\ref{div})\\
+% % $\LRto$ $s_1 \lrto_V s_1'$  \hfill ($\pi \lrto_V \pi'$)\\
+% % $\LRto$ $(\Hm', s_1') \models \psi$  \hfill  (induction hypothesis)\\
+% % $\LRto$ $(\Hm', s') \models \phi$
+
+% % \textbf{Case} $\phi = \EXIST \GLOBAL \psi$:\\
+% % $\Hm, s \models \phi$ \\
+% % $\LRto$ There is a path $\pi =(s=s_0, s_1, ...)$ such that for each $i \geq 0$ there is $(\Hm, s_i) \models \psi$\\
+% % $\LRto$ There is a path $\pi' = (s'=s_0', s_1', ...)$ such that $\pi \lrto_V \pi'$   \hfill ($s \lrto_V s'$, Proposition~\ref{div})\\
+% % $\LRto$ $s_i \lrto_V s_i'$ for each $i \geq 0$ \hfill ($\pi \lrto_V \pi'$)\\
+% % $\LRto$ $(\Hm', s_i') \models \psi$ for each $i \geq 0$  \hfill  (induction hypothesis)\\
+% % $\LRto$ $(\Hm', s') \models \phi$
+
+% % \textbf{Case} $\phi = \EXIST [\psi_1 \UNTIL \psi_2]$:\\
+% % %\textbf{Case} $\varphi = \MPE \FUTURE \psi$:
+% % $\Hm, s \models \phi$ \\
+% % $\LRto$ There is a path $\pi= (s=s_0, s_1, ...)$ such that there is $i \geq 0$ such that $(\Hm, s_i) \models \psi_2$, and for all $0 \leq j < i$, $(\Hm, s_j) \models \psi_1$\\
+% % $\LRto$ There is a path $\pi' = (s=s_0', s_1', ...)$ such that $\pi \lrto_V \pi'$  \hfill  ($s \lrto_V s'$, Proposition~\ref{div})\\
+% % $\LRto$ $(\Hm', s_i') \models \psi_2$, and for all $0 \leq j < i$ $(\Hm', s_j') \models \psi_1$   \hfill   (induction hypothesis)\\
+% % $\LRto$ $(\Hm', s') \models \phi$
+% \end{proof}
+
+\noindent\textbf{Proposition}~\ref{pro:VI:div}
+Let $i\in \{1,2\}$, $V_1,V_2\subseteq\cal A$, $I_1, I_2 \subseteq \Ind$
+and ${\cal K}_i=({\cal M}_i,s_0^i)~(i=1,2,3)$ be initial Ind-structures
+ such that
+${\cal K}_1\lrto_{\tuple{V_1, I_1}}{\cal K}_2$ and ${\cal K}_2\lrto_{\tuple{V_2,I_2}}{\cal K}_3$.
+ Then:
+ \begin{enumerate}[(i)]
+  % \item $s_1'\lrto_{V_i}s_2'~(i=1,2)$ implies $s_1'\lrto_{V_1\cup V_2}s_2'$;
+%   \item $\pi_1'\lrto_{V_i}\pi_2'~(i=1,2)$ implies $\pi_1'\lrto_{V_1\cup V_2}\pi_2'$;
+%   \item for each path $\pi_{s_1}$ of $\Hm_1$ there is a path $\pi_{s_2}$  of $\Hm_2$ such that $\pi_{s_1} \lrto_{V_1} \pi_{s_2}$, and vice versa;
+   \item ${\cal K}_1\lrto_{\tuple{V_1\cup V_2, I_1 \cup I_2}}{\cal K}_3$;
+   \item If $V_1 \subseteq V_2$ and $I_1 \subseteq I_2$ then ${\cal K}_1 \lrto_{\tuple{V_2, I_2}} {\cal K}_2$.
+ \end{enumerate}
+\begin{proof}
+%This can be proved similarly with Proposition~\ref{div}.
+(i) By Proposition 1 in~\cite{renyansfirstpaper} we have ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$. For (i) of Definition~\ref{def:VInd:bisimulation} we can prove it as follows:
+for all $(s,s_1) \in [j]_1$ there is a $(s', s_1') \in [j]_2$ such that $s\lrto_{V_1} s'$ and $s_1 \lrto_{V_1} s_1'$ and there is a $(s'', s_1'') \in [j]_3$ such that $s'\lrto_{V_2} s''$ and $s_1' \lrto_{V_2} s_1''$,  then we have for all $(s,s_1) \in [j]_1$ there is a $(s'', s_1'') \in [j]_3$ such that $s  \lrto_{V_1\cup V_2} s''$ and $s_1 \lrto_{V_1\cup V_2} s_1''$. The (ii) of Definition~\ref{def:VInd:bisimulation} can be proved similarly.
+
+(ii) This can be proved from (ii) of Proposition 1 in~\cite{renyansfirstpaper}.
+\end{proof}
+
+
+\noindent\textbf{Proposition}~\ref{pro:TranE}
+ Let $\varphi$ be a \CTL\ formula, then $\varphi \equiv_{\tuple{V', I}} T_{\varphi}$.
+\begin{proof} (sketch)
+This can be proved from $T_i$ to $T_{i+1}$ $(0\leq i < n)$ by using one transformation rule on $T_i$.
+We will prove this proposition from the following several aspects:
+
+(1) $\varphi \equiv_{\tuple{\{p\}, {\O}}} T_0$.
+
+$(\Rto)$ For all $(\Hm_1,s_1) \in \Mod(\varphi)$, \ie $(\Hm_1,s_1) \models \varphi$. We can construct an \Ind-Kripke structure $\Hm_2$ is identical to $\Hm_1$ except $L_2(s_2) = L_1(s_1) \cup \{p\}$. It is apparent that $(\Hm_2,s_2) \models T_0$ and $(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$.
+
+$(\Lto)$ For all $(\Hm_1,s_1) \in \Mod(T_0)$, it is apparent that $(\Hm_1,s_1) \models \varphi$ by the sematic of $\start$.
+
+By $\psi \rto_t R_i$ we mean using transformation rules $t$ on formula $\psi$ (the formulae $\psi$ as the
+premises of rule $t$) and obtaining the set  $R_i$ of its results. Let $X$ be a set of formulas,
+we will show $T_i \equiv_{\tuple{V',I}} T_{i+1}$ by using the transformation rule $t$. Where $T_i= X \cup \{\psi\}$, $T_{i+1}=X \cup R_i$, $V'$ is the set of atoms introduced by $t$ and $I$ is the set of indexes introduced by $t$. (We will prove this result in $t\in \{$Trans(1), Trans(4), Trans(6)$\}$, other cases can be proved similarly.)
+
+(2) For $t$=Trans(1):\\
+$(\Rto)$ For all $(\Hm_1,s_1) \in \Mod(T_i)$ \ie $(\Hm_1, s_1) \models X \wedge \ALL\GLOBAL(q \supset \EXIST \NEXT \varphi)$\\
+$\Rto$ $(\Hm_1,s_1)\models X$ and for every $\pi$ starting from $s_1$ and every state $s_1^j \in \pi$, $(\Hm,s_1^j) \models \neg q$ or there exists a path $\pi'$ starting from $s_1^j$ such that  $(s_1^j,s_1^{j+1})\in R_1$ and $(\Hm,s_1^{j+1})\models \varphi$.\\
+We can construct an \Ind-Kripke structure $\Hm_2$ is identical to $\Hm_1$ except  $[ind]_2= \bigcup_{s\in S} R_s \cup R_y$, where $ind$ is the index introduced by using Trans(1) on clause $\ALL\GLOBAL(q \supset \EXIST \NEXT \varphi)$, $R_{s_1^{j}}=\{(s_1^{j},s_1^{j+1}), (s_1^{j+1}, s_1^{j+2}),\dots\}$ and $R_y=\{(s_x,s_y)| \text{ for all } s_x \in S$ if for all $(s_1',s_2')\in \bigcup_{s\in S} R_s, s_1'\neq s_x$ then find exactly one state $s_y\in S$ such that $(s_x,s_y)\in R\}$, which means for every $s\in S$ there exists exactly a state $s'\in S$ such that $(s,s')\in [ind]$ and $(s,s')\in R$. It is apparent that $(\Hm_1, s_1) \lrto_{\tuple{{\O}, \{ind\}}} (\Hm_2, s_2)$ (let $s_2=s_1$).\\
+$\Rto$ for every path starting from $s_1$ and every state $s_1^j$ in this path, $(\Hm_2, s_1^j) \models \neg q$ or $(\Hm_2, s_1^j)\models \EXIST \NEXT \varphi_{\tuple{ind}}$ \hfill (by the semantic of $\EXIST \NEXT$)\\
+$\Rto$ $(\Hm_2, s_1) \models \ALL \GLOBAL(q \supset \EXIST_{\tuple{ind}} \NEXT \varphi )$\\
+$\Rto$ $(\Hm_2, s_1) \models X \wedge \ALL \GLOBAL(q \supset \EXIST_{\tuple{ind}} \NEXT \varphi )$
+
+$(\Lto)$ For all $(\Hm_1,s_1) \in \Mod(T_{i+1})$ \ie $(\Hm_1,s_1) \models X \wedge \ALL \GLOBAL(q \supset \EXIST_{\tuple{ind}} \NEXT \varphi )$\\
+$\Rto$ $(\Hm_1,s_1) \models X$ and $(\Hm_1,s_1) \models \ALL \GLOBAL(q \supset \EXIST_{\tuple{ind}} \NEXT \varphi)$\\
+$\Rto$ for every path starting from $s_1$ and every state $s_1^j$ in this path, $(\Hm_1, s_1^j) \models \neg q$ or there exits a state $s'$ such that $(s_1^j, s')\in [ind]_1$ and $(\Hm_1, s') \models \varphi$ \hfill (by the semantic of $\EXIST_{\tuple{ind}} \NEXT$)\\
+$\Rto$ for every path starting from $s_1$ and every state $s_1^j$ in this path, $(\Hm_1, s_1^j) \models \neg q$ or $(\Hm_1, s_1^j) \models \EXIST \NEXT \varphi$ \hfill (by the semantic of $\EXIST \NEXT$)\\
+$\Rto$ $(\Hm_1,s_1) \models \ALL\GLOBAL(q \supset \EXIST \NEXT \varphi)$\\
+$\Rto$ $(\Hm_1, s_1) \models X \wedge \ALL\GLOBAL(q \supset \EXIST \NEXT \varphi)$\\
+It is apparent that $(\Hm_1, s_1) \lrto_{\tuple{{\O}, \{ind\}}} (\Hm_1, s_1)$.
+
+(3) For $t$=Trans(4):\\
+$(\Rto)$ For all $(\Hm_1,s_1) \in \Mod(T_i)$, \ie $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q \supset \varphi_1 \vee \varphi_2)$ \\
+$\Rto$ $(\Hm_1,s_1) \models X$ and $\forall s_1'\in S, (\Hm_1,s_1') \models q \supset \varphi_1 \vee \varphi_2$\\
+$\Rto$ $(\Hm_1,s_1') \models \neg q$ or $(\Hm_1,s_1') \models \varphi_1 \vee \varphi_2$\\
+The we can construct an \Ind-Kripke structure $\Hm_2$ as follows: $\Hm_2$ is the same with $\Hm_1$ except for each state $s_1'$ if $(\Hm_1,s_1') \models \neg q$ then $L_2(s_1')= L_1(s_1')$, else if $(\Hm_1,s_1') \models \varphi_1$ then $L_2(s_1')= L_1(s_1')$ else $L_2(s_1') = L_1(s_1') \cup \{p\}$. It is apparent that $(\Hm_2,s_1') \models (q\supset \varphi_1 \vee p) \wedge (p \supset \varphi_2)$ and $(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$, then $(\Hm_2,s_1) \models T_{i+1}$.
+
+$(\Lto)$ For all $(\Hm_1, s_1) \in \Mod(T_{i+1})$, \ie $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q\supset \varphi_1 \vee p) \wedge \ALL\GLOBAL(p \supset \varphi_2)$. It is apparent that $(\Hm_1, s_1) \models T_i$.
+
+
+(4) For $t$=Trans(6):\\
+We prove for $\EXIST_{\tuple{ind}} \NEXT$, while for the $\ALL \NEXT$ can be proved similarly.
+
+$(\Rto)$ For all $(\Hm_1,s_1) \in \Mod(T_i)$, \ie $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \supset \EXIST_{\tuple{ind}}\NEXT \varphi)$\\
+$\Rto$ $(\Hm_1,s_1) \models X$ and for all $s_1'\in S, (\Hm_1,s_1') \models q \supset \EXIST_{\tuple{ind}} \NEXT \varphi$\\
+$\Rto$ $(\Hm_1,s_1') \models \neg q$ or there exists a state $s'$ such that $(s_1', s') \in [ind]$ and $(\Hm_1,s') \models \varphi$ \\
+We can construct an \Ind-Kripke structure $\Hm_2$ as follows: $\Hm_2$ is the same with $\Hm_1$ except for each state $s_1'$ if $(\Hm_1,s_1') \models \neg q$ then $L_2(s_1')= L_1(s_1')$, else if $(\Hm_1,s_1') \models q$ then $L_2(s') = L_1(s') \cup \{p\}$. It is apparent that $(\Hm_2,s_1) \models \ALL\GLOBAL(q\supset \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \supset \varphi)$, $(\Hm_2,s_2) \models T_{i+1}$ and $(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$ ($s_2=s_1$).
+
+ $(\Lto)$ For all $(\Hm_1, s_1) \in \Mod(T_{i+1})$, \ie $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q\supset \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \supset \varphi)$. It is apparent that $(\Hm_1, s_1) \models T_i$.
+
+\end{proof}
+
+
+\noindent\textbf{Proposition}~\ref{pro:ResE}
+ Let $\varphi$ be a \CTL\ formula,
+ %and $W$ be the set of new atoms introduced by resolution rules \textbf{(ERES1)} and \textbf{(ERES2)} (if any),
+ then $T_{\varphi} \equiv_{\tuple{V \cup V', {\O}}} Res$.
+
+\begin{proof}(sketch)
+This can be proved from $T_i$ to $T_{i+1}$ $(0\leq i < n)$ by using one resolution rule on $T_i$.
+
+
+By $\psi \rto_r R_i$ we mean using resolution rules $r$ on set $\psi$ (the formulae in $\psi$ as the premises of rule $r$) and obtaining the set $R_i$ of resolution results.
+we will show $T_i \equiv_{\tuple{V,I}} T_{i+1}$ by using the resolution rule $r$. Where $T_i= X \cup \psi$, $T_{i+1}=X \cup R_i$, $X$ be a set of $\CTLsnf$ clauses, $p$ be the proposition corresponding with literal $l$ used to do resolution in $r$.
+
+(1) If $\psi \rto_r R_i$ by an application of $r\in \{\textbf{(SRES1)}, \dots, \textbf{(SRES8)}, (\textbf{RW1}), (\textbf{RW2})\}$, then $T_i \equiv_{\tuple{\{p\}, {\O}}} T_{i+1}$.
+
+
+On one hand, it is apparent that $\psi \models R_i$ and then $T_i \models T_{i+1}$. On the other hand, $T_i\subseteq T_{i+1}$ and then $T_{i+1} \models T_i$.
+
+(2) If $\psi \rto_r R_i$ by an application of $r=$\textbf{(ERES1)},
+then $T_i \equiv_{\tuple{\{l, w_{\neg l}^{\ALL}\}, {\O}}} T_{i+1}$.
+
+It has been proved that $\psi \models R_i$ in~\cite{bolotov2000clausal}, then there is $T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL}$ and  then for all $(\Hm_1,s_1) \in \Mod(T_i= X \cup \psi)$ there is a $(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$ s.t. $(\Hm_1, s_1) \lrto_{\tuple{\{p, w_{\neg l}^{\ALL}\}, {\O}}} (\Hm_2, s_2)$ and vice versa by Proposition~\ref{pro:TranE}.
+
+For rule \textbf{(ERES2)} we have the same result.
+
+\end{proof}
+
+
+\noindent\textbf{Proposition}~\ref{pro:remove}
+Let $V''=V \cup V'$, then we have
+ \[
+   Res \equiv_{V''}  \emph{Removing\_atoms}(Res, V).
+ \]
+
+\begin{proof}
+For convenience, we let $V=\{p\}$, i.e. $V$ contain only one element $p$, $C_i$ is a classical clause and $l$ is $p$ or $\neg p$.
+It is evident that $Res \models \emph{Removing\_atoms}(Res, V)$, hence we only need to prove that for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ with $\Hm=(S, R, L, s)$ there is an initial structure ${\cal K}'=(\Hm', s')$ such that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models Res$. 
+
+As we can see that the $p$ can only appear in the right of a clause, we will prove this proposition from the following several points.
+
+(1) We consider there are global clauses in $Res$ (the other cases are sub-cases of this one), then for each $C=\top\supset C_1 \vee l \in Res$:
+
+(a) If there does not exist a clause $C'\in Res$ such that $C$ and $C'$ are resolvable on $p$, this means there is no other clauses in $Res$ except $Pt$-sometime clauses $C'$ containing $\neg l$ with $Pt\in \{\ALL, \EXIST\}$. 
+
+If $p\not \in \Var(C')$, for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we can construct $(\Hm',s')$ as follows: Let $\Hm'= (S, R, L',s)$ (i.e. $s'=s$) in which $L'$ is the same as $L$ except for each $s_1\in S$, if $(\Hm, s_1) \not \models C_1 \vee l$ then let $L'(s_1) = L(s_1) \cup \{p\}$ if $l=p$ else $L'(s_1) = L(s_1) - \{p\}$.
+
+If $C'= Q\supset Pt \FUTURE \neg l$, without loss of generality, we assume $l=p$  for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we construct $(\Hm',s')$ as follows: let $\Hm'=(S', R', L', s')$ with $S'=S$, $R'=R$, $s'=s$ and $L'=L$ except that for each $s\in S'$ we have $L'(s) = L(s) - \{Q\}$ if $Q$ is an atom (if $Q$ is a term then we can delete the atoms which appearing in $Q$ positively and add the atoms which appearing in $Q$ negatively) and $L'(s) = L(s) \cup \{p\}$ if $(\Hm, s) \not \models C_1$ else $L'(s) = L(s)$. 
+It is easy to check that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models Res$. 
+
+(b) If there are some clauses $C'\in Res$ such that $C$ and $C'$ are resolvable on $p$:
+\begin{enumerate}[(i)]
+    \item If $C'= Q\supset Pt \NEXT (C_2 \vee \neg l)$ (we let $Pt=\GLOBAL$, we can prove similarly for $Pt = \EXIST$) then we have $Q\supset \GLOBAL \NEXT(C_1 \vee C_2) \in Res$, then for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we construct $(\Hm',s')$ as follows: Let $\Hm'= (S, R, L',s)$ (i.e. $s'=s$) in which $L'$ is the same as $L$ except for each $s_1\in S$ if $(\Hm, s_1) \not \models Q$ then for each $(s_1, s_2) \in R$ if $(\Hm, s_2) \not \models C_1$ then let $L'(s_2) = L(s_2) \cup \{p\}$ if $l=p$ else $L'(s_2) = L(s_2) - \{p\}$, else if $(\Hm, s_2) \models  C_1 \wedge \neg C_2$ then let $L'(s_2) = L(s_2) - \{p\}$ if $l=p$ else $L'(s_2) = L(s_2) \cup \{p\}$; else if $(\Hm, s_2) \models \neg C_1 \wedge C_2$ then let $L'(s_2) = L(s_2) \cup \{p\}$ if $l=p$ else $L'(s_2) = L(s_2) - \{p\}$. It is easy to check that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models C' \wedge C$.
+    \item If $C' =  Q\supset Pt \FUTURE \neg l$. Without loss of generality, we assume $l=p$ for convenience. In order to make $C$ and $C'$ are resolvable on $p$, there must be a set of $\CTLsnf$ clauses $\{P_1^1 \supset * C_1^1$, \dots, $P_{m_1}^1 \supset * C_{m_1}^1$, $P_1^n \supset * C_1^n$, \dots, $P_{m_n}^1 \supset * C_{m_n}^1 \}$ such that $*$ is either empty or
+an operator in $\{\GLOBAL \NEXT, \EXIST_{\tuple{ind}} \NEXT\}$, which include $\neg C_1 \supset l$, such that $\bigvee_{i=1}^n \bigwedge_{j=1}^{m_i} P_j^i \supset \EXIST \NEXT \EXIST \GLOBAL l$. Therefore, we get a clause $C''=\top \supset \neg Q \vee \neg p \vee C_1$ by using ERES1 (similar for ERES2) and then $\top \supset \neg Q \vee C_1$ by using SRES8 on $C$ and $C''$. In this case, for any ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we construct $(\Hm',s')$ as follows: Let $\Hm'= (S, R, L',s)$ (i.e. $s'=s$) in which $L'$ is the same as $L$ except for each $s_1\in S$ if $(\Hm, s_1) \models Q$ then let $L'(s_1) = L(s_1) - \{p\}$, else $L'(s_1) = L(s_1) \cup \{p\}$. It is easy to check that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models C' \wedge C$.   
+    \item We can consider other clauses similarly, and obtained that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models Res$. 
+\end{enumerate}
+ 
+(2) We consider the $Pt$-step clauses, let $C\in Res$ is $Q \supset \GLOBAL \NEXT(C_1 \vee \neg l)$. Without loss of generality, we assume there are some clauses $C'\in Res$ such that $C$ and $C'$ are resolvable on $p$ and $l=p$.
+
+If $C'= Q_1\supset Pt \NEXT (C_2 \vee \neg l)$ (we let $Pt=\EXIST_{ind}$, we can prove similarly for $Pt = \GLOBAL$) then we have $Q \wedge Q_1 \supset \EXIST_{ind} \NEXT(C_1 \vee C_2) \in Res$, then for each ${\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$ we construct $(\Hm',s')$ as follows: Let $\Hm'= (S, R, L',s)$ (i.e. $s'=s$) in which $L'$ is the same as $L$ except for each $s_1\in S$
+\begin{enumerate}[(i)]
+    \item if $(\Hm, s_1) \not \models Q \wedge Q_1$ then ``if $(\Hm, s_1) \models \neg Q \wedge Q_1$ then (if $(\Hm, s_2') \not \models C_2$ for $(s_1, s_2') \in \pi_s^{\tuple{ind}}$ then let $L'(s_2') = L(s_2') - \{p\}$ else $L'(s_2') = L(s_2')$), else if $(\Hm, s_1) \models Q \wedge \neg Q_1$ then for each $(s_1, s_2) \in R$ (if $(\Hm, s_2) \not \models C_1$ then let $L'(s_2) = L(s_2) \cup \{p\}$ else $L'(s_2') = L(s_2')$), else let $L'(s_2') = L(s_2')$".
+    \item else if $(\Hm, s_1) \models Q \wedge Q_1$ then we have $(\Hm,s_2') \models C_1 \vee C_2$ for $(s_1, s_2) \in \pi_s^{\tuple{ind}}$. Therefore, if $(\Hm, s_2') \models C_1 \wedge \neg C_2$ then $L'(s_2') = L(s_2') - \{p\}$, else if  $(\Hm, s_2') \models \neg C_1 \wedge C_2$ then let $L'(s_2) = L(s_2) \cup \{p\}$ else $L'(s_2') = L(s_2')$. For other state $s_2$ with $(s_1, s_2) \in R$ and $s_2 \not = s_2'$, if $(\Hm, s_1) \models Q$ and $(\Hm, s_2) \models \neg C_1$ then let $L'(s_2) = L(s_2) \cup \{p\}$ else $L'(s_2') = L(s_2')$.
+\end{enumerate}
+It is easy to check that ${\cal K} \lrto_{V''} {\cal K}'$ and ${\cal K}' \models C' \wedge C$, in which ${\cal K}' = (\Hm',s')$.  
+\end{proof}
+
+
+\noindent\textbf{Proposition}~\ref{pro:Ind:EF}
+Let $\EXIST_{\tuple{ind}} \FUTURE \varphi$ be a $\CTLsnf$ formula, then we have 
+\[
+\EXIST_{\tuple{ind}} \FUTURE \varphi \equiv \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi.
+\]
+\begin{proof}
+($\Rto$) Let $(\Hm, s_0) \in \Mod(\EXIST_{\tuple{ind}} \FUTURE \varphi)$, then there exists a path $\pi_{s_0}^{\tuple{ind}}$ such that $(\Hm, s_j) \models \varphi$ for some $s_j \in \pi_s^{\tuple{ind}}$ with $0 \leq j$. In this case, we can see either $j=0$ or $j > 0$, then we have $(\Hm, s_0) \models  \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi$.
+
+($\Lto$) Let $(\Hm, s_0) \in \Mod(\varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi)$, then we have $(\Hm,s_0) \models \varphi$ or there exists a path $\pi_{s_0}^{\tuple{ind}} = (s_0, s_1, \dots)$ such that $(\Hm, s_1) \models \EXIST_{\tuple{ind}}\FUTURE \varphi$. Therefore, we have $(\Hm, s_0) \models \EXIST_{\tuple{ind}} \FUTURE \varphi$ by the semantic of $\EXIST_{\tuple{ind}}\FUTURE$.
+\end{proof}
+
+
+\noindent\textbf{Proposition}\ref{pro:In2NI}
+Let $P$, $P_i$ and $\varphi_i$ be \CTL\ formulas, then
+\begin{enumerate}[(i)]
+  \item $\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$,
+  \item $\bigwedge_{i=1}^n (P_i\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i) \equiv_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{0,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\supset \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$,
+  \item $\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\supset \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$, where $(j_1, \dots, j_n)$ are sequences of all elements in $\{0, \dots, n\}$,
+  \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \wedge P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \equiv_{\tuple{\emptyset, \{ind\}}} P \supset ((C \wedge \EXIST \NEXT \varphi_2) \vee \EXIST \NEXT (\varphi_1 \wedge \varphi_2))$,
+  \item $P\supset (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1) \vee P \supset \EXIST_{\tuple{ind}} \NEXT \varphi_2 \equiv_{\tuple{\emptyset, \{ind\}}} P \supset (C \vee \EXIST \NEXT (\varphi_1 \vee \varphi_2))$.
+\end{enumerate}
+
+\begin{proof}
+(i)  For all $(\Hm, s_0) \in \Mod(\bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \NEXT \varphi_i))$ there exists $(s_0, s_1)\in [ind]$ such that $(\Hm, s_1) \models \varphi_1$, \dots, $(\Hm, s_1) \models \varphi_n$, then there is $(s_0, s_1)\in R$ s.t. $(\Hm, s_1) \models \bigwedge_{i=1}^n \varphi_i$, i.e. $(\Hm, s_0) \models P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$.
+
+For each $(\Hm, s_0) \in \Mod(P\supset \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i)$, we suppose there is $(s_0, s_1)\in R$ s.t. $(\Hm, s_1) \models \bigwedge_{i=1}^n \varphi_i$. It is easy to construct an initial \Ind-model $(\Hm', s_0)$ such that $(\Hm', s_0)$ is identical to $(\Hm, s_0)$ except the $(s_0, s_1) \in [ind]$, i.e. $(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$.
+
+(ii) (If part) For any model $(\Hm,s_0)$ of the left side of the equation if there is $(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$ with $j_i \in \{1, \dots, n\}$ and $1\leq m \leq n$, then there is a next state $s_1$ of $s_0$ with $(s_0, s_1) \in [ind]$ such that $(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$. By the definition of $[ind]$, we have $(s_0, s_1) \in R$ and then $(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \supset \EXIST \NEXT (\bigwedge_{i=1}^m P_{j_i} \varphi_{j_i})$. The other side can be similarly proved as (i).
+
+(iii) (Only if part) For any model $(\Hm,s_0)$ of the right side of the equation if there is $(\Hm,s_0) \models P$ then there exists a path $\pi_{s_0}$ such that $\varphi_i \in \pi_{s_0}$ ($1\leq i \leq n$). This means we can construct an initial \Ind-model $(\Hm', s_0)$ such that $(\Hm', s_0)$ is identical to $(\Hm, s_0)$ except for each $(s_j, s_{j+1})$ of $\pi_{s_0}$ there is $(s_j, s_{j+1}) \in [ind]$ $(0\leq j)$. It is easy to check $(\Hm', s_0) \models \bigwedge_{i=1}^n (P\supset \EXIST_{\tuple{ind}} \FUTURE \varphi_i)$ and  $(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$.  The other side can be shown similarly as in (ii).
+
+Other results can be proved similarly.
+\end{proof}
+
+
+\noindent\textbf{Proposition}~\ref{pro:complexity}
+Let $\varphi$ be a CTL formula and $V \subseteq \Ha$.
+The time and space complexity of Algorithm~\ref{alg:compute:forgetting:by:Resolution} are $O((m+1)2^{4(n+n')}$. Where $|\Var(\varphi)|=n$, $|V'|=n'$ ($V'$ is set of atoms introduced in the Transform process) and $m$ is the number of indices introduced during transformation.
+\begin{proof}
+It is mainly decided by the resolution process.
+The possible number of $\CTLsnf$ clauses under the give $V$, $V'$ and $Ind$ is $(m+1)2^{4(n+n')}+(m*(n+n')+n+n'+1)2^{2(n+n')+1})$.
+\end{proof}
+
+
+\noindent\textbf{Theorem}[Generalised Ackermann’s Lemma]~\ref{thm:Aclm}
+  Let $\Gamma$ be a set of $\CTLsnf$ clauses that contains the set $\Delta = \{\top \supset \neg x \vee C_1$, \dots, $\top \supset \neg x \vee C_n, x \supset B_1, \dots, x \supset B_m\}$ of clauses, where $x \in V'$ is a atom introduced in the Transform process, the $C_i$ $(1 \leq i \leq n)$ are Classical propositional clauses that do not contain $x$, and $B_j$ ($1 \leq j \leq m$) are formulas of the form $Qt {\cal T} C$ with $Qt \in \{\ALL, \EXIST_{\tuple{ind}}\}$, ${\cal T}\in \{\NEXT, \FUTURE\}$ that also do not contain $x$. If $\Gamma'= \Gamma - \Delta$ is positive w.r.t. $x$, then $\Gamma'[x/\varphi] \equiv_{\tuple{\{x\}, \emptyset}} \Gamma$ with $\varphi = \bigwedge_{i=1}^n C_i \wedge \bigwedge_{j=1}^m B_j$. Where $\Gamma'[x/\varphi]$ is obtained from $\Gamma'$ by replacing all $x$ with $\varphi$.
+
+\begin{proof}
+Without loss of generality, we suppose there are only A-step clauses in $\Gamma'$, other cases can be proved similarly. 
+
+$(\Rto)$ For any model $(\Hm, s_0)$ of $\Gamma$, it is obvious that $(\Hm, s_0) \models \Gamma'$.
+
+$(\Lto)$ For any models $(\Hm, s_0)$ of $\Gamma'$ with $\Hm = (S, R, L, s_0)$, we can construct an \Ind-initial structure $\Hm'=(S', R', L', s_0')$ with $S'=S$, $R'=R$, $s_0'= s_0$ and $L'$ is the same with $L$ except that for each $s'\in S'$ if $(\Hm', s') \models x \wedge \vaprhi$ then let $L'(s') = L(s) - \{x\}$, else let $L'(s') = L(s)$.
+
+It is easy to check that $(\Hm,s_0) \lrto_{\tuple{\{x\}, \emptyset}} (\Hm', s_0')$ and $(\Hm',s_0') \models \Gamma'$.
+\end{proof}
+ 
+
+\end{document}
