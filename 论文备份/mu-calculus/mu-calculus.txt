@@ -151,8 +151,19 @@
 \section{Introduction}
 Propositional $\mu$-calculus is an expressive logic, on binary trees it is as expressive as the monadic second order logic of two successors~\cite{emerson1991tree, niwinski1988fixed}.
 Subsequent research showed that the $\mu$-calculus is an important logic when specification and verification is concerned.
+One of the common phenomenons in both the verification and the system design is some information content of such specification might become irrelevant for the system due to various reasons e.g., it might be discarded or become obsolete by time, or just become infeasible due to practical difficulties. 
+However, In this case it is expensive in time and space to re-extract the specification that meets the requirements. The problem arises on how to remove it without altering the relevant system behaviour or violating the existing system specifications over a given signature.
 
-Belief updates and belief revision, as two well-studied issues in artificial intelligence, are concerned with the update and revision aspects of an agent's belief with respect to new beliefs. Intuitively, if $\varphi$ represents the agent's belief about the world and the agent performs an action that is supposed to make $\psi$ true in the resulting world, then the agent's belief about the resulting  world can be described by $\vaprhi \diamond \psi$, where $\diamond$ is the update operator of choice.
+\emph{Belief updates} and \emph{belief revision}, as two well-studied issues in artificial intelligence, are concerned with the update and revision aspects of an agent's belief with respect to new beliefs~\cite{katsunodifference}. Intuitively, if $\varphi$ represents the agent's belief about the world and the agent performs an action that is supposed to make $\psi$ true in the resulting world, then the agent's belief about the resulting  world can be described by $\varphi \diamond \psi$, where $\diamond$ is the update operator of choice. 
+We can see that the theory of belief updates does not tell us how to do updates with  respect to such gain in knowledge due to a sensing action. 
+In this sense, as an analogous notion of belief update, the \emph{knowledge update} was proposed by Chitta in~\cite{baral2005knowledge} to solve the belief updates caused by sensing actions, in which the effect of a sensing action is expressed by introducing modal operator (K)nows. 
+Nevertheless, there are no approaches to solve the knowledge update in logic languages which contain temporal operators. 
+
+
+To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a pricipled way. In this paper, we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting to compute the knowledge update of \emph{Temporal operator}.
+In particular, we will give the definition of forgetting in $\mu$-calculus by using the bisimulation~\cite{} and show whether this notion satisfies the general principles or postulates proposed by Zhang~\cite{Zhang2009Knowledge}. We then study the relationship between SNC (WSC) and forgetting, and we also demonstrate how forgetting can be used in knowledge update in $\mu$-calculus.  
+
+It has been proved that the modal $\mu$-calculus has \emph{Uniform interpolation}~\cite{d1996uniform}. Informally, this means that for every $\mu$ formula $\varphi$ and every finite set $V$ of atoms, there exists an $\mu$ formula $\exists V \varphi$ which .
 
 \section{Modal $\mu$-calculus}
 \subsection{Syntax}
