@@ -148,11 +148,24 @@
 
 \maketitle
 
+
+\section{Abstract}
+Propositional $\mu$-calculus is an expressive logic, and also an important specification language in verification.
+One of the common phenomenons in both the verification and the system design is some information content of such specification might become irrelevant for the system due to various reasons e.g., it might be discarded or become obsolete by time, or just become infeasible due to practical difficulties. 
+Then, the problem arises on how to distill the information without altering the relevant system behavior or violating the original specification over a given signature.
+Moreover, three crucial notions are vital:  the \emph{strongest necessary condition} (SNC), the \emph{weakest sufficient condition}  (WSC) and the knowledge update.
+To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a pricipled way. In this paper, we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting to compute the knowledge update of \emph{Temporal operator}.
+We study its theoretical properties and also show that our notion
+of forgetting satisfies existing essential postulates of knowledge forgetting.
+Furthermore, we show that the entailment of the forgetting is $\textsc{Exptime}$-complete.
+
 \section{Introduction}
 Propositional $\mu$-calculus is an expressive logic, on binary trees it is as expressive as the monadic second order logic of two successors~\cite{emerson1991tree, niwinski1988fixed}.
 Subsequent research showed that the $\mu$-calculus is an important logic when specification and verification is concerned.
 One of the common phenomenons in both the verification and the system design is some information content of such specification might become irrelevant for the system due to various reasons e.g., it might be discarded or become obsolete by time, or just become infeasible due to practical difficulties. 
 However, In this case it is expensive in time and space to re-extract the specification that meets the requirements. The problem arises on how to remove it without altering the relevant system behaviour or violating the existing system specifications over a given signature.
+Moreover, in such a scenario, two logical notions introduced by E. Dijkstra in~\cite{DBLP:journals/cacm/Dijkstra75} are highly informative: the strongest post-condition (SP) and the weakest precondition (WP) of a given specification, which are corresponding with the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC), proposed by Lin~\cite{lin2001strongest}, of the specification, respectively. These correspond to the \emph{most general consequence} and the \emph{most specific abduction} of such specification, respectively.
+
 
 \emph{Belief updates} and \emph{belief revision}, as two well-studied issues in artificial intelligence, are concerned with the update and revision aspects of an agent's belief with respect to new beliefs~\cite{katsunodifference}. Intuitively, if $\varphi$ represents the agent's belief about the world and the agent performs an action that is supposed to make $\psi$ true in the resulting world, then the agent's belief about the resulting  world can be described by $\varphi \diamond \psi$, where $\diamond$ is the update operator of choice. 
 We can see that the theory of belief updates does not tell us how to do updates with  respect to such gain in knowledge due to a sensing action. 
@@ -160,10 +173,22 @@ In this sense, as an analogous notion of belief update, the \emph{knowledge upda
 Nevertheless, there are no approaches to solve the knowledge update in logic languages which contain temporal operators. 
 
 
-To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a pricipled way. In this paper, we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting to compute the knowledge update of \emph{Temporal operator}.
+To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a pricipled way. Inspired by~\cite{lin2001strongest, renyansfirstpaper}, in this paper we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting to compute the knowledge update of \emph{Temporal operator}.
 In particular, we will give the definition of forgetting in $\mu$-calculus by using the bisimulation~\cite{} and show whether this notion satisfies the general principles or postulates proposed by Zhang~\cite{Zhang2009Knowledge}. We then study the relationship between SNC (WSC) and forgetting, and we also demonstrate how forgetting can be used in knowledge update in $\mu$-calculus.  
 
-It has been proved that the modal $\mu$-calculus has \emph{Uniform interpolation}~\cite{d1996uniform}. Informally, this means that for every $\mu$ formula $\varphi$ and every finite set $V$ of atoms, there exists an $\mu$ formula $\exists V \varphi$ which .
+\emph{Forgetting}, 
+which is a dual concept of {\em uniform interpolation}~\cite{visser1996uniform,konev2009forgetting} and was first formally defined in propositional and FOL by Lin and Reiter~\cite{lin1994forget,eiter2019brief}, can be traced back to the work of Boole on propositional
+variable elimination and the seminal work of Ackermann~\cite{ackermann1935untersuchungen}.
+However, existing forgetting definitions in PL and answer set programming are not directly applicable in modal logics.
+Hopefully, it has been proved that the modal $\mu$-calculus has \emph{Uniform interpolation}~\cite{d1996uniform}. Informally, this means that for every $\mu$ formula $\varphi$ and every finite set $V$ of atoms, there exists an $\mu$ formula $\exists V \varphi$ which does not contain atoms from $V$ but is  logically closest to $\vaprhi$ in some sense. This gives us a path to explore the forgetting in $\mu$-calculus.
+
+The rest of the paper is organised as follows.
+
+
+% \section{Related work}
+% (Forgetting, uniform interpolation)
+
+% It has been proved that the modal $\mu$-calculus has \emph{Uniform interpolation}~\cite{d1996uniform}. Informally, this means that for every $\mu$ formula $\varphi$ and every finite set $V$ of atoms, there exists an $\mu$ formula $\exists V \varphi$ which .
 
 \section{Modal $\mu$-calculus}
 \subsection{Syntax}
@@ -286,8 +311,8 @@ quantifier.
 \begin{definition}[Disjunctive $\mu$-formula]
 The set of disjunctive formulas, ${\cal F}_d$ is the smallest set defined by the following clauses:  
 \begin{itemize}
-    \item disjunctions and non-contradictory conjunction of literals are a disjunctive formula;
-    \item special conjunctions: if $\varphi_1, \dots, \varphi_n\in {\cal F}_d$ and $\delta$ is a noncontradictory
+    \item disjunctions and non-contradictory conjunction of literals are disjunctive formulae;
+    \item special conjunctions: if $\varphi_1, \dots, \varphi_n\in {\cal F}_d$ and $\delta$ is a non contradictory
 conjunction of literals, then $\delta \wedge Cover(\varphi_1, \dots, \varphi_n) \in {\cal F}_d$;
     \item fixpoint operators: if $\varphi\in  {\cal F}_d$, $\varphi$ does not contain $X \wedge \psi$ as a subformula for
 any formula $\psi$, and $X$ is positive in $\varphi$, then $\mu X. \varphi$, $\nu X. \varphi$ are in ${\cal F}_d$.
@@ -296,10 +321,12 @@ any formula $\psi$, and $X$ is positive in $\varphi$, then $\mu X. \varphi$, $\n
 
 
 
-\begin{theorem}[\cite{janin1995automata}]
+\begin{theorem}[\cite{janin1995automata}] \label{thm:mu2dis}
 Any $\mu$-calculus formula is equivalent to a disjunctive one.
 \end{theorem}
 
+Theorem \ref{thm:mu2dis} means that for each $\mu$-calculus formula $\varphi$ there is a disjunctive formula $\psi \in {\cal F}_d$ such that $\varphi \equiv \psi$.
+Deciding whether a disjunctive formula is satisfiable can be done in polynomial time, hence changing the $\mu$-calculus formula into its disjunctive form will increase the efficiency of deciding its satisfiability since the satisfiability of $\mu$-calculus is in  $\textsc{Exptime}$-complete.
 
 \begin{definition}
   Given a $\mu$-sentence $\varphi$ and a language $L'\subseteq L(\varphi)$, the uniform interpolant of $\varphi$ with respect to $L'$
