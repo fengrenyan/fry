@@ -154,7 +154,7 @@ Propositional $\mu$-calculus is an expressive logic, and also an important speci
 One of the common phenomenons in both the verification and the system design is some information content of such specification might become irrelevant for the system due to various reasons e.g., it might be discarded or become obsolete by time, or just become infeasible due to practical difficulties. 
 Then, the problem arises on how to distill the information without altering the relevant system behavior or violating the original specification over a given signature.
 Moreover, three crucial notions are vital:  the \emph{strongest necessary condition} (SNC), the \emph{weakest sufficient condition}  (WSC) and the knowledge update.
-To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a pricipled way. In this paper, we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting to compute the knowledge update of \emph{Temporal operator}.
+To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a pricipled way. In this paper, we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting.
 We study its theoretical properties and also show that our notion
 of forgetting satisfies existing essential postulates of knowledge forgetting.
 Furthermore, we show that the entailment of the forgetting is $\textsc{Exptime}$-complete.
@@ -164,7 +164,7 @@ Propositional $\mu$-calculus is an expressive logic, on binary trees it is as ex
 Subsequent research showed that the $\mu$-calculus is an important logic when specification and verification is concerned.
 One of the common phenomenons in both the verification and the system design is some information content of such specification might become irrelevant for the system due to various reasons e.g., it might be discarded or become obsolete by time, or just become infeasible due to practical difficulties. 
 However, In this case it is expensive in time and space to re-extract the specification that meets the requirements. The problem arises on how to remove it without altering the relevant system behaviour or violating the existing system specifications over a given signature.
-Moreover, in such a scenario, two logical notions introduced by E. Dijkstra in~\cite{DBLP:journals/cacm/Dijkstra75} are highly informative: the strongest post-condition (SP) and the weakest precondition (WP) of a given specification, which are corresponding with the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC), proposed by Lin~\cite{lin2001strongest}, of the specification, respectively. These correspond to the \emph{most general consequence} and the \emph{most specific abduction} of such specification, respectively.
+Moreover, in such a scenario, two logical notions introduced by E. Dijkstra in~\cite{DBLP:journals/cacm/Dijkstra75} are highly informative: the strongest post-condition (SP) and the weakest precondition (WP) of a given specification, which are corresponding with the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC), proposed by Lin~\cite{lin2001strongest}, of the specification, respectively, and have been central to a wide variety of tasks and studies, e.g. in generating counterexamples~\cite{dailler2018instrumenting} and refinement of system~\cite{woodcock1990refinement}. These correspond to the \emph{most general consequence} and the \emph{most specific abduction} of such specification, respectively.
 
 
 \emph{Belief updates} and \emph{belief revision}, as two well-studied issues in artificial intelligence, are concerned with the update and revision aspects of an agent's belief with respect to new beliefs~\cite{katsunodifference}. Intuitively, if $\varphi$ represents the agent's belief about the world and the agent performs an action that is supposed to make $\psi$ true in the resulting world, then the agent's belief about the resulting  world can be described by $\varphi \diamond \psi$, where $\diamond$ is the update operator of choice. 
@@ -177,10 +177,18 @@ To address these scenarios and to target the relevant notions SNC (WSC) and know
 In particular, we will give the definition of forgetting in $\mu$-calculus by using the bisimulation~\cite{} and show whether this notion satisfies the general principles or postulates proposed by Zhang~\cite{Zhang2009Knowledge}. We then study the relationship between SNC (WSC) and forgetting, and we also demonstrate how forgetting can be used in knowledge update in $\mu$-calculus.  
 
 \emph{Forgetting}, 
-which is a dual concept of {\em uniform interpolation}~\cite{visser1996uniform,konev2009forgetting} and was first formally defined in propositional and FOL by Lin and Reiter~\cite{lin1994forget,eiter2019brief}, can be traced back to the work of Boole on propositional
+which is a dual concept of {\em uniform interpolant}~\cite{visser1996uniform,konev2009forgetting} and was first formally defined in propositional and FOL by Lin and Reiter~\cite{lin1994forget,eiter2019brief}, can be traced back to the work of Boole on propositional
 variable elimination and the seminal work of Ackermann~\cite{ackermann1935untersuchungen}.
+In classical propositional logic (CPL) the result of forgetting atom $p$ from formula $\varphi$ is $\varphi[p/\top] \vee \varphi[p/\bot]$, that is the disjunction of formulas obtained from $\varphi$ by replacing $p$ with $\top$ and $\bot$ respectively.
+
+
 However, existing forgetting definitions in PL and answer set programming are not directly applicable in modal logics.
-Hopefully, it has been proved that the modal $\mu$-calculus has \emph{Uniform interpolation}~\cite{d1996uniform}. Informally, this means that for every $\mu$ formula $\varphi$ and every finite set $V$ of atoms, there exists an $\mu$ formula $\exists V \varphi$ which does not contain atoms from $V$ but is  logically closest to $\vaprhi$ in some sense. This gives us a path to explore the forgetting in $\mu$-calculus.
+And we can also not directly use the method of forgetting in $\CTL$~\cite{renyansfirstpaper} since it will not work when the  models of the formula are infinite. 
+Hopefully, it has been proved that the modal $\mu$-calculus has \emph{Uniform interpolation}~\cite{d1996uniform}. Informally, for every $\mu$ formula $\varphi$ and every finite set $V$ of atoms, there exists an $\mu$ formula $\exists V \varphi$ which does not contain atoms from $V$ but is  logically closest to $\varphi$ in some sense. This means that the result of forgetting some atoms from a $\mu$-calculus formula always exists. In this sense, showing the semantic of forgetting in $\mu$-calculus through general principles or postulates is important to make it clearer to understand.
+
+Informally, the four postulates proposed by Zhang~\cite{Zhang2009Knowledge} show that the result $\psi$ of forgetting some set $V$ of atoms from a formula $\varphi$ is not only weaker than the $\varphi$, i.e. $\varphi \models \psi$, irrelevant to $V$, i.e. exists some formula that do not contain atoms in $V$ and equivalent with $\psi$, and also has the same ``logic content" with $\varphi$, i.e. for each formula $\phi$ that irrelevant to $V$, $\phi$ can be implied by $\varphi$ iff $\phi$ can be implied by $\psi$.
+In this paper we explore the forgetting of $\mu$-calculus under infinite models (to distinguish that of $\CTL$~\cite{renyansfirstpaper}) from both the postulates and the algebraic properties of the forgetting operator.The complexity of the entailment of the forgetting operator is also explored from the point of automaton and it is shown in $\textsc{Exptime}$-complete.
+It is worth mentioning that we restrict the models are finite in the knowledge update part in order to express the models of a formula. And we show that our definition of $\diamond_{\mu}$ by forgetting satisfies Katsuno and Mendelzon¡¯s update postulates~\cite{katsuno91mendelzon}.
 
 The rest of the paper is organised as follows.
 
@@ -255,7 +263,6 @@ In the following, we denote $s\in \parallel \varphi \parallel_V$ by $(\Hm, s, V)
 valuation $V$, if $\varphi$ is a sentence. $(\Hm, V) \models \varphi$ is used to denote $(\Hm, r, V) \models \varphi$, in this case we say that $(\Hm,V)$ is a model of $\varphi$.
 By $\Mod(\varphi)$ we mean the set of models of $\varphi$. In particular, if $\varphi$ is a sentence, then $\Mod(\varphi) = \{\Hm \mid (\Hm, r) \models \varphi\}$.
 Similarly, let $\Sigma$ be a set of sentences, we define $\Mod(\Sigma)$ as the set of Kripke structure $\Hm$ such that $\Hm \models \varphi$ for each $\varphi\in \Sigma$.
-
 $\varphi \models \psi$ denotes logical consequence: if $(\Hm,V ) \models \varphi$ then $(\Hm,V) \models \psi$ for every model
 $\Hm$ and for every valuation $V$.
 
@@ -305,7 +312,7 @@ cover operators are definable in the $\lozenge$ syntax. Conversely,
 
 Hence, the $\mu$-calculus obtained from the covers-syntax is equivalent to the familiar $\mu$-calculus constructed using the $\lozenge$-syntax. In this paper we use a mixture of the two syntax because,
 as we shall see, cover operators behave nicely with respect to the existential bisimulation
-quantifier.
+quantifier. Specially, the $\mu$-calculus formula have a normal form, called disjunctive $\mu$-formula~\cite{janin1995automata} as follows.
 
 
 \begin{definition}[Disjunctive $\mu$-formula]
@@ -328,7 +335,9 @@ Any $\mu$-calculus formula is equivalent to a disjunctive one.
 Theorem \ref{thm:mu2dis} means that for each $\mu$-calculus formula $\varphi$ there is a disjunctive formula $\psi \in {\cal F}_d$ such that $\varphi \equiv \psi$.
 Deciding whether a disjunctive formula is satisfiable can be done in polynomial time, hence changing the $\mu$-calculus formula into its disjunctive form will increase the efficiency of deciding its satisfiability since the satisfiability of $\mu$-calculus is in  $\textsc{Exptime}$-complete.
 
-\begin{definition}
+Uniform interpolant has been widely in various of logic languages, some logics enjoy uniform interpolation, but some are not.
+Formally, the uniform interpolant under $\mu$-calculus is defined as follows.
+\begin{definition} [Uniform interplant~\cite{d2006modal}]
   Given a $\mu$-sentence $\varphi$ and a language $L'\subseteq L(\varphi)$, the uniform interpolant of $\varphi$ with respect to $L'$
  is a $\mu$-sentence $\psi$ such that:
  \begin{itemize}
@@ -338,6 +347,9 @@ Deciding whether a disjunctive formula is satisfiable can be done in polynomial 
  \end{itemize}
 \end{definition}
 
+Notice that uniform interpolation is stronger than Craig interpolation, which states that for any two formulas $\varphi$, $\psi$ with $\varphi \models \psi$ there exists a formula $\theta$ (called the Craig interpolant of $\varphi$, $\psi$) in the common language with $\varphi \models \theta$ and $\theta \models \psi$. Clearly, if the logic enjoys uniform interpolation then the Craig interpolant of $\varphi$, $\psi$ does not depend on $\psi$ but only on the common language: it is simply the uniform interpolant of $\varphi$ relative to $L' = L(\varphi) \cap L(\psi)$.
+
+It has been proved that the $\mu$-calculus has uniform interpolation. Moreover when the given formula is a  disjunctive $\mu$-formula then the uniform interpolant of it can be obtained by replacing the pointed atoms with $\top$ and their negation with $\top$ at the same time.
 \begin{theorem}
 The uniform interpolant $\widetilde{\exists}p \varphi$ ($p\in \Ha$) of a disjunctive $\mu$-formula $\varphi$ is equivalent
 to the $\mu$-formula $\varphi[p/\top,\neg p/\top]$, where $\varphi[p/\top,\neg p/\top]$ is defined from $\varphi$ by simultaneously
@@ -352,10 +364,10 @@ substituting the literals $p$ and $\neg p$ with $\top$.
 
 
 \section{Forgetting in $\mu$-calculus}
-
+In this section we present the definition of forgetting in $\mu$-calculus and investigate its semantic properties.
 
 \subsection{Definition of Forgetting}
-In this subsection we present the definition of forgetting in $\mu$-calculus and investigate its semantic properties.
+In this subsection we present the definition of forgetting in $\mu$-calculus by using the bisimulation technique.
 For convenience, in the following we let $\Hm_i=(S_i, r_i, R_i, L_i)$ with $i\in \mathbf{N}$ be Kripke structure.
 
 \begin{definition}[V-bisimulation]\label{def:VB}
@@ -614,7 +626,7 @@ substituting the literals $p$ and $\neg p$ with $\top$.
 
 
 \subsection{Complexity Results}
-
+Before talk about the complexity results of the forgetting operator, let's recall the $\mu$-automaton, which is important in $\mu$-calculus to show the uniform interpolation and model checking of $\mu$-calculus. In this sense the $\mu$-automaton can make a big convenience to show our complexity results. 
 \begin{definition}[$\mu$-automaton~\cite{d1996uniform}]
   A $\mu$-automaton $A$, also called modal automaton~\cite{bradfield2018mu}, is a tuple $(Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$ such that:
   \begin{enumerate}[(i)]
@@ -627,11 +639,10 @@ substituting the literals $p$ and $\neg p$ with $\top$.
   \end{enumerate}
 \end{definition}
 
-Although this automata differ slightly from those given in~\cite{janin1995automata,bradfield2018mu}, but the automata in their various guises are equivalent. Moreover, modal automata are essentially alternating automata~\cite{bradfield2018mu}.
-
-
+ Although this automata differ slightly from those given in~\cite{janin1995automata,bradfield2018mu}, but the automata in their various guises are equivalent. Moreover, modal automata are essentially alternating automata~\cite{bradfield2018mu}. It is worth mentioning that it has been shown that construct a $\mu$-automaton from a $\mu$-calculus formula can be done in exponential time, while it is in polynomial time when the $\mu$-calculus formula is a disjunctive $\mu$-formula. Then we have the following complexity result.
+ 
 \begin{proposition}[Model Checking]\label{pro:MC}
-Given a finite Kripke structure  $\Hm$, a $\mu$-sentence $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is \texsc{NP} $\cap$ co-\texsc{NP}.
+Given a finite Kripke structure  $\Hm$, a disjunctive $\mu$-formula $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is \texsc{NP} $\cap$ co-\texsc{NP}.
 \end{proposition}
 \begin{proof}
 Let $A_{\varphi}$ be a $\mu$-automaton such that for any Kripke structure ${\cal N}$ there is $A_{\varphi}$ accept ${\cal N}$ iff ${\cal N} \models \varphi$. Where $A_{\varphi} = (Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$ with $\Var(\varphi) = \Sigma_p \cup \Sigma_r$. Without loss of generality, we assume $V \subseteq \Var(\varphi)$ and $V=\{p\}$.  Therefore we can constructure a $\mu$-automaton $B= (Q, \Sigma_p - V, \Sigma_r, q_0, \delta', \Omega)$ with:
@@ -645,6 +656,21 @@ In this case, the problem $\Hm \models^? \Muforget(\varphi, V)$ is reduced to de
 \end{proof}
 
 
+
+% \begin{proposition}[Model Checking]\label{pro:MC}
+% Given a finite Kripke structure  $\Hm$, a $\mu$-sentence $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is \texsc{NP} $\cap$ co-\texsc{NP}.
+% \end{proposition}
+
+
+
+More importantly, from the perspective of knowledge bases evolving, we are also interested in the following reasoning problems about forgetting, which are explored in CPL~\cite{wang2015forgetting}. 
+
+\begin{enumerate}[(i)]
+    \item $[$var-weak$]$ if the restriction of $\varphi$ on the signature of $\psi$ is at most as strong as $\psi$, i.e. $\psi\models \Muforget(\varphi, V)$,
+    \item $[$var-strong$]$ if the restriction of $\varphi$ on the signature of $\psi$ is at least as strong as $\psi$, i.e. $\Muforget(\varphi, V)\models \psi$,
+    \item $[$var-entailment$]$ if the restriction of one knowledge base on its original signature is at most as strong as that of the other, i.e. $\Muforget(\varphi, V) \models \Muforget(\psi, V)$.
+\end{enumerate}
+Where $\varphi$, $\psi$ are $\mu$-sentences, and $V$ a set of atoms. Besides, in (i) and (ii) there is $\Var(\varphi) - V = \Var(\psi)$ and in (iii) there is $V \subseteq \Var(\varphi) \cap \Var(\psi)$. Then we have the following results.
 
 \begin{theorem}[Entailment]
 	\label{thm:Ent}
@@ -662,7 +688,12 @@ Let $A_{\varphi}$ and $A_{\psi}$ be the $\mu$-automatons of $\varphi$ and $\psi$
 , we can obtain the complement $C$ of $A_\psi$ in linear time, and then the intersection $A_{C \cap B}$ between $C$ and $B$  in linear time. In this case, the $\Muforget(\varphi, V ) \models^? \psi$ is reduced to decide whether the language accpeted by $A_{C \cap B}$ is empty, which is $\textsc{Exptime}$-complete~\cite{comon1997tree}.
 \end{proof}
 
-
+Similarly with the reasoning problems talked above, the following equivalent problem are also important, in which ``var-independence" and ``var-equivalence" under CPL are proposed~\cite{lang2003propositional}.
+\begin{enumerate}[(i)]
+    \item $[$var-independence$]$ If a formula $\varphi$ is independent of a set $V$ of atoms, i.e. $\Muforget(\varphi,V) \equiv \varphi$,
+    \item $[$var-match$]$ if the restriction of $\varphi$ on the signature of $\psi$ perfectly matches $\psi$, i.e. $\Muforget(\varphi, V) \equiv \psi$.
+    \item $[$var-equivalence$]$ if the restriction of the two formulas on a common signature are equivalent, i.e. $\Muforget(\varphi, V) \equiv \Muforget(\psi, V)$.
+\end{enumerate}
 
 The following results are implications of Theorem~\ref{thm:Ent}.
 \begin{corollary}
@@ -679,7 +710,7 @@ Let $\varphi$ and $\psi$ be two $\mu$-sentences and $V$ be a set of atoms. Then,
 
 \section{Necessary and Sufficient Conditions}
 \label{ns_conditions}
-In this section, we present the final key notions of our work:  namely, the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC)  of a given \CTL\ specification.  As aforementioned in the introduction, these notions (introduced by E. Dijkstra in \cite{DBLP:journals/cacm/Dijkstra75}) correspond to the \emph{most general consequence} and the \emph{most specific abduction} of a specification, respectively, and have been central to a wide variety of tasks and studies (see Related Work). Our contribution, in particular, will be on computing SNC and WSC via forgetting under a given initial \MPK-structure and a set $V$ of atoms.  Let us give the formal definition. 
+In this section, we present two key notions of our work:  namely, the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC)  of a given $\mu$-calculus specification.  As aforementioned in the introduction, these notions (introduced by E. Dijkstra in \cite{DBLP:journals/cacm/Dijkstra75}) correspond to the \emph{most general consequence} and the \emph{most specific abduction} of a specification, respectively, and have been central to a wide variety of tasks and studies, e.g. generating counterexamples and refinement of system. Our contribution, in particular, will be on computing SNC and WSC via forgetting under a given $\mu$-sentence and a set $V$ of atoms.  Let us give the formal definition. 
 \begin{definition}[sufficient and necessary condition]\label{def:NC:SC}
 Let $\phi$, $\psi$ be two $\mu$-sentences, $V \subseteq \Var(\phi)$, $q\in\Var(\phi)- V$
 and $\Var(\psi)\subseteq V$.
@@ -745,8 +776,9 @@ we have $\beta \models \psi$ by (\PP). Therefore, $\beta$ is the SNC of $q$ on $
 
 
 \section{Representing knowledge update via forgetting}
-In the following, we will propose a method of defining knowledge update via forgetting which will
-satisfy all the following postulates (U1)¨C(U8) in~\cite{katsuno91mendelzon}:
+In this section, we present the final key notion of our work: knowledge update.
+In particular, we will propose a method of defining knowledge update via forgetting which will
+satisfy all the following Katsuno and Mendelzon's postulates (U1)¨C(U8) proposed in~\cite{katsuno91mendelzon}:
 \begin{enumerate}[]
     \item (U1)  $\Gamma \diamond \phi \models \phi$.
     \item (U2) If  $\Gamma \models \phi$,  then  $\Gamma \diamond \phi \equiv \Gamma$.
@@ -757,7 +789,7 @@ satisfy all the following postulates (U1)¨C(U8) in~\cite{katsuno91mendelzon}:
     \item (U7) If $\Gamma$ has a unique model, then $(\Gamma \diamond \phi) \wedge (\Gamma \diamond \psi) \models \Gamma \diamond (\phi \vee \psi)$.
     \item (U8) $(\Gamma_1 \vee \Gamma_2) \diamond \phi \equiv (\Gamma_1 \diamond \phi) \vee  (\Gamma_2 \diamond \phi)$.
 \end{enumerate}
-
+Where $\varphi \diamond \psi$ expresses the result of updating $\varphi$ with $\psi$ and $\diamond$ is the knowledge update operator.
 
 
 For this purpose, in this part we suppose the models of a $\mu$-sentence are initial structures, in which an initial structure is a Kripke structure $\Hm=(S, sr, R, L)$ with $S$ is a finite set of states, $sr$ is an initial state (i.e. for each state $s'\in S$ the $sr$ can arrive at $s'$) and $R$ is a total relation.
@@ -776,15 +808,15 @@ Let $\psi=\Muforget(\phi, V)$. We have that for each $\Hm \models \psi$ there is
 In this case, we can easy prove that for each initial structure $\Hm$, if $\Hm \models \psi$ then we can obtain an initial structure $\Hm'$ such that $\Hm' \models \phi$ and $\Hm \lrto_V \Hm'$, and vice versa. 
 \end{proof}
 
-Intuitively, given a logic language ${\cal L}$, we say some operator ${\cal O}$ in ${\cal L}$ is closed whenever the result of using the ${\cal O}$ on the element of ${\cal L}$ is also in ${\cal L}$. 
+Intuitively, given a logic language ${\cal L}$, we say some operator ${\cal O}$ in ${\cal L}$ is closed whenever the result of using the ${\cal O}$ on the elements of ${\cal L}$ is also in ${\cal L}$. 
 Theorem~\ref{thm:initModel} shows that the forgetting in $\mu$-calculus is also closed when restrict the models of $\mu$-sentence to initial structures. Formally:
 
 \begin{corollary}
 The forgetting of $\mu$-calculus is closed under the initial structure semantic, i.e. we only consider the initial structures as the models of $\mu$-sentence.
 \end{corollary}
 
-According to~\cite{renyansfirstpaper}, we can see that any initial structure $\Hm$ on $\Ha$ can be captured by a \CTL\ formula, i.e.  characterizing formula ${\cal F}_{\Ha}(\Hm)$~\cite{renyansfirstpaper}, and hence a $\mu$-sentence~\cite{emerson1997model}.
-In this case, we define the knowledge update operator in $\mu$-calculus as follows.
+According to~\cite{renyansfirstpaper}, we can see that any initial structure $\Hm$ on $\Ha$ can be captured by a \CTL\ formula, i.e. the characterizing formula ${\cal F}_{\Ha}(\Hm)$~\cite{renyansfirstpaper}, and hence a $\mu$-sentence~\cite{emerson1997model}.
+In this case, we define the knowledge update operator $\diamond_{\mu}$ in $\mu$-calculus as follows.
 
 
 \begin{definition}\label{def:KU}
@@ -795,7 +827,7 @@ In this case, we define the knowledge update operator in $\mu$-calculus as follo
   where ${\cal F}_{\Ha}(\Hm)$ is the characterizing  formula of $\Hm$ on $\Ha$, and $V_{min} \subseteq \Ha$ is a minimal subset of atoms that makes $\Muforget({\cal F}_{\Ha}(\Hm), V_{min}) \wedge \phi$ consistent. 
 \end{definition}
 
-Recall the definition of knowledge update in propositional logic (PL), 
+Recall the definition of knowledge update in CPL, 
 let $I$, $J_1$ and $J_2$ be three interpretations, then $J_1$ is closer to $I$ than $J_2$, written $J_1 \leq_{I,pam} J_2$, iff $\Diff(I, J_1) \subseteq \Diff(I, J_2)$, where $\Diff(X, Y) =\{p\in \Ha \mid X(p) \not = Y(p)\}$.
 The set of models of knowledge update $\psi$ to $\Gamma$ is equal with the set of union of sets of models which are minimal models of $\psi$ about the partial order $\leq_{I,pam}$ with $I$ is a model of $\Gamma$, i.e. $\Mod(\Gamma \diamond_{pam} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi), \leq_{I,pam})$. Where $Min(\Mod(\psi), \leq_{I,pam})$ expresses the set of models $J$ of $\psi$ such that $J$ is minimal with respect to $\leq_{I,pam}$.
 
