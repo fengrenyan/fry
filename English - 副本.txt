@@ -1,0 +1,416 @@
+@inproceedings{fox2003formal,
+  title={Formal specification and verification of ARM6},
+  author={Fox, Anthony},
+  booktitle={International Conference on Theorem Proving in Higher Order Logics},
+  pages={25--40},
+  year={2003},
+  organization={Springer}
+}
+
+@inproceedings{daum2009implementation,
+  title={Implementation correctness of a real-time operating system},
+  author={Daum, Matthias and Schirmer, Norbert W and Schmidt, Mareike},
+  booktitle={2009 Seventh IEEE International Conference on Software Engineering and Formal Methods},
+  pages={23--32},
+  year={2009},
+  organization={IEEE}
+}
+
+
+@article{robinson1965machine,
+  title={A machine-oriented logic based on the resolution principle},
+  author={Robinson, John Alan},
+  journal={Journal of the ACM (JACM)},
+  volume={12},
+  number={1},
+  pages={23--41},
+  year={1965},
+  publisher={ACM New York, NY, USA}
+}
+
+
+@book{hughes1996new,
+  title={A new introduction to modal logic},
+  author={Hughes, George Edward and Cresswell, Max J and Cresswell, Mary Meyerhoff},
+  year={1996},
+  publisher={Psychology Press}
+}
+
+
+@article{hoare1969axiomatic,
+  title={An axiomatic basis for computer programming},
+  author={Hoare, Charles Antony Richard},
+  journal={Communications of the ACM},
+  volume={12},
+  number={10},
+  pages={576--580},
+  year={1969},
+  publisher={ACM New York, NY, USA}
+}
+
+
+
+@book{harel1979first,
+  title={First-order dynamic logic},
+  author={Harel, David and others},
+  volume={68},
+  year={1979},
+  publisher={Springer Berlin}
+}
+
+
+
+@inproceedings{reynolds2002separation,
+  title={Separation logic: A logic for shared mutable data structures},
+  author={Reynolds, John C},
+  booktitle={Proceedings 17th Annual IEEE Symposium on Logic in Computer Science},
+  pages={55--74},
+  year={2002},
+  organization={IEEE}
+}
+
+
+@article{lin2016formalization,
+  title={A formalization of programs in first-order logic with a discrete linear order},
+  author={Lin, Fangzhen},
+  journal={Artificial Intelligence},
+  volume={235},
+  pages={1--25},
+  year={2016},
+  publisher={Elsevier}
+}
+
+
+
+@inproceedings{clarke1981design,
+  title={Design and synthesis of synchronization skeletons using branching time temporal logic},
+  author={Clarke, Edmund M and Emerson, E Allen},
+  booktitle={Workshop on Logic of Programs},
+  pages={52--71},
+  year={1981},
+  organization={Springer},
+  publisher={Springer, Berlin, Heidelberg}
+}
+
+
+
+@article{biere2003bounded,
+  title={Bounded model checking},
+  author={Biere, Armin and Cimatti, Alessandro and Clarke, Edmund M and Strichman, Ofer and Zhu, Yunshan},
+  year={2003},
+  publisher={Carnegie Mellon University},
+  volume={58},
+  pages={117--148},
+}
+
+
+
+@article{burch1992symbolic,
+  title={Symbolic model checking: 1020 states and beyond},
+  author={Burch, Jerry R and Clarke, Edmund M and McMillan, Kenneth L and Dill, David L and Hwang, Lain-Jinn},
+  journal={Information and computation},
+  volume={98},
+  number={2},
+  pages={142--170},
+  year={1992},
+  publisher={Elsevier}
+}
+
+
+
+@book{DBLP:series/txtcs/Schneider04,
+  author    = {Klaus Schneider},
+  title     = {Verification of Reactive Systems - Formal Methods and Algorithms},
+  series    = {Texts in Theoretical Computer Science. An {EATCS} Series},
+  publisher = {Springer},
+  year      = {2004},
+  url       = {https://doi.org/10.1007/978-3-662-10778-2},
+  doi       = {10.1007/978-3-662-10778-2},
+  isbn      = {978-3-642-05555-3},
+  timestamp = {Fri, 09 Jun 2017 11:04:45 +0200},
+  biburl    = {https://dblp.org/rec/series/txtcs/Schneider04.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@article{DBLP:journals/jlp/DaillerHMM18,
+  author    = {Sylvain Dailler and
+               David Hauzar and
+               Claude March{\'{e}} and
+               Yannick Moy},
+  title     = {Instrumenting a weakest precondition calculus for counterexample generation},
+  journal   = {J. Log. Algebraic Methods Program.},
+  volume    = {99},
+  pages     = {97--113},
+  year      = {2018},
+  url       = {https://doi.org/10.1016/j.jlamp.2018.05.003},
+  doi       = {10.1016/j.jlamp.2018.05.003},
+  timestamp = {Sat, 22 Feb 2020 19:18:11 +0100},
+  biburl    = {https://dblp.org/rec/journals/jlp/DaillerHMM18.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@inproceedings{DBLP:conf/fm/WoodcockM90,
+  author    = {Jim Woodcock and
+               Carroll Morgan},
+  editor    = {Dines Bj{\o}rner and
+               C. A. R. Hoare and
+               Hans Langmaack},
+  title     = {Refinement of State-Based Concurrent Systems},
+  booktitle = {{VDM} '90, {VDM} and {Z} - Formal Methods in Software Development,
+               Third International Symposium of {VDM} Europe, Kiel, FRG, April 17-21,
+               1990, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {428},
+  pages     = {340--351},
+  publisher = {Springer},
+  year      = {1990},
+  url       = {https://doi.org/10.1007/3-540-52513-0\_18},
+  doi       = {10.1007/3-540-52513-0\_18},
+  timestamp = {Tue, 14 May 2019 10:00:46 +0200},
+  biburl    = {https://dblp.org/rec/conf/fm/WoodcockM90.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@article{DBLP:journals/cacm/Dijkstra75,
+  author    = {Edsger W. Dijkstra},
+  title     = {Guarded Commands, Nondeterminacy and Formal Derivation of Programs},
+  journal   = {Commun. {ACM}},
+  volume    = {18},
+  number    = {8},
+  pages     = {453--457},
+  year      = {1975},
+  url       = {https://doi.org/10.1145/360933.360975},
+  doi       = {10.1145/360933.360975},
+  timestamp = {Wed, 14 Nov 2018 10:22:34 +0100},
+  biburl    = {https://dblp.org/rec/journals/cacm/Dijkstra75.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+
+@article{DBLP:journals/ai/EiterW08,
+  author    = {Thomas Eiter and
+               Kewen Wang},
+  title     = {Semantic forgetting in answer set programming},
+  journal   = {Artif. Intell.},
+  volume    = {172},
+  number    = {14},
+  pages     = {1644--1672},
+  year      = {2008},
+  url       = {https://doi.org/10.1016/j.artint.2008.05.002},
+  doi       = {10.1016/j.artint.2008.05.002},
+  timestamp = {Sat, 19 Oct 2019 19:55:50 +0200},
+  biburl    = {https://dblp.org/rec/journals/ai/EiterW08.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+@article{DBLP:journals/ki/EiterK19,
+  author    = {Thomas Eiter and
+               Gabriele Kern{-}Isberner},
+  title     = {A Brief Survey on Forgetting from a Knowledge Representation and Reasoning
+               Perspective},
+  journal   = {K{\"{u}}nstliche Intell.},
+  volume    = {33},
+  number    = {1},
+  pages     = {9--33},
+  year      = {2019},
+  url       = {https://doi.org/10.1007/s13218-018-0564-6},
+  doi       = {10.1007/s13218-018-0564-6},
+  timestamp = {Tue, 14 Jul 2020 14:26:21 +0200},
+  biburl    = {https://dblp.org/rec/journals/ki/EiterK19.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+
+@article{DBLP:journals/ai/GoncalvesKLW20,
+  author    = {Ricardo Gon{\c{c}}alves and
+               Matthias Knorr and
+               Jo{\~{a}}o Leite and
+               Stefan Woltran},
+  title     = {On the limits of forgetting in Answer Set Programming},
+  journal   = {Artif. Intell.},
+  volume    = {286},
+  pages     = {103307},
+  year      = {2020},
+  url       = {https://doi.org/10.1016/j.artint.2020.103307},
+  doi       = {10.1016/j.artint.2020.103307},
+  timestamp = {Fri, 07 Aug 2020 08:55:33 +0200},
+  biburl    = {https://dblp.org/rec/journals/ai/GoncalvesKLW20.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/jelia/KnorrA14,
+  author    = {Matthias Knorr and
+               Jos{\'{e}} J{\'{u}}lio Alferes},
+  editor    = {Eduardo Ferm{\'{e}} and
+               Jo{\~{a}}o Leite},
+  title     = {Preserving Strong Equivalence while Forgetting},
+  booktitle = {Logics in Artificial Intelligence - 14th European Conference, {JELIA}
+               2014, Funchal, Madeira, Portugal, September 24-26, 2014. Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {8761},
+  pages     = {412--425},
+  publisher = {Springer},
+  year      = {2014},
+  url       = {https://doi.org/10.1007/978-3-319-11558-0\_29},
+  doi       = {10.1007/978-3-319-11558-0\_29},
+  timestamp = {Fri, 07 Aug 2020 08:55:19 +0200},
+  biburl    = {https://dblp.org/rec/conf/jelia/KnorrA14.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+
+
+@article{DBLP:journals/jsyml/DAgostinoH00,
+  author    = {Giovanna D'Agostino and
+               Marco Hollenberg},
+  title     = {Logical Questions Concerning The mu-Calculus: Interpolation, Lyndon
+               and Los-Tarski},
+  journal   = {J. Symb. Log.},
+  volume    = {65},
+  number    = {1},
+  pages     = {310--332},
+  year      = {2000},
+  url       = {https://doi.org/10.2307/2586539},
+  doi       = {10.2307/2586539},
+  timestamp = {Sun, 28 May 2017 13:21:52 +0200},
+  biburl    = {https://dblp.org/rec/journals/jsyml/DAgostinoH00.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@article{dijkstra1972humble,
+  title={The humble programmer},
+  author={Dijkstra, Edsger W},
+  journal={Communications of the ACM},
+  volume={15},
+  number={10},
+  pages={859--866},
+  year={1972},
+  publisher={ACM New York, NY, USA}
+}
+
+@book{apt2010verification,
+  title={Verification of sequential and concurrent programs},
+  author={Apt, Krzysztof and De Boer, Frank S and Olderog, Ernst-R{\"u}diger},
+  year={2010},
+  publisher={Springer Science \& Business Media}
+}
+
+@article{floyd6719assigning,
+  title={Assigning meaning to programs},
+  author={Floyd67, R and Floyd, R},
+  journal={Mathematical Aspects of Computer Science},
+  volume={19},
+  pages={19--31}
+}
+
+@article{hoare1969axiomatic,
+  title={An axiomatic basis for computer programming},
+  author={Hoare, Charles Antony Richard},
+  journal={Communications of the ACM},
+  volume={12},
+  number={10},
+  pages={576--580},
+  year={1969},
+  publisher={ACM New York, NY, USA}
+}
+
+@book{1974Introduction,
+  title={Introduction to Mathematical Theory of Computation},
+  author={ Manna, Zohar },
+  publisher={McGraw-Hill, Inc.},
+  year={1974},
+}
+
+@incollection{mccarthy1959basis,
+  title={A basis for a mathematical theory of computation},
+  author={McCarthy, John},
+  booktitle={Studies in Logic and the Foundations of Mathematics},
+  volume={26},
+  pages={33--70},
+  year={1959},
+  publisher={Elsevier}
+}
+
+
+@inproceedings{DBLP:conf/lop/ClarkeE81,
+  author    = {Edmund M. Clarke and
+               E. Allen Emerson},
+  editor    = {Dexter Kozen},
+  title     = {Design and Synthesis of Synchronization Skeletons Using Branching-Time
+               Temporal Logic},
+  booktitle = {Logics of Programs, Workshop, Yorktown Heights, New York, USA, May
+               1981},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {131},
+  pages     = {52--71},
+  publisher = {Springer},
+  year      = {1981},
+  url       = {https://doi.org/10.1007/BFb0025774},
+  doi       = {10.1007/BFb0025774},
+  timestamp = {Tue, 14 May 2019 10:00:52 +0200},
+  biburl    = {https://dblp.org/rec/conf/lop/ClarkeE81.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@book{DBLP:books/daglib/0019927,
+  author    = {Mordechai Ben{-}Ari},
+  title     = {Principles of the spin model checker},
+  publisher = {Springer},
+  year      = {2008},
+  url       = {https://doi.org/10.1007/978-1-84628-770-1},
+  doi       = {10.1007/978-1-84628-770-1},
+  isbn      = {978-1-84628-769-5},
+  timestamp = {Tue, 16 May 2017 14:01:34 +0200},
+  biburl    = {https://dblp.org/rec/books/daglib/0019927.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+
+@book{clarke2018model,
+  title={Model checking},
+  author={Clarke Jr, Edmund M and Grumberg, Orna and Kroening, Daniel and Peled, Doron and Veith, Helmut},
+  year={2018},
+  publisher={MIT press}
+}
+@book{berard2013systems,
+  title={Systems and software verification: model-checking techniques and tools},
+  author={B{\'e}rard, B{\'e}atrice and Bidoit, Michel and Finkel, Alain and Laroussinie, Fran{\c{c}}ois and Petit, Antoine and Petrucci, Laure and Schnoebelen, Philippe},
+  year={2013},
+  publisher={Springer Science \& Business Media}
+}
+
+
+@book{kropf2013introduction,
+  title={Introduction to formal hardware verification},
+  author={Kropf, Thomas},
+  year={2013},
+  publisher={Springer Science \& Business Media}
+}
+
+@book{kurshan2014computer,
+  title={Computer-aided verification of coordinating processes: the automata-theoretic approach},
+  author={Kurshan, Robert P},
+  year={2014},
+  publisher={Princeton university press}
+}
+
+@book{peled2001software,
+  title={Software reliability methods},
+  author={Peled, Doron A},
+  year={2001},
+  publisher={Springer Science \& Business Media}
+}
+
+@incollection{emerson1990temporal,
+  title={Temporal and modal logic},
+  author={Emerson, E Allen},
+  booktitle={Formal Models and Semantics},
+  pages={995--1072},
+  year={1990},
+  publisher={Elsevier}
+}
