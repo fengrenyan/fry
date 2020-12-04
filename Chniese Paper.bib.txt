@@ -1,0 +1,80 @@
+
+
+@book{Janick2007System,
+  title={System Verilog验证方法学},
+  author={Janick Bergeron … [等 and 夏宇闻},
+  publisher={北京航空航天大学出版社},
+  year={2007},
+}
+
+
+@book{袁志斌2008软件开发的形式化工程方法,
+  title={软件开发的形式化工程方法},
+  author={袁志斌},
+  publisher={清华大学出版社},
+  year={2008},
+}
+
+
+@book{古天龙2005软件开发的形式化方法,
+  title={软件开发的形式化方法},
+  author={古天龙},
+  publisher={高等教育出版社},
+  year={2005},
+}
+
+
+@article{文中华2009模型检测规划中的状态分层方法,
+  title={模型检测规划中的状态分层方法},
+  author={文中华 and 黄巍 and 刘任任 and 姜云飞},
+  journal={软件学报},
+  volume={20},
+  number={004},
+  pages={858-869},
+  year={2009},
+}
+
+
+@article{张玉清2000Needham,
+  title={Needham—Schroeder公钥协议的模型检测分析},
+  author={张玉清 and 王磊},
+  journal={软件学报},
+  volume={11},
+  number={10},
+  pages={1348-1352},
+  year={2000},
+}
+
+
+
+@phdthesis{孙守卿0基于模型检测工具,
+  title={基于模型检测工具SPIN的安全协议分析和验证},
+  author={孙守卿},
+  year={2005},
+  university={兰州大学},
+}
+
+@phdthesis{黎吾平2008模型检测在软件方面的应用,
+  title={模型检测在软件方面的应用},
+  author={黎吾平},
+  university={吉林大学},
+  year={2008},
+}
+
+
+@article{文习明2019多智能体模态逻辑系统,
+  title={多智能体模态逻辑系统KD45_n中的知识遗忘},
+  author={文习明 and 方良达 and 余泉 and 常亮 and 王驹},
+  journal={计算机科学},
+  volume={46},
+  number={07},
+  pages={201-211},
+  year={2019},
+}
+
+@phdthesis{冯仁艳0基于遗忘的知识充分性与必要性研究,
+  title={基于遗忘的知识充分性与必要性研究},
+  author={冯仁艳},
+  year=2018
+  university={贵州大学},
+}
