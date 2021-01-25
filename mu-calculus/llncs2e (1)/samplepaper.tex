@@ -491,7 +491,7 @@ any formula $\psi$, and $X$ is positive in $\varphi$, then $\mu X. \varphi$, $\n
 \end{itemize}
 \end{definition}
 
-\begin{example}
+\begin{example}\label{exmp:disF}
 It is easy to check that both $\nu X. (j \wedge ch) \wedge \lozenge (\neg j \wedge \neg ch) \wedge \lozenge \lozenge X$ and  $\nu X. (j \wedge ch) \wedge \square (\neg j \wedge \neg ch) \wedge \square \square X$ are not disjunctive formulas.
 While $j \wedge ch \wedge \lozenge (\neg j \wedge \neg ch)$, $\mu X. (j \wedge ch) \wedge \lozenge X$ and $\nu X. (j \wedge ch) \wedge \lozenge \lozenge X$ are disjunctive formulas because we have:
 \[
@@ -529,7 +529,7 @@ Formally, the uniform interpolation under $\mu$-calculus is defined as follows.
 Notice that uniform interpolation is stronger than Craig interpolation, which states that for any two formulas $\varphi$, $\psi$ with $\varphi \models \psi$ there exists a formula $\theta$ (called the Craig interpolant of $\varphi$, $\psi$) in the common language with $\varphi \models \theta$ and $\theta \models \psi$. Clearly, if the logic enjoys uniform interpolation then the Craig interpolant of $\varphi$, $\psi$ does not depend on $\psi$ but only on the common language: it is simply the uniform interpolant of $\varphi$ relative to $L' = \Var(\varphi) \cap \Var(\psi)$.
 
 It has been proved that the $\mu$-calculus has uniform interpolation~\cite{d2000logical,d1996uniform}. Moreover, when the given formula is a  disjunctive formula then the uniform interpolant of it can be obtained by replacing both the pointed atoms and their negation with $\top$ at the same time~\cite{d2006modal}. Formally:
-\begin{theorem}
+\begin{theorem} \label{thm:disUniF}
 The uniform interpolant $\widetilde{\exists}p \varphi$ ($p\in \Ha$) of a disjunctive formula $\varphi$ is equivalent
 to the $\mu$-formula $\varphi[p/\top,\neg p/\top]$, where $\varphi[p/\top,\neg p/\top]$ is defined from $\varphi$ by simultaneously
 substituting the literals $p$ and $\neg p$ with $\top$.
@@ -584,37 +584,22 @@ which is defined for states of a given \MPK-structure.}.
 In this sense, we can see that our $V$-bisimulation is also similar to those definitions to some extent.
 
 We say that two Kripke structures $\Hm_1$ and $\Hm_2$ are \emph{$V$-bisimilar}, denoted $\Hm_1 \lrto_V \Hm_2$, if there exists a $V$-bisimulation ${\cal B}$ between them.
-Moreover, from this Definition~\ref{def:VB} we can se that the $\lrto_V$ is an equivalence relation between Kripke structures. Formally:
+In this case, we also say that $\Hm_1$ and $\Hm_2$ on $V$.
+Moreover, from this Definition~\ref{def:VB} we can see that the $\lrto_V$ between Kripke structures has some interesting properties besides the equivalence relation. Formally:
 \begin{proposition} \label{pro:EqUnion}
 Let $V, V_1 \subseteq \Ha$, $\Hm_1$, $\Hm_2$ and $\Hm_3$ be three Kripke structures, then we have:
 \begin{enumerate} [(i)]
-    \item the $\lrto_V$ is an  equivalence relation between Kripke structures;
+    \item the $\lrto_V$ is an equivalence relation between Kripke structures;
     \item if $\Hm_1 \lrto_V \Hm_2$ and $\Hm_2 \lrto_{V_1} \Hm_3$, then $\Hm_1 \lrto_{V \cup V_1} \Hm_3$.
 \end{enumerate}
 
 \end{proposition}
 
-% \begin{proof}
-% (i) We prove it form the reflexivity, symmetry and transitivity.
+Intuitively, the (i) in Proposition~\ref{pro:EqUnion} means that $\lrto_V$ is reflexive, symmetric and transitive.
+(ii) refers to that if $\Hm_1$ and $\Hm_2$ are bisimilar on two different sets $V$ and $V_1$ respectively, then they are bisimilar on the union of those two sets.
+As we will show in the next context that this is important to demonstrate the \emph{modularity}, one of the important properties of forgetting in $\mu$-calculus.
 
-% (1) $\lrto_V$ is reflexive. It is easy to check that $\Hm\lrto_V \Hm$ for any Kripke structure.
-
-% (2) $\lrto_V$ is symmetric. We will show that for each $\Hm_1$ and $\Hm_2$, if $\Hm_1 \lrto_V \Hm_2$ then $\Hm_2 \lrto_V \Hm_1$.
-% Supposing $\Hm_1 \lrto_V \Hm_2$ by the $V$-bisimulation $\Hb$, we construct a relation $\Hb_1$ as follows: $\Hb_1=\{(s,t) | (t, s)\in \Hb\}$. We will show that $\Hb_1$ is a $V$-bisimulation between $\Hm_2$ and $\Hm_1$ from the following several points:
-% \begin{itemize}
-%     \item $r_2 \Hb_1 r_1$ since $r_1 \Hb r_2$,
-%     \item for each $s\in S_1$ and $t\in S_2$, if $t \Hb_1 s$ then we have $s\Hb t$ and hence $p \in L_1(s)$ iff $p \in L_2(t)$ for each $p \in \Ha - V$, and
-%     \item the third and forth points in the definition of $V$-bisimulation can be checked easily for $\Hb_1$.
-% \end{itemize}
-
-% (3) $\lrto_V$ is transitive. We will show that for each $\Hm_1$, $\Hm_2$ and $\Hm_3$, if $\Hm_1 \lrto_V \Hm_2$ and $\Hm_2 \lrto_V \Hm_3$ then $\Hm_1 \lrto_V \Hm_3$. Supposing $\Hm_1 \lrto_V \Hm_2$ by the $V$-bisimulation $\Hb_1$ and $\Hm_2 \lrto_V \Hm_3$  by the $V$-bisimulation $\Hb_2$, we construct a relation $\Hb$ as follows: $\Hb=\{(s, z) | (s,t) \in \Hb_1\ \mbox{and}\ (t, z)\in \Hb_2\}$.
-% We can also prove similarly with (2) that $\Hb$ is a $V$-bisimulation between $\Hm_1$ and $\Hm_3$. Therefore, $\Hm_1 \lrto_V \Hm_3$.
-
-% (ii) In order to prove $\Hm_1 \lrto_{V\cup V_1} \Hm_3$, we only need to find a binary relation $\Hb$ such that $\Hb$ is a $(V\cup V_1)$-bisimulation between $\Hm_1$ and $\Hm_3$.
-% Supposing $\Hm_1 \lrto_V \Hm_2$ by the $V$-bisimulation $\Hb_1$ and $\Hm_2 \lrto_{V_1} \Hm_3$  by the $V_1$-bisimulation $\Hb_2$. Let $\Hb = \{(s_1, s_3)| (s_1, s_2) \in \Hb_1\ \mbox{and} \ (s_2, s_3) \in \Hb_2\}$. We can easily check that $\Hb$ is a $(V\cup V_1)$-bisimulation between $\Hm_1$ and $\Hm_3$.
-
-
-% \end{proof}
+To get some intuition of the $V$-bisimulation, let's look at the following example.
 
 \begin{example}
 In Fig.~\ref{fig:bisim} we can check that $\Hm \lrto_{\{ch\}} \Hm'$ because there is a $\{ch\}$-bisimulation $\Hb=\{(s_0, t_0), (s_1, t_1), (s_2, t_1), \dots, (s_m, t_1)\}$ between $\Hm$ and $\Hm'$.
@@ -669,9 +654,10 @@ is a {\em result of forgetting $V$ from} $\phi$, if
 \end{equation*}
 \end{definition}
 For convenience, we denote the result of forgetting $V$ from $\phi$ as $\Muforget(\phi, V)$.
-% A formula $\phi$ is {\em irrelevant to} the atoms in a set $V$ (or simply $V$-{\em irrelevant}), written $\IR(\phi,V)$,
-% if there is a formula $\psi$ with $\Var(\psi)\cap V=\emptyset$ such that $\phi\equiv\psi$.
-% The $V$-{\em irrelevant} of a set of formulas can be defined similarly, i.e. a set $\Sigma$ of formulas is irrelevant to the atoms in $V$, written $\IR(\Sigma, V)$, if $\IR(\varphi, V)$ for each $\varphi \in \Sigma$.
+In Definition~\ref{def:V:forgetting}, instead of giving a syntactic definition like uniform interpolation above, we define the forgetting from the point of the semantics.
+Moreover, it is not difficult to see that Definition~\ref{def:V:forgetting} implies if both $\psi$ and $\psi'$ are results of forgetting $V$ from $\phi$, then
+$\Mod(\psi)=\Mod(\psi')$, i.e., $\psi$ and $\psi'$ have the same models. In this sense, the result of  forgetting $V$ from $\phi$ is unique (up to semantic equivalence).
+In the following subsection we will show that such $\mu$-sentence (for each given  $\mu$-sentence and set of atoms) always exists.
 
 
 \subsection{Semantic Properties of Forgetting in $\mu$-calculus}
@@ -688,7 +674,8 @@ This can be obtained from the Theorem 3.1 in~\cite{d1996uniform}.
 This means that the uniform interpolant $\widetilde{\exists}q \phi$ ($q\in \Ha$) of $\phi$ with respect to $\Var(\phi) - \{q\}$ is the result of forgetting $\{q\}$ from $\phi$.
 In this case, we also say that the forgetting of $\mu$-calculus is \emph{closed}, that is the result of forgetting some set of atoms from a $\mu$-sentence is also a $\mu$-sentence.
 Note that if both $\psi$ and $\psi'$ are results of forgetting $V$ from $\phi$, then
-$\Mod(\psi)=\Mod(\psi')$, i.e., $\psi$ and $\psi'$ have the same models. In this sense, the forgetting result is unique (up to equivalence).
+$\Mod(\psi)=\Mod(\psi')$, i.e., $\psi$ and $\psi'$ have the same models.
+%In this sense, the forgetting result is unique (up to equivalence).
 
 At this point, it is important to emphasize that, the notion of forgetting  we have defined for $\mu$-calculus extends the classical forgetting defined for propositional logic (PL)~\cite{lin1994forget}. Assuming $\varphi$ is a PL formula and $p\in \Ha$, then $\Forget(\varphi, p)$ is a result of forgetting $p$ from $\varphi$; that is, $\Forget(\varphi, p)\equiv \varphi[p/\bot] \vee \varphi[p/\top]$.
 That way, given a set $V\subseteq \Ha$, one can recursively define $\Forget(\varphi, V\cup \{p\}) = \Forget(\Forget(\varphi, p),V)$, where $\Forget(\varphi, \emptyset) = \varphi$. Using this insight, the following result shows that the classical notion of forgetting (for PL ~\cite{lin1994forget}) is a special case of forgetting in $\mu$-calculus.
@@ -706,6 +693,23 @@ Let $\varphi$ be a PL formula and $V\subseteq \Ha$, then
 % On the other hand, for each $\Hm \in \Mod(\Forget(\varphi, V))$ with $\Hm = (S, r, R, L)$ there exists a $\Hm' \in \Mod(\varphi)$ such that $r\Hb r'$. Construct a Kripke structure $\Hm_1$ such that $\Hm_1=(S_1, r_1, R_1, L_1)$ with $S_1= (S - \{r\}) \cup \{r_1\}$, $R_1$ is the same as $R$ except that $r$ is replaced by $r_1$, and $L_1$ is the same as $L$ except $L_1(r_1) = L'(r')$, where $L'$ is the label function of $M'$. It is clear that $\Hm_1$ is a model of $\varphi$ and $\Hm_1 \lrto_V \Hm$. Hence, $\Hm$ is a model of $\Muforget(\varphi, V)$ due to $\IR(\Muforget(\varphi, V), V)$.
 % \end{proof}
 
+Let's see the following example.
+\begin{example}
+Let $\alpha = (a \wedge b) \vee (a \wedge \neg b \wedge c)$ and $V = \{b\}$. We show how to compute forgetting $V$ from $\alpha$ by $\forget$ and $\Muforget$ respectively.
+
+(1)
+\begin{align*}
+    \forget(\alpha,V) & \equiv \alpha[b/\bot] \vee \alpha[b/\top]\\
+    & \equiv (a \wedge c) \vee a \\
+    & \equiv a
+\end{align*}
+(2) We can use Theorem~\ref{thm:disUniF} and Theorem~\ref{thm:exist} to compute forgetting $V$ from $\alpha$ since $\alpha$ is a disjunctive formula:
+\begin{align*}
+    \Muforget(\alpha, V) & \equiv \alpha[b/\top, \neg b/\top]\\
+    & \equiv (a \wedge \top) \vee (a \wedge \neg \top \wedge c)\\
+    & \equiv a
+\end{align*}
+\end{example}
 
 A general description is important for understanding the concept of forgetting.
 To doing so, authors give four postulates (also called \emph{forgetting postulates}), which can be  considered as desirable properties of such a notion, concerning knowledge forgetting in  \SFive\ modal logic~\cite{Yan:AIJ:2009}.
@@ -885,6 +889,19 @@ The homogeneity of $\ALL\NEXT$ (or $\EXIST\NEXT$) on forgetting says we can move
  By Theorem 3.6. in~\cite{d2006modal}, we have $\Muforget(\varphi, \{p\}) \equiv \varphi[p/\top, \neg p/\top]$, where $\varphi[p/\top$, $\neg p/\bot]$ is obtained from $\varphi$ by simultaneously
 substituting the literals $p$ and $\neg p$ with $\top$.
  \end{proof}
+
+ This means we can easily compute the forgetting when the given formula is a disjunctive formula. In this sense, we can transform a formula into its disjunctive form offline, and then compute its result of forgetting some atoms from it, this will be efficient in some situations.
+
+ \begin{example}
+  Let's recall the three disjunctive formulas in Example~\ref{exmp:disF}:
+$\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),$ $ \varphi_2= \mu X. (j \wedge ch) \wedge Cover(X, \top)$ and $\varphi_3=  \nu X. (j \wedge ch) \wedge Cover(Cover(X, \top), \top)$. Let $V=\{ch\}$ we can easily compute their results of forgetting $V$ from those formulas.
+
+(1) $\Muforget(\varphi_1, V) \equiv j \wedge Cover(\bot, \top)$;
+
+(2) $\Muforget(\varphi_2, V) \equiv \mu X. j  \wedge Cover(X, \top)$;
+
+(3) $\Muforget(\varphi_2, V) \equiv \nu X. j \wedge Cover(Cover(X, \top), \top)$.
+ \end{example}
 
 
 
