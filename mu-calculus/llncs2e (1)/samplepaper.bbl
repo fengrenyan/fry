@@ -68,12 +68,6 @@ Emerson, E.A., Jutla, C.S.: Tree automata, mu-calculus and determinacy. In:
 Fang, L., Liu, Y., Van~Ditmarsch, H.: Forgetting in multi-agent modal logics.
   Artificial Intelligence  \textbf{266},  51--80 (2019)
 
-\bibitem{feng2020sufficient}
-Feng, R., Acar, E., Schlobach, S., Wang, Y., Liu, W.: On sufficient and
-  necessary conditions in bounded ctl: A forgetting approach. In: Proceedings
-  of the International Conference on Principles of Knowledge Representation and
-  Reasoning. vol.~17, pp. 361--370 (2020)
-
 \bibitem{renyansfirstpaper}
 Feng, R., Acar, E., Schlobach, S., Wang, Y., Liu, W.: On sufficient and
   necessary conditions in bounded ctl: A forgetting approach  \textbf{17}(1),
@@ -83,11 +77,6 @@ Feng, R., Acar, E., Schlobach, S., Wang, Y., Liu, W.: On sufficient and
 Janin, D., Walukiewicz, I.: Automata for the modal $\mu$-calculus and related
   results. In: International Symposium on Mathematical Foundations of Computer
   Science. pp. 552--562. Springer (1995)
-
-\bibitem{katsunodifference}
-Katsuno, H., Mendelzon, A.: On the difference between updating a knowledge base
-  and revising it. In: Principles of Knowledge Representation and Reasoning:
-  Proceedings of the Second International Conference (KR91). pp. 230--237
 
 \bibitem{katsuno91mendelzon}
 Katsuno, H.: Mendelzon, ao: On the difference between updating a knowledge base
@@ -135,9 +124,5 @@ Woodcock, J.C., Morgan, C.: Refinement of state-based concurrent systems. In:
 \bibitem{Yan:AIJ:2009}
 Zhang, Y., Zhou, Y.: Knowledge forgetting: Properties and applications.
   Artificial Intelligence  \textbf{173}(16-17),  1525--1537 (2009)
-
-\bibitem{Zhang2009Knowledge}
-Zhang, Y., Zhou, Y.: Knowledge forgetting: Properties and applications.
-  Artificial Intelligence  \textbf{173}(16),  1525--1537 (2009)
 
 \end{thebibliography}
