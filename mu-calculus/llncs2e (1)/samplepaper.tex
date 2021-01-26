@@ -333,9 +333,15 @@ Informally, the four postulates proposed by Zhang~\cite{Yan:AIJ:2009} show that 
 In this paper we explore the forgetting of $\mu$-calculus under infinite models (to distinguish that of $\CTL$~\cite{renyansfirstpaper}) from both the postulates and the algebraic properties of the forgetting operator. The complexities of the reasoning problems of the forgetting operator are also explored from the point of automaton and it is shown that these are in $\textsc{Exptime}$-complete.
 It is worth mentioning that we restrict the models are finite in the knowledge update part in order to express the models of a formula. And we show that our definition of $\diamond_{\mu}$ by forgetting satisfies Katsuno and Mendelzon's update postulates~\cite{katsuno91mendelzon}.
 
-%The rest of the paper is organised as follows.
+The rest of the paper is organised as follows. Next section reports about the related work. Section~\ref{preliminaries} introduces the notation and technical preliminaries. As key contributions, Section~\ref{forgetting}, introduces the notion of forgetting in $\mu$-calculus. Moreover, it studies the semantic properties of forgetting. In addition, a complexity analysis, concerning model checking and reasoning problems of forgetting, is carried out.
+Section~\ref{ns_conditions} explores the relation between forgetting and SNC (WSC). Section~\ref{knowledge_updat} gives how to Represent knowledge update via forgetting. Conclusion closes the paper.
 
-\section{Modal $\mu$-calculus}
+
+Due to space restrictions, for most of the technical results, the actual proof is moved to the supplementary material in Appendix, and instead an intuitive justification is put in place.
+
+\section{Related work}
+
+\section{Modal $\mu$-calculus} \label{preliminaries}
 We start with some technical and notational preliminaries.
 Given a formula $\varphi$, the \emph{language} of $\varphi$, denoted $L(\varphi)$, is the set of all propositional constants appearing in the formula.
 %Let ${\cal L}$ be language with a finite set ${\cal A}$ of atoms, we call ${\cal A}$ the \emph{signature} of ${\cal L}$.
@@ -542,7 +548,7 @@ substituting the literals $p$ and $\neg p$ with $\top$.
 
 
 
-\section{Forgetting in $\mu$-calculus}
+\section{Forgetting in $\mu$-calculus} \label{forgetting}
 In this section we present the definition of forgetting in $\mu$-calculus and investigate its semantic properties.
 First, we give the definition of $V$-bisimulation between Kripke structures. The notion of $V$-bisimulation captures the idea that the two systems are behaviourally the same except for the atoms in $V$. In this way we give the definition of forgetting by using the $V$-bisimulation.
 
@@ -697,7 +703,7 @@ Let's see the following example.
 \begin{example}
 Let $\alpha = (a \wedge b) \vee (a \wedge \neg b \wedge c)$ and $V = \{b\}$. We show how to compute forgetting $V$ from $\alpha$ by $\forget$ and $\Muforget$ respectively.
 
-(1)
+(1) The step of computing forgetting by $\forget$ is as follows:
 \begin{align*}
     \forget(\alpha,V) & \equiv \alpha[b/\bot] \vee \alpha[b/\top]\\
     & \equiv (a \wedge c) \vee a \\
@@ -709,6 +715,8 @@ Let $\alpha = (a \wedge b) \vee (a \wedge \neg b \wedge c)$ and $V = \{b\}$. We 
     & \equiv (a \wedge \top) \vee (a \wedge \neg \top \wedge c)\\
     & \equiv a
 \end{align*}
+
+It is obvious that $\forget(\alpha, V) \equiv \Muforget(\alpha, V)$.
 \end{example}
 
 A general description is important for understanding the concept of forgetting.
@@ -867,6 +875,7 @@ The following properties show that the forgetting respects the basic semantic no
 
  Intuitively, in Proposition~\ref{pro:ctl:forget:1}, (i) means that forgetting some set of atoms from a sentence do not affect the satisfiability of this sentence. In (ii) we can see that if two sentence are equivalent then the results of forgetting the same set of atoms from both of them are also equivalent. The intuitive meaning of (iii) is obvious. (iv) refers to the result of forgetting $V$ from a disjunctive formula $\varphi_1 \vee \varphi_2$ is equivalent with the disjunction of the results of forgetting $V$ from $\varphi_1$ and $\varphi_2$ respectively. While (v) points out that it is not the case for a conjunctive formula.
 
+Another important property of $\Muforget$ operator is about the formulas with that all the sub-formula are in the domain of $\ALL\NEXT$ ($\square$) or $\EXIST \NEXT$ ($\lozenge$). Formally:
 \begin{proposition}[Homogeneity]\label{pro:mu:forget:2}
  Let $V\subseteq\cal A$ and $\phi$ be a $\mu$-sentence, then we have: % and $Q\in \{\EXIST, \ALL\}$.
    \begin{enumerate}[(i)]
@@ -880,8 +889,8 @@ The homogeneity of $\ALL\NEXT$ (or $\EXIST\NEXT$) on forgetting says we can move
 
 %   It is easy to check that $\Muforget(\delta X. \phi(X), V) \not \equiv \delta X. \Muforget(\phi(X), V)$ with $\delta \in \{\mu, \nu\}$ since $\phi(X)$ is not a $\mu$-sentence.
 
-
- It is noteworthy that it is easy to compute a forgetting results for a set of atoms from a $\mu$-sentence when it is a disjunctive formula.
+Although the homogeneity in Proposition~\ref{pro:mu:forget:2} gives a convenience for computing forgetting.
+However, it is noteworthy that it is easy to compute a forgetting results for a set of atoms from a $\mu$-sentence when it is a disjunctive formula. By Theorem~\ref{thm:exist} we know that the set of models of the result of forgetting a proposition $p$ from a $\mu$-sentence $\varphi$ is equal to the set of models of the uniform interpolant  of $\varphi$ with respect to $\Var(\varphi) -\{p\}$, i.e. $\Mod(\Muforget(\varphi, \{p\})) = \Mod(\widetilde{\exists}p \varphi)$.  This means that when the given formula is a disjunctive formula, we can compute the result of forgetting $p$ from just by replacing the $p$ and $\neg p$ with $\top$ at the same time. Then we have the following proposition.
  \begin{proposition}
  Let $\varphi$ be a $\mu$-sentence and $p\in \Ha$. If $\varphi$ be a disjunctive formula~\cite{d2006modal}, then $\Muforget(\varphi, \{p\})$ can be computed in linear time.
  \end{proposition}
@@ -890,11 +899,13 @@ The homogeneity of $\ALL\NEXT$ (or $\EXIST\NEXT$) on forgetting says we can move
 substituting the literals $p$ and $\neg p$ with $\top$.
  \end{proof}
 
- This means we can easily compute the forgetting when the given formula is a disjunctive formula. In this sense, we can transform a formula into its disjunctive form offline, and then compute its result of forgetting some atoms from it, this will be efficient in some situations.
+
+In this sense, we can transform a formula into its disjunctive form offline, and then compute its result of forgetting some atoms from it, this will be efficient in some situations.
+ Let's recall the three disjunctive formulas, which obtained from  $\mu$-sentences, in Example~\ref{exmp:disF}. And in the following example, we shall show how to compute forgetting $ch$ from those formulas.
 
  \begin{example}
-  Let's recall the three disjunctive formulas in Example~\ref{exmp:disF}:
-$\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),$ $ \varphi_2= \mu X. (j \wedge ch) \wedge Cover(X, \top)$ and $\varphi_3=  \nu X. (j \wedge ch) \wedge Cover(Cover(X, \top), \top)$. Let $V=\{ch\}$ we can easily compute their results of forgetting $V$ from those formulas.
+ Let's denote those formulas as follows:
+$\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),$ $ \varphi_2= \mu X. (j \wedge ch) \wedge Cover(X, \top)$ and $\varphi_3=  \nu X. (j \wedge ch) \wedge Cover(Cover(X, \top), \top)$. Let $V=\{ch\}$, we can easily compute their results of forgetting $V$ from those formulas.
 
 (1) $\Muforget(\varphi_1, V) \equiv j \wedge Cover(\bot, \top)$;
 
@@ -909,7 +920,13 @@ $\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),$ $ \varphi_2
 
 
 \subsection{Complexity Results}
-Before talk about the complexity results of the forgetting operator, let's recall the $\mu$-automaton, which is important in $\mu$-calculus to show the uniform interpolation and model checking of $\mu$-calculus. In this part we will show that the $\mu$-automaton can also make a big convenience to show our complexity results.
+Computational complexity theory focuses on classifying computational problems according to their resource usage, and relating these classes to each other.
+A problem is regarded as inherently difficult if its solution requires significant resources.
+Hence, classify the forgetting operator from its complexity is important to explore an efficient algorithm to compute it.
+In this section, we will explore the complexity of the forgetting operator from both its model checking and reasoning problems.
+Recall that the result of forgetting some atoms from a disjunctive formula can be obtained in linear time, nevertheless, as we will show that the model checking problem is intractable even the given formula is a disjunctive formula.
+
+Before talk about the complexity results of the forgetting operator, let's recall the $\mu$-automaton, which is an important technique in $\mu$-calculus to compute the uniform interpolation of a given formula and demonstrate the complexity of model checking of $\mu$-calculus. In this part we will show that the $\mu$-automaton can also make a big convenience to show our complexity results.
 \begin{definition}[$\mu$-automaton~\cite{d1996uniform}]
   A $\mu$-automaton $A$, also called modal automaton~\cite{bradfield2018mu}, is a tuple $(Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$ such that:
   \begin{enumerate}[(i)]
@@ -922,7 +939,10 @@ Before talk about the complexity results of the forgetting operator, let's recal
   \end{enumerate}
 \end{definition}
 
- Although this automaton differs slightly from those given in~\cite{janin1995automata,bradfield2018mu}, but the automata in their various guises are equivalent. Moreover, modal automata are essentially alternating automata~\cite{bradfield2018mu}. It has been shown that constructing a $\mu$-automaton from a $\mu$-calculus formula can be done in exponential time, while it is in polynomial time when the $\mu$-calculus formula is a disjunctive formula. Then we have the following complexity result.
+ Although this automaton differs slightly from those given in~\cite{janin1995automata,bradfield2018mu}, but the automata in their various guises are equivalent. Moreover, modal automata are essentially alternating automata~\cite{bradfield2018mu}. And it has been shown that constructing a $\mu$-automaton from a $\mu$-calculus formula can be done in exponential time, while it is in polynomial time when the $\mu$-calculus formula is a disjunctive formula.
+
+ In addition, it had been shown in~\cite{d1996uniform} that for each $\mu$-automaton $A_{\varphi}$ obtained from a $\mu$-formula $\varphi$  and a proposition $p$ it is easy to construct another $\mu$-automaton $B$ such that, for any Kripke structure ${\cal N}$, $B$ accepts ${\cal N}$ iff there is a model ${\cal N}'$ of $\varphi$ such that ${\cal N} \lrto_{\{p\}} {\cal N}'$, i.e. $B$ corresponds to a $\mu$-sentence which is equivalent to $\Muforget(\varphi, V)$ by the definition of forgetting in $\mu$-calculus.
+ Then we have the following complexity result.
 
 \begin{proposition}[Model Checking]\label{pro:MC}
 Given a finite Kripke structure  $\Hm$, a disjunctive formula $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is \textsc{NP} $\cap$ co-\textsc{NP}.
@@ -992,8 +1012,7 @@ Let $\varphi$ and $\psi$ be two $\mu$-sentences and $V$ be a set of atoms. Then,
 
 
 
-\section{Necessary and Sufficient Conditions}
-\label{ns_conditions}
+\section{Necessary and Sufficient Conditions}\label{ns_conditions}
 In this section, we present two key notions of our work:  namely, the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC)  of a given $\mu$-calculus specification, which corresponds to the \emph{most general consequence} and the \emph{most specific abduction} of a specification, respectively.  As aforementioned in the introduction, these notions respectively are accordance with the \emph{strongest precondition} (SP) and the \emph{weakest post-condition} (WP) (introduced by E. Dijkstra in \cite{DBLP:journals/cacm/Dijkstra75}), which have been central to a wide variety of tasks and studies, e.g. generating counterexamples and refinement of system in verification. Our contribution, in particular, will be on computing SNC and WSC via forgetting under a given $\mu$-sentence and a set $V$ of atoms.  Let us give the formal definition.
 \begin{definition}[sufficient and necessary condition]\label{def:NC:SC}
 Let $\phi$, $\psi$ be two $\mu$-sentences, $V \subseteq \Var(\phi)$, $q\in\Var(\phi)- V$
@@ -1014,6 +1033,7 @@ and $\Var(\psi)\subseteq V$.
     for any SC $\psi'$ of $q$ on $V$ under $\phi$.
 \end{itemize}
 \end{definition}
+Intuitively, the SNC (WSC) is the strongest (weakest) one among the NCs (SCs) of $q$ on $V$ under $\phi$.
 Note that if both $\psi$ and $\psi'$ are SNC (WSC) of $q$ on $V$ under $\phi$, then
 $\Mod(\psi)=\Mod(\psi')$, i.e., $\psi$ and $\psi'$ have the same models.
 In this sense, the SNC (WSC) of $q$ on $V$ under $\phi$ is unique (up to semantic equivalence). The following result shows that the SNC and WSC are in fact dual notions.
@@ -1024,6 +1044,9 @@ In this sense, the SNC (WSC) of $q$ on $V$ under $\phi$ is unique (up to semanti
  Then, $\psi$ is a SNC (WSC) of $q$ on $V$ under $\varphi$ iff $\neg \psi$ is a WSC (SNC)
     of $\neg q$ on $V$ under $\varphi$.
 \end{proposition}
+
+
+
 
 
 
@@ -1053,13 +1076,27 @@ Following Theorem~\ref{thm:SNC:WSC:forget}, assume that $\beta = \Muforget(\varp
 In addition, for any $\mu$-sentence $\psi$ with $\IR(\psi, (\Var(\varphi) \cup \{q\})- V)$ and $\varphi \wedge q \models \psi$,
 we have $\beta \models \psi$ by (\PP). Therefore, $\beta$ is the SNC of $q$ on $V$ under $\varphi$. This shows the intuition of how the SNC can be obtained from the forgetting.
 
+Although we can use forgetting to compute the SNC and WSC, it had been found that sometimes, it is a lot easier
+to compute the strongest necessary condition than the weakest sufficient condition, and
+sometimes, it is the other way around~\cite{DBLP:Lin:AIJ:2001}. For instance, the author had found that for many
+theories, strongest necessary conditions are easier to compute than weakest sufficient
+conditions. When one condition is much easier to compute, the following proposition will
+be very helpful in computing the other one.
+
+\begin{proposition}\label{pro:eachOne}
+Let $\Gamma$ be a $\mu$-sentence, $q$ a proposition, and $V$ a set of propositions.
+\begin{enumerate}[(i)]
+ \item If $\varphi$ is a necessary condition of $q$ on $V$ under $\Gamma$, and $\psi$ the weakest sufficient condition of $q$ on $V$ under $\Gamma \cup \{\varphi\}$, then $\varphi \wedge \psi$ is the weakest sufficient condition of $q$ on $V$ under $\Gamma$.\\
+ \item  If $\psi$ is a sufficient condition of $q$ on $V$ under $\Gamma$, and $\varphi$ a strongest necessary condition of $q$ on $V$ under $\Gamma \cup \{\neg \psi\}$, then $\varphi \vee \psi$ is a strongest necessary condition of $q$ on $V$ under $\Gamma$.
+ \end{enumerate}
+\end{proposition}
 
 
 
 
 
 
-\section{Representing knowledge update via forgetting}
+\section{Representing knowledge update via forgetting}\label{knowledge_updat}
 In this section, we present the final key notion of our work: knowledge update.
 In particular, we will propose a method of defining knowledge update via forgetting which will
 satisfy all the following Katsuno and Mendelzon's postulates (U1)-(U8) proposed in~\cite{katsuno91mendelzon}:
@@ -1183,7 +1220,7 @@ Furthermore, we have studied formal properties about forgetting, among them, hom
 In particular, we have shown that our notion of forgetting satisfies the well-known postulates of forgetting, which means it faithfully extends the notion of forgetting from classical propositional logic, modal logic \SFive, \CTL\ to $\mu$-calculus.
 We also showed that for any $\mu$-sentence, if it is a disjunctive formula, then forgetting a set  of atoms from it can be down in linear time.
 On the complexity theory side, we have investigated that the Model checking problem of forgetting $V$ from a disjunctive formula is \textsc{NP} $\cap$ co-\textsc{NP}
-and the entailment problems of forgetting are $\textsc{Exptime}$-complete from the point of $\mu$ automaton.
+and the entailment problems of forgetting are $\textsc{Exptime}$-complete from the point of $\mu$-automaton.
 And finally, we showed that the knowledge update in terms of forgetting in $\mu$-calculus under initial structures satisfies the Katsuno and Mendelzon's postulates (U1)-(U8).
 
 \paragraph{Future work}
@@ -1576,6 +1613,9 @@ Let $A_{\varphi}$ and $A_{\psi}$ be the $\mu$-automaton of $\varphi$ and $\psi$ 
 
 
 
+
+
+
 \noindent\textbf{Proposition}~\ref{dual} \textbf{(dual)} Let $V,q,\varphi$ and $\psi$ are defined as in Definition~\ref{def:NC:SC}.
  Then, $\psi$ is a SNC (WSC) of $q$ on $V$ under $\varphi$ iff $\neg \psi$ is a WSC (SNC)
     of $\neg q$ on $V$ under $\varphi$.
@@ -1629,6 +1669,20 @@ The proof of the other part of the proposition is similar.
     We can see that $\varphi \wedge \psi \models {\cal F}$ by suppose. Therefore, $\varphi \models \psi \lrto {\cal F}$, which means $\psi$ is logic equivalence with ${\cal F}$ under $\varphi$.
     This is contradict with the suppose. Then ${\cal F}$ is the SNC of $q$ on $P$ under $\varphi$.
  \end{proof}
+
+
+\noindent\textbf{Proposition}\ref{pro:eachOne}
+Let $\Gamma$ be a $\mu$-sentence, $q$ a proposition, and $V$ a set of propositions.
+\begin{enumerate}[(i)]
+ \item If $\varphi$ is a necessary condition of $q$ on $V$ under $\Gamma$, and $\psi$ the weakest sufficient condition of $q$ on $V$ under $\Gamma \cup \{\varphi\}$, then $\varphi \wedge \psi$ is the weakest sufficient condition of $q$ on $V$ under $\Gamma$.\\
+ \item  If $\psi$ is a sufficient condition of $q$ on $V$ under $\Gamma$, and $\varphi$ a strongest necessary condition of $q$ on $V$ under $\Gamma \cup \{\neg \psi\}$, then $\varphi \vee \psi$ is a strongest necessary condition of $q$ on $V$ under $\Gamma$.
+ \end{enumerate}
+\begin{proof}
+(i) First of all, $\varphi \wedge \psi$ is an SC due to $\Gamma \cup \{\varphi\} \models \psi \supset q$, i.e. $\Gamma \models \varphi \wedge \supset q$.
+We will show it is the weakest one: suppose $\varphi'$ is an SC, i.e. $\Gamma \models \varphi' \supset q$. We need to show that $\Gamma \models \varphi' \supset \varphi \wedge \psi$. Thanks to $\Gamma \models q \supset \varphi$. We have $\Gamma \models  \varphi' \supset \varphi$. However, $\varphi'$ is also an SC of $q$ under $\Gamma \cup \{\varphi\}$, hence $\Gamma \cup \{\varphi\} \models  \varphi' \supset \psi$ because $\psi$ is the WSC of $q$ under $\Gamma \cup \{\varphi\}$. Therefore $\Gamma \models (\varphi \wedge \psi)$.
+
+(ii) Suppose $\varphi'$ is an NC of $q$ under $\Gamma$, i.e. $\Gamma \models q \supset \varphi'$. We have $\Gamma \models \psi \supset \varphi'$ since $\Gamma \models \psi \supset q$. And there is $\Gamma \cup \{\neg \psi\} \models \varphi \supset \varphi'$ due to $\Gamma \cup \{\neg \psi\} \models q \supset \varphi$ and $\Gamma \cup \{\neg \psi\} \models q \supset \varphi'$. Therefore we have $\Gamma \models \varphi \supset \varphi'$ by $\Gamma \models \neg \psi \wedge \varphi \supset \varphi'$ and $\Gamma \models \psi \supset \varphi'$.
+\end{proof}
 
 
 

@@ -697,7 +697,7 @@ Let's see the following example.
 \begin{example}
 Let $\alpha = (a \wedge b) \vee (a \wedge \neg b \wedge c)$ and $V = \{b\}$. We show how to compute forgetting $V$ from $\alpha$ by $\forget$ and $\Muforget$ respectively.
 
-(1) The step of computing forgetting by $\forget$ is as follows:
+(1)
 \begin{align*}
     \forget(\alpha,V) & \equiv \alpha[b/\bot] \vee \alpha[b/\top]\\
     & \equiv (a \wedge c) \vee a \\
@@ -709,8 +709,6 @@ Let $\alpha = (a \wedge b) \vee (a \wedge \neg b \wedge c)$ and $V = \{b\}$. We 
     & \equiv (a \wedge \top) \vee (a \wedge \neg \top \wedge c)\\
     & \equiv a
 \end{align*}
-
-It is obvious that $\forget(\alpha, V) \equiv \Muforget(\alpha, V)$.
 \end{example}
 
 A general description is important for understanding the concept of forgetting.
@@ -883,8 +881,8 @@ The homogeneity of $\ALL\NEXT$ (or $\EXIST\NEXT$) on forgetting says we can move
 
 %   It is easy to check that $\Muforget(\delta X. \phi(X), V) \not \equiv \delta X. \Muforget(\phi(X), V)$ with $\delta \in \{\mu, \nu\}$ since $\phi(X)$ is not a $\mu$-sentence.
 
-Although the homogeneity in Proposition~\ref{pro:mu:forget:2} gives a convenience for computing forgetting.
-However, it is noteworthy that it is easy to compute a forgetting results for a set of atoms from a $\mu$-sentence when it is a disjunctive formula. By Theorem~\ref{thm:exist} we know that the set of models of the result of forgetting a proposition $p$ from a $\mu$-sentence $\varphi$ is equal to the set of models of the uniform interpolant  of $\varphi$ with respect to $\Var(\varphi) -\{p\}$, i.e. $\Mod(\Muforget(\varphi, \{p\})) = \Mod(\widetilde{\exists}p \varphi)$.  This means that when the given formula is a disjunctive formula, we can compute the result of forgetting $p$ from just by replacing the $p$ and $\neg p$ with $\top$ at the same time. Then we have the following proposition.
+
+ Although the Homogeneity in Proposition~\ref{pro:mu:forget:2} gives a  It is noteworthy that it is easy to compute a forgetting results for a set of atoms from a $\mu$-sentence when it is a disjunctive formula. By Theorem~\ref{thm:exist} we know that the set of models of the result of forgetting a proposition $p$ from a $\mu$-sentence $\varphi$ is equal to the set of models of the uniform interpolant  of $\varphi$ with respect to $\Var(\varphi) -\{p\}$, i.e. $\Mod(\Muforget(\varphi, \{p\})) = \Mod(\widetilde{\exists}p \varphi)$.  This means that when the given formula is a disjunctive formula, we can compute the result of forgetting $p$ from just by replacing the $p$ and $\neg p$ with $\top$ at the same time. Then we have the following proposition.
  \begin{proposition}
  Let $\varphi$ be a $\mu$-sentence and $p\in \Ha$. If $\varphi$ be a disjunctive formula~\cite{d2006modal}, then $\Muforget(\varphi, \{p\})$ can be computed in linear time.
  \end{proposition}
@@ -895,11 +893,10 @@ substituting the literals $p$ and $\neg p$ with $\top$.
 
 
 In this sense, we can transform a formula into its disjunctive form offline, and then compute its result of forgetting some atoms from it, this will be efficient in some situations.
- Let's recall the three disjunctive formulas, which obtained from  $\mu$-sentences, in Example~\ref{exmp:disF}. And in the following example, we shall show how to compute forgetting $ch$ from those formulas.
 
  \begin{example}
- Let's denote those formulas as follows:
-$\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),$ $ \varphi_2= \mu X. (j \wedge ch) \wedge Cover(X, \top)$ and $\varphi_3=  \nu X. (j \wedge ch) \wedge Cover(Cover(X, \top), \top)$. Let $V=\{ch\}$, we can easily compute their results of forgetting $V$ from those formulas.
+  Let's recall the three disjunctive formulas in Example~\ref{exmp:disF}:
+$\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),$ $ \varphi_2= \mu X. (j \wedge ch) \wedge Cover(X, \top)$ and $\varphi_3=  \nu X. (j \wedge ch) \wedge Cover(Cover(X, \top), \top)$. Let $V=\{ch\}$ we can easily compute their results of forgetting $V$ from those formulas.
 
 (1) $\Muforget(\varphi_1, V) \equiv j \wedge Cover(\bot, \top)$;
 
@@ -914,12 +911,6 @@ $\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),$ $ \varphi_2
 
 
 \subsection{Complexity Results}
-Computational complexity theory focuses on classifying computational problems according to their resource usage, and relating these classes to each other.
-A problem is regarded as inherently difficult if its solution requires significant resources.
-Hence, classify the forgetting operator from its complexity is important to explore an efficient algorithm to compute it.
-In this section, we will explore the complexity of the forgetting operator from both its model checking and reasoning problems.
-Recall that the result of forgetting some atoms from a disjunctive formula can be obtained in linear time, nevertheless, as we will show that the model checking problem is intractable even the given formula is a disjunctive formula.
-
 Before talk about the complexity results of the forgetting operator, let's recall the $\mu$-automaton, which is important in $\mu$-calculus to show the uniform interpolation and model checking of $\mu$-calculus. In this part we will show that the $\mu$-automaton can also make a big convenience to show our complexity results.
 \begin{definition}[$\mu$-automaton~\cite{d1996uniform}]
   A $\mu$-automaton $A$, also called modal automaton~\cite{bradfield2018mu}, is a tuple $(Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$ such that:
@@ -1194,7 +1185,7 @@ Furthermore, we have studied formal properties about forgetting, among them, hom
 In particular, we have shown that our notion of forgetting satisfies the well-known postulates of forgetting, which means it faithfully extends the notion of forgetting from classical propositional logic, modal logic \SFive, \CTL\ to $\mu$-calculus.
 We also showed that for any $\mu$-sentence, if it is a disjunctive formula, then forgetting a set  of atoms from it can be down in linear time.
 On the complexity theory side, we have investigated that the Model checking problem of forgetting $V$ from a disjunctive formula is \textsc{NP} $\cap$ co-\textsc{NP}
-and the entailment problems of forgetting are $\textsc{Exptime}$-complete from the point of $\mu$-automaton.
+and the entailment problems of forgetting are $\textsc{Exptime}$-complete from the point of $\mu$ automaton.
 And finally, we showed that the knowledge update in terms of forgetting in $\mu$-calculus under initial structures satisfies the Katsuno and Mendelzon's postulates (U1)-(U8).
 
 \paragraph{Future work}
