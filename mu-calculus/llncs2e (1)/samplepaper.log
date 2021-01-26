@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  26 JAN 2021 10:08
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  26 JAN 2021 20:34
 entering extended mode
 **E:/（博士）我的资料/Git/fry/mu-calculus/llncs2e*(1)/samplepaper.tex
 ("E:/（博士）我的资料/Git/fry/mu-calculus/llncs2e (1)/samplepaper.tex"
@@ -807,75 +807,95 @@ Overfull \hbox (11.25pt too wide) in paragraph at lines 287--296
  []
 
 [2 <E:/（博士）我的资料/Git/fry/mu-calculus/llncs2e (1)/run_simp.png>]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 324.
-
-
-LaTeX Warning: Citation `wang2013forgetting' on page 3 undefined on input line 
-324.
-
-
-LaTeX Warning: Citation `gonccalves2020limits' on page 3 undefined on input lin
-e 324.
-
-
 Underfull \vbox (badness 2158) has occurred while \output is active []
 
  [3]
-[4] [5] [6] [7] [8]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 345.
+
+
+LaTeX Warning: Citation `doherty2001computing' on page 4 undefined on input lin
+e 351.
+
+
+LaTeX Warning: Citation `zhang2010forgetting' on page 4 undefined on input line
+ 356.
+
+
+LaTeX Warning: Citation `gabbay2008second' on page 4 undefined on input line 35
+8.
+
+
+LaTeX Warning: Citation `zhang2010forgetting' on page 4 undefined on input line
+ 361.
+
+[4]
+
+LaTeX Warning: Citation `wang2013forgetting' on page 5 undefined on input line 
+369.
+
+
+LaTeX Warning: Citation `gonccalves2020limits' on page 5 undefined on input lin
+e 369.
+
+[5] [6] [7] [8] [9] [10]
 File: run_simp.png Graphic file (type png)
  <use run_simp.png>
-Package pdftex.def Info: run_simp.png used on input line 617.
+Package pdftex.def Info: run_simp.png used on input line 651.
 (pdftex.def)             Requested size: 121.4927pt x 74.84026pt.
 
-<j_bisimi.png, id=198, 107.40125pt x 145.54375pt>
+<j_bisimi.png, id=268, 107.40125pt x 145.54375pt>
 File: j_bisimi.png Graphic file (type png)
  <use j_bisimi.png>
-Package pdftex.def Info: j_bisimi.png used on input line 625.
+Package pdftex.def Info: j_bisimi.png used on input line 659.
 (pdftex.def)             Requested size: 39.91846pt x 54.09462pt.
 
-Overfull \hbox (9.0pt too wide) in paragraph at lines 617--626
+Overfull \hbox (9.0pt too wide) in paragraph at lines 651--660
  [][][][] 
  []
 
-[9] [10 <E:/（博士）我的资料/Git/fry/mu-calculus/llncs2e (1)/j_bisimi.p
-ng>]
+[11 <E:/（博士）我的资料/Git/fry/mu-calculus/llncs2e (1)/j_bisimi.png>]
+[12]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 748.
- [11] [12] [13] [14]
-Overfull \hbox (11.7639pt too wide) in paragraph at lines 988--989
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 782.
+ [13] [14] [15]
+Overfull \hbox (11.7639pt too wide) in paragraph at lines 1025--1026
 []$\OT1/cmr/m/n/10 [$\OT1/ptm/m/n/10 Var-independence$\OT1/cmr/m/n/10 ]$ \OT1/p
 tm/m/n/10 If a for-mu-la $\OML/cmm/m/it/10 '$ \OT1/ptm/m/n/10 is in-de-pen-den-
 t of a set $\OML/cmm/m/it/10 V$ \OT1/ptm/m/n/10 of atom-s, i.e. $[]\OT1/cmr/m/n
 /10 (\OML/cmm/m/it/10 '; V\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $
  []
 
-[15]
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 1117--1118
+
+ []
+
 
 LaTeX Warning: The counter will not be printed.
-             The label is:  on input line 1077.
+             The label is:  on input line 1131.
 
-[16] [17]
-Overfull \hbox (0.55247pt too wide) in paragraph at lines 1191--1199
+[18] [19]
+Overfull \hbox (0.55247pt too wide) in paragraph at lines 1245--1253
 \OT1/ptm/m/n/10 sim-i-lar with the $\OMS/cmsy/m/n/10 L$\OT1/ptm/m/n/10 -bisimul
 ation, in which any $\OML/cmm/m/it/10 $\OT1/ptm/m/n/10 -sentence is in-vari-an
 t for $\OMS/cmsy/m/n/10 L$\OT1/ptm/m/n/10 -bisimulation.
  []
 
-[18] [19]
+[20] [21]
 ("E:\（博士）我的资料\Git\fry\mu-calculus\llncs2e (1)\samplepaper.bbl"
-[20
+[22
 
 ]
-Underfull \hbox (badness 2582) in paragraph at lines 117--119
+Underfull \hbox (badness 2582) in paragraph at lines 139--141
 []\OT1/ptm/m/n/9 Wang, Y.: On for-get-ting in tractable propo-si-tion-al frag-m
 ents. arX-iv preprint arX-
  []
 
-) [21] [22
+) [23] [24
 
 ]
-Overfull \hbox (5.05008pt too wide) in paragraph at lines 1419--1420
+Overfull \hbox (5.05008pt too wide) in paragraph at lines 1473--1474
 []\OT1/ptm/m/n/10 Let $\OMS/cmsy/m/n/10 M 2 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
  '\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 with $\OMS/cmsy/m/n/10 M \OT1/cmr/m/n/10 =
  (\OML/cmm/m/it/10 S; s; R; L\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . We con-struc-t
@@ -883,8 +903,8 @@ Overfull \hbox (5.05008pt too wide) in paragraph at lines 1419--1420
 /10 = (\OML/cmm/m/it/10 S; s; R; L[]\OT1/cmr/m/n/10 )$
  []
 
-[23]
-Overfull \hbox (9.02502pt too wide) in paragraph at lines 1511--1512
+[25]
+Overfull \hbox (9.02502pt too wide) in paragraph at lines 1565--1566
 []\OT1/ptm/m/n/10 Let $\OMS/cmsy/m/n/10 M \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 S
 ; R; s; L\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 , $\OML/cmm/m/it/10 M[] \OT1/cmr/m/n
 /10 = (\OML/cmm/m/it/10 S[]; R[]; s[]; L[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 wi
@@ -893,16 +913,21 @@ n/10 M[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 S[]; R[]; s[]; L[]\OT1/cmr/m/n/10
 )$
  []
 
-[24]
-Overfull \hbox (47.3348pt too wide) in paragraph at lines 1519--1520
+[26]
+Overfull \hbox (47.3348pt too wide) in paragraph at lines 1573--1574
 []\OT1/ptm/m/n/10 (i) In or-der to prove $[]\OT1/cmr/m/n/10 ([][]\OML/cmm/m/it/
 10 ; V\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  [][]\OT1/cmr/m/n/10 ([](\OML/cmm/m/
 it/10 ; V\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , we on-ly need to prove $[]\OT1/c
 mr/m/n/10 ([]([][]\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/10 )) =$
  []
 
-[25] [26] [27]
-Overfull \hbox (0.14348pt too wide) in paragraph at lines 1684--1685
+[27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 1705--1706
+
+ []
+
+[29]
+Overfull \hbox (0.14348pt too wide) in paragraph at lines 1755--1756
 $\OMS/cmsy/m/n/10 M[]$ \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 M $[] M[]$\OT1/ptm
 /m/n/10 , i.e. $\OMS/cmsy/m/n/10 M[]$ \OT1/ptm/m/n/10 is a mod-el of both $[]\O
 T1/cmr/m/n/10 (\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OT1/cmr/
@@ -911,13 +936,14 @@ t/10 $ \OT1/ptm/m/n/10 and $[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/
 n/10 (\OMS/cmsy/m/n/10 M\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ;$
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1696.
-[28]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1696.
+[30]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1767.
+ [31]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1767.
 
 ("E:\（博士）我的资料\Git\fry\mu-calculus\llncs2e (1)\samplepaper.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1696.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1696.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1767.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1767.
 
 
 Package rerunfilecheck Warning: File `samplepaper.out' has changed.
@@ -929,10 +955,10 @@ Package rerunfilecheck Info: Checksums for `samplepaper.out':
 (rerunfilecheck)             After:  204B59EC3E5E5191A2D652C390132139;99.
  ) 
 Here is how much of TeX's memory you used:
- 9343 strings out of 495354
- 130461 string characters out of 3183859
- 257281 words of memory out of 3000000
- 12181 multiletter control sequences out of 15000+200000
+ 9383 strings out of 495354
+ 131084 string characters out of 3183859
+ 256930 words of memory out of 3000000
+ 12199 multiletter control sequences out of 15000+200000
  47434 words of font info for 107 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  36i,15n,46p,1403b,599s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -953,9 +979,9 @@ b><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTe
 X/fonts/type1/urw/courier/ucrr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb
 8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/fonts/
 type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on samplepaper.pdf (28 pages, 425083 bytes).
+Output written on samplepaper.pdf (31 pages, 444967 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 180 named destinations out of 1000 (max. 500000)
+ 693 PDF objects out of 1000 (max. 8388607)
+ 202 named destinations out of 1000 (max. 500000)
  19 words of extra memory for PDF output out of 10000 (max. 10000000)
 

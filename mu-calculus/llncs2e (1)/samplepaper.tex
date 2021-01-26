@@ -306,7 +306,7 @@ Now assume a situation in which due to some problems (i.e. the venue changed or 
 
 
 Similar scenarios  like the one presented in Example~\ref{examp:run} may arise in many different domains such as business-process modelling, software development, concurrent systems and more~\cite{Baier:PMC:2008}. Yet dropping some restrictions in a large and complex  system or specification, without affecting the working system components or violating dependent specifications over a given signature, is a non-trivial task.
-Moreover, in such a scenario, two logical notions introduced by E. Dijkstra in~\cite{DBLP:journals/cacm/Dijkstra75} are highly informative: the strongest post-condition (SP) and the weakest precondition (WP) of a given specification, which are corresponding with the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC), proposed by Lin~\cite{lin2001strongest}, of the specification, respectively, and have been central to a wide variety of tasks and studies, e.g. in generating counterexamples~\cite{dailler2018instrumenting} and refinement of system~\cite{woodcock1990refinement}. These correspond to the \emph{most general consequence} and the \emph{most specific abduction} of such specification, respectively.
+Moreover, in such a scenario, two logical notions introduced by E. Dijkstra in~\cite{DBLP:journals/cacm/Dijkstra75} are highly informative: the strongest post-condition (SP) and the weakest precondition (WP) of a given specification, which are corresponding with the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC), proposed by Lin~\cite{DBLP:Lin:AIJ:2001}, of the specification, respectively, and have been central to a wide variety of tasks and studies, e.g. in generating counterexamples~\cite{dailler2018instrumenting} and refinement of system~\cite{woodcock1990refinement}. These correspond to the \emph{most general consequence} and the \emph{most specific abduction} of such specification, respectively.
 
 
 Besides, \emph{belief updates} and \emph{belief revision}, as two well-studied issues in artificial intelligence, are concerned with the update and revision aspects of an agent's belief with respect to new beliefs~\cite{katsuno91mendelzon}. Intuitively, if $\varphi$ represents the agent's belief about the world and the agent performs an action that is supposed to make $\psi$ true in the resulting world, then the agent's belief about the resulting  world can be described by $\varphi \diamond \psi$, where $\diamond$ is the update operator of choice.
@@ -315,14 +315,14 @@ In this sense, as an analogous notion of belief update, the \emph{knowledge upda
 Nevertheless, there are no approaches to solve the knowledge update in logic languages which contain \emph{temporal operators}.
 
 
-To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a principle way. Inspired by~\cite{lin2001strongest,renyansfirstpaper}, in this paper we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting.
+To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a principle way. Inspired by~\cite{DBLP:Lin:AIJ:2001,renyansfirstpaper}, in this paper we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting.
 In particular, we will give the definition of forgetting in $\mu$-calculus by using the bisimulation~\cite{browne1988characterizing,Baier:PMC:2008,Yan:AIJ:2009} and show whether this notion satisfies the general principles or postulates proposed by Zhang~\cite{Yan:AIJ:2009}. We then study the relationship between SNC (WSC) and forgetting, and we also demonstrate how forgetting can be used in knowledge update in $\mu$-calculus.
 
 \emph{Forgetting},
 which is a dual concept of {\em uniform interpolation}~\cite{visser1996uniform,konev2009forgetting} and was first formally defined in propositional and FOL by Lin and Reiter~\cite{lin1994forget,eiter2019brief}, can be traced back to the work of Boole on propositional
 variable elimination and the seminal work of Ackermann~\cite{ackermann1935untersuchungen}.
-Moreover, it has been extended  to various logic systems. See~\cite{wang2013forgetting,eiter2019brief,gonccalves2020limits} for a recent and comprehensive survey.
-Particularly, in classical propositional logic (CPL) the result of forgetting atom $p$ from formula $\varphi$ is $\varphi[p/\top] \vee \varphi[p/\bot]$, that is the disjunction of formulas obtained from $\varphi$ by replacing $p$ with $\top$ and $\bot$ respectively.
+Moreover, it has been extended  to various logic systems. See~\cite{eiter2019brief} for a recent and comprehensive survey.
+% Particularly, in classical propositional logic (CPL) the result of forgetting atom $p$ from formula $\varphi$ is $\varphi[p/\top] \vee \varphi[p/\bot]$, that is the disjunction of formulas obtained from $\varphi$ by replacing $p$ with $\top$ and $\bot$ respectively.
 
 
 However, existing forgetting definitions in PL and answer set programming are not directly applicable in modal logics.
@@ -340,6 +340,34 @@ Section~\ref{ns_conditions} explores the relation between forgetting and SNC (WS
 Due to space restrictions, for most of the technical results, the actual proof is moved to the supplementary material in Appendix, and instead an intuitive justification is put in place.
 
 \section{Related work}
+In this section, we shall discuss briefly about published matter that technically relates to our work.
+
+\subsection{The Weakest precondition condition}
+The Weakest precondition, as an important concept in formal verification, was proposed in~\cite{Dijkstra:1959} at first by Dijkstra to solve the problem of computing or approximating invariant appearing in \emph{verification of computer programs and systems}, particularly in ``Hoare triple"~\cite{Hoare1969}.
+Afterward, it has been wildly studied by researchers, especially in generating counterexamples~\cite{dailler2018instrumenting} and refinement of  system~\cite{woodcock1990refinement}.
+
+In the filed of knowledge expression and reasoning (KR), there is a similar concept, called \emph{weakest sufficient condition}(WSC), had been introduced in~\cite{DBLP:Lin:AIJ:2001} by Lin to generate successor state axioms from causal theories. Moreover, the SNC and WSC for a proposition $q$ on a restricted subset of the propositional variables under a propositional theory $T$ are computed based on the notion of forgetting.
+Besides, the SNC and WSC are generalized to first order logic (FOL) and a direct method that is based
+on \emph{Second-Order Quantifier Elimination} (SOQE) technique has been proposed to automatically generate SNC and WSC in~\cite{doherty2001computing}. Besides, the paper~\cite{renyansfirstpaper} also use a forgetting-based method to compute the SNC and WSC in \CTL.
+
+\subsection{The notion of forgetting}
+\emph{Forgetting}, which was first formally defined in propositional and first order logics by Lin and Reiter~\cite{lin1994forget}, can be traced back to the work of Boole on propositional
+variable elimination and the seminal work of Ackermann~\cite{ackermann1935untersuchungen} who recognised that the problem amounts to the elimination of existential second-order quantifiers.
+Usually, the definition of forgetting can be defined from the perspective of Strong/Semantic Forgetting and Weak Forgetting  respectively~\cite{zhang2010forgetting}.
+
+In First-Order Logic (FOL), forgetting has often been studied as an instance of the SOQE problem. It shows in~\cite{lin1994forget} that the result of (Strongly) forgetting an n-ary predicate $P$ from a first-order formula $\varphi$ is $\exists R \varphi[P/R]$, in which $R$ is an n-ary predicate variable and $\varphi[X/Y]$ is a result of replacing every occurrence of $X$ in $\varphi$ by $Y$. The task of forgetting in first-order logic, as a computational problem, is to find a first-order formula that is equivalent to $\exists R \varphi[P/R]$. It is evident that this is a SOQE problem. However, it shows in~\cite{gabbay2008second} that the solution of SOQE problem is not always expressible in FOL, which means that the results of forgetting in FOL is not always expressible in FOL.
+Nonetheless, the solution of weak forgetting is always expressible in FOL, though
+there are cases the forgetting solution can only be represented by an infinite set of
+FOL formulas~\cite{zhang2010forgetting}.
+Similarly, the forgetting in description logics are also explored to create restricted views
+of ontologies by eliminating concept and role symbols from description logic-based
+ontologies~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role}.
+
+In Propositional Logic (PL), forgetting has often been studied under the name of variable
+elimination. In particular, the solution of forgetting a propositional variable $p$ from a PL formula $\varphi$ is $\varphi[p/\bot] \vee \varphi[p/\top]$~\cite{lin1994forget}, where $\varphi[p/\bot]$ and $\varphi[p/\top]$ denote the formulas obtained from $\varphi$ by replacing atom $p$ with $\bot$ and $\top$ respectively.
+In~\cite{Yan:AIJ:2009}, the authors define the knowledge forgetting of S5 modal logic from the Strong Forgetting point of view to explore the relationship between knowledge forgetting and knowledge update. Besides, they have proposed four general postulates for knowledge forgetting and show that these four postulates precisely characterize the notion of knowledge forgetting described above in S5 modal logic.
+What's more, forgetting in logic programs under answer-set semantics, which is a non-monotonic logic program, are also considered, see~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013,wang2013forgetting,gonccalves2020limits}  for more details.
+
 
 \section{Modal $\mu$-calculus} \label{preliminaries}
 We start with some technical and notational preliminaries.
@@ -580,7 +608,7 @@ On one hand, the $V$-bisimulation is similar with the ${\cal L}$-bisimulation in
 
 On the other hand, it is easy to see that our definition is similar with the one introduced in~\cite{renyansfirstpaper}. That is, they are the same whenever the state $s$ in the \MPK-structure $(\Hm, s)$ in that definition is limited to its initial state, and each state in $\Hm_i$ is reachable from the $r_i$.
 Moreover, the $V$-bisimulation defined in~\cite{renyansfirstpaper}, the classical
-bisimulation-equivalence of Definition~7.1 in \cite{Baier:PMC:2008}, state equivalence (i.e., $E_n$) in \cite{browne1988characterizing} and state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008} are closely related~\footnote{the $V$-bisimulation defined in~\cite{renyansfirstpaper} is similar to
+bisimulation-equivalence of Definition~7.1 in \cite{Baier:PMC:2008}, state equivalence (i.e., $E_n$) in \cite{browne1988characterizing} and state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008} are closely related~\footnote{The $V$-bisimulation defined in~\cite{renyansfirstpaper} is similar to
 the state equivalence (i.e., $E_n$) in \cite{browne1988characterizing}, yet it is
 different in the sense that $V$-bisimulation is defined on \MPK-structures,
 while state-equivalence is defined on states.
@@ -590,7 +618,7 @@ which is defined for states of a given \MPK-structure.}.
 In this sense, we can see that our $V$-bisimulation is also similar to those definitions to some extent.
 
 We say that two Kripke structures $\Hm_1$ and $\Hm_2$ are \emph{$V$-bisimilar}, denoted $\Hm_1 \lrto_V \Hm_2$, if there exists a $V$-bisimulation ${\cal B}$ between them.
-In this case, we also say that $\Hm_1$ and $\Hm_2$ on $V$.
+In this case, we also say that $\Hm_1$ and $\Hm_2$ are bisimilar on $V$.
 Moreover, from this Definition~\ref{def:VB} we can see that the $\lrto_V$ between Kripke structures has some interesting properties besides the equivalence relation. Formally:
 \begin{proposition} \label{pro:EqUnion}
 Let $V, V_1 \subseteq \Ha$, $\Hm_1$, $\Hm_2$ and $\Hm_3$ be three Kripke structures, then we have:
@@ -602,7 +630,7 @@ Let $V, V_1 \subseteq \Ha$, $\Hm_1$, $\Hm_2$ and $\Hm_3$ be three Kripke structu
 \end{proposition}
 
 Intuitively, the (i) in Proposition~\ref{pro:EqUnion} means that $\lrto_V$ is reflexive, symmetric and transitive.
-(ii) refers to that if $\Hm_1$ and $\Hm_2$ are bisimilar on two different sets $V$ and $V_1$ respectively, then they are bisimilar on the union of those two sets.
+(ii) refers to that if $\Hm_1$ and $\Hm_2$ are bisimilar on two different sets $V$ and $V_1$ respectively, then they are bisimilar on the union of these two sets.
 As we will show in the next context that this is important to demonstrate the \emph{modularity}, one of the important properties of forgetting in $\mu$-calculus.
 
 To get some intuition of the $V$-bisimulation, let's look at the following example.
@@ -875,7 +903,7 @@ The following properties show that the forgetting respects the basic semantic no
 
  Intuitively, in Proposition~\ref{pro:ctl:forget:1}, (i) means that forgetting some set of atoms from a sentence do not affect the satisfiability of this sentence. In (ii) we can see that if two sentence are equivalent then the results of forgetting the same set of atoms from both of them are also equivalent. The intuitive meaning of (iii) is obvious. (iv) refers to the result of forgetting $V$ from a disjunctive formula $\varphi_1 \vee \varphi_2$ is equivalent with the disjunction of the results of forgetting $V$ from $\varphi_1$ and $\varphi_2$ respectively. While (v) points out that it is not the case for a conjunctive formula.
 
-Another important property of $\Muforget$ operator is about the formulas with that all the sub-formula are in the domain of $\ALL\NEXT$ ($\square$) or $\EXIST \NEXT$ ($\lozenge$). Formally:
+Another important property of $\Muforget$ is about the formulas with that all the sub-formula are in the domain of $\ALL\NEXT$ ($\square$) or $\EXIST \NEXT$ ($\lozenge$). Formally:
 \begin{proposition}[Homogeneity]\label{pro:mu:forget:2}
  Let $V\subseteq\cal A$ and $\phi$ be a $\mu$-sentence, then we have: % and $Q\in \{\EXIST, \ALL\}$.
    \begin{enumerate}[(i)]
@@ -890,9 +918,9 @@ The homogeneity of $\ALL\NEXT$ (or $\EXIST\NEXT$) on forgetting says we can move
 %   It is easy to check that $\Muforget(\delta X. \phi(X), V) \not \equiv \delta X. \Muforget(\phi(X), V)$ with $\delta \in \{\mu, \nu\}$ since $\phi(X)$ is not a $\mu$-sentence.
 
 Although the homogeneity in Proposition~\ref{pro:mu:forget:2} gives a convenience for computing forgetting.
-However, it is noteworthy that it is easy to compute a forgetting results for a set of atoms from a $\mu$-sentence when it is a disjunctive formula. By Theorem~\ref{thm:exist} we know that the set of models of the result of forgetting a proposition $p$ from a $\mu$-sentence $\varphi$ is equal to the set of models of the uniform interpolant  of $\varphi$ with respect to $\Var(\varphi) -\{p\}$, i.e. $\Mod(\Muforget(\varphi, \{p\})) = \Mod(\widetilde{\exists}p \varphi)$.  This means that when the given formula is a disjunctive formula, we can compute the result of forgetting $p$ from just by replacing the $p$ and $\neg p$ with $\top$ at the same time. Then we have the following proposition.
+However, it is noteworthy that it is easy to compute the result of forgetting a set of atoms from a $\mu$-sentence when it is a disjunctive formula. By Theorem~\ref{thm:exist} we know that the set of models of the result of forgetting a proposition $p$ from a $\mu$-sentence $\varphi$ is equal to the set of models of the uniform interpolant  of $\varphi$ with respect to $\Var(\varphi) -\{p\}$, i.e. $\Mod(\Muforget(\varphi, \{p\})) = \Mod(\widetilde{\exists}p \varphi)$.  This means that when the given formula is a disjunctive formula, we can compute the result of forgetting $p$ from $\varphi$ just by replacing the $p$ and $\neg p$ with $\top$ at the same time. Then we have the following proposition.
  \begin{proposition}
- Let $\varphi$ be a $\mu$-sentence and $p\in \Ha$. If $\varphi$ be a disjunctive formula~\cite{d2006modal}, then $\Muforget(\varphi, \{p\})$ can be computed in linear time.
+ Let $\varphi$ be a $\mu$-sentence and $p\in \Ha$. If $\varphi$ is a disjunctive formula~\cite{d2006modal}, then $\Muforget(\varphi, \{p\})$ can be computed in linear time.
  \end{proposition}
  \begin{proof}
  By Theorem 3.6. in~\cite{d2006modal}, we have $\Muforget(\varphi, \{p\}) \equiv \varphi[p/\top, \neg p/\top]$, where $\varphi[p/\top$, $\neg p/\bot]$ is obtained from $\varphi$ by simultaneously
@@ -922,7 +950,7 @@ $\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),$ $ \varphi_2
 \subsection{Complexity Results}
 Computational complexity theory focuses on classifying computational problems according to their resource usage, and relating these classes to each other.
 A problem is regarded as inherently difficult if its solution requires significant resources.
-Hence, classify the forgetting operator from its complexity is important to explore an efficient algorithm to compute it.
+Hence, classifying the forgetting operator from its complexity is important to explore an efficient algorithm to compute it.
 In this section, we will explore the complexity of the forgetting operator from both its model checking and reasoning problems.
 Recall that the result of forgetting some atoms from a disjunctive formula can be obtained in linear time, nevertheless, as we will show that the model checking problem is intractable even the given formula is a disjunctive formula.
 
@@ -1224,7 +1252,7 @@ and the entailment problems of forgetting are $\textsc{Exptime}$-complete from t
 And finally, we showed that the knowledge update in terms of forgetting in $\mu$-calculus under initial structures satisfies the Katsuno and Mendelzon's postulates (U1)-(U8).
 
 \paragraph{Future work}
-As we can see that the reasoning problems of forgetting are $\textsc{Exptime}$-complete, which means there is no algorithm can compute the result of forgetting a set of atoms from a $\mu$-sentence in polynomial time.
+As we can see that the model checking problem of forgetting is \textsc{NP} $\cap$ co-\textsc{NP} and the reasoning problems of forgetting are $\textsc{Exptime}$-complete, which means there is no algorithm can compute the result of forgetting a set of atoms from a $\mu$-sentence in polynomial time.
 It is worthwhile to explore sub-classes of $\mu$-calculus such that we can compute the forgetting in polynomial time. Moreover, when a finite transition system $\Hm$ does not satisfy a specification $\varphi$, one can evaluate the weakest sufficient condition $\psi$ over a signature $V$ under which $\Hm \models \varphi$, viz. expressing $\Hm$ with its characterizing formula, to explore how the condition $\psi$ can guide the design of a new transition system $\Hm'$ satisfying $\varphi$.
 
 %
