@@ -715,7 +715,10 @@ In this case, we also say that the forgetting of $\mu$-calculus is \emph{closed}
 %In this sense, the forgetting result is unique (up to equivalence).
 
 At this point, it is important to emphasize that, the notion of forgetting  we have defined for $\mu$-calculus extends the classical forgetting defined for CPL~\cite{lin1994forget}. Assuming $\varphi$ is a CPL formula and $p\in \Ha$, then $\Forget(\varphi, p)$ is a result of forgetting $p$ from $\varphi$; that is, $\Forget(\varphi, p)\equiv \varphi[p/\bot] \vee \varphi[p/\top]$.
-Moreover, given a set $V\subseteq \Ha$, one can recursively define $\Forget(\varphi, V\cup \{p\}) = \Forget(\Forget(\varphi, p),V)$, where $\Forget(\varphi, \emptyset) = \varphi$. Using this insight, the following result shows that the classical notion of forgetting (for PL ~\cite{lin1994forget}) is a special case of forgetting in $\mu$-calculus.
+Moreover, given a set $V\subseteq \Ha$, the $\Forget(\varphi, V\cup \{p\})$ is recursively defined as $\Forget(\Forget(\varphi, p),V)$ with $\Forget(\varphi, \emptyset) = \varphi$.
+% one can recursively define $\Forget(\varphi, V\cup \{p\}) = \Forget(\Forget(\varphi, p),V)$,
+% where $\Forget(\varphi, \emptyset) = \varphi$.
+Using this insight, the following result shows that the classical notion of forgetting (for CPL ~\cite{lin1994forget}) is a special case of forgetting in $\mu$-calculus.
 
 
 \begin{theorem}\label{thm:PL:CTL}

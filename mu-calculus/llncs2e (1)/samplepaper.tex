@@ -323,7 +323,7 @@ In particular, we will give the definition of forgetting in $\mu$-calculus by us
 \emph{Forgetting},
 which is a dual concept of {\em uniform interpolation}~\cite{visser1996uniform,konev2009forgetting} and was first formally defined in propositional and first-order logic (FOL) by Lin and Reiter~\cite{lin1994forget,eiter2019brief}, can be traced back to the work of Boole on propositional
 variable elimination and the seminal work of Ackermann~\cite{ackermann1935untersuchungen}.
-Moreover, it has been extended  to various logic systems. See~\cite{eiter2019brief} for a recent and comprehensive survey.
+Moreover, it has been extended  to various logic systems, including modal logics~\cite{Yan:AIJ:2009,fang2019forgetting} and nonmonotonic logics~\cite{DBLP:journals/jair/WangZZZ14,gonccalves2020limits}. See~\cite{eiter2019brief} for a recent and comprehensive survey.
 % Particularly, in classical propositional logic (CPL) the result of forgetting atom $p$ from formula $\varphi$ is $\varphi[p/\top] \vee \varphi[p/\bot]$, that is the disjunction of formulas obtained from $\varphi$ by replacing $p$ with $\top$ and $\bot$ respectively.
 
 
@@ -332,14 +332,18 @@ And we can also not directly use the method of forgetting in $\CTL$~\cite{renyan
 Hopefully, it has been proved that the modal $\mu$-calculus has \emph{Uniform interpolation}~\cite{d1996uniform}. Informally, for every $\mu$ sentence $\varphi$ and every finite set $V$ of atoms, there exists an $\mu$ sentence $\exists V \varphi$ which does not contain atoms from $V$ but is  logically closest to $\varphi$ in some sense. This means that the result of forgetting some atoms from a $\mu$-calculus sentence always exists. In this sense, showing the semantic of forgetting in $\mu$-calculus through \emph{general principles or postulates} is important to make it clearer to understand.
 
 Informally, the four postulates proposed by Zhang~\cite{Yan:AIJ:2009} show that the result $\psi$ of forgetting some set $V$ of atoms from a formula $\varphi$ is not only weaker than $\varphi$, i.e. $\varphi \models \psi$, irrelevant to $V$, i.e. exists a formula that do not contain atoms in $V$ and equivalent with $\psi$, but also has the same ``logic content" with $\varphi$, i.e. for each formula $\phi$ that irrelevant to $V$, $\phi$ can be implied by $\varphi$ iff $\phi$ can be implied by $\psi$.
-In this paper we explore the forgetting of $\mu$-calculus under infinite models (to distinguish that of $\CTL$~\cite{renyansfirstpaper}) from both the postulates and the algebraic properties of the forgetting operator. The complexities of the reasoning problems of the forgetting operator are also explored from the point of automaton and it is shown that these are in $\textsc{Exptime}$-complete.
+In this paper we explore the forgetting of $\mu$-calculus under infinite models (to distinguish that of $\CTL$~\cite{renyansfirstpaper}) from both the postulates and the algebraic properties of the forgetting operator. The complexities of the reasoning problems of the forgetting operator are also explored from the point of automaton and it is shown that these are $\textsc{Exptime}$-complete.
 It is worth mentioning that we restrict the models are finite in the knowledge update part in order to express the models of a formula. And we show that our definition of $\diamond_{\mu}$ by forgetting satisfies Katsuno and Mendelzon's update postulates~\cite{katsuno91mendelzon}.
 
 % The rest of the paper is organised as follows. Next section reports about the related work. Section~\ref{preliminaries} introduces the notation and technical preliminaries. As key contributions, Section~\ref{forgetting}, introduces the notion of forgetting in $\mu$-calculus. Moreover, it studies the semantic properties of forgetting. In addition, a complexity analysis, concerning model checking and reasoning problems of forgetting, is carried out.
 % Section~\ref{ns_conditions} explores the relation between forgetting and SNC (WSC). Section~\ref{knowledge_updat} gives how to Represent knowledge update via forgetting. Conclusion closes the paper.
-
-
-Due to space restrictions, for most of the technical results, the actual proof is moved to the supplementary material in Appendix, and instead an intuitive justification is put in place.
+%
+% Due to space restrictions, for most of the technical results, the actual proof is moved to the supplementary material in Appendix, and instead an intuitive justification is put in place.
+After discuss the related work in the next section, the basic notation and technical preliminaries are introduced in Section~\ref{preliminaries}. The formal definition of forgetting in $\mu$-calculus,  its various properties and computational complexities are presented in Section~\ref{forgetting}.
+Section~\ref{ns_conditions} identifies the weakest sufficient conditions via forgetting.
+Section~\ref{knowledge_updat} addresses the knowledge update of $\mu$-calculus via forgetting.
+Finally, concluding remarks are discussed in Section~\ref{sec:conclude}.
+Due to space limitation, the detailed proofs of  technical results are moved to Appendix.
 
 \section{Related work}
 In this section, we shall discuss briefly about published matter that technically relates to our work.
@@ -366,9 +370,9 @@ of ontologies by eliminating concept and role symbols from description logic-bas
 ontologies~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,zhao2017role}.
 
 In CPL, forgetting has often been studied under the name of variable
-elimination. In particular, the solution of forgetting a propositional variable $p$ from a PL formula $\varphi$ is $\varphi[p/\bot] \vee \varphi[p/\top]$~\cite{lin1994forget}, where $\varphi[p/\bot]$ and $\varphi[p/\top]$ denote the formulas obtained from $\varphi$ by replacing atom $p$ with $\bot$ and $\top$ respectively.
+elimination. In particular, the solution of forgetting a propositional variable $p$ from a CPL formula $\varphi$ is $\varphi[p/\bot] \vee \varphi[p/\top]$~\cite{lin1994forget}, where $\varphi[p/\bot]$ and $\varphi[p/\top]$ denote the formulas obtained from $\varphi$ by replacing atom $p$ with $\bot$ and $\top$ respectively.
 In~\cite{Yan:AIJ:2009}, the authors define the knowledge forgetting of S5 modal logic from the Strong Forgetting point of view to explore the relationship between knowledge forgetting and knowledge update. Besides, they have proposed four general postulates for knowledge forgetting and show that these four postulates precisely characterize the notion of knowledge forgetting described above in S5 modal logic.
-What's more, forgetting in logic programs under answer-set semantics, which is a non-monotonic logic program, are also considered, see~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,Yisong:KR:2012,Yisong:IJCAI:2013,wang2013forgetting,gonccalves2020limits}  for more details.
+What's more, forgetting in logic programs under answer-set semantics, which is a non-monotonic logic program, are also considered, see~\cite{DBLP:Zhang:AIJ2006,Eiter2008Semantic,Wong:PhD:Thesis,DBLP:journals/jair/WangZZZ14,Yisong:IJCAI:2013,gonccalves2020limits}  for more details.
 
 
 \section{Modal $\mu$-calculus} \label{preliminaries}
@@ -549,7 +553,7 @@ Any $\mu$-calculus formula is equivalent to a disjunctive one.
 \end{theorem}
 
 Theorem \ref{thm:mu2dis} means that for each $\mu$-calculus formula $\varphi$ there is a disjunctive formula $\psi \in {\cal F}_d$ such that $\varphi \equiv \psi$.
-Deciding whether a disjunctive formula is satisfiable can be done in polynomial time, hence changing the $\mu$-calculus formula into its disjunctive form will increase the efficiency of deciding its satisfiability since the satisfiability of $\mu$-calculus is in  $\textsc{Exptime}$-complete.
+Deciding whether a disjunctive formula is satisfiable can be done in polynomial time, hence changing the $\mu$-calculus formula into its disjunctive form will increase the efficiency of deciding its satisfiability since the satisfiability of $\mu$-calculus is  $\textsc{Exptime}$-complete.
 
 Another important concept is \emph{uniform interpolation}, which has been widely explored in various of logic languages. Some logics enjoy uniform interpolation, but some are not.
 Formally, the uniform interpolation under $\mu$-calculus is defined as follows.
@@ -584,7 +588,7 @@ In this section we present the definition of forgetting in $\mu$-calculus and in
 First, we give the definition of $V$-bisimulation between Kripke structures. The notion of $V$-bisimulation captures the idea that the two systems are behaviourally the same except for the atoms in $V$. In this way we give the definition of forgetting by using the $V$-bisimulation.
 
 Second, the related properties, e.g. Modularity, Commutativity and Homogeneity, of the forgetting operator will be explored.
-And last, we show that the model checking problem of forgetting $V$ from a disjunctive formula is \textsc{NP} $\cap$ co-\textsc{NP} and the reasoning problems are  $\textsc{Exptime}$-complete.
+And last, we show that the model checking problem of forgetting $V$ from a disjunctive formula is in \textsc{NP} $\cap$ co-\textsc{NP} and the reasoning problems are $\textsc{Exptime}$-complete.
 
 \subsection{Definition of Forgetting}
 In this subsection we present the definition of forgetting in $\mu$-calculus by the bisimulation technique.
@@ -613,7 +617,7 @@ On the other hand, it is easy to see that our definition is similar with the one
 Moreover, the $V$-bisimulation defined in~\cite{renyansfirstpaper}, the classical
 bisimulation-equivalence of Definition~7.1 in \cite{Baier:PMC:2008}, state equivalence (i.e., $E_n$) in \cite{browne1988characterizing} and state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008} are closely related.\footnote{The $V$-bisimulation defined in~\cite{renyansfirstpaper} is similar to
 the state equivalence (i.e., $E_n$) in \cite{browne1988characterizing}, yet it is
-different in the sense that $V$-bisimulation is defined on \MPK-structures,
+different in the sense that the one in~\cite{renyansfirstpaper} is defined on \MPK-structures,
 while state-equivalence is defined on states.
 Moreover, $V$-bisimulation is also different
 from  the state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008},
@@ -983,7 +987,7 @@ Before talk about the complexity results of the forgetting operator, let's recal
  Then we have the following complexity result.
 
 \begin{proposition}[Model Checking]\label{pro:MC}
-Given a finite Kripke structure  $\Hm$, a disjunctive formula $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is \textsc{NP} $\cap$ co-\textsc{NP}.
+Given a finite Kripke structure  $\Hm$, a disjunctive formula $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is in \textsc{NP}$\cap$co-\textsc{NP}.
 \end{proposition}
 % \begin{proof}
 % Let $A_{\varphi}$ be a $\mu$-automaton such that, for any Kripke structure ${\cal N}$, %there is
@@ -1250,22 +1254,28 @@ Knowledge update operator $\diamond_{\mu}$ satisfies Katsuno and Mendelzon's upd
 % For (U8), we will prove $(\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi \models (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi)$ at first. For each $\Hm \in \Mod((\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi)$, there is a $\Hm_1 \in \Mod(\Gamma_1)$ (or $\Hm_1\in \Mod(\Gamma_2)$) and $V_{min}$ such that $\Hm \lrto_{V_{min}} \Hm_1$. Therefore, we have $\Hm \models  (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi)$. Similarly, for each $\Hm \in \Mod( (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi))$ there is a $\Hm_1\in \Mod(\Gamma_1)$ (or $\Hm_1 \in \Mod(\Gamma_2)$) and $V_{min}$ such that $\Hm \lrto_{V_{min}} \Hm_1$. Hence, $\Hm \models (\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi$.
 % \end{proof}
 
-\section{Concluding Remarks}
+\section{Concluding Remarks}\label{sec:conclude}
 \paragraph{Summary}
 In this paper, we targeted the strongest necessary and weakest sufficient conditions SNC (WSC) and knowledge update in $\mu$-calculus using a forgetting-based approach.
 In doing so, we introduced and employed the notion of $V$-bisimulation which is similar with the ${\cal L}$-bisimulation, in which any $\mu$-sentence is invariant for ${\cal L}$-bisimulation.
-Furthermore, we have studied formal properties about forgetting, among them, homogeneity, modularity and commutativity.
-In particular, we have shown that our notion of forgetting satisfies the well-known postulates of forgetting, which means it faithfully extends the notion of forgetting from classical propositional logic, modal logic \SFive, \CTL\ to $\mu$-calculus.
-We also showed that for any $\mu$-sentence, if it is a disjunctive formula, then forgetting a set  of atoms from it can be down in linear time.
-On the complexity theory side, we have investigated that the Model checking problem of forgetting $V$ from a disjunctive formula is \textsc{NP} $\cap$ co-\textsc{NP}
-and the entailment problems of forgetting are $\textsc{Exptime}$-complete from the point of $\mu$-automaton.
-And finally, we showed that the knowledge update in terms of forgetting in $\mu$-calculus under initial structures satisfies the Katsuno and Mendelzon's postulates (U1)-(U8).
+Furthermore, we have studied formal properties about forgetting, including homogeneity, modularity and commutativity.
+In particular, we have shown that our notion of forgetting satisfies the well-known forgetting postulates. Thus, it faithfully extends the notion of forgetting in classical propositional logic, modal logic \SFive\  and \CTL.
+We also showed that, for any $\mu$-sentence, if it is a disjunctive formula then forgetting a set  of atoms from it can be done in linear time.
+From the perspective of computational complexity,
+%the complexity theory side,
+we have investigated that the model checking problem for forgetting results  from a disjunctive formula is in \textsc{NP}$\cap$co-\textsc{NP}
+and the entailment problems relating to forgetting are $\textsc{Exptime}$-complete. % from the point of $\mu$-automaton.
+We finally showed that the knowledge update in terms of forgetting  for $\mu$-calculus
+under initial structures satisfies the Katsuno and Mendelzon's postulates (U1)-(U8).
 
 \paragraph{Future work}
 In the future, an algorithm to compute forgetting will be explored and implemented. As it is shown in this work that the forgetting of a disjunctive formula can be computed in linear time, in this sense, a method of transforming a formula into its disjunctive form will be a direction for the forgetting algorithm.
 % As we can see that the model checking problem of forgetting is \textsc{NP} $\cap$ co-\textsc{NP} and the reasoning problems of forgetting are $\textsc{Exptime}$-complete, which means there is no algorithm can compute the result of forgetting a set of atoms from a $\mu$-sentence in polynomial time.
 Besides, It is worthwhile to explore sub-classes of $\mu$-calculus that the forgetting can be computed easily.
-Moreover, when a finite transition system $\Hm$ does not satisfy a specification $\varphi$, one can evaluate the weakest sufficient condition $\psi$ over a signature $V$ under which $\Hm \models \varphi$, viz. expressing $\Hm$ with its characterizing formula, to explore how the condition $\psi$ can guide the design of a new transition system $\Hm'$ satisfying $\varphi$.
+Moreover, when a finite transition system $\Hm$ does not satisfy a specification $\varphi$,
+it is important to calculate a weakest sufficient condition $\psi$ over a signature $V$ under which $\Hm$ satisfies $\varphi$. %viz. expressing $\Hm$ with its characterizing formula, to explore how the condition $\psi$ can guide the design of a new transition system $\Hm'$ satisfying $\varphi$.
+It is also crucial to explore how the weakest sufficient condition $\psi$
+can be used to revise or update the transition system $\Hm$ for the specification $\varphi$.
 
 %
 % ---- Bibliography ----
@@ -1618,22 +1628,22 @@ $\Rto$ $\Hm \models \EXIST \NEXT \phi$ and then $\Hm_3 \models \Muforget(\EXIST 
 
 
 \noindent\textbf{Proposition}\ref{pro:MC} \textbf{(Model Checking)}
-Given a finite Kripke structure  $\Hm$, a disjunctive formula $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is \textsc{NP} $\cap$ co-\textsc{NP}.
+Given a finite Kripke structure  $\Hm$, a disjunctive formula $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is in \textsc{NP}$\cap$co-\textsc{NP}.
 \begin{proof}
 Let $A_{\varphi}$ be a $\mu$-automaton such that, for any Kripke structure ${\cal N}$, %there is
-$A_{\varphi}$ accepts ${\cal N}$ iff ${\cal N} \models \varphi$, where $A_{\varphi} = (Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$ with $\Var(\varphi) = \Sigma_p \cup \Sigma_r$. Without loss of generality, we assume $V \subseteq \Var(\varphi)$ and $V=\{p\}$.  Therefore we can construct  a $\mu$-automaton $B= (Q, \Sigma_p - V, \Sigma_r, q_0, \delta', \Omega)$ with:
+$A_{\varphi}$ accepts ${\cal N}$ iff ${\cal N} \models \varphi$, where $A_{\varphi} = (Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$ with $\Var(\varphi) = \Sigma_p \cup \Sigma_r$. Without loss of generality, we assume $V \subseteq \Var(\varphi)$ and $V=\{p\}$.  Therefore we can construct  a $\mu$-automaton $B= (Q, \Sigma_p - V, \Sigma_r, q_0, \delta', \Omega)$ such that
 \[
-    \delta'(q, L) := \delta(q, L) \cup \delta(q, L \cup \{p\}).
+    \delta'(q, L) = \delta(q, L) \cup \delta(q, L \cup \{p\}).
 \]
 
 It has been proved in~\cite{d1996uniform} that, for each Kripke structure ${\cal N}$,  $B$ accepts ${\cal N}$ iff there is a model ${\cal N}'$ of $\varphi$ such that ${\cal N} \lrto_{\{p\}} {\cal N}'$, i.e. $B$ corresponds to a $\mu$-sentence which is equivalent to $\Muforget(\varphi, V)$ by the definition of forgetting in $\mu$-calculus.
 
-In this case, the problem $\Hm \models^? \Muforget(\varphi, V)$ is reduced to decide whether $B$ accepts $\Hm$, which is \textsc{NP} $\cap$ co-\textsc{NP}~\cite{bradfield2018mu}.
+In this case, the problem $\Hm \models^? \Muforget(\varphi, V)$ is reduced to decide whether $B$ accepts $\Hm$, which is in \textsc{NP}$\cap$co-\textsc{NP}~\cite{bradfield2018mu}.
 \end{proof}
 
 
 
-\noindent\textbf{Theorem}\ref{thm:Ent} \textbf{(Entailment)}
+\noindent\textbf{Theorem}~\ref{thm:Ent} \textbf{(Entailment)}
 Let $\varphi$ and $\psi$ be two $\mu$-sentences and $V$ be a set of atoms. Then, the following problems are $\textsc{Exptime}$-complete.
 \begin{enumerate}[(i)]
   \item deciding  $\Muforget(\varphi, V ) \models^? \psi$,
