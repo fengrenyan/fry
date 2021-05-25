@@ -1,0 +1,1266 @@
+\begin{thebibliography}{174}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
+  \urlstyle{same}\fi
+\providecommand{\href}[2]{\url{#2}}
+\providecommand{\doi}[1]{\href{https://doi.org/#1}{#1}}
+
+\bibitem[Sweeney(2002)]{sweeney2002k}
+SWEENEY~L.
+\newblock k-anonymity: {A} model for protecting privacy\allowbreak[J].
+\newblock International Journal of Uncertainty, Fuzziness and Knowledge-Based
+  Systems, 2002, 10\penalty0 (5):\penalty0 557-570.
+
+\bibitem[Nabeel et~al.(2014)Nabeel and Bertino]{nabeel2014privacy}
+NABEEL~M, BERTINO~E.
+\newblock Privacy preserving delegated access control in public
+  clouds\allowbreak[J].
+\newblock {IEEE} Trans. Knowl. Data Eng., 2014, 26\penalty0 (9):\penalty0
+  2268-2280.
+
+\bibitem[黄刘生\ 等(2015)黄刘生, 田苗苗, and 黄河]{huang2015review}
+黄刘生, 田苗苗, 黄河.
+\newblock 大数据隐私保护密码技术研究综述\allowbreak[J].
+\newblock 软件学报, 2015, 26\penalty0 (4):\penalty0 945-959.
+
+\bibitem[Machanavajjhala et~al.(2007)Machanavajjhala, Kifer, Gehrke, and
+  Venkitasubramaniam]{machanavajjhala2007l}
+MACHANAVAJJHALA~A, KIFER~D, GEHRKE~J, et~al.
+\newblock \emph{L}-diversity: Privacy beyond \emph{k}-anonymity\allowbreak[J].
+\newblock {TKDD}, 2007, 1\penalty0 (1):\penalty0 3.
+
+\bibitem[Li et~al.(2007)Li, Li, and Venkatasubramanian]{li2007t}
+LI~N, LI~T, VENKATASUBRAMANIAN~S.
+\newblock t-closeness: Privacy beyond k-anonymity and
+  l-diversity\allowbreak[C]//\allowbreak
+{ICDE}.
+\newblock [S.l.]: {IEEE} Computer Society, 2007: 106-115.
+
+\bibitem[Dwork(2006)]{dwork2006differential}
+DWORK~C.
+\newblock Differential privacy\allowbreak[C]//\allowbreak
+Lecture Notes in Computer Science: volume 4052\quad {ICALP} {(2)}.
+\newblock [S.l.]: Springer, 2006: 1-12.
+
+\bibitem[Zhang et~al.(2018)Zhang, Li, Zhang, and Lv]{zhang2018privacy}
+ZHANG~W, LI~H, ZHANG~M, et~al.
+\newblock Privacy-aware risk-adaptive access control in health information
+  systems using topic models\allowbreak[C]//\allowbreak
+{SACMAT}.
+\newblock [S.l.]: {ACM}, 2018: 61-67.
+
+\bibitem[Reiter et~al.(1998)Reiter and Rubin]{reiter1998crowds}
+REITER~M~K, RUBIN~A~D.
+\newblock Crowds: Anonymity for web transactions\allowbreak[J].
+\newblock {ACM} Trans. Inf. Syst. Secur., 1998, 1\penalty0 (1):\penalty0 66-92.
+
+\bibitem[Edman et~al.(2009)Edman and Yener]{edman2009anonymity}
+EDMAN~M, YENER~B.
+\newblock On anonymity in an electronic society: A survey of anonymous
+  communication systems\allowbreak[J].
+\newblock ACM Comput. Surv., 2009, 42\penalty0 (1):\penalty0 5:1-5:35.
+
+\bibitem[Niu et~al.(2014)Niu, Li, Zhu, Cao, and Li]{niu2014achieving}
+NIU~B, LI~Q, ZHU~X, et~al.
+\newblock Achieving k-anonymity in privacy-aware location-based
+  services\allowbreak[C]//\allowbreak
+{INFOCOM}.
+\newblock [S.l.]: {IEEE}, 2014: 754-762.
+
+\bibitem[Campan et~al.(2008)Campan and Truta]{campan2008data}
+CAMPAN~A, TRUTA~T~M.
+\newblock Data and structural k-anonymity in social
+  networks\allowbreak[C]//\allowbreak
+Lecture Notes in Computer Science: volume 5456\quad PinKDD.
+\newblock [S.l.]: Springer, 2008: 33-54.
+
+\bibitem[Wong et~al.(2006)Wong, Li, Fu, and Wang]{wong2006anonymity}
+WONG~R~C, LI~J, FU~A~W, et~al.
+\newblock ($\alpha$, $k$)-anonymity: an enhanced k-anonymity model for privacy
+  preserving data publishing\allowbreak[C]//\allowbreak
+{KDD}.
+\newblock [S.l.]: {ACM}, 2006: 754-759.
+
+\bibitem[Ying et~al.(2009)Ying, Pan, Wu, and Guo]{ying2009comparisons}
+YING~X, PAN~K, WU~X, et~al.
+\newblock Comparisons of randomization and k-degree anonymization schemes for
+  privacy preserving social network publishing\allowbreak[C]//\allowbreak
+{SNAKDD}.
+\newblock [S.l.]: {ACM}, 2009: 10.
+
+\bibitem[Li et~al.(2010)Li, Li, and Venkatasubramanian]{li2010closeness}
+LI~N, LI~T, VENKATASUBRAMANIAN~S.
+\newblock Closeness: {A} new privacy measure for data publishing\allowbreak[J].
+\newblock {IEEE} Trans. Knowl. Data Eng., 2010, 22\penalty0 (7):\penalty0
+  943-956.
+
+\bibitem[林欣\ 等(2009)林欣, 李善平, and 杨朝晖]{lin2009lbs}
+林欣, 李善平, 杨朝晖.
+\newblock LBS中连续查询攻击算法及匿名性度量\allowbreak[J].
+\newblock 软件学报, 2009, 20\penalty0 (4):\penalty0 1058-1068.
+
+\bibitem[Xu et~al.(2007)Xu and Cai]{xu2007location}
+XU~T, CAI~Y.
+\newblock Location anonymity in continuous location-based
+  services\allowbreak[C]//\allowbreak
+{GIS}.
+\newblock [S.l.]: {ACM}, 2007: 39.
+
+\bibitem[王彩梅\ 等(2012)王彩梅, 郭亚军, 郭艳华,
+  et~al.]{wang2012location}
+王彩梅, 郭亚军, 郭艳华, 等.
+\newblock 位置服务中用户轨迹的隐私度量\allowbreak[J].
+\newblock 软件学报, 2012, 23\penalty0 (02):\penalty0 352-360.
+
+\bibitem[Cuff et~al.(2016)Cuff and Yu]{cuff2016differential}
+CUFF~P, YU~L.
+\newblock Differential privacy as a mutual information
+  constraint\allowbreak[C]//\allowbreak
+{ACM} Conference on Computer and Communications Security.
+\newblock [S.l.]: {ACM}, 2016: 43-54.
+
+\bibitem[Wang et~al.(2016{\natexlab{a}})Wang, Ying, and
+  Zhang]{wang2016relation}
+WANG~W, YING~L, ZHANG~J.
+\newblock On the relation between identifiability, differential privacy, and
+  mutual-information privacy\allowbreak[J].
+\newblock {IEEE} Trans. Information Theory, 2016, 62\penalty0 (9):\penalty0
+  5018-5029.
+
+\bibitem[Kairouz et~al.(2014)Kairouz, Oh, and Viswanath]{kairouz2014extremal}
+KAIROUZ~P, OH~S, VISWANATH~P.
+\newblock Extremal mechanisms for local differential
+  privacy\allowbreak[C]//\allowbreak
+{NIPS}.
+\newblock [S.l.: s.n.], 2014: 2879-2887.
+
+\bibitem[Mironov(2017)]{mironov2017renyi}
+MIRONOV~I.
+\newblock R{\'{e}}nyi differential privacy\allowbreak[C]//\allowbreak
+{CSF}.
+\newblock [S.l.]: {IEEE} Computer Society, 2017: 263-275.
+
+\bibitem[Holohan et~al.(2017)Holohan, Antonatos, Braghin, and
+  Aonghusa]{holohan2017k}
+HOLOHAN~N, ANTONATOS~S, BRAGHIN~S, et~al.
+\newblock (k, {\(\epsilon\)})-anonymity: k-anonymity with
+  {\(\epsilon\)}-differential privacy\allowbreak[J].
+\newblock CoRR, 2017, abs/1710.01615.
+
+\bibitem[Li et~al.(2013)Li, Qardaji, Su, Wu, and Yang]{li2013membership}
+LI~N, QARDAJI~W~H, SU~D, et~al.
+\newblock Membership privacy: a unifying framework for privacy
+  definitions\allowbreak[C]//\allowbreak
+{ACM} Conference on Computer and Communications Security.
+\newblock [S.l.]: {ACM}, 2013: 889-900.
+
+\bibitem[熊金波\ 等(2018)熊金波, 王敏燊, 田有亮, 马蓉,
+  姚志强, and 林铭炜]{xiong2018research}
+熊金波, 王敏燊, 田有亮, 等.
+\newblock 面向云数据的隐私度量研究进展\allowbreak[J].
+\newblock 软件学报, 2018, 29\penalty0 (7):\penalty0 1963-1980.
+
+\bibitem[Wagner et~al.(2018)Wagner and Eckhoff]{wagner2018technical}
+WAGNER~I, ECKHOFF~D.
+\newblock Technical privacy metrics: {A} systematic survey\allowbreak[J].
+\newblock {ACM} Comput. Surv., 2018, 51\penalty0 (3):\penalty0 57:1-57:38.
+
+\bibitem[Shokri et~al.(2011)Shokri, Theodorakopoulos, Boudec, and
+  Hubaux]{shokri2011quantifying}
+SHOKRI~R, THEODORAKOPOULOS~G, BOUDEC~J~L, et~al.
+\newblock Quantifying location privacy\allowbreak[C]//\allowbreak
+{IEEE} Symposium on Security and Privacy.
+\newblock [S.l.]: {IEEE} Computer Society, 2011: 247-262.
+
+\bibitem[Ma et~al.(2015)Ma and Yau]{ma2015information}
+MA~C~Y~T, YAU~D~K~Y.
+\newblock On information-theoretic measures for quantifying privacy protection
+  of time-series data\allowbreak[C]//\allowbreak
+AsiaCCS.
+\newblock [S.l.]: {ACM}, 2015: 427-438.
+
+\bibitem[Zhao et~al.(2018)Zhao and Wagner]{zhao2018evaluating}
+ZHAO~Y, WAGNER~I.
+\newblock Evaluating privacy metrics for graph anonymization and
+  de-anonymization\allowbreak[C]//\allowbreak
+AsiaCCS.
+\newblock [S.l.]: {ACM}, 2018: 817-819.
+
+\bibitem[俞艺涵\ 等(2018)俞艺涵, 付钰, and 吴晓平]{yu2018shannon}
+俞艺涵, 付钰, 吴晓平.
+\newblock
+  基于Shannon信息熵与BP神经网络的隐私数据度量与分级模型\allowbreak[J].
+\newblock 通信学报, 2018, 39\penalty0 (12):\penalty0 10-17.
+
+\bibitem[Humbert et~al.(2013)Humbert, Ayday, Hubaux, and
+  Telenti]{humbert2013addressing}
+HUMBERT~M, AYDAY~E, HUBAUX~J~P, et~al.
+\newblock Addressing the concerns of the lacks family: Quantification of kin
+  genomic privacy\allowbreak[C]//\allowbreak
+CCS '13: Proceedings of the 2013 ACM SIGSAC Conference on Computer \&
+  Communications Security.
+\newblock New York, NY, USA: ACM, 2013: 1141-1152.
+
+\bibitem[Olteanu et~al.(2017)Olteanu, Huguenin, Shokri, Humbert, and
+  Hubaux]{olteanu2017quantifying}
+OLTEANU~A, HUGUENIN~K, SHOKRI~R, et~al.
+\newblock Quantifying interdependent privacy risks with location
+  data\allowbreak[J].
+\newblock {IEEE} Trans. Mob. Comput., 2017, 16\penalty0 (3):\penalty0 829-842.
+
+\bibitem[Deznabi et~al.(2018)Deznabi, Mobayen, Jafari, Tastan, and
+  Ayday]{deznabi2018inference}
+DEZNABI~I, MOBAYEN~M, JAFARI~N, et~al.
+\newblock An inference attack on genomic data using kinship, complex
+  correlations, and phenotype information\allowbreak[J].
+\newblock IEEE/ACM Transactions on Computational Biology and Bioinformatics,
+  2018, 15\penalty0 (4):\penalty0 1333 - 1343.
+
+\bibitem[Manousakas et~al.(2018)Manousakas, Mascolo, Beresford, Chan, and
+  Sharma]{manousakas2018quantifying}
+MANOUSAKAS~D, MASCOLO~C, BERESFORD~A~R, et~al.
+\newblock Quantifying privacy loss of human mobility graph
+  topology\allowbreak[J].
+\newblock PoPETs, 2018, 2018\penalty0 (3):\penalty0 5-21.
+
+\bibitem[Cao et~al.(2019)Cao, Yoshikawa, Xiao, and Xiong]{cao2019quantifying}
+CAO~Y, YOSHIKAWA~M, XIAO~Y, et~al.
+\newblock Quantifying differential privacy in continuous data release under
+  temporal correlations\allowbreak[J].
+\newblock {IEEE} Trans. Knowl. Data Eng., 2019, 31\penalty0 (7):\penalty0
+  1281-1295.
+
+\bibitem[Shokri et~al.(2017{\natexlab{a}})Shokri, Stronati, Song, and
+  Shmatikov]{shokri2017membership}
+SHOKRI~R, STRONATI~M, SONG~C, et~al.
+\newblock Membership inference attacks against machine learning
+  models\allowbreak[C]//\allowbreak
+{IEEE} Symposium on Security and Privacy.
+\newblock [S.l.]: {IEEE} Computer Society, 2017{\natexlab{a}}: 3-18.
+
+\bibitem[Rahman et~al.(2018)Rahman, Rahman, Lagani{\`{e}}re, and
+  Mohammed]{rahman2018membership}
+RAHMAN~M~A, RAHMAN~T, LAGANI{\`{E}}RE~R, et~al.
+\newblock Membership inference attack against differentially private deep
+  learning model\allowbreak[J].
+\newblock Transactions on Data Privacy, 2018, 11\penalty0 (1):\penalty0 61-79.
+
+\bibitem[Cheu et~al.(2019)Cheu, Smith, Ullman, Zeber, and
+  Zhilyaev]{cheu2019distributed}
+CHEU~A, SMITH~A~D, ULLMAN~J, et~al.
+\newblock Distributed differential privacy via
+  shuffling\allowbreak[C]//\allowbreak
+Lecture Notes in Computer Science: volume 11476\quad {EUROCRYPT} {(1)}.
+\newblock [S.l.]: Springer, 2019: 375-403.
+
+\bibitem[Xu et~al.(2019)Xu, Ren, Zhang, Zhang, Qin, and
+  Ren]{xu2019ganobfuscator}
+XU~C, REN~J, ZHANG~D, et~al.
+\newblock Ganobfuscator: Mitigating information leakage under {GAN} via
+  differential privacy\allowbreak[J].
+\newblock {IEEE} Trans. Information Forensics and Security, 2019, 14\penalty0
+  (9):\penalty0 2358-2371.
+
+\bibitem[Yu et~al.(2019)Yu, Liu, Pu, Gursoy, and Truex]{yu2019differentially}
+YU~L, LIU~L, PU~C, et~al.
+\newblock Differentially private model publishing for deep
+  learning\allowbreak[C]//\allowbreak
+{IEEE} Symposium on Security and Privacy.
+\newblock [S.l.]: {IEEE}, 2019: 332-349.
+
+\bibitem[Wang et~al.(2018)Wang, Zhang, Lu, Wang, Qin, and Ren]{wang2018real}
+WANG~Q, ZHANG~Y, LU~X, et~al.
+\newblock Real-time and spatio-temporal crowd-sourced social network data
+  publishing with differential privacy\allowbreak[J].
+\newblock {IEEE} Trans. Dependable Sec. Comput., 2018, 15\penalty0
+  (4):\penalty0 591-606.
+
+\bibitem[李昊\ 等(2017)李昊, 张敏, 冯登国, and 惠榛]{li2017access}
+李昊, 张敏, 冯登国, 等.
+\newblock 大数据访问控制研究\allowbreak[J].
+\newblock 计算机学报, 2017, 40\penalty0 (1):\penalty0 72-91.
+
+\bibitem[Ni et~al.(2007)Ni, Trombetta, Bertino, and Lobo]{ni2007privacy}
+NI~Q, TROMBETTA~A, BERTINO~E, et~al.
+\newblock Privacy-aware role based access control\allowbreak[C]//\allowbreak
+{SACMAT}.
+\newblock [S.l.]: {ACM}, 2007: 41-50.
+
+\bibitem[Edemacu et~al.(2019)Edemacu, Park, Jang, and Kim]{edemacu2019privacy}
+EDEMACU~K, PARK~H~K, JANG~B, et~al.
+\newblock Privacy provision in collaborative ehealth with attribute-based
+  encryption: Survey, challenges and future directions\allowbreak[J].
+\newblock {IEEE} Access, 2019, 7:\penalty0 89614-89636.
+
+\bibitem[Wang et~al.(2019)Wang, Tian, and Chen]{wang2019game}
+WANG~Y, TIAN~L, CHEN~Z.
+\newblock Game analysis of access control based on user behavior
+  trust\allowbreak[J].
+\newblock Information, 2019, 10\penalty0 (4):\penalty0 132.
+
+\bibitem[Liu et~al.(2011)Liu, Li, Wang, and Camp]{liu2011risk}
+LIU~D, LI~N, WANG~X, et~al.
+\newblock Beyond risk-based access control: Towards incentive-based access
+  control\allowbreak[C]//\allowbreak
+Lecture Notes in Computer Science: volume 7035\quad Financial Cryptography.
+\newblock [S.l.]: Springer, 2011: 102-112.
+
+\bibitem[Amini et~al.(2019)Amini and Osanloo]{amini2019purpose}
+AMINI~M, OSANLOO~F.
+\newblock Purpose-based privacy preserving access control for secure service
+  provision and composition\allowbreak[J].
+\newblock {IEEE} Trans. Services Computing, 2019, 12\penalty0 (4):\penalty0
+  604-620.
+
+\bibitem[Cheng et~al.(2007)Cheng, Rohatgi, Keser, Karger, Wagner, and
+  Reninger]{cheng2007fuzzy}
+CHENG~P~C, ROHATGI~P, KESER~C, et~al.
+\newblock Fuzzy multi-level security: An experiment on quantified risk-adaptive
+  access control\allowbreak[C]//\allowbreak
+2007 IEEE Symposium on Security and Privacy (SP '07).
+\newblock [S.l.: s.n.], 2007: 222-230.
+
+\bibitem[McGraw(2009)]{mcgraw2009risk}
+MCGRAW~R.
+\newblock Risk-adaptable access control ({RAdAC})\allowbreak[R].
+\newblock [S.l.]: {NIST} Privilege (Access) Management Workshop, 2009.
+
+\bibitem[Wang et~al.(2011)Wang and Jin]{wang2011quantified}
+WANG~Q, JIN~H.
+\newblock Quantified risk-adaptive access control for patient privacy
+  protection in health information systems\allowbreak[C]//\allowbreak
+AsiaCCS.
+\newblock [S.l.]: {ACM}, 2011: 406-410.
+
+\bibitem[Li et~al.(2009)Li and Li]{li2009tradeoff}
+LI~T, LI~N.
+\newblock On the tradeoff between privacy and utility in data
+  publishing\allowbreak[C]//\allowbreak
+{KDD}.
+\newblock [S.l.]: {ACM}, 2009: 517-526.
+
+\bibitem[Sui et~al.(2011)Sui and Boutilier]{sui2011efficiency}
+SUI~X, BOUTILIER~C.
+\newblock Efficiency and privacy tradeoffs in mechanism
+  design\allowbreak[C]//\allowbreak
+{AAAI}.
+\newblock [S.l.]: {AAAI} Press, 2011.
+
+\bibitem[Guo et~al.(2012)Guo and Chen]{guo2012mining}
+GUO~S, CHEN~K.
+\newblock Mining privacy settings to find optimal privacy-utility tradeoffs for
+  social network services\allowbreak[C]//\allowbreak
+SocialCom/PASSAT.
+\newblock [S.l.]: {IEEE} Computer Society, 2012: 656-665.
+
+\bibitem[Sankar et~al.(2013)Sankar, Rajagopalan, and Poor]{sankar2013utility}
+SANKAR~L, RAJAGOPALAN~S~R, POOR~H~V.
+\newblock Utility-privacy tradeoffs in databases: An information-theoretic
+  approach\allowbreak[J].
+\newblock {IEEE} Trans. Information Forensics and Security, 2013, 8\penalty0
+  (6):\penalty0 838-852.
+
+\bibitem[Kalantari et~al.(2018)Kalantari, Sankar, and
+  Sarwate]{kalantari2018robust}
+KALANTARI~K, SANKAR~L, SARWATE~A~D.
+\newblock Robust privacy-utility tradeoffs under differential privacy and
+  hamming distortion\allowbreak[J].
+\newblock {IEEE} Trans. Information Forensics and Security, 2018, 13\penalty0
+  (11):\penalty0 2816-2830.
+
+\bibitem[He et~al.(2019)He and Li]{he2019modeling}
+HE~Z, LI~J.
+\newblock Modeling snp-trait associations and realizing privacy-utility
+  tradeoff in genomic data publishing\allowbreak[C]//\allowbreak
+Lecture Notes in Computer Science: volume 11490\quad {ISBRA}.
+\newblock [S.l.]: Springer, 2019: 65-72.
+
+\bibitem[Zhu et~al.(2018)Zhu and Rass]{zhu2018game}
+ZHU~Q, RASS~S.
+\newblock Game theory meets network security: {A}
+  tutorial\allowbreak[C]//\allowbreak
+Proceedings of the 2018 {ACM} {SIGSAC} Conference on Computer and
+  Communications Security, {CCS} 2018, Toronto, ON, Canada, October 15-19,
+  2018.
+\newblock [S.l.: s.n.], 2018: 2163-2165.
+
+\bibitem[Freudiger et~al.(2009)Freudiger, Manshaei, Hubaux, and
+  Parkes]{freudiger2009non}
+FREUDIGER~J, MANSHAEI~M~H, HUBAUX~J, et~al.
+\newblock On non-cooperative location privacy: a game-theoretic
+  analysis\allowbreak[C]//\allowbreak
+{ACM} Conference on Computer and Communications Security.
+\newblock [S.l.]: {ACM}, 2009: 324-337.
+
+\bibitem[Santos et~al.(2011)Santos, Humbert, Shokri, and
+  Hubaux]{santos2011collaborative}
+SANTOS~F, HUMBERT~M, SHOKRI~R, et~al.
+\newblock Collaborative location privacy with rational
+  users\allowbreak[C]//\allowbreak
+Lecture Notes in Computer Science: volume 7037\quad GameSec.
+\newblock [S.l.]: Springer, 2011: 163-181.
+
+\bibitem[Wang et~al.(2014)Wang and Zhang]{wang2014stochastic}
+WANG~W, ZHANG~Q.
+\newblock A stochastic game for privacy preserving context sensing on mobile
+  phone\allowbreak[C]//\allowbreak
+{INFOCOM}.
+\newblock [S.l.]: {IEEE}, 2014: 2328-2336.
+
+\bibitem[Shokri et~al.(2017{\natexlab{b}})Shokri, Theodorakopoulos, and
+  Troncoso]{shokri2017privacy}
+SHOKRI~R, THEODORAKOPOULOS~G, TRONCOSO~C.
+\newblock Privacy games along location traces: {A} game-theoretic framework for
+  optimizing location privacy\allowbreak[J].
+\newblock {ACM} Trans. Priv. Secur., 2017, 19\penalty0 (4):\penalty0
+  11:1-11:31.
+
+\bibitem[Du et~al.(2018)Du, Jiang, Chen, Ren, and Poor]{du2018community}
+DU~J, JIANG~C, CHEN~K, et~al.
+\newblock Community-structured evolutionary game for privacy protection in
+  social networks\allowbreak[J].
+\newblock {IEEE} Trans. Information Forensics and Security, 2018, 13\penalty0
+  (3):\penalty0 574-589.
+
+\bibitem[Hu et~al.(2014)Hu, Ahn, Zhao, and Yang]{hu2014game}
+HU~H, AHN~G, ZHAO~Z, et~al.
+\newblock Game theoretic analysis of multiparty access control in online social
+  networks\allowbreak[C]//\allowbreak
+{SACMAT}.
+\newblock [S.l.]: {ACM}, 2014: 93-102.
+
+\bibitem[Liu et~al.(2016)Liu, Xing, and Shen]{liu2016dynamic}
+LIU~C, XING~S, SHEN~L.
+\newblock Dynamic hybrid-access control in multi-user and multi-femtocell
+  networks via stackelberg game competition\allowbreak[J].
+\newblock IET Communications, 2016, 10\penalty0 (7):\penalty0 862-872.
+
+\bibitem[Helil et~al.(2017)Helil, Halik, and Rahman]{helil2017non}
+HELIL~N, HALIK~A, RAHMAN~K.
+\newblock Non-zero-sum cooperative access control game model with user trust
+  and permission risk\allowbreak[J].
+\newblock Applied Mathematics and Computation, 2017, 307:\penalty0 299 - 310.
+
+\bibitem[Gao et~al.(2018)Gao, Yan, and Yang]{gao2018game}
+GAO~L, YAN~Z, YANG~L~T.
+\newblock Game theoretical analysis on acceptance of a cloud data access
+  control system based on reputation\allowbreak[J].
+\newblock IEEE Transactions on Cloud Computing, 2018:\penalty0 1-1.
+
+\bibitem[彭长根\ 等(2016)彭长根, 丁红发, 朱义杰, and
+  付祖峰]{peng2016privacy}
+彭长根, 丁红发, 朱义杰, 等.
+\newblock 隐私保护的信息熵模型及其度量方法\allowbreak[J].
+\newblock 软件学报, 2016, 28\penalty0 (8):\penalty0 1891-1903.
+
+\bibitem[Ding et~al.(2020)Ding, Tian, Peng, Zhang, and
+  Xiang]{ding2010inferences}
+DING~H, TIAN~Y, PENG~C, et~al.
+\newblock Inference attacks on genomic privacy with an improved hmm and an rcnn
+  model for unrelated individuals\allowbreak[J].
+\newblock Information Sciences, 2020, 512:\penalty0 207 - 218.
+
+\bibitem[Ding et~al.(2019{\natexlab{a}})Ding, Peng, Tian, and
+  Xiang]{ding2019risk}
+DING~H, PENG~C, TIAN~Y, et~al.
+\newblock A risk adaptive access control model based on markov for big data in
+  the cloud\allowbreak[J].
+\newblock IJHPCN, 2019, 13\penalty0 (4):\penalty0 464-475.
+
+\bibitem[Ding et~al.(2019{\natexlab{b}})Ding, Peng, Tian, and
+  Xiang]{ding2019game}
+DING~H, PENG~C, TIAN~Y, et~al.
+\newblock A game theoretical analysis of risk adaptive access control for
+  privacy preserving\allowbreak[C]//\allowbreak
+NaNA 2019.
+\newblock [S.l.]: {IEEE}, 2019{\natexlab{b}}: 1.
+
+\bibitem[Shannon(1948)]{shannon1948mathematical}
+SHANNON~C~E.
+\newblock A mathematical theory of communication\allowbreak[J].
+\newblock The Bell System Technical Journal, 1948, 27\penalty0 (3):\penalty0
+  379-423.
+
+\bibitem[Stone(2018)]{stone2018information}
+STONE~J~V.
+\newblock Information theory: {A} tutorial introduction\allowbreak[J].
+\newblock CoRR, 2018, abs/1802.05968.
+
+\bibitem[Owen(2001)]{owen2001game}
+OWEN~G.
+\newblock Game theory\allowbreak[M].
+\newblock 3rd edition ed.
+\newblock San Diego: Academic Press, 2001.
+
+\bibitem[Gibbons(1992)]{gibbons1992game}
+GIBBONS~R.
+\newblock Game theory for applied economists\allowbreak[M].
+\newblock Princeton: Princeton University Press, 1992.
+
+\bibitem[Newton(2018)]{newton2018evolutionary}
+NEWTON~J.
+\newblock Evolutionary game theory: {A} renaissance\allowbreak[J].
+\newblock Games, 2018, 9\penalty0 (2):\penalty0 31.
+
+\bibitem[Smith(1982)]{smith1982evolution}
+SMITH~J~M.
+\newblock Evolution and the theory of games\allowbreak[M].
+\newblock Cambridge: Cambridge University Press, 1982.
+
+\bibitem[Serjantov et~al.(2002)Serjantov and Danezis]{serjantov2002towards}
+SERJANTOV~A, DANEZIS~G.
+\newblock Towards an information theoretic metric for
+  anonymity\allowbreak[C]//\allowbreak
+Lecture Notes in Computer Science: volume 2482\quad Privacy Enhancing
+  Technologies.
+\newblock [S.l.]: Springer, 2002: 41-53.
+
+\bibitem[D{\'{\i}}az et~al.(2002)D{\'{\i}}az, Seys, Claessens, and
+  Preneel]{diaz2002towards}
+D{\'{I}}AZ~C, SEYS~S, CLAESSENS~J, et~al.
+\newblock Towards measuring anonymity\allowbreak[C]//\allowbreak
+Lecture Notes in Computer Science: volume 2482\quad Privacy Enhancing
+  Technologies.
+\newblock [S.l.]: Springer, 2002: 54-68.
+
+\bibitem[Hoh et~al.(2007)Hoh, Gruteser, Xiong, and Alrabady]{hoh2007preserving}
+HOH~B, GRUTESER~M, XIONG~H, et~al.
+\newblock Preserving privacy in gps traces via uncertainty-aware path
+  cloaking\allowbreak[C]//\allowbreak
+{ACM} Conference on Computer and Communications Security.
+\newblock [S.l.]: {ACM}, 2007: 161-171.
+
+\bibitem[Ma et~al.(2009)Ma, Kargl, and Weber]{ma2009measuring}
+MA~Z, KARGL~F, WEBER~M.
+\newblock Measuring location privacy in {V2X} communication systems with
+  accumulated information\allowbreak[C]//\allowbreak
+{MASS}.
+\newblock [S.l.]: {IEEE} Computer Society, 2009: 322-331.
+
+\bibitem[Chen et~al.(2012)Chen and Pang]{chen2012measuring}
+CHEN~X, PANG~J.
+\newblock Measuring query privacy in location-based
+  services\allowbreak[C]//\allowbreak
+{CODASPY}.
+\newblock [S.l.]: {ACM}, 2012: 49-60.
+
+\bibitem[Ngoc et~al.(2010)Ngoc, Echizen, Kamiyama, and Yoshiura]{ngoc2010new}
+NGOC~T~H, ECHIZEN~I, KAMIYAMA~K, et~al.
+\newblock New approach to quantification of privacy on social network
+  sites\allowbreak[C]//\allowbreak
+{AINA}.
+\newblock [S.l.]: {IEEE} Computer Society, 2010: 556-564.
+
+\bibitem[Yang et~al.(2012)Yang, Lutes, Li, Luo, and Liu]{yang2012stalking}
+YANG~Y, LUTES~J, LI~F, et~al.
+\newblock Stalking online: on user privacy in social
+  networks\allowbreak[C]//\allowbreak
+{CODASPY}.
+\newblock [S.l.]: {ACM}, 2012: 37-48.
+
+\bibitem[Agrawal et~al.(2001)Agrawal and Aggarwal]{agrawal2001design}
+AGRAWAL~D, AGGARWAL~C~C.
+\newblock On the design and quantification of privacy preserving data mining
+  algorithms\allowbreak[C]//\allowbreak
+{PODS}.
+\newblock [S.l.]: {ACM}, 2001.
+
+\bibitem[Zhan(2007)]{zhan2007quantifying}
+ZHAN~J~Z.
+\newblock Quantifying privacy for privacy preserving data
+  mining\allowbreak[C]//\allowbreak
+{CIDM}.
+\newblock [S.l.]: {IEEE}, 2007: 630-636.
+
+\bibitem[Edman et~al.(2007)Edman, Sivrikaya, and Yener]{edman2007combinatorial}
+EDMAN~M, SIVRIKAYA~F, YENER~B.
+\newblock A combinatorial approach to measuring
+  anonymity\allowbreak[C]//\allowbreak
+{ISI}.
+\newblock [S.l.]: {IEEE}, 2007: 356-363.
+
+\bibitem[Wagner(2017)]{wagner2017evaluating}
+WAGNER~I.
+\newblock Evaluating the strength of genomic privacy metrics\allowbreak[J].
+\newblock {ACM} Trans. Priv. Secur., 2017, 20\penalty0 (1):\penalty0 2:1-2:34.
+
+\bibitem[{The Genomes Project Consortium}(2015)]{gpc2015global}
+{The Genomes Project Consortium}.
+\newblock A global reference for human genetic variation\allowbreak[J].
+\newblock Nature, 2015, 526:\penalty0 68.
+
+\bibitem[{U.S. Equal Employment Opportunity Commission}(2008)]{eeoc2008genetic}
+{U.S. Equal Employment Opportunity Commission}.
+\newblock Genetic information nondiscrimination act of 2008\allowbreak[M].
+\newblock [S.l.]: Eeoc.gov, 2008.
+
+\bibitem[Sweeney et~al.(2013)Sweeney, Abu, and Winn]{sweeney2013identifying}
+SWEENEY~L, ABU~A, WINN~J.
+\newblock Identifying participants in the personal genome project by
+  name\allowbreak[Z/OL].
+\newblock Data Privacy Lab, IQSS, Harvard University, 2013.
+\newblock \url{http://dataprivacylab.org/projects/pgp/}.
+
+\bibitem[Gymrek et~al.(2013)Gymrek, McGuire, Golan, Halperin, and
+  Erlich]{gymrek2013identifying}
+GYMREK~M, MCGUIRE~A~L, GOLAN~D, et~al.
+\newblock Identifying personal genomes by surname inference\allowbreak[J].
+\newblock Science, 2013, 339\penalty0 (6117):\penalty0 321-324.
+
+\bibitem[Cai et~al.(2015)Cai, Hao, Winslett, Xiao, Yang, Zhang, and
+  Zhou]{cai2015deterministic}
+CAI~R, HAO~Z, WINSLETT~M, et~al.
+\newblock Deterministic identification of specific individuals from gwas
+  results\allowbreak[J].
+\newblock Bioinformatics, 2015, 31\penalty0 (11):\penalty0 1701-1707.
+
+\bibitem[Shringarpure et~al.(2015)Shringarpure and
+  Bustamante]{shringarpure2015privacy}
+SHRINGARPURE~S, BUSTAMANTE~C.
+\newblock Privacy {Risks} from {Genomic} {Data}-{Sharing}
+  {Beacons}\allowbreak[J].
+\newblock American Journal of Human Genetics, 2015, 97\penalty0 (5):\penalty0
+  631-646.
+
+\bibitem[Walsh et~al.(2011)Walsh, Liu, Ballantyne, van Oven, Lao, and
+  Kayser]{walsh2011irisplex}
+WALSH~S, LIU~F, BALLANTYNE~K~N, et~al.
+\newblock Irisplex: A sensitive dna tool for accurate prediction of blue and
+  brown eye colour in the absence of ancestry information\allowbreak[J].
+\newblock Forensic Science International: Genetics, 2011, 5\penalty0
+  (3):\penalty0 170 - 180.
+
+\bibitem[Rohlfs et~al.(2012)Rohlfs, Fullerton, and Weir]{rohlfs2012familial}
+ROHLFS~R~V, FULLERTON~S~M, WEIR~B~S.
+\newblock Familial identification: Population structure and relationship
+  distinguishability\allowbreak[J].
+\newblock PLOS Genetics, 2012, 8\penalty0 (2):\penalty0 e1002469.
+
+\bibitem[Hess(2017)]{hess2017controversial}
+HESS~P.
+\newblock Controversial geneticist warns: We can read your face in your
+  dna\allowbreak[M].
+\newblock [S.l.]: Eeoc.gov, 2017.
+
+\bibitem[Scutti(2018)]{scutti2018what}
+SCUTTI~S.
+\newblock What the golden state killer case means for your genetic
+  privacy\allowbreak[M].
+\newblock [S.l.]: CNN, 2018.
+
+\bibitem[Shi et~al.(2017)Shi and Wu]{shi2017overview}
+SHI~X, WU~X.
+\newblock An overview of human genetic privacy\allowbreak[J].
+\newblock Annals of the New York Academy of Sciences, 2017, 1387\penalty0
+  (1):\penalty0 61-72.
+
+\bibitem[Samani et~al.(2015)Samani, Huang, Ayday, Elliot, Fellay, Hubaux, and
+  Kutalik]{samani2015quantifying}
+SAMANI~S~S, HUANG~Z, AYDAY~E, et~al.
+\newblock Quantifying genomic privacy via inference attack with high-order snv
+  correlations\allowbreak[C]//\allowbreak
+SPW '15: Proceedings of the 2015 IEEE Security and Privacy Workshops.
+\newblock Washington, DC, USA: IEEE Computer Society, 2015: 32-40.
+
+\bibitem[Howie et~al.(2009)Howie, Donnelly, and Marchini]{howie2009flexible}
+HOWIE~B~N, DONNELLY~P, MARCHINI~J.
+\newblock A flexible and accurate genotype imputation method for the next
+  generation of genome-wide association studies\allowbreak[J].
+\newblock PLOS Genetics, 2009, 5\penalty0 (6):\penalty0 1-15.
+
+\bibitem[{En.wikipedia.org}(2018)]{en2018inference}
+{En.wikipedia.org}.
+\newblock Inference attack\allowbreak[EB/OL].
+\newblock 2018\allowbreak[21 May 2018].
+\newblock \url{https://en.wikipedia.org/wiki/Inference_attack}.
+
+\bibitem[Narain et~al.(2016)Narain, Vo{-}Huu, Block, and
+  Noubir]{narain2016inferring}
+NARAIN~S, VO{-}HUU~T~D, BLOCK~K, et~al.
+\newblock Inferring user routes and locations using zero-permission mobile
+  sensors\allowbreak[C]//\allowbreak
+{IEEE} Symposium on Security and Privacy, {SP} 2016, San Jose, CA, USA, May
+  22-26, 2016.
+\newblock [S.l.: s.n.], 2016: 397-413.
+
+\bibitem[Gong et~al.(2016)Gong and Liu]{gong2016you}
+GONG~N~Z, LIU~B.
+\newblock You are who you know and how you behave: Attribute inference attacks
+  via users' social friends and behaviors\allowbreak[C]//\allowbreak
+25th {$USENIX$} Security Symposium ({$USENIX$} Security 16).
+\newblock [S.l.: s.n.], 2016: 979-995.
+
+\bibitem[Ganju et~al.(2018)Ganju, Wang, Yang, Gunter, and
+  Borisov]{ganju2018property}
+GANJU~K, WANG~Q, YANG~W, et~al.
+\newblock Property inference attacks on fully connected neural networks using
+  permutation invariant representations\allowbreak[C]//\allowbreak
+Proceedings of the 2018 {ACM} {SIGSAC} Conference on Computer and
+  Communications Security, {CCS} 2018, Toronto, ON, Canada, October 15-19,
+  2018.
+\newblock [S.l.: s.n.], 2018: 619-633.
+
+\bibitem[Pouliot et~al.(2016)Pouliot and Wright]{pouliot2016shadow}
+POULIOT~D, WRIGHT~C~V.
+\newblock The shadow nemesis: Inference attacks on efficiently deployable,
+  efficiently searchable encryption\allowbreak[C]//\allowbreak
+Proceedings of the 2016 {ACM} {SIGSAC} Conference on Computer and
+  Communications Security, Vienna, Austria, October 24-28, 2016.
+\newblock [S.l.: s.n.], 2016: 1341-1352.
+
+\bibitem[Wang et~al.(2009)Wang, Li, Wang, Tang, and Zhou]{wang2009learning}
+WANG~R, LI~Y~F, WANG~X, et~al.
+\newblock Learning your identity and disease from research papers: Information
+  leaks in genome wide association study\allowbreak[C]//\allowbreak
+CCS '09: Proceedings of the 16th ACM Conference on Computer and Communications
+  Security.
+\newblock New York, NY, USA: ACM, 2009: 534-544.
+
+\bibitem[He et~al.(2017)He, Li, Li, Yu, Gao, and Wang]{he2017addressing}
+HE~Z, LI~Y, LI~J, et~al.
+\newblock Addressing the threats of inference attacks on traits and genotypes
+  from individual genomic data\allowbreak[C]//\allowbreak
+Bioinformatics Research and Applications - 13th International Symposium,
+  {ISBRA} 2017, Honolulu, HI, USA, May 29 - June 2, 2017, Proceedings.
+\newblock [S.l.: s.n.], 2017: 223-233.
+
+\bibitem[Ayday et~al.(2017)Ayday and Humbert]{ayday2017inference}
+AYDAY~E, HUMBERT~M.
+\newblock Inference attacks against kin genomic privacy\allowbreak[J].
+\newblock {IEEE} Security {\&} Privacy, 2017, 15\penalty0 (5):\penalty0 29-37.
+
+\bibitem[Homer et~al.(2008)Homer, Szelinger, Redman, Duggan, Tembe, Muehling,
+  Pearson, Stephan, Nelson, and Craig]{homer2008resolving}
+HOMER~N, SZELINGER~S, REDMAN~M, et~al.
+\newblock Resolving individuals contributing trace amounts of dna to highly
+  complex mixtures using high-density snp genotyping microarrays\allowbreak[J].
+\newblock PLOS Genetics, 2008, 4\penalty0 (8):\penalty0 1-9.
+
+\bibitem[Mailman et~al.(2007)Mailman, Feolo, Jin, Kimura, Tryka, Bagoutdinov,
+  Hao, Kiang, Paschall, Phan, et~al.]{mailman2007ncbi}
+MAILMAN~M~D, FEOLO~M, JIN~Y, et~al.
+\newblock The ncbi dbgap database of genotypes and phenotypes\allowbreak[J].
+\newblock Nature genetics, 2007, 39\penalty0 (10):\penalty0 1181.
+
+\bibitem[{The National Human Genome Research
+  Institute}(2015)]{nhgri2015privacy}
+{The National Human Genome Research Institute}.
+\newblock Privacy in genomics\allowbreak[EB/OL].
+\newblock 2015\allowbreak[April 21, 2015].
+\newblock \url{https://www.genome.gov/27561246/privacy-in-genomics}.
+
+\bibitem[Wang et~al.(2016{\natexlab{b}})Wang, Wen, Wu, and
+  Shi]{wang2016infringement}
+WANG~Y, WEN~J, WU~X, et~al.
+\newblock Infringement of individual privacy via mining differentially private
+  gwas statistics\allowbreak[C]//\allowbreak
+WANG~Y, YU~G, ZHANG~Y, et~al.
+\newblock Big Data Computing and Communications.
+\newblock Cham: Springer International Publishing, 2016{\natexlab{b}}: 355-366.
+
+\bibitem[Harmanci et~al.(2016)Harmanci and
+  Gerstein]{harmanci2016quantification}
+HARMANCI~A, GERSTEIN~M.
+\newblock Quantification of private information leakage from phenotype-genotype
+  data: linking attacks\allowbreak[J].
+\newblock Nature Methods, 2016, 13\penalty0 (3):\penalty0 251-256.
+
+\bibitem[Schadt et~al.(2012)Schadt, Woo, and Hao]{schadt2012bayesian}
+SCHADT~E~E, WOO~S, HAO~K.
+\newblock Bayesian method to predict individual {SNP} genotypes from gene
+  expression data\allowbreak[J].
+\newblock Nature Genetics, 2012, 44\penalty0 (5):\penalty0 603-608.
+
+\bibitem[Libbrecht et~al.(2015)Libbrecht and Noble]{libbrecht2015machine}
+LIBBRECHT~M~W, NOBLE~W~S.
+\newblock Machine learning applications in genetics and genomics\allowbreak[J].
+\newblock Nature Reviews Genetics, 2015, 16\penalty0 (6):\penalty0 321-332.
+
+\bibitem[Durbin et~al.(1998)Durbin, Eddy, Krogh, and
+  Mitchison]{durbin1998biological}
+DURBIN~R, EDDY~S~R, KROGH~A, et~al.
+\newblock Biological sequence analysis: probabilistic models of proteins and
+  nucleic acids\allowbreak[M].
+\newblock [S.l.]: Cambridge university press, 1998.
+
+\bibitem[Rabiner(1989)]{rabiner1989tutorial}
+RABINER~L~R.
+\newblock A tutorial on hidden {Markov} models and selected applications in
+  speech recognition\allowbreak[J].
+\newblock Proceedings of the IEEE, 1989, 77\penalty0 (2):\penalty0 257-286.
+
+\bibitem[Stamp(2004)]{stamp2004revealing}
+STAMP~M.
+\newblock A revealing introduction to hidden {Markov} models\allowbreak[J].
+\newblock Department of Computer Science San Jose State University,
+  2004:\penalty0 26-56.
+
+\bibitem[Hu et~al.(1996)Hu, Brown, and Turin]{hu1996hmm}
+HU~J, BROWN~M~K, TURIN~W.
+\newblock Hmm based online handwriting recognition\allowbreak[J].
+\newblock IEEE Transactions on pattern analysis and machine intelligence, 1996,
+  18\penalty0 (10):\penalty0 1039-1045.
+
+\bibitem[Long et~al.(2017)Long, Shelhamer, and Darrell]{long2017fully}
+LONG~J, SHELHAMER~E, DARRELL~T.
+\newblock Fully convolutional networks for semantic segmentation\allowbreak[J].
+\newblock IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017,
+  39\penalty0 (4):\penalty0 640-651.
+
+\bibitem[Nyholt et~al.(2009)Nyholt, Yu, and Visscher]{nyholt2009jim}
+NYHOLT~D~R, YU~C~E, VISSCHER~P~M.
+\newblock On {Jim} {Watson}'s {APOE} status: genetic information is hard to
+  hide\allowbreak[J].
+\newblock European Journal of Human Genetics, 2009, 17\penalty0 (2):\penalty0
+  147-149.
+
+\bibitem[{The International Genome Sample Resource
+  (IGSR)}(2015{\natexlab{a}})]{IGSR2019}
+{The International Genome Sample Resource (IGSR)}.
+\newblock {IGSR}: The international genome sample resource\allowbreak[EB/OL].
+\newblock 2015.
+\newblock \url{http://www.internationalgenome.org/}.
+
+\bibitem[Howie et~al.(2014)Howie and Marchini]{howie2014impute2}
+HOWIE~B, MARCHINI~J.
+\newblock {IMPUTE2}\allowbreak[EB/OL].
+\newblock 2014\allowbreak[23 Dec 2014].
+\newblock \url{https://mathgen.stats.ox.ac.uk/impute/impute_v2.html#reference}.
+
+\bibitem[Ayday et~al.(2013)Ayday, Raisaro, and Hubaux]{ayday2013personal}
+AYDAY~E, RAISARO~J~L, HUBAUX~J.
+\newblock Personal use of the genomic data: Privacy vs. storage
+  cost\allowbreak[C]//\allowbreak
+2013 {IEEE} Global Communications Conference, {GLOBECOM} 2013, Atlanta, GA,
+  USA, December 9-13, 2013.
+\newblock [S.l.: s.n.], 2013: 2723-2729.
+
+\bibitem[Marchini et~al.(2007)Marchini, Howie, Myers, McVean, and
+  Donnelly]{marchini2007newa}
+MARCHINI~J, HOWIE~B, MYERS~S, et~al.
+\newblock A new multipoint method for genome-wide association studies by
+  imputation of genotypes\allowbreak[J].
+\newblock Nature Genetics, 2007, 39\penalty0 (7):\penalty0 906-913.
+
+\bibitem[{The International Genome Sample Resource
+  (IGSR)}(2015{\natexlab{b}})]{igsr2015which}
+{The International Genome Sample Resource (IGSR)}.
+\newblock Which populations are part of your study?\allowbreak[EB/OL].
+\newblock 2015\allowbreak[January 30, 2015].
+\newblock \url{http://www.internationalgenome.org/category/population/}.
+
+\bibitem[Thorisson et~al.(2005)Thorisson, Smith, Krishnan, and
+  Stein]{thorisson2005international}
+THORISSON~G~A, SMITH~A~V, KRISHNAN~L, et~al.
+\newblock The international hapmap project web site\allowbreak[J].
+\newblock Genome research, 2005, 15\penalty0 (11):\penalty0 1592-1593.
+
+\bibitem[Greenbaum et~al.(2008)Greenbaum, Du, and
+  Gerstein]{greenbaum2008genomic}
+GREENBAUM~D, DU~J, GERSTEIN~M.
+\newblock Genomic anonymity: Have we already lost it?\allowbreak[J].
+\newblock The American Journal of Bioethics, 2008, 8\penalty0 (10):\penalty0
+  71-74.
+
+\bibitem[Humbert et~al.(2015)Humbert, Huguenin, Hugonot, Ayday, and
+  Hubaux]{humbert2015de}
+HUMBERT~M, HUGUENIN~K, HUGONOT~J, et~al.
+\newblock De-anonymizing genomic databases using phenotypic
+  traits\allowbreak[J].
+\newblock PoPETs, 2015, 2015\penalty0 (2):\penalty0 99-114.
+
+\bibitem[Humbert et~al.(2017)Humbert, Ayday, Hubaux, and
+  Telenti]{humbert2017quantifying}
+HUMBERT~M, AYDAY~E, HUBAUX~J, et~al.
+\newblock Quantifying interdependent risks in genomic privacy\allowbreak[J].
+\newblock {ACM} Trans. Priv. Secur., 2017, 20\penalty0 (1):\penalty0 3:1-3:31.
+
+\bibitem[Kschischang et~al.(2001)Kschischang, Frey, and
+  Loeliger]{kschischang2001factor}
+KSCHISCHANG~F~R, FREY~B~J, LOELIGER~H.
+\newblock Factor graphs and the sum-product algorithm\allowbreak[J].
+\newblock {IEEE} Trans. Information Theory, 2001, 47\penalty0 (2):\penalty0
+  498-519.
+
+\bibitem[Auton et~al.(2015)Auton, Abecasis, Altshuler, Durbin, Bentley,
+  Chakravarti, {Clark}, {Donnelly}, {Eichler}, {Flicek}, {Gabriel}, {Gibbs},
+  {Green}, {Hurles}, {Knoppers}, {Korbel}, {Lander}, {Lee}, {Lehrach},
+  {Mardis}, {Marth}, {McVean}, {Nickerson}, {Schmidt}, {Sherry}, {Wang},
+  {Wilson}, {Boerwinkle}, {Doddapaneni}, {Han}, {Korchina}, {Kovar}, {Lee},
+  {Muzny}, {Reid}, {Zhu}, {Chang}, {Feng}, {Fang}, {Guo}, {Jian}, {Jiang},
+  {Jin}, {Lan}, {Li}, {Li}, {Li}, {Liu}, {Liu}, {Lu}, {Ma}, {Tang}, {Wang},
+  {Wang}, {Wu}, {Wu}, {Xu}, {Yin}, {Zhang}, {Zhang}, {Zhao}, {Zhao}, {Zheng},
+  {Gupta}, {Gharani}, {Toji}, {Gerry}, {Resch}, {Barker}, {Clarke}, {Gil},
+  {Hunt}, {Kelman}, {Kulesha}, {Leinonen}, {McLaren}, {Radhakrishnan}, {Roa},
+  {Smirnov}, {Smith}, {Streeter}, {Thormann}, {Toneva}, {Vaughan},
+  {Zheng-Bradley}, {Grocock}, {Humphray}, {James}, {Kingsbury}, {Sudbrak},
+  {Albrecht}, {Amstislavskiy}, {Borodina}, {Lienhard}, {Mertes}, {Sultan},
+  {Timmermann}, {Yaspo}, {Fulton}, {Ananiev}, {Belaia}, {Beloslyudtsev},
+  {Bouk}, {Chen}, {Church}, {Cohen}, {Cook}, {Garner}, {Hefferon}, {Kimelman},
+  {Liu}, {Lopez}, {Meric}, {O'Sullivan}, {Ostapchuk}, {Phan}, {Ponomarov},
+  {Schneider}, {Shekhtman}, {Sirotkin}, {Slotta}, {Zhang}, {Balasubramaniam},
+  {Burton}, {Danecek}, {Keane}, {Kolb-Kokocinski}, {McCarthy}, {Stalker},
+  {Quail}, {Davies}, {Gollub}, {Webster}, {Wong}, {Zhan}, {Campbell}, {Kong},
+  {Marcketta}, {Yu}, {Antunes}, {Bainbridge}, {Sabo}, {Huang}, {Coin}, {Fang},
+  {Li}, {Li}, {Lin}, {Liu}, {Luo}, {Shao}, {Xie}, {Ye}, {Yu}, {Zhang}, {Zheng},
+  {Zhu}, {Alkan}, {Dal}, {Kahveci}, {Garrison}, {Kural}, {Lee}, {Leong},
+  {Stromberg}, {Ward}, {Wu}, {Zhang}, {Daly}, {DePristo}, {Handsaker}, {Banks},
+  {Bhatia}, {Angel}, {Genovese}, {Li}, {Kashin}, {McCarroll}, {Nemesh},
+  {Poplin}, {Yoon}, {Lihm}, {Makarov}, {Gottipati}, {Keinan},
+  {Rodriguez-Flores}, {Rausch}, {Fritz}, {Stütz}, {Beal}, {Datta}, {Herrero},
+  {Ritchie}, {Zerbino}, {Sabeti}, {Shlyakhter}, {Schaffner}, {Vitti}, {Cooper},
+  {Ball}, {Stenson}, {Barnes}, {Bauer}, {Cheetham}, {Cox}, {Eberle}, {Kahn},
+  {Murray}, {Peden}, {Shaw}, {Kenny}, {Batzer}, {Konkel}, {Walker},
+  {MacArthur}, {Lek}, {Herwig}, {Ding}, {Koboldt}, {Larson}, {Ye}, {Gravel},
+  {Swaroop}, {Chew}, {Lappalainen}, {Erlich}, {Gymrek}, {Willems}, {Simpson},
+  {Shriver}, {Rosenfeld}, {Bustamante}, {Montgomery}, {Vega}, {Byrnes},
+  {Carroll}, {DeGorter}, {Lacroute}, {Maples}, {Martin}, {Moreno-Estrada},
+  {Shringarpure}, {Zakharia}, {Halperin}, {Baran}, {Cerveira}, {Hwang},
+  {Malhotra}, {Plewczynski}, {Radew}, {Romanovitch}, {Zhang}, {Hyland},
+  {Craig}, {Christoforides}, {Homer}, {Izatt}, {Kurdoglu}, {Sinari}, {Squire},
+  {Xiao}, {Sebat}, {Antaki}, {Gujral}, {Noor}, {Ye}, {Burchard}, {Hernandez},
+  {Gignoux}, {Haussler}, {Katzman}, {Kent}, {Howie}, {Ruiz-Linares},
+  {Dermitzakis}, {Devine}, {Kang}, {Kidd}, {Blackwell}, {Caron}, {Chen},
+  {Emery}, {Fritsche}, {Fuchsberger}, {Jun}, {Li}, {Lyons}, {Scheller},
+  {Sidore}, {Song}, {Sliwerska}, {Taliun}, {Tan}, {Welch}, {Wing}, {Zhan},
+  {Awadalla}, {Hodgkinson}, {Li}, {Shi}, {Quitadamo}, {Lunter}, {Marchini},
+  {Myers}, {Churchhouse}, {Delaneau}, {Gupta-Hinch}, {Kretzschmar}, {Iqbal},
+  {Mathieson}, {Menelaou}, {Rimmer}, {Xifara}, {Oleksyk}, {Fu}, {Liu}, {Xiong},
+  {Jorde}, {Witherspoon}, {Xing}, {Browning}, {Browning}, {Hormozdiari},
+  {Sudmant}, {Khurana}, {Tyler-Smith}, {Albers}, {Ayub}, {Chen}, {Colonna},
+  {Jostins}, {Walter}, {Xue}, {Gerstein}, {Abyzov}, {Balasubramanian}, {Chen},
+  {Clarke}, {Fu}, {Harmanci}, {Jin}, {Lee}, {Liu}, {Mu}, {Zhang}, {Zhang},
+  {Hartl}, {Shakir}, {Degenhardt}, {Meiers}, {Raeder}, {Casale}, {Stegle},
+  {Lameijer}, {Hall}, {Bafna}, {Michaelson}, {Gardner}, {Mills}, {Dayama},
+  {Chen}, {Fan}, {Chong}, {Chen}, {Chaisson}, {Huddleston}, {Malig}, {Nelson},
+  {Parrish}, {Blackburne}, {Lindsay}, {Ning}, {Zhang}, {Lam}, {Sisu},
+  {Challis}, {Evani}, {Lu}, {Nagaswamy}, {Yu}, {Li}, {Habegger}, {Yu},
+  {Cunningham}, {Dunham}, {Lage}, {Jespersen}, {Horn}, {Kim}, {Desalle},
+  {Narechania}, {Sayres}, {Mendez}, {Poznik}, {Underhill}, {Mittelman},
+  {Banerjee}, {Cerezo}, {Fitzgerald}, {Louzada}, {Massaia}, {Yang}, {Kalra},
+  {Hale}, {Dan}, {Barnes}, {Beiswanger}, {Cai}, {Cao}, {Henn}, {Jones}, {Kaye},
+  {Kent}, {Kerasidou}, {Mathias}, {Ossorio}, {Parker}, {Rotimi}, {Royal},
+  {Sandoval}, {Su}, {Tian}, {Tishkoff}, {Via}, {Wang}, {Yang}, {Yang}, {Zhu},
+  {Bodmer}, {Bedoya}, {Cai}, {Gao}, {Chu}, {Peltonen}, {Garcia-Montero},
+  {Orfao}, {Dutil}, {Martinez-Cruzado}, {Mathias}, {Hennis}, {Watson},
+  {McKenzie}, {Qadri}, {LaRocque}, {Deng}, {Asogun}, {Folarin}, {Happi},
+  {Omoniwa}, {Stremlau}, {Tariyal}, {Jallow}, {Joof}, {Corrah}, {Rockett},
+  {Kwiatkowski}, {Kooner}, {Hien}, {Dunstan}, {ThuyHang}, {Fonnie}, {Garry},
+  {Kanneh}, {Moses}, {Schieffelin}, {Grant}, {Gallo}, {Poletti}, {Saleheen},
+  {Rasheed}, {Brooks}, {Felsenfeld}, {McEwen}, {Vaydylevich}, {Duncanson},
+  {Dunn}, and {Schloss}]{auton2015a}
+AUTON~A, ABECASIS~G~R, ALTSHULER~D~M, et~al.
+\newblock A global reference for human genetic variation\allowbreak[J].
+\newblock Nature, 2015, 526\penalty0 (7571):\penalty0 68-74.
+
+\bibitem[Köhler et~al.(2014)Köhler, Doelken, Mungall, Bauer, Firth,
+  Bailleul-Forestier, {Black}, {Brown}, {Brudno}, {Campbell}, {Fitzpatrick},
+  {Eppig}, {Jackson}, {Freson}, {Girdea}, {Helbig}, {Hurst}, {Jähn},
+  {Jackson}, {Kelly}, {Ledbetter}, {Mansour}, {Martin}, {Moss}, {Mumford},
+  {Ouwehand}, {Park}, {Riggs}, {Scott}, {Sisodiya}, {Vooren}, {Wapner},
+  {Wilkie}, {Wright}, {Silfhout}, {Leeuw}, {Vries}, {Washingthon}, {Smith},
+  {Westerfield}, {Schofield}, {Ruef}, {Gkoutos}, {Haendel}, {Smedley}, {Lewis},
+  and {Robinson}]{koehler2014human}
+KöHLER~S, DOELKEN~S~C, MUNGALL~C~J, et~al.
+\newblock The human phenotype ontology project: linking molecular biology and
+  disease through phenotype data\allowbreak[J].
+\newblock Nucleic Acids Research, 2014, 42\penalty0 (1):\penalty0 966-974.
+
+\bibitem[MacArthur et~al.(2017)MacArthur, Bowler, Cerezo, Gil, Hall, Hastings,
+  Junkins, McMahon, Milano, Morales, Pendlington, Welter, Burdett, Hindorff,
+  Flicek, Cunningham, and Parkinson]{macarthur2017the}
+MACARTHUR~J~A~L, BOWLER~E, CEREZO~M, et~al.
+\newblock The new nhgri-ebi catalog of published genome-wide association
+  studies (gwas catalog)\allowbreak[J].
+\newblock Nucleic Acids Research, 2017, 45.
+
+\bibitem[Manolio et~al.(2008)Manolio, Brooks, and Collins]{manolio2008a}
+MANOLIO~T~A, BROOKS~L~D, COLLINS~F~S.
+\newblock A hapmap harvest of insights into the genetics of common
+  disease\allowbreak[J].
+\newblock Journal of Clinical Investigation, 2008, 118\penalty0 (5):\penalty0
+  1590-1605.
+
+\bibitem[Climer et~al.(2014)Climer, Yang, de~las Fuentes, Dávila-Román, and
+  Gu]{climer2014a}
+CLIMER~S, YANG~W, DE~LAS FUENTES~L, et~al.
+\newblock A custom correlation coefficient (ccc) approach for fast
+  identification of multi-snp association patterns in genome-wide snps
+  data.\allowbreak[J].
+\newblock Genetic Epidemiology, 2014, 38\penalty0 (7):\penalty0 610-621.
+
+\bibitem[Drmanac et~al.(2010)Drmanac, Sparks, Callow, Halpern, Burns, Kermani,
+  Carnevali, Nazarenko, Nilsen, Yeung, Dahl, Fernandez, Staker, Pant, Baccash,
+  Borcherding, Brownley, Cedeno, Chen, Chernikoff, Cheung, Chirita, Curson,
+  Ebert, Hacker, Hartlage, Hauser, Huang, Jiang, Karpinchyk, Koenig, Kong,
+  Landers, Le, Liu, McBride, Morenzoni, Morey, Mutch, Perazich, Perry, Peters,
+  Peterson, Pethiyagoda, Pothuraju, Richter, Rosenbaum, Roy, Shafto,
+  Sharanhovich, Shannon, Sheppy, Sun, Thakuria, Tran, Vu, Zaranek, Wu, Drmanac,
+  Oliphant, Banyai, Martin, Ballinger, Church, and Reid]{drmanac2010human}
+DRMANAC~R, SPARKS~A~B, CALLOW~M~J, et~al.
+\newblock Human genome sequencing using unchained base reads on self-assembling
+  dna nanoarrays\allowbreak[J].
+\newblock Science, 2010, 327\penalty0 (5961):\penalty0 78-81.
+
+\bibitem[Hubaux et~al.(2017)Hubaux, Katzenbeisser, and
+  Malin]{hubaux2017genomic}
+HUBAUX~J, KATZENBEISSER~S, MALIN~B~A.
+\newblock Genomic data privacy and security: Where we stand and where we are
+  heading\allowbreak[J].
+\newblock {IEEE} Security {\&} Privacy, 2017, 15\penalty0 (5):\penalty0 10-12.
+
+\bibitem[Qian(2001)]{qian2001acla}
+QIAN~J.
+\newblock {ACLA:} {A} framework for access control list {(ACL)} analysis and
+  optimization\allowbreak[C]//\allowbreak
+{IFIP} Conference Proceedings: volume 192\quad Communications and Multimedia
+  Security.
+\newblock [S.l.]: Kluwer, 2001.
+
+\bibitem[Jung et~al.(2012)Jung and Joshi]{jung2012cribac}
+JUNG~Y, JOSHI~J~B~D.
+\newblock Cribac: Community-centric role interaction based access control
+  model\allowbreak[J].
+\newblock Computers {\&} Security, 2012, 31\penalty0 (4):\penalty0 497-523.
+
+\bibitem[Zhang et~al.(2011)Zhang, Mu, and Zhang]{zhang2011attribute}
+ZHANG~Q, MU~Y, ZHANG~M.
+\newblock Attribute-based authentication for multi-agent systems with dynamic
+  groups\allowbreak[J].
+\newblock Computer Communications, 2011, 34\penalty0 (3):\penalty0 436-446.
+
+\bibitem[Huang et~al.(2011)Huang, Tsai, and Tseng]{huang2011policy}
+HUANG~D, TSAI~W, TSENG~Y.
+\newblock Policy management for secure data access control in vehicular
+  networks\allowbreak[J].
+\newblock J. Network Syst. Manage., 2011, 19\penalty0 (4):\penalty0 448-471.
+
+\bibitem[Ni et~al.(2010)Ni, Bertino, and Lobo]{ni2010risk}
+NI~Q, BERTINO~E, LOBO~J.
+\newblock Risk-based access control systems built on fuzzy
+  inferences\allowbreak[C]//\allowbreak
+AsiaCCS.
+\newblock [S.l.]: {ACM}, 2010: 250-260.
+
+\bibitem[Shaikh et~al.(2012)Shaikh, Adi, and Logrippo]{shaikh2012dynamic}
+SHAIKH~R~A, ADI~K, LOGRIPPO~L.
+\newblock Dynamic risk-based decision methods for access control
+  systems\allowbreak[J].
+\newblock Computer Security, 2012, 31\penalty0 (4):\penalty0 447-464.
+
+\bibitem[Choi et~al.(2015)Choi, Kim, and Park]{choi2015framework}
+CHOI~D, KIM~D, PARK~S.
+\newblock A framework for context sensitive risk-based access control in
+  medical information systems\allowbreak[J].
+\newblock Comp. Math. Methods in Medicine, 2015, 2015:\penalty0
+  265132:1-265132:9.
+
+\bibitem[Chen et~al.(2011)Chen and Crampton]{chen2011risk}
+CHEN~L, CRAMPTON~J.
+\newblock Risk-aware role-based access control\allowbreak[C]//\allowbreak
+Lecture Notes in Computer Science: volume 7170\quad {STM}.
+\newblock [S.l.]: Springer, 2011: 140-156.
+
+\bibitem[Khambhammettu et~al.(2013)Khambhammettu, Boulares, Adi, and
+  Logrippo]{khambhammettu2013framework}
+KHAMBHAMMETTU~H, BOULARES~S, ADI~K, et~al.
+\newblock A framework for risk assessment in access control
+  systems\allowbreak[J].
+\newblock Computer Security, 2013, 39:\penalty0 86-103.
+
+\bibitem[惠榛\ 等(2015)惠榛, 李昊, 张敏, and 冯登国]{hui2015risk}
+惠榛, 李昊, 张敏, 等.
+\newblock
+  面向医疗大数据的风险自适应的访问控制模型\allowbreak[J].
+\newblock 通信学报, 2015, 36\penalty0 (12):\penalty0 190-199.
+
+\bibitem[Verma(2004)]{verma2004xml}
+VERMA~M.
+\newblock Xml security: Control information access with xacml\allowbreak[R].
+\newblock [S.l.]: {IBM}, 2004.
+
+\bibitem[Chen et~al.(2013)Chen, Gasparini, and Norman]{chen2013xacml}
+CHEN~L, GASPARINI~L, NORMAN~T~J.
+\newblock Xacml and risk-aware access control\allowbreak[J].
+\newblock Resource, 2013, 2\penalty0 (10):\penalty0 3-5.
+
+\bibitem[dos Santos et~al.(2014)dos Santos, Westphall, and
+  Westphall]{santos2014dynamic}
+DOS SANTOS~D~R, WESTPHALL~C~M, WESTPHALL~C~B.
+\newblock A dynamic risk-based access control architecture for cloud
+  computing\allowbreak[C]//\allowbreak
+{NOMS}.
+\newblock [S.l.]: {IEEE}, 2014: 1-9.
+
+\bibitem[Lampson(1974)]{lampson1974protection}
+LAMPSON~B~W.
+\newblock Protection\allowbreak[J].
+\newblock ACM SIGOPS Operating Systems Review, 1974, 8\penalty0 (1):\penalty0
+  18-24.
+
+\bibitem[Bell et~al.(1973)Bell and LaPadula]{bell1973secure}
+BELL~D~E, LAPADULA~L~J.
+\newblock Secure computer systems: Mathematical foundations\allowbreak[R].
+\newblock [S.l.]: Miter Corp Bedford Ma, 1973.
+
+\bibitem[Sandhu et~al.(1996)Sandhu, Coyne, Feinstein, and
+  Youman]{sandhu1996role}
+SANDHU~R~S, COYNE~E~J, FEINSTEIN~H~L, et~al.
+\newblock Role-based access control models\allowbreak[J].
+\newblock Computer, 1996, 29\penalty0 (2):\penalty0 38-47.
+
+\bibitem[Kuhn et~al.(2010)Kuhn, Coyne, and Weil]{kuhn2010adding}
+KUHN~D~R, COYNE~E~J, WEIL~T~R.
+\newblock Adding attributes to role-based access control\allowbreak[J].
+\newblock Computer, 2010, 43\penalty0 (6):\penalty0 79-81.
+
+\bibitem[Servos et~al.(2017)Servos and Osborn]{servos2017current}
+SERVOS~D, OSBORN~S~L.
+\newblock Current research and open problems in attribute-based access
+  control\allowbreak[J].
+\newblock ACM Computing Surveys (CSUR), 2017, 49\penalty0 (4):\penalty0
+  65:1-65:45.
+
+\bibitem[Paci et~al.(2018)Paci, Squicciarini, and Zannone]{paci2018survey}
+PACI~F, SQUICCIARINI~A~C, ZANNONE~N.
+\newblock Survey on access control for community-centered collaborative
+  systems\allowbreak[J].
+\newblock ACM Computing Surveys (CSUR), 2018, 51\penalty0 (1):\penalty0
+  6:1-6:38.
+
+\bibitem[Dimmock et~al.(2004)Dimmock, Belokosztolszki, Eyers, Bacon, and
+  Moody]{dimmock2004using}
+DIMMOCK~N, BELOKOSZTOLSZKI~A, EYERS~D, et~al.
+\newblock Using trust and risk in role-based access control
+  policies\allowbreak[C]//\allowbreak
+SACMAT '04: Proceedings of the Ninth ACM Symposium on Access Control Models and
+  Technologies.
+\newblock New York, NY, USA: ACM, 2004: 156-162.
+
+\bibitem[Pustchi et~al.(2015)Pustchi and Sandhu]{pustchi2015mt}
+PUSTCHI~N, SANDHU~R.
+\newblock Mt-abac: A multi-tenant attribute-based access control model with
+  tenant trust\allowbreak[C]//\allowbreak
+QIU~M, XU~S, YUNG~M, et~al.
+\newblock Network and System Security.
+\newblock Cham: Springer International Publishing, 2015: 206-220.
+
+\bibitem[Do et~al.(2017)Do, Tran, Hong, Kamhoua, Kwiat, Blasch, Ren, Pissinou,
+  and Iyengar]{do2017game}
+DO~C~T, TRAN~N~H, HONG~C~S, et~al.
+\newblock Game theory for cyber security and privacy\allowbreak[J].
+\newblock ACM Computing Surveys (CSUR), 2017, 50\penalty0 (2):\penalty0
+  30:1-30:37.
+
+\bibitem[Zhang et~al.(2015)Zhang, He, Zhao, Huang, and Liu]{zhang2015towards}
+ZHANG~Y, HE~J, ZHAO~B, et~al.
+\newblock Towards more pro-active access control in computer systems and
+  networks\allowbreak[J].
+\newblock Computers and Security, 2015, 49\penalty0 (C):\penalty0 132-146.
+
+\bibitem[Kandala et~al.(2011)Kandala, Sandhu, and
+  Bhamidipati]{kandala2011attribute}
+KANDALA~S, SANDHU~R, BHAMIDIPATI~V.
+\newblock An attribute based framework for risk-adaptive access control
+  models\allowbreak[C]//\allowbreak
+2011 Sixth International Conference on Availability, Reliability and Security.
+\newblock [S.l.: s.n.], 2011: 236-241.
+
+\bibitem[Bijon et~al.(2012)Bijon, Krishnan, and Sandhu]{bijon2012risk}
+BIJON~K~Z, KRISHNAN~R, SANDHU~R.
+\newblock Risk-aware rbac sessions\allowbreak[C]//\allowbreak
+VENKATAKRISHNAN~V, GOSWAMI~D.
+\newblock Information Systems Security.
+\newblock Berlin, Heidelberg: Springer Berlin Heidelberg, 2012: 59-74.
+
+\bibitem[Diep et~al.(2007)Diep, Hung, Zhung, Lee, koo Lee, and
+  Lee]{diep2007enforcing}
+DIEP~N~N, HUNG~L~X, ZHUNG~Y, et~al.
+\newblock Enforcing access control using risk
+  assessment\allowbreak[C]//\allowbreak
+Fourth European Conference on Universal Multiservice Networks (ECUMN'07).
+\newblock [S.l.: s.n.], 2007: 419-424.
+
+\bibitem[dos Santos et~al.(2016)dos Santos, Marinho, Schmitt, Westphall, and
+  Westphall]{santos2016framework}
+DOS SANTOS~D~R, MARINHO~R, SCHMITT~G~R, et~al.
+\newblock A framework and risk assessment approaches for risk-based access
+  control in the cloud\allowbreak[J].
+\newblock Journal of Network and Computer Applications, 2016, 74\penalty0
+  (C):\penalty0 86-97.
+
+\bibitem[Zhen et~al.(2015)Zhen, Hao, Min, and Deng-guo]{zhen2015risk}
+ZHEN~H, HAO~L, MIN~Z, et~al.
+\newblock Risk-adaptive access control model for big data in
+  healthcare\allowbreak[J].
+\newblock Journal on Communications, 2015, 36\penalty0 (12):\penalty0 190-199.
+
+\bibitem[Sandhu et~al.(1994)Sandhu and Samarati]{sandhu1994access}
+SANDHU~R~S, SAMARATI~P.
+\newblock Access control: principle and practice\allowbreak[J].
+\newblock IEEE Communications Magazine, 1994, 32\penalty0 (9):\penalty0 40-48.
+
+\bibitem[McCune et~al.(2006)McCune, Jaeger, Berger, Caceres, and
+  Sailer]{mccune2006shamon}
+MCCUNE~J~M, JAEGER~T, BERGER~S, et~al.
+\newblock Shamon: A system for distributed mandatory access
+  control\allowbreak[C]//\allowbreak
+2006 22nd Annual Computer Security Applications Conference (ACSAC'06).
+\newblock [S.l.: s.n.], 2006: 23-32.
+
+\bibitem[Downs et~al.(1985)Downs, Rub, Kung, and Jordan]{downs1985issues}
+DOWNS~D~D, RUB~J~R, KUNG~K~C, et~al.
+\newblock Issues in discretionary access control\allowbreak[C]//\allowbreak
+1985 IEEE Symposium on Security and Privacy.
+\newblock [S.l.: s.n.], 1985: 208-208.
+
+\bibitem[Wang et~al.(2010)Wang, Liu, and Wu]{wang2010hierarchical}
+WANG~G, LIU~Q, WU~J.
+\newblock Hierarchical attribute-based encryption for fine-grained access
+  control in cloud storage services\allowbreak[C]//\allowbreak
+Proceedings of the 17th {ACM} Conference on Computer and Communications
+  Security, {CCS} 2010, Chicago, Illinois, USA, October 4-8, 2010.
+\newblock [S.l.: s.n.], 2010: 735-737.
+
+\bibitem[Krautsevich et~al.(2014)Krautsevich, Lazouski, Martinelli, and
+  Yautsiukhin]{krautsevich2014towards}
+KRAUTSEVICH~L, LAZOUSKI~A, MARTINELLI~F, et~al.
+\newblock Towards attribute-based access control policy engineering using
+  risk\allowbreak[C]//\allowbreak
+BAUER~T, GRO{SS}MANN~J, SEEHUSEN~F, et~al.
+\newblock Risk Assessment and Risk-Driven Testing.
+\newblock Cham: Springer International Publishing, 2014: 80-90.
+
+\bibitem[Boulares et~al.(2017)Boulares, Adi, and Logrippo]{boulares2017insider}
+BOULARES~S, ADI~K, LOGRIPPO~L.
+\newblock Insider threat likelihood assessment for access control systems:
+  Quantitative approach\allowbreak[C]//\allowbreak
+CUPPENS~F, WANG~L, CUPPENS-BOULAHIA~N, et~al.
+\newblock Foundations and Practice of Security.
+\newblock Cham: Springer International Publishing, 2017: 135-142.
+
+\bibitem[Armando et~al.(2015{\natexlab{a}})Armando, Bezzi, Cerbo, and
+  Metoui]{armando2015balancing}
+ARMANDO~A, BEZZI~M, CERBO~F, et~al.
+\newblock Balancing trust and risk in access control\allowbreak[C]//\allowbreak
+Proceedings of the Confederated International Conferences on On the Move to
+  Meaningful Internet Systems: OTM 2015 Conferences - Volume 9415.
+\newblock Berlin, Heidelberg: Springer-Verlag, 2015{\natexlab{a}}: 660-676.
+
+\bibitem[Diaz-Lopez et~al.(2016)Diaz-Lopez, Dolera-Tormo, Gomez-Marmol, and
+  Martinez-Perez]{diaz-lopez2016dynamic}
+DIAZ-LOPEZ~D, DOLERA-TORMO~G, GOMEZ-MARMOL~F, et~al.
+\newblock Dynamic counter-measures for risk-based access control
+  systems\allowbreak[J].
+\newblock Future Generation Computer Systems, 2016, 55\penalty0 (C):\penalty0
+  321-335.
+
+\bibitem[Armando et~al.(2015{\natexlab{b}})Armando, Bezzi, Metoui, and
+  Sabetta]{armando2015risk}
+ARMANDO~A, BEZZI~M, METOUI~N, et~al.
+\newblock Risk-based privacy-aware information disclosure\allowbreak[J].
+\newblock International Journal of Secure Software Engineering, 2015,
+  6\penalty0 (2):\penalty0 70-89.
+
+\end{thebibliography}

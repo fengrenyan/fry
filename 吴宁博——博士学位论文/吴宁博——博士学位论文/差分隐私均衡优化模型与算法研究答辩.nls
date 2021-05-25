@@ -1,0 +1,85 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{\textbf{BSC}}]\begingroup Binary Symmetric Channel\quad \quad \quad \quad  \quad \quad \quad 二元对称信道\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{DMC}}]\begingroup Discrete Memoryless Channel\quad \quad \quad  \quad \quad \quad 离散无记忆信道\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{DP}}]\begingroup Differential Privacy\quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad 差分隐私\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{LDP}}]\begingroup Local Differential Privacy\quad \quad \quad \quad  \quad \ \ \quad \quad 本地化差分隐私\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{MI}}]\begingroup Mutual Information\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad 互信息\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{MRR}}]\begingroup Multivariate Randomized Response\quad  \ \ \quad \quad 多元随机响应\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{ORRP}}]\begingroup Orderly Randomized Response Perturbation 有序随机响应扰动\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{PDF}}]\begingroup Probability Density Function\quad \quad \quad \quad  \ \ \quad \quad 概率密度函数\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{PDP}}]\begingroup Personalized Differential Privacy\quad \quad \ \ \ \quad \quad 个性化差分隐私\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{PM}}]\begingroup Piecewise Mechanism\quad \quad \quad \quad \quad \quad \quad  \quad \quad 分段机制\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{PPAD}}]\begingroup Privacy-Preserving Attack Defense\quad \quad \  \quad \quad 隐私保护攻击防御\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{PPDA}}]\begingroup Privacy-Preserving Data Analysis\quad \quad \ \ \ \quad \quad 隐私保护的数据分析\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{PPDM}}]\begingroup Privacy-Preserving Data Mining\quad \quad \quad  \ \quad \quad 隐私保护的数据挖掘\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{PPDP}}]\begingroup Privacy-Preserving Data Publishing\quad \quad \quad \quad 隐私保护的数据发布\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{QIF}}]\begingroup Quantitative Information Flow\quad \quad \quad \quad  \quad \quad 量化信息流\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{RR}}]\begingroup Randomized Response\quad \quad \quad \quad \quad \quad \quad  \ \quad \quad 随机响应\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{SD}}]\begingroup Saddle Point\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \ \quad \quad 鞍点\nomeqref {0}
+		\nompageref{iv}
+  \item [{\textbf{TPZS}}]\begingroup Two-Person Zero-Sum\quad \quad \quad \quad \quad \quad \quad \ \quad \quad 二人零和\nomeqref {0}
+		\nompageref{iv}
+
+ \nomgroup{N}
+
+  \item [{$\delta$}]\begingroup 期望失真门限\nomeqref {0}
+		\nompageref{iv}
+  \item [{$\lambda$}]\begingroup 拉格朗日乘子\nomeqref {0}
+		\nompageref{iv}
+  \item [{$\mathcal{D},\mathcal{A}$}]\begingroup 防御者与攻击者的策略集合\nomeqref {0}
+		\nompageref{iv}
+  \item [{$\mathcal{P},\mathcal{Q}$}]\begingroup 概率分布集合，隐私机制集合\nomeqref {0}
+		\nompageref{iv}
+  \item [{$\mathcal{Q}_{d,\tau},Q_j$}]\begingroup 可达的隐私机制，第j个最佳隐私机制\nomeqref {0}
+		\nompageref{iv}
+  \item [{$\mathcal{X},\hat{\mathcal{X}}$}]\begingroup 原始数据字母表，扰动数据字母表\nomeqref {0}
+		\nompageref{iv}
+  \item [{$\mid\mathcal{X}\mid$,$\mid\hat{\mathcal{X}}\mid$}]\begingroup 原始与扰动字母表中不同的原子数\nomeqref {0}
+		\nompageref{iv}
+  \item [{$\phi_{c}$}]\begingroup 依赖等级\nomeqref {0}
+		\nompageref{iv}
+  \item [{$\tau$}]\begingroup 给定的质量损失约束\nomeqref {0}
+		\nompageref{iv}
+  \item [{$\Theta$}]\begingroup 邻接矩阵\nomeqref {0}
+		\nompageref{iv}
+  \item [{$d(\cdot,\cdot)$}]\begingroup 失真测量函数\nomeqref {0}
+		\nompageref{iv}
+  \item [{$D_{KL}(\cdot \parallel \cdot)$}]\begingroup 相对熵距离函数\nomeqref {0}
+		\nompageref{iv}
+  \item [{$n$}]\begingroup 系统用户总数\nomeqref {0}
+		\nompageref{iv}
+  \item [{$p(\cdot),q(\cdot/\cdot)$}]\begingroup 先验概率分布，条件概率分布\nomeqref {0}
+		\nompageref{iv}
+  \item [{$P^*,Q^*$}]\begingroup 最优策略组合\nomeqref {0}
+		\nompageref{iv}
+  \item [{$q(\cdot,\cdot/\cdot),p(\cdot,\cdot)$}]\begingroup 条件概率分布以及联合概率分布\nomeqref {0}
+		\nompageref{iv}
+  \item [{$r(\cdot,\cdot)$}]\begingroup 联合概率分布\nomeqref {0}
+		\nompageref{iv}
+  \item [{$S_d,S_a$}]\begingroup 防御者与攻击者的策略\nomeqref {0}
+		\nompageref{iv}
+  \item [{$T$,$w_{ij}$}]\begingroup 收敛门限阈值，属性相关度门限\nomeqref {0}
+		\nompageref{iv}
+  \item [{$U(\cdot,\cdot)$}]\begingroup 博弈的效用函数\nomeqref {0}
+		\nompageref{iv}
+
+\end{thenomenclature}

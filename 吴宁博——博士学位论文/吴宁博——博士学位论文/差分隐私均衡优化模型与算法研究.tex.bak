@@ -1,0 +1,249 @@
+%% Thesis Template of GZ.Univ
+%%   for using revised CASthesis package with LaTeX2e
+%%
+%% Created by snda.liu <thinksheng@foxmail.com>
+%%
+%% $Id: 论文盲评.tex,v 0.12 2015/12/06 19:35:46   $
+
+%%%请使用pdflatex或pdftexify编译
+%%%上述两种编译器，可以识别的图片格式有：PDF,JPG,JPEG,PNG
+
+
+
+
+
+\documentclass[pdftex,notypeinfo,oneside,UTF8,fntef]{CASthesis}
+
+
+
+\graphicspath{{chapter/}{figures/}} % 设置图形文件的搜索路径
+
+\CTEXsetup[format+={\flushleft}]{section} % 小节标题靠左对齐
+
+\allowdisplaybreaks[4] %公式强制分页
+\usepackage{enumitem}
+
+%\renewcommand{\baselinestretch}{1.5} %行间距，默认为1.3
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{mathptmx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{relsize}
+\usepackage{colortbl}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{bm}
+\usepackage{pbox}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{balance}
+\usepackage{tablefootnote}
+\usepackage{epstopdf, epsfig}
+\usepackage{url}
+\usepackage{cleveref}[2012/02/15]
+\usepackage{arydshln}
+\usepackage[super]{gbt7714}
+\usepackage{natbib}
+%算法的工具包
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{makecell}
+\usepackage{blkarray}
+%设置页边距
+\usepackage{geometry}
+\geometry{left=2.54cm,right=2.54cm,top=3.17cm,bottom=3.17cm}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\mycite}[1]{\scalebox{1.3}[1.3]{\raisebox{-0.65ex}{\cite{#1}}}}
+\numberwithin{algorithm}{chapter}
+\renewcommand{\algorithmicrequire}{ \textbf{输入:}}     %Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{ \textbf{输出:}}    %UseOutput in the format of Algorithm
+%\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\usepackage{geometry}%设置页边距
+\geometry{left=2.54cm,right=2.54cm,top=3.17cm,bottom=3.17cm}
+
+\theoremstyle{THrm}{
+	\newtheorem{question}{问题}[section]
+    \newtheorem{problem}{问题}[section]
+	\newtheorem{property}{性质}[section]
+	\newtheorem{assumption}{假设}[section]
+	\newtheorem{claim}[lemma]{断言}
+}
+\usepackage{nomencl}%所用宏包
+\makenomenclature%必须加上，放在\begin{document}之前
+%\renewcommand{\nomname}{缩略语对照表}
+\setcounter{tocdepth}{2}%设定目录层级（通常取值0-2之间）
+
+\renewcommand{\nomname}{}
+%% this modifies item separation:
+\setlength{\nomitemsep}{8pt}
+%% this part defines the groups:
+%----------------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+
+  \item[\large \bfseries\hspace{0.38\textwidth}
+  \ifstrequal{#1}{N}{符号对照表}{%
+  \ifstrequal{#1}{A}{缩略语对照表}}%
+]\vspace{15pt}} % this is to add vertical space between the groups.
+
+
+
+\begin{document}
+
+\oddyemei{\leftmark}
+\evenyemei{贵州大学博士学位论文}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 封面部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+   \titlepage
+\newpage\thispagestyle{empty}
+
+ \begin{flushleft}
+  \setlength{\fboxrule}{1pt}
+  \setlength{\fboxsep}{0.1cm}
+  \fbox{\shortstack[l]{\vspace*{15pt}\\\songti\zihao{5}论文编号：\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\\vspace*{15pt}}}
+ \end{flushleft}
+
+\vspace*{30pt}
+\begin{center}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=2.9cm]{gzdx_red.jpg}\\
+  \includegraphics[width=3.9cm]{gzdx_mao.jpg}\\
+\end{figure}
+  \kaishu\zihao{-0}{\textbf{2021届博士学位论文}}
+\end{center}
+
+\vspace*{20pt}
+\begin{center}
+  \heiti\zihao{1}{差分隐私的均衡优化\\ 模型与算法研究}
+\end{center}
+
+\vspace*{20pt}
+\begin{center}
+  \heiti\zihao{3}{
+  学科专业：\uwave{\hbox to 52mm{~~~~~~~~~~~~软件工程~~~~~~~~~~~~}}\\
+  研究方向：\uwave{\hbox to 52mm{~~~~~~~~密码学与数据安全~~~~~~~~}}
+  }
+\end{center}
+
+\vspace*{70pt}
+
+\begin{center}
+  \heiti\zihao{4}
+     {中国$\cdot$贵州$\cdot$贵阳\\2021~年~3~月}
+\end{center}
+
+
+  \frontmatter%前序页码i ii iii iv
+  % 目录
+  \tableofcontents
+  % 表格目录
+  \listoftables
+  % 插图目录
+  \listoffigures
+%术语表
+%\renewcommand{\nomname}{符号对照表}
+%\nomenclature{符号}{符号说明}%
+\nomenclature[N]{$n$}{系统用户总数}
+\nomenclature[N]{$\mathcal{X},\hat{\mathcal{X}}$}{原始数据字母表，扰动数据字母表}
+\nomenclature[N]{$\mid\mathcal{X}\mid$,$\mid\hat{\mathcal{X}}\mid$}{原始与扰动字母表中不同的原子数}
+\nomenclature[N]{$p(\cdot),q(\cdot/\cdot)$}{先验概率分布，条件概率分布}
+\nomenclature[N]{$\mathcal{D},\mathcal{A}$}{防御者与攻击者的策略集合}
+\nomenclature[N]{$\Theta$}{邻接矩阵}
+\nomenclature[N]{$U(\cdot,\cdot)$}{博弈的效用函数}
+\nomenclature[N]{$d(\cdot,\cdot)$}{失真测量函数}
+\nomenclature[N]{$\lambda$}{拉格朗日乘子}
+\nomenclature[N]{$T$,$w_{ij}$}{收敛门限阈值，属性相关度门限}
+\nomenclature[N]{$\phi_{c}$}{依赖等级}
+\nomenclature[N]{$\mathcal{P},\mathcal{Q}$}{概率分布集合，隐私机制集合}
+\nomenclature[N]{$r(\cdot,\cdot)$}{联合概率分布}
+\nomenclature[N]{$P^*,Q^*$}{最优策略组合}
+\nomenclature[N]{$q(\cdot,\cdot/\cdot),p(\cdot,\cdot)$}{条件概率分布以及联合概率分布}
+\nomenclature[N]{$S_d,S_a$}{防御者与攻击者的策略}
+\nomenclature[N]{$D_{KL}(\cdot \parallel \cdot)$}{相对熵距离函数}
+\nomenclature[N]{$\delta$}{期望失真门限}
+\nomenclature[N]{$\tau$}{给定的质量损失约束}
+\nomenclature[N]{$\mathcal{Q}_{d,\tau},Q_j$}{可达的隐私机制，第j个最佳隐私机制}
+%缩略语对照表
+\nomenclature[A]{\textbf{DP}}{Differential Privacy\quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad 差分隐私}
+\nomenclature[A]{\textbf{PPDP}}{Privacy-Preserving Data Publishing\quad \quad \quad \quad 隐私保护的数据发布}
+\nomenclature[A]{\textbf{PPDA}}{Privacy-Preserving Data Analysis\quad \quad \ \ \ \quad \quad 隐私保护的数据分析}
+\nomenclature[A]{\textbf{PPDM}}{Privacy-Preserving Data Mining\quad \quad \quad  \ \quad \quad 隐私保护的数据挖掘}
+\nomenclature[A]{\textbf{LDP}}{Local Differential Privacy\quad \quad \quad \quad  \quad \ \ \quad \quad 本地化差分隐私}
+\nomenclature[A]{\textbf{RR}}{Randomized Response\quad \quad \quad \quad \quad \quad \quad  \ \quad \quad 随机响应}
+\nomenclature[A]{\textbf{PM}}{Piecewise Mechanism\quad \quad \quad \quad \quad \quad \quad  \quad \quad 分段机制}
+\nomenclature[A]{\textbf{MI}}{Mutual Information\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad 互信息}
+\nomenclature[A]{\textbf{QIF}}{Quantitative Information Flow\quad \quad \quad \quad  \quad \quad 量化信息流}
+%\nomenclature[A]{\textbf{OUE}}{optimized unary encoding\quad \quad \quad \quad \quad \quad 最优一元编码}
+\nomenclature[A]{\textbf{ORRP}}{Orderly Randomized Response Perturbation 有序随机响应扰动}
+\nomenclature[A]{\textbf{PPAD}}{Privacy-Preserving Attack Defense\quad \quad \  \quad \quad 隐私保护攻击防御}
+\nomenclature[A]{\textbf{PDP}}{Personalized Differential Privacy\quad \quad \ \ \ \quad \quad 个性化差分隐私}
+\nomenclature[A]{\textbf{MRR}}{Multivariate Randomized Response\quad  \ \ \quad \quad 多元随机响应}
+\nomenclature[A]{\textbf{PDF}}{Probability Density Function\quad \quad \quad \quad  \ \ \quad \quad 概率密度函数}
+\nomenclature[A]{\textbf{BSC}}{Binary Symmetric Channel\quad \quad \quad \quad  \quad \quad \quad 二元对称信道}
+\nomenclature[A]{\textbf{DMC}}{Discrete Memoryless Channel\quad \quad \quad  \quad \quad \quad 离散无记忆信道}
+\nomenclature[A]{\textbf{SD}}{Saddle Point\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \ \quad \quad 鞍点}
+\nomenclature[A]{\textbf{TPZS}}{Two-Person Zero-Sum\quad \quad \quad \quad \quad \quad \quad \ \quad \quad 二人零和}
+%\printnomenclature[2cm]
+\printnomenclature[1.5in]%放在想输出术语表的地方，一般是段首
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 前言部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 摘要
+\input{chapter/abstracts.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 摘要结束
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文部
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter%正式页码1 2 3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 第1 章
+
+\input{chapter/chapter-01-introduction.tex}%绪论
+
+\input{chapter/chapter-02-basic} %基本模型与定义
+\input{chapter/chapter-03-privacyMetricModel} %差分隐私通信模型及度量方法
+\input{chapter/chapter-04-tradeoff.tex} %基于最优率失真的差分隐私数据收集机制       //  差分隐私数据收集的最优化模型
+\input{chapter/chapter-05-LDP.tex} %基于最优率失真的差分隐私数据发布机制  // 差分隐私数据发布的最优化模型
+\input{chapter/chapter-06-rational.tex} %基于博弈均衡的差分隐私最优策略机制   // 差分隐私策略机制的均衡优化模型
+\input{chapter/chapter-07-conclusion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 附件部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%参考文献%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{gbt7714-unsrt}
+ \bibliography{bib/paper}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 致谢%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%致谢及致谢之后的部分不需要复制
+
+\end{document}

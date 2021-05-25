@@ -1,12 +1,15 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.20 of 2017/10/04
+%
+\documentclass[runningheads]{llncs}
+%
 \usepackage{times}
 \usepackage{soul}
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
 \usepackage[utf8]{inputenc}
-\usepackage[small]{caption}
+%\usepackage[small]{caption}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsthm}
@@ -22,24 +25,54 @@
 \urlstyle{same}
 
 
-\title{Forgeting in $\mu$-calculus}
-\author{fengrenyan }
-\date{May 2020}
+\usepackage{caption}
+\usepackage{subfig}
+%\usepackage{subfigure}
+
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following line
+% to display URLs in blue roman font according to Springer's eBook style:
+% \renewcommand\UrlFont{\color{blue}\rmfamily}
 
 \begin{document}
+%
+\title{Forgeting in $\mu$-calculus\thanks{Supported by organization x.}}
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{First Author\inst{1}\orcidID{0000-1111-2222-3333} \and
+Second Author\inst{2,3}\orcidID{1111-2222-3333-4444} \and
+Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
+%
+\authorrunning{F. Author et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{Princeton University, Princeton NJ 08544, USA \and
+Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
+\email{lncs@springer.com}\\
+\url{http://www.springer.com/gp/computer-science/lncs} \and
+ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
+\email{\{abc,lncs\}@uni-heidelberg.de}}
+%
+
 \newcommand{\tuple}[1]{{\langle{#1}\rangle}}
 \newcommand{\Mod}{\textit{Mod}}
 \newcommand\ie{{\it i.e. }}
 \newcommand\eg{{\it e.g.}}
-\newcommand\st{{\it s.t. }}
-\newtheorem{definition}{Definition}
+% \newcommand\st{{\it s.t. }}
+% \newtheorem{definition}{Definition}
 \newtheorem{examp}{Example}
-\newenvironment{example}{\begin{examp}\rm}{\end{examp}}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}[theorem]{Corollary}
-\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}\\ }
+% \newenvironment{example}{\begin{examp}\rm}{\end{examp}}
+% \newtheorem{lemma}{Lemma}
+% \newtheorem{proposition}{Proposition}
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{corollary}[theorem]{Corollary}
+% \newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}\\ }
 \newcommand{\rto}{\rightarrow}
 \newcommand{\lto}{\leftarrow}
 \newcommand{\lrto}{\leftrightarrow}
@@ -146,10 +179,10 @@
 \newcommand{\PIP}[1]{\Pi_{#1}^{p}}
 \newcommand{\SigmaP}[1]{\Sigma_{#1}^{p}}
 
-\maketitle
 
-
-\section{Abstract}
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
 Propositional $\mu$-calculus is an expressive logic, and also an important specification language in verification.
 One of the common phenomenons in both the verification and the system design is some information content of such specification might become irrelevant for the system due to various reasons e.g., it might be discarded or become obsolete by time, or just become infeasible due to practical difficulties. 
 Then, the problem arises on how to distill the information without altering the relevant system behavior or violating the original specification over a given signature.
@@ -159,21 +192,112 @@ We study its theoretical properties and also show that our notion
 of forgetting satisfies existing essential postulates of knowledge forgetting.
 Furthermore, we show that the entailment of the forgetting is $\textsc{Exptime}$-complete.
 
+\keywords{Weakest precondition  \and Strongest post-condition \and Forgetting.}
+\end{abstract}
+%
+%
+%
 \section{Introduction}
-Propositional $\mu$-calculus is an expressive logic, on binary trees it is as expressive as the monadic second order logic of two successors~\cite{emerson1991tree, niwinski1988fixed}.
+Propositional $\mu$-calculus is an expressive logic, on binary trees it is as expressive as the monadic second order logic of two successors~\cite{emerson1991tree,niwinski1988fixed}.
 Subsequent research showed that the $\mu$-calculus is an important logic when specification and verification is concerned.
 One of the common phenomenons in both the verification and the system design is some information content of such specification might become irrelevant for the system due to various reasons e.g., it might be discarded or become obsolete by time, or just become infeasible due to practical difficulties. 
 However, In this case it is expensive in time and space to re-extract the specification that meets the requirements. The problem arises on how to remove it without altering the relevant system behaviour or violating the existing system specifications over a given signature.
+Let's consider the following example.
+
+\begin{example}[Playing PingPong]
+\label{examp:run}
+Assume \emph{John} plays PingPong with $n+1$ people and there are $n$ chairs. At the beginning, John plays PingPong with one of the $n+1$ people, it is obvious that there are $n$ people left at this time. In our scenario, we assume \emph{John} can not win anyone, which means that \emph{John} has always been beaten by other people every turn. In this case, after five games it will be \emph{John}'s turn. 
+This process can be modeled by Fig.~\ref{fig:run} (a).
+
+In Fig.~\ref{fig:run} (a), this scenario is represented by the Kripke structure $\Hm=(S, s_0, R, L)$ with  the corresponding atomic variables $V=\{j, ch\}$, in which $j$ means \emph{John}'s turn and $ch$ means the \emph{John}'s chair is free. Besides, $m=2^n$, this means there is $m$ orders to \emph{John}'s turn.
+
+
+In this scenario, we can see from the unwinding of $\Hm$ in Fig.~\ref{fig:run} (b) that for each (some) path $\pi = (s_0, s_1, ...)$ starting from $s_0$ we have $\forall i\in \mathbb{N}$ there is $(\Hm, s_{2*i}) \models ch \wedge j$ and $(\Hm, s_{2*i+1}) \models \neg ch \wedge \neg j$, i.e. for each \emph{even state} in each (some) path that starting from $s_0$ the $ch \wedge j$ holds and $\neg ch \wedge \neg j$ holds for \emph{old states} in this path. This property can be represented by a $\mu$-calculus formula $\varphi=\nu X. (j \wedge ch) \wedge \square (\neg j \wedge \neg ch) \wedge \square \square X$ ($\varphi=\nu X. (j \wedge ch) \wedge \lozenge (\neg j \wedge \neg ch) \wedge \lozenge \lozenge X$), this is not expressible with temporal logics. 
+
+Now assume a situation in which due to some problems (i.e. the venue changed or the chair broke down), John does no longer have a chair. This means, all the playing processes concerning chair no more necessary and should be dropped from both the  specifications (e.g. $\varphi$) and the  Kripke structure for simplification. 
+
+
+% \begin{figure}[htbp]
+% \centering    %居中
+ 
+% \subfigure[Kripke structure ${\cal M}$] %第一张子图
+% {
+% 	\begin{minipage}{4cm}
+% 	\centering          %子图居中
+% 	\includegraphics[width=4cm]{run_simp.png}   %以pic.jpg的0.5倍大小输出
+% 	\end{minipage}
+% }
+	
+% \subfigure[The unwinding of ${\cal M}$] %第二张子图
+% {
+% 	\begin{minipage}{4cm}
+% 	\centering      %子图居中
+% 	\includegraphics[width=4cm]{run.png}   %以pic.jpg的0.5倍大小输出
+% 	\end{minipage}
+% }
+ 
+% \caption{The PingPong's Model} %  %大图名称
+% \label{fig:run}  %图片引用标记
+% \end{figure}
+
+% \begin{figure}[htbp]
+% \centering    %居中
+% 	\begin{minipage}[t]{0.48\textwidth}
+% 	\centering          %子图居中
+% 	\includegraphics[width=4cm]{run_simp.png}   %以pic.jpg的0.5倍大小输出
+% 	\caption{Kripke structure ${\cal M}$}
+% 	\end{minipage}
+% 	\begin{minipage}[t]{0.48\textwidth}
+% 	\centering      %子图居中
+% 	\includegraphics[width=4cm]{run.png}   %以pic.jpg的0.5倍大小输出
+% 	\caption{The unwinding of ${\cal M}$}
+% 	\end{minipage}
+% \caption{The PingPong's Model} %  %大图名称
+% \label{fig:run}  %图片引用标记
+% \end{figure}
+
+
+
+ \begin{figure}[htbp]
+     \centering
+     \subfloat[Kripke structure ${\cal M}$]{ 
+        \label{RMSE_TAN_MKDB_all}
+        \begin{minipage}[c]{.5\linewidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{run_simp.png}
+        \end{minipage}
+     }
+     \subfloat[The unwinding of ${\cal M}$]{
+        \label{RMSE_TAN_MKDB_bigdataset}
+        \begin{minipage}[c]{.5\linewidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{run.png}
+            %\caption{The unwinding of ${\cal M}$}
+        \end{minipage}
+     }
+     \caption{The PingPong's Model}
+     \label{fig:run}
+ \end{figure}
+
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=5cm]{run_simp.png}\\
+%   \caption{Car Engine Manufacturing Scenario }\label{fig:run}
+% \end{figure}
+\end{example}
+
+
+Similar scenarios  like the one presented in Example~\ref{examp:run} may arise in many different domains such as business-process modelling, software development, concurrent systems and more~\cite{Baier:PMC:2008}. Yet dropping some restrictions in a large and complex  system or specification, without affecting the working system components or violating dependent specifications over a given signature, is a non-trivial task.
 Moreover, in such a scenario, two logical notions introduced by E. Dijkstra in~\cite{DBLP:journals/cacm/Dijkstra75} are highly informative: the strongest post-condition (SP) and the weakest precondition (WP) of a given specification, which are corresponding with the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC), proposed by Lin~\cite{lin2001strongest}, of the specification, respectively, and have been central to a wide variety of tasks and studies, e.g. in generating counterexamples~\cite{dailler2018instrumenting} and refinement of system~\cite{woodcock1990refinement}. These correspond to the \emph{most general consequence} and the \emph{most specific abduction} of such specification, respectively.
 
 
-\emph{Belief updates} and \emph{belief revision}, as two well-studied issues in artificial intelligence, are concerned with the update and revision aspects of an agent's belief with respect to new beliefs~\cite{katsunodifference}. Intuitively, if $\varphi$ represents the agent's belief about the world and the agent performs an action that is supposed to make $\psi$ true in the resulting world, then the agent's belief about the resulting  world can be described by $\varphi \diamond \psi$, where $\diamond$ is the update operator of choice. 
+Besides, \emph{belief updates} and \emph{belief revision}, as two well-studied issues in artificial intelligence, are concerned with the update and revision aspects of an agent's belief with respect to new beliefs~\cite{katsunodifference}. Intuitively, if $\varphi$ represents the agent's belief about the world and the agent performs an action that is supposed to make $\psi$ true in the resulting world, then the agent's belief about the resulting  world can be described by $\varphi \diamond \psi$, where $\diamond$ is the update operator of choice. 
 We can see that the theory of belief updates does not tell us how to do updates with  respect to such gain in knowledge due to a sensing action. 
 In this sense, as an analogous notion of belief update, the \emph{knowledge update} was proposed by Chitta in~\cite{baral2005knowledge} to solve the belief updates caused by sensing actions, in which the effect of a sensing action is expressed by introducing modal operator (K)nows. 
 Nevertheless, there are no approaches to solve the knowledge update in logic languages which contain temporal operators. 
 
 
-To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a pricipled way. Inspired by~\cite{lin2001strongest, renyansfirstpaper}, in this paper we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting to compute the knowledge update of \emph{Temporal operator}.
+To address these scenarios and to target the relevant notions SNC (WSC) and knowledge update in a pricipled way. Inspired by~\cite{lin2001strongest,feng2020sufficient}, in this paper we explore the knowledge update and SNC (WSC) of $\mu$-calculus from the point of forgetting to compute the knowledge update of \emph{Temporal operator}.
 In particular, we will give the definition of forgetting in $\mu$-calculus by using the bisimulation~\cite{} and show whether this notion satisfies the general principles or postulates proposed by Zhang~\cite{Zhang2009Knowledge}. We then study the relationship between SNC (WSC) and forgetting, and we also demonstrate how forgetting can be used in knowledge update in $\mu$-calculus.  
 
 \emph{Forgetting}, 
@@ -192,13 +316,10 @@ It is worth mentioning that we restrict the models are finite in the knowledge u
 
 The rest of the paper is organised as follows.
 
-
-% \section{Related work}
-% (Forgetting, uniform interpolation)
-
-% It has been proved that the modal $\mu$-calculus has \emph{Uniform interpolation}~\cite{d1996uniform}. Informally, this means that for every $\mu$ formula $\varphi$ and every finite set $V$ of atoms, there exists an $\mu$ formula $\exists V \varphi$ which .
-
 \section{Modal $\mu$-calculus}
+Given a formula $\varphi$, the \emph{language} of $\varphi$ is the set of all propositional constants appearing in the formula.
+%Let ${\cal L}$ be language with a finite set ${\cal A}$ of atoms, we call ${\cal A}$ the \emph{signature} of ${\cal L}$. 
+% A literal is either an atom $p$, called positive literal, or its negation $\neg p$, called negative literal. The complement of a literal $l$ is $\neg l$.
 \subsection{Syntax}
 Modal $\mu$-calculus is an extension of modal logic, we consider the propositional $\mu$-calculus as introduced by Kozen~\cite{DBLP:journals/cacm/Kozen83}. Let $\Ha=\{p,q,\dots\}$ be a set of propositions letters and ${\cal V}=\{X, Y, \dots\}$ a set of variables. Formulas of the $\mu$-calculus over these sets can be defined by the following grammar: 
 \[
@@ -210,7 +331,7 @@ Note that we allow negations only before propositional constants. All the result
 presented here extend to the general case when negation before variables is also
 allowed, restricting as usual to positive occurrences of bound variables, that is to say variables appear after an even number of negations.
 Variables, propositional constants and their negations will be called \emph{literals}.
-
+For convenience, in the following, $\varphi$, $\varphi_1$, \dots, $\psi$, $\psi_1$, \dots\ will denote formulas.
 
 We call a formula \emph{well\ named} iff every variable is bound at most once in the formula and free variables are distinct from bound
 variables. For a variable $X$ bound in a well named formula $\varphi$ there exists a unique subterm of $\varphi$ of the form $\delta X. \varphi(X)$ with $\delta \in \{\nu, \mu\}$, from now on called the \emph{binding definition}
@@ -229,7 +350,7 @@ Every formula is equivalent to some guarded formula.
 This proposition allows us to restrict ourselves to \textbf{guarded}, \textbf{well-named} formulas.
 From now on, we shall only consider formulas of this kind.
 
-In the following, $\varphi$, $\varphi_1$, \dots, $\psi$, $\psi_1$, \dots\ will denote formulas.
+
 
 
 
@@ -264,7 +385,9 @@ valuation $V$, if $\varphi$ is a sentence. $(\Hm, V) \models \varphi$ is used to
 By $\Mod(\varphi)$ we mean the set of models of $\varphi$. In particular, if $\varphi$ is a sentence, then $\Mod(\varphi) = \{\Hm \mid (\Hm, r) \models \varphi\}$.
 Similarly, let $\Sigma$ be a set of sentences, we define $\Mod(\Sigma)$ as the set of Kripke structure $\Hm$ such that $\Hm \models \varphi$ for each $\varphi\in \Sigma$.
 $\varphi \models \psi$ denotes logical consequence: if $(\Hm,V ) \models \varphi$ then $(\Hm,V) \models \psi$ for every model
-$\Hm$ and for every valuation $V$.
+$\Hm$ and for every valuation $V$. 
+Especially, given two sentences (or set of sentences) $\Sigma$ and $\Pi$, $\Sigma \models \Pi$ if $\Mod(\Sigma) \subseteq \Mod(\Pi)$ and $\Sigma \equiv \Pi$ whenever $\Mod(\Sigma) \subseteq \Mod(\Pi)$ and $\Mod(\Pi) \subseteq \Mod(\Sigma)$.
+%$\varphi \equiv \psi$ whenever $\varphi \models \psi$ and $\psi \models \varphi$.
 
 
 
@@ -283,6 +406,15 @@ Similarly, the greatest fixpoint $\nu(f) = \bigcap\nu_{\alpha}(f)$, where
 
 Apparently, in $\mu X. \varphi(X)$, $\varphi(X)$ is a  monotonic function about $X$ since $X$ appearing in $\varphi(X)$ positively.
 Therefore, $\parallel \mu X. \varphi(X)\parallel_V$ is the least fixpoint of the monotone operator $\parallel \varphi \parallel_{V}: 2^S\rto 2^S$ (it also be written as $Y \mapsto \parallel \varphi\parallel_{V[X:=Y]}$ sometimes).
+Let's see an example to show how to compute the greatest fixpoints of the $\mu$-formula $\varphi$ talked in Example~\ref{examp:run}.
+\begin{example}
+Recall that $\varphi=\nu X. (j \wedge ch) \wedge \square (\neg j \wedge \neg ch) \wedge \square \square X$, let $\Hm=(S, r, R, L)$ be a Kripke structure, then we have:
+\begin{itemize}
+    \item $\nu_0(\parallel \varphi \parallel) = S$,
+    \item $\nu_1(\parallel \varphi \parallel) = \parallel j \parallel \cap \parallel ch \parallel \cap \parallel \square (\neg j \wedge \neg ch) \parallel \cap \parallel \square \square \nu_0(\parallel \varphi \parallel) \parallel$ $=\{s | s \in L(j) \cap L(ch)\ \text{and}\ \forall t. (s, t) \in R, t \in S - (L(j) \cup L(ch))\}$,
+    \item ...
+\end{itemize}
+\end{example}
 
 An alternative syntax for the $\mu$-calculus is obtained by substituting the $\lozenge$ operator with
 a set of \emph{cover\ operators}, one for each natural n. For $n \geq 1$ these operators are defined as
@@ -312,13 +444,13 @@ cover operators are definable in the $\lozenge$ syntax. Conversely,
 
 Hence, the $\mu$-calculus obtained from the covers-syntax is equivalent to the familiar $\mu$-calculus constructed using the $\lozenge$-syntax. In this paper we use a mixture of the two syntax because,
 as we shall see, cover operators behave nicely with respect to the existential bisimulation
-quantifier. Specially, the $\mu$-calculus formula have a normal form, called disjunctive $\mu$-formula~\cite{janin1995automata} as follows.
+quantifier. Specially, the $\mu$-calculus formula have a normal form, called disjunctive formula~\cite{janin1995automata} as follows.
 
 
-\begin{definition}[Disjunctive $\mu$-formula]
+\begin{definition}[disjunctive formula]
 The set of disjunctive formulas, ${\cal F}_d$ is the smallest set defined by the following clauses:  
 \begin{itemize}
-    \item disjunctions and non-contradictory conjunction of literals are disjunctive formulae;
+    \item disjunctions and non-contradictory conjunction of literals are disjunctive formulas;
     \item special conjunctions: if $\varphi_1, \dots, \varphi_n\in {\cal F}_d$ and $\delta$ is a non contradictory
 conjunction of literals, then $\delta \wedge Cover(\varphi_1, \dots, \varphi_n) \in {\cal F}_d$;
     \item fixpoint operators: if $\varphi\in  {\cal F}_d$, $\varphi$ does not contain $X \wedge \psi$ as a subformula for
@@ -326,6 +458,11 @@ any formula $\psi$, and $X$ is positive in $\varphi$, then $\mu X. \varphi$, $\n
 \end{itemize} 
 \end{definition}
 
+\begin{example}
+It is easy to check that both $\nu X. (j \wedge ch)  \wedge \square \square X$ and  $\nu X. (j \wedge ch) \wedge \square (\neg j \wedge \neg ch) \wedge \square \square X$ are not disjunctive formulas since $\square X$ is not a disjunctive formula.
+While $\mu X. (j \wedge ch) \wedge \lozenge X$ and $\nu X. (j \wedge ch) \wedge \lozenge \lozenge X$ are disjunctive formulas.
+
+\end{example}
 
 
 \begin{theorem}[\cite{janin1995automata}] \label{thm:mu2dis}
@@ -335,7 +472,7 @@ Any $\mu$-calculus formula is equivalent to a disjunctive one.
 Theorem \ref{thm:mu2dis} means that for each $\mu$-calculus formula $\varphi$ there is a disjunctive formula $\psi \in {\cal F}_d$ such that $\varphi \equiv \psi$.
 Deciding whether a disjunctive formula is satisfiable can be done in polynomial time, hence changing the $\mu$-calculus formula into its disjunctive form will increase the efficiency of deciding its satisfiability since the satisfiability of $\mu$-calculus is in  $\textsc{Exptime}$-complete.
 
-Uniform interpolant has been widely in various of logic languages, some logics enjoy uniform interpolation, but some are not.
+Uniform interpolant has been widely explored in various of logic languages, some logics enjoy uniform interpolation, but some are not.
 Formally, the uniform interpolant under $\mu$-calculus is defined as follows.
 \begin{definition} [Uniform interplant~\cite{d2006modal}]
   Given a $\mu$-sentence $\varphi$ and a language $L'\subseteq L(\varphi)$, the uniform interpolant of $\varphi$ with respect to $L'$
@@ -349,9 +486,9 @@ Formally, the uniform interpolant under $\mu$-calculus is defined as follows.
 
 Notice that uniform interpolation is stronger than Craig interpolation, which states that for any two formulas $\varphi$, $\psi$ with $\varphi \models \psi$ there exists a formula $\theta$ (called the Craig interpolant of $\varphi$, $\psi$) in the common language with $\varphi \models \theta$ and $\theta \models \psi$. Clearly, if the logic enjoys uniform interpolation then the Craig interpolant of $\varphi$, $\psi$ does not depend on $\psi$ but only on the common language: it is simply the uniform interpolant of $\varphi$ relative to $L' = L(\varphi) \cap L(\psi)$.
 
-It has been proved that the $\mu$-calculus has uniform interpolation. Moreover when the given formula is a  disjunctive $\mu$-formula then the uniform interpolant of it can be obtained by replacing the pointed atoms with $\top$ and their negation with $\top$ at the same time.
+It has been proved that the $\mu$-calculus has uniform interpolation~\cite{d2000logical,d1996uniform}. Moreover, when the given formula is a  disjunctive formula then the uniform interpolant of it can be obtained by replacing the pointed atoms with $\top$ and their negation with $\top$ at the same time~\cite{d2006modal}. Formally:
 \begin{theorem}
-The uniform interpolant $\widetilde{\exists}p \varphi$ ($p\in \Ha$) of a disjunctive $\mu$-formula $\varphi$ is equivalent
+The uniform interpolant $\widetilde{\exists}p \varphi$ ($p\in \Ha$) of a disjunctive formula $\varphi$ is equivalent
 to the $\mu$-formula $\varphi[p/\top,\neg p/\top]$, where $\varphi[p/\top,\neg p/\top]$ is defined from $\varphi$ by simultaneously
 substituting the literals $p$ and $\neg p$ with $\top$.
 \end{theorem}
@@ -365,6 +502,10 @@ substituting the literals $p$ and $\neg p$ with $\top$.
 
 \section{Forgetting in $\mu$-calculus}
 In this section we present the definition of forgetting in $\mu$-calculus and investigate its semantic properties.
+First, we give the definition of $V$-bisimulation between Kripke structures. The notion of $V$-bisimulation capture the idea that the two systems are behaviourally same except the atoms in $V$. In this way we give the definition of forgetting by using the $V$-bisimulation.
+
+Second, the related properties, e.g. Modularity, Commutativity and Homogeneity, of the forgetting operator will be explored.
+And last, we show that the Model checking problem of disjunctive formula is in \texsc{NP} $\cap$ co-\texsc{NP} and the reasoning problems are in  $\textsc{Exptime}$-complete. 
 
 \subsection{Definition of Forgetting}
 In this subsection we present the definition of forgetting in $\mu$-calculus by using the bisimulation technique.
@@ -400,6 +541,40 @@ Supposing $\Hm_1 \lrto_V \Hm_2$ by the $V$-bisimulation $\Hb$, we construct a re
 We can also prove silimarly with (2) that $\Hb$ is a $V$-bisimulation between $\Hm_1$ and $\Hm_3$. Therefore, $\Hm_1 \lrto_V \Hm_3$.
 \end{proof}
 
+\begin{example}
+In Fig.~\ref{fig:bisim} we can check that $\Hm \lrto_{\{ch\}} \Hm'$ because there is a $\{ch\}$-bisimulation $\Hb=\{(s_0, t_0), (s_1, t_1), (s_2, t_1), \dots, (s_m, t_1)\}$ between $\Hm$ and $\Hm'$.
+
+
+
+\begin{figure}[htbp]
+     \centering
+     \subfloat[Kripke structure ${\cal M}$]{ 
+        \label{bis1}
+        \begin{minipage}[c]{.5\linewidth}
+            \centering
+            \includegraphics[width=0.7\textwidth]{run_simp.png}
+        \end{minipage}
+     }
+     \subfloat[Kripke structure ${\cal M}'$]{
+        \label{bis2}
+        \begin{minipage}[c]{.5\linewidth}
+            \centering
+            \includegraphics[width=0.23\textwidth]{j_bisimi.png}
+            %\caption{The unwinding of ${\cal M}$}
+        \end{minipage}
+     }
+     \caption{Two $V$-bisimilar Kripke structures}
+     \label{fig:bisim}
+ \end{figure}
+
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=5cm]{run_simp.png}\\
+%   \caption{Car Engine Manufacturing Scenario }\label{fig:run}
+% \end{figure}
+
+\end{example}
+
 As it has been said in~\cite{d1996uniform} that any ${\cal L}$-sentence $\vaprhi$ (that is: a $\mu$-sentence
 that only uses symbols from the language ${\cal L}$) is invariant for ${\cal L}$-bisimulation,  i.e. if there is a ${\cal L}$-bisimulation between $\Hm$ and $\Hm'$ then $\varphi$ holds in $\Hm$ iff it holds in $\Hm'$.
 It should then be obvious that if $\IR(\varphi, V)$ and  
@@ -408,7 +583,7 @@ $\Hm \lrto_V \Hm'$ then $\varphi$ holds in $\Hm$ iff it holds in $\Hm'$.
 
 We define the forgetting in $\mu$-calculus in the follows, although forgetting is a dual concept in S5 and Propositional logic~\cite{fang2019forgetting}, 
 it is important to give the formal definition of forgetting in $\mu$-calculus since as we will see that it is useful to knowledge
-update of $\mu$-calculus. Moreover, as shown in~\cite{renyansfirstpaper}, forgetting in \CTL\ can also be used to compute SNC (Strongest Necessary Condition) and WSC (Weakest Sufficient Condition).
+update of $\mu$-calculus. Moreover, as shown in~\cite{renyansfirstpaper}, forgetting in \CTL\ can also be used to compute the SNC and the WSC.
  
 \begin{definition}[Forgetting]\label{def:V:forgetting}
   Let $V\subseteq\cal A$ and $\phi$ be a $\mu$-sentence.
@@ -421,10 +596,13 @@ is a {\em result of forgetting $V$ from} $\phi$, if
 For convenience, we denote the result of forgetting $V$ from $\phi$ as $\Muforget(\phi, V)$.
 A formula $\phi$ is {\em irrelevant to} the atoms in a set $V$ (or simply $V$-{\em irrelevant}), written $\IR(\phi,V)$,
 if there is a formula $\psi$ with $\Var(\psi)\cap V=\emptyset$ such that $\phi_1\equiv\psi$. 
-The $V$-{\em irrelevant} of a set of formulas can be defined similarly.
+The $V$-{\em irrelevant} of a set of formulas can be defined similarly, i.e. a set $\Sigma$ of formulas is irrelevant to the atoms in $V$, written $\IR(\Sigma, V)$, if $\IR(\varphi, V)$ for each $\varphi \in \Sigma$.
 
 
 \subsection{Semantic Properties of Forgetting in $\mu$-calculus}
+In this part we show the semantic properties of forgetting in $\mu$-calculus. In particular, we show that our forgetting is closed (see blow) in $\mu$-calculus, satisfies the general postulates, i.e. the representation theorem, and the algebraic properties, including Modularity, Commutativity and Homogeneity.
+
+
 \begin{theorem}\label{thm:exist}
 Let $q \in \cal A$ and $\phi$ be a $\mu$-sentence. There is a $\mu$-sentence $\psi$ such that $\IR(\psi, \{q\})$ and $\psi \equiv \Muforget(\phi, \{q\})$. 
 \end{theorem}
@@ -432,9 +610,10 @@ Let $q \in \cal A$ and $\phi$ be a $\mu$-sentence. There is a $\mu$-sentence $\p
 This can be obtained from the Theorem 3.1 in~\cite{d1996uniform}.
 \end{proof}
 
-In this case, we also say that the forgetting of $\mu$-calculus is closed.
+This means that the uniform interpolant $\widetilde{\exists}q \phi$ ($q\in \Ha$) of $\phi$ with respect to $\Var(\phi) - \{q\}$ is the result of forgetting $\{q\}$ from $\phi$.
+In this case, we also say that the forgetting of $\mu$-calculus is closed, that is the result of forgetting some set of atoms from a $\mu$-sentence is also a $\mu$-sentence.
 
-At this point, it is important to emphasize that, the notion of forgetting  we have defined for \CTL\ respects the classical forgetting defined for propositional logic (PL)~\cite{lin1994forget}. To see this, assume that $\varphi$ is a PL formula and $p\in \Ha$, then $\Forget(\varphi, p)$ is a result of forgetting $p$ from $\varphi$; that is, $\Forget(\varphi, p)\equiv \varphi[p/\bot] \vee \varphi[p/\top]$.
+At this point, it is important to emphasize that, the notion of forgetting  we have defined for $\mu$-calculus respects the classical forgetting defined for propositional logic (PL)~\cite{lin1994forget}. To see this, assume that $\varphi$ is a PL formula and $p\in \Ha$, then $\Forget(\varphi, p)$ is a result of forgetting $p$ from $\varphi$; that is, $\Forget(\varphi, p)\equiv \varphi[p/\bot] \vee \varphi[p/\top]$.
 That way, given a set $V\subseteq \Ha$, one can recursively define $\Forget(\varphi, V\cup \{p\}) = \Forget(\Forget(\varphi, p),V)$, where $\Forget(\varphi, \emptyset) = \varphi$. Using this insight, the following result shows that the classical notion of forgetting (for PL ~\cite{lin1994forget}) is a special case of forgetting in $\mu$-calculus. 
 
 
@@ -596,6 +775,7 @@ The following properties show that the forgetting respects the basic semantic no
  The (v) can be proved as (iv).
  \end{proof}
  
+ Intuitively, in Proposition~\ref{pro:ctl:forget:1}, (i) means that forgetting some set of atoms from a sentence do not affect the satisfiability of this sentence. In (ii) we can see that if two sentence are equivalent then the results of forgetting the same set of atoms from both of them are also equivalent. The intuitive meaning of (iii) is obvious. (iv) refers to the result of forgetting $V$ from a disjunctive formula $\varphi_1 \vee \vaprhi_2$ is equivalent with the disjunction of the results of forgetting $V$ from $\varphi_1$ and $\vaprhi_2$ respectively. While (v) points that it is not the case for a conjunctive formula.
  
 \begin{proposition}[Homogeneity]\label{pro:mu:forget:2} 
  Let $V\subseteq\cal A$ and $\phi$ be a $\mu$-sentence, then we have: % and $Q\in \{\EXIST, \ALL\}$.
@@ -607,13 +787,15 @@ The following properties show that the forgetting respects the basic semantic no
 \begin{proof}
 (i) 
 \end{proof}
+
+The homogeneity of $\ALL\NEXT$ (or $\EXIST\NEXT$) on forgetting says we can move the operator $\Muforget$ afterward to the $\ALL\NEXT$ (or $\EXIST\NEXT$) to compute the forgetting of formula of the form $\ALL\NEXT \varphi$ (or $\EXIST\NEXT \varphi$).
    
-   It is easy to check that $\Muforget(\delta X. \phi(X), V) \not \equiv \delta X. \Muforget(\phi(X), V)$ with $\delta \in \{\mu, \nu\}$ since $\phi(X)$ is not a $\mu$-sentence.
+%   It is easy to check that $\Muforget(\delta X. \phi(X), V) \not \equiv \delta X. \Muforget(\phi(X), V)$ with $\delta \in \{\mu, \nu\}$ since $\phi(X)$ is not a $\mu$-sentence.
    
    
  
  \begin{proposition}
- Let $\varphi$ be a $\mu$-sentence and $p\in \Ha$. If $\varphi$ be a disjunctive $\mu$-formula~\cite{d2006modal}, then $\Muforget(\varphi, \{p\})$ can be computed in linear time.
+ Let $\varphi$ be a $\mu$-sentence and $p\in \Ha$. If $\varphi$ be a disjunctive formula~\cite{d2006modal}, then $\Muforget(\varphi, \{p\})$ can be computed in linear time.
  \end{proposition}
  \begin{proof}
  By Theorem 3.6. in~\cite{d2006modal}, we have $\Muforget(\varphi, \{p\}) \equiv \varphi[p/\top, \neg p/\top]$, where $\varphi[p/\top, \neg p/\bot]$ is obtained from $\varphi$ by simultaneously
@@ -639,10 +821,10 @@ Before talk about the complexity results of the forgetting operator, let's recal
   \end{enumerate}
 \end{definition}
 
- Although this automata differ slightly from those given in~\cite{janin1995automata,bradfield2018mu}, but the automata in their various guises are equivalent. Moreover, modal automata are essentially alternating automata~\cite{bradfield2018mu}. It is worth mentioning that it has been shown that construct a $\mu$-automaton from a $\mu$-calculus formula can be done in exponential time, while it is in polynomial time when the $\mu$-calculus formula is a disjunctive $\mu$-formula. Then we have the following complexity result.
+ Although this automata differ slightly from those given in~\cite{janin1995automata,bradfield2018mu}, but the automata in their various guises are equivalent. Moreover, modal automata are essentially alternating automata~\cite{bradfield2018mu}. It is worth mentioning that it has been shown that construct a $\mu$-automaton from a $\mu$-calculus formula can be done in exponential time, while it is in polynomial time when the $\mu$-calculus formula is a disjunctive formula. Then we have the following complexity result.
  
 \begin{proposition}[Model Checking]\label{pro:MC}
-Given a finite Kripke structure  $\Hm$, a disjunctive $\mu$-formula $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is \texsc{NP} $\cap$ co-\texsc{NP}.
+Given a finite Kripke structure  $\Hm$, a disjunctive formula $\varphi$ and $V\subseteq \Ha$, deciding $\Hm \models^? \Muforget(\varphi, V)$ is \texsc{NP} $\cap$ co-\texsc{NP}.
 \end{proposition}
 \begin{proof}
 Let $A_{\varphi}$ be a $\mu$-automaton such that for any Kripke structure ${\cal N}$ there is $A_{\varphi}$ accept ${\cal N}$ iff ${\cal N} \models \varphi$. Where $A_{\varphi} = (Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$ with $\Var(\varphi) = \Sigma_p \cup \Sigma_r$. Without loss of generality, we assume $V \subseteq \Var(\varphi)$ and $V=\{p\}$.  Therefore we can constructure a $\mu$-automaton $B= (Q, \Sigma_p - V, \Sigma_r, q_0, \delta', \Omega)$ with:
@@ -755,7 +937,7 @@ In order to generalise Definition~\ref{def:NC:SC} to arbitrary formulas, one can
 The following result establishes the bridge between forgetting and the notion of SNC (WSC) which are central to our contribution.
 
 \begin{theorem}\label{thm:SNC:WSC:forget}
- Let $\varphi$ be a formula, $V\subseteq\Var(\varphi)$ and $q\in\Var(\varphi)- V$.
+ Let $\varphi$ be a $\mu$-sentence, $V\subseteq\Var(\varphi)$ and $q\in\Var(\varphi)- V$.
  \begin{enumerate}[(i)]
    \item $\Muforget(\varphi \land q$, $(\Var(\varphi) \cup \{q\}) - V)$
    is a SNC of $q$ on $V$ under $\varphi$.
@@ -1000,7 +1182,112 @@ $\varphi=\nu X \cdot \psi \wedge (\varphi_1 \vee T\NEXT X)$, then $\varphi'= T(\
 
 Proposition~\ref{pro:conCTL2mu} implies that for each $\mu$-sentence $\varphi$ that is in the form of that in Proposition~\ref{pro:conCTL2mu} and set $V$ of atoms there exists a \CTL\ formula $\psi$ such that $\Muforget(\varphi, V) \equiv \CTLforget(\psi, V)$.
 
-\bibliographystyle{plain}
+
+
+% \section{First Section}
+% \subsection{A Subsection Sample}
+% Please note that the first paragraph of a section or subsection is
+% not indented. The first paragraph that follows a table, figure,
+% equation etc. does not need an indent, either.
+
+% Subsequent paragraphs, however, are indented.
+
+% \subsubsection{Sample Heading (Third Level)} Only two levels of
+% headings should be numbered. Lower level headings remain unnumbered;
+% they are formatted as run-in headings.
+
+% \paragraph{Sample Heading (Fourth Level)}
+% The contribution should contain no more than four levels of
+% headings. Table~\ref{tab1} gives a summary of all heading levels.
+
+% \begin{table}
+% \caption{Table captions should be placed above the
+% tables.}\label{tab1}
+% \begin{tabular}{|l|l|l|}
+% \hline
+% Heading level &  Example & Font size and style\\
+% \hline
+% Title (centered) &  {\Large\bfseries Lecture Notes} & 14 point, bold\\
+% 1st-level heading &  {\large\bfseries 1 Introduction} & 12 point, bold\\
+% 2nd-level heading & {\bfseries 2.1 Printing Area} & 10 point, bold\\
+% 3rd-level heading & {\bfseries Run-in Heading in Bold.} Text follows & 10 point, bold\\
+% 4th-level heading & {\itshape Lowest Level Heading.} Text follows & 10 point, italic\\
+% \hline
+% \end{tabular}
+% \end{table}
+
+
+% \noindent Displayed equations are centered and set on a separate
+% line.
+% \begin{equation}
+% x + y = z
+% \end{equation}
+% Please try to avoid rasterized images for line-art diagrams and
+% schemas. Whenever possible, use vector graphics instead (see
+% Fig.~\ref{fig1}).
+
+% \begin{figure}
+% \includegraphics[width=\textwidth]{fig1.eps}
+% \caption{A figure caption is always placed below the illustration.
+% Please note that short captions are centered, while long ones are
+% justified by the macro package automatically.} \label{fig1}
+% \end{figure}
+
+% \begin{theorem}
+% This is a sample theorem. The run-in heading is set in bold, while
+% the following text appears in italics. Definitions, lemmas,
+% propositions, and corollaries are styled the same way.
+% \end{theorem}
+% %
+% % the environments 'definition', 'lemma', 'proposition', 'corollary',
+% % 'remark', and 'example' are defined in the LLNCS documentclass as well.
+% %
+% \begin{proof}
+% Proofs, examples, and remarks have the initial word in italics,
+% while the following text appears in normal font.
+% \end{proof}
+% For citations of references, we prefer the use of square brackets
+% and consecutive numbers. Citations using labels or the author/year
+% convention are also acceptable. The following bibliography provides
+% a sample reference list with entries for journal
+% articles~\cite{ref_article1}, an LNCS chapter~\cite{ref_lncs1}, a
+% book~\cite{ref_book1}, proceedings without editors~\cite{ref_proc1},
+% and a homepage~\cite{ref_url1}. Multiple citations are grouped
+% \cite{ref_article1,ref_lncs1,ref_book1},
+% \cite{ref_article1,ref_book1,ref_proc1,ref_url1}.
+
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+\bibliographystyle{splncs04}
 \bibliography{ijcai20}
 
+\begin{thebibliography}{8}
+\bibitem{ref_article1}
+Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
+
+\bibitem{ref_lncs1}
+Author, F., Author, S.: Title of a proceedings paper. In: Editor,
+F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
+Springer, Heidelberg (2016). \doi{10.10007/1234567890}
+
+\bibitem{ref_book1}
+Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
+Location (1999)
+
+\bibitem{ref_proc1}
+Author, A.-B.: Contribution title. In: 9th International Proceedings
+on Proceedings, pp. 1--2. Publisher, Location (2010)
+
+\bibitem{ref_url1}
+LNCS Homepage, \url{http://www.springer.com/lncs}. Last accessed 4
+Oct 2017
+\end{thebibliography}
 \end{document}

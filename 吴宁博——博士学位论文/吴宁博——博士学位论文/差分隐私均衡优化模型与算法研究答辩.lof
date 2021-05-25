@@ -1,0 +1,52 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces 差分隐私的应用研究\relax }}{4}{figure.caption.9}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces 差分隐私多维数据处理流程\relax }}{7}{figure.caption.11}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces 本文核心研究内容及其关系\relax }}{13}{figure.caption.12}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces 本文的章节内容组织结构图\relax }}{15}{figure.caption.13}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Shannon基本通信系统模型\relax }}{19}{figure.caption.15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 差分隐私的基本通信模型\relax }}{29}{figure.caption.16}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 属性关联依赖图\relax }}{38}{figure.caption.19}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 差分隐私预算参数与失真度关系\relax }}{38}{figure.caption.20}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces 互信息隐私泄露与失真度关系\relax }}{38}{figure.caption.20}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 权衡隐私与效用的差分隐私优化机制研究框架\relax }}{45}{figure.caption.21}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 含有背景知识攻击的差分隐私通信模型\relax }}{47}{figure.caption.22}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces MovieLens数据集评分的率失真曲线\relax }}{54}{figure.caption.23}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 期望失真、互信息隐私和拉格朗日乘子关系\relax }}{55}{figure.caption.24}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces 拉格朗日乘子与差分隐私参数关系\relax }}{55}{figure.caption.25}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces 两种差分隐私信道机制的对比\relax }}{56}{figure.caption.26}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces 拉格朗日乘子与互信息隐私泄露\relax }}{57}{figure.caption.29}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces 具有辅助背景知识的$\lambda $与隐私参数\relax }}{57}{figure.caption.29}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces 收敛门限与互信息隐私泄露量\relax }}{58}{figure.caption.30}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces 收敛门限与期望失真度\relax }}{58}{figure.caption.30}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 面向多维数据收集的系统模型\relax }}{64}{figure.caption.31}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces ORRP方案实现的两个阶段\relax }}{66}{figure.caption.32}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces ORRP方案对多维数据的有序随机扰动\relax }}{70}{figure.caption.33}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 多维数据有序随机扰动的两个阶段示意图\relax }}{71}{figure.caption.34}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces 不同隐私机制的信息泄露和失真对比\relax }}{80}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Adult数据集}}}{80}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NLTCS数据集}}}{80}{figure.caption.36}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Credit Approval数据集}}}{80}{figure.caption.36}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces ORRP方案隐私信息泄露的参数影响\relax }}{81}{figure.caption.37}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Adult数据集}}}{81}{figure.caption.37}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NLTCS数据集}}}{81}{figure.caption.37}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Credit Approval数据集}}}{81}{figure.caption.37}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces ORRP方案数据质量损失的参数影响\relax }}{82}{figure.caption.38}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Adult数据集}}}{82}{figure.caption.38}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NLTCS数据集}}}{82}{figure.caption.38}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Credit Approval数据集}}}{82}{figure.caption.38}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces 隐私保护数据收集的系统模型\relax }}{86}{figure.caption.40}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces 理性决策过程的描述说明\relax }}{94}{figure.caption.43}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces $|\mathcal {X}|=6$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{96}{figure.caption.46}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces $|\mathcal {X}|=12$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{96}{figure.caption.46}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
