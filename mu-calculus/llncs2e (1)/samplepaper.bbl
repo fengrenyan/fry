@@ -1,0 +1,179 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{ackermann1935untersuchungen}
+Ackermann, W.: Untersuchungen {\"u}ber das eliminationsproblem der
+  mathematischen logik. Mathematische Annalen  \textbf{110}(1),  390--413
+  (1935)
+
+\bibitem{Baier:PMC:2008}
+Baier, C., Katoen, J.: Principles of Model Checking. The MIT Press (2008)
+
+\bibitem{baral2005knowledge}
+Baral, C., Zhang, Y.: Knowledge updates: Semantics and complexity issues.
+  Artificial Intelligence  \textbf{164}(1-2),  209--243 (2005)
+
+\bibitem{bradfield2018mu}
+Bradfield, J., Walukiewicz, I.: The mu-calculus and model checking. In:
+  Handbook of Model Checking, pp. 871--919. Springer (2018)
+
+\bibitem{browne1988characterizing}
+Browne, M.C., Clarke, E.M., Gr{\"u}mberg, O.: Characterizing finite kripke
+  structures in propositional temporal logic. Theoretical Computer Science
+  \textbf{59}(1-2),  115--131 (1988)
+
+\bibitem{comon1997tree}
+Comon, H.: Tree automata techniques and applications. http://www. grappa.
+  univ-lille3. fr/tata  (1997)
+
+\bibitem{d1996uniform}
+D'Agostino, G., Hollenberg, M.: Uniform interpolation, automata and the modal
+  $\mu$-calculus. Logic Group Preprint Series  \textbf{165} (1996)
+
+\bibitem{d2000logical}
+D'agostino, G., Hollenberg, M.: Logical questions concerning the
+  $\mu$-calculus: Interpolation, lyndon and {\l}o{\'s}-tarski. Journal of
+  Symbolic Logic pp. 310--332 (2000)
+
+\bibitem{d2006modal}
+D'Agostino, G., Lenzi, G.: On modal $\mu$-calculus with explicit interpolants.
+  Journal of applied logic  \textbf{4}(3),  256--278 (2006)
+
+\bibitem{dailler2018instrumenting}
+Dailler, S., Hauzar, D., March{\'e}, C., Moy, Y.: Instrumenting a weakest
+  precondition calculus for counterexample generation. Journal of logical and
+  algebraic methods in programming  \textbf{99},  97--113 (2018)
+
+\bibitem{Dijkstra:1959}
+Dijkstra, E.W.: A note on two problems in connexion with graphs. Numerische
+  Mathematik  \textbf{1},  269--271 (1959)
+
+\bibitem{DBLP:journals/cacm/Dijkstra75}
+Dijkstra, E.W.: Guarded commands, {N}ondeterminacy and {F}ormal {D}erivation of
+  {P}rograms. Commun. {ACM}  \textbf{18}(8),  453--457 (1975).
+  \doi{10.1145/360933.360975}, \url{https://doi.org/10.1145/360933.360975}
+
+\bibitem{eiter2019brief}
+Eiter, T., Kern-Isberner, G.: A brief survey on forgetting from a knowledge
+  representation and reasoning perspective. KI-K{\"u}nstliche Intelligenz
+  \textbf{33}(1),  9--33 (2019)
+
+\bibitem{Eiter2008Semantic}
+Eiter, T., Wang, K.: Semantic forgetting in answer set programming. Elsevier
+  Science Publishers Ltd. (2008)
+
+\bibitem{emerson1997model}
+Emerson, E.A.: Model checking and the mu-calculus. DIMACS series in discrete
+  mathematics  \textbf{31},  185--214 (1997)
+
+\bibitem{emerson1991tree}
+Emerson, E.A., Jutla, C.S.: Tree automata, mu-calculus and determinacy. In:
+  FoCS. vol.~91, pp. 368--377. Citeseer (1991)
+
+\bibitem{fang2019forgetting}
+Fang, L., Liu, Y., Van~Ditmarsch, H.: Forgetting in multi-agent modal logics.
+  Artificial Intelligence  \textbf{266},  51--80 (2019)
+
+\bibitem{renyansfirstpaper}
+Feng, R., Acar, E., Schlobach, S., Wang, Y., Liu, W.: On sufficient and
+  necessary conditions in bounded ctl: A forgetting approach  \textbf{17}(1),
+  361--370 (2020)
+
+\bibitem{Hoare1969}
+Hoare, C.: An axiomatic basis for computer programming. Communications of the
+  ACM  \textbf{12},  576--580,583 (1969)
+
+\bibitem{janin1995automata}
+Janin, D., Walukiewicz, I.: Automata for the modal $\mu$-calculus and related
+  results. In: International Symposium on Mathematical Foundations of Computer
+  Science. pp. 552--562. Springer (1995)
+
+\bibitem{katsuno91mendelzon}
+Katsuno, H.: Mendelzon, ao: On the difference between updating a knowledge base
+  and revising it. Proc. of KR  \textbf{91}
+
+\bibitem{konev2009forgetting}
+Konev, B., Walther, D., Wolter, F.: Forgetting and uniform interpolation in
+  large-scale description logic terminologies. In: Twenty-First International
+  Joint Conference on Artificial Intelligence (2009)
+
+\bibitem{DBLP:journals/cacm/Kozen83}
+Kozen, D.: Results on the propositional $\mu$-calculus. Theoretical Computer
+  Science  \textbf{27},  333--354 (1983)
+
+\bibitem{lang2003propositional}
+Lang, J., Liberatore, P., Marquis, P.: Propositional
+  independence-formula-variable independence and forgetting. Journal of
+  Artificial Intelligence Research  \textbf{18},  391--443 (2003)
+
+\bibitem{lin2001strongest}
+Lin, F.: On strongest necessary and weakest sufficient conditions. Artificial
+  Intelligence  \textbf{128}(1),  143--159 (2001)
+
+\bibitem{DBLP:Lin:AIJ:2001}
+Lin, F.: On strongest necessary and weakest sufficient conditions. Artificial
+  Intelligence  \textbf{128}(1-2),  143--159 (2001)
+
+\bibitem{lin1994forget}
+Lin, F., Reiter, R.: Forget it. In: Working Notes of AAAI Fall Symposium on
+  Relevance. pp. 154--159 (1994)
+
+\bibitem{Lutz:IJCAI:2011}
+Lutz, C., Wolter, F.: Foundations for uniform interpolation and forgetting in
+  expressive description logics. In: IJCAI 2011, Proceedings of the 22nd
+  International Joint Conference on Artificial Intelligence. pp. 989--995.
+  IJCAI/AAAI, Barcelona, Catalonia, Spain (2011)
+
+\bibitem{niwinski1988fixed}
+Niwinski, D.: Fixed points vs. infinite generation. In: Proceedings Third
+  Annual Symposium on Logic in Computer Science. pp. 402--403. IEEE Computer
+  Society (1988)
+
+\bibitem{visser1996uniform}
+Visser, A.: Uniform interpolation and layered bisimulation. In: G{\"o}del'96
+  (Brno, 1996), pp. 139--164 (1996)
+
+\bibitem{wang2015forgetting}
+Wang, Y.: On forgetting in tractable propositional fragments. arXiv preprint
+  arXiv:1502.02799  (2015)
+
+\bibitem{Yisong:IJCAI:2013}
+Wang, Y., Wang, K., Zhang, M.: Forgetting for answer set programs revisited.
+  In: IJCAI 2013, Proceedings of the 23rd International Joint Conference on
+  Artificial Intelligence. pp. 1162--1168. IJCAI/AAAI, Beijing, China (2013)
+
+\bibitem{Yisong:KR:2012}
+Wang, Y., Zhang, Y., Zhou, Y., Zhang, M.: Forgetting in logic programs under
+  strong equivalence. In: Principles of Knowledge Representation and Reasoning:
+  Proceedings of the Thirteenth International Conference. pp. 643--647. AAAI
+  Press, Rome, Italy (2012)
+
+\bibitem{Wang:AMAI:2010}
+Wang, Z., Wang, K., Topor, R.W., Pan, J.Z.: Forgetting for knowledge bases in
+  \textrm{DL-Lite}. Annuals of Mathematics and Artificial Intelligence
+  \textbf{58}(1-2),  117--151 (2010)
+
+\bibitem{Wong:PhD:Thesis}
+Wong, K.S.: Forgetting in Logic Programs. Ph.D. thesis, The University of New
+  South Wales (2009)
+
+\bibitem{woodcock1990refinement}
+Woodcock, J.C., Morgan, C.: Refinement of state-based concurrent systems. In:
+  International Symposium of VDM Europe. pp. 340--351. Springer (1990)
+
+\bibitem{DBLP:Zhang:AIJ2006}
+Zhang, Y., Foo, N.Y.: Solving logic program conflict through strong and weak
+  forgettings. Artificial Intelligence  \textbf{170}(8-9),  739--778 (2006)
+
+\bibitem{Yan:AIJ:2009}
+Zhang, Y., Zhou, Y.: Knowledge forgetting: Properties and applications.
+  Artificial Intelligence  \textbf{173}(16-17),  1525--1537 (2009)
+
+\bibitem{zhao2017role}
+Zhao, Y., Schmidt, R.A.: Role forgetting for alcoqh ($\delta$)-ontologies using
+  an ackermann-based approach. In: Proceedings of the 26th International Joint
+  Conference on Artificial Intelligence. pp. 1354--1361. AAAI Press (2017)
+
+\end{thebibliography}

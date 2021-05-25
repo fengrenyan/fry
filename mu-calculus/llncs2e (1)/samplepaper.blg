@@ -1,0 +1,24 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: samplepaper.aux
+The style file: splncs04.bst
+Database file #1: ijcai20.bib
+Repeated entry---line 188 of file ijcai20.bib
+ : @article{renyansfirstpaper
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 207 of file ijcai20.bib
+ : @article{d1996uniform
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 242 of file ijcai20.bib
+ : @inproceedings{janin1995automata
+ :                                 ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "doherty2001computing"
+Warning--I didn't find a database entry for "zhang2010forgetting"
+Warning--I didn't find a database entry for "gabbay2008second"
+Warning--I didn't find a database entry for "wang2013forgetting"
+Warning--I didn't find a database entry for "gonccalves2020limits"
+Warning--empty journal in renyansfirstpaper
+Warning--empty year in katsuno91mendelzon
+Warning--missing publisher in visser1996uniform
+(There were 3 error messages)
