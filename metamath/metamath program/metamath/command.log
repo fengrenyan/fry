@@ -1,0 +1,106 @@
+The log file "command.log" was opened 4-Sep-2021 8:59 AM.
+MM> verify proof *
+0 10%  20%  30%  40%  50%  60%  70%  80%  90% 100%
+..................................................
+All proofs in the database were verified in 0.00 s.
+MM> show proof th1 /all
+ 1       tt=tt  $f term t
+ 2       tr=tze $a term 0
+ 3     tt=tpl $a term ( t + 0 )
+ 4     tr=tt  $f term t
+ 5   wp=weq $a wff ( t + 0 ) = t
+ 6     tt=tt  $f term t
+ 7     tr=tt  $f term t
+ 8   wq=weq $a wff t = t
+ 9     tt=tt  $f term t
+10   min=a2 $a |- ( t + 0 ) = t
+11         tt=tt  $f term t
+12         tr=tze $a term 0
+13       tt=tpl $a term ( t + 0 )
+14       tr=tt  $f term t
+15     wp=weq $a wff ( t + 0 ) = t
+16           tt=tt  $f term t
+17           tr=tze $a term 0
+18         tt=tpl $a term ( t + 0 )
+19         tr=tt  $f term t
+20       wp=weq $a wff ( t + 0 ) = t
+21         tt=tt  $f term t
+22         tr=tt  $f term t
+23       wq=weq $a wff t = t
+24     wq=wim $a wff ( ( t + 0 ) = t -> t = t )
+25       tt=tt  $f term t
+26     min=a2 $a |- ( t + 0 ) = t
+27         tt=tt  $f term t
+28         tr=tze $a term 0
+29       tt=tpl $a term ( t + 0 )
+30       tr=tt  $f term t
+31       ts=tt  $f term t
+32     maj=a1 $a |- ( ( t + 0 ) = t -> ( ( t + 0 ) = t -> t = t ) )
+33   maj=mp $a |- ( ( t + 0 ) = t -> t = t )
+34 th1=mp $a |- t = t
+MM> show labels t* /all
+The labels that match are shown with statement number, label, and type.
+3 tt $f             4 tr $f             5 ts $f             8 tze $a
+9 tpl $a            19 th1 $p
+MM> show labels t*
+The assertions that match are shown with statement number, label, and type.
+8 tze $a            9 tpl $a            19 th1 $p
+MM> show labels *
+The assertions that match are shown with statement number, label, and type.
+8 tze $a            9 tpl $a            10 weq $a           11 wim $a
+12 a1 $a            13 a2 $a            17 mp $a            19 th1 $p
+MM> show statement mp /full
+Statement 17 is located on line 24 of the file "pro1.mm".  Its statement number
+for HTML pages is 7.
+?Warning: Statement "mp" has no comment
+17 mp $a |- Q $.
+Its mandatory hypotheses in RPN order are:
+  wp $f wff P $.
+  wq $f wff Q $.
+  min $e |- P $.
+  maj $e |- ( P -> Q ) $.
+The statement and its hypotheses require the variables:  Q P
+The variables it contains are:  Q P
+MM> show proof th1 /lemmon /all
+ 1 tt            $f term t
+ 2 tze           $a term 0
+ 3 1,2 tpl       $a term ( t + 0 )
+ 4 tt            $f term t
+ 5 3,4 weq       $a wff ( t + 0 ) = t
+ 6 tt            $f term t
+ 7 tt            $f term t
+ 8 6,7 weq       $a wff t = t
+ 9 tt            $f term t
+10 9 a2          $a |- ( t + 0 ) = t
+11 tt            $f term t
+12 tze           $a term 0
+13 11,12 tpl     $a term ( t + 0 )
+14 tt            $f term t
+15 13,14 weq     $a wff ( t + 0 ) = t
+16 tt            $f term t
+17 tze           $a term 0
+18 16,17 tpl     $a term ( t + 0 )
+19 tt            $f term t
+20 18,19 weq     $a wff ( t + 0 ) = t
+21 tt            $f term t
+22 tt            $f term t
+23 21,22 weq     $a wff t = t
+24 20,23 wim     $a wff ( ( t + 0 ) = t -> t = t )
+25 tt            $f term t
+26 25 a2         $a |- ( t + 0 ) = t
+27 tt            $f term t
+28 tze           $a term 0
+29 27,28 tpl     $a term ( t + 0 )
+30 tt            $f term t
+31 tt            $f term t
+32 29,30,31 a1   $a |- ( ( t + 0 ) = t -> ( ( t + 0 ) = t -> t = t ) )
+33 15,24,26,32 mp  $a |- ( ( t + 0 ) = t -> t = t )
+34 5,8,10,33 mp  $a |- t = t
+MM> show proof th1 /lemmon /renumber
+1 a2             $a |- ( t + 0 ) = t
+2 a2             $a |- ( t + 0 ) = t
+3 a1             $a |- ( ( t + 0 ) = t -> ( ( t + 0 ) = t -> t = t ) )
+4 2,3 mp         $a |- ( ( t + 0 ) = t -> t = t )
+5 1,4 mp         $a |- t = t
+MM> close log
+The log file "command.log" was closed 4-Sep-2021 9:35 AM.

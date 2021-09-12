@@ -1,0 +1,15 @@
+\usepackage{nomencl}%所用宏包
+\makenomenclature%必须加上，放在\begin{document}之前
+
+
+
+\nomenclature{$a$}{The number of angels per unit area}%
+\nomenclature{$N$}{The number of angels per needle point}%
+\nomenclature{$A$}{The area of the needle point}%
+\nomenclature{$sigma$}{The total mass of angels per unit area}%
+\nomenclature{$m$}{The mass of one angel}
+\printnomenclature%放在想输出术语表的地方，一般是段首
+
+pdflatex 运行
+
+ makeindex 差分隐私均衡优化模型与算法研究.nlo  -s nomencl.ist -o 差分隐私均衡优化模型与算法研究.nls

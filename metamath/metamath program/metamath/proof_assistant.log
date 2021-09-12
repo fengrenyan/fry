@@ -1,0 +1,107 @@
+The log file "proof_assistant.log" was opened 4-Sep-2021 9:46 AM.
+MM> prove th1
+Entering the Proof Assistant.  HELP PROOF_ASSISTANT for help, EXIT to exit.
+You will be working on statement (from "SHOW STATEMENT th1"):
+19 th1 $p |- t = t $= ... $.
+Note:  The proof you are starting with is already complete.
+MM-PA> delete all
+The entire proof was deleted.
+1    th1=? $? |- t = t
+MM-PA> show new_proof/lemmon/all
+1 ?              $? |- t = t
+MM-PA> assign 1 mp
+3 -1   min=?  $? |- $2
+4      maj=?  $? |- ( $2 -> t = t )
+MM-PA> show neq_proof/lemmon/all
+            ^^^^^^^^^
+?Expected NEW_PROOF, SETTINGS, LABELS, STATEMENT, SOURCE, PROOF, MEMORY,
+TRACE_BACK, USAGE, ELAPSED_TIME, or DISCOURAGED.
+MM-PA> show new_proof/lemmon/all
+1 ?              $? wff $2
+2 ?              $? wff t = t
+3 ?              $? |- $2
+4 ?              $? |- ( $2 -> t = t )
+5 1,2,3,4 mp     $a |- t = t
+MM-PA> show new_proof/lemmon
+3 ?              $? |- $2
+4 ?              $? |- ( $2 -> t = t )
+5 3,4 mp         $a |- t = t
+MM-PA> assign 4 mp
+3 -2   min=?  $? |- $2
+6 -1     min=?  $? |- $4
+7        maj=?  $? |- ( $4 -> ( $2 -> t = t ) )
+MM-PA> show new_proof/lemmon
+3 ?              $? |- $2
+6 ?              $? |- $4
+7 ?              $? |- ( $4 -> ( $2 -> t = t ) )
+8 6,7 mp         $a |- ( $2 -> t = t )
+9 3,8 mp         $a |- t = t
+MM-PA> assign 3 a2
+ 7 -1     min=?  $? |- $4
+ 8        maj=?  $? |- ( $4 -> ( ( $5 + 0 ) = $5 -> t = t ) )
+MM-PA> show new_proof/lemmon
+ 4 a2            $a |- ( $5 + 0 ) = $5
+ 7 ?             $? |- $4
+ 8 ?             $? |- ( $4 -> ( ( $5 + 0 ) = $5 -> t = t ) )
+ 9 7,8 mp        $a |- ( ( $5 + 0 ) = $5 -> t = t )
+10 4,9 mp        $a |- t = t
+MM-PA> assign 8 a1
+ 7        min=?  $? |- ( t + 0 ) = t
+MM-PA> assign 7 a2
+MM-PA> show new_proof/lemmon
+ 4 a2            $a |- ( t + 0 ) = t
+ 8 a2            $a |- ( t + 0 ) = t
+12 a1            $a |- ( ( t + 0 ) = t -> ( ( t + 0 ) = t -> t = t ) )
+13 8,12 mp       $a |- ( ( t + 0 ) = t -> t = t )
+14 4,13 mp       $a |- t = t
+MM-PA> show new_proof/lemmon/all
+ 1 ?             $? wff ( t + 0 ) = t
+ 2 ?             $? wff t = t
+ 3 ?             $? term t
+ 4 3 a2          $a |- ( t + 0 ) = t
+ 5 ?             $? wff ( t + 0 ) = t
+ 6 ?             $? wff ( ( t + 0 ) = t -> t = t )
+ 7 ?             $? term t
+ 8 7 a2          $a |- ( t + 0 ) = t
+ 9 ?             $? term ( t + 0 )
+10 ?             $? term t
+11 ?             $? term t
+12 9,10,11 a1    $a |- ( ( t + 0 ) = t -> ( ( t + 0 ) = t -> t = t ) )
+13 5,6,8,12 mp   $a |- ( ( t + 0 ) = t -> t = t )
+14 1,2,4,13 mp   $a |- t = t
+MM-PA> improve all
+A proof of length 1 was found for step 11.
+A proof of length 1 was found for step 10.
+A proof of length 3 was found for step 9.
+A proof of length 1 was found for step 7.
+A proof of length 9 was found for step 6.
+A proof of length 5 was found for step 5.
+A proof of length 1 was found for step 3.
+A proof of length 3 was found for step 2.
+A proof of length 5 was found for step 1.
+Steps 1 and above have been renumbered.
+CONGRATULATIONS!  The proof is complete.  Use SAVE NEW_PROOF to save it.
+Note:  The Proof Assistant does not detect $d violations.  After saving
+the proof, you should verify it with VERIFY PROOF.
+MM-PA> show new_proof/normal
+Proof of "th1":
+---------Clip out the proof below this line to put it in the source file:
+  tt tze tpl tt weq tt tt weq tt a2 tt tze tpl tt weq tt tze tpl tt weq tt tt
+  weq wim tt a2 tt tze tpl tt tt a1 mp mp $.
+---------The proof of "th1" (115 bytes) ends above this line.
+MM-PA> show new_proof/compressed
+Proof of "th1":
+---------Clip out the proof below this line to put it in the source file:
+  ( tze tpl weq a2 wim a1 mp ) ABCZADZAADZAEZJJKFLIAAGHH $.
+---------The proof of "th1" (54 bytes) ends above this line.
+MM-PA> exit
+Warning:  You have not saved changes to the proof of "th1".
+Do you want to EXIT anyway (Y, N) <N>? y
+Exiting the Proof Assistant.  Type EXIT again to exit Metamath.
+MM> minimize_with */brief
+    ^^^^^^^^^^^^^
+?Expected DBG, HELP, READ, WRITE, PROVE, SHOW, SEARCH, SAVE, SUBMIT, OPEN,
+CLOSE, SET, FILE, BEEP, EXIT, QUIT, ERASE, VERIFY, MARKUP, MORE, TOOLS, or
+MIDI.
+MM> close log
+The log file "proof_assistant.log" was closed 4-Sep-2021 10:20 AM.

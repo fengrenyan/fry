@@ -1,0 +1,487 @@
+\chapter{计算CTL下的遗忘：基于消解的方法}\label{chapter04}
+{\em 本章针对隐私保护数据发布中隐私与效用的平衡问题，利用率失真理论研究了权衡隐私与数据效用的最优化隐私机制。首先，基于Shannon信息论通信模型与度量，在第\ref{chapter03}章的基础上，构建隐私-失真的最优化模型。然后，考虑关联知识对互信息隐私泄露的影响，借鉴条件互信息量，提出基于联合事件的互信息隐私度量，并修改率失真函数提出最小化隐私泄露的优化模型。最后，从凸优化问题求解的角度，分析拉格朗日构造泛函计算过程中存在的难题，由此基于率失真计算的交替最小化Blahut-Arimoto算法提出互信息隐私最优化模型的近似求解算法。分析与实验结果表明所提出的方法在满足数据效用约束的条件下，具有较小的互信息隐私泄露。}
+
+\section{引言}
+%\section{研究思路及框架}
+当前，基于网络的信息服务已经应用到现实生活中的各个领域，包括医疗健康、社交网络、位置服务、推荐服务等。这些应用采集的基础数据中往往包含有诸如疾病、社会关系、位置、兴趣爱好等个人敏感信息。由于统计与科学发现的需要，应用服务中的数据应该被发布、共享。例如，医疗健康监测需要医院发布、共享患者电子病历数据。但是，敏感数据信息可能因数据标识或额外辅助数据而受到重识别和连接攻击导致隐私泄露\cite{sweeney2002k}。由于数据隐私问题，数据共享成为很多组织面临的困难问题。目前，解决数据发布、共享及应用中存在的隐私泄露问题，已经成为数据分析、数据挖掘和数据共享领域的一个重要研究内容。为解决上述问题，Dwork提出的差分隐私\cite{dwork2006differential,dwork2006calibrating,dwork2008differential,dwork2014algorithmic,dwork2015the}(Differential Privacy，DP)保护模型方法，迅速成为隐私保护研究的热点\cite{zhu2017differentially,zhangxiaojian2014,zhu2017differentially}。近年来，围绕差分隐私保护的隐私与数据效用权衡问题，学术研究基于不同的实现机制\cite{mcsherry2007mechanism,dwork2008differential,ghosh2012universally}提出了诸多的差分隐私方案。现有的工作依据模型假设的不同\cite{sarwate2014a}，可以划分为非信息论和信息论方法两大类。本文将前者定义为经典差分隐私的研究范畴，后者利用信息论方法对差分隐私机制开展研究，逐渐成为一个新兴的研究方向。在信息论差分隐私模型中，以Shannon信息论\cite{shannon1948a} 为基本出发点，借鉴熵的量化工具，基于量化信息流\cite{smith2009on,alvim2011on,boreale2015quantitative,alvim2015on}(Quantitative Information Flow，QIF)的思想，考虑隐私保护模型中隐私泄露风险与数据效用的量化以及权衡问题，对于隐私与效用矛盾是行之有效的解决方法。
+
+
+近年来，基于熵的信息度量在隐私保护中得到了诸多的应用\cite{issa2016an,liao2019tunable,Chatzikokolakis2008Anonymity,sankar2013utility}，信息论方法与隐私保护结合的研究点现已逐渐引起国内学者的关注。如彭长根等\cite{peng2016}提出了隐私保护的信息熵模型、含敌手攻击的隐私信息熵模型和主观感受的加权隐私信息熵模型，并进一步提出了利用信息熵度量了隐私保护机制的信息泄露风险，为隐私保护效果评价提供了一种基于信息论的方法。此外，吴振强等\cite{zhenqiangwu2019}为度量社交网络的隐私保护效果，提出了网络结构熵的度量方法。更多地，信息论方法在差分隐私模型中用于隐私信息的量化，奠定了信息论差分隐私模型研究的基础\cite{mir2012information}，同时建立了互信息隐私与差分隐私的关联\cite{cuff2016differential}。 对此方面，已存在不少的研究工作\cite{kalantari2018robust,alvim2011differential,wang2016on,sarwate2014a,wang2015a,du2015Fundamental,xiong2016randomized}利用信息论方法探讨最优化隐私保护机制问题\cite{kalantari2016optimal,kairouz2016extremal}。尽管如此，信息论方法对于差分隐私的研究还依然存在着诸多有待深入研究和思考的问题。例如，对于差分隐私数据发布中的隐私与失真函数\cite{wang2016on}，在获得最小信息传输率的下界以及获得可达最小信息率时的最优化信道机制的问题等。
+
+存在的差分隐私研究工作主要是针对数据独立情景，缺乏考虑数据关联和敌手拥有先验知识对隐私泄露的影响\cite{zhu2015correlated,li2019impact}。多数情况下，数据之间是存在关联的，并且由于数据关联可以辅助敌手识别出某些特定个体的隐私信息\cite{zhu2015correlated,yang2015bayesian}。例如，文献\mycite{zhu2015correlated}例举了医疗数据集中由于家庭住址相同对于流感疾病的影响，这是由于相同的属性信息辅助识别出其它个体疾病敏感信息的案例。又如，表\ref{tab:attributes_dependency_degree}所列出的属性之间的关联。这些关联的辅助数据信息被定义为隐私保护系统中敌手的背景知识，这意味着，如果敌手在一定的关联背景知识辅助下，则会获得更多的隐私信息量从而具有比较高的置信概率识别出个体隐私信息\cite{ningbowu2020}。 信息论方法中的条件互信息量表达了在给定条件下信宿获得有关信源的信息量。针对上述问题，条件互信息量能够度量敌手在拥有先验辅助背景知识条件下的互信息隐私泄露量。基于此，利用信息论方法在差分隐私中考虑敌手背景知识的影响，研究最小化互信息隐私泄露风险时的最优化信道机制问题就凸显重要。针对提出的这个问题，在本章中研究了最小化互信息隐私优化模型以及最优化隐私机制问题，提出了条件互信息隐私优化模型并设计了优化模型迭代算法。
+
+围绕本章的研究内容，解决了以下几个关键问题，支撑了信息论差分隐私最优化模型与隐私机制的研究。首先，利用Shannon信息论方法，解决了差分隐私数据发布场景中权衡隐私与效用的最优化模型和含背景知识攻击下的最优化模型表达问题。其次，利用Lagrange 乘子法，解决了所提出优化模型的求解计算问题。最后，基于交替最小化算法，解决了本章中求解最优化隐私机制条件概率分布的算法问题。随着上述问题的解决，本章的研究工作实现了差分隐私数据发布中权衡隐私与效用的最优化隐私机制设计。对比目前存在的工作，本章的主要贡献总结为：
+
+(1) 考虑差分隐私离线数据发布场景，结合差分隐私的离散无记忆信道模型，基于互信息的隐私风险度量和数据失真的效用度量提出了消息联合互信息隐私度量，建立了差分隐私数据发布与信息论通信模型之间的基本联系。
+
+(2) 围绕信息率失真函数，将差分隐私数据发布场景中隐私泄露风险与数据效用平衡建模为带失真约束的最优化问题。在此基础上考虑了辅助背景知识攻击下的隐私与效用平衡问题，建立拥有辅助背景知识的差分隐私数据发布隐私与效用优化模型，并进一步考虑了求解差分隐私最小信息率的计算方法。
+
+(3) 基于Blahut-Arimoto迭代最小化算法设计了计算最小化互信息隐私泄露的迭代算法，解决如何利用迭代求解算法计算差分隐私数据发布的最优信道条件转移概率，为差分隐私最优化机制设计提供了一种基于信息论的支撑。
+
+%\begin{itemize}
+%\item [(1)]考虑差分隐私离线数据发布场景，结合差分隐私的离散无记忆信道(DMC)模型，基于互信息的隐私风险度量和数据失真的效用度量提出了消息联合互信息隐私度量，建立了差分隐私数据发布与信息论通信模型之间的基本联系。
+%
+% \item [(2)]围绕信息率失真函数，将差分隐私数据发布场景中隐私泄露风险与数据效用平衡建模为带失真约束的最优化问题。在此基础上考虑了辅助背景知识攻击下的隐私与效用平衡问题，建立拥有辅助背景知识的差分隐私数据发布隐私与效用优化模型，并进一步考虑了求解差分隐私最小信息率的计算方法。
+%
+%\item [(3)]基于Blahut-Arimoto迭代最小化算法设计了计算最小化互信息隐私泄露的迭代算法，解决如何利用迭代求解算法计算差分隐私数据发布的最优信道条件转移概率，为差分隐私最优化机制设计提供了一种基于信息论的支撑。
+%\end{itemize}
+
+本章其余部分组织如下：首先，第\ref{chapter05-system-model}节介绍系统模型与研究问题，给出相关的定义和基本的符号表示。其次，第\ref{chapter05-optimal-model}节阐述本章针对权衡隐私与效用问题所提出的优化模型，并形式化的给出模型表述。第\ref{chapter05-optimazation-mechanism} 节对本章提出优化模型的求解方法及算法进行详细的阐述。第\ref{chapter04-experiment}节利用公开数据集对所提出的方法和算法进行实验分析。最后，第\ref{chapter04-conclusion}节对本章的主要工作进行总结。
+
+\section{系统模型与问题提出}\label{chapter05-system-model}
+
+
+本节给出本章的基本模型定义与符号表示，并阐述本章中的研究问题。
+
+\subsection{数据模型}
+通常，有关个体的信息可以表述为表\ref{tab:origin}具有的形式，即是由元组和属性组成的二维矩阵。本质上，这是一个关系数据模型，其中的数据是由元组信息组成的集合，每个元组是有关特定个体的一组属性描述信息。例如，表\ref{tab:origin}中元组由Age、Sex、Race等属性组成，又如，医疗数据中通常包含姓名、性别、出生日期、社保账号、疾病等信息。然而，在这样的数据集合中，通常有些属性值被认为是私有的敏感隐私信息(如表\ref{tab:origin}中的Marital-status、医疗数据中的疾病信息等)，理应属于受保护的隐私数据。
+
+基于关系代数理论，给出上述表达的关系模型表示。正式的，一个关系型数据集$\mathcal{D}$含有$n$个元组，其中的每个元组由$k$个属性组成，表示为$\mathcal{D}=\{d_1,\cdots,d_n\}$。以$k$属性组成的元组为单位，并假设其取值于一个域$\mathcal{X}$。其中的，$\mathcal{X}$表示所有$k$个属性域集合元素的笛卡尔积，基数$|\mathcal{X}|=M$，满足$M \geq 2$，代表数据域中离散的$M$个原子符号。对于任意的元组$d_i(1\leq i \leq n)$都是数据取值域全集$\mathcal{X}$的一个具体实例。由此，采用离散型随机变量$X$表示数据集，取值于有限域$\mathcal{X}$。对于任意两个数据集实例$x,x' \in \mathcal{X}$，汉明距离$d(x,x')$度量两个数据集实例之间不同元组的数目。如果汉明距离满足 $d(x,x')\leq 1$，则称$x,~x'$为相邻数据集，记作$x\sim x'$。基于以上的数据模型表示，差分隐私数据发布框架中，随机化隐私机制是一个算法$Q$，其接受原始数据库$\mathcal{D}$
+输入，随机扰动输出噪声结果$Q(\mathcal{D})\rightarrow \mathbb{R}^{n}$\cite{dwork2014algorithmic}。由此，差分隐私保护机制的噪声扰动的随机化函数映射，与Shannon信息论中的噪声信道模型$\{X~Q(\hat{X}|X)~\hat{X}\}$\cite{xiong2016randomized,alvim2011differential}不谋而合。以此为基本的出发点，本章\ref{chapter05-achieve-channel}节从信息论的角度给出具体的阐述与分析。
+
+\subsection{信道模型}\label{chapter05-achieve-channel}
+
+本节在\ref{sec:communication_model_of_dp}节介绍的差分隐私通信模型的基础上，给出更详细的信道模型细节描述。首先，在差分隐私的离线数据发布应用场景中，差分隐私随机化机制接受原始数据输入，概率性映射输出原始数据的近似净化副本。差分隐私机制与Shannon通信系统在数据处理流程方面具有相似之处。基于此，可以从Shannon信息论的角度，将差分隐私机制表述为从字母表$\mathcal{X}$到再生字母表$\mathcal{\hat{X}}$的条件概率映射。本节以此为基本的出发点，将对数据集的差分隐私保护建模为信息论信道模型。为方便理解，首先给出以下简单示例。对于``是''和``否''问题类型的二进制数据集$\mathcal{D}=\{0,1\}^{n}$，$p_x(0)$和$p_x(1)$分别表示概率分布，$q_{\hat{X}|X}(\hat{x}|x),(x,\hat{x}\in \{0,1\})$表达随机化隐私机制$X\xrightarrow{Q} \hat{X}$，本质上该表达是信息论二元对称信道(Binary Symmetric Channel，BSC)模型。除此之外，对于如表\ref{tab:origin}中Marital-status、医疗数据中疾病信息等离散类别型数据，都可以使用条件概率$q(\cdot|\cdot)$形式表示为两个有限离散集合之间的概率性映射关系。对此，本章中延承差分隐私基本通信模型开展本章隐私机制的研究。
+
+上述分析奠定了信道模型的理论基础，本节中结合差分隐私离线数据发布的数据混淆原理，将其建模为原始数据信源$X$到混淆、扰动数据信宿$\hat{X}$之间的点对点通信模型$\{X~Q(\hat{X}|X)~\hat{X}\}$，扰动输出仅统计依赖于原始输入的离散无记忆信道(Discrete Memoryless Channel，DMC)模型。正式的，$\mathcal{X}$和$\mathcal{\hat{X}}$分别表示有限的离散字母表集合，随机化函数映射$Q:\mathcal{X}\rightarrow\hat{\mathcal{X}}$表示为条件概率$q(\hat{x}|x)$矩阵形式。为了捕捉类别型数据的语义完整性，不失一般性考虑$\mathcal{X}=\hat{\mathcal{X}}$的情况，对字母表$\mathcal{X}$中原子符号序列化表示$1,2,\cdots,M$，则有
+\begin{equation}\label{Eq:MRR_5.2.2}\nonumber
+	q(\hat{x}|x)=\begin{pmatrix}
+		q_{(1|1)}& q_{(2|1)}&\cdots &q_{(j|1)}&\cdots & q_{(M|1)}\\
+		q_{(1|2)}& q_{(2|2)}&\cdots &q_{(j|2)}&\cdots & q_{(M|2)}\\
+		\vdots & \vdots & \vdots &\vdots &\vdots & \vdots \\
+		q_{(1|i)}  & q_{(2|i)} &\cdots & q_{(j|i)}& \cdots &q_{(M|i)}\\
+		\vdots & \vdots & \vdots &\vdots &\vdots & \vdots \\
+		q_{(1|M)}& q_{(2|M)}&\cdots &q_{(j|M)}&\cdots & q_{(M|M)}
+	\end{pmatrix}
+\end{equation}
+基于上述信道模型的条件概率$q(\hat{x}|x)$表示，信道概率分布的统计性质反映了差分隐私的随机化特性。由此，结合本章上下文给出以下差分隐私的定义。
+\begin{definition}\textup{\cite{alvim2011differential,wang2016on}}\label{def:chapter05-dp}对于$\epsilon \in \mathbb{R}^{+}$，一个离散无记忆信道模型$\mathcal{Q}:\mathcal{X}\times \mathcal{\hat{X}}\rightarrow \mathbb{R}^{+} $ 满足$\epsilon$-差分隐私($\epsilon$-DP)，当且仅当对所有的$x$,$x'\in \mathcal{X}$，汉明$d(x,x')\leq 1$和$\hat{x}\in \mathcal{\hat{X}}$，信道条件概率$q(\cdot|\cdot)$满足$\epsilon$-概率不可区分性
+	\begin{equation}
+		q(\hat{x}|x)\leq \exp (\epsilon) \times q(\hat{x}|x')
+	\end{equation}
+\end{definition}
+
+\begin{remark}
+{\em 定义\textup{\ref{def:chapter05-dp}}的表述依赖于信道模型条件概率分布$q(\hat{x}|x)$，反映了信道统计特性。由此，差分隐私的隐私保护水平定义为
+\begin{equation}\label{eq:chapter05-epsilon}
+	\epsilon^{*}\triangleq \inf \left(\epsilon: \ln \frac{q(\hat{x}|x)}{q(\hat{x}|x')}\right),x,x'\in \mathcal{X}\text{和}\hat{x}\in \mathcal{\hat{X}}
+\end{equation}
+}
+\end{remark}
+信道模型的信息传输率$R$和期望失真$\mathbb{E}\left[d(X,\hat{X})\right]$与信道条件概率$q(\hat{x}|x)$和先验分布$p(x)$密切相关。信息论差分隐私模型中考虑数据先验分布$p(x)$的影响，基于隐私与失真关系约束数据质量损失的$(\epsilon,\delta)$可达信道集合可以定义为
+
+%噪声信道条件概率与信息传输率$R$和失真紧密联系，从满足失真约束的角度，可以定义$(\epsilon,\delta)$可达信道集合。
+\begin{definition}\label{def:achievechannel}对于给定的数据分布$p(x)$和失真函数$d(x,\hat{x})$，期望失真$\mathbb{E}\left[d(X,\hat{X})\right]$不超过给定的失真门限$\delta$的所有$\epsilon$-差分隐私信道$q(\hat{x}|x)$称为$(\epsilon,\delta)$可达信道集合，则有
+	\begin{equation}
+		(\epsilon,\delta)\stackrel{\text{def}}{=} \left\{q(\hat{x}|x):\sum_{x,\hat{x}}p(x)q(\hat{x}|x)d(x,\hat{x})\leq \delta\right\}
+	\end{equation}
+\end{definition}
+
+基于上述定义\ref{def:achievechannel}，本章中的研究是在满足差分隐私与给定失真度的$(\epsilon,\delta)$可达信道中寻找概率分布$q(\hat{x}|x)$。 由期望失真公式\ref{eq:chapter03-ED}易知可行集是超平面的闭半空间，并且半空间是凸的\cite{boyd2004convex}，封闭的，凸的且满足$\sum_{\hat{x}}q(\hat{x}|x)=1, q(\hat{x}|x)\geq 0$。由此，利用凸集合交集的保凸运算规则，$(\epsilon,\delta)$可达信道集合依然保持凸性。此外，文献\mycite{xiong2016randomized}中已经从下水平集的角度证明了$\epsilon$参数的计算函数是拟凸函数。基于此，本章中的研究是在凸可行集中计算最优分布$q(\hat{x}|x)$优化问题。
+
+
+
+\subsection{问题提出}\label{chapter05-problem-statement}
+
+本小节中引入隐私泄露与数据效用的信息论度量方法，然后给出本章研究问题的详细描述。首先，差分隐私的语义安全考虑了敌手有关数据的先验分布与后验概率分布的距离，据此量化隐私泄露。Kullback-Leibler (KL)散度是度量两个概率分布之间距离的有效工具\cite{cover2006elements}。针对此，定义敌手后验概率分布$p(x|\hat{x})$ 与先验分布$p(x)$之间的相对熵距离度量平均情况下的隐私泄露量。事实上，期望形式的相对熵度量等效于互信息量$I(X;\hat{X})$\cite{calmon2012privacy}，
+
+\begin{equation}\label{chapter05-privacy-metrics}
+	I(X;\hat{X})=\mathbb{E}_{\hat{X}}D_{KL}\left(p(x|\hat{x})\parallel p(x)\right)
+\end{equation}
+其中， $D_{KL}(\cdot \parallel \cdot)$是相对熵距离函数。
+
+%互信息度量近似合成数据$\hat{X}$包含原始数据$X$的信息量。因此，可以定义互信息量度量差分隐私离线数据发布框架中的隐私泄露风险。此外，互信息$I(X;\hat{X})=H(X)-H(X|\hat{X})$，依据熵与互信息的关系，互信息$I(X;\hat{X})$刻画观测到$\hat{X}$后有关随机变量$X$不确定度的减少量，条件熵$H(X|\hat{X})$表述随机变量仍具有的不确定度。对于固定信源概率分布,$H(X)$固定。由此，隐私泄露风险度量的互信息与条件熵可视为等价可替换的量化方法\cite{zhang2019online}。
+\begin{remark}{\em
+在本章中我们采用上述公式}\ref{chapter05-privacy-metrics}{\em 的形式度量混淆合成数据$\hat{X}$包含原始数据$X$的隐私泄露量。平均互信息量是数据先验分布$p(x)$和信道条件概率分布$q(\hat{x}|x)$的函数，是关于$p(x)$的凸函数，$q(\hat{x}|x)$的凹函数。}
+\end{remark}
+%\subsection{效用度量}
+
+其次，为表达混淆输出数据的质量损失，采用汉明距离$d(x,\hat{x})$定义$X$与$\hat{X}$之间的期望汉明失真
+\begin{equation}\label{eq:chapter05-distortion}
+	\mathbb{E}\left[d\left(X,\hat{X}\right)\right]=\sum_{x}\sum_{\hat{x}}p(x)q(\hat{x}|x)d(x,\hat{x})
+\end{equation}
+度量平均的失真程度。由上式\ref{eq:chapter05-distortion}可知，$	\mathbb{E}\left[d\left(X,\hat{X}\right)\right]$是有关$p(x)$、$q(\hat{x}|x)$和失真测量~$d(x,\hat{x})$~的函数。本章中利用期望汉明失真度量就是同时考虑了数据分布和信道概率分布的影响。
+
+基于上述分析及符号表示，本章中的基础研究可以表述为差分隐私数据发布中约束数据质量损失$\delta$的条件下最小化隐私泄露的隐私机制条件概率分布求解问题，$\min_{q(\hat{x}|x):\sum_{x}\sum_{\hat{x}}p(x)q(\hat{x}|x)d(x,\hat{x})\leq \delta}I(X;\hat{X})$。其次，针对含有关联背景知识$Z$的敌手模型，研究给定数据质量损失门限，差分隐私最优的概率分布函数设计问题，$\min_{q(\hat{x},z|x):\sum_{x}\sum_{\hat{x}}\sum_{z}p(x)q(\hat{x},z|x)d(x,\hat{x})\leq  \delta}I(X;\hat{X},Z)$。围绕上述问题，本章开展了权衡隐私与效用的优化模型与算法研究。接下来，\ref{chapter05-optimal-model}节阐述具体的优化模型，\ref{chapter05-optimazation-mechanism}节给出模型计算及算法的伪代码描述。
+
+\section{隐私与效用的优化模型}\label{chapter05-optimal-model}
+本节中介绍本章针对权衡隐私与效用问题所提出的优化模型。首先\ref{subsec:chapter05-yjsl}小节给出一个总体的研究方案框架，然后，分别在\ref{subsec:chapter05-mi-optimazation}小节介绍互信息隐私优化模型，\ref{subsec:chapter-05-conditional-mioptimization}小节阐述数据关联的条件互信息优化模型。
+
+\subsection{研究方案概述}\label{subsec:chapter05-yjsl}
+本章基于信息论的方法，从优化的角度研究权衡隐私泄露与数据效用的互信息隐私最优化问题。为了更好地阐述本章的研究工作，首先给出研究的框架示意图，如下图\ref{Fig:chapter05-1}所示。
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=5.0in]{chapter04/Figure4-1.jpg}
+	\caption{权衡隐私与效用的差分隐私优化机制研究框架}
+	\label{Fig:chapter05-1}
+\end{figure}
+
+在图\ref{Fig:chapter05-1}中，以差分隐私离线数据发布应用场景为立意的出发点，使用信息论、优化理论的方法解决数据发布中权衡隐私泄露与数据效用问题为研究目标。以下具体的介绍本章的研究思路：首先，通过分析差分隐私离线数据发布中原始数据扰动输出数据副本的处理流程，以数据模型、信道模型为基础，构建差分隐私信道模型。随后，从通信的角度给出本章信道模型的数学表达。以此为基础，针对隐私与效用的权衡问题，在熵与失真的度量基础上，将权衡隐私与效用的问题形式化为限失真约束条件下的最小化隐私信息泄露问题，给出互信息隐私优化模型，与著名的信息率失真函数具有相似的表述形式。其次，在差分隐私通信模型中引入含辅助背景知识攻击的敌手模型，将敌手拥有背景知识条件下的隐私与效用的权衡问题形式化为多约束条件的一个凸优化问题，给出条件互信息优化模型。最后，针对上述优化模型，研究模型的计算与算法求解问题。
+
+\subsection{互信息隐私优化模型}\label{subsec:chapter05-mi-optimazation}
+基于信息熵的度量模型及方法，互信息量度量差分隐私数据发布的隐私泄露，期望失真量化发布数据与原始数据的失真程度，也即是数据的可用性。直观上理解，差分隐私数据发布中的隐私泄露与数据效用是极大极小的矛盾问题。依据隐私保护中的隐私与效用原则\cite{sankar2013utility}，权衡隐私与数据效用属于最优性均衡解决的问题。以此为理论的出发点，在限定数据可用性约束的前提下，利用隐私-失真函数形式化表述权衡问题为如下的优化模型$1$的形式。
+
+\textbf{模型1：}差分隐私信道模型$\mathcal{Q}:\mathcal{X}\times \mathcal{\hat{X}}\rightarrow \mathbb{R}^{+}$获得可达的最小互信息隐私泄露量，当且仅当对于给定的数据分布$p(x)$，失真函数$d(x,\hat{x})$和数据质量约束$\mathbb{E}[d(X,\hat{X})]\leq \delta$，信道概率分布$q(\hat{x}|x)$是下述凸优化模型的最优解。
+\begin{alignat}{2}
+	R(\delta) & =\min_{q(\hat{x}|x)}I(X;\hat{X}) \nonumber \\
+	\mbox{subject to} \quad
+	& \sum_{x}\sum_{\hat{x}}p(x)q(\hat{x}|x)d(x,\hat{x})\leq  \delta \label{eq:chapter04-4-6}\\
+	& \sum_{\hat{x}}q(\hat{x}|x)=1 \\
+	& q(\hat{x}|x) \geq 0\label{eq:chapter04-4-8}
+\end{alignat}
+其中的$I(X;\hat{X})$和公式\ref{eq:chapter04-4-6}$\sim$\ref{eq:chapter04-4-8}分别是优化模型$1$的优化目标函数和约束条件，描述满足约束条件的$q(\hat{x}|x)$中寻找极小化$I(X;\hat{X})$的问题。
+
+上述的优化模型$1$从隐私-失真的角度\cite{wang2016on}给出了权衡隐私与数据效用的基本优化模型，最小化信息率$R(\delta)$的形式化表述和Shannon信息论率失真函数\cite{cover2006elements}具有相同的表达形式，是关于信道条件概率分布$q(\hat{x}|x)$的最小值问题。在隐私保护中，最优化模型$1$在满足给定数据质量损失门限的前提条件下，求解最小化互信息隐私泄露的数据混淆机制，即信道条件概率分布。对此，文献\mycite{mir2012information,wang2016on}中已经给出了获得最优率失真的隐私机制依然提供一个确定等级差分隐私保护的结论。借用这个结论，通过上述模型$1$获得的信道概率满足$(\epsilon,\delta)$可达信道。
+\subsection{条件互信息优化模型}\label{subsec:chapter-05-conditional-mioptimization}
+
+上述优化模型$1$刻画了隐私与失真函数的关系，在隐私保护中具有广泛的应用\cite{wang2016on,sarwate2014a,mir2012information}。但是，上述模型中的隐私和失真函数没有考虑差分隐私离线数据发布场景中关联辅助背景知识对互信息隐私泄露的影响。实际应用中，由于隐私攻击者可能通过其它途径获取隐私关联数据，从而导致隐私泄露问题。本章中使用随机变量$Z$表示辅助的背景知识，并考虑由$Z$辅助识别的互信息隐私泄露问题。具体地说，依据隐私保护数据发布者和隐私攻击者对背景知识$Z$
+的了解程度，将含背景知识的优化问题划分为如下的两种情形进行考虑：
+
+%(1) 辅助背景知识$Z$是隐私保护数据发布者和隐私攻击者都知道的共同知识。在这种情况下，互信息的隐私度量$I(X;\hat{X})$改变为给定$Z$的条件下$X$和$\hat{X}$之间的条件互信息量$I(X;\hat{X}|Z)$。针对此，上述优化模型$1$中的最小化目标函数改变为求解变量$q(\hat{x}|x,z)$，使得条件互信息$I(X;\hat{X}|Z)$获得最小值。
+%
+%(2) 辅助背景知识$Z$是隐私攻击者可通过其它途径获得的外部关联数据，刻画了攻击者的能力。但是，数据发布者拥有一定有关辅助背景知识的统计信息，而未能精准的获得$Z$的具体数据细节。在这样的情形下，互信息的隐私度量$I(X;\hat{X})$改变为$X$和联合变量$\hat{X},Z$之间的互信息量$I(X;\hat{X},Z)$。针对此，上述优化模型$1$的最小化目标函数改变为求解条件概率$q(\hat{x},z|x)$使得$I(X;\hat{X},Z)$最小化。
+\begin{itemize}[leftmargin=2em]
+\item [(1)]辅助背景知识$Z$是隐私保护数据发布者和隐私攻击者都知道的共同知识。在这种情况下，互信息的隐私度量$I(X;\hat{X})$改变为给定$Z$的条件下$X$和$\hat{X}$之间的条件互信息量$I(X;\hat{X}|Z)$。针对此，上述优化模型$1$中的最小化目标函数改变为求解变量$q(\hat{x}|x,z)$，使得条件互信息$I(X;\hat{X}|Z)$获得最小值。
+
+\item [(2)]辅助背景知识$Z$是隐私攻击者可通过其它途径获得的外部关联数据，刻画了攻击者的能力。但是，数据发布者拥有一定有关辅助背景知识的统计信息，而未能精准的获得$Z$的具体数据细节。在这样的情形下，互信息的隐私度量$I(X;\hat{X})$改变为$X$和联合变量$\hat{X},Z$之间的互信息量$I(X;\hat{X},Z)$。针对此，上述优化模型$1$的最小化目标函数改变为求解条件概率$q(\hat{x},z|x)$使得$I(X;\hat{X},Z)$最小化。
+\end{itemize}
+
+结合差分隐私离线数据发布应用场景中原始数据$X$到扰动数据$\hat{X}$之间的数据混淆过程，所表达出的隐私通信模型$X\xrightarrow{Q}\hat{X}$。考虑隐私攻击者可通过观察$\hat{X}$后，关联拥有的可用背景知识$Z$对原始数据$X$中的隐私信息进行推断攻击的敌手模型。本章中把隐私攻击者可以得到的背景知识$Z$考虑为仅攻击者拥有的知识。数据发布的混淆扰动过程表述为如图~\ref{Fig:chapter05-2}所示的隐私通信模型。
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=5.0in]{chapter04/Figure2.png}
+	\caption{含有背景知识攻击的差分隐私通信模型}
+	\label{Fig:chapter05-2}
+\end{figure}
+
+为了更好的说明上图\ref{Fig:chapter05-2}中隐私攻击者具有关联辅助背景知识$Z$对互信息隐私泄露风险的影响，首先从理论上给出下述定理\ref{theorem:5.1}。
+\begin{theorem} \label{theorem:5.1}随机变量$X$与$\hat{X},Z$的联合互信息量$I(X;\hat{X},Z)$不小于互信息$I(X;\hat{X})$。
+\end{theorem}
+\textbf{证明定理\ref{theorem:5.1}：}由随机变量$X$和$X,Z$联合的互信息量定义，则有
+\begin{alignat}{2}
+	I(X;\hat{X},Z) & =\sum_{x}\sum_{\hat{x}}\sum_{z}p(x,\hat{x},z)\log \frac{q(x|\hat{x},z)}{p(x)} \\
+	 & = \sum_{x}\sum_{\hat{x}}\sum_{z}p(x,\hat{x},z)\log \left( \frac {q(x|\hat{x},z)}{q(x|\hat{x})}\cdot \frac{q(x|\hat{x})}{p(x)} \right)\\
+	 & = \sum_{x}\sum_{\hat{x}}p(x,\hat{x})\log \frac{q(x|\hat{x})}{p(x)} \nonumber \\
+	 & +\sum_{x}\sum_{\hat{x}}\sum_{z}p(x,\hat{x},z)\log \frac{q(x|\hat{x},z)}{q(x|\hat{x})}\\
+	 & = I(X;\hat{X})+I(X;Z|\hat{X})\\
+	 & \geq I(X;\hat{X})
+\end{alignat}
+易知，$I(X;\hat{X},Z)$是互信息$I(X;\hat{X})$和条件互信息$I(X;Z|\hat{X})$之和。因为平均互信息的非负性，则有结论成立。
+
+基于上述互信息隐私泄露量的分析，拥有背景知识$Z$相对于$I(X;\hat{X})$可增加隐私泄露量。以此为基础，接下来将差分隐私数据发布中隐私攻击者拥有背景知识$Z$的最小化互信息隐私泄露问题定义为
+
+\begin{definition}对于给定$X$的失真函数$d(x,\hat{x})$，差分隐私信道模型$\mathcal{Q}:\mathcal{X}\times \mathcal{\hat{X}}\rightarrow \mathbb{R}^{+}$，在满足$\mathbb{E}[d(X,\hat{X})]\leq \delta$的约束下，隐私信道获得的最小互信息隐私泄露量为信息率$R_{z}(\delta)$。其中，$R_{z}(\delta)$为下述最优化模型$2$的最优值。
+\end{definition}
+
+\textbf{模型2：}对于数据$X$的失真函数$d(x,\hat{x})$，在$Z$的条件下，数据质量满足限失真门限$\delta$的约束，条件概率$q(\hat{x},z|x)$是获得最小化互信息隐私泄露$R_{z}(\delta)$ 的最优点，即是下述优化问题的最优解。
+\begin{alignat}{2}%\label{eq:chapter05-model2}
+	R_{z}(\delta) & =\min_{q(\hat{x},z|x)}I(X;\hat{X},Z) \nonumber \\
+	\mbox{subject to} \quad
+	& \sum_{x}\sum_{\hat{x}}\sum_{z}p(x)q(\hat{x},z|x)d(x,\hat{x})\leq  \delta \label{eq:chapter04-14}\\
+	& \sum_{\hat{x}}\sum_{z}q(\hat{x},z|x)=1\\
+	& q(\hat{x},z|x) \geq 0\label{eq:chapter04-16}
+\end{alignat}
+其中$I(X;\hat{X},Z)=\sum_{x,\hat{x},z}p(x,\hat{x},z)\log \frac{q(\hat{x},z|x)}{p(\hat{x},z)}$和公式\ref{eq:chapter04-14}$\sim$\ref{eq:chapter04-16}分别为目标函数和约束条件。
+
+上述最优化模型$2$是互信息隐私泄露$I(X;\hat{X},Z)$关于条件概率分布$q(\hat{x},z|x)$的最小值求解问题。换句话表述，上述优化模型$2$的最优解$q(\hat{x},z|x)$就是在数据质量损失约束条件下，使得互信息量$I(X;\hat{X},Z)$获得极小值。
+
+\section{差分隐私数据发布机制与优化}\label{chapter05-optimazation-mechanism}
+
+本节中针对上述优化模型$2$，利用Lagrange对偶函数的方法对权衡隐私与效用的优化模型进行求解，给出KKT条件的参量表达式。然后，针对直接计算最优条件概率分布的困难性问题，基于Blahut-Arimoto算法给出了差分隐私数据发布场景中计算最优信道条件概率分布的迭代算法。
+
+\subsection{优化模型最优解}
+
+借鉴率失真函数的求解方法，最优化模型$2$是满足期望失真约束和条件概率分布约束条件下，有关凸目标函数的一个标准最小化问题。对其利用Lagrange乘子法进行求解，首先构造以下泛函$L(q)$
+\begin{alignat}{2}
+	L(q) & =\sum_{x}\sum_{\hat{x},z}q(\hat{x},z|x)\log \frac{q(\hat{x},z|x)}{q(\hat{x},z)} \nonumber \\
+	  & + \lambda \sum_{x}\sum_{\hat{x},z}p(x)q(\hat{x},z|x)d(x,\hat{x}) \\
+	& +\sum_{x}\nu (x)\sum_{\hat{x},z}q(\hat{x},z|x) \nonumber
+\end{alignat}
+
+然后，对构造的$L(q)$关于$q(\hat{x},z|x)$求偏导数，并令$\frac{\partial L(q)}{\partial q(\hat{x},z|x)}=0$得到如下含有拉格朗日乘子参数$\lambda$的表达式
+\begin{alignat}{2}
+	\frac{\partial L(q)}{\partial q(\hat{x},z|x)} & =p(x)\log \frac{q(\hat{x},z|x)}{q(\hat{x},z)}+p(x)
+	-\sum_{x'}p(x')q(\hat{x},z|x')\frac{1}{q(\hat{x},z)}p(x) \nonumber \\
+	 & + \lambda p(x)d(x,\hat{x}) \\
+	& +\nu (x) \nonumber \\
+	& = 0 \nonumber
+\end{alignat}
+由于先验概率分布$p(x)\geq 0$，利用KKT条件可以计算得到使得互信息最小化的条件概率$q(\hat{x},z|x)$参量表达式
+\begin{equation}\label{eq:chapter05-pdf}
+	q(\hat{x},z|x)=\frac{q(\hat{x},z)e^{-\lambda d(x,\hat{x})}}{\sum_{\hat{x},z}q(\hat{x},z)e^{-\lambda d(x,\hat{x})}}
+\end{equation}
+
+然而，通过联合方程组的方式直接解出最优输出分布仍然比较困难。针对这个计算的困难问题，Blahut和Arimoto\cite{arimoto1972an,blahut1972computation}提出了计算率失真函数的迭代求解算法，该算法是两个概率分布凸集之间计算最小相对熵距离的一种特殊情况\cite{cover2006elements}。已经证明算法在两个概率分布凸集之间交替最小化相对熵距离的计算过程中存在一个极限，收敛到相对熵距离最小值。基于此，求解率失真$R(\delta)$需要将率失真函数改写为两个集合之间相对熵距离最小化的形式。为了将其改进应用到优化模型$2$的求解计算中，以下给出计算的预处理过程。
+
+\subsection{交替最小化算法}
+对于两个给定凸集$A$和$B$以及欧几里得范数距离，目标是计算集合$A$和$B$之间的最小欧氏距离。利用交替最小化的思想，首先，选择任意的$a \in A$ ，计算$b \in B$满足~$\min \parallel a-b\parallel_{2}$。然后固定~$b$，在集合$A$中计算欧式距离和$b$最近的元素。重复上述计算过程，随着重复次数增加，特定的距离度量收敛于两个集合的最小值\cite{cover2006elements}。特别地，如果上述是在两个概率分布集合$A$和$B$之间的相对熵(Kullback-Leibler，KL) 距离度量中，最小化距离的算法将收敛到$A$和$B$之间的最小相对熵\cite{csiszar1984information}。
+
+本章中，基于上述最小化算法的交替计算过程对提出的优化模型进行求解。首先，需要将其改写为相对熵距离在两个概率分布集合之间双重最小化的形式。为此，给出以下引理\ref{lemma:chapter05-1}。
+\begin{lemma}\label{lemma:chapter05-1}设$p(x)q(\hat{x},z|x)$是给定的联合分布，使得最小化相对熵$D(p(x)q(\hat{x},z|x)\parallel p(x)r(\hat{x},z))$~的分布$r(\hat{x},z)$是对应于条件概率$q(\hat{x},z|x)$的边缘分布$r^*(\hat{x},z)$，也即是
+	\begin{equation}\label{lemma5.1}
+		D_{KL}(p(x)q(\hat{x},z|x)\parallel p(x)r^*(\hat{x},z))=\min_{r(\hat{x},z)}D_{KL}(p(x)q(\hat{x},z|x)\parallel p(x)r(\hat{x},z))
+	\end{equation}
+	其中，$r^*(\hat{x},z)=\sum_{x}p(x)q(\hat{x},z|x)$。
+\end{lemma}
+\textbf{证明引理\ref{lemma:chapter05-1}：}根据相对熵$D_{KL}(\cdot||\cdot)$的定义，构造
+\begin{alignat}{2}
+	D_{KL}\left( p(x)q(\hat{x},z|x)\parallel p(x)r(\hat{x},z)\right)
+	 & -D_{KL}\left(p(x)q(\hat{x},z|x)\parallel p(x)r^{*}(\hat{x},z)\right) \\
+	 & =\sum_{x,\hat{x},z}p(x)q(\hat{x},z|x)\log \frac{p(x)q(\hat{x},z|x)}{p(x)r(\hat{x},z)}\\
+	 & - \sum_{x,\hat{x},z}p(x)q(\hat{x},z|x)\log \frac{r^*(\hat{x},z)}{r(x,z)}\\
+	 & = \sum_{x}\sum_{\hat{x}}p(x,\hat{x})\log \frac{q(x|\hat{x})}{p(x)} \nonumber \\
+	 &=\sum_{\hat{x},z}r^*(\hat{x},z)\log \frac{r^*(\hat{x},z)}{r(x,z)}\\
+	 & =D_{KL}\left(r^*(\hat{x},z)\parallel r(\hat{x},z)\right)
+\end{alignat}
+由于相对熵的非负性质，则有$D_{KL}\left(r^*(\hat{x},z)\parallel r(\hat{x},z)\right)\geq 0$的结论。当且仅当，$r^*(\hat{x},z)= r(\hat{x},z)$ 时等号成立。
+
+基于引理\ref{lemma:chapter05-1}和$I(X;\hat{X},Z)=\sum_{x}\sum_{\hat{x}}\sum_{z}p(x,\hat{x},z)\log \frac{q(\hat{x},z|x)}{p(\hat{x},z)}$的计算公式，可以将上述优化模型$2$中的最优化目标函数$I(X;\hat{X},Z)$表述为一个具有相对熵距离的双重最小化问题的形式，则有
+\begin{alignat}{2}
+& \min_{q(\hat{x},z|x):\sum_{x,\hat{x},z}p(x)q(\hat{x},z|x)d(x,\hat{x})\leq  \delta}\sum_{x,\hat{x},z} p(x,\hat{x},z)\log \frac{q(\hat{x},z|x)}{p(\hat{x},z)}\\
+=\min_{r(\hat{x},z)}&\min_{q(\hat{x},z|x):\sum_{x,\hat{x},z}p(x)q(\hat{x},z|x)d(x,\hat{x})\leq  \delta}\sum_{x,\hat{x},z}p(x)q(\hat{x},z|x)\log \frac{q(\hat{x},z|x)}{r(\hat{x},z)}\label{eq:chapter05-double}
+\end{alignat}
+
+针对上式~\ref{eq:chapter05-double}中的双重最小化问题，利用交替最小化算法进行计算近似最优解。如果集合$A$为边际分布$p(x)$满足期望失真门限的所有联合概率分布 $p(x,\hat{x},z)$的集合，$B$为乘积分布$p(x)r(\hat{x},z)$构成的集合，则对于任意的分布$r(\hat{x},z)$，上述公式\ref{eq:chapter05-double}中的双重最小化可以表述为如下公式\ref{eq:chapter04-1-28}的形式，
+
+\begin{equation}\label{eq:chapter04-1-28}
+	\min_{q(\hat{x},z|x):\sum_{x,\hat{x},z}p(x)q(\hat{x},z|x)d(x,\hat{x})\leq  \delta } I(X;\hat{X},Z)=\min_{q \in B}\min_{p \in A} D_{KL}(p\parallel q)
+\end{equation}
+
+基于上述方法将优化模型$2$中的问题转变为了两个概率分布集合之间计算最小相对熵距离的双重最小化问题。然后，借鉴计算率失真函数的交替最小化算法\cite{csiszar1984information,csiszar1974on}，设计本章中对优化模型$2$求解的近似算法。以下\ref{sec:chapter04-algorithm}节详细阐述本章中最优信道模型概率分布的迭代近似计算过程。
+
+\subsection{优化模型迭代算法}\label{sec:chapter04-algorithm}
+
+针对上述优化模型2中所描述的具有多约束条件的凸优化问题，本节中采用两个概率分布集合之间相对熵距离双重最小化的迭代计算方法进行求解。基于Blahut-Arimoto算法作为基础设计求解优化模型计算信道条件概率分布的迭代算法。算法接受预设参数输入，包括Lagrange乘子$\lambda$、数据先验分布$p(x)$、汉明失真$d(x,\hat{x})$和收敛阈值门限$T$。具体的迭代计算过程包含有以下几个步骤。
+
+(1) 首先，初始化算法输出的联合概率分布$r_0(\hat{x},z)$为均匀分布。
+
+(2) 其次，利用Lagrange 乘子法求解得到的公式~\ref{eq:chapter05-pdf}~的条件概率表达式计算条件概率分布$q_0(\hat{x},z|x)$和互信息量$I(X;\hat{X},Z)$。然后，基于引理\ref{lemma:chapter05-1}为基础，计算$r(\hat{x},z)=\sum_{x}p(x)q_0(\hat{x},z|x)$。
+
+(3) 最后，重复上述计算步骤(2)直到互信息量收敛于阈值门限$T$。
+
+上述迭代计算过程结束，算法输出可获得的最小互信息隐私泄露量以及条件概率分布$q(\hat{x},z|x)$ 和期望汉明失真。这个计算过程在算法\ref{alg:chapter05-1}中通过伪代码的形式给出了具体的描述。
+\begin{algorithm}[htbp]
+ \small
+ \setstretch{1.2}
+\caption{ 最小化互信息隐私泄露量}
+\label{alg:chapter05-1}
+\begin{algorithmic}[1]
+\REQUIRE ~~\\
+\begin{tabular}[t]{p{8mm}l}
+ $\lambda$&:  Lagrange乘子\\
+ $p(x)$&: 数据先验分布\\
+ $d(x,\hat{x})$&: 汉明失真矩阵\\
+ $T$&: 收敛门限阈值参数
+\end{tabular}
+\ENSURE ~~\\
+\begin{tabular}[t]{p{8mm}l}
+$q(\hat{x},z|x)$&: 条件概率分布\\
+$MI^*$&: 最小的互信息泄露量$I(X;\hat{X},Z)$\\
+$\bar{\delta}$&: 达到最小互信息时的期望失真度
+\end{tabular}
+\STATE 初始化$r_0(\hat{x},z)$为均匀分布
+\STATE 计算$q_0(\hat{x},z|x)=\frac{r_0(\hat{x},z)e^{-\lambda d(x,\hat{x})}}{\sum_{\hat{x},z}r_0(\hat{x},z)e^{-\lambda d(x,\hat{x})}}$
+\STATE $I_0\leftarrow $算法\ref{alg:chapter05-2}利用$p(x),q_0(\hat{x},z|x),r_0(\hat{x},z)$计算互信息/*子程序\ref{alg:chapter05-2}*/
+\STATE 计算$r(\hat{x},z)=\sum_{x}p(x)q_0(\hat{x},z|x)$
+\WHILE{true}
+\STATE 计算$q(\hat{x},z|x)=\frac{r(\hat{x},z)e^{-\lambda d(x,\hat{x})}}{\sum_{\hat{x},z}r_0(\hat{x},z)e^{-\lambda d(x,\hat{x})}}$;
+\STATE $I \leftarrow $算法\ref{alg:chapter05-2}利用$p(x),q(\hat{x},z|x),r(\hat{x},z)$
+\IF{$I_0-I \leq T$}
+\STATE $MI^* \leftarrow I$
+\STATE 期望失真度$\bar{\delta}=\sum_{x,\hat{x},z}p(x)q(\hat{x},z|x)d(x,\hat{x})$
+\RETURN $MI^*, q(\hat{x},z|x), \bar{\delta}$
+\ELSE
+\STATE $I_0 \leftarrow I$
+\STATE $r(\hat{x},z)=\sum_{x}p(x)q(\hat{x},z|x)$
+\ENDIF
+\ENDWHILE
+\end{algorithmic}
+\end{algorithm}
+
+上述算法\ref{alg:chapter05-1}中的步骤$3$利用算法\ref{alg:chapter05-2}进行互信息隐私泄露的计算。依据$X$与$X,\hat{Z}$的联合互信息计算公式
+\begin{equation}
+	I(X;\hat{X},Z)=\sum_{x,\hat{x},z}p(x)q(\hat{x},z|x) \log \frac{q(\hat{x},z|x)}{q(\hat{x},z)}
+\end{equation}
+得到信息泄露量，具体的计算细节在算法\ref{alg:chapter05-2}中给出描述。
+
+\begin{algorithm}[htb]
+ \small
+ \setstretch{1.2}
+\caption{ 计算互信息隐私泄露量}
+\label{alg:chapter05-2}
+\begin{algorithmic}[1]
+\REQUIRE ~~\\
+\begin{tabular}[t]{p{8mm}l}
+ $p(x)$&: 数据先验分布\\
+ $q(\hat{x},z|x)$&: 条件概率分布\\
+ $r(\hat{x},z)$&: 联合概率分布
+\end{tabular}
+\ENSURE ~~\\
+\begin{tabular}[t]{p{8mm}l}
+$MI$&: 平均互信息隐私泄露量
+\end{tabular}
+\STATE 初始化设置$MI = 0$
+\FOR{循环遍历$X,\hat{X}$，以及$Z$取值空间，$i \in |\mathcal{X}|, j \in |\mathcal{\hat{X}}|,k \in |\mathcal{Z}|$}
+\STATE $MI \leftarrow \sum p(x_i)q(\hat{x}_j,z_k|x_i) \log \frac{q(\hat{x}_j,z_k|x_i)}{r(\hat{x}_j,z_k)}$
+\ENDFOR
+\RETURN $MI$;
+\end{algorithmic}
+\end{algorithm}
+
+基于上述算法\ref{alg:chapter05-1}可以得到最小互信息隐私泄露量时的信道条件概率分布$q(\hat{x},z|x)$。然而，根据差分隐私定义\ref{def:chapter05-dp}，隐私保护的不可区分度和条件概率$q(\hat{x}|x)$相关。由此，首先需要利用条件概率公式计算联合概率分布$p(x,\hat{x},z)$，进而基于联合概率分布，关于辅助背景知识$Z$计算边缘概率分布$q(x,\hat{x})$。其次，以数据先验概率分布$p(x)$为基础，计算得到隐私机制的信道条件概率分布$q(\hat{x}|x)$。基于互信息度量是平均意义上的隐私泄露量，但是，率失真函数方法获得的隐私机制依然能够提供一个确定等级的差分隐私保护\cite{wang2016on,mir2012information}。以此为基础依据，针对信道条件概率分布$q(\hat{x}|x)$根据定义\ref{def:chapter05-dp}利用公式\ref{eq:chapter05-epsilon}计算差分隐私的预算参数，具体过程如算法\ref{alg:chapter05-3}中伪代码描述。
+\begin{algorithm}[htb]
+\caption{信道条件概率和隐私预算参数}
+\label{alg:chapter05-3}
+ \small
+ \setstretch{1.2}
+\begin{algorithmic}[1]
+\REQUIRE ~~\\
+\begin{tabular}[t]{p{8mm}l}
+ $q(\hat{x},z|x)$&: 条件概率分布\\
+ $p(x)$&: 数据先验分布
+\end{tabular}
+\ENSURE ~~\\
+\begin{tabular}[t]{p{8mm}l}
+$q(\hat{x}|x)$&: 信道条件概率\\
+$\epsilon^*$  &: 差分隐私预算参数
+\end{tabular}
+\STATE 计算边缘分布$q(x,\hat{x})=\sum_{z}p(x)q(\hat{x},z|x)$
+\STATE 计算条件概率分布$q(\hat{x}|x)=\frac{q(x,\hat{x})}{p(x)}$
+\FOR{循环遍历$X,\hat{X}$，$i \in |\mathcal{X}|, j \in |\mathcal{\hat{X}}|$}
+\STATE 求解$\epsilon^* = \min \left\{\log \max \left[\frac{p(\hat{x}_j|x_i)}{p(\hat{x}_j|x'_i)}\right]\right\}$
+\ENDFOR
+\RETURN $q(\hat{x}|x)$，$\epsilon^*$
+\end{algorithmic}
+\end{algorithm}
+
+\begin{remark}
+	{\em 以下给出算法的计算复杂性分析。上述迭代最小化算法\textup{\ref{alg:chapter05-1}}的基本操作是计算$q(\hat{x},z|x)$、$r(\hat{x},z)$及互信息量$I(X;\hat{X},Z)$。算法的每一轮计算过程中，算法\textup{\ref{alg:chapter05-1}}的第$6$行中$(\hat{x},z)$的计算需要进行$O\left(|\hat{X}||Z|\right)$ 次基本运算。由此，对所有的$x$计算条件概率分布需要的基本运算次数是$O\left(|X||\hat{X}||Z|\right)$。其次，算法\textup{\ref{alg:chapter05-1}}的第$7$ 行中计算互信息隐私量也是需要$O\left(|X||\hat{X}||Z|\right)$次基本运算操作。最后，第$14$行中联合概率分布$r(\hat{x},z)$的计算，对每一个变量$x$的基本运算复杂度是$O\left(|\hat{X}||Z|\right)$。因此，计算$r(\hat{x},z)$ 的复杂度是$O\left(|X||\hat{X}||Z|\right)$。综合以上分析，算法\textup{\ref{alg:chapter05-1}}的总体计算时间复杂度为问题规模源字母表空间、再生字母表空间及辅助背景知识空间大小的函数，也即是$O\left(|X||\hat{X}||Z|\right)$。}
+\end{remark}
+\section{实验与分析}\label{chapter04-experiment}
+本节中针对上述优化模型所设计的迭代算法进行实验仿真，从互信息隐私泄露和期望失真的角度展示了具体的实验结果。以下具体介绍实验环境与实验结果。
+\subsection{实验设置}
+本章中的算法使用Java程序语言及第三方Math数学工具包编程实现，利用公开数据集MovieLens和Adult在Intel Core i5-6300U，2.4GHz，4G运行Windows10 X64 操作系统的个人PC上运行算法。以下简单给出基础数据集的说明。
+\begin{itemize}
+\item [(1)]MovieLens\footnote{https://grouplens.org/datasets/movielens/}是用户电影评分数据集，其中包含了$943$个用户对$1682$部电影的$100000$ 个评分数据。评分数据中的评分等级rating是一个范围在$1 \sim 5$的整数。
+
+\item [(2)]机器学习的Adult数据集原始具有$15$个属性，删除丢失数据项的记录后，实际得到了$30162$个有效元组。本节实验中选择 Marital-status (婚姻状态)、Occupation(职业)类别型变量进行实验分析。
+\end{itemize}
+\subsection{实验分析}
+
+实验分析环节，针对本章中隐私攻击者有或无辅助背景知识的优化模型1和优化模型2，分别给出了真实数据集上的实验分析。
+
+\textbf{(1)} 针对差分隐私数据发布中无辅助背景知识的优化模型$1$，选择MovieLens用户电影评分数据集中编号$785$的评分数据，各项评分等级的概率分布是$p(x)=\{0.0513,0.1538,\\0.4872,0.2051,0.1026\}$，信息熵$H(x)=1.9464$。然后，利用汉明失真测量建立汉明失真矩阵。进一步，选择$\lambda$乘子取值区间$\lambda \in [0.6,10]$和收敛阈值门限$T=10^{-8}$，计算$\lambda$选取不同取值时，优化模型$1$对应的隐私机制的互信息隐私泄露量、期望失真程度和满足差分隐私的预算参数。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=3.5in]{chapter04/Figure3.png}
+\caption{MovieLens数据集评分的率失真曲线}
+\label{Fig:chapter05-3}
+\end{figure}
+
+图\ref{Fig:chapter05-3}所示为MovieLens电影评分数据集的期望汉明失真和互信息之间的率失真曲线。图中显示，随着期望失真度逼近于$0$，互信息度量的隐私泄露逼近于信息熵。此外，当期望失真度大于$0.5$，互信息隐私泄露量趋近于$0$，这个变化过程表现出了互信息隐私量和期望失真之间的变化关系。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=3.5in]{chapter04/Figure4.png}
+\caption{ 期望失真、互信息隐私和拉格朗日乘子关系}
+\label{Fig:chapter05-4}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=3.5in]{chapter04/Figure5.png}
+\caption{拉格朗日乘子与差分隐私参数关系}
+\label{Fig:chapter05-5}
+\end{figure}
+
+除此之外，实验分析了Lagrange乘子$\lambda$变化对所计算的隐私机制在期望失真和互信息隐私方面的影响。当$T=10^{-8}$时，$\lambda$和互信息隐私、期望失真之间的关系表达为三维图\ref{Fig:chapter05-4}。从图中显示的结果分析，在$\lambda=10.0$时，互信息量$1.943$接近于信源熵$1.9464$，对应的期望失真$0.00018$逼近于$0$，这个关系与图\ref{Fig:chapter05-3}中的曲线图显示结果相吻合。
+
+优化模型迭代求解的算法中$\lambda$和$T$通过影响算法输出的信道条件概率分布进而影响差分隐私保护等级，即隐私预算参数。为了量化隐私机制的不可区分度给出了实验分析。图\ref{Fig:chapter05-5}中展示了信道条件概率满足差分隐私预算参数的曲线(以$\ln$为单位)。从图中所示结果分析，随着$\lambda$变大隐私参数趋近于稳定。结合图\ref{Fig:chapter05-4}和图\ref{Fig:chapter05-5}的结果可知，$\lambda$增加使得互信息隐私量变大，隐私保护的强度变弱，但是，$\lambda$的增加对互信息隐私的影响变弱，使得隐私保护强度无明显变化。
+
+
+\textbf{(2)} 针对差分隐私数据发布应用中隐私攻击者具有辅助背景知识的优化模型$2$。利用Adult数据集进行实验分析，首先，选择数据集中的Marital-status(婚姻状态)属性，其是类别型属性，域值具有$7$个不同的取值，实验中将其作为发布时的原始数据$X$。其次，由于数据集中Occupation(职业)和Marital-status之间的数据关联，实验中选择Occupation属性，属性域具有$14$个不同的取值，将其考虑为辅助的背景知识$Z$。基于上述数据进行模型$2$的分析，首先，原始数据$X$的概率分布$p(x)=\{0.1386,0.0007,0.4668,0.0127,0.322,0.0312,0.0273\}$，信息熵$H(X)=1.82$。随后，对于类别型属性假设原始与混淆扰动数据域相同，建立汉明失真矩阵。进一步，选择$\lambda \in [0.5,1.0]$，$T=10^{-8}$利用算法\ref{alg:chapter05-1}进行实验。
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=3.5in]{chapter04/Figure6.png}
+\caption{两种差分隐私信道机制的对比}
+\label{Fig:chapter05-6}
+\end{figure}
+
+以下基于本文的隐私与效用度量方法给出实验结果与分析。首先，通过本章中迭代算法求解的隐私信道机制与对称的信道机制在互信息隐私和期望失真度量方面进行对比，比较隐私与数据效用性能。两种不同的信道条件概率分布之间，互信息隐私和期望失真的变化曲线如图\ref{Fig:chapter05-6}所示。图中曲线所示的结果分析，本章中通过优化模型迭代算法求解的隐私机制在同等失真度条件下比对称信道机制表现出更小的互信息隐私泄露。为详细的、定量的表述两种不同隐私机制之间的比较。表\ref{tab:chapter05-1}给出了限失真的互信息隐私泄露量对比数据，表达出同等失真度条件下，迭代优化机制具有相对较小的隐私泄露量。与之对应的，表\ref{tab:chapter05-2}的数据表现出同等隐私泄露容忍度条件下，迭代优化机制拥有相对较小的失真度。结合图\ref{Fig:chapter05-6}及表\ref{tab:chapter05-1}得知，在满足数据质量损失约束前提下，所求解的迭代优化机制比对称信道机制有较好的隐私效果。
+
+
+\begin{table}
+\setstretch{1.1}
+\centering
+\caption{限失真的互信息隐私泄露量对比}
+\label{tab:chapter05-1}
+\begin{tabular}{ccc}
+  \hline
+    机制对比 & 互信息泄露量 & 期望失真\\
+  \hline
+  对称信道机制 & \tabincell{c}{(0.3397, 0.4963, 0.6379, 0.8387) \\ (1.0185, 1.1587, 1.2761, 1.4166)\\(1.5428, 1.6205, 1.6813, 1.7261)}
+   & \multirow{3}{*}{\tabincell{c}{(0.509, 0.423, 0.355, 0.270)\\(0.203, 0.156, 0.120, 0.081) \\ (0.050, 0.033, 0.021, 0.013)}}  \\ 	\cline{1-2}
+    迭代优化机制 &  \tabincell{c}{(0.0154, 0.1073, 0.2293, 0.4437) \\ (0.6593, 0.8440, 1.0143, 1.2242)\\(1.3923, 1.5290, 1.6237, 1.6880)}
+  &   \\
+  \cline{1-3}
+\end{tabular}
+\end{table}
+
+% \begin{table}[!h]
+\begin{table}
+\setstretch{1.1}
+\centering
+\caption{相同互信息隐私泄露的期望失真度对比}
+\label{tab:chapter05-2}
+\begin{tabular}{ccc}
+  \hline
+    机制对比 & 期望失真 & 互信息泄露量\\
+  \hline
+  对称信道机制 & \tabincell{c}{(0.780, 0.675, 0.580) \\ (0.450, 0.345, 0.270)\\(0.205, 0.050, 0.020)}
+   & \multirow{3}{*}{\tabincell{c}{(0.02, 0.11, 0.23) \\ (0.44, 0.66, 0.84) \\ (1.01, 1.54, 1.69)}}  \\ 	\cline{1-2}
+    迭代优化机制 &  \tabincell{c}{(0.509, 0.423, 0.355) \\ (0.270, 0.203, 0.156)\\(0.120, 0.033, 0.013)}
+  &   \\
+  \cline{1-3}
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=8cm]{chapter04/Figure7.png}
+\caption{拉格朗日乘子与互信息隐私泄露}
+\label{Fig:chapter05-7}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=8cm]{chapter04/Figure8.png}
+\caption{具有辅助背景知识的$\lambda$与隐私参数}
+\label{Fig:chapter05-8}
+\end{minipage}
+\end{figure}
+
+为研究优化模型$2$的迭代算法中参数对隐私机制条件概率分布的影响，选取$\lambda \in [0.5,10]$，$T=0.01$分析$\lambda$和互信息隐私泄露量、预算参数之间的变化关系。首先，图\ref{Fig:chapter05-7}中展示了$\lambda$和互信息隐私泄露量的变化曲线，结果表明随着$\lambda$的增加，隐私机制的保护强度减弱，互信息隐私泄露量增大。除此之外，曲线的斜率表明了随$\lambda$变大隐私泄露量的增长率下降。当$\lambda \geq 5$时，隐私泄露的变化逐渐呈现平稳的发展趋势。相对应的，隐私预算参数的变化曲线图\ref{Fig:chapter05-8}(图中以$\ln$为单位)，结果表明$\lambda$的增加带动了隐私参数的增长，刻画了隐私保护强度的减弱。当$\lambda \geq 5$时，图\ref{Fig:chapter05-8}所表明的结果与图\ref{Fig:chapter05-7}中的结果具有一致性。
+
+更多地，阐述算法中参数$\lambda$，$T$和互信息隐私泄露、期望失真度的关系。实验中设置$\lambda \in \{0.5,1.0,1.5,2.0,2.5\}$、$T\in \{10^{-4},10^{-5},10^{-6},10^{-7},10^{-8}\}$，并组合考虑了不同的$\lambda$和$T$组合。以下给出实验结果的描述。首先，互信息隐私方面，固定$T$ 的取值改变$\lambda$的实验结果如图\ref{Fig:chapter05-9}所示。图中的结果表明，随$\lambda$增加互信息隐私泄露量变大。同时可以看出，选定$\lambda$，$T$的步长以$10$的倍数增长时，互信息隐私泄露量变化较微弱。其次，期望失真的数据质量损失方面，$\lambda$，$T$和期望失真的变化关系如图\ref{Fig:chapter05-10} 所示。图中的结果表明选定$T$时，$\lambda$的变大使得失真损失增加。然而，选定$\lambda$具体取值时，以步长为$10$的数量级增长的$T$并没有引起期望失真的明显变化。基于此说明，在通过算法求解最优信道条件概率分布，设计隐私保护机制阶段，考虑隐私与数据质量需求恰当的选择算法参数$\lambda$和$T$，获得理想的隐私保护效果。
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=8cm]{chapter04/Figure9.png}
+\caption{收敛门限与互信息隐私泄露量}
+\label{Fig:chapter05-9}
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\includegraphics[width=8cm]{chapter04/Figure10.png}
+\caption{收敛门限与期望失真度}
+\label{Fig:chapter05-10}
+\end{minipage}
+\end{figure}
+
+
+
+本节针对差分隐私数据发布应用中隐私攻击者有或无辅助背景知识的优化模型$1$和$2$，分别采用真实的数据集进行了实验，给出最优化模型迭代计算的差分隐私信道机制在互信息隐私泄露、期望失真方面的分析。在模型$2$求解的隐私机制中，基于隐私与数据可用性的信息论度量对比了对称信道机制。数据结果表明本章中考虑背景知识条件下的迭代优化机制在相同失真下具有比较小的隐私泄露，在相同隐私泄露条件下，所提出的方法具有较高的数据效用。
+
+\section{本章小结}\label{chapter04-conclusion}
+本章针对差分隐私数据发布中的隐私保护问题，借鉴Shannon信息论基本通信模型，在隐私与数据效用的度量基础上，利用率失真理论构建了隐私与失真的最优化模型，研究了满足数据质量损失约束条件的互信息隐私最优化机制问题，给出差分隐私数据发布的互信息隐私优化模型。随后，在数据发布的隐私通信模型中，考虑了隐私攻击者可能具有的关联辅助背景知识对互信息隐私泄露的影响，提出了基于联合事件的最小化互信息隐私泄露的优化模型。对于模型求解计算信道条件概率分布的问题，利用拉格朗日乘子法和凸问题的KKT最优性条件，给出解的参量表达式。在迭代算法计算方面，基于率失真函数求解的Blahut-Arimoto算法设计了最优化信道条件概率的迭代求解算法。最后，通过真实数据集上的实验结果，阐述了本章理论部分的研究成果，分析了所提出模型及算法的有效性及优势。
+

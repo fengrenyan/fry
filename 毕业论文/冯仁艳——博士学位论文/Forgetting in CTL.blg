@@ -1,0 +1,36 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Forgetting in CTL.aux
+The style file: gbt7714-unsrt.bst
+Illegal, another \bibstyle command---line 901 of file Forgetting in CTL.aux
+ : \bibstyle
+ :          {gbt7714-unsrt}
+I'm skipping whatever remains of this command
+Database file #1: bib/paper.bib
+I was expecting a `,' or a `}'---line 780 of file bib/paper.bib
+ :  
+ :  year="2019"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 1197 of file bib/paper.bib
+ : @article{xiao2011differential
+ :                              ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1472 of file bib/paper.bib
+ :  
+ :  year="2017"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 1517 of file bib/paper.bib
+ : @inproceedings{kasiviswanathan2013analyzing
+ :                                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1588 of file bib/paper.bib
+ : @article{kasiviswanathan2011what
+ :                                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1598 of file bib/paper.bib
+ : @inproceedings{qin2016heavy
+ :                            ,
+I'm skipping whatever remains of this entry
+Warning--empty year in tang2017privacy
+Warning--empty year in tang2017privacy
+(There were 7 error messages)

@@ -1,0 +1,28 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.12.16)  18 NOV 2020 11:41
+entering extended mode
+**D:/绉戠爺鏂囩尞璧勬枡/鍗氬＋瀛︿綅璁烘枃/chapter/chapter04/chap-04-tradeoff.t
+ex
+
+(D:/绉戠爺鏂囩尞璧勬枡/鍗氬＋瀛︿綅璁烘枃/chapter/chapter04/chap-04-tradeoff.te
+x
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+! Undefined control sequence.
+l.1 \chapter
+            {隐私与效用平衡的差分隐私最优化模型}
+? 
+! Emergency stop.
+l.1 \chapter
+            {隐私与效用平衡的差分隐私最优化模型}
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 7 strings out of 495354
+ 309 string characters out of 3183354
+ 44842 words of memory out of 3000000
+ 3276 multiletter control sequences out of 15000+200000
+ 3640 words of font info for 14 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 5i,0n,1p,127b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
