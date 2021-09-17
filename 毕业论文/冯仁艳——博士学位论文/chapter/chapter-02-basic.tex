@@ -25,7 +25,7 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 	\item 如果$\varphi \in {\cal F}({\cal L}^p)$，则$(\neg \varphi)\in {\cal F}({\cal L}^p)$。
 	\item 如果$\varphi$，$\varphi'\in {\cal F}({\cal L}^p)$，则$(\varphi * \varphi')\in {\cal F}({\cal L}^p)$。其中，$*\in \{\wedge,\vee, \rto, \lrto\}$。
 \end{itemize}
-此外，也称“ture”和“false”为原子公式，分别记为“$\top$”和“$\bot$”。
+此外，也称“ture”和“false”为原子公式，分别记为“$\top$”和“$\bot$”。原子命题或其否定称为\emph{文字}，有限个文字的吸取称为\emph{子句}。
 
 \begin{example}\label{exp:pro:form}
 	下面几个字符串为${\cal L}^p$的公式：
@@ -86,6 +86,8 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 	\end{itemize}
 \end{definition}
 对于任意的命题公式$\varphi$和真假赋值$v$，当$\varphi^v=\top$时，称$v$是公式$\varphi$的一个模型，也可以记为$v \models \varphi$，读作$v$满足$\varphi$。一般地，当存在一个真假赋值$v$使得$v\models \varphi$，则称公式$\varphi$是\emph{可满足的}。如果$\varphi$是可满足的，且$\neg \varphi$是不可满足的，则称$\varphi$是\emph{有效的}。
+
+值得注意的是，命题逻辑的语义也可定义在“解释（interpretation）”上。一个\emph{解释}$I$是$\Ha$的子集。除了对原子命题$p\in \Ha$，$I$对公式的解释如真假赋值一样。在解释原子命题$p\in \Ha$上，$p^I$为真当且仅当$p\in I$。模型和可满足的定义与真假赋值的类似。
 
 模态逻辑是经典逻辑的扩充，它是经典逻辑中引进“必然”和“可能”这两种模态词得到的。如上所述，命题的真假值只有两种，命题是真的（1）或是假的（0）。而在模态逻辑中，把命题
 区分为必然真的命题和并非必然真的命题，把假命题区分为必然假的和并非必然假的命题。对于任何命题$\varphi$，可以有两种模态命题：“$\varphi$是必然的”和“$\varphi$是可能的”。值得注意的是，时序逻辑也是模态逻辑的一种。
@@ -203,9 +205,101 @@ $\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
 可以类似定义公式的集合与原子命题集合的无关性，也即是：如果对于公式的集合$\Pi$中的任意一个公式$\varphi$，$\IR(\varphi,V)$都成立，则$\Pi$与$V$中的原子命题无关，记为$\IR(\Pi,V)$。
 
 \subsection{$\CTL$的标准形式}
-SNF
+
+在讲述$\CTL$的标准形式之前，先引入一种带有索引的$\CTL$，记为$\CTL_{ind}$。
+这种语言是在$\CTL$的已有符号下加入下面几种符号得到：
+\begin{itemize}
+	\item 命题常量符号$\start$；
+	\item 一个可数无限的索引集$\Ind$；
+	\item 带有索引$ind$（$ind \in \Ind$）的时序算子：$\EXIST_{\tuple{ind}} \NEXT$, $\EXIST_{\tuple{ind}} \FUTURE$, $\EXIST_{\tuple{ind}} \GLOBAL$, $\EXIST_{\tuple{ind}} \UNTILL$, 和 $\EXIST_{\tuple{ind}} \UNLESS$。
+\end{itemize}
+与$\CTL$公式的定义类似，其公式可以递归地定义如下：
+\begin{equation}\label{def:CTL_ind:formulas}
+	\phi ::=  \bot \mid \top \mid p \mid\neg\phi \mid \phi\lor\phi \mid
+	\EXIST \NEXT \phi \mid
+	\EXIST \GLOBAL \phi \mid
+	\EXIST (\phi\ \UNTILL\ \phi)\mid
+	\EXIST_{ind} \NEXT \phi \mid
+	\EXIST_{ind} \GLOBAL \phi \mid
+	\EXIST_{ind} (\phi\ \UNTILL\ \phi)
+\end{equation}
+
+与$\CTL$不同的是，$\CTL_{ind}$的语义定义在一种扩展的初始-Kripke结构上，该结构被称为$\Ind$-Kripke结构。
+一个$\Ind$-Kripke结构是一个五元组$\Hm=(S,R,L,[\_],s_0)$，且除了$[\_]$，其余元素都跟初始Kripke中的元素对应。该五元组中的$[\_]$是一个以$\Ind$为定义域，$2^{S\times S}$为值域的后继函数，即$[\_]:\Ind \rto 2^{S\times S}$，且满足对于任意的$s\in S$都存在唯一一个$s'\in S$使得$(s,s')\in [ind]\cap R$。
+记$\pi_{s_i}^{ind}$是$\Hm$上的一条路径$(s_i,s_{i+1},s_{i+2},\dots)$，且对于任意的$j\ge i$都有：
+\[
+(s_j,s_{j+1}) \in [ind] \qquad 
+\]
+一个$\Ind$-Kripke结构$\Hm$和其上的一个状态$s$构成一个$ind$-结构，记为$(\Hm,s)$。同理，如果$s$是初始状态$s_0$，则称$(\Hm,s_0)$为初始$ind$-结构。
+
+令$\varphi$是一个$\CTL_{ind}$公式、${\cal K}=(\Hm,s_0)$是一个初始$ind$-结构、且$s$是$\Hm$上的一个状态，则$\varphi$和$(\Hm,s_0)$的可满足关系$(\Hm,s_0)\models \varphi$被定义如下（这里只列出带有索引的公式的可满足关系，其余公式的可参加$\CTL$部分的定义）：
+\begin{itemize}
+	\item $({\cal M},s) \models \start$当且仅当$s=s_0$；
+	\item $({\cal M},s)\models \EXIST_{\tuple{ind}} \NEXT \psi$当且仅当对于路径$\pi_{s}^{\tuple{ind}}$，有$(\Hm, s')\models \psi$且$(s, s') \in [ind]$;
+	\item $({\cal M},s)\models \EXIST_{\tuple{ind}}\GLOBAL\psi$当且仅当对于任意的$s' \in  \pi_{s}^{\tuple{ind}}$，%occurring in $\pi_{s}^{\tuple{ind}}$,
+	$(\Hm,s') \models \psi$;
+	\item $({\cal M},s)\models \EXIST_{\tuple{ind}}(\psi_1\UNTILL\psi_2)$
+	当且仅当存在路径$\pi_{s}^{\tuple{ind}} = (s=s_1, s_2, \dots)$上的状态$s_j$（$j\ge 1$），使得$(\Hm,s_j) \models \psi_2$，且对于任意的$s_k \in \pi_{s}^{\tuple{ind}}$，若$1\leq k < j$，则$(\Hm,s_k) \models \psi_1$；
+	\item $(\Hm,s) \models \EXIST_{\tuple{ind}} \FUTURE \psi$当且仅当$(\Hm,s) \models \EXIST_{\tuple{ind}}(\top \UNTILL\psi)$；
+	\item $({\cal M},s)\models \EXIST_{\tuple{ind}}(\varphi\UNLESS\psi)$当且仅当$(\Hm,s) \models \EXIST_{\tuple{ind}}\GLOBAL \varphi$或$({\cal M},s)\models \EXIST_{\tuple{ind}}(\varphi\UNTILL\psi)$。
+\end{itemize}
+
+对于给定的公式$\varphi$和初始$ind$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称${\cal K}$是$\varphi$的一个\emph{$\Ind$-模型}，也称${\cal K}$满足$\varphi$。其他的术语与$\CTL$部分的类似，这里不再赘述。
+
+已有结果表明，任意的$\CTL$公式能够在多项式时间内被转换为$\CTL$的全局子句分离的范式（separated normal form with global clauses for \CTL，$\CTLsnf$子句）\cite{zhang2008first,zhang2014resolution}。
+$\CTLsnf$子句是具有下面几种形式的公式：
+\[
+\begin{array}{ll}
+	\ALL \GLOBAL (\start \rto \bigvee_{j=1}^{k} m_{j}) & \text{(初始句，initial clause)} \\
+	\ALL \GLOBAL (\top\rto \bigvee_{j=1}^{k} m_{j}) &\text{(全局子句，global clause)} \\
+	\ALL \GLOBAL (\bigwedge_{i=1}^{n} l_{i} \rto \ALL \NEXT \bigvee_{j=1}^{k} m_{j}) & (\ALL\text{-步子句，} \ALL\text{-step clause}) \\
+	\ALL \GLOBAL (\bigwedge_{i=1}^{n} l_{i} \rto \EXIST_\tuple{ind} \NEXT \bigvee_{j=1}^{k} m_{j}) & (\EXIST\text{-步子句，} \EXIST\text{-step clause}) \\
+	\ALL \GLOBAL (\bigwedge_{i=1}^{n} l_{i} \rto \ALL \FUTURE l) & (\ALL\text{-某时子句，} \ALL\text{-sometime clause}) \\
+	\ALL \GLOBAL (\bigwedge_{i=1}^{n} l_{i} \rto \EXIST_{\tuple{ind}} \FUTURE l) & (\EXIST\text{-某时子句，} \EXIST\text{-sometime clause})\\
+\end{array}
+\]
+其中$k$和$n$都是大于0的常量，$\start$是命题常量符号，$l_i$（$1\leq i \leq n$）、$m_j$（$1\leq j \leq k$）和$l$都是文字，且$ind \in \Ind$。
+从上述标准形式中，可以看到每个$\CTLsnf$子句都是$\ALL\GLOBAL(P \rto G)$形式。因此在没有歧义的情况下，下文中将使用$P \rto G$指代这些子句。
+此外，除了额外说明，本文通常讲$\CTLsnf$子句和子句统称为子句。
+
+一个$\CTL$公式$\varphi$可以通过表~\ref{tab:trans}中的规则将其转换为一个$\CTLsnf$子句的集合，记为$T_{\varphi}$。
+
+\begin{table}[h!]%[width=.9\linewidth,cols=4,pos=h]
+	\footnotesize
+	\centering\caption{转换规则}\label{tab:trans}
+	\begin{tabular}{c}
+		\toprule
+		$
+		\begin{aligned}
+			& \textbf{Trans(1)}\frac{q \rto \EXIST T \varphi}{q\rto \EXIST_{\tuple{ind}} T \varphi}; \qquad
+			\textbf{Trans(2)} \frac{q \rto \EXIST (\varphi_1 \UNTILL \varphi_2)}{q\rto \EXIST_{\tuple{ind}} (\varphi_1 \UNTILL \varphi_2)};
+			&& 
+			\textbf{Trans(3)} \frac{q\rto \varphi_1 \wedge \varphi_2}{q\rto \varphi_1, q\rto \varphi_2};\\
+			&   \textbf{Trans(4)}  \frac{q\rto \varphi_1 \vee \varphi_2\ (\hbox{如果$\varphi_2$不是子句})}{ q\rto \varphi_1 \vee p, p\rto \varphi_2};
+			&&\textbf{Trans(5)}  \frac{q\rto D}{\top \rto \neg q \vee D};\ \frac{q\rto \perp}{ \top \rto \neg q};\ \frac{q \rto \top}{\{\}} \\
+			&  \textbf{Trans(6)} \frac{q\rto Q\NEXT \varphi\ (\hbox{如果$\varphi$不是子句})}{q\rto Q\NEXT p, p\rto \varphi}; 
+			&& \textbf{Trans(7)} \frac{q\rto Q\FUTURE \varphi\ (\hbox{如果$\varphi$不是文字})}{q\rto Q\FUTURE p, p\rto \varphi}; \\
+			&  \textbf{Trans(8)} \frac{q\rto Q(\varphi_1 \UNTILL \varphi_2) \  (\hbox{如果$\varphi_2$不是文字})}{q\rto Q(\varphi_1 \UNTILL p),  p\rto \varphi_2}; 
+			&& \textbf{Trans(10)} \frac{q\rto Q\GLOBAL \varphi}{\ q \rto  p, p\rto \varphi,p\rto Q\NEXT p};  \\
+			& \textbf{Trans(11)} \frac{q\rto Q(\varphi \UNTILL l)}{q \rto l\vee p, p\rto \varphi, p\rto Q\NEXT(l\vee p),q\rto Q \FUTURE l};
+			&& \textbf{Trans(12)} \frac{q\rto Q(\varphi \UNLESS l)}{q \rto l\vee p, p\rto \varphi, p\rto Q\NEXT(l\vee p)}.
+		\end{aligned}
+		$\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+在表~\ref{tab:trans}中，$T\in \{\NEXT, \GLOBAL, \FUTURE\}$，$ind$是规则中引入的新的索引且$Q\in \{\ALL, \EXIST_{\tuple{ind}}\}$；
+$q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句）, $p$是新的原子命题；$\varphi$，$\varphi_1$，和$\varphi_2$都是\CTL公式。
+
+规则\textbf{Trans(1)}和规则\textbf{Trans(2)}为每一个存在路径量词$\EXIST$引入一个新的索引$ind$；规则\textbf{Trans(3)}到规则\textbf{Trans(5)}通过引入新的替换规则将复杂的公式用新的原子命题替换；规则\textbf{Trans(6)}到规则\textbf{Trans(12)}用于移除掉那些不能出现在$\CTLsnf$中的时序操作符~\cite{DBLP:journals/aicom/ZhangHD10}。
+
+%在详细描述这些规则之前，首先介绍一下在$\CTL$中引入索引后得到的语言，本文称之为$\CTLsnf$子句的语言。
+
+
 
 \subsection{$\CTL$下的消解}
+
+\emph{消解}是一种用于判定给定的命题公式（或一阶公式）是否可满足的规则，该技术可以追溯到1960年Davis等的工作~\cite{DBLP:journals/jacm/DavisP60}，之后被Robinson加以完善~\cite{DBLP:journals/jacm/Robinson65}。对于给定的公式，消解给出一个反驳定理证明过程。
 
 \subsection{$\mu$-演算}
 

@@ -1,66 +1,66 @@
-\nomenclatureentry{N$\Ha$@[{$\Ha$}]\begingroup 原子命题的集合\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$V$， $\overline{V}$@[{$V$， $\overline{V}$}]\begingroup $V\subseteq {\cal A}$，$\overline{V}={\cal A}-V$\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N${\cal L}^p$@[{${\cal L}^p$}]\begingroup 经典命题语言\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$p,q,r, \dots$@[{$p,q,r, \dots$}]\begingroup 原子命题\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\neg$，$\wedge$，$\vee$，$\rto$，$\lrto$@[{$\neg$，$\wedge$，$\vee$，$\rto$，$\lrto$}]\begingroup 否定，合取，吸取，蕴涵，等值于\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\Atom({\cal L}^p)$，${\cal F}({\cal L}^p)$@[{$\Atom({\cal L}^p)$，${\cal F}({\cal L}^p)$}]\begingroup ${\cal L}^p$的原子公式的集合\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N${\cal F}({\cal L}^p)$@[{${\cal F}({\cal L}^p)$}]\begingroup ${\cal L}^p$的公式的集合（公式的集合）\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$top$@[{$top$}]\begingroup ture（1）（重言式或永真式）\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$bot$@[{$bot$}]\begingroup false（0）（矛盾式或永假式）\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$v:\Ha \rto \{0,1\}$@[{$v:\Ha \rto \{0,1\}$}]\begingroup 真假赋值\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N${\cal F}^{\Hm}$@[{${\cal F}^{\Hm}$}]\begingroup 命题单模态逻辑公式的集合\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\MPK$@[{$\MPK$}]\begingroup 必然\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\MPB$@[{$\MPB$}]\begingroup 可能\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\Hm=(S,R,L)$@[{$\Hm=(S,R,L)$}]\begingroup Kripke结构\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\tuple{S,s}$，$\tuple{W,w}$@[{$\tuple{S,s}$，$\tuple{W,w}$}]\begingroup $\MPK$-解释\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\Hm=(S,R,L,s_0)$@[{$\Hm=(S,R,L,s_0)$}]\begingroup 初始结构\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N${\cal K}=(\Hm,s)$@[{${\cal K}=(\Hm,s)$}]\begingroup 初始$\MPK$-结构\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\Tr_{n}^{\Hm}(s)$@[{$\Tr_{n}^{\Hm}(s)$}]\begingroup 定义在$\Hm$上根为$s$深度为$n$的计算树\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\cal L$@[{$\cal L$}]\begingroup $\CTL$语言\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\overset{def}{=}$@[{$\overset{def}{=}$}]\begingroup 定义为\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\varphi,\psi, \dots,\varphi_1, \psi_1,\dots$@[{$\varphi,\psi, \dots,\varphi_1, \psi_1,\dots$}]\begingroup 命题公式（公式）\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$v\models \varphi$，$(\Hm,s)\models \varphi$@[{$v\models \varphi$，$(\Hm,s)\models \varphi$}]\begingroup $v$，$(\Hm,s)$满足$\varphi$\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\pi_s=(s_1=s, s_2,\dots)$@[{$\pi_s=(s_1=s, s_2,\dots)$}]\begingroup 以$s$为起点的路径\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\Mod(\varphi)$@[{$\Mod(\varphi)$}]\begingroup $\varphi$的模型的集合\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\varphi_1\models \varphi_2$@[{$\varphi_1\models \varphi_2$}]\begingroup $\varphi_1$逻辑地蕴涵$\varphi_2$\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\varphi_1\equiv \varphi_2$@[{$\varphi_1\equiv \varphi_2$}]\begingroup $\varphi_1$和$\varphi_2$等值公式\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\Var(\varphi)$@[{$\Var(\varphi)$}]\begingroup 出现在$\varphi$的原子命题的集合\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\IR(\varphi,V)$@[{$\IR(\varphi,V)$}]\begingroup $\varphi$与$V$中的原子命题无关\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$n$@[{$n$}]\begingroup 系统用户总数\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\mathcal{X},\hat{\mathcal{X}}$@[{$\mathcal{X},\hat{\mathcal{X}}$}]\begingroup 原始数据字母表，扰动数据字母表\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\mid\mathcal{X}\mid$,$\mid\hat{\mathcal{X}}\mid$@[{$\mid\mathcal{X}\mid$,$\mid\hat{\mathcal{X}}\mid$}]\begingroup 原始与扰动字母表中不同的原子数\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$p(\cdot),q(\cdot/\cdot)$@[{$p(\cdot),q(\cdot/\cdot)$}]\begingroup 先验概率分布，条件概率分布\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\mathcal{D},\mathcal{A}$@[{$\mathcal{D},\mathcal{A}$}]\begingroup 防御者与攻击者的策略集合\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\Theta$@[{$\Theta$}]\begingroup 邻接矩阵\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$U(\cdot,\cdot)$@[{$U(\cdot,\cdot)$}]\begingroup 博弈的效用函数\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$d(\cdot,\cdot)$@[{$d(\cdot,\cdot)$}]\begingroup 失真测量函数\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\lambda$@[{$\lambda$}]\begingroup 拉格朗日乘子\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$T$,$w_{ij}$@[{$T$,$w_{ij}$}]\begingroup 收敛门限阈值，属性相关度门限\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\phi_{c}$@[{$\phi_{c}$}]\begingroup 依赖等级\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\mathcal{P},\mathcal{Q}$@[{$\mathcal{P},\mathcal{Q}$}]\begingroup 概率分布集合，隐私机制集合\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$r(\cdot,\cdot)$@[{$r(\cdot,\cdot)$}]\begingroup 联合概率分布\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$P^*,Q^*$@[{$P^*,Q^*$}]\begingroup 最优策略组合\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$q(\cdot,\cdot/\cdot),p(\cdot,\cdot)$@[{$q(\cdot,\cdot/\cdot),p(\cdot,\cdot)$}]\begingroup 条件概率分布以及联合概率分布\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$S_d,S_a$@[{$S_d,S_a$}]\begingroup 防御者与攻击者的策略\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$D_{KL}(\cdot \parallel \cdot)$@[{$D_{KL}(\cdot \parallel \cdot)$}]\begingroup 相对熵距离函数\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\delta$@[{$\delta$}]\begingroup 期望失真门限\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\tau$@[{$\tau$}]\begingroup 给定的质量损失约束\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{N$\mathcal{Q}_{d,\tau},Q_j$@[{$\mathcal{Q}_{d,\tau},Q_j$}]\begingroup 可达的隐私机制，第j个最佳隐私机制\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{DP}@[{\textbf{DP}}]\begingroup Differential Privacy\quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad 差分隐私\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{PPDP}@[{\textbf{PPDP}}]\begingroup Privacy-Preserving Data Publishing\quad \quad \quad \quad 隐私保护的数据发布\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{PPDA}@[{\textbf{PPDA}}]\begingroup Privacy-Preserving Data Analysis\quad \quad \ \ \ \quad \quad 隐私保护的数据分析\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{PPDM}@[{\textbf{PPDM}}]\begingroup Privacy-Preserving Data Mining\quad \quad \quad  \ \quad \quad 隐私保护的数据挖掘\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{LDP}@[{\textbf{LDP}}]\begingroup Local Differential Privacy\quad \quad \quad \quad  \quad \ \ \quad \quad 本地化差分隐私\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{RR}@[{\textbf{RR}}]\begingroup Randomized Response\quad \quad \quad \quad \quad \quad \quad  \ \quad \quad 随机响应\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{PM}@[{\textbf{PM}}]\begingroup Piecewise Mechanism\quad \quad \quad \quad \quad \quad \quad  \quad \quad 分段机制\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{MI}@[{\textbf{MI}}]\begingroup Mutual Information\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad 互信息\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{QIF}@[{\textbf{QIF}}]\begingroup Quantitative Information Flow\quad \quad \quad \quad  \quad \quad 量化信息流\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{ORRP}@[{\textbf{ORRP}}]\begingroup Orderly Randomized Response Perturbation 有序随机响应扰动\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{PPAD}@[{\textbf{PPAD}}]\begingroup Privacy-Preserving Attack Defense\quad \quad \  \quad \quad 隐私保护攻击防御\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{PDP}@[{\textbf{PDP}}]\begingroup Personalized Differential Privacy\quad \quad \ \ \ \quad \quad 个性化差分隐私\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{MRR}@[{\textbf{MRR}}]\begingroup Multivariate Randomized Response\quad  \ \ \quad \quad 多元随机响应\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{PDF}@[{\textbf{PDF}}]\begingroup Probability Density Function\quad \quad \quad \quad  \ \ \quad \quad 概率密度函数\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{BSC}@[{\textbf{BSC}}]\begingroup Binary Symmetric Channel\quad \quad \quad \quad  \quad \quad \quad 二元对称信道\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{DMC}@[{\textbf{DMC}}]\begingroup Discrete Memoryless Channel\quad \quad \quad  \quad \quad \quad 离散无记忆信道\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{SD}@[{\textbf{SD}}]\begingroup Saddle Point\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \ \quad \quad 鞍点\nomeqref {0}|nompageref}{ix}
-\nomenclatureentry{A\textbf{TPZS}@[{\textbf{TPZS}}]\begingroup Two-Person Zero-Sum\quad \quad \quad \quad \quad \quad \quad \ \quad \quad 二人零和\nomeqref {0}|nompageref}{ix}
+\nomenclatureentry{N$\Ha$@[{$\Ha$}]\begingroup 原子命题的集合\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$V$， $\overline{V}$@[{$V$， $\overline{V}$}]\begingroup $V\subseteq {\cal A}$，$\overline{V}={\cal A}-V$\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N${\cal L}^p$@[{${\cal L}^p$}]\begingroup 经典命题语言\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$p,q,r, \dots$@[{$p,q,r, \dots$}]\begingroup 原子命题\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\neg$，$\wedge$，$\vee$，$\rto$，$\lrto$@[{$\neg$，$\wedge$，$\vee$，$\rto$，$\lrto$}]\begingroup 否定，合取，吸取，蕴涵，等值于\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\Atom({\cal L}^p)$，${\cal F}({\cal L}^p)$@[{$\Atom({\cal L}^p)$，${\cal F}({\cal L}^p)$}]\begingroup ${\cal L}^p$的原子公式的集合\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N${\cal F}({\cal L}^p)$@[{${\cal F}({\cal L}^p)$}]\begingroup ${\cal L}^p$的公式的集合（公式的集合）\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$top$@[{$top$}]\begingroup ture（1）（重言式或永真式）\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$bot$@[{$bot$}]\begingroup false（0）（矛盾式或永假式）\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$v:\Ha \rto \{0,1\}$@[{$v:\Ha \rto \{0,1\}$}]\begingroup 真假赋值\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N${\cal F}^{\Hm}$@[{${\cal F}^{\Hm}$}]\begingroup 命题单模态逻辑公式的集合\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\MPK$@[{$\MPK$}]\begingroup 必然\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\MPB$@[{$\MPB$}]\begingroup 可能\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\Hm=(S,R,L)$@[{$\Hm=(S,R,L)$}]\begingroup Kripke结构\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\tuple{S,s}$，$\tuple{W,w}$@[{$\tuple{S,s}$，$\tuple{W,w}$}]\begingroup $\MPK$-解释\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\Hm=(S,R,L,s_0)$@[{$\Hm=(S,R,L,s_0)$}]\begingroup 初始结构\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N${\cal K}=(\Hm,s)$@[{${\cal K}=(\Hm,s)$}]\begingroup 初始$\MPK$-结构\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\Tr_{n}^{\Hm}(s)$@[{$\Tr_{n}^{\Hm}(s)$}]\begingroup 定义在$\Hm$上根为$s$深度为$n$的计算树\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\cal L$@[{$\cal L$}]\begingroup $\CTL$语言\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\overset{def}{=}$@[{$\overset{def}{=}$}]\begingroup 定义为\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\varphi,\psi, \dots,\varphi_1, \psi_1,\dots$@[{$\varphi,\psi, \dots,\varphi_1, \psi_1,\dots$}]\begingroup 命题公式（公式）\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$v\models \varphi$，$(\Hm,s)\models \varphi$@[{$v\models \varphi$，$(\Hm,s)\models \varphi$}]\begingroup $v$，$(\Hm,s)$满足$\varphi$\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\pi_s=(s_1=s, s_2,\dots)$@[{$\pi_s=(s_1=s, s_2,\dots)$}]\begingroup 以$s$为起点的路径\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\Mod(\varphi)$@[{$\Mod(\varphi)$}]\begingroup $\varphi$的模型的集合\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\varphi_1\models \varphi_2$@[{$\varphi_1\models \varphi_2$}]\begingroup $\varphi_1$逻辑地蕴涵$\varphi_2$\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\varphi_1\equiv \varphi_2$@[{$\varphi_1\equiv \varphi_2$}]\begingroup $\varphi_1$和$\varphi_2$等值公式\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\Var(\varphi)$@[{$\Var(\varphi)$}]\begingroup 出现在$\varphi$的原子命题的集合\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\IR(\varphi,V)$@[{$\IR(\varphi,V)$}]\begingroup $\varphi$与$V$中的原子命题无关\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$n$@[{$n$}]\begingroup 系统用户总数\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\mathcal{X},\hat{\mathcal{X}}$@[{$\mathcal{X},\hat{\mathcal{X}}$}]\begingroup 原始数据字母表，扰动数据字母表\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\mid\mathcal{X}\mid$,$\mid\hat{\mathcal{X}}\mid$@[{$\mid\mathcal{X}\mid$,$\mid\hat{\mathcal{X}}\mid$}]\begingroup 原始与扰动字母表中不同的原子数\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$p(\cdot),q(\cdot/\cdot)$@[{$p(\cdot),q(\cdot/\cdot)$}]\begingroup 先验概率分布，条件概率分布\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\mathcal{D},\mathcal{A}$@[{$\mathcal{D},\mathcal{A}$}]\begingroup 防御者与攻击者的策略集合\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\Theta$@[{$\Theta$}]\begingroup 邻接矩阵\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$U(\cdot,\cdot)$@[{$U(\cdot,\cdot)$}]\begingroup 博弈的效用函数\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$d(\cdot,\cdot)$@[{$d(\cdot,\cdot)$}]\begingroup 失真测量函数\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\lambda$@[{$\lambda$}]\begingroup 拉格朗日乘子\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$T$,$w_{ij}$@[{$T$,$w_{ij}$}]\begingroup 收敛门限阈值，属性相关度门限\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\phi_{c}$@[{$\phi_{c}$}]\begingroup 依赖等级\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\mathcal{P},\mathcal{Q}$@[{$\mathcal{P},\mathcal{Q}$}]\begingroup 概率分布集合，隐私机制集合\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$r(\cdot,\cdot)$@[{$r(\cdot,\cdot)$}]\begingroup 联合概率分布\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$P^*,Q^*$@[{$P^*,Q^*$}]\begingroup 最优策略组合\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$q(\cdot,\cdot/\cdot),p(\cdot,\cdot)$@[{$q(\cdot,\cdot/\cdot),p(\cdot,\cdot)$}]\begingroup 条件概率分布以及联合概率分布\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$S_d,S_a$@[{$S_d,S_a$}]\begingroup 防御者与攻击者的策略\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$D_{KL}(\cdot \parallel \cdot)$@[{$D_{KL}(\cdot \parallel \cdot)$}]\begingroup 相对熵距离函数\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\delta$@[{$\delta$}]\begingroup 期望失真门限\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\tau$@[{$\tau$}]\begingroup 给定的质量损失约束\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{N$\mathcal{Q}_{d,\tau},Q_j$@[{$\mathcal{Q}_{d,\tau},Q_j$}]\begingroup 可达的隐私机制，第j个最佳隐私机制\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{DP}@[{\textbf{DP}}]\begingroup Differential Privacy\quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad 差分隐私\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{PPDP}@[{\textbf{PPDP}}]\begingroup Privacy-Preserving Data Publishing\quad \quad \quad \quad 隐私保护的数据发布\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{PPDA}@[{\textbf{PPDA}}]\begingroup Privacy-Preserving Data Analysis\quad \quad \ \ \ \quad \quad 隐私保护的数据分析\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{PPDM}@[{\textbf{PPDM}}]\begingroup Privacy-Preserving Data Mining\quad \quad \quad  \ \quad \quad 隐私保护的数据挖掘\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{LDP}@[{\textbf{LDP}}]\begingroup Local Differential Privacy\quad \quad \quad \quad  \quad \ \ \quad \quad 本地化差分隐私\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{RR}@[{\textbf{RR}}]\begingroup Randomized Response\quad \quad \quad \quad \quad \quad \quad  \ \quad \quad 随机响应\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{PM}@[{\textbf{PM}}]\begingroup Piecewise Mechanism\quad \quad \quad \quad \quad \quad \quad  \quad \quad 分段机制\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{MI}@[{\textbf{MI}}]\begingroup Mutual Information\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad 互信息\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{QIF}@[{\textbf{QIF}}]\begingroup Quantitative Information Flow\quad \quad \quad \quad  \quad \quad 量化信息流\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{ORRP}@[{\textbf{ORRP}}]\begingroup Orderly Randomized Response Perturbation 有序随机响应扰动\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{PPAD}@[{\textbf{PPAD}}]\begingroup Privacy-Preserving Attack Defense\quad \quad \  \quad \quad 隐私保护攻击防御\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{PDP}@[{\textbf{PDP}}]\begingroup Personalized Differential Privacy\quad \quad \ \ \ \quad \quad 个性化差分隐私\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{MRR}@[{\textbf{MRR}}]\begingroup Multivariate Randomized Response\quad  \ \ \quad \quad 多元随机响应\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{PDF}@[{\textbf{PDF}}]\begingroup Probability Density Function\quad \quad \quad \quad  \ \ \quad \quad 概率密度函数\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{BSC}@[{\textbf{BSC}}]\begingroup Binary Symmetric Channel\quad \quad \quad \quad  \quad \quad \quad 二元对称信道\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{DMC}@[{\textbf{DMC}}]\begingroup Discrete Memoryless Channel\quad \quad \quad  \quad \quad \quad 离散无记忆信道\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{SD}@[{\textbf{SD}}]\begingroup Saddle Point\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \ \quad \quad 鞍点\nomeqref {0}|nompageref}{xi}
+\nomenclatureentry{A\textbf{TPZS}@[{\textbf{TPZS}}]\begingroup Two-Person Zero-Sum\quad \quad \quad \quad \quad \quad \quad \ \quad \quad 二人零和\nomeqref {0}|nompageref}{xi}

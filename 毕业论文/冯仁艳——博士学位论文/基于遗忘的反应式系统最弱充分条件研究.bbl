@@ -1,4 +1,4 @@
-\begin{thebibliography}{163}
+\begin{thebibliography}{166}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -986,6 +986,26 @@ BOLOTOV~A.
 \newblock Journal of Experimental $\&$ Theoretical Artificial Intelligence,
   1999, 11\penalty0 (1):\penalty0 77-93.
 \newblock DOI: \doi{10.1080/095281399146625}.
+
+\bibitem[Zhang et~al.(2008)Zhang, Hustadt, and Dixon]{zhang2008first}
+ZHANG~L, HUSTADT~U, DIXON~C.
+\newblock First-order resolution for {CTL}\allowbreak[R].
+\newblock [S.l.]: Citeseer, 2008.
+
+\bibitem[Zhang et~al.(2014)Zhang, Hustadt, and Dixon]{zhang2014resolution}
+ZHANG~L, HUSTADT~U, DIXON~C.
+\newblock A resolution calculus for the branching-time temporal logic
+  {CTL}\allowbreak[J].
+\newblock ACM Transactions on Computational Logic (TOCL), 2014, 15\penalty0
+  (1):\penalty0 1-38.
+
+\bibitem[Zhang et~al.(2010)Zhang, Hustadt, and
+  Dixon]{DBLP:journals/aicom/ZhangHD10}
+ZHANG~L, HUSTADT~U, DIXON~C.
+\newblock {CTL-RP:} {A} computation tree logic resolution
+  prover\allowbreak[J/OL].
+\newblock {AI} Commun., 2010, 23\penalty0 (2-3):\penalty0 111-136.
+\newblock \url{https://doi.org/10.3233/AIC-2010-0463}.
 
 \bibitem[{Dwork} et~al.(2015){Dwork}, {Feldman}, {Hardt}, {Pitassi},
   {Reingold}, and {Roth}]{dwork2015the}
