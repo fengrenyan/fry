@@ -1,4 +1,4 @@
-\begin{thebibliography}{166}
+\begin{thebibliography}{167}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -224,8 +224,8 @@ ICALP'06 Proceedings of the 33rd international conference on Automata,
 \newblock Universally utility-maximizing privacy mechanisms\allowbreak[J].
 \newblock SIAM Journal on Computing, 2012, 41\penalty0 (6):\penalty0 1673-1693.
 
-\bibitem[{Alvim} et~al.(2012{\natexlab{a}}){Alvim}, {Andr\'{e}s},
-  {Chatzikokolakis}, {Degano}, and {Palamidessi}]{alvim2011differential}
+\bibitem[{Alvim} et~al.(2012){Alvim}, {Andr\'{e}s}, {Chatzikokolakis},
+  {Degano}, and {Palamidessi}]{alvim2011differential}
 {Alvim}~M~S, {Andr\'{e}s}~M~E, {Chatzikokolakis}~K, et~al.
 \newblock Differential privacy: on the trade-off between utility and
   information leakage\allowbreak[J].
@@ -945,13 +945,19 @@ Proceedings of the Twenty-Ninth International Joint Conference on Artificial
 \newblock 面向计算机科学的数理逻辑\allowbreak[M].
 \newblock [出版地不详]: 北京大学出版社, 1989.
 
+\bibitem[Gabbay et~al.(2008)Gabbay, Schmidt, and Szalas]{gabbay2008second}
+GABBAY~D~M, SCHMIDT~R~A, SZALAS~A.
+\newblock Second-order quantifier elimination. foundations, computational
+  aspects and applications\allowbreak[M].
+\newblock [S.l.: s.n.], 2008.
+
 \bibitem[Kripke(1963)]{kripke1963semantical}
 KRIPKE~S~A.
 \newblock Semantical analysis of modal logic i normal modal propositional
   calculi\allowbreak[J].
 \newblock Mathematical Logic Quarterly, 1963, 9\penalty0 (5-6):\penalty0 67-96.
 
-\bibitem[Zhang et~al.(2009)Zhang and Zhou]{zhang2009knowledge}
+\bibitem[Zhang et~al.(2009{\natexlab{a}})Zhang and Zhou]{zhang2009knowledge}
 ZHANG~Y, ZHOU~Y.
 \newblock Knowledge forgetting: Properties and applications\allowbreak[J].
 \newblock Artificial Intelligence, 2009, 173\penalty0 (16-17):\penalty0
@@ -1007,72 +1013,64 @@ ZHANG~L, HUSTADT~U, DIXON~C.
 \newblock {AI} Commun., 2010, 23\penalty0 (2-3):\penalty0 111-136.
 \newblock \url{https://doi.org/10.3233/AIC-2010-0463}.
 
+\bibitem[Davis et~al.(1960)Davis and Putnam]{DBLP:journals/jacm/DavisP60}
+DAVIS~M, PUTNAM~H.
+\newblock A computing procedure for quantification theory\allowbreak[J/OL].
+\newblock J. {ACM}, 1960, 7\penalty0 (3):\penalty0 201-215.
+\newblock \url{http://doi.acm.org/10.1145/321033.321034}.
+
+\bibitem[Robinson(1965)]{DBLP:journals/jacm/Robinson65}
+ROBINSON~J~A.
+\newblock A machine-oriented logic based on the resolution
+  principle\allowbreak[J/OL].
+\newblock J. {ACM}, 1965, 12\penalty0 (1):\penalty0 23-41.
+\newblock \url{http://doi.acm.org/10.1145/321250.321253}.
+
+\bibitem[Enjalbert et~al.(1989)Enjalbert and del
+  Cerro]{DBLP:journals/tcs/EnjalbertC89}
+ENJALBERT~P, DEL CERRO~L~F.
+\newblock Modal resolution in clausal form\allowbreak[J/OL].
+\newblock Theor. Comput. Sci., 1989, 65\penalty0 (1):\penalty0 1-33.
+\newblock \url{https://doi.org/10.1016/0304-3975(89)90137-0}.
+
+\bibitem[Cavalli et~al.(1984)Cavalli and del Cerro]{DBLP:conf/cade/CavalliC84}
+CAVALLI~A~R, DEL CERRO~L~F.
+\newblock A decision method for linear temporal
+  logic\allowbreak[C/OL]//\allowbreak
+SHOSTAK~R~E.
+\newblock Lecture Notes in Computer Science: volume 170\quad 7th International
+  Conference on Automated Deduction, Napa, California, USA, May 14-16, 1984,
+  Proceedings.
+\newblock Springer, 1984: 113-127.
+\newblock \url{https://doi.org/10.1007/978-0-387-34768-4\_7}.
+
+\bibitem[Bolotov et~al.(1999)Bolotov and
+  Fisher]{DBLP:journals/jetai/BolotovF99}
+BOLOTOV~A, FISHER~M.
+\newblock A clausal resolution method for {CTL} branching-time temporal
+  logic\allowbreak[J/OL].
+\newblock J. Exp. Theor. Artif. Intell., 1999, 11\penalty0 (1):\penalty0 77-93.
+\newblock \url{https://doi.org/10.1080/095281399146625}.
+
+\bibitem[Zhang et~al.(2009{\natexlab{b}})Zhang and Zhou]{Yan:AIJ:2009}
+ZHANG~Y, ZHOU~Y.
+\newblock Knowledge forgetting: Properties and applications\allowbreak[J].
+\newblock Artificial Intelligence, 2009, 173\penalty0 (16-17):\penalty0
+  1525-1537.
+
+\bibitem[Kaushik et~al.(2002)Kaushik, Naughton, Bohannon, and
+  Shenoy]{kaushik2002updates}
+KAUSHIK~R, NAUGHTON~J~F, BOHANNON~P, et~al.
+\newblock Updates for structure indexes\allowbreak[C]//\allowbreak
+Proceedings of VLDB'02.
+\newblock [S.l.]: Elsevier, 2002: 239-250.
+
 \bibitem[{Dwork} et~al.(2015){Dwork}, {Feldman}, {Hardt}, {Pitassi},
   {Reingold}, and {Roth}]{dwork2015the}
 {Dwork}~C, {Feldman}~V, {Hardt}~M, et~al.
 \newblock The reusable holdout: Preserving validity in adaptive data
   analysis\allowbreak[J].
 \newblock Science, 2015, 349\penalty0 (6248):\penalty0 636-638.
-
-\bibitem[{Shannon}(1959)]{Shannon1959Coding}
-{Shannon}~C~E.
-\newblock Coding theorems for a discrete source with a fidelity
-  criteria\allowbreak[J].
-\newblock Ire National Convention Record, 1959, 4:\penalty0 93-126.
-
-\bibitem[{Hey} et~al.(2009){Hey}, {Tansley}, and {Tolle}]{hey2009the}
-{Hey}~T, {Tansley}~S, {Tolle}~K.
-\newblock The fourth paradigm: Data{-}intensive scientific
-  discovery\allowbreak[M].
-\newblock USA: Microsoft Research, 2009.
-
-\bibitem[吴宁博\ 等(2019)吴宁博, 彭长根, and 牟其林]{ningbowu2019}
-吴宁博, 彭长根, 牟其林.
-\newblock 面向关联属性的差分隐私信息熵度量方法\allowbreak[J].
-\newblock 电子学报, 2019, 47\penalty0 (11):\penalty0 2337-2343.
-
-\bibitem[{Alvim} et~al.(2012{\natexlab{b}}){Alvim}, {Chatzikokolakis},
-  {Palamidessi}, and {Smith}]{alvim2012measuring}
-{Alvim}~M~S, {Chatzikokolakis}~K, {Palamidessi}~C, et~al.
-\newblock Measuring information leakage using generalized gain
-  functions\allowbreak[C]//\allowbreak
-2012 IEEE 25th Computer Security Foundations Symposium.
-\newblock Cambridge, MA, USA: {IEEE} Computer Society, 2012{\natexlab{b}}:
-  265-279.
-
-\bibitem[{Wagner} et~al.(2018){Wagner} and {Eckhoff}]{wagner2018technical}
-{Wagner}~I, {Eckhoff}~D.
-\newblock Technical privacy metrics: A systematic survey\allowbreak[J].
-\newblock ACM Computing Surveys, 2018, 51\penalty0 (3):\penalty0 57:1-57:38.
-
-\bibitem[彭长根\ 等(2016)彭长根, 丁红发, 朱义杰, 田有亮, and
-  符祖峰]{peng2016}
-彭长根, 丁红发, 朱义杰, 等.
-\newblock 隐私保护的信息熵模型及其度量方法\allowbreak[J].
-\newblock 软件学报, 2016, 27\penalty0 (8):\penalty0 1891-1903.
-
-\bibitem[熊金波\ 等(2018)熊金波, 王敏燊, 田有亮, 马蓉,
-  姚志强, and 林铭炜]{xiongjinbo2018}
-熊金波, 王敏燊, 田有亮, 等.
-\newblock 面向云数据的隐私度量研究进展\allowbreak[J].
-\newblock 软件学报, 2018, v.29\penalty0 (7):\penalty0 141-158.
-
-\bibitem[{Boreale} et~al.(2015){Boreale} and
-  {Pampaloni}]{boreale2015quantitative}
-{Boreale}~M, {Pampaloni}~F.
-\newblock Quantitative information flow under generic leakage functions and
-  adaptive adversaries\allowbreak[J/OL].
-\newblock Logical Methods in Computer Science, 2015, 11\penalty0 (4):\penalty0
-  1-31.
-\newblock \url{https://doi.org/10.2168/LMCS-11(4:5)2015}.
-
-\bibitem[{Alvim} et~al.(2010){Alvim}, {Chatzikokolakis}, {Degano}, and
-  {Palamidessi}]{alvim2010differential}
-{Alvim}~M~S, {Chatzikokolakis}~K, {Degano}~P, et~al.
-\newblock Differential privacy versus quantitative information
-  flow\allowbreak[J/OL].
-\newblock CoRR, 2010, abs/1012.4250.
-\newblock \url{http://arxiv.org/abs/1012.4250}.
 
 \bibitem[张啸剑\ 等(2014)张啸剑 and 孟小峰]{zhangxiaojian2014}
 张啸剑, 孟小峰.
@@ -1084,6 +1082,21 @@ ZHANG~L, HUSTADT~U, DIXON~C.
 \newblock Mechanism design via differential privacy\allowbreak[C]//\allowbreak
 48th Annual IEEE Symposium on Foundations of Computer Science (FOCS'07).
 \newblock Providence, RI, USA: IEEE, 2007: 94-103.
+
+\bibitem[{Boreale} et~al.(2015){Boreale} and
+  {Pampaloni}]{boreale2015quantitative}
+{Boreale}~M, {Pampaloni}~F.
+\newblock Quantitative information flow under generic leakage functions and
+  adaptive adversaries\allowbreak[J/OL].
+\newblock Logical Methods in Computer Science, 2015, 11\penalty0 (4):\penalty0
+  1-31.
+\newblock \url{https://doi.org/10.2168/LMCS-11(4:5)2015}.
+
+\bibitem[彭长根\ 等(2016)彭长根, 丁红发, 朱义杰, 田有亮, and
+  符祖峰]{peng2016}
+彭长根, 丁红发, 朱义杰, 等.
+\newblock 隐私保护的信息熵模型及其度量方法\allowbreak[J].
+\newblock 软件学报, 2016, 27\penalty0 (8):\penalty0 1891-1903.
 
 \bibitem[吴振强\ 等(2019)吴振强, 胡静, 田堉攀, 史武超, and
   颜军]{zhenqiangwu2019}
