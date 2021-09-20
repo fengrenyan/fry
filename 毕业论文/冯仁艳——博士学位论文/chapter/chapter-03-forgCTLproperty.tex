@@ -40,11 +40,50 @@
 
 
 下面例子呈现结构之间的$V$-互模拟。
-\begin{example}
-	
+\begin{example}\label{exam:vB}
+	令${\cal K}_1$，${\cal K}_2$和${\cal K}_3$为三个$\MPK$-结构，其图表示分别如图中的${\cal K}_1$，${\cal K}_2$和${\cal K}_3$所示。它们之间的互模拟关系也如图中标记所示，即${\cal K}_1 \lrto_{\{sp\}} {\cal K}_2$，${\cal K}_2 \lrto_{\{se\}} {\cal K}_3$和${\cal K}_1 \lrto_{\{sp,se\}} {\cal K}_3$。此外，可以看出${\cal K}_1$，${\cal K}_2$和${\cal K}_3$之间是互不互模拟\cite{Baier:PMC:2008}的，即不$\emptyset$-互模拟。
+	\begin{figure*}[!htb]
+		\centering
+		% Requires \usepackage{graphicx}
+		\includegraphics[width=8cm]{chapter03/NVBnewCar.png}\\
+		\caption{$\MPK$-结构之间的$V$-互模拟关系}
+		\label{Fig:chapter05-1}
+	\end{figure*}
 \end{example}
 
-
+ 为了简化书写和看起来简洁，当从上下文中能明确知道所指的初始结构和$\Ind$-Kripke结构（为了方便，将这两种结构通称为结构），则可以使用状态来表示这些结构之间的$V$-互模拟，即使用$s_1 \lrto_V s_2$替代$(\Hm_1, s_1)\lrto (\Hm_2,s_2)$。
+ 
+ $V$-互模拟给出了两个结构之间相互模仿的行为关系，下面的命题给出了这种关系一些关键的性质。
+ \begin{proposition}
+ 	令$i$是属于集合$\{1,2\}$的变量，$V_1$和$V_2$是$\Ha$的子集，$s_1'$和$s_2'$是两个状态，$\pi_1'$和$\pi_2'$是两条路径，${\cal K}_j=(\Hm_j,s_j)$$(j=1,2,3)$是$\MPK$-结构（或$\Ind$-结构）。如果$({\cal K}_1 \lrto_{V_1} {\cal K}_2)$且$({\cal K}_2 \lrto_{V_2} {\cal K}_3)$，则：
+ 	\begin{itemize}
+ 		\item[] (i) 若$s_1' \lrto_{V_i} s_2'$，则$s_1'\lrto_{V_1 \cup V_2} s_2'$；
+ 		\item[] (ii) 若$\pi_1' \lrto_{V_i} \pi_2'$，则$\pi_1'\lrto_{V_1 \cup V_2} \pi_2'$；
+ 		\item[] (iii) 对$\Hm_1$上的任意一条路径$\pi_{s_1}$，存在$\Hm_2$上的一条路径$\pi_{s_2}$使得$\pi_{s_1} \lrto_{V_1} \pi_{s_2}$；反之亦然；
+ 		\item[] (iv) ${\cal K}_1 \lrto_{V_1 \cup V_2} {\cal K}_3$；
+ 		\item[] (v) 若$V_1 \supseteq V_2$，则${\cal K}_1 \lrto_{V_2} {\cal K}_2$。
+ 	\end{itemize}
+ \end{proposition}
+\begin{proof}
+	(i) 假设$s_1'$和$s_2'$分别来源于$\Hm_1$和$\Hm_2$，${\cal K}_1=(\Hm_1,s_1)$，${\cal K}_2=(\Hm_2,s_2)$。为了证明$s_1'\lrto_{V_1 \cup V_2} s_2'$，只需证明对于任意的$n\ge 0$，$(s_1',s_2')\in \Hb_n^{V_1 \cup V_2}$。
+	
+	基始. 当$n=0$时显然是成立的。
+	
+	归纳步骤. 假设对于任意的$0\leq i \leq n$，若$({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_1}$且$({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_2}$，则$({\cal K}_1, {\cal K}_2) \in \Hb_i^{V_1\cup V_2}$。这里根据定义~\ref{def:V-bisimulation}证明对于若$({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1}$且$({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_2}$，则$({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1\cup V_2}$。
+	
+	（a）$L_1(s_1)-(V_1\cup V_2) = L_2(s_2) - (V_1 \cup V_2)$是显然成立的。
+	
+	（b）给定$i\in \{1,2\}$，$0< j \leq n+1$，$K_i^j=(\Hm_i, s_i^j)$。这里将证明对于任意的$(s_1,s_1^1)\in R_1$，存在一个$(s_2,s_2^1)\in R_2$使得$(s_1^1,s_2^1)\in \Hb_n^{V_1\cup V_2}$。
+	有归纳假设可知$({\cal K}_1,{\cal K}_2)\in \Hb_n^{V_1\cup V_2}$，因而有$({\cal K}_1^1, {\cal K}_2^1) \in \Hb_{n-1}^{V_1 \cup V_2}$。
+	因此，只需证明对于任意的$(s_1^n,s_1^{n+1})\in R_1$，存在$(s_2^n,s_2^{n+1}) \in R_2$使得$(s_1^{n+1},s_2^{n+1})\in \Hb_0^{V_1\cup V_2}$。
+	因为$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^{V_1}$且$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^{V_2}$，所以有$L_1(s_1^{n+1}) - (V_1 \cup V_2) = L_1(s_2^{n+1}) - (V_1 \cup V_2)$。
+	
+	（c）定义中的第三点可以类似（b）证明。
+	
+	因此，当令$s_1$和$s_2$分别为$s_1'$和$s_2'$，就可得到$s_1'\lrto_{V_1 \cup V_2} s_2'$。
+	
+	(ii)
+\end{proof}
  
 
 \section{本章小结}
