@@ -47,14 +47,14 @@
 		% Requires \usepackage{graphicx}
 		\includegraphics[width=8cm]{chapter03/NVBnewCar.png}\\
 		\caption{$\MPK$-结构之间的$V$-互模拟关系}
-		\label{Fig:chapter05-1}
+		\label{Fig:chapter05:v1uv2}
 	\end{figure*}
 \end{example}
 
  为了简化书写和看起来简洁，当从上下文中能明确知道所指的初始结构和$\Ind$-Kripke结构（为了方便，将这两种结构通称为结构），则可以使用状态来表示这些结构之间的$V$-互模拟，即使用$s_1 \lrto_V s_2$替代$(\Hm_1, s_1)\lrto (\Hm_2,s_2)$。
  
  $V$-互模拟给出了两个结构之间相互模仿的行为关系，下面的命题给出了这种关系一些关键的性质。
- \begin{proposition}
+ \begin{proposition}\label{pro:div}
  	令$i$是属于集合$\{1,2\}$的变量，$V_1$和$V_2$是$\Ha$的子集，$s_1'$和$s_2'$是两个状态，$\pi_1'$和$\pi_2'$是两条路径，${\cal K}_j=(\Hm_j,s_j)$$(j=1,2,3)$是$\MPK$-结构（或$\Ind$-结构）。如果$({\cal K}_1 \lrto_{V_1} {\cal K}_2)$且$({\cal K}_2 \lrto_{V_2} {\cal K}_3)$，则：
  	\begin{itemize}
  		\item[] (i) 若$s_1' \lrto_{V_i} s_2'$，则$s_1'\lrto_{V_1 \cup V_2} s_2'$；
@@ -129,12 +129,31 @@
 	
 	(b) 对于任意的$(s_1,s_{1,1})\in R_1$，下面证明存在一个$(s_2,s_{2,1})\in R_2$使得$({\cal K}_{1,1}, {\cal K}_{2,1}) \in \Hb_k^{V_2}$。
 	由归纳假设可知$({\cal K}_{1,1}, {\cal K}_{2,1}) \in \Hb_{k-1}^{V_2}$，因而只需要证明：\textcircled{1} 对于所有的$(s_{1,k},s_{1,k+1})\in R_1$存在一个$(s_{2,k},s_{2,k+1})\in R_2$使得$({\cal K}_{1,k+1}, {\cal K}_{2,k+1}) \in \Hb_0^{V_2}$由于$({\cal K}_{1,1}, {\cal K}_{2,1}) \in \Hb_k^{V_1}$。因此，类似与基始里的证明方法，可得$L_1(s_{1,k+1})-V_2 = L_2(s_{2,k+1})-V_2$成立，即：$({\cal K}_{1,k+1}, {\cal K}_{2,k+1}) \in \Hb_0^{V_2}$。
-	\textcircled{2} 可以类似\textcircled{1}证明对任意的$(s_{2,k},s_{2,k+1})\in R_1$存在一个$(s_{1,k},s_{1,k+1})\in R_2$使得$({\cal K}_{1,k+1}, {\cal K}_{2,k+1}) \in \Hb_0^{V_2}$。
+	\textcircled{2} 可以类似\textcircled{1}证明对任意的$(s_{2,k},s_{2,k+1})\in R_1$存在一个$(s_{1,k},s_{1,k+1})\in R_2$使得$({\cal K}_{1,k+1}$, ${\cal K}_{2,k+1}) \in \Hb_0^{V_2}$。
 	
 	(c) 对于任意的$(s_2,s_{2,1}) \in R_2$，类似(b)可以证明存在$(s_1,s_{1,1}) \in R_1$使得$({\cal K}_{1,1}, {\cal K}_{2,1}) \in \Hb_k^{V_2}$。
 \end{proof}
  
+ 在命题~\ref{pro:div}中，性质(i)-(iii)是$V$-互模拟的标准属性，含义比较直观。性质(iv)表示如果一个结构分别与另外的两个结构具有$V_1$和$V_2$-互模拟关系，则这两个结构是$V_1\cup V_2$-互模拟的（如图~\ref{Fig:chapter05:v1uv2}所示）。如后文所示，这一性质对遗忘理论性质的探索至关重要。性质(v)表示若两个结构是$V_1$-互模拟的，则对于任意的$V_2$，若$V_1 \subseteq V_2$则这两个结构是$V_2$-互模拟的。
+ 
+ 从互模拟的定义上来看，如果两个结构是$V$-互模拟的，那么对于与$V$中的原子命题无关的公式$\varphi$来说，这两个结构同时满足或不满足$\varphi$。这一性质可以形式化地描述如下：
+ 
+ \begin{theorem}
+ 	令$V\subseteq \Ha$是原子命题的集合，${\cal K}_i$ $(i=1,2)$是两个具有$V$-互模拟的$\MPK$-结构，即：${\cal K}_1 \lrto_V {\cal V_2}$，$\Phi$是一个$\CTL$公式且$\IR(\Phi, V)$。则有${\cal K}_1\models \Phi$当且仅当${\cal K}_2\models \Phi$。
+ \end{theorem}
+\begin{proof}
+	这一结论可以从$\CTL$公式的结构归纳地来证明。此外，不失一般性地可以假设$\Var(\Phi) \cap V=\emptyset$，${\cal K}_1=(\Hm,s)$和${\cal K}_1=(\Hm',s')$。
+	
+	情形1：$\Phi = p$ （$p\in \Ha -V$）.
+	
+	$(\Hm,s)\models \Phi$当且仅当$p\in L(s)$ \hfill （可满足关系的定义）\\
+	$\LRto$ $p\in L'(s')$ \hfill （$s \lrto_v s'$）\\
+	$\LRto$ $(\Hm',s') \models \Phi$。
+\end{proof}
 
+\begin{example}
+	令$\varphi_1 = d \wedge \EXIST\FUTURE se \wedge \ALL\GLOBAL(se \rto \ALL\NEXT d)$和$\varphi_2=d \wedge \ALL\NEXT se$是两个$\CTL$公式，且$\IR(\varphi_1,\{sp\})$ 和 $\IR(\varphi_2,\{sp\})$成立。因此可以验证图~\ref{Fig:chapter05:v1uv2}中的${\cal K}_1$和${\cal K}_2$都满足$\varphi_1$，但是都不满足$\varphi_2$。
+\end{example}
 \section{本章小结}
 本章基于Shannon基本通信模型，给出差分隐私通信模型及其信道数学模型。以此通信模型为基本出发点，构建了一种属性关联、元组记录独立同分布的离散无记忆信源的$n$次扩展信源。在此基础上，引入信息熵、条件熵、互信息量、失真函数等概念给出了隐私信源熵、隐私熵与隐私泄露风险、数据效用的基本度量模型及方法。进一步，针对多维属性关联的隐私度量问题，基于信息熵提出了面向关联属性的差分隐私信息熵度量模型及方法。首先，利用互信息相关性分析方法解决关联属性相关度量化问题。随后，基于相关度给出关联属性的图表示。进一步，基于差分隐私的信道模型、属性关联图中隐私泄露关键路径，借助马尔可夫理论分析了关联属性导致敏感信息的隐私泄露量。最后，以真实数据集上的实验给出所提出的信息熵度量模型及方法的量化过程及结果。本章是研究差分隐私信息论度量的基础工作，为后续基于隐私信息度量研究权衡隐私与效用均衡优化模型以及隐私机制设计奠定基础。
 
