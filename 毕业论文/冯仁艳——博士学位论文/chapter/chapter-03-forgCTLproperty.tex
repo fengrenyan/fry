@@ -65,6 +65,8 @@
  	\end{itemize}
  \end{proposition}
 \begin{proof}
+	这里给出结构为$\MPK$-结构的证明，结构为$\Ind$-结构的情形可以类似地证明。
+	
 	(i) 假设$s_1'$和$s_2'$分别来源于$\Hm_1$和$\Hm_2$，${\cal K}_1=(\Hm_1,s_1)$，${\cal K}_2=(\Hm_2,s_2)$。为了证明$s_1'\lrto_{V_1 \cup V_2} s_2'$，只需证明对于任意的$n\ge 0$，$(s_1',s_2')\in \Hb_n^{V_1 \cup V_2}$。
 	
 	基始. 当$n=0$时显然是成立的。
@@ -138,8 +140,8 @@
  
  从互模拟的定义上来看，如果两个结构是$V$-互模拟的，那么对于与$V$中的原子命题无关的公式$\varphi$来说，这两个结构同时满足或不满足$\varphi$。这一性质可以形式化地描述如下：
  
- \begin{theorem}
- 	令$V\subseteq \Ha$是原子命题的集合，${\cal K}_i$ $(i=1,2)$是两个具有$V$-互模拟的$\MPK$-结构，即：${\cal K}_1 \lrto_V {\cal V_2}$，$\Phi$是一个$\CTL$公式且$\IR(\Phi, V)$。则有${\cal K}_1\models \Phi$当且仅当${\cal K}_2\models \Phi$。
+ \begin{theorem}\label{thm:V-bisimulation:EQ}
+ 	令$V\subseteq \Ha$是原子命题的集合，${\cal K}_i$ $(i=1,2)$是两个具有$V$-互模拟的$\MPK$-结构，即：${\cal K}_1 \lrto_V {\cal K}_2$，$\Phi$是一个$\CTL$公式且$\IR(\Phi, V)$。则有${\cal K}_1\models \Phi$当且仅当${\cal K}_2\models \Phi$。
  \end{theorem}
 \begin{proof}
 	这一结论可以从$\CTL$公式的结构归纳地来证明。此外，不失一般性地可以假设$\Var(\Phi) \cap V=\emptyset$，${\cal K}_1=(\Hm,s)$和${\cal K}_1=(\Hm',s')$。
@@ -149,11 +151,144 @@
 	$(\Hm,s)\models \Phi$当且仅当$p\in L(s)$ \hfill （可满足关系的定义）\\
 	$\LRto$ $p\in L'(s')$ \hfill （$s \lrto_v s'$）\\
 	$\LRto$ $(\Hm',s') \models \Phi$。
+	
+	情形2：$\Phi = \neg \psi$.
+	
+	$(\Hm,s)\models \Phi$当且仅当$(\Hm,s) \not \models \psi$\\
+	$\LRto$ $(\Hm',s')\not \models \psi$  \hfill （归纳假设）\\
+	$\LRto$ $(\Hm',s') \models \Phi$。
+	
+	情形3：$\Phi = \psi_1 \vee \psi_2$.
+	
+	$(\Hm,s)\models \Phi$\\
+	$\LRto$ $(\Hm,s) \models \psi_1$或$(\Hm,s) \models \psi_2$\\
+	$\LRto$ $(\Hm',s')  \models \psi_1$或$(\Hm',s') \models \psi_2$ \hfill （归纳假设）\\
+	$\LRto$ $(\Hm',s') \models \Phi$。
+	
+	情形4：$\Phi=\EXIST\NEXT\psi$.
+	
+	$(\Hm,s)\models \Phi$\\
+	$\LRto$ 存在一条路径$\pi=(s,s_1,\dots)$使得$(\Hm,s_1)\models \psi$\\
+	$\LRto$ 存在一条路径$\pi'=(s',s_1',\dots)$使得$\pi \lrto_V \pi'$ \hfill ($s \lrto_V s'$，Proposition~\ref{pro:div})\\
+	$\LRto$ $s_1 \lrto_V s_1'$ \hfill ($\pi \lrto_V \pi'$)\\
+	$\LRto$ $(\Hm',s_1') \models \psi$   \hfill   （归纳假设）\\
+	$\LRto$ $(\Hm',s')\models \Phi$。
+	
+	情形5：$\Phi = \EXIST \GLOBAL \psi$.
+	
+		$(\Hm,s)\models \Phi$\\
+	$\LRto$ 存在一条路径$\pi=(s=s_0,s_1,\dots)$使得对于任意的$i\ge 0$都有$(\Hm,s_i)\models \psi$\\
+	$\LRto$ 存在一条路径$\pi'=(s'=s_0',s_1',\dots)$使得$\pi \lrto_V \pi'$ \hfill ($s \lrto_V s'$，Proposition~\ref{pro:div})\\
+	$\LRto$ 对于任意的$i\ge 0$都有$s_i \lrto_V s_i'$ \hfill ($\pi \lrto_V \pi'$)\\
+	$\LRto$ 对于任意的$i\ge 0$都有$(\Hm,s_i') \models \psi$ \hfill （归纳假设）\\
+	$\LRto$ $(\Hm',s')\models \Phi$。
+	
+	情形6：$\Phi = \EXIST (\psi_1 \UNTILL \psi_2)$.
+	
+	$(\Hm,s) \models \Phi$\\
+	$\LRto$ 存在一条路径$\pi=(s=s_0,s_1,\dots)$和$i \ge 0$使得$(\Hm,s_i) \models \psi_2$，且对所有的$0\leq j <i$都有$(\Hm,s_j)\models \psi_1$\\
+	$\LRto$ 存在一条路径$\pi'=(s'=s_0',s_1',\dots)$使得$\pi \lrto_V \pi'$ \hfill ($s \lrto_V s'$，Proposition~\ref{pro:div})\\
+	$\LRto$ $(\Hm',s_i') \models \psi_2$，且对于所有的$0\leq j <i$都有$(\Hm',s_j')\models \psi_1$  \hfill  （归纳假设）\\
+	$\LRto$ $(\Hm',s')\models \Phi$。
 \end{proof}
 
 \begin{example}
 	令$\varphi_1 = d \wedge \EXIST\FUTURE se \wedge \ALL\GLOBAL(se \rto \ALL\NEXT d)$和$\varphi_2=d \wedge \ALL\NEXT se$是两个$\CTL$公式，且$\IR(\varphi_1,\{sp\})$ 和 $\IR(\varphi_2,\{sp\})$成立。因此可以验证图~\ref{Fig:chapter05:v1uv2}中的${\cal K}_1$和${\cal K}_2$都满足$\varphi_1$，但是都不满足$\varphi_2$。
 \end{example}
+
+\section{遗忘理论及其语义属性}
+这部分将给出$\CTL$下的遗忘理论的定义及其相关属性。
+
+\begin{definition}[遗忘理论]\label{def:V:forgetting}
+	令$V$是$\Ha$的一个子集，$\Phi$是一个公式。如果一个公式$\psi$满足下面条件，则称$\psi$为从$\Phi$中遗忘掉$V$后得到结果，记为$\CTLforget(\Phi, V)$：
+	\begin{itemize}
+		\item $\psi$与$V$中原子命题无关（即：$\Var(\psi) \cap V= \emptyset$）；
+		\item $\Mod(\psi)=\{{\cal K}\mid {\cal K} \mbox{是一个初始$\MPK$-结构}, \exists {\cal K}'\in\Mod(\phi)\ \text{ \st }\ {\cal K}'\lrto_V{\cal K}\}$
+	\end{itemize}
+	%$V$中原子命题无关的公式（即：$\Var(\varphi) \cap V= \emptyset$） 
+\end{definition}
+
+	
+从定义~\ref{def:V:forgetting}可以看出，如果有两个公式$\psi$和$\psi'$都是从$\Phi$中遗忘掉$V$中元素后得到的结果，则有$\psi\equiv \psi'$。从这个角度来看，可以说从$\Phi$中遗忘掉$V$中元素后得到的结果之间是语义等价的。此外，当$V$中只包含一个元素的时候，可以省略掉集合符号，即：$\CTLforget(\Phi, \{p\}) \equiv \CTLforget(\Phi, p)$。
+
+回顾一下，从命题公式$\varphi$中遗忘掉原子命题$p$得到的结果记为：$\Forget(\varphi,\{p\})\equiv\varphi[p/\bot] \vee \varphi[p/\top]$。
+值得注意的是，本文的遗忘理论的定义与Lin等人于1994提出命题逻辑下的遗忘理论一致。换句话说，本文将命题逻辑下的遗忘理论扩展到了$\CTL$下。下面命题展示了上述结论：
+
+\begin{theorem}\label{thm:PL:CTL}
+	给定一个命题公式$\varphi$和原子命题的集合$V\subseteq \Ha$，则下面逻辑等式成立。
+	\[\CTLforget(\varphi, V) \equiv \Forget(\varphi,V).
+	\]
+\end{theorem}
+\begin{proof}
+	为了证明上述结论成立，只需要证明$\Mod(\CTLforget(\varphi, V))= \Mod(\Forget(\varphi,V))$。
+	
+	一方面，对于$\CTLforget(\varphi, V)$的任意一个模型$(\Hm, s)$，由遗忘理论的定义可知存在一个$\varphi$的模型$(\Hm',s')$使得$(\Hm, s)\lrto_V (\Hm',s')$。因而有$(s,s')\in \Hb_0$，这意味着$(\Hm,s)\models \Forget(\varphi,V)$。
+	
+	另一方面，对于$\Forget(\varphi,V)$的任意一个模型$(\Hm, s)$（$\Hm=(S,R,L,s)$），存在一个$\varphi$的模型$(\Hm',s')$（$\Hm'=(S',R',L',s')$）使得$(s,s')\in \Hb_0$。此时可以构建一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$\Hm_1=(S_1,R_1,L_1,s_1)$，其中：
+	\begin{itemize}
+		\item $S_1=(S-\{s\})\cup \{s_1\}$；
+		\item $R_1$由将$R$出现的$s$替换为$s_1$得到；
+		\item 对于$S_1$中的任意的一个状态$s^*$：
+		\[L_1(s^*)=
+		\left\{
+		\begin{array}{ll}
+			L'(s'), \quad \qquad \qquad \hbox{如果$s^*=s_1$；} \\
+			L(s^*), \ \ \ \ \qquad \qquad \hbox{否则。}
+		\end{array}
+		\right.
+		\]
+	\end{itemize}
+
+	显然，$(\Hm_1,s_1)$是$\varphi$的一个模型且$s_1 \lrto_V s$。因此，$(\Hm,s)$是$\CTLforget(\varphi,V)$的一个模型。
+\end{proof}
+
+遗忘理论的另一个重要的属性与$V$-无关性密切相关。直观地说，对于给定的公式$\psi=\varphi \wedge (q\lrto \alpha)$，如果$\IR(\varphi \wedge \alpha, \{q\})$，那么从$\psi$中遗忘掉$q$后得到的结果为$\varphi$。这一性质与后文中将要介绍的$SNC$（$WSC$）的计算密切相关。但是由于其也是遗忘理论的性质，因而本文将其放在此处来探讨。
+\begin{lemma}
+	给定两个公式$\varphi$和$\alpha$，且$q \in \overline{\Var(\varphi) \cup \Var(\alpha)}$。则$\CTLforget(\varphi \wedge (q \lrto \alpha), q)\equiv \varphi$。
+\end{lemma}
+\begin{proof}
+	令$\varphi'=\varphi \wedge (q \lrto \alpha)$。
+	对于任意$\CTLforget(\varphi',q)$的模型$(\Hm,s)$，有遗忘理论的定义可知存在一个初始$\MPK$-结构$(\Hm',s')$使得$(\Hm,s)\lrto_{\{q\}}(\Hm',s')$且$(\Hm',s')\models \varphi'$。
+   $(\Hm',s')\models \varphi$显然成立。
+   此外，由于$\IR(\varphi, \{q\})$且$(\Hm,s)\lrto_{\{q\}}(\Hm',s')$，由定理~\ref{thm:V-bisimulation:EQ}可知$(\Hm,s)\models \varphi$。
+   
+   为了证明另一个方向，令$\Hm=(S,R,L,s)$且$(\Hm,s)\in \Mod(\varphi)$。下面初始$\MPK$-结构构造$(\Hm',s)$使得$\Hm'=(S,R,L',s)$，其中：
+   	\begin{align*}
+   	& L':S \rto \Ha\ \mbox{和}\ \forall s^*\in S, \hbox{ 若}\ (\Hm, s^*) \not \models \alpha, \hbox{ 则 } L'(s^*) = L(s^*)-\{q\}\,  \hbox{ 否则 }\ L'(s^*) = L(s^*)\cup\{q\}, \\
+   	& \hbox{ 若}\ (\Hm, s) \models \alpha, \hbox{ 则 } L'(s) = L(s) \cup\{q\}, \ \hbox{ 否则}\ L'(s) = L(s)-\{q\}.
+   \end{align*}
+
+	可以看出$(\Hm',s) \models \varphi$，$(\Hm',s)\models q \lrto \alpha$且$(\Hm',s) \lrto_{\{q\}} (\Hm,s)$。
+	因此，$(\Hm',s) \models \varphi \wedge (q \lrto \alpha)$。所以，由$(\Hm',s) \lrto_{\{q\}} (\Hm,s)$可知$(\Hm,s)\models \CTLforget(\varphi \wedge (q \lrto \alpha), q)$。
+\end{proof}
+
+除了上述性质，遗忘理论还有其他一些一般属性。下面将详细介绍这些属性。
+
+根据遗忘理论的定义可以看出，从一个公式里遗忘掉某个原子命题集合中的元素是将该集合看作一个整体来遗忘的。下面的结论说明，遗忘可以将原子命题中的元素拿出来一个一个的遗忘，而不是作为一个整体。
+\begin{proposition}[Modularity]\label{disTF}
+	对于给定的公式$\varphi$，原子命题集合$V$，和原子命题$p$（$p\not \in V$），下面的结论成立：
+	\[
+	\CTLforget(\varphi,\{p\}\cup V) \equiv \CTLforget(\CTLforget(\varphi,p),V).
+	\]
+\end{proposition}
+\begin{proof}
+	要证明上述结论成立，只需证明等式左右两边的公式有相同的模型。
+	
+	一方面，令$\Hm_1=(S_1,R_1,L_1,s_1)$是一个初始结构，$(\Hm_1,s_1)$是$\CTLforget(\varphi,\{p\}\cup V)$的一个模型。由遗忘理论的定义可知，存在$\varphi$的一个模型$(
+	Hm,s)$（$\Hm=(S,R,L,s)$）使得$(\Hm_1,s_1)\lrto_{\{p\}\cup V} (\Hm,s)$。
+	此时，可以如下构建一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$\Hm_2=(S_2,R_2,L_2,s_2)$且：
+	\begin{itemize}
+		\item[(1)] 对于$s_2$：令$s_2$是满足下面条件的状态：
+		\begin{itemize}
+			\item $p \in L_2(s_2)$当且仅当$p\in L_1(s_1)$，
+			\item 对于任意的$q \in V$，$q \in L_2(s_2)$当且仅当$q\in L(s)$，
+			\item 对于其他的原子命题$q'$，$q' \in L_2(s_2)$当且仅当$q'\in L_1(s_1)$当且仅当$q'\in L(s)$。
+		\end{itemize}
+			
+		\item[(2)] description
+	\end{itemize}
+\end{proof}
+
 \section{本章小结}
 本章基于Shannon基本通信模型，给出差分隐私通信模型及其信道数学模型。以此通信模型为基本出发点，构建了一种属性关联、元组记录独立同分布的离散无记忆信源的$n$次扩展信源。在此基础上，引入信息熵、条件熵、互信息量、失真函数等概念给出了隐私信源熵、隐私熵与隐私泄露风险、数据效用的基本度量模型及方法。进一步，针对多维属性关联的隐私度量问题，基于信息熵提出了面向关联属性的差分隐私信息熵度量模型及方法。首先，利用互信息相关性分析方法解决关联属性相关度量化问题。随后，基于相关度给出关联属性的图表示。进一步，基于差分隐私的信道模型、属性关联图中隐私泄露关键路径，借助马尔可夫理论分析了关联属性导致敏感信息的隐私泄露量。最后，以真实数据集上的实验给出所提出的信息熵度量模型及方法的量化过程及结果。本章是研究差分隐私信息论度量的基础工作，为后续基于隐私信息度量研究权衡隐私与效用均衡优化模型以及隐私机制设计奠定基础。
 

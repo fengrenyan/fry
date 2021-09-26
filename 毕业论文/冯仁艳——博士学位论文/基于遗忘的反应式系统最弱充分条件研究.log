@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  23 SEP 2021 19:33
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  26 SEP 2021 21:47
 entering extended mode
 **基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -2252,7 +2252,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3])
+[3]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4])
 \tf@toc=\write6
 
 
@@ -2261,15 +2268,15 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4]
+[5]
 (D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
 �文\基于遗忘的反应式系统最弱充分条件研究.lot)
 \tf@lot=\write7
- [5
+ [6
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
-�文\基于遗忘的反应式系统最弱充分条件研究.lof [6
+�文\基于遗忘的反应式系统最弱充分条件研究.lof [7
 
 ])
 \tf@lof=\write8
@@ -2280,9 +2287,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7] [8
-
-]
+[8]
 No file 基于遗忘的反应式系统最弱充分条件研究.nls.
 
 (D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
@@ -2308,6 +2313,7 @@ m/m/n/12.05/ff | \OT1/ptm/m/n/12.05 ORRP)|\C70/rm/m/n/12.05/30 |
  []
 
 [9
+
 
 ]
 
@@ -2386,7 +2392,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.64 
-      [3] <./figures/chapter02_3.jpg, id=1125, 568.524pt x 253.6677pt>
+      [3] <./figures/chapter02_3.jpg, id=1130, 568.524pt x 253.6677pt>
 File: ./figures/chapter02_3.jpg Graphic file (type jpg)
 
 <use ./figures/chapter02_3.jpg>
@@ -2412,7 +2418,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5] <./figures/chapter02_4.jpg, id=1214, 707.5233pt x 195.8517pt>
+[5] <./figures/chapter02_4.jpg, id=1219, 707.5233pt x 195.8517pt>
 File: ./figures/chapter02_4.jpg Graphic file (type jpg)
 
 <use ./figures/chapter02_4.jpg>
@@ -2461,7 +2467,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11] <./figures/chapter01_1.jpg, id=1413, 480.95685pt x 196.5744pt>
+[11] <./figures/chapter01_1.jpg, id=1418, 480.95685pt x 196.5744pt>
 File: ./figures/chapter01_1.jpg Graphic file (type jpg)
 
 <use ./figures/chapter01_1.jpg>
@@ -2489,7 +2495,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14] <./figures/chapter01_2.jpg, id=1432, 430.54852pt x 414.28778pt>
+[14] <./figures/chapter01_2.jpg, id=1437, 430.54852pt x 414.28778pt>
 File: ./figures/chapter01_2.jpg Graphic file (type jpg)
 
 <use ./figures/chapter01_2.jpg>
@@ -2742,7 +2748,7 @@ t/12.05/30 | \C70/rm/m/it/12.05/82 �$\OMS/ztmcm/m/n/12.05 K[]$\C70/rm/m/it/12.
 V$\OT1/ptm/m/it/12.05 -
  []
 
-<figures/chapter03/NVBnewCar.png, id=1594, 432.61626pt x 326.21875pt>
+<figures/chapter03/NVBnewCar.png, id=1599, 432.61626pt x 326.21875pt>
 File: figures/chapter03/NVBnewCar.png Graphic file (type png)
 
 <use figures/chapter03/NVBnewCar.png>
@@ -2771,7 +2777,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [29]
-Overfull \hbox (19.73923pt too wide) in paragraph at lines 68--69
+Overfull \hbox (10.85179pt too wide) in paragraph at lines 70--71
 []\OT1/ptm/m/n/12.05 (i) \C70/rm/m/n/12.05/50 G \C70/rm/m/n/12.05/8b �$\OML/ztm
 cm/m/it/12.05 s[]$\C70/rm/m/n/12.05/54 �$\OML/ztmcm/m/it/12.05 s[]$\C70/rm/m/n/
 12.05/52  + \C70/rm/m/n/12.05/67 e \C70/rm/m/n/12.05/6e � \C70/rm/m/n/12.05/4e
@@ -2785,7 +2791,7 @@ mcm/m/n/12.05 M[]\OML/ztmcm/m/it/12.05 ; s[]\OT1/ztmcm/m/n/12.05 )$|\C70/rm/m/n
  []
 
 
-Overfull \hbox (20.59804pt too wide) in paragraph at lines 72--73
+Overfull \hbox (20.59804pt too wide) in paragraph at lines 74--75
 []\C70/rm/m/n/12.05/5f R \C70/rm/m/n/12.05/7e � \C70/rm/m/n/12.05/6b e \C70/rm/
 m/n/12.05/9a �\OT1/ptm/m/n/12.05 . \C70/rm/m/n/12.05/50 G \C70/rm/m/n/12.05/8b 
 � \C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/4e � � \C70/rm/m/n/12.05/61  \C70/r
@@ -2808,7 +2814,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [30 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter03/NVBnewCar.png>]
-Overfull \hbox (7.45074pt too wide) in paragraph at lines 99--100
+Overfull \hbox (7.45074pt too wide) in paragraph at lines 101--102
 []\OT1/ptm/m/n/12.05 (b) $\OMS/ztmcm/m/n/12.05 K[] $[] K[]$\C70/rm/m/n/12.05/5f
  S \C70/rm/m/n/12.05/4e  � \C70/rm/m/n/12.05/5f S \C70/rm/m/n/12.05/5b � \C70/
 rm/m/n/12.05/4e � \C70/rm/m/n/12.05/62 @ \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.
@@ -2823,7 +2829,7 @@ C70/rm/m/n/12.05/90 � \C70/rm/m/n/12.05/67 	$\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m
  []
 
 
-Overfull \hbox (7.32814pt too wide) in paragraph at lines 107--109
+Overfull \hbox (7.32814pt too wide) in paragraph at lines 109--111
 $\OMS/ztmcm/m/n/12.05 B[]g$|\C70/rm/m/n/12.05/30 | \C70/rm/m/n/12.05/66 > \C70
 /rm/m/n/12.05/71 6$\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 s[]; s[]\OT1/ztm
 cm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 2 B[]$\C70/rm/m/n/12.05/62  \C70/rm/m/n/12
@@ -2850,7 +2856,48 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[32])
+[32]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
+Overfull \hbox (43.19148pt too wide) in paragraph at lines 277--281
+\C70/rm/m/n/12.05/5f �$\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 M[]\OML/ztmcm
+/m/it/12.05 ; s[]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 $[] \OT1/ztmcm/m/n
+/12.05 (\OMS/ztmcm/m/n/12.05 M\OML/ztmcm/m/it/12.05 ; s\OT1/ztmcm/m/n/12.05 )$|
+\C70/rm/m/n/12.05/30 | \C70/rm/m/n/12.05/6b d \C70/rm/m/n/12.05/65 � \C70/rm/m
+/n/12.05/53 � \C70/rm/m/n/12.05/4e � \C70/rm/m/n/12.05/59 � \C70/rm/m/n/12.05/4
+e  \C70/rm/m/n/12.05/67 � \C70/rm/m/n/12.05/5e � \C70/rm/m/n/12.05/4e   * \C70
+/rm/m/n/12.05/52  \C70/rm/m/n/12.05/59 �$[]$\OT1/ptm/m/n/12.05 -\C70/rm/m/n/12
+.05/7e � \C70/rm/m/n/12.05/67 �$\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 M[]\
+OML/ztmcm/m/it/12.05 ; s[]\OT1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.05/4f  \C70/rm
+/m/n/12.05/5f �$\OMS/ztmcm/m/n/12.05 M[] \OT1/ztmcm/m/n/12.05 = (\OML/ztmcm/m/i
+t/12.05 S[]; R[]; L[]; s[]\OT1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.05/4e |\C70/rm
+/m/n/12.05/ff |
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--281
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35])
 (D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
 �文\chapter/chapter-04-resolution.tex
 
@@ -2859,13 +2906,13 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[33]
+[36]
 第四章
-[34
+[37
 
 ]
 
-LaTeX Warning: Reference `tab:attributes_dependency_degree' on page 35 undefine
+LaTeX Warning: Reference `tab:attributes_dependency_degree' on page 38 undefine
 d on input line 11.
 
 
@@ -2874,22 +2921,22 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[35]
+[38]
 
-LaTeX Warning: Reference `tab:origin' on page 36 undefined on input line 37.
-
-
-LaTeX Warning: Reference `tab:origin' on page 36 undefined on input line 37.
+LaTeX Warning: Reference `tab:origin' on page 39 undefined on input line 37.
 
 
-LaTeX Warning: Reference `tab:origin' on page 36 undefined on input line 37.
+LaTeX Warning: Reference `tab:origin' on page 39 undefined on input line 37.
 
 
-LaTeX Warning: Reference `sec:communication_model_of_dp' on page 36 undefined o
+LaTeX Warning: Reference `tab:origin' on page 39 undefined on input line 37.
+
+
+LaTeX Warning: Reference `sec:communication_model_of_dp' on page 39 undefined o
 n input line 44.
 
 
-LaTeX Warning: Reference `tab:origin' on page 36 undefined on input line 44.
+LaTeX Warning: Reference `tab:origin' on page 39 undefined on input line 44.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2897,14 +2944,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36]
+[39]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[37pdfTeX warning (ext4): destination with the same identifier (name{equation.4
+[40pdfTeX warning (ext4): destination with the same identifier (name{equation.4
 .2.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -2912,7 +2959,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 l.72 
      ]
 
-LaTeX Warning: Reference `eq:chapter03-ED' on page 38 undefined on input line 8
+LaTeX Warning: Reference `eq:chapter03-ED' on page 41 undefined on input line 8
 0.
 
 
@@ -2921,7 +2968,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[38] <figures/chapter04/Figure4-1.jpg, id=1738, 500.5902pt x 228.6141pt>
+[41] <figures/chapter04/Figure4-1.jpg, id=1764, 500.5902pt x 228.6141pt>
 File: figures/chapter04/Figure4-1.jpg Graphic file (type jpg)
 
 <use figures/chapter04/Figure4-1.jpg>
@@ -2935,7 +2982,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[39 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[42 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter04/Figure4-1.jpg>]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2943,7 +2990,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[40] <figures/chapter04/Figure2.png, id=1762, 542.2659pt x 119.4864pt>
+[43] <figures/chapter04/Figure2.png, id=1789, 542.2659pt x 119.4864pt>
 File: figures/chapter04/Figure2.png Graphic file (type png)
 
 <use figures/chapter04/Figure2.png>
@@ -2956,7 +3003,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[41 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[44 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter04/Figure2.png>]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2964,14 +3011,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42]
+[45]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[43]
+[46]
 Overfull \hbox (10.8026pt too wide) in paragraph at lines 220--221
 [][]\C70/zhhei/bx/n/12.05/5f  \C70/rm/bx/n/12.05/74  \OT1/ptm/b/n/12.05 4.1. 
 []\C70/rm/m/it/12.05/8b �$\OML/ztmcm/m/it/12.05 p\OT1/ztmcm/m/n/12.05 (\OML/ztm
@@ -2997,7 +3044,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44]
+[47]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 266.
 
@@ -3018,7 +3065,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[45]
+[48]
 Overfull \hbox (11.21892pt too wide) in paragraph at lines 316--316
 []|$\OML/ztmcm/m/it/10.54 q\OT1/ztmcm/m/n/10.54 ([]\OML/ztmcm/m/it/10.54 ; z\OM
 S/ztmcm/m/n/10.54 j\OML/ztmcm/m/it/10.54 x\OT1/ztmcm/m/n/10.54 )$| 
@@ -3052,14 +3099,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[46]
+[49]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[47]
+[50]
 Overfull \hbox (1.93312pt too wide) in paragraph at lines 365--366
 []\OT1/ptm/m/n/12.05 MovieLens[][][][][]\C70/rm/m/n/12.05/66 / \C70/rm/m/n/12.0
 5/75 ( \C70/rm/m/n/12.05/62 7 \C70/rm/m/n/12.05/75 5 \C70/rm/m/n/12.05/5f q \C7
@@ -3072,7 +3119,7 @@ C70/rm/m/n/12.05/90 � \C70/rm/m/n/12.05/75 5 \C70/rm/m/n/12.05/5f q \C70/rm/m/n
 /12.05/76 �$\OT1/ztmcm/m/n/12.05 100000$
  []
 
-<figures/chapter04/Figure3.png, id=1892, 390.9807pt x 316.5426pt>
+<figures/chapter04/Figure3.png, id=1919, 390.9807pt x 316.5426pt>
 File: figures/chapter04/Figure3.png Graphic file (type png)
 
 <use figures/chapter04/Figure3.png>
@@ -3095,14 +3142,14 @@ n/12.05 0\OML/ztmcm/m/it/12.05 :\OT1/ztmcm/m/n/12.05 1538\OML/ztmcm/m/it/12.05
 ; [] $
  []
 
-<figures/chapter04/Figure4.png, id=1894, 424.9476pt x 331.7193pt>
+<figures/chapter04/Figure4.png, id=1921, 424.9476pt x 331.7193pt>
 File: figures/chapter04/Figure4.png Graphic file (type png)
 
 <use figures/chapter04/Figure4.png>
 Package pdftex.def Info: figures/chapter04/Figure4.png used on input line 384.
 (pdftex.def)             Requested size: 252.94499pt x 197.45387pt.
 
-<figures/chapter04/Figure5.png, id=1895, 368.3361pt x 316.5426pt>
+<figures/chapter04/Figure5.png, id=1922, 368.3361pt x 316.5426pt>
 File: figures/chapter04/Figure5.png Graphic file (type png)
 
 <use figures/chapter04/Figure5.png>
@@ -3115,7 +3162,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[48 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[51 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter04/Figure3.png>]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3123,10 +3170,10 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[49 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[52 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter04/Figure4.png> <D:/（博士）我的资料/Git/fry/�
 �业论文/冯仁艳——博士学位论文/figures/chapter04/Figure5.png>]
-<figures/chapter04/Figure6.png, id=1917, 421.8159pt x 316.5426pt>
+<figures/chapter04/Figure6.png, id=1943, 421.8159pt x 316.5426pt>
 File: figures/chapter04/Figure6.png Graphic file (type png)
 
 <use figures/chapter04/Figure6.png>
@@ -3139,9 +3186,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[50 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[53 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter04/Figure6.png>]
-<figures/chapter04/Figure7.png, id=1928, 421.8159pt x 316.5426pt>
+<figures/chapter04/Figure7.png, id=1954, 421.8159pt x 316.5426pt>
 File: figures/chapter04/Figure7.png Graphic file (type png)
 
 <use figures/chapter04/Figure7.png>
@@ -3152,7 +3199,7 @@ Overfull \hbox (10.19922pt too wide) in paragraph at lines 450--451
  [][] 
  []
 
-<figures/chapter04/Figure8.png, id=1929, 421.8159pt x 316.5426pt>
+<figures/chapter04/Figure8.png, id=1955, 421.8159pt x 316.5426pt>
 File: figures/chapter04/Figure8.png Graphic file (type png)
 
 <use figures/chapter04/Figure8.png>
@@ -3169,10 +3216,10 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[51 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[54 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter04/Figure7.png> <D:/（博士）我的资料/Git/fry/�
 �业论文/冯仁艳——博士学位论文/figures/chapter04/Figure8.png>]
-<figures/chapter04/Figure9.png, id=1942, 421.8159pt x 316.5426pt>
+<figures/chapter04/Figure9.png, id=1968, 421.8159pt x 316.5426pt>
 File: figures/chapter04/Figure9.png Graphic file (type png)
 
 <use figures/chapter04/Figure9.png>
@@ -3183,7 +3230,7 @@ Overfull \hbox (10.19922pt too wide) in paragraph at lines 469--470
  [][] 
  []
 
-<figures/chapter04/Figure10.png, id=1943, 421.8159pt x 316.5426pt>
+<figures/chapter04/Figure10.png, id=1969, 421.8159pt x 316.5426pt>
 File: figures/chapter04/Figure10.png Graphic file (type png)
 
 <use figures/chapter04/Figure10.png>
@@ -3201,7 +3248,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[52 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[55 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter04/Figure9.png> <D:/（博士）我的资料/Git/fry/�
 �业论文/冯仁艳——博士学位论文/figures/chapter04/Figure10.png>])
 (D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
@@ -3212,9 +3259,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[53]
+[56]
 第五章
-[54
+[57
 
 ]
 
@@ -3223,9 +3270,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[55]
+[58]
 
-LaTeX Warning: Reference `def:dp' on page 56 undefined on input line 53.
+LaTeX Warning: Reference `def:dp' on page 59 undefined on input line 53.
 
 
 Overfull \hbox (1.7789pt too wide) in paragraph at lines 53--54
@@ -3246,14 +3293,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[56]
+[59]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[57] <./figures/chapter06/chapter06_1.jpg, id=2033, 349.5459pt x 220.1826pt>
+[60] <./figures/chapter06/chapter06_1.jpg, id=2059, 349.5459pt x 220.1826pt>
 File: ./figures/chapter06/chapter06_1.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/chapter06_1.jpg>
@@ -3267,7 +3314,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[58 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[61 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter06/chapter06_1.jpg>]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3275,7 +3322,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[59] <./figures/chapter06/chapter06_2.jpg, id=2059, 536.9661pt x 172.4844pt>
+[62] <./figures/chapter06/chapter06_2.jpg, id=2086, 536.9661pt x 172.4844pt>
 File: ./figures/chapter06/chapter06_2.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/chapter06_2.jpg>
@@ -3289,7 +3336,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[60 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[63 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter06/chapter06_2.jpg>]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3297,7 +3344,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[61]
+[64]
 Overfull \hbox (1.57503pt too wide) in paragraph at lines 191--191
 []|$\OML/ztmcm/m/it/10.54 A[]$| 
  []
@@ -3313,14 +3360,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[62]
+[65]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[63] <./figures/chapter06/chapter06_3.jpg, id=2149, 463.61205pt x 116.17403pt>
+[66] <./figures/chapter06/chapter06_3.jpg, id=2175, 463.61205pt x 116.17403pt>
 File: ./figures/chapter06/chapter06_3.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/chapter06_3.jpg>
@@ -3328,7 +3375,7 @@ Package pdftex.def Info: ./figures/chapter06/chapter06_3.jpg used on input line
  247.
 (pdftex.def)             Requested size: 362.37598pt x 90.8086pt.
 
-<./figures/chapter06/chapter06_4.jpg, id=2155, 815.9283pt x 279.444pt>
+<./figures/chapter06/chapter06_4.jpg, id=2181, 815.9283pt x 279.444pt>
 File: ./figures/chapter06/chapter06_4.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/chapter06_4.jpg>
@@ -3346,7 +3393,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[64 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[67 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter06/chapter06_3.jpg>]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3354,7 +3401,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[65 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[68 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter06/chapter06_4.jpg>]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3362,9 +3409,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[66]
+[69]
 
-LaTeX Warning: Reference `def:condition_entropy' on page 67 undefined on input 
+LaTeX Warning: Reference `def:condition_entropy' on page 70 undefined on input 
 line 339.
 
 
@@ -3373,7 +3420,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[67]
+[70]
 Overfull \hbox (4.02838pt too wide) in paragraph at lines 375--376
 \C70/rm/m/it/12.05/75 ($\OMS/ztmcm/m/n/12.05 f\OML/ztmcm/m/it/12.05 Q[]\OMS/ztm
 cm/m/n/12.05 g[]$\C70/rm/m/it/12.05/62 p \C70/rm/m/it/12.05/52 � \C70/rm/m/it/1
@@ -3393,7 +3440,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[68]
+[71]
 Overfull \hbox (0.62807pt too wide) in paragraph at lines 427--427
 []|$\OML/cmm/b/it/10.54 A$| 
  []
@@ -3414,30 +3461,30 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[69]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[70]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[71]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [72]
 
-LaTeX Warning: Reference `tab:origin' on page 73 undefined on input line 577.
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[73]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[74]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[75]
+
+LaTeX Warning: Reference `tab:origin' on page 76 undefined on input line 577.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3445,7 +3492,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[73] <./figures/chapter06/MI_ED_Adult.jpg, id=2337, 230.7822pt x 175.6161pt>
+[76] <./figures/chapter06/MI_ED_Adult.jpg, id=2363, 230.7822pt x 175.6161pt>
 File: ./figures/chapter06/MI_ED_Adult.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/MI_ED_Adult.jpg>
@@ -3457,7 +3504,7 @@ Overfull \hbox (17.04321pt too wide) in paragraph at lines 593--593
  [][] 
  []
 
-<./figures/chapter06/MI_ED_NLTCS.jpg, id=2338, 224.7597pt x 162.6075pt>
+<./figures/chapter06/MI_ED_NLTCS.jpg, id=2364, 224.7597pt x 162.6075pt>
 File: ./figures/chapter06/MI_ED_NLTCS.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/MI_ED_NLTCS.jpg>
@@ -3469,7 +3516,7 @@ Overfull \hbox (17.0518pt too wide) in paragraph at lines 600--600
  [][] 
  []
 
-<./figures/chapter06/MI_ED_CRX.jpg, id=2339, 254.3904pt x 191.2746pt>
+<./figures/chapter06/MI_ED_CRX.jpg, id=2365, 254.3904pt x 191.2746pt>
 File: ./figures/chapter06/MI_ED_CRX.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/MI_ED_CRX.jpg>
@@ -3504,12 +3551,12 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[74 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[77 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter06/MI_ED_Adult.jpg> <D:/（博士）我的资料/Git/fr
 y/毕业论文/冯仁艳——博士学位论文/figures/chapter06/MI_ED_NLTCS.
 jpg> <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学
 位论文/figures/chapter06/MI_ED_CRX.jpg>]
-<./figures/chapter06/MI_lambda_adult.jpg, id=2360, 227.1687pt x 191.2746pt>
+<./figures/chapter06/MI_lambda_adult.jpg, id=2386, 227.1687pt x 191.2746pt>
 File: ./figures/chapter06/MI_lambda_adult.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/MI_lambda_adult.jpg>
@@ -3521,7 +3568,7 @@ Overfull \hbox (17.05254pt too wide) in paragraph at lines 631--631
  [][] 
  []
 
-<./figures/chapter06/MI_Lambda_nlcts.jpg, id=2361, 216.3282pt x 191.2746pt>
+<./figures/chapter06/MI_Lambda_nlcts.jpg, id=2387, 216.3282pt x 191.2746pt>
 File: ./figures/chapter06/MI_Lambda_nlcts.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/MI_Lambda_nlcts.jpg>
@@ -3533,7 +3580,7 @@ Overfull \hbox (17.05435pt too wide) in paragraph at lines 639--639
  [][] 
  []
 
-<./figures/chapter06/MI_Lambda_crx.jpg, id=2362, 240.4182pt x 194.4063pt>
+<./figures/chapter06/MI_Lambda_crx.jpg, id=2388, 240.4182pt x 194.4063pt>
 File: ./figures/chapter06/MI_Lambda_crx.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/MI_Lambda_crx.jpg>
@@ -3550,7 +3597,7 @@ Overfull \hbox (2.94444pt too wide) in paragraph at lines 631--650
  [][][][][][] 
  []
 
-<./figures/chapter06/ED_lambda_adult.jpg, id=2371, 255.354pt x 197.0562pt>
+<./figures/chapter06/ED_lambda_adult.jpg, id=2397, 255.354pt x 197.0562pt>
 File: ./figures/chapter06/ED_lambda_adult.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/ED_lambda_adult.jpg>
@@ -3562,7 +3609,7 @@ Overfull \hbox (17.04979pt too wide) in paragraph at lines 665--665
  [][] 
  []
 
-<./figures/chapter06/ED_lambda_nltcs.jpg, id=2372, 235.3593pt x 150.8034pt>
+<./figures/chapter06/ED_lambda_nltcs.jpg, id=2398, 235.3593pt x 150.8034pt>
 File: ./figures/chapter06/ED_lambda_nltcs.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/ED_lambda_nltcs.jpg>
@@ -3574,7 +3621,7 @@ Overfull \hbox (17.0547pt too wide) in paragraph at lines 673--673
  [][] 
  []
 
-<./figures/chapter06/ED_lambda_crx.jpg, id=2373, 245.2362pt x 193.2018pt>
+<./figures/chapter06/ED_lambda_crx.jpg, id=2399, 245.2362pt x 193.2018pt>
 File: ./figures/chapter06/ED_lambda_crx.jpg Graphic file (type jpg)
 
 <use ./figures/chapter06/ED_lambda_crx.jpg>
@@ -3597,7 +3644,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[75 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[78 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter06/MI_lambda_adult.jpg> <D:/（博士）我的资料/Gi
 t/fry/毕业论文/冯仁艳——博士学位论文/figures/chapter06/MI_Lambd
 a_nlcts.jpg> <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——�
@@ -3620,7 +3667,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[76 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[79 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/chapter06/ED_lambda_adult.jpg> <D:/（博士）我的资料/Gi
 t/fry/毕业论文/冯仁艳——博士学位论文/figures/chapter06/ED_lambd
 a_nltcs.jpg> <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——�
@@ -3633,17 +3680,17 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[77]
+[80]
 第六章
-[78
+[81
 
 ]
 
-LaTeX Warning: Reference `sec:communication_model_of_dp' on page 79 undefined o
+LaTeX Warning: Reference `sec:communication_model_of_dp' on page 82 undefined o
 n input line 8.
 
 
-LaTeX Warning: Reference `sec:communication_model_of_dp' on page 79 undefined o
+LaTeX Warning: Reference `sec:communication_model_of_dp' on page 82 undefined o
 n input line 11.
 
 
@@ -3652,8 +3699,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[79]
-<./figures/Application_architecture.jpg, id=2468, 729.38498pt x 327.02174pt>
+[82]
+<./figures/Application_architecture.jpg, id=2494, 729.38498pt x 327.02174pt>
 File: ./figures/Application_architecture.jpg Graphic file (type jpg)
 
 <use ./figures/Application_architecture.jpg>
@@ -3667,29 +3714,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[80 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[83 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/Application_architecture.jpg>]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[81]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[82]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[83]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -3698,7 +3724,28 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [84]
 
-LaTeX Warning: Reference `sec:chapter3_convex_concave_game' on page 85 undefine
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[85]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[86]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[87]
+
+LaTeX Warning: Reference `sec:chapter3_convex_concave_game' on page 88 undefine
 d on input line 165.
 
 
@@ -3707,9 +3754,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[85]
+[88]
 
-LaTeX Warning: Reference `theorem:minmax' on page 86 undefined on input line 20
+LaTeX Warning: Reference `theorem:minmax' on page 89 undefined on input line 20
 1.
 
 
@@ -3718,7 +3765,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[86]
+[89]
 Overfull \hbox (10.19696pt too wide) in paragraph at lines 234--234
 []|$\OML/ztmcm/m/it/10.54 U\OT1/ztmcm/m/n/10.54 (\OML/ztmcm/m/it/10.54 P; Q\OT1
 /ztmcm/m/n/10.54 )$| 
@@ -3736,7 +3783,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[87]
+[90]
 Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
@@ -3751,7 +3798,7 @@ Overfull \hbox (19.5728pt too wide) in paragraph at lines 264--276
 []$[]$ 
  []
 
-<./figures/decision.jpg, id=2577, 134.1813pt x 83.8332pt>
+<./figures/decision.jpg, id=2603, 134.1813pt x 83.8332pt>
 File: ./figures/decision.jpg Graphic file (type jpg)
 
 <use ./figures/decision.jpg>
@@ -3764,7 +3811,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[88 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[91 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/decision.jpg>]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3772,14 +3819,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[89] <./figures/Fig3.jpg, id=2601, 194.6472pt x 153.6942pt>
+[92] <./figures/Fig3.jpg, id=2628, 194.6472pt x 153.6942pt>
 File: ./figures/Fig3.jpg Graphic file (type jpg)
 
 <use ./figures/Fig3.jpg>
 Package pdftex.def Info: ./figures/Fig3.jpg used on input line 358.
 (pdftex.def)             Requested size: 199.1731pt x 144.54524pt.
 
-<./figures/Fig4.jpg, id=2602, 215.8464pt x 153.6942pt>
+<./figures/Fig4.jpg, id=2629, 215.8464pt x 153.6942pt>
 File: ./figures/Fig4.jpg Graphic file (type jpg)
 
 <use ./figures/Fig4.jpg>
@@ -3792,7 +3839,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[90 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
+[93 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士学�
 ��论文/figures/Fig3.jpg> <D:/（博士）我的资料/Git/fry/毕业论文/�
 �仁艳——博士学位论文/figures/Fig4.jpg>])
 (D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
@@ -3803,17 +3850,17 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[91]
+[94]
 第七章
-[92
+[95
 
 ]
 
-LaTeX Warning: Reference `sec:communication_model_of_dp' on page 93 undefined o
+LaTeX Warning: Reference `sec:communication_model_of_dp' on page 96 undefined o
 n input line 8.
 
 
-LaTeX Warning: Reference `sec:communication_model_of_dp' on page 93 undefined o
+LaTeX Warning: Reference `sec:communication_model_of_dp' on page 96 undefined o
 n input line 11.
 
 
@@ -3822,34 +3869,13 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[93]
+[96]
 File: ./figures/Application_architecture.jpg Graphic file (type jpg)
  <use ./figures/Application_architecture.jpg>
 Package pdftex.def Info: ./figures/Application_architecture.jpg used on input l
 ine 27.
 (pdftex.def)             Requested size: 397.47911pt x 180.67587pt.
 
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[94]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[95]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[96]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -3865,10 +3891,6 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [98]
 
-LaTeX Warning: Reference `sec:chapter3_convex_concave_game' on page 99 undefine
-d on input line 165.
-
-
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
@@ -3876,7 +3898,32 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [99]
 
-LaTeX Warning: Reference `theorem:minmax' on page 100 undefined on input line 2
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[100]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[101]
+
+LaTeX Warning: Reference `sec:chapter3_convex_concave_game' on page 102 undefin
+ed on input line 165.
+
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[102]
+
+LaTeX Warning: Reference `theorem:minmax' on page 103 undefined on input line 2
 01.
 
 
@@ -3885,7 +3932,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[100]
+[103]
 Overfull \hbox (10.19696pt too wide) in paragraph at lines 234--234
 []|$\OML/ztmcm/m/it/10.54 U\OT1/ztmcm/m/n/10.54 (\OML/ztmcm/m/it/10.54 P; Q\OT1
 /ztmcm/m/n/10.54 )$| 
@@ -3903,7 +3950,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[101]
+[104]
 Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
@@ -3929,14 +3976,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[102]
+[105]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[103]
+[106]
 File: ./figures/Fig3.jpg Graphic file (type jpg)
  <use ./figures/Fig3.jpg>
 Package pdftex.def Info: ./figures/Fig3.jpg used on input line 358.
@@ -3952,7 +3999,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[104])
+[107])
 (D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
 �文\chapter/chapter-08-experiments.tex
 
@@ -3961,17 +4008,17 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[105]
+[108]
 第八章
-[106
+[109
 
 ]
 
-LaTeX Warning: Reference `sec:communication_model_of_dp' on page 107 undefined 
+LaTeX Warning: Reference `sec:communication_model_of_dp' on page 110 undefined 
 on input line 8.
 
 
-LaTeX Warning: Reference `sec:communication_model_of_dp' on page 107 undefined 
+LaTeX Warning: Reference `sec:communication_model_of_dp' on page 110 undefined 
 on input line 11.
 
 
@@ -3980,34 +4027,13 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[107]
+[110]
 File: ./figures/Application_architecture.jpg Graphic file (type jpg)
  <use ./figures/Application_architecture.jpg>
 Package pdftex.def Info: ./figures/Application_architecture.jpg used on input l
 ine 27.
 (pdftex.def)             Requested size: 397.47911pt x 180.67587pt.
 
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[108]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[109]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[110]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4023,7 +4049,28 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [112]
 
-LaTeX Warning: Reference `sec:chapter3_convex_concave_game' on page 113 undefin
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[113]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[114]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[115]
+
+LaTeX Warning: Reference `sec:chapter3_convex_concave_game' on page 116 undefin
 ed on input line 165.
 
 
@@ -4032,9 +4079,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[113]
+[116]
 
-LaTeX Warning: Reference `theorem:minmax' on page 114 undefined on input line 2
+LaTeX Warning: Reference `theorem:minmax' on page 117 undefined on input line 2
 01.
 
 
@@ -4043,7 +4090,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[114]
+[117]
 Overfull \hbox (10.19696pt too wide) in paragraph at lines 234--234
 []|$\OML/ztmcm/m/it/10.54 U\OT1/ztmcm/m/n/10.54 (\OML/ztmcm/m/it/10.54 P; Q\OT1
 /ztmcm/m/n/10.54 )$| 
@@ -4061,7 +4108,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[115]
+[118]
 Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
@@ -4087,14 +4134,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[116]
+[119]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[117]
+[120]
 File: ./figures/Fig3.jpg Graphic file (type jpg)
  <use ./figures/Fig3.jpg>
 Package pdftex.def Info: ./figures/Fig3.jpg used on input line 358.
@@ -4110,7 +4157,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[118])
+[121])
 (D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
 �文\chapter/chapter-09-conclusion.tex
 
@@ -4119,28 +4166,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[119]
-第九章
-[120
-
-]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[121])
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
 [122]
-(D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
-�文\基于遗忘的反应式系统最弱充分条件研究.bbl [123
-
+第九章
+[123
 
 ]
 
@@ -4149,7 +4177,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[124]
+[124])
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4157,13 +4185,11 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [125]
+(D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
+�文\基于遗忘的反应式系统最弱充分条件研究.bbl [126
 
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
 
-[126]
+]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4178,11 +4204,6 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [128]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 512.
-
- (D:\Application\Ctex\MiKTeX\tex\latex\psnfss\ot1phv.fd
-File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-)
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4204,6 +4225,11 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [131]
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 512.
+
+ (D:\Application\Ctex\MiKTeX\tex\latex\psnfss\ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4245,9 +4271,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[137])
-(D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
-�文\chapter/thanks.tex
+[137]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4256,6 +4280,29 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [138]
 
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[139]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[140])
+(D:\（博士）我的资料\Git\fry\毕业论文\冯仁艳——博士学位�
+�文\chapter/thanks.tex
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[141]
+
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 1.
@@ -4265,7 +4312,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 1.
 
-) [139
+) [142
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12.05> not available
@@ -4283,15 +4330,15 @@ n/12.05 [J]. \C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.05/7b � \C70/rm/m/n/12.05/67
 pdfTeX warning: pdflatex.exe (file D:/（博士）我的资料/Git/fry/毕业�
 �文/冯仁艳——博士学位论文/figures/shengming.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<figures/shengming.pdf, id=3088, 597.50829pt x 845.0471pt>
+<figures/shengming.pdf, id=3114, 597.50829pt x 845.0471pt>
 File: figures/shengming.pdf Graphic file (type pdf)
 
 <use figures/shengming.pdf>
 Package pdftex.def Info: figures/shengming.pdf used on input line 464.
 (pdftex.def)             Requested size: 452.96826pt x 640.63068pt.
- [140
+ [143
 
-] [141 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士�
+] [144 <D:/（博士）我的资料/Git/fry/毕业论文/冯仁艳——博士�
 ��位论文/figures/shengming.pdf>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 471.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 471.
@@ -4302,7 +4349,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 471.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 471.
 Package rerunfilecheck Info: File `基于遗忘的反应式系统最弱充分�
 �件研究.out' has not changed.
-(rerunfilecheck)             Checksum: 166B7463D120FC57789E344FA8383F17;8443.
+(rerunfilecheck)             Checksum: 80810F16CA5C2535B8730FAED95569A5;8526.
 
 
 LaTeX Warning: There were undefined references.
@@ -4312,13 +4359,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36745 strings out of 495354
- 625748 string characters out of 3183188
- 746564 words of memory out of 3000000
- 37132 multiletter control sequences out of 15000+200000
- 284205 words of font info for 827 fonts, out of 3000000 for 9000
+ 36791 strings out of 495354
+ 626579 string characters out of 3183188
+ 747932 words of memory out of 3000000
+ 37163 multiletter control sequences out of 15000+200000
+ 286258 words of font info for 834 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,23n,55p,2978b,3004s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,23n,55p,2978b,3007s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{algorithm.8.1} has been referenced but does not e
 xist, replaced by a fixed one
 
@@ -4454,9 +4501,9 @@ ol/usyr.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><D:/Ap
 plication/Ctex/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/Application/Ctex/MiK
 TeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on 基于遗忘的反应式系统最弱充分条件研究.pdf (1
-59 pages, 6802381 bytes).
+62 pages, 6821652 bytes).
 PDF statistics:
- 4010 PDF objects out of 4296 (max. 8388607)
- 800 named destinations out of 1000 (max. 500000)
- 1446 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 4037 PDF objects out of 4296 (max. 8388607)
+ 808 named destinations out of 1000 (max. 500000)
+ 1454 words of extra memory for PDF output out of 10000 (max. 10000000)
 
