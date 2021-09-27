@@ -33,20 +33,20 @@
 \contentsline {section}{\numberline {4.1}引言}{39}{section.4.1}
 \contentsline {section}{\numberline {4.2}系统模型与问题提出}{41}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}数据模型}{41}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}信道模型}{41}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}问题提出}{43}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.2}信道模型}{42}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}问题提出}{44}{subsection.4.2.3}
 \contentsline {section}{\numberline {4.3}隐私与效用的优化模型}{44}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}研究方案概述}{44}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}研究方案概述}{45}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}互信息隐私优化模型}{45}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}条件互信息优化模型}{46}{subsection.4.3.3}
 \contentsline {section}{\numberline {4.4}差分隐私数据发布机制与优化}{48}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}优化模型最优解}{48}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}交替最小化算法}{49}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}优化模型迭代算法}{50}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.3}优化模型迭代算法}{51}{subsection.4.4.3}
 \contentsline {section}{\numberline {4.5}实验与分析}{52}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}实验设置}{53}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.1}实验设置}{52}{subsection.4.5.1}
 \contentsline {subsection}{\numberline {4.5.2}实验分析}{53}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}本章小结}{57}{section.4.6}
+\contentsline {section}{\numberline {4.6}本章小结}{58}{section.4.6}
 \contentsline {chapter}{\numberline {第五章\hspace {0.3em}}差分隐私数据收集的优化模型}{59}{chapter.5}
 \contentsline {section}{\numberline {5.1}引言}{59}{section.5.1}
 \contentsline {section}{\numberline {5.2}系统模型与问题提出}{61}{section.5.2}
@@ -112,6 +112,6 @@
 \contentsline {chapter}{\numberline {第九章\hspace {0.3em}}总结与展望}{125}{chapter.9}
 \contentsline {section}{\numberline {9.1}工作总结}{125}{section.9.1}
 \contentsline {section}{\numberline {9.2}研究展望}{126}{section.9.2}
-\contentsline {chapter}{参考文献}{128}{chapter*.57}
-\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{144}{chapter*.58}
-\contentsline {chapter}{攻读博士学位期间科研和论文情况}{145}{chapter*.59}
+\contentsline {chapter}{参考文献}{128}{chapter*.58}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{144}{chapter*.59}
+\contentsline {chapter}{攻读博士学位期间科研和论文情况}{145}{chapter*.60}
