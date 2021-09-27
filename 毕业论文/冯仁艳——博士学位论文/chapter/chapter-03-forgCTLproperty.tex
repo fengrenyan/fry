@@ -299,6 +299,50 @@
 	\end{itemize}
 \end{proof}
 
+不难看出，从公式中遗忘掉原子命题的集合中的元素，可以将该集合拆成两个集合后遗忘。
+\begin{corollary}
+	对于给定的公式$\varphi$，原子命题集合$V_1$和$V_2$，下面的结论成立：
+	\[
+	\CTLforget(\varphi,V_1\cup V_2) \equiv \CTLforget(\CTLforget(\varphi,V_1),V_2).
+	\]
+\end{corollary}
+
+如同被遗忘的原子命题的集合能被拆成两个集合的遗忘一样，下面将介绍有些情况下从带路径时序词的公式中遗忘掉一些原子命题可以将这些时许词提到遗忘操作的前面。
+\begin{proposition}
+	令$V\subseteq \Ha$为原子命题的集合，$\Phi$为$\CTL$公式，则下面等式成立：
+	\begin{itemize}
+		\item[(i)] $\CTLforget(\ALL\NEXT\Phi,V) \equiv \ALL \NEXT\CTLforget(\Phi,V)$；
+		\item[(ii)] $\CTLforget(\EXIST\NEXT\Phi,V) \equiv \EXIST \NEXT\CTLforget(\Phi,V)$；
+		\item[(iii)] $\CTLforget(\ALL\FUTURE\Phi,V) \equiv \ALL\FUTURE\CTLforget(\Phi,V)$；
+		\item[(iv)] $\CTLforget(\EXIST\FUTURE\Phi,V) \equiv \EXIST\FUTURE\CTLforget(\Phi,V)$。
+	\end{itemize}
+\end{proposition}
+\begin{proof}
+	为了证明上述结论成立，这里新引入一个叫做“子结构”的概念。对于给定的初始结构$\Hm=(S,R,L,s_0)$，称满足下面约束的初始$\MPK$-结构$(\Hm',s_0')$为$(\Hm,s_0)$的一个子结构：
+	\begin{itemize}
+		\item $S'\subseteq S$且$S'=\{s'\mid s' \hbox{ 从$s_0'$是可达的}\}$，
+		\item $R'=\{(s_1,s_2)\mid s_1,s_2\in S' \hbox{ 和$(s_1,s_2)\in R$}\}$，
+		\item $L':S' \rto 2^{\Ha}$且对于所有的$s_1\in S'$有$L'(s_1)=L(s_1)$，且
+		\item $s_0'$要么是$s_0$本身，要么是从$s_0$可达的某一个状态。
+	\end{itemize}
+(i) 要证明$\CTLforget(\ALL\NEXT\Phi,V) \equiv \ALL \NEXT\CTLforget(\Phi,V)$，只需证明：
+\[
+\Mod(\CTLforget(\ALL\NEXT\Phi,V)) = \Mod(\ALL \NEXT\CTLforget(\Phi,V)).
+\]
+
+$(\Rto)$ 对于任意$\CTLforget(\ALL\NEXT\Phi,V)$的模型$(\Hm',s')$，存在一个初始$\MPK$-结构$(\Hm,s)$使得$(\Hm,s)\models \ALL\NEXT\Phi$且$(\Hm,s)\lrto_V (\Hm',s')$\\
+$\Rto$ 对任意$(\Hm,s)$的子结构$(\Hm_1,s_1)$（其中$(s,s_1)\in R$），$(\Hm_1,s_1)\models \Phi$\\
+$\Rto$ 存在一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$(\Hm_2,s_2)\models \CTLforget(\Phi,V)$且$(\Hm_2,s_2) \lrto_V (\Hm_1,s_1)$\\
+$\Rto$ 由这些$(\Hm_2,s_2)$容易构造出一个初始$\MPK$-结构$(\Hm_3,s_3)$，使得$s_2$是$s_3$的直接后继状态，$(\Hm_2,s_2)$是$(\Hm_3,s_3)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
+$\Rto$ $(\Hm_3,s_3) \models \ALL \NEXT(\CTLforget(\Phi,V))$且$(\Hm_3,s_3) \lrto_V (\Hm',s')$\\
+$\Rto$ $(\Hm',s')\models \ALL \NEXT(\CTLforget(\Phi,V))$（由定理~\ref{thm:V-bisimulation:EQ}）
+
+$(\Lto)$ 令$(\Hm_3,s_3)$是$\ALL \NEXT(\CTLforget(\Phi,V))$的模型，则对于任意$(\Hm_3,s_3)$的子结构$(\Hm_2,s_2)$（其中$(s_3,s_2)\in R_3$）有$(\Hm_2,s_2)\models \CTLforget(\Phi,V)$\\
+$\Rto$ 对任意上述的$(\Hm_2,s_2)$，存在一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$(\Hm_1,s_1)\models \Phi$且$(\Hm_1,s_1)\lrto_V (\Hm_2,s_2)$\\
+$\Rto$ 由这些$(\Hm_1,s_1)$容易构造出一个初始$\MPK$-结构$(\Hm,s)$，使得$s_1$是$s$的直接后继状态，$(\Hm_1,s_1)$是$(\Hm,s)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
+$\Rto$ $(\Hm,s)\models \ALL\NEXT\Phi$且$(\Hm_3,s_3)\models \CTLforget(\ALL\NEXT\Phi,V)$。
+\end{proof}
+
 \section{本章小结}
 本章基于Shannon基本通信模型，给出差分隐私通信模型及其信道数学模型。以此通信模型为基本出发点，构建了一种属性关联、元组记录独立同分布的离散无记忆信源的$n$次扩展信源。在此基础上，引入信息熵、条件熵、互信息量、失真函数等概念给出了隐私信源熵、隐私熵与隐私泄露风险、数据效用的基本度量模型及方法。进一步，针对多维属性关联的隐私度量问题，基于信息熵提出了面向关联属性的差分隐私信息熵度量模型及方法。首先，利用互信息相关性分析方法解决关联属性相关度量化问题。随后，基于相关度给出关联属性的图表示。进一步，基于差分隐私的信道模型、属性关联图中隐私泄露关键路径，借助马尔可夫理论分析了关联属性导致敏感信息的隐私泄露量。最后，以真实数据集上的实验给出所提出的信息熵度量模型及方法的量化过程及结果。本章是研究差分隐私信息论度量的基础工作，为后续基于隐私信息度量研究权衡隐私与效用均衡优化模型以及隐私机制设计奠定基础。
 
