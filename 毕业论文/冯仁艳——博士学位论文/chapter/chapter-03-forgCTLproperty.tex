@@ -278,14 +278,24 @@
 	Hm,s)$（$\Hm=(S,R,L,s)$）使得$(\Hm_1,s_1)\lrto_{\{p\}\cup V} (\Hm,s)$。
 	此时，可以如下构建一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$\Hm_2=(S_2,R_2,L_2,s_2)$且：
 	\begin{itemize}
-		\item[(1)] 对于$s_2$：令$s_2$是满足下面条件的状态：
+		\item[(1)] 对于$s_2$情形：令$s_2$是满足下面条件的状态：
 		\begin{itemize}
 			\item $p \in L_2(s_2)$当且仅当$p\in L_1(s_1)$，
 			\item 对于任意的$q \in V$，$q \in L_2(s_2)$当且仅当$q\in L(s)$，
 			\item 对于其他的原子命题$q'$，$q' \in L_2(s_2)$当且仅当$q'\in L_1(s_1)$当且仅当$q'\in L(s)$。
 		\end{itemize}
 			
-		\item[(2)] description
+		\item[(2)] 其他情形：
+		\begin{itemize}
+			\item 对于所有的满足$w\in S$，$w_1\in S_1$且$w\lrto_{\{p\}\cup V} w_1$的状态对$(w,w_1)$，如下构造$w_2\in S_2$：
+				\begin{itemize}
+					\item $p \in L_2(w_2)$当且仅当$p\in L_1(w_1)$，
+					\item 对于任意的$q \in V$，$q \in L_2(w_2)$当且仅当$q\in L(w)$，
+					\item 对于其他的原子命题$q'$，$q' \in L_2(w_2)$当且仅当$q'\in L_1(w_1)$当且仅当$q'\in L(w)$。
+				\end{itemize}
+			\item 对于$(w_1',w_1)\in R_1$，若$w_2$是基于$w_1$构造而成，且$w_2'$是基于$w_1'$构造而成，则令$(w_2',w_2)\in R_2$。
+		\end{itemize}
+		\item[(3)] 删除掉$S_2$和$R_2$中重复的元素。
 	\end{itemize}
 \end{proof}
 
