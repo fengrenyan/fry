@@ -309,12 +309,12 @@
 
 如同被遗忘的原子命题的集合能被拆成两个集合的遗忘一样，下面将介绍有些情况下从带路径时序词的公式中遗忘掉一些原子命题可以将这些时许词提到遗忘操作的前面。
 \begin{proposition}
-	令$V\subseteq \Ha$为原子命题的集合，$\Phi$为$\CTL$公式，则下面等式成立：
+	令$V\subseteq \Ha$为原子命题的集合，$\phi$为$\CTL$公式，则下面等式成立：
 	\begin{itemize}
-		\item[(i)] $\CTLforget(\ALL\NEXT\Phi,V) \equiv \ALL \NEXT\CTLforget(\Phi,V)$；
-		\item[(ii)] $\CTLforget(\EXIST\NEXT\Phi,V) \equiv \EXIST \NEXT\CTLforget(\Phi,V)$；
-		\item[(iii)] $\CTLforget(\ALL\FUTURE\Phi,V) \equiv \ALL\FUTURE\CTLforget(\Phi,V)$；
-		\item[(iv)] $\CTLforget(\EXIST\FUTURE\Phi,V) \equiv \EXIST\FUTURE\CTLforget(\Phi,V)$。
+		\item[(i)] $\CTLforget(\ALL\NEXT\phi,V) \equiv \ALL \NEXT\CTLforget(\phi,V)$；
+		\item[(ii)] $\CTLforget(\EXIST\NEXT\phi,V) \equiv \EXIST \NEXT\CTLforget(\phi,V)$；
+		\item[(iii)] $\CTLforget(\ALL\FUTURE\phi,V) \equiv \ALL\FUTURE\CTLforget(\phi,V)$；
+		\item[(iv)] $\CTLforget(\EXIST\FUTURE\phi,V) \equiv \EXIST\FUTURE\CTLforget(\phi,V)$。
 	\end{itemize}
 \end{proposition}
 \begin{proof}
@@ -325,24 +325,46 @@
 		\item $L':S' \rto 2^{\Ha}$且对于所有的$s_1\in S'$有$L'(s_1)=L(s_1)$，且
 		\item $s_0'$要么是$s_0$本身，要么是从$s_0$可达的某一个状态。
 	\end{itemize}
-(i) 要证明$\CTLforget(\ALL\NEXT\Phi,V) \equiv \ALL \NEXT\CTLforget(\Phi,V)$，只需证明：
+(i) 要证明$\CTLforget(\ALL\NEXT\phi,V) \equiv \ALL \NEXT\CTLforget(\phi,V)$，只需证明：
 \[
-\Mod(\CTLforget(\ALL\NEXT\Phi,V)) = \Mod(\ALL \NEXT\CTLforget(\Phi,V)).
+\Mod(\CTLforget(\ALL\NEXT\phi,V)) = \Mod(\ALL \NEXT\CTLforget(\phi,V)).
 \]
 
-$(\Rto)$ 对于任意$\CTLforget(\ALL\NEXT\Phi,V)$的模型$(\Hm',s')$，存在一个初始$\MPK$-结构$(\Hm,s)$使得$(\Hm,s)\models \ALL\NEXT\Phi$且$(\Hm,s)\lrto_V (\Hm',s')$\\
-$\Rto$ 对任意$(\Hm,s)$的子结构$(\Hm_1,s_1)$（其中$(s,s_1)\in R$），$(\Hm_1,s_1)\models \Phi$\\
-$\Rto$ 存在一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$(\Hm_2,s_2)\models \CTLforget(\Phi,V)$且$(\Hm_2,s_2) \lrto_V (\Hm_1,s_1)$\\
+$(\Rto)$ 对于任意$\CTLforget(\ALL\NEXT\phi,V)$的模型$(\Hm',s')$，存在一个初始$\MPK$-结构$(\Hm,s)$使得$(\Hm,s)\models \ALL\NEXT\phi$且$(\Hm,s)\lrto_V (\Hm',s')$\\
+$\Rto$ 对任意$(\Hm,s)$的子结构$(\Hm_1,s_1)$（其中$(s,s_1)\in R$），$(\Hm_1,s_1)\models \phi$\\
+$\Rto$ 存在一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$(\Hm_2,s_2)\models \CTLforget(\phi,V)$且$(\Hm_2,s_2) \lrto_V (\Hm_1,s_1)$\\
 $\Rto$ 由这些$(\Hm_2,s_2)$容易构造出一个初始$\MPK$-结构$(\Hm_3,s_3)$，使得$s_2$是$s_3$的直接后继状态，$(\Hm_2,s_2)$是$(\Hm_3,s_3)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
-$\Rto$ $(\Hm_3,s_3) \models \ALL \NEXT(\CTLforget(\Phi,V))$且$(\Hm_3,s_3) \lrto_V (\Hm',s')$\\
-$\Rto$ $(\Hm',s')\models \ALL \NEXT(\CTLforget(\Phi,V))$（由定理~\ref{thm:V-bisimulation:EQ}）
+$\Rto$ $(\Hm_3,s_3) \models \ALL \NEXT(\CTLforget(\phi,V))$且$(\Hm_3,s_3) \lrto_V (\Hm',s')$\\
+$\Rto$ $(\Hm',s')\models \ALL \NEXT(\CTLforget(\phi,V))$（由定理~\ref{thm:V-bisimulation:EQ}）
 
-$(\Lto)$ 令$(\Hm_3,s_3)$是$\ALL \NEXT(\CTLforget(\Phi,V))$的模型，则对于任意$(\Hm_3,s_3)$的子结构$(\Hm_2,s_2)$（其中$(s_3,s_2)\in R_3$）有$(\Hm_2,s_2)\models \CTLforget(\Phi,V)$\\
-$\Rto$ 对任意上述的$(\Hm_2,s_2)$，存在一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$(\Hm_1,s_1)\models \Phi$且$(\Hm_1,s_1)\lrto_V (\Hm_2,s_2)$\\
+$(\Lto)$ 令$(\Hm_3,s_3)$是$\ALL \NEXT(\CTLforget(\phi,V))$的模型，则对于任意$(\Hm_3,s_3)$的子结构$(\Hm_2,s_2)$（其中$(s_3,s_2)\in R_3$）有$(\Hm_2,s_2)\models \CTLforget(\phi,V)$\\
+$\Rto$ 对任意上述的$(\Hm_2,s_2)$，存在一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$(\Hm_1,s_1)\models \phi$且$(\Hm_1,s_1)\lrto_V (\Hm_2,s_2)$\\
 $\Rto$ 由这些$(\Hm_1,s_1)$容易构造出一个初始$\MPK$-结构$(\Hm,s)$，使得$s_1$是$s$的直接后继状态，$(\Hm_1,s_1)$是$(\Hm,s)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
-$\Rto$ $(\Hm,s)\models \ALL\NEXT\Phi$且$(\Hm_3,s_3)\models \CTLforget(\ALL\NEXT\Phi,V)$。
+$\Rto$ $(\Hm,s)\models \ALL\NEXT\phi$且$(\Hm_3,s_3)\models \CTLforget(\ALL\NEXT\phi,V)$。
+
+(ii) 为了证明$\CTLforget(\EXIST \NEXT \phi, V) \equiv \EXIST\NEXT\CTLforget(\phi, V)$，只需证明：
+\[\Mod(\CTLforget(\EXIST \NEXT \phi, V)) = \Mod( \EXIST\NEXT\CTLforget(\phi, V)).\]
+
+$(\Rto)$ 对于任意$\CTLforget(\EXIST\NEXT\phi,V)$的模型$(\Hm',s')$，存在一个初始$\MPK$-结构$(\Hm,s)$使得$(\Hm,s)\models \ALL\NEXT\phi$且$(\Hm,s)\lrto_V (\Hm',s')$\\
+$\Rto$ 存在$(\Hm,s)$的子结构$(\Hm_1,s_1)$（其中$(s,s_1)\in R$），$(\Hm_1,s_1)\models \phi$\\
+$\Rto$ 存在一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$(\Hm_2,s_2)\models \CTLforget(\phi,V)$且$(\Hm_2,s_2) \lrto_V (\Hm_1,s_1)$\\
+$\Rto$ 由$(\Hm_2,s_2)$和$(\Hm,s)$的其他子结构容易构$(\Hm,s_x)$（$(s,s_x)\in S$）造出一个初始$\MPK$-结构$(\Hm_3,s_3)$，使得$s_2$是$s_3$的直接后继状态，$(\Hm_2,s_2)$是$(\Hm_3,s_3)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
+$\Rto$ $(\Hm_3,s_3) \models \EXIST \NEXT(\CTLforget(\phi,V))$且$(\Hm_3,s_3) \lrto_V (\Hm',s')$\\
+$\Rto$ $(\Hm',s')\models \EXIST \NEXT(\CTLforget(\phi,V))$（由定理~\ref{thm:V-bisimulation:EQ}）
+
+$(\Lto)$ 令$(\Hm_3,s_3)$是$\EXIST \NEXT(\CTLforget(\phi,V))$的模型，则存在一个$(\Hm_3,s_3)$的子结构$(\Hm_2,s_2)$（其中$(s_3,s_2)\in R_3$）有$(\Hm_2,s_2)\models \CTLforget(\phi,V)$\\
+$\Rto$ 对任意上述的$(\Hm_2,s_2)$，存在一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$(\Hm_1,s_1)\models \phi$且$(\Hm_1,s_1)\lrto_V (\Hm_2,s_2)$\\
+$\Rto$ 由$(\Hm_1,s_1)$和$(\Hm_3,s_3)$的其他子结构$(\Hm_3,s_x)$（$(s_3,s_x)\in S$）容易构造出一个初始$\MPK$-结构$(\Hm,s)$，使得$s_1$是$s$的直接后继状态，$(\Hm_1,s_1)$是$(\Hm,s)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
+$\Rto$ $(\Hm,s)\models \EXIST\NEXT\phi$且$(\Hm_3,s_3)\models \CTLforget(\EXIST\NEXT\phi,V)$。
+
+同理可证(iii)和(iv)成立。
 \end{proof}
 
-\section{本章小结}
-本章基于Shannon基本通信模型，给出差分隐私通信模型及其信道数学模型。以此通信模型为基本出发点，构建了一种属性关联、元组记录独立同分布的离散无记忆信源的$n$次扩展信源。在此基础上，引入信息熵、条件熵、互信息量、失真函数等概念给出了隐私信源熵、隐私熵与隐私泄露风险、数据效用的基本度量模型及方法。进一步，针对多维属性关联的隐私度量问题，基于信息熵提出了面向关联属性的差分隐私信息熵度量模型及方法。首先，利用互信息相关性分析方法解决关联属性相关度量化问题。随后，基于相关度给出关联属性的图表示。进一步，基于差分隐私的信道模型、属性关联图中隐私泄露关键路径，借助马尔可夫理论分析了关联属性导致敏感信息的隐私泄露量。最后，以真实数据集上的实验给出所提出的信息熵度量模型及方法的量化过程及结果。本章是研究差分隐私信息论度量的基础工作，为后续基于隐私信息度量研究权衡隐私与效用均衡优化模型以及隐私机制设计奠定基础。
+%\section{基于归结的遗忘理论计算方法}
+
+
+\section{本章小结} 
+本章基于现有不同环境下的互模拟，给出了扩展的Kripke结构下的$V$-互模拟的定义。
+结构间的$V$-互模拟描述的是两个结构除了$V$中的元素之外，它们的状态转换行为是能够互相模拟的。这与遗忘理论所描述的“遗忘掉不想考虑的原子命题应该不影响剩余原子命题上的结论”一致。因此，我们使用$V$-互模拟刻画了原始公式与遗忘结果的模型之间的关系，从而得到了遗忘理论的定义。
+遗忘理论作为本主要探讨的对象，本章通过研究$V$-互模拟的一些基本性质，探索了遗忘理论应有的一般属性，这些属性包括：模块化性质、交换性、同质性和命题罗也满足的属性。除了这些基本性质，本章还说明了本文所给出的遗忘理论的定义是命题逻辑下遗忘理论定义的扩展。这些都为后文探索如何使用遗忘理论计算最强必要条件和最弱充分条件奠定了坚实的基础。
 
