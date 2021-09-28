@@ -31,87 +31,87 @@
 \contentsline {section}{\numberline {3.4}本章小结}{38}{section.3.4}
 \contentsline {chapter}{\numberline {第四章\hspace {0.3em}}计算CTL下的遗忘：基于归结的方法}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}引言}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}系统模型与问题提出}{41}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}数据模型}{41}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}信道模型}{42}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}问题提出}{44}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}隐私与效用的优化模型}{44}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}研究方案概述}{45}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}互信息隐私优化模型}{45}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}条件互信息优化模型}{46}{subsection.4.3.3}
-\contentsline {section}{\numberline {4.4}差分隐私数据发布机制与优化}{48}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}优化模型最优解}{48}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}交替最小化算法}{49}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}优化模型迭代算法}{51}{subsection.4.4.3}
-\contentsline {section}{\numberline {4.5}实验与分析}{52}{section.4.5}
-\contentsline {subsection}{\numberline {4.5.1}实验设置}{52}{subsection.4.5.1}
-\contentsline {subsection}{\numberline {4.5.2}实验分析}{53}{subsection.4.5.2}
-\contentsline {section}{\numberline {4.6}本章小结}{58}{section.4.6}
-\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}差分隐私数据收集的优化模型}{59}{chapter.5}
-\contentsline {section}{\numberline {5.1}引言}{59}{section.5.1}
-\contentsline {section}{\numberline {5.2}系统模型与问题提出}{61}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}基本定义}{61}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}系统模型}{62}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}问题提出}{63}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}隐私保护数据收集方案}{64}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}研究方案概述}{64}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}互信息隐私最优机制}{65}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}有序随机响应扰动机制}{68}{subsection.5.3.3}
-\contentsline {section}{\numberline {5.4}隐私与效用分析}{71}{section.5.4}
-\contentsline {subsection}{\numberline {5.4.1}隐私分析}{71}{subsection.5.4.1}
-\contentsline {subsection}{\numberline {5.4.2}效用分析}{73}{subsection.5.4.2}
-\contentsline {subsection}{\numberline {5.4.3}相关度损失度量}{74}{subsection.5.4.3}
-\contentsline {section}{\numberline {5.5}实验与分析}{76}{section.5.5}
-\contentsline {subsection}{\numberline {5.5.1}实验设置}{76}{subsection.5.5.1}
-\contentsline {subsection}{\numberline {5.5.2}对比分析}{77}{subsection.5.5.2}
-\contentsline {subsection}{\numberline {5.5.3}参数$\lambda $影响}{79}{subsection.5.5.3}
-\contentsline {subsection}{\numberline {5.5.4}参数$T$影响}{82}{subsection.5.5.4}
-\contentsline {section}{\numberline {5.6}本章小结}{82}{section.5.6}
-\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}差分隐私策略机制的均衡优化模型}{83}{chapter.6}
-\contentsline {section}{\numberline {6.1}引言}{83}{section.6.1}
-\contentsline {section}{\numberline {6.2}系统模型与问题提出}{85}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}系统模型}{85}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}敌手模型}{86}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}问题提出}{86}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}隐私保护攻防博弈}{88}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}博弈模型}{88}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}均衡分析}{90}{subsection.6.3.2}
-\contentsline {section}{\numberline {6.4}策略优化选择算法}{92}{section.6.4}
-\contentsline {section}{\numberline {6.5}实验与分析}{94}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}实例分析}{94}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}数值分析}{95}{subsection.6.5.2}
-\contentsline {section}{\numberline {6.6}本章小结}{96}{section.6.6}
-\contentsline {chapter}{\numberline {第七章\hspace {0.3em}}差分隐私策略机制的均衡优化模型}{97}{chapter.7}
-\contentsline {section}{\numberline {7.1}引言}{97}{section.7.1}
-\contentsline {section}{\numberline {7.2}系统模型与问题提出}{99}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}系统模型}{99}{subsection.7.2.1}
-\contentsline {subsection}{\numberline {7.2.2}敌手模型}{100}{subsection.7.2.2}
-\contentsline {subsection}{\numberline {7.2.3}问题提出}{100}{subsection.7.2.3}
-\contentsline {section}{\numberline {7.3}隐私保护攻防博弈}{102}{section.7.3}
-\contentsline {subsection}{\numberline {7.3.1}博弈模型}{102}{subsection.7.3.1}
-\contentsline {subsection}{\numberline {7.3.2}均衡分析}{104}{subsection.7.3.2}
-\contentsline {section}{\numberline {7.4}策略优化选择算法}{106}{section.7.4}
-\contentsline {section}{\numberline {7.5}实验与分析}{108}{section.7.5}
-\contentsline {subsection}{\numberline {7.5.1}实例分析}{108}{subsection.7.5.1}
-\contentsline {subsection}{\numberline {7.5.2}数值分析}{109}{subsection.7.5.2}
-\contentsline {section}{\numberline {7.6}本章小结}{110}{section.7.6}
-\contentsline {chapter}{\numberline {第八章\hspace {0.3em}}差分隐私策略机制的均衡优化模型}{111}{chapter.8}
-\contentsline {section}{\numberline {8.1}引言}{111}{section.8.1}
-\contentsline {section}{\numberline {8.2}系统模型与问题提出}{113}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}系统模型}{113}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}敌手模型}{114}{subsection.8.2.2}
-\contentsline {subsection}{\numberline {8.2.3}问题提出}{114}{subsection.8.2.3}
-\contentsline {section}{\numberline {8.3}隐私保护攻防博弈}{116}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}博弈模型}{116}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}均衡分析}{118}{subsection.8.3.2}
-\contentsline {section}{\numberline {8.4}策略优化选择算法}{120}{section.8.4}
-\contentsline {section}{\numberline {8.5}实验与分析}{122}{section.8.5}
-\contentsline {subsection}{\numberline {8.5.1}实例分析}{122}{subsection.8.5.1}
-\contentsline {subsection}{\numberline {8.5.2}数值分析}{123}{subsection.8.5.2}
-\contentsline {section}{\numberline {8.6}本章小结}{124}{section.8.6}
-\contentsline {chapter}{\numberline {第九章\hspace {0.3em}}总结与展望}{125}{chapter.9}
-\contentsline {section}{\numberline {9.1}工作总结}{125}{section.9.1}
-\contentsline {section}{\numberline {9.2}研究展望}{126}{section.9.2}
-\contentsline {chapter}{参考文献}{128}{chapter*.58}
-\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{144}{chapter*.59}
-\contentsline {chapter}{攻读博士学位期间科研和论文情况}{145}{chapter*.60}
+\contentsline {section}{\numberline {4.2}系统模型与问题提出}{40}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}数据模型}{40}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}信道模型}{41}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}问题提出}{43}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}隐私与效用的优化模型}{43}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}研究方案概述}{44}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}互信息隐私优化模型}{44}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}条件互信息优化模型}{45}{subsection.4.3.3}
+\contentsline {section}{\numberline {4.4}差分隐私数据发布机制与优化}{47}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}优化模型最优解}{47}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}交替最小化算法}{48}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}优化模型迭代算法}{50}{subsection.4.4.3}
+\contentsline {section}{\numberline {4.5}实验与分析}{51}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}实验设置}{51}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}实验分析}{52}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}本章小结}{57}{section.4.6}
+\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}差分隐私数据收集的优化模型}{58}{chapter.5}
+\contentsline {section}{\numberline {5.1}引言}{58}{section.5.1}
+\contentsline {section}{\numberline {5.2}系统模型与问题提出}{60}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}基本定义}{60}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}系统模型}{61}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}问题提出}{62}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}隐私保护数据收集方案}{63}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}研究方案概述}{63}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}互信息隐私最优机制}{64}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}有序随机响应扰动机制}{67}{subsection.5.3.3}
+\contentsline {section}{\numberline {5.4}隐私与效用分析}{70}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}隐私分析}{70}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}效用分析}{72}{subsection.5.4.2}
+\contentsline {subsection}{\numberline {5.4.3}相关度损失度量}{73}{subsection.5.4.3}
+\contentsline {section}{\numberline {5.5}实验与分析}{75}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}实验设置}{75}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}对比分析}{76}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}参数$\lambda $影响}{78}{subsection.5.5.3}
+\contentsline {subsection}{\numberline {5.5.4}参数$T$影响}{81}{subsection.5.5.4}
+\contentsline {section}{\numberline {5.6}本章小结}{81}{section.5.6}
+\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}差分隐私策略机制的均衡优化模型}{82}{chapter.6}
+\contentsline {section}{\numberline {6.1}引言}{82}{section.6.1}
+\contentsline {section}{\numberline {6.2}系统模型与问题提出}{84}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}系统模型}{84}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}敌手模型}{85}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}问题提出}{85}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}隐私保护攻防博弈}{87}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}博弈模型}{87}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}均衡分析}{89}{subsection.6.3.2}
+\contentsline {section}{\numberline {6.4}策略优化选择算法}{91}{section.6.4}
+\contentsline {section}{\numberline {6.5}实验与分析}{93}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}实例分析}{93}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}数值分析}{94}{subsection.6.5.2}
+\contentsline {section}{\numberline {6.6}本章小结}{95}{section.6.6}
+\contentsline {chapter}{\numberline {第七章\hspace {0.3em}}差分隐私策略机制的均衡优化模型}{96}{chapter.7}
+\contentsline {section}{\numberline {7.1}引言}{96}{section.7.1}
+\contentsline {section}{\numberline {7.2}系统模型与问题提出}{98}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}系统模型}{98}{subsection.7.2.1}
+\contentsline {subsection}{\numberline {7.2.2}敌手模型}{99}{subsection.7.2.2}
+\contentsline {subsection}{\numberline {7.2.3}问题提出}{99}{subsection.7.2.3}
+\contentsline {section}{\numberline {7.3}隐私保护攻防博弈}{101}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}博弈模型}{101}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}均衡分析}{103}{subsection.7.3.2}
+\contentsline {section}{\numberline {7.4}策略优化选择算法}{105}{section.7.4}
+\contentsline {section}{\numberline {7.5}实验与分析}{107}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}实例分析}{107}{subsection.7.5.1}
+\contentsline {subsection}{\numberline {7.5.2}数值分析}{108}{subsection.7.5.2}
+\contentsline {section}{\numberline {7.6}本章小结}{109}{section.7.6}
+\contentsline {chapter}{\numberline {第八章\hspace {0.3em}}差分隐私策略机制的均衡优化模型}{110}{chapter.8}
+\contentsline {section}{\numberline {8.1}引言}{110}{section.8.1}
+\contentsline {section}{\numberline {8.2}系统模型与问题提出}{112}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}系统模型}{112}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}敌手模型}{113}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}问题提出}{113}{subsection.8.2.3}
+\contentsline {section}{\numberline {8.3}隐私保护攻防博弈}{115}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}博弈模型}{115}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}均衡分析}{117}{subsection.8.3.2}
+\contentsline {section}{\numberline {8.4}策略优化选择算法}{119}{section.8.4}
+\contentsline {section}{\numberline {8.5}实验与分析}{121}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}实例分析}{121}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.2}数值分析}{122}{subsection.8.5.2}
+\contentsline {section}{\numberline {8.6}本章小结}{123}{section.8.6}
+\contentsline {chapter}{\numberline {第九章\hspace {0.3em}}总结与展望}{124}{chapter.9}
+\contentsline {section}{\numberline {9.1}工作总结}{124}{section.9.1}
+\contentsline {section}{\numberline {9.2}研究展望}{125}{section.9.2}
+\contentsline {chapter}{参考文献}{127}{chapter*.58}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{143}{chapter*.59}
+\contentsline {chapter}{攻读博士学位期间科研和论文情况}{144}{chapter*.60}
