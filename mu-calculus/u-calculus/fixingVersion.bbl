@@ -1,0 +1,48 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\providecommand{\doi}[1]{https://doi.org/#1}
+
+\bibitem{Baier:PMC:2008}
+Baier, C., Katoen, J.: Principles of model checking. {MIT} Press (2008)
+
+\bibitem{browne1988characterizing}
+Browne, M.C., Clarke, E.M., Gr{\"u}mberg, O.: Characterizing finite kripke
+  structures in propositional temporal logic. Theoretical Computer Science
+  \textbf{59}(1-2),  115--131 (1988)
+
+\bibitem{d1996uniform}
+D'Agostino, G., Hollenberg, M.: Uniform interpolation, automata and the modal
+  {\(\mu\)}-calculus. In: Kracht, M., de~Rijke, M., Wansing, H., Zakharyaschev,
+  M. (eds.) Advances in Modal Logic 1, papers from the first workshop on
+  "Advances in Modal logic," held in Berlin, Germany, 8-10 October 1996. pp.
+  73--84. {CSLI} Publications (1996)
+
+\bibitem{d2000logical}
+D'Agostino, G., Hollenberg, M.: Logical questions concerning the
+  {\(\mu\)}-calculus: Interpolation, lyndon and los-tarski. J. Symb. Log.
+  \textbf{65}(1),  310--332 (2000). \doi{10.2307/2586539},
+  \url{https://doi.org/10.2307/2586539}
+
+\bibitem{d2006modal}
+D'Agostino, G., Lenzi, G.: On modal $\mu$-calculus with explicit interpolants.
+  Journal of applied logic  \textbf{4}(3),  256--278 (2006)
+
+\bibitem{renyansfirstpaper}
+Feng, R., Acar, E., Schlobach, S., Wang, Y., Liu, W.: On sufficient and
+  necessary conditions in bounded {CTL:} {A} forgetting approach. In:
+  Calvanese, D., Erdem, E., Thielscher, M. (eds.) Proceedings of the 17th
+  International Conference on Principles of Knowledge Representation and
+  Reasoning, {KR} 2020, Rhodes, Greece, September 12-18, 2020. pp. 361--370
+  (2020). \doi{10.24963/kr.2020/37}, \url{https://doi.org/10.24963/kr.2020/37}
+
+\bibitem{janin1995automata}
+Janin, D., Walukiewicz, I.: Automata for the modal {\(\mu\)}-calculus and
+  related results. In: International Symposium on Mathematical Foundations of
+  Computer Science. pp. 552--562. Springer (1995)
+
+\bibitem{DBLP:journals/cacm/Kozen83}
+Kozen, D.: Results on the propositional $\mu$-calculus. Theoretical Computer
+  Science  \textbf{27},  333--354 (1983)
+
+\end{thebibliography}
