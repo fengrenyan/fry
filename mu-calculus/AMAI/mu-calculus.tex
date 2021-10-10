@@ -1,0 +1,601 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% Please do not use \input{...} to include other tex files.       %%
+%% Submit your LaTeX manuscript as one .tex document.              %%
+%%                                                                 %%
+%% All additional figures and files should be attached             %%
+%% separately and not embedded in the \TeX\ document itself.       %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%\documentclass[referee,sn-basic]{sn-jnl}% referee option is meant for double line spacing
+
+%%=======================================================%%
+%% to print line numbers in the margin use lineno option %%
+%%=======================================================%%
+
+%%\documentclass[lineno,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+%%======================================================%%
+%% to compile with pdflatex/xelatex use pdflatex option %%
+%%======================================================%%
+
+%%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+%%\documentclass[sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+\documentclass[sn-mathphys]{sn-jnl}% Math and Physical Sciences Reference Style
+%%\documentclass[sn-aps]{sn-jnl}% American Physical Society (APS) Reference Style
+%%\documentclass[sn-vancouver]{sn-jnl}% Vancouver Reference Style
+%%\documentclass[sn-apa]{sn-jnl}% APA Reference Style
+%%\documentclass[sn-chicago]{sn-jnl}% Chicago-based Humanities Reference Style
+%%\documentclass[sn-standardnature]{sn-jnl}% Standard Nature Portfolio Reference Style
+%%\documentclass[default]{sn-jnl}% Default
+%%\documentclass[default,iicol]{sn-jnl}% Default with double column layout
+
+%%%% Standard Packages
+%%<additional latex packages if required can be included here>
+%%%%
+
+%%%%%=============================================================================%%%%
+%%%%  Remarks: This template is provided to aid authors with the preparation
+%%%%  of original research articles intended for submission to journals published 
+%%%%  by Springer Nature. The guidance has been prepared in partnership with 
+%%%%  production teams to conform to Springer Nature technical requirements. 
+%%%%  Editorial and presentation requirements differ among journal portfolios and 
+%%%%  research disciplines. You may find sections in this template are irrelevant 
+%%%%  to your work and are empowered to omit any such section if allowed by the 
+%%%%  journal you intend to submit to. The submission guidelines and policies 
+%%%%  of the journal take precedence. A detailed User Manual is available in the 
+%%%%  template package for technical guidance.
+%%%%%=============================================================================%%%%
+
+\jyear{2021}%
+
+%% as per the requirement new theorem styles can be included as shown below
+\theoremstyle{thmstyleone}%
+\newtheorem{theorem}{Theorem}%  meant for continuous numbers
+%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
+%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
+\newtheorem{proposition}[theorem]{Proposition}% 
+%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+
+\theoremstyle{thmstyletwo}%
+\newtheorem{example}{Example}%
+\newtheorem{remark}{Remark}%
+
+\theoremstyle{thmstylethree}%
+\newtheorem{definition}{Definition}%
+
+\raggedbottom
+%%\unnumbered% uncomment this for unnumbered level heads
+
+\begin{document}
+
+\title[Article Title]{Knowledge Forgetting in Propositional $\mu$-calculus}
+
+
+\newcommand{\tuple}[1]{{\langle{#1}\rangle}}
+%\newcommand{\Dtuple}[2]{{\right\|{#2}\right\|}}
+\newcommand{\Mod}{\textit{Mod}}
+\newcommand\ie{{\it i.e. }}
+\newcommand\eg{{\it e.g.}}
+% \newcommand\st{{\it s.t. }}
+% \newtheorem{definition}{Definition}
+\newtheorem{examp}{Example}
+% \newenvironment{example}{\begin{examp}\rm}{\end{examp}}
+% \newtheorem{lemma}{Lemma}
+% \newtheorem{proposition}{Proposition}
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{corollary}[theorem]{Corollary}
+\iffalse
+\newenvironment{proof}{{\bf Proof:}}{\hfill\rule{2mm}{2mm}\\ }
+\fi
+\newcommand{\rto}{\rightarrow}
+\newcommand{\lto}{\leftarrow}
+\newcommand{\lrto}{\leftrightarrow}
+\newcommand{\Rto}{\Rightarrow}
+\newcommand{\Lto}{\Leftarrow}
+\newcommand{\LRto}{\Leftrightarrow}
+\newcommand{\Var}{\textit{Var}}
+\newcommand{\Forget}{\textit{Forget}}
+\newcommand{\KForget}{\textit{KForget}}
+\newcommand{\TForget}{\textit{TForget}}
+\newcommand{\forget}{\textit{forget}}
+\newcommand{\Fst}{\textit{Fst}}
+\newcommand{\dep}{\textit{dep}}
+\newcommand{\term}{\textit{term}}
+\newcommand{\literal}{\textit{literal}}
+
+\newcommand{\Atom}{\mathcal{A}}
+\newcommand{\SFive}{\textbf{S5}}
+\newcommand{\MPK}{\textsc{k}}
+\newcommand{\MPB}{\textsc{b}}
+\newcommand{\MPT}{\textsc{t}}
+\newcommand{\MPA}{\forall}
+\newcommand{\MPE}{\exists}
+
+\newcommand{\DNF}{\textit{DNF}}
+\newcommand{\CNF}{\textit{CNF}}
+
+\newcommand{\degree}{\textit{degree}}
+\newcommand{\sunfold}{\textit{sunfold}}
+
+\newcommand{\Pos}{\textit{Pos}}
+\newcommand{\Neg}{\textit{Neg}}
+\newcommand\wrt{{\it w.r.t.}}
+\newcommand{\Hm} {{\cal M}}
+\newcommand{\Hw} {{\cal W}}
+\newcommand{\Hr} {{\cal R}}
+\newcommand{\Hb} {{\cal B}}
+\newcommand{\Ha} {{\cal A}}
+
+\newcommand{\Dsj}{\triangledown}
+
+\newcommand{\wnext}{\widetilde{\bigcirc}}
+\newcommand{\nex}{\bigcirc}
+\newcommand{\ness}{\square}
+\newcommand{\qness}{\boxminus}
+\newcommand{\wqnext}{\widetilde{\circleddash}}
+\newcommand{\qnext}{\circleddash}
+\newcommand{\may}{\lozenge}
+\newcommand{\qmay}{\blacklozenge}
+\newcommand{\unt} {{\cal U}}
+\newcommand{\since} {{\cal S}}
+\newcommand{\SNF} {\textit{SNF$_C$}}
+\newcommand{\start}{\textbf{start}}
+\newcommand{\Elm}{\textit{Elm}}
+\newcommand{\simp}{\textbf{simp}}
+\newcommand{\nnf}{\textbf{nnf}}
+
+\newcommand{\Diff}{\textrm{Diff}}
+
+\newcommand{\CTL}{\textrm{CTL}}
+\newcommand{\Ind}{\textrm{Ind}}
+\newcommand{\Tran}{\textrm{Tran}}
+\newcommand{\Sub}{\textrm{Sub}}
+\newcommand{\NI}{\textrm{NI}}
+\newcommand{\Inst}{\textrm{Inst}}
+\newcommand{\Com}{\textrm{Com}}
+\newcommand{\Rp}{\textrm{Rp}}
+%\newcommand{\forget}{{\textsc{f}_\CTL}}
+\newcommand{\ALL}{\textsc{a}}
+\newcommand{\EXIST}{\textsc{e}}
+\newcommand{\NEXT}{\textsc{x}}
+\newcommand{\FUTURE}{\textsc{f}}
+\newcommand{\UNTIL}{\textsc{u}}
+\newcommand{\GLOBAL}{\textsc{g}}
+\newcommand{\UNLESS}{\textsc{w}}
+\newcommand{\Def}{\textrm{def}}
+\newcommand{\IR}{\textrm{IR}}
+\newcommand{\Tr}{\textrm{Tr}}
+\newcommand{\dis}{\textrm{dis}}
+\def\PP{\ensuremath{\textbf{PP}}}
+\def\NgP{\ensuremath{\textbf{NP}}}
+\def\W{\ensuremath{\textbf{W}}}
+\newcommand{\Pre}{\textrm{Pre}}
+\newcommand{\Post}{\textrm{Post}}
+
+
+\newcommand{\CTLsnf}{{\textsc{SNF}_{\textsc{ctl}}^g}}
+\newcommand{\ResC}{{\textsc{R}_{\textsc{ctl}}^{\succ, S}}}
+\newcommand{\CTLforget}{{\textsc{F}_{\textsc{ctl}}}}
+\newcommand{\Muforget}{{\textsc{F}_{\textsc{$\mu$}}}}
+\newcommand{\Refine}{\textsc{Refine}}
+\newcommand{\cf}{\textrm{cf.}}
+\newcommand{\NEXP}{\textmd{\rm NEXP}}
+%\newcommand{\EXP}{\textmd{\rm EXP}}
+\newcommand{\coNEXP}{\textmd{\rm co-NEXP}}
+\newcommand{\NP}{\textmd{\rm NP}}
+\newcommand{\coNP}{\textmd{\rm co-NP}}
+\newcommand{\Pol}{\textmd{\rm P}}
+\newcommand{\BH}[1]{\textmd{\rm BH}_{#1}}
+\newcommand{\coBH}[1]{\textmd{\rm co-BH}_{#1}}
+\newcommand{\Empty}{\emptyset}%\varnothing}
+\newcommand{\NLOG}{\textmd{\rm NLOG}}
+\newcommand{\DeltaP}[1]{\Delta_{#1}^{p}}
+\newcommand{\PIP}[1]{\Pi_{#1}^{p}}
+\newcommand{\SigmaP}[1]{\Sigma_{#1}^{p}}
+
+%%=============================================================%%
+%% Prefix	-> \pfx{Dr}
+%% GivenName	-> \fnm{Joergen W.}
+%% Particle	-> \spfx{van der} -> surname prefix
+%% FamilyName	-> \sur{Ploeg}
+%% Suffix	-> \sfx{IV}
+%% NatureName	-> \tanm{Poet Laureate} -> Title after name
+%% Degrees	-> \dgr{MSc, PhD}
+%% \author*[1,2]{\pfx{Dr} \fnm{Joergen W.} \spfx{van der} \sur{Ploeg} \sfx{IV} \tanm{Poet Laureate} 
+%%                 \dgr{MSc, PhD}}\email{iauthor@gmail.com}
+%%=============================================================%%
+
+\author*[1,2]{\fnm{First} \sur{Author}}\email{iauthor@gmail.com}
+
+\author[2,3]{\fnm{Second} \sur{Author}}\email{iiauthor@gmail.com}
+\equalcont{These authors contributed equally to this work.}
+
+\author[1,2]{\fnm{Third} \sur{Author}}\email{iiiauthor@gmail.com}
+\equalcont{These authors contributed equally to this work.}
+
+\affil*[1]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{100190}, \state{State}, \country{Country}}}
+
+\affil[2]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{10587}, \state{State}, \country{Country}}}
+
+\affil[3]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{610101}, \state{State}, \country{Country}}}
+
+%%==================================%%
+%% sample for unstructured abstract %%
+%%==================================%%
+
+\abstract{The $\mu$-calculus is one of the most important logics describing specifications of transition systems. It has been
+	extensively explored for formal verification in model checking due to its exceptional balance between expressiveness and algorithmic properties.
+	From the perspective of systems/knowledge evolving,  one may want to discard some information content in a specification that become irrelevant or unnecessary;  one may also need a (weakest) precondition for a system to enjoy some desire properties.
+	% On the one hand, some  information content in a specification
+	% might become irrelevant or unnecessary due to various reasons from the perspective of knowledge representation.
+	% On the other hand, a weakest precondition of a specification is badly necessary in verification, where
+	%  a (weakest) precondition is sufficient for a transition system to enjoy a desire property.
+	This paper is to address these scenarios for $\mu$-calculus in a principle way in terms of knowledge {\em forgetting}.
+	In particular, it proposes a
+	notion of forgetting by a generalized bisimulation 
+	%bisimilar equivalence (over a signature) 
+	and explores the semantic and logical properties of forgetting, 
+	%its important properties as a knowledge distilling operator, 
+	besides some reasoning complexity results.
+	It also shows that the forgetting can be employed to compute the weakest preconditions and to present knowledge update.}
+
+%%================================%%
+%% Sample for structured abstract %%
+%%================================%%
+
+% \abstract{\textbf{Purpose:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+% 
+% \textbf{Methods:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+% 
+% \textbf{Results:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.
+% 
+% \textbf{Conclusion:} The abstract serves both as a general introduction to the topic and as a brief, non-technical summary of the main results and their implications. The abstract must not include subheadings (unless expressly permitted in the journal's Instructions to Authors), equations or citations. As a guide the abstract should not exceed 200 words. Most journals do not set a hard limit however authors are advised to check the author instructions for the journal they are submitting to.}
+
+\keywords{$\mu$-calculus, Forgetting, Weakest precondition, Knowledge update}
+
+%%\pacs[JEL Classification]{D8, H51}
+
+%%\pacs[MSC Classification]{35A01, 65L10, 65L12, 65L20, 65L70}
+
+\maketitle
+
+\section{Introduction}\label{sec1}
+
+Propositional $\mu$-calculus consists essentially of propositional modal logic with a least fixpoint operator.
+While it is as expressive as the monadic second-order logic of two successors (S2S) on binary trees~\cite{emerson1991tree,niwinski1988fixed}, 
+it enjoys the small-model property. The exceptional balance between expressiveness and algorithmic properties
+results in efficient and successful automatic verification (model checking) of livenss, fairness and safety for concurrent systems~\cite{emerson1997model}.
+
+From the perspective of systems/knowledge evolving, some information content of a (concurrent) system may become
+irrelevant due to various reasons, e.g., it might become obsolete by time, or perhaps infeasible due to practical difficulties.
+It is usually a non-trivial task  to keep a system update by
+discarding or eliminating such information content from the system. To redesign a system from scratch is undesirable 
+when it evolves from another one since  it is usually expensive and tedious to design a system meeting  given requirements.
+It is also a challenge  to find a (weakest) condition for
+a system to enjoy some desirable properties (under some restrictions). For instance, when a system
+$\Hm$ does not have the property $\varphi$, how can one find a (weakest) restriction of $\Hm$ under which the property $\varphi$ holds?
+This is the well-known weakest preconditions~\cite{DBLP:journals/cacm/Dijkstra75}.
+
+This paper is to address the above scenarios for $\mu$-calculus in a principle way in terms of forgetting,
+which is deeply rooted in artificial intelligence (AI) and formal logic (with the well-known notion of uniform interpolation).
+Informally, {\em knowledge forgetting} is to discard all of the information content over a given signature, or alternatively to 
+extract all of information content over some signature.
+In this way, a logical approach is at hand to dismiss irrelevant information content without changing the behaviour of  the  associated  system  or  violating  the  existing  system  specification under a  given signature. In addition, it also provides a logical way to find a (weakest) precondition (named {\em weakest sufficient condition} in AI jargon)  under a  given signature. 
+
+
+Indeed, forgetting has been extensively studied in  various logical formal systems to deal with  abductive reasoning, reasoning under inconsistency, knowledge updating and epistemic planning, including the classical propositional and first-order
+logic~\cite{Fangzhen:forgetit,DBLP:Lin:AIJ:2001,lang2003propositional}, (multi-agent) modal logics~\cite{su2004reasoning,baral2005knowledge,Yan:AIJ:2009,fang2019forgetting,feng2020sufficient}, description logics~\cite{konev2009forgetting,Lutz:IJCAI:2011,DBLP:conf/aaai/ZhaoSWZF20} and nonmonotonic logics (answer set programming in particular)~\cite{DBLP:journals/ai/EiterW08,wang2013forgetting,DBLP:journals/jair/WangZZZ14,Yisong:AAAI:2015,Delgrande:AAAI:2015,gonccalves2020limits}. 
+
+To our best, none of existing knowledge forgetting is applicable to $\mu$-calculus. The main contributions of the work are as follows:
+\begin{itemize}
+	\item We propose a knowledge forgetting for $\mu$-calculus and prove a presentation theorem to characterize the forgetting.
+	Other properties of forgetting are revealed, including modularity, commutativity, homogeneity and reasoning complexities.
+	When forgetting is involved, various reasoning tasks become harder than without forgetting.
+	These results are mostly applicable to uniform interpolation due to its duality with knowledge forgetting.
+	
+	\item We demonstrate that how the knowledge forgetting can be employed as a flexible notion 
+	to compute the weakest sufficient conditions and to represent knowledge update in $\mu$-calculus. 
+	In particular, we give a knowledge update operator in terms of forgetting that 
+	enjoys the Katsuno and Mendelzon's knowledge update postulates~\cite{katsuno91mendelzon}.
+\end{itemize}
+
+The rest of the paper is organized as follows. 
+After discussing the related work in the next section, the basic notation and technical preliminaries are introduced in Section~\ref{preliminaries}. The formal definition of forgetting in $\mu$-calculus,  its various properties, and the computational complexities are presented in Section~\ref{forgetting}.
+Section~\ref{applications} shows that the forgetting can be used to compute WSC (SNC) and to present knowledge update.
+%Section~\ref{ns_conditions} identifies the WSC by forgetting.
+%Section~\ref{knowledge_updat} addresses the knowledge update of $\mu$-calculus by forgetting.
+Finally, concluding remarks are given in Section~\ref{sec:conclude}.
+
+To avoid hindering the flow of content, detailed proofs of the technical results are provided in the Appendix.
+
+\section{Related work}
+In this section, we briefly discuss published matter that is technically related to our work.
+
+\subsection{The Weakest Precondition}
+%hoare triple, WP, invariant, ÏêÏ¸ÃèÊöÑ½
+%Recall that in formal verification,
+
+
+The \emph{weakest precondition}, as an important concept in formal verification, was first proposed %~\cite{Dijkstra:1959}
+by Dijkstra to solve the problem of computing or approximating invariants appearing in the  \emph{verification of computer programs and systems}~\cite{DBLP:journals/cacm/Dijkstra75}, particularly in the ``Hoare triple"~\cite{Hoare1969}.
+Afterwards, it was wildly studied in various fields, especially in 
+refining systems~\cite{woodcock1990refinement},
+reasoning about assembly language programs~\cite{legato2002weakest},
+formulating verification conditions~\cite{DBLP:journals/ipl/Leino05}, 
+generating counterexamples~\cite{dailler2018instrumenting}, and so on.
+
+In the field of \emph{artificial intelligence} (AI), there is a similar concept called the \emph{weakest sufficient condition} (WSC), which was introduced by Lin to generate successor state axioms from causal theories (in planning)~\cite{DBLP:Lin:AIJ:2001,lin2003compiling}. Moreover, the SNC and WSC for proposition $q$ on a restricted subset of the propositional variables under propositional theory $T$ are computed based on the notion of forgetting.
+Afterwards the SNC and WSC were generalized to first-order logic (FOL) and a direct method based
+on the \emph{second-order quantifier elimination} (SOQE) technique was proposed to automatically generate the SNC and WSC~\cite{doherty2001computing}. In addition, a forgetting-based method is used to compute the SNC and WSC in \CTL~\cite{feng2020sufficient}.
+
+\subsection{Forgetting}
+\emph{Forgetting}
+%,
+%which is a dual concept of {\em uniform interpolation}~\cite{visser1996uniform,konev2009forgetting}, 
+was first formally defined in PL and FOL by Lin and Reiter~\cite{Fangzhen:forgetit,eiter2019brief}.
+As a technique for distilling knowledge, it has been explored in various of logic languages and widely used in AI. % (see the survey \cite{eiter2019brief} for more detail).
+Except for the WSC (SNC), belief update/revision, and knowledge update talked about in the Introduction, forgetting has been used for conflict solving~\cite{DBLP:Zhang:AIJ2006,Lang2010Reasoning} and knowledge compilation~\cite{Bienvenu2010Knowledge}.
+Informally, forgetting is used to abstract from a knowledge base ${\cal T}$ only the part that is relevant to a subset of alphabet ${\cal P}$ while not affecting the results of ${\cal T}$ on ${\cal P}$.
+
+The concept of forgetting can be traced back to the work of Boole on \emph{propositional
+	variable elimination} and the seminal work of Ackermann~\cite{ackermann1935untersuchungen}, who recognised that the problem amounts to \emph{the elimination of existential second-order quantifiers}.
+Moreover, it has been extended  to various logic systems, including modal logics~\cite{Yan:AIJ:2009,fang2019forgetting} and nonmonotonic logics~\cite{DBLP:journals/jair/WangZZZ14,gonccalves2020limits}.
+
+
+%Usually, the definition of forgetting can be defined from the perspective of \emph{strong (or semantic) forgetting} and \emph{weak forgetting}~\cite{Zhang:KR:2010}.
+%We consider semantic forgetting (abbreviated to forgetting) and give its definition in CPL and FOL here.
+
+In PL, forgetting has often been studied under the name `variable
+elimination'. Formally, the solution of forgetting a propositional variable $p$ from a PL formula $\varphi$ is $\varphi[p/\bot] \vee \varphi[p/\top]$~\cite{Fangzhen:forgetit}, where $\varphi[p/\bot]$ and $\varphi[p/\top]$ denote the formulas obtained from $\varphi$ by replacing atom $p$ with $\bot$ and $\top$, respectively.
+
+
+In FOL, the definition of forgetting was defined from the perspective of \emph{strong (or semantic) forgetting} and \emph{weak forgetting}~\cite{Zhang:KR:2010}.
+Although  weak forgetting and strong forgetting are not exactly the same, they coincide when the result of strong forgetting exists.
+We consider semantic forgetting (abbreviated to forgetting) and give its definition in PL and FOL here.
+Forgetting is considered an instance of the SOQE problem in FOL. In that case, the result of forgetting an n-ary predicate $P$ from a first-order formula $\varphi$ is $\exists R \varphi[P/R]$~\cite{Fangzhen:forgetit}, in which $R$ is an n-ary predicate variable and $\varphi[X/Y]$ is a result of replacing every occurrence of $X$ in $\varphi$ by $Y$. The task of forgetting in FOL, as a computational problem, is to find a first-order formula that is equivalent to $\exists R \varphi[P/R]$. It is evident that this is an SOQE problem. However, the solution to the SOQE problem is not always expressible in FOL~\cite{gabbay2008second},which means that the results of forgetting in FOL are not always expressible in FOL, i.e., forgetting in FOL is \emph{not closed}.
+Nonetheless, the solution of weak forgetting is always expressible in FOL, although
+there are cases in which the forgetting solution can be represented only by an infinite set of
+FOL formulas~\cite{Zhang:KR:2010}. %~\cite{zhang2010forgetting}.
+See~\cite{eiter2019brief} for a recent and comprehensive survey.
+
+In non-classical logics,
+%in~\cite{Yan:AIJ:2009},
+the knowledge forgetting for S5 modal logic was firstly proposed and was used to represent different forms of knowledge updates~\cite{Yan:AIJ:2009}.
+%%%In this paper, the authors shown that  
+%%% the knowledge update of S5 can be represented.% through knowledge forgetting.
+% and explored to show the relationship between knowledge forgetting and knowledge update~\cite{Yan:AIJ:2009}. 
+More importantly, four general postulates for knowledge forgetting were revealed to precisely characterize both
+semantic and logical properties of knowledge forgetting, and the dual notion of \emph{uniform interpolation} ~\cite{visser1996uniform}.
+% 
+%  In addition, they proposed four general postulates for knowledge forgetting and showed that these four postulates precisely characterize the notion of knowledge forgetting in S5 modal logic.
+% Moreover, they show that \emph{uniform interpolation} ~\cite{visser1996uniform} is a dual concept of forgetting in S5 and PL. 
+These notions were recently extended to multi-agent modal logics~\cite{fang2019forgetting} and CTL~\cite{feng2020sufficient}.
+The forgetting in description logics (DL) are also explored with the motivation of constructing restricted ontologies by eliminating concept and role symbols from DL-based
+ontologies~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,Konev:JAIR:2012,Zhao:2017:IJCAI,DBLP:conf/aaai/ZhaoSWZF20}. 
+% Furthermore, i
+In the scenario of non-monotonic reasoning,  forgetting in logic programs under answer set semantics has been extensively investigated from the perspective of various forgetting postulates~\cite{DBLP:Zhang:AIJ2006,DBLP:journals/ai/EiterW08,Wong:PhD:Thesis,DBLP:journals/jair/WangZZZ14,wang2013forgetting,DBLP:journals/jair/Delgrande17,gonccalves2020limits}, see~\cite{eiter2019brief,gonccalves2021forgetting} for a comprehensive survey.
+% Similarly, the forgetting in description logics (DL) are also explored with the motivation of constructing restricted ontologies by eliminating concept and role symbols from DL-based
+% ontologies~\cite{Wang:AMAI:2010,Lutz:IJCAI:2011,Konev:JAIR:2012,Zhao:2017:IJCAI,DBLP:conf/aaai/ZhaoSWZF20}. 
+
+One should note that  the modal $\mu$-calculus enjoys the \emph{uniform interpolation} property~\cite{d1996uniform}. 
+We will show that the uniform interpolation is indeed the dual notion of our proposed forgetting. Thus, most theoretical results for
+the forgetting are applicable to uniform interpolation as well, including the four general principles or postulates characterizing 
+this logical forgetting in particular.
+
+
+\section{Preliminaries}  \label{preliminaries}
+In this section, we introduce the technical and notational preliminaries, i.e., the  syntax and semantics of $\mu$-calculus, closely related to this paper.
+Moreover, throughout this paper, we denote by $\overline V$ the complement of $V \subseteq B$ on a given set $B$, i.e., $\overline V = B -V$.
+
+\subsection{The syntax of $\mu$-calculus}\label{mu-suntax}
+Modal $\mu$-calculus is an extension of modal logic, and we consider the propositional $\mu$-calculus introduced by Kozen~\cite{DBLP:journals/cacm/Kozen83}.
+Let $\Ha=\{p,q,\dots\}$ be a set of propositional letters (atoms) and ${\cal V}=\{X, Y, \dots\}$ be a set of variables.
+Then, the formulas of the $\mu$-calculus, called $\mu$-formulas (or formulas), over these sets can be inductively defined in Backus-Naur form:
+\[
+\varphi := p\ |\ \neg p\ |\ X\ |\ \varphi \vee \varphi\ |\ \varphi \wedge \varphi \ |\ \EXIST\NEXT \varphi\ |\ \ALL\NEXT \varphi\ |\ \mu X. \varphi\ |\ \nu X. \varphi
+\]
+where $p\in \Ha$ and $X\in {\cal V}$. $\top$ and $\bot$ are also $\mu$-calculus formulas, which express `true' and `false', respectively.
+\section{Results}\label{sec2}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+
+\section{This is an example for first level head---section head}\label{sec3}
+
+\subsection{This is an example for second level head---subsection head}\label{subsec2}
+
+\subsubsection{This is an example for third level head---subsubsection head}\label{subsubsec2}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. 
+
+\section{Equations}\label{sec4}
+
+
+
+\section{Examples for theorem like environments}\label{sec10}
+
+For theorem like environments, we require \verb+amsthm+ package. There are three types of predefined theorem styles exists---\verb+thmstyleone+, \verb+thmstyletwo+ and \verb+thmstylethree+ 
+
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. please ignore this.       %%
+%%=============================================%%
+\bigskip
+\begin{tabular}{|l|p{19pc}|}
+\hline
+\verb+thmstyleone+ & Numbered, theorem head in bold font and theorem text in italic style \\\hline
+\verb+thmstyletwo+ & Numbered, theorem head in roman font and theorem text in italic style \\\hline
+\verb+thmstylethree+ & Numbered, theorem head in bold font and theorem text in roman style \\\hline
+\end{tabular}
+\bigskip
+%%=============================================%%
+%% For presentation purpose, we have included  %%
+%% \bigskip command. please ignore this.       %%
+%%=============================================%%
+
+For mathematics journals, theorem styles can be included as shown in the following examples:
+
+\begin{theorem}[Theorem subhead]\label{thm1}
+Example theorem text. Example theorem text. Example theorem text. Example theorem text. Example theorem text. 
+Example theorem text. Example theorem text. Example theorem text. Example theorem text. Example theorem text. 
+Example theorem text. 
+\end{theorem}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+
+\begin{proposition}
+Example proposition text. Example proposition text. Example proposition text. Example proposition text. Example proposition text. 
+Example proposition text. Example proposition text. Example proposition text. Example proposition text. Example proposition text. 
+\end{proposition}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+
+\begin{example}
+Phasellus adipiscing semper elit. Proin fermentum massa
+ac quam. Sed diam turpis, molestie vitae, placerat a, molestie nec, leo. Maecenas lacinia. Nam ipsum ligula, eleifend
+at, accumsan nec, suscipit a, ipsum. Morbi blandit ligula feugiat magna. Nunc eleifend consequat lorem. 
+\end{example}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+
+\begin{remark}
+Phasellus adipiscing semper elit. Proin fermentum massa
+ac quam. Sed diam turpis, molestie vitae, placerat a, molestie nec, leo. Maecenas lacinia. Nam ipsum ligula, eleifend
+at, accumsan nec, suscipit a, ipsum. Morbi blandit ligula feugiat magna. Nunc eleifend consequat lorem. 
+\end{remark}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+
+\begin{definition}[Definition sub head]
+Example definition text. Example definition text. Example definition text. Example definition text. Example definition text. Example definition text. Example definition text. Example definition text. 
+\end{definition}
+
+Additionally a predefined ``proof'' environment is available: \verb+\begin{proof}+ \verb+...+ \verb+\end{proof}+. This prints a ``Proof'' head in italic font style and the ``body text'' in roman font style with an open square at the end of each proof environment. 
+
+\begin{proof}
+Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. 
+\end{proof}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text. Sample body text.
+
+\begin{proof}[Proof of Theorem~{\upshape\ref{thm1}}]
+Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. Example for proof text. 
+\end{proof}
+
+\noindent
+For a quote environment, use \verb+\begin{quote}...\end{quote}+
+\begin{quote}
+Quoted text example. Aliquam porttitor quam a lacus. Praesent vel arcu ut tortor cursus volutpat. In vitae pede quis diam bibendum placerat. Fusce elementum
+convallis neque. Sed dolor orci, scelerisque ac, dapibus nec, ultricies ut, mi. Duis nec dui quis leo sagittis commodo.
+\end{quote}
+
+Sample body text. Sample body text. Sample body text. Sample body text. Sample body text (refer Figure~\ref{fig1}). Sample body text. Sample body text. Sample body text (refer Table~\ref{tab3}). 
+
+\section{Methods}\label{sec11}
+
+
+
+\section{Discussion}\label{sec12}
+
+Discussions should be brief and focused. In some disciplines use of Discussion or `Conclusion' is interchangeable. It is not mandatory to use both. Some journals prefer a section `Results and Discussion' followed by a section `Conclusion'. Please refer to Journal-level guidance for any specific requirements. 
+
+\section{Conclusion}\label{sec13}
+
+Conclusions may be used to restate your hypothesis or research question, restate your major findings, explain the relevance and the added value of your work, highlight any limitations of your study, describe future directions for research and recommendations. 
+
+In some disciplines use of Discussion or 'Conclusion' is interchangeable. It is not mandatory to use both. Please refer to Journal-level guidance for any specific requirements. 
+
+\backmatter
+
+\bmhead{Supplementary information}
+
+If your article has accompanying supplementary file/s please state so here. 
+
+Authors reporting data from electrophoretic gels and blots should supply the full unprocessed scans for key as part of their Supplementary information. This may be requested by the editorial team/s if it is missing.
+
+Please refer to Journal-level guidance for any specific requirements.
+
+\bmhead{Acknowledgments}
+
+Acknowledgments are not compulsory. Where included they should be brief. Grant or contribution numbers may be acknowledged.
+
+Please refer to Journal-level guidance for any specific requirements.
+
+\section*{Declarations}
+
+Some journals require declarations to be submitted in a standardised format. Please check the Instructions for Authors of the journal to which you are submitting to see if you need to complete this section. If yes, your manuscript must contain the following sections under the heading `Declarations':
+
+\begin{itemize}
+\item Funding
+\item Conflict of interest/Competing interests (check journal-specific guidelines for which heading to use)
+\item Ethics approval 
+\item Consent to participate
+\item Consent for publication
+\item Availability of data and materials
+\item Code availability 
+\item Authors' contributions
+\end{itemize}
+
+\noindent
+If any of the sections are not relevant to your manuscript, please include the heading and write `Not applicable' for that section. 
+
+%%===================================================%%
+%% For presentation purpose, we have included        %%
+%% \bigskip command. please ignore this.             %%
+%%===================================================%%
+\bigskip
+\begin{flushleft}%
+Editorial Policies for:
+
+\bigskip\noindent
+Springer journals and proceedings: \url{https://www.springer.com/gp/editorial-policies}
+
+\bigskip\noindent
+Nature Portfolio journals: \url{https://www.nature.com/nature-research/editorial-policies}
+
+\bigskip\noindent
+\textit{Scientific Reports}: \url{https://www.nature.com/srep/journal-policies/editorial-policies}
+
+\bigskip\noindent
+BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies}
+\end{flushleft}
+
+\begin{appendices}
+
+\section{Section title of first appendix}\label{secA1}
+
+An appendix contains supplementary information that is not an essential part of the text itself but which may be helpful in providing a more comprehensive understanding of the research problem or it is information that is too cumbersome to be included in the body of the paper.
+
+%%=============================================%%
+%% For submissions to Nature Portfolio Journals %%
+%% please use the heading ``Extended Data''.   %%
+%%=============================================%%
+
+%%=============================================================%%
+%% Sample for another appendix section			       %%
+%%=============================================================%%
+
+%% \section{Example of another appendix section}\label{secA2}%
+%% Appendices may be used for helpful, supporting or essential material that would otherwise 
+%% clutter, break up or be distracting to the text. Appendices can consist of sections, figures, 
+%% tables and equations etc.
+
+\end{appendices}
+
+%%===========================================================================================%%
+%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
+%% system, please include the references within the manuscript file itself. You may do this  %%
+%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
+%% file, and delete the associated \verb+\bibliography+ commands.                            %%
+%%===========================================================================================%%
+
+\bibliography{sn-bibliography}% common bib file
+%% if required, the content of .bbl file can be included here once bbl is generated
+%%\input sn-article.bbl
+
+%% Default %%
+%%\input sn-sample-bib.tex%
+
+\end{document}
