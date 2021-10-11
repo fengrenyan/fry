@@ -216,14 +216,19 @@
 \author*[1]{\fnm{Ysiong} \sur{Wang}}\email{yswang@gzu.edu.cn}
 %\equalcont{These authors contributed equally to this work.}
 
-\author[1,2]{\fnm{Ren} \sur{Qian}}\email{iiiauthor@gmail.com}
+\author[1]{\fnm{Ren} \sur{Qian}}\email{cse.rqian18@gzu.edu.cn}
+%\equalcont{These authors contributed equally to this work.}
+\author[1]{\fnm{Lei} \sur{Yang}}\email{gs.leiyang19@gzu.edu.cn}
 %\equalcont{These authors contributed equally to this work.}
 
-\affil*[1]{\orgdiv{Department of Computer Science and Technology}, \orgname{Guizhou University}, \orgaddress{\street{Xi Hua}, \city{Guiyang}, \postcode{550025}, \state{State}, \country{China}}}
+\author[1]{\fnm{Panfeng} \sur{Chen}}\email{gs.pfchen17@gzu.edu.cn}
+%\equalcont{These authors contributed equally to this work.}
 
-\affil[2]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{10587}, \state{State}, \country{Country}}}
+\affil*{\orgdiv{Department of Computer Science and Technology}, \orgname{Guizhou University}, \orgaddress{\street{Xi Hua}, \city{Guiyang}, \postcode{550025}, \state{State}, \country{China}}}
 
-\affil[3]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{610101}, \state{State}, \country{Country}}}
+% \affil[2]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{10587}, \state{State}, \country{Country}}}
+
+% \affil[3]{\orgdiv{Department}, \orgname{Organization}, \orgaddress{\street{Street}, \city{City}, \postcode{610101}, \state{State}, \country{Country}}}
 
 %%==================================%%
 %% sample for unstructured abstract %%
@@ -320,14 +325,14 @@ In this section, we briefly discuss the published matters that are technically r
 
 The \emph{weakest precondition}, as an important concept in formal verification, was first proposed %~\cite{Dijkstra:1959}
 by Dijkstra to solve the problem of computing or approximating invariants appearing in the  \emph{verification of computer programs and systems}~\cite{DBLP:journals/cacm/Dijkstra75}, particularly in the ``Hoare triple"~\cite{Hoare1969}.
-Afterwards, it was wildly studied in various fields, especially in 
+Afterwards, it was wildly used in various fields, especially in 
 refining systems~\cite{woodcock1990refinement},
 reasoning about assembly language programs~\cite{legato2002weakest},
 formulating verification conditions~\cite{DBLP:journals/ipl/Leino05}, 
 generating counterexamples~\cite{dailler2018instrumenting}, and so on.
 
 In the field of AI, there is a similar concept called the \emph{weakest sufficient condition} (a dual concept is the \emph{strongest necessary condition}, SNC), which was introduced by Lin to generate successor state axioms from causal theories (in planning)~\cite{DBLP:Lin:AIJ:2001,lin2003compiling}. Moreover, the SNC and WSC for proposition $q$ on a restricted subset of the propositional variables under propositional theory $T$ are computed based on the notion of forgetting.
-Afterwards the SNC and WSC were generalized to first-order logic (FOL) and a direct method based
+Afterwards, the SNC and WSC were generalized to first-order logic (FOL) and a direct method based
 on the \emph{second-order quantifier elimination} (SOQE) technique was proposed to automatically generate the SNC and WSC~\cite{doherty2001computing}. In addition, a forgetting-based method is used to compute the SNC and WSC in computation tree logic (\CTL)~\cite{feng2020sufficient}.
 
 \subsection{Forgetting}
@@ -403,7 +408,7 @@ The {\em signature} of the language $\cal L$ of $\mu$-calculus includes:
 	\item fixpoint operators: $\mu$ and $\nu$.
 \end{itemize}
 
-It is generally agreed that $\ALL\NEXT$ and $\EXIST\NEXT$ bind more tightly than boolean operators, and we also assume that $\nu$ and $\mu$ bind looser than boolean operators~\cite{bradfield2018mu}.
+It is generally agreed that $\ALL\NEXT$ and $\EXIST\NEXT$ bind more tightly than boolean operators, and as in~\cite{bradfield2018mu}, we also assume that $\nu$ and $\mu$ bind looser than boolean operators.
 % Let $\Ha=\{p,q,\dots\}$ be a set of propositional letters (atoms) and ${\cal V}=\{X, Y, \dots\}$ be a set of variables.
 Then, the formulas of the $\mu$-calculus, called $\mu$-formulas (or formulas), over these sets can be inductively defined via a Backus-Naur form:
 \[
@@ -420,18 +425,16 @@ All the results
 presented here extend to the general case where negation before variables is also
 allowed, restricted as usual to positive occurrences of bound variables; that is, variables appear after an even number of negations.
 Variables, propositional letters and their negations are called \emph{literals}.
-For convenience, in the following, $\varphi$, $\varphi_1$, \dots, $\psi$, $\psi_1$, \dots\ are used to denote $\mu$-formulas.
+% For convenience, in the following, $\varphi$, $\varphi_1$, \dots, $\psi$, $\psi_1$, \dots\ are used to denote $\mu$-formulas.
 Moreover, we denote $\Var(\varphi)$ as the set of atoms appearing in formula $\varphi$.
 % By $\Var(\varphi)$ we mean the set of atoms appearing in formula $\varphi$.
 
 A formula is \emph{well\ named} if every variable is bound at most once in the formula, and free variables are distinct from bound
-variables. For a variable $X$ bound in a well named formula $\varphi$ there exists a unique subformula of $\varphi$ of the form $\delta X. \psi(X)$ with $\delta \in \{\nu, \mu\}$.
-%, from now on called the \emph{binding definition}
-%of $X$ in $\varphi$. We call $X$ a $\mu$-variable when $\delta = \mu$, otherwise we call $X$ a $\nu$-variable.
-
+variables. 
+% For a variable $X$ bound in a well named formula $\varphi$, there exists a unique subformula of $\varphi$ of the form $\delta X. \psi(X)$ with $\delta \in \{\nu, \mu\}$.
 Variable X in $\delta X. \varphi(X)$ is \emph{guarded} if every occurrence of $X$ in
 $\varphi(X)$ is within the scope of some modality operators $\EXIST \NEXT$ or $\ALL \NEXT$.
-A formula is guarded iff every bound variable in the formula is guarded. Furthermore, a \emph{$\mu$-sentence} is a formula containing no free
+A formula is guarded if every bound variable in the formula is guarded. Furthermore, a \emph{$\mu$-sentence} is a formula containing no free
 variables.%, i.e., no variables unbound by an operator.
 
 In the following, we restrict ourselves to \textbf{guarded}, \textbf{well-named} $\mu$-sentences.
@@ -484,13 +487,13 @@ $(\Hm, v) \models \varphi$ is used to denote $(\Hm, r, v) \models \varphi$.
 And $(\Hm,v)$ is a \emph{model} of $\varphi$ whenever  $(\Hm, v) \models \varphi$.
 
 $\Mod(\varphi)$ denotes the set of models of $\varphi$.
-In particular, if $\varphi$ is a $\mu$-sentence, then we use $\Hm \models \varphi$ to replace $(\Hm, v) \models \varphi$ and $\Mod(\varphi) = \{\Hm \mid \Hm \models \varphi\}$.
+In particular, if $\varphi$ is a $\mu$-sentence, we use $\Hm \models \varphi$ to replace $(\Hm, v) \models \varphi$ and then $\Mod(\varphi) = \{\Hm \mid \Hm \models \varphi\}$.
 Similarly, let $\Sigma$ be a set of $\mu$-sentences; we define $\Mod(\Sigma)$ as the set of Kripke structures $\Hm$ with $\Hm \models \varphi$ for each $\varphi\in \Sigma$.
 Moreover, $\psi$ is a \emph{logical consequence} of $\varphi$, denoted by $\varphi \models \psi$, if $(\Hm,v ) \models \varphi$ then $(\Hm,v) \models \psi$ for every Kripke structure $\Hm$ and valuation $v$.
 %$\varphi \models \psi$ denotes \emph{logical consequence}: if $(\Hm,v ) \models \varphi$ then $(\Hm,v) \models \psi$ for every Kripke structure
 %$\Hm$ and valuation $v$.
 Particularly, given two sentences (or set of sentences) $\Sigma$ and $\Pi$, $\Sigma \models \Pi$ if $\Mod(\Sigma) \subseteq \Mod(\Pi)$. And $\Sigma \equiv \Pi$ whenever $\Mod(\Sigma) = \Mod(\Pi)$; in this case we also call $\Sigma$ and $\Pi$ \emph{semantically  equivalent}.
-And $\Sigma$ is consistent if $\Mod(\Sigma) \not = \emptyset$, otherwise is contradictory.
+And $\Sigma$ is consistent if $\Mod(\Sigma) \not = \emptyset$, otherwise $\Sigma$ is contradictory.
 
 A $\mu$-sentence $\phi$ is {\em irrelevant to} the atoms in a set $V$ (or simply $V$-{\em irrelevant}), written $\IR(\phi,V)$,
 if there is a $\mu$-sentence $\psi$ with $\Var(\psi)\cap V=\emptyset$ s.t. $\phi\equiv\psi$.
@@ -574,11 +577,11 @@ Finally, we show that the model checking problem of forgetting $V$ from a disjun
 % That is, we extend the bisimulation to one under a given set of atoms, i.e., $V$-bisimulation with $V$ being a set of atoms.
 % For convenience, let $\Hm_i=(S_i, r_i, R_i, L_i)$, in which $i$ is in the natural set $\mathbb{N}$, be Kripke structures.
 
-Recalling the meaning of forgetting in the explored logic languages, ``forgetting" some atoms from  a given formula should not violate the existing specification over the remaining signature. 
+Recalling the meaning of forgetting in the explored logic form systems, ``forgetting" some atoms from  a given formula should not violate the existing specification over the remaining signature. 
 
 Bisimulation is a binary relation between state transition systems (they are expressed by Kripke structures in this paper) and associating systems that behave in the same way, in the sense that two systems mimic each other.
 To define forgetting, we extend the bisimulation to one under a given set of atoms, i.e., $V$-bisimulation with $V$ being a set of atoms.
-For convenience, let $\Hm_i=(S_i, r_i, R_i, L_i)$, in which $i$ is in the natural set $\mathbb{N}$, be Kripke structures.
+For convenience, let $\Hm_i=(S_i, r_i, R_i, L_i)$ be Kripke structures, in which $i$ is in the set $\mathbb{N}$ of natural numbers.
 
 \begin{definition}[V-bisimulation]\label{def:VB}
 	Let $V \subseteq \Ha$ and  $\Hm_1$ and $\Hm_2$ be two Kripke structures. $\Hb\subseteq S_1 \times S_2$ is a $V$-bisimulation between $\Hm_1$ and $\Hm_2$ if:
@@ -598,7 +601,7 @@ $\Hm \lrto_V \Hm'$, then $\varphi$ holds in $\Hm$ iff it holds in $\Hm'$.
 We call this property \emph{$V$-invariant} in this paper.
 
 %similar to the ${\cal L}$-bisimulation in~\cite{d1996uniform}, which is a relation satisfying the above clauses just for the symbols in language ${\cal L}$.
-On the other hand, it is easy to see that our definition is similar to that introduced in~\cite{feng2020sufficient}. That is, the definitions are the same whenever $(\Hm_i, r_i)$ is limited to an initial $\MPK$-structure.
+On the other hand, it is easy to see that our definition is similar to that introduced in~\cite{feng2020sufficient}. That is, the definitions are the same whenever  Definition~\ref{def:VB} is on $(\Hm_i, r_i)$, which is an initial $\MPK$-structure~\cite{feng2020sufficient}.
 %they are the same whenever the state $r_i$ in the Kripke structure $(S_i, r_i, R_i, L_i)$ in our definition is limited to its initial state, and each state in $S_i$ is reachable from the $r_i$.
 Moreover, the $V$-bisimulation defined in~\cite{feng2020sufficient}, the classical
 bisimulation-equivalence of Definition~7.1 in \cite{Baier:PMC:2008}, the state equivalence (i.e., $E_n$) in \cite{browne1988characterizing}, and the state-based bisimulation notion of Definition~7.7 in \cite{Baier:PMC:2008} are closely related.\footnote{The $V$-bisimulation defined in~\cite{feng2020sufficient} is similar to
@@ -636,7 +639,7 @@ To obtain  some intuition of the $V$-bisimulation, let us consider the following
 
 \end{example}
 
-Moreover, we can see that the relation $\lrto_V$ has some interesting properties besides the equivalence relation. Formally:
+Moreover, we can see that the relation $\lrto_V$ has some interesting properties in addition to the equivalence relation. Formally:
 
 \begin{proposition} \label{pro:EqUnion}
 	Let $V, V_1 \subseteq \Ha$ and $\Hm_1$, $\Hm_2$ and $\Hm_3$ be three Kripke structures, then we have:
@@ -702,9 +705,9 @@ Theorem~\ref{thm:exist} means that the result of forgetting some set of atoms fr
 
 
 % A general description is important for understanding the concept of forgetting.
-To generally describe the forgetting,
+%To generally describe the forgetting,
 %To achieve this, 
-four postulates (also called \emph{forgetting postulates}), which indeed precisely characterize the underlying knowledge forgetting semantics  S5 modal logic, are proposed~\cite{Yan:AIJ:2009}.
+In~\cite{Yan:AIJ:2009}, four postulates (also called \emph{forgetting postulates}), which indeed precisely characterize the underlying knowledge forgetting semantics  S5 modal logic, are proposed.
 In the following, we first list these postulates and then show the relationship between forgetting in $\mu$-calculus and forgetting postulates.
 % that it also provides an “if and only if” characterization on our notion of forgetting in $\mu$-calculus.
 
@@ -730,7 +733,7 @@ forgetting result is irrelevant to forgotten atoms.
 
 
 
-The following theorem states that the forgetting postulates above indeed precisely characterize the underlying forgetting semantics of $\mu$-calculus.
+% The following theorem states that the forgetting postulates above indeed precisely characterize the underlying forgetting semantics of $\mu$-calculus.
 \begin{theorem}[Representation Theorem]\label{thm:Rep}
 Let $\varphi$, $\varphi'$ and $\phi$ be $\mu$-sentences and $V \subseteq \Ha$.
 Then the following statements are equivalent:
@@ -745,14 +748,14 @@ $(i) \LRto (ii)$. To prove this, we will show that:
 \[
 \Mod(\Muforget(\varphi, V)) = \Mod(\{\phi \mid \varphi \models \phi, \IR(\phi, V)\}).\]
 $(\Rto)$ For each model $\Hm'$ of $\Muforget(\varphi, V)$\\
-$\Rto$ there exists a Kripke structure $\Hm$ s.t. $\Hm \models \varphi$ and $\Hm \lrto_V \Hm'$ \hfill (Def. ~\ref{def:V:forgetting}) \\
+$\Rto$  $\exists\Hm$ s.t. $\Hm \models \varphi$ and $\Hm \lrto_V \Hm'$ \hfill (Def. ~\ref{def:V:forgetting}) \\
 $\Rto$ $\Hm' \models \phi$ for all $\phi$ with $\varphi \models \phi$ and $\IR(\phi, V)$ \\
 $\Rto$ $\Hm' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$
 
 $(\Lto)$ It is evident that $\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \Muforget(\varphi, V)$ since $\IR(\Muforget(\varphi, V),V)$ and $\varphi \models \Muforget(\varphi, V)$ by  Definition~\ref{def:V:forgetting}.
 
-$(ii) \Rto (iii)$. For convenience, let $A = \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$. Firstly, it is easy to see that $\IR(A,V)$ since for any $\phi' \in A$ there is $\IR(\phi',V)$.
-Therefore, we have $\IR(\varphi', V)$. Second, $\varphi \models \phi'$ for any $\phi'\in A$, hence $\varphi \models \varphi'$.
+$(ii) \Rto (iii)$. For convenience, let $A = \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$. Firstly, it is easy to see that $\IR(A,V)$ since for each $\phi' \in A$, there is $\IR(\phi',V)$.
+Therefore, we have $\IR(\varphi', V)$. Second, $\varphi \models \phi'$ for each $\phi'\in A$, hence $\varphi \models \varphi'$.
 %The (\NgP) and (\PP) are obvious from $A$.
 Third, $\forall \phi$ with $\IR(\phi, V)$, if $\varphi \models \phi$ then $\phi \in A$ by the definition of $A$, and then $\varphi' \models \phi$.
 Last but not least, $\forall \phi$ with $\IR(\phi, V)$, if $\varphi \not \models \phi$ then $\phi \not \in A$ by the definition of $A$. Therefore, $\varphi' \not \models \phi$ by Definition~\ref{def:V:forgetting} and $V$-invarianty.
@@ -763,7 +766,8 @@ $(iii) \Rto (ii)$. (1) $\varphi' \models \{\phi \mid \varphi \models \phi, \IR(\
 \end{proof}
 
 % Theorem~\ref{thm:Rep}  means that for a given $\mu$-sentence $\varphi$ and a set of atoms $V$, a $\mu$-sentence $\varphi'$ represents a result of forgetting $V$ from $\varphi$ if $\varphi'$ satisfies the forgetting postulates, and vice versa. 
-Theorem~\ref{thm:Rep} is significant in the sense that the representation theorem gives an ``if and only if" characterization on forgetting in $\mu$-calculus, which is in accordance with that in S5 modal logic and that in \CTL.
+Theorem~\ref{thm:Rep} reveals that the forgetting postulates above indeed precisely characterize the underlying forgetting semantics of $\mu$-calculus.
+That is, the representation theorem gives an ``if and only if" characterization on forgetting in $\mu$-calculus, which is in accordance with that in S5 modal logic and that in \CTL.
 
 Postulate (\textbf{IR}) is also of crucial importance for computing the SNC and WSC, in addition to the representation theorem. Consider the $\mu$-sentence $\psi = \varphi \wedge (q \lrto \alpha)$. If $\varphi \wedge \alpha$ is $\{q\}$-irrelevant, then the result of forgetting $q$ from $\psi$ is $\varphi$. Formally, this can be described as in the following lemma, and as we will  see later in Section 5, it is the basis of reducing the SNC (WSC) of any $\mu$-sentence to that of a proposition.
 
@@ -828,7 +832,7 @@ Let $\varphi$ be a $\mu$-sentence and $V_i\subseteq{\cal A}~(i=1,2)$. Then,
 \]
 \end{corollary}
 
-Another property of $\Muforget$ is about a class of formulas, where all the sub-formulas appear in the scope of the same temporal operators $\ALL\NEXT$ or $\EXIST \NEXT$. Formally:
+Another property of $\Muforget$ is about a class of formulas, where all the sub-formulas appear in the scope of the same  $\ALL\NEXT$ or $\EXIST \NEXT$.
 
 
 \begin{proposition}[Homogeneity]\label{pro:mu:forget:2}
@@ -925,7 +929,9 @@ Similar to the reasoning problems discussed above, the following equivalent prob
     \item $[$Var-match$]$ if the restriction of $\varphi$ on the signature of $\psi$ perfectly matches $\psi$, i.e., $\Muforget(\varphi, V) \equiv \psi$,
     \item $[$Var-equivalence$]$ if the restriction of the two formulas on a common signature are equivalent, i.e., $\Muforget(\varphi, V) \equiv \Muforget(\psi, V)$.
 \end{enumerate}
-For $\varphi$ and $\psi$, both equivalent problems and reasoning problems have the same constraints.
+For $\varphi$ and $\psi$, 
+the equivalent problems have the same constraints as the reasoning problems.
+% both equivalent problems and reasoning problems have the same constraints.
 % In these problems, $\varphi$ and $\psi$ have the same constraints as those in reasoning problems.
 
 The following results are implications of Theorem~\ref{thm:Ent}.
@@ -1008,10 +1014,12 @@ The following result shows that forgetting and the notion of the SNC (WSC) are c
  \begin{proof}
   We will prove the SNC part, while it is not difficult to prove the WSC part according to Proposition \ref{dual}. And let ${\cal F}=\Muforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$.
 
-    The ``NC" part: It's easy to see that $\varphi \wedge q \models {\cal F}$ by {\bfseries (W)}. Hence, $\varphi\models q \rto {\cal F}$, this means
+    The ``NC" part: It's easy to see that $\varphi \wedge q \models {\cal F}$ by (\W). Hence, $\varphi\models q \rto {\cal F}$, this means
   ${\cal F}$ is an NC of $q$ on $V$ under $\varphi$.
 
-  The ``SNC" part: We shall show that for all $\psi'$, there is $\varphi \models {\cal F} \rto \psi'$, where $\psi'$ is the NC of $q$ on $V$ under $\varphi$, i.e., $\varphi \models q \rto \psi'$ and $\Var(\psi') \subseteq V$. Suppose that there exists an NC $\psi$ of $q$ on $V$ under $\varphi$ with $\psi$ is not logic equivalence with ${\cal F}$ under $\varphi$, such that $\varphi \models \psi \rto {\cal F}$.\\
+  The ``SNC" part: We shall show that for each NC $\psi'$ of $q$ on $V$ under $\varphi$, there is $\varphi \models {\cal F} \rto \psi'$. 
+%   We shall show that for all $\psi'$, there is $\varphi \models {\cal F} \rto \psi'$, where $\psi'$ is the NC of $q$ on $V$ under $\varphi$, i.e., $\varphi \models q \rto \psi'$ and $\Var(\psi') \subseteq V$. 
+  Suppose that there exists an NC $\psi$ of $q$ on $V$ under $\varphi$ such that $\varphi \models \psi \rto {\cal F}$, and $\psi$ is not logic equivalence with ${\cal F}$ under $\varphi$.\\
   $\Rto$ $\varphi \wedge q \models \psi$ iff ${\cal F} \models \psi$ \hfill ((\PP) and $\IR(\psi, (\Var(\varphi)\cup \{q\})) -V$)\\
   $\Rto$ $\varphi \wedge {\cal F} \models \psi$  \hfill ($\varphi \wedge q \models \psi$ (by suppose))\\
   $\Rto$ $\varphi \wedge \psi \models {\cal F}$  \hfill (by suppose)\\
@@ -1062,7 +1070,7 @@ Let $\psi$ and $\varphi$ be two $\mu$-sentences, $V\subseteq \Var(\varphi)$ be a
 
 \subsection{Representing a Knowledge Update Via Forgetting}\label{knowledge_updat}
 This part presents the final key notion of our work: the knowledge update.
-Similarly, we propose a method of defining knowledge update by forgetting in $\mu$-calculus that will
+In particular, we propose a method of defining knowledge update by forgetting in $\mu$-calculus that will
 satisfy all the following Katsuno and Mendelzon's postulates (U1)-(U8)~\cite{katsuno91mendelzon}.
 \begin{enumerate}[]
     \item (U1)  $\Gamma \diamond \phi \models \phi$.
@@ -1077,7 +1085,7 @@ satisfy all the following Katsuno and Mendelzon's postulates (U1)-(U8)~\cite{kat
 Here $\varphi \diamond \psi$ expresses the result of updating $\varphi$ with $\psi$, and $\diamond$ is the knowledge update operator.
 
 
-For this purpose, in this part, we assume that the models of a $\mu$-sentence are initial structures\footnote{An \emph{initial structure} is a Kripke structure $\Hm=(S, sr, R, L)$ with $S$ being a finite set of states, $sr$ being an initial state (i.e., for each state $s'\in S$, the $sr$ can arrive at $s'$), $R$ being a total relation and $L: S \rto 2^{\Ha}$ being a label function, where $\Ha$ is restricted to a finite set. See~\cite{feng2020sufficient} for more details.}.
+Especially, in this part, we assume that the models of a $\mu$-sentence are initial structures\footnote{An \emph{initial structure} is a Kripke structure $\Hm=(S, sr, R, L)$ with $S$ being a finite set of states, $sr$ being an initial state (i.e., for each state $s'\in S$, the $sr$ can arrive at $s'$), $R$ being a total relation and $L: S \rto 2^{\Ha}$ being a label function, where $\Ha$ is restricted to a finite set. See~\cite{feng2020sufficient} for more details.}.
 %, where an \emph{initial structure} is a Kripke structure $\Hm=(S, sr, R, L)$ with $S$ being a finite set of states, $sr$ being an initial state (i.e., for each state $s'\in S$, the $sr$ can arrive at $s'$), $R$ being a total relation and $L: S \rto 2^{\Ha}$ being a label function, where $\Ha$ is restricted to a finite set.
 In addition, we also limit the definition of forgetting on initial structures,
 i.e., the models mentioned in Definition~\ref{def:V:forgetting} are initial structures. In this case, we have:
@@ -1092,15 +1100,18 @@ where both $\Hm$ and $\Hm'$ are initial structures.
 \end{theorem}
 
 %Intuitively, given a logic language ${\cal L}$, we say some operator ${\cal O}$ in ${\cal L}$ is closed whenever the result of using the ${\cal O}$ on the elements of ${\cal L}$ is also in ${\cal L}$.
-Theorem~\ref{thm:initModel} shows that the forgetting in $\mu$-calculus is also closed when restricting the models of the $\mu$-sentence to initial structures.
+Theorem~\ref{thm:initModel} implies that the forgetting in $\mu$-calculus is also closed when restricting the models of the $\mu$-sentence to initial structures.
 
 \begin{corollary}
 The forgetting of $\mu$-calculus is closed under the initial structure semantic, i.e., we consider only the initial structures as the models of the $\mu$-sentence.
 \end{corollary}
 
 According to~\cite{feng2020sufficient}, we can see that any initial structure $\Hm$ on $\Ha$ can be captured by a \CTL\ formula, i.e., the characterizing formula ${\cal F}_{\Ha}(\Hm)$~\cite{feng2020sufficient}, and hence a $\mu$-sentence~\cite{emerson1997model}.
-For the $\Ha$, $V_{min}\subseteq \Ha$, and $\varphi = \Muforget({\cal F}_{\Ha}(\Hm), V_{min})$, by $\Mod(\varphi)$, we mean the set of models of $\varphi$, where $V_{min} \subseteq \Ha$ is a minimal subset of atoms that makes $\varphi$ consistent.
-Besides, $$\bigcup_{V_{min}\subseteq \Ha} \Mod(\Muforget({\cal F}_{\Ha}(\Hm), V_{min}))$$ denotes the union of all $\Mod(\Muforget({\cal F}_{\Ha}(\Hm), V_{min}))$ with $V_{min}\subseteq \Ha$.
+For the $\Ha$, $V_{min}\subseteq \Ha$, and $\varphi = \Muforget({\cal F}_{\Ha}(\Hm), V_{min})$, 
+we denote $\Mod(\varphi)$ as  the set of models of $\varphi$,
+%by $\Mod(\varphi)$, we mean the set of models of $\varphi$,
+where $V_{min} \subseteq \Ha$ is a minimal subset of atoms that makes $\varphi$ consistent.
+In addition, $$\bigcup_{V_{min}\subseteq \Ha} \Mod(\Muforget({\cal F}_{\Ha}(\Hm), V_{min}))$$ denotes the union of all $\Mod(\Muforget({\cal F}_{\Ha}(\Hm), V_{min}))$ with $V_{min}\subseteq \Ha$.
 Then, we define the knowledge update operator $\diamond_{\mu}$ in $\mu$-calculus as follows.
 
 
@@ -1120,7 +1131,7 @@ Let $I$, $J_1$, and $J_2$ be three interpretations, i.e., sets of atoms; then $J
 The set of models of knowledge updating $\psi$ on $\Gamma$ is exactly the union of the minimal models of $\psi$ under the partial order $\leq_{I,pam}$, where $I$ is a model of $\Gamma$, i.e., $$\Mod(\Gamma \diamond_{pam} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi), \leq_{I,pam}).$$ Here, $Min(\Mod(\psi), \leq_{I,pam})$ is the set of models of $\psi$ that are minimal with respect to $\leq_{I,pam}$.
 
 
-Similarly, we define a partial ordering over the set of initial structures that link to the knowledge operator $\diamond_{\mu}$.
+We define a partial ordering over the set of initial structures that link to the knowledge operator $\diamond_{\mu}$.
 
 \begin{definition}\label{def:closer}
   Let $\Hm$, $\Hm_1$ and $\Hm_2$ be three initial structures, then $\Hm_1$ is closer to $\Hm$ than $\Hm_2$, written $\Hm_1 \leq_{\Hm} \Hm_2$, iff for any $V_2 \subseteq \Atom$ s.t. $\Hm_2 \lrto_{V_2} \Hm$, there exists a $V_1 \subseteq V_2$ s.t. $\Hm_1 \lrto_{V_1} \Hm$. We denote $\Hm_1 <_{\Hm} \Hm_2$ iff $\Hm_1 \leq_{\Hm} \Hm_2$ and $\Hm_2 \not \leq_{\Hm} \Hm_1$.
@@ -1139,7 +1150,7 @@ Let $\Gamma$ and $\phi$ be $\mu$-sentences. Then, we have:
 \]
 \end{theorem}
 
-Theorem~\ref{thm:minU} indicates that our definition of knowledge update in $\mu$-calculus by forgetting is in accordance with the one defined by the $\leq_{\Hm}$, which is similar to the partial order $\leq_{I, pam}$ in PL.
+Theorem~\ref{thm:minU} indicates that our definition of knowledge update in $\mu$-calculus by forgetting is in accordance with the one defined by the $\leq_{\Hm}$.
 
 More importantly, the following theorem shows that our definition of $\diamond_{\mu}$ by forgetting satisfies the Katsuno and Mendelzon's update postulates.
 \begin{theorem}\label{thm:U1toU8}
@@ -1156,7 +1167,7 @@ In doing so, we presented %%introduced  and employed
 the notions of $V$-bisimulation and forgetting at first. %%, which is similar to the ${\cal L}$-bisimulation, in which any $\mu$-sentence is invariant for ${\cal L}$-bisimulation.
 Then, we showed that the forgetting enjoys homogeneity, modularity, commutativity, and
 the four general forgetting principles/postulates.
-Besides, various reasoning tasks relating to forgetting were proved to be intractable.
+In addition, various reasoning tasks relating to forgetting were proved to be intractable.
 Finally, the forgetting was employed to compute the weakest sufficient conditions (preconditions) and to represent
 knowledge update.
 % Furthermore, we studied formal properties about forgetting, including homogeneity, modularity, and commutativity.
@@ -1563,7 +1574,7 @@ Let $V \subseteq \cal A$ and $\phi$ be a $\mu$-sentence. Then there is a $\mu$-s
 where both $\Hm$ and $\Hm'$ are initial structures.
 \begin{proof}
 Let $\psi=\Muforget(\phi, V)$. We have that for each $\Hm \models \psi$, there is a $\Hm' \models \phi$ with $\Hm \lrto_V \Hm'$ by Theorem~\ref{thm:exist} and Definition~\ref{def:V:forgetting}, and for each $\Hm' \in \Mod(\phi)$, there is $\phi \models \psi$.
-In this case, we can easily prove that for each initial structure $\Hm$, if $\Hm \models \psi$ then we can obtain an initial structure $\Hm'$ s.t. $\Hm' \models \phi$ and $\Hm \lrto_V \Hm'$. Besides, for each $\Hm' \in \Mod(\phi)$, there is $\Hm' \models \psi$ by (\W).
+In this case, we can easily prove that for each initial structure $\Hm$, if $\Hm \models \psi$ then we can obtain an initial structure $\Hm'$ s.t. $\Hm' \models \phi$ and $\Hm \lrto_V \Hm'$. In addition, for each $\Hm' \in \Mod(\phi)$, there is $\Hm' \models \psi$ by (\W).
 \end{proof}
 
 
