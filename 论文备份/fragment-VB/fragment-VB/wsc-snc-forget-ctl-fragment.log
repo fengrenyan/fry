@@ -1,0 +1,931 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  16 OCT 2021 22:04
+entering extended mode
+**wsc-snc-forget-ctl-fragment.tex
+
+(D:\（博士）我的资料\Git\fry\论文备份\fragment-VB\fragment-VB\wsc-s
+nc-forget-ctl-fragment.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+
+(D:\（博士）我的资料\Git\fry\论文备份\fragment-VB\fragment-VB\llncs
+.cls
+Document Class: llncs 2018/03/10 v2.20 
+ LaTeX document class for Lecture Notes in Computer Science
+(D:\Application\Ctex\MiKTeX\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(D:\Application\Ctex\MiKTeX\tex\latex\base\size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\tools\multicol.sty
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+\c@tracingmulticols=\count87
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count88
+\c@collectmore=\count89
+\doublecol@number=\count90
+\multicoltolerance=\count91
+\multicolpretolerance=\count92
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count93
+\c@finalcolumnbadness=\count94
+\last@try=\dimen108
+\multicolovershoot=\dimen109
+\multicolundershoot=\dimen110
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\multicol@sort@counter=\count95
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\oberdiek\aliascnt.sty
+Package: aliascnt 2009/09/08 v1.3 Alias counter (HO)
+
+(D:\Application\Ctex\MiKTeX\tex\latex\carlisle\remreset.sty))
+\c@chapter=\count96
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 365.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 368.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 369.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 370.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 371.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
+\tocchpnum=\dimen111
+\tocsecnum=\dimen112
+\tocsectotal=\dimen113
+\tocsubsecnum=\dimen114
+\tocsubsectotal=\dimen115
+\tocsubsubsecnum=\dimen116
+\tocsubsubsectotal=\dimen117
+\tocparanum=\dimen118
+\tocparatotal=\dimen119
+\tocsubparanum=\dimen120
+\@tempcntc=\count97
+\fnindent=\dimen121
+\c@@inst=\count98
+\c@@auth=\count99
+\c@auco=\count100
+\instindent=\dimen122
+\authrun=\box52
+\authorrunning=\toks14
+\tocauthor=\toks15
+\titrun=\box53
+\titlerunning=\toks16
+\toctitle=\toks17
+\c@theorem=\count101
+\c@case=\count102
+\c@conjecture=\count103
+\c@corollary=\count104
+\c@definition=\count105
+\c@example=\count106
+\c@exercise=\count107
+\c@lemma=\count108
+\c@note=\count109
+\c@problem=\count110
+\c@property=\count111
+\c@proposition=\count112
+\c@question=\count113
+\c@solution=\count114
+\c@remark=\count115
+\headlineindent=\dimen123
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\setspace\setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\helvet.sty
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+
+(D:\Application\Ctex\MiKTeX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks18
+))
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\courier.sty
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\ltxmisc\url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\Application\Ctex\MiKTeX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\Application\Ctex\MiKTeX\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(D:\Application\Ctex\MiKTeX\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(D:\Application\Ctex\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(D:\Application\Ctex\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count116
+))
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\tools\enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks19
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\ams\math\amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(D:\Application\Ctex\MiKTeX\tex\latex\ams\math\amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(D:\Application\Ctex\MiKTeX\tex\latex\ams\math\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks20
+\ex@=\dimen126
+))
+(D:\Application\Ctex\MiKTeX\tex\latex\ams\math\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen127
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\ams\math\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count117
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count118
+\leftroot@=\count119
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count120
+\DOTSCASE@=\count121
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+\big@size=\dimen128
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+
+
+Package amsmath Warning: Unable to redefine math accent \vec.
+
+\macc@depth=\count122
+\c@MaxMatrixCols=\count123
+\dotsspace@=\muskip11
+\c@parentequation=\count124
+\dspbrk@lvl=\count125
+\tag@help=\toks21
+\row@=\count126
+\column@=\count127
+\maxfields@=\count128
+\andhelp@=\toks22
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
+\@envbody=\toks23
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+) (D:\Application\Ctex\MiKTeX\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(D:\Application\Ctex\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(D:\Application\Ctex\MiKTeX\tex\latex\subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip48
+\subfigcapskip=\skip49
+\subfigcaptopadj=\dimen135
+\subfigbottomskip=\skip50
+\subfigcapmargin=\dimen136
+\subfiglabelskip=\skip51
+\c@subfigure=\count129
+\c@lofdepth=\count130
+\c@subtable=\count131
+\c@lotdepth=\count132
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(D:\Application\Ctex\MiKTeX\tex\latex\subfigure\subfigure.cfg)
+\subfig@top=\skip52
+\subfig@bottom=\skip53
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\algorithm2e\algorithm2e.sty
+Package: algorithm2e 2008/00/00 v3.10 algorithms environments
+\c@AlgoLine=\count133
+
+(D:\Application\Ctex\MiKTeX\tex\latex\base\ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\tools\xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+(D:\Application\Ctex\MiKTeX\tex\latex\ltxmisc\relsize.sty
+Package: relsize 2003/07/04 ver 3.1
+)
+********************************************************
+Package `algorithm2e' Release 4.01 -- december 14 2009 --
+- algorithm2e-announce@lirmm.fr mailing list for announcement about releases
+- algorithm2e-discussion@lirmm.fr mailing list for discussion about package
+subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
+- Author: Christophe Fiorio (fiorio@lirmm.fr)
+********************************************************
+\skiptotal=\skip54
+\skiplinenumber=\skip55
+\skiprule=\skip56
+\skiphlne=\skip57
+\skiptext=\skip58
+\skiplength=\skip59
+\algomargin=\skip60
+\skipalgocfslide=\skip61
+\algowidth=\dimen137
+\inoutsize=\dimen138
+\inoutline=\dimen139
+\interspacetitleruled=\dimen140
+\interspacealgoruled=\dimen141
+\interspacetitleboxruled=\dimen142
+\algocf@inoutbox=\box56
+\algocf@inputbox=\box57
+\AlCapSkip=\skip62
+\AlCapHSkip=\skip63
+\algocf@nlbox=\box58
+\algocf@hangingbox=\box59
+\algocf@capbox=\box60
+\algoheightruledefault=\skip64
+\algoheightrule=\skip65
+\algotitleheightruledefault=\skip66
+\algotitleheightrule=\skip67
+\c@algocfline=\count134
+\c@algocfproc=\count135
+\c@algocf=\count136
+\algocf@algoframe=\box61
+\algocf@algobox=\box62
+)
+(D:\（博士）我的资料\Git\fry\论文备份\fragment-VB\fragment-VB\wsc-s
+nc-forget-ctl-fragment.aux
+
+LaTeX Warning: Label `thm:AX:Dcon' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 37.
+ (D:\Application\Ctex\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(D:\Application\Ctex\MiKTeX\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count137
+\scratchdimen=\dimen143
+\scratchbox=\box63
+\nofMPsegments=\count138
+\nofMParguments=\count139
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count140
+\MPscratchDim=\dimen144
+\MPnumerator=\count141
+\makeMPintoPDFobject=\count142
+\everyMPtoPDFconversion=\toks26
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 160.
+LaTeX Font Info:    Try loading font information for U+msa on input line 160.
+ (D:\Application\Ctex\MiKTeX\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 160.
+
+(D:\Application\Ctex\MiKTeX\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 160.
+
+
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Title too long for running head. Please supply
+a shorter form with \titlerunning prior to \maketitle
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 162.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 176.
+
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 176.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 181.
+Missing character: There is no � in font ptmr7t!
+Missing character: There is no � in font ptmr7t!
+Missing character: There is no � in font ptmr7t!
+Missing character: There is no � in font ptmr7t!
+ [1
+
+{D:/Application/Ctex/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}]
+
+Overfull \hbox (2.49219pt too wide) in paragraph at lines 209--214
+\OT1/ptm/m/n/10 weak-est suf-fi-cien-t con-di-tion (WSC) is the most gen-er-al 
+pre-con-di-tion. In the past decades,
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 234.
+[2]
+
+LaTeX Warning: Command \O invalid in math mode on input line 320.
+
+[3] [4]
+Overfull \hbox (4.59334pt too wide) in paragraph at lines 513--526
+[]\OT1/ptm/m/n/10 On the one hand, the above set-based bisim-u-la-tion is an ex
+-ten-sion of the bisimulation-
+ []
+
+[5]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 610.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 642.
+
+
+Overfull \hbox (3.35007pt too wide) in paragraph at lines 680--683
+$\OMS/cmsy/m/n/10 B[]$ \OT1/ptm/m/n/10 due to $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/1
+0 K[]\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 K[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 
+2 B[]$\OT1/ptm/m/n/10 . It is easy to see that $\OML/cmm/m/it/10 L[]\OT1/cmr/m/
+n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10
+ V \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\
+OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10  $
+ []
+
+
+Overfull \hbox (5.95137pt too wide) in paragraph at lines 680--683
+$\OML/cmm/m/it/10 V$\OT1/ptm/m/n/10 , then there is $\OML/cmm/m/it/10 L[]\OT1/c
+mr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/
+it/10 W \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
+ s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 W$\OT1/ptm/m/n/10 . T
+here-fore, $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 K[]\OML/cmm/m/it/10 ; \OMS/cmsy/m
+/n/10 K[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2$
+ []
+
+[6]
+Overfull \hbox (12.34895pt too wide) in paragraph at lines 729--730
+\OT1/ptm/m/n/10 and then $\OMS/cmsy/m/n/10 M$ \OT1/ptm/m/n/10 is $\OML/cmm/m/it
+/10 V$\OT1/ptm/m/n/10 -distinguished by $\OML/cmm/m/it/10 s[]$ \OT1/ptm/m/n/10 
+and $\OML/cmm/m/it/10 s[]$ \OT1/ptm/m/n/10 at the least depth $\OT1/cmr/m/n/10 
+0$\OT1/ptm/m/n/10 , \OT1/ptm/m/it/10 i.e.  $[][]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/
+10 M\OML/cmm/m/it/10 ; s[]; s[]; \OT1/cmr/m/n/10 0)$\OT1/ptm/m/n/10 ; 
+ []
+
+[7] <k2.png, id=42, 472.76625pt x 447.6725pt>
+File: k2.png Graphic file (type png)
+ <use k2.png>
+Package pdftex.def Info: k2.png used on input line 744.
+(pdftex.def)             Requested size: 138.84729pt x 131.48161pt.
+
+<k2VQ.png, id=43, 340.27126pt x 84.315pt>
+File: k2VQ.png Graphic file (type png)
+ <use k2VQ.png>
+Package pdftex.def Info: k2VQ.png used on input line 748.
+(pdftex.def)             Requested size: 104.1381pt x 25.80415pt.
+
+Overfull \hbox (22.41411pt too wide) in paragraph at lines 739--752
+[]\OT1/ptm/m/n/10 Hence, we can ob-tain $\OMS/cmsy/m/n/10 B \OT1/cmr/m/n/10 = \
+OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 )\OM
+L/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 )\OML
+/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 )\OML/
+cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 )\OML/c
+mm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 )\OML/cm
+m/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 )\OML/cmm
+/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 )$\OT1/ptm
+/m/n/10 ,
+ []
+
+[8 <D:/（博士）我的资料/Git/fry/论文备份/fragment-VB/fragment-VB/k2
+.png> <D:/（博士）我的资料/Git/fry/论文备份/fragment-VB/fragment-VB
+/k2VQ.png>]
+Overfull \hbox (21.3589pt too wide) in paragraph at lines 844--844
+[] 
+ []
+
+[9] <k1.png, id=54, 463.7325pt x 195.73125pt>
+File: k1.png Graphic file (type png)
+ <use k1.png>
+Package pdftex.def Info: k1.png used on input line 1065.
+(pdftex.def)             Requested size: 142.26378pt x 60.04587pt.
+ [10] [11 <D:/（博士）我的资料/Git/fry/论文备份/fragment-VB/fragmen
+t-VB/k1.png>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 1299.
+
+
+[12]
+Overfull \hbox (65.14473pt too wide) detected at line 1364
+[]\OT1/cmr/m/n/10 ([][]\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10  
+; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 ) \OMS/
+cmsy/m/n/10  [][]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '; \OMS/cmsy/m/n/10 f\OM
+L/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ^ []\OT1/c
+mr/m/n/10 (\OML/cmm/m/it/10   \OMS/cmsy/m/n/10 ^ \OML/cmm/m/it/10 '; \OMS/cmsy/
+m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )[]  \OMS/cmsy/m/n/
+10  [][]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '; \OMS/cmsy/m/n/10 f\OML/cmm/m/i
+t/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ^ []\OT1/cmr/m/n/10
+ (\OML/cmm/m/it/10  ; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT
+1/cmr/m/n/10 )\OML/cmm/m/it/10 :
+ []
+
+[13]
+Overfull \hbox (1.27292pt too wide) in paragraph at lines 1369--1374
+$\OMS/cmsy/m/n/10 )$ $M\OML/cmm/m/it/10 ; s[] \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/
+10 = []([][]\OML/cmm/m/it/10 '; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m
+/n/10 g\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 and $\OMS/cmsy/m/n/10 M\OML/cmm/m/it/
+10 ; s[] \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10   \OMS/cmsy/
+m/n/10 ^ \OML/cmm/m/it/10 '; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/
+10 g\OT1/cmr/m/n/10 )$  \OT1/ptm/m/n/10 (IR($[]\OT1/cmr/m/n/10 ([][]\OML/cmm/m/
+it/10 '; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 
+)\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/
+cmr/m/n/10 )$\OT1/ptm/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1375--1379
+
+ []
+
+[14]
+Overfull \hbox (0.96022pt too wide) in paragraph at lines 1479--1484
+$\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]
+\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = []([][]\OML/cmm/m/it/10
+ '; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )$ \O
+T1/ptm/m/n/10 and $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT
+1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10  ; \OM
+S/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )$  \OT1/ptm
+/m/n/10 (IR($[]\OT1/cmr/m/n/10 ([][]\OML/cmm/m/it/10 '; \OMS/cmsy/m/n/10 f\OML/
+cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OMS/cmsy/m/
+n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 ,
+ []
+
+[15]
+
+LaTeX Warning: Citation `emerson1984deciding' on page 16 undefined on input lin
+e 1512.
+
+
+LaTeX Warning: Citation `emerson1984deciding' on page 16 undefined on input lin
+e 1514.
+
+[16]
+Overfull \hbox (3.62016pt too wide) in paragraph at lines 1560--1565
+$\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]
+\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = []([][]\OML/cmm/m/it/10
+ '; \OMS/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )$ \O
+T1/ptm/m/n/10 and $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT
+1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10  ; \OM
+S/cmsy/m/n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )$  \OT1/ptm
+/m/n/10 (IR($[]\OT1/cmr/m/n/10 ([][]\OML/cmm/m/it/10 '; \OMS/cmsy/m/n/10 f\OML/
+cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OMS/cmsy/m/
+n/10 f\OML/cmm/m/it/10 q\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 ,
+ []
+
+[17]
+
+LaTeX Font Warning: Font shape `OMS/ptm/bx/n' undefined
+(Font)              using `OMS/ptm/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 1608.
+
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1608.
+
+LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1608.
+
+
+Overfull \hbox (6.85622pt too wide) detected at line 1621
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '[] \OMS/cmsy/m/n/10 ^ [][]\OML/cmm/m/it/10
+ '[] \OMS/cmsy/m/n/10 ^ [][]\OML/cmm/m/it/10 '[]; p\OT1/cmr/m/n/10 ) \OMS/cmsy/
+m/n/10  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '[]; p\OT1/cmr/m/n/10 ) \OMS/cmsy/
+m/n/10 ^ [][]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '[]; p\OT1/cmr/m/n/10 )) \OMS
+/cmsy/m/n/10 ^ [][]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '[] \OMS/cmsy/m/n/10 ^ 
+\OML/cmm/m/it/10 '[]; p\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 :
+ []
+
+[18] [19]
+
+LaTeX Warning: Command \O invalid in math mode on input line 1803.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1825.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1825.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1825.
+
+[20]
+LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1897.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+
+LaTeX Warning: The counter will not be printed.
+             The label is:  on input line 1906.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
+
+LaTeX Warning: Command \O invalid in math mode on input line 1908.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1925.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1925.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1925.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1932.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1937.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1937.
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1947.
+
+[23]
+Overfull \hbox (6.11337pt too wide) detected at line 1957
+[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; C; C[] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/
+10 C\OT1/cmr/m/n/10 ) = []([](\OML/cmm/m/it/10 ; C\OT1/cmr/m/n/10 )\OML/cmm/m/
+it/10 ; C[] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 C\OT1/cmr/m/n/10 ) = [] [](\OML
+/cmm/m/it/10 B; C; C[] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 C\OT1/cmr/m/n/10 )\O
+ML/cmm/m/it/10 :
+ []
+
+
+LaTeX Warning: Command \O invalid in math mode on input line 1958.
+
+
+Overfull \hbox (3.43991pt too wide) in paragraph at lines 2002--2006
+\OT1/ptm/m/n/10 where $\OMS/cmsy/m/n/10 ]$ \OT1/ptm/m/n/10 s-tand-s for dis-joi
+n-t u-nion and where $\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s\OT1
+/cmr/m/n/10 ) = \OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s\OT1/cmr
+/m/n/10 )$ \OT1/ptm/m/n/10 if $\OML/cmm/m/it/10 s \OMS/cmsy/m/n/10 2 \OML/cmm/m
+/it/10 S[]$\OT1/ptm/m/n/10 . Then $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cm
+m/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[]$
+ []
+
+
+Overfull \hbox (21.186pt too wide) in paragraph at lines 2002--2006
+$\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$\OT
+1/ptm/m/n/10 , \OT1/ptm/m/it/10 i.e.  \OT1/ptm/m/n/10 there is $\OML/cmm/m/it/1
+0 C \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 S[] \OMS/cmsy/m/n/10 ] \OML/cmm/m/it/10
+ S[]=\OMS/cmsy/m/n/10 B$ \OT1/ptm/m/n/10 such that $\OML/cmm/m/it/10 s[]; s[] \
+OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 C$\OT1/ptm/m/n/10 , where $\OMS/cmsy/m/n/10 
+B \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[
+]\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm
+/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[]$
+ []
+
+[24] [25] [26]
+
+LaTeX Warning: Command \O invalid in math mode on input line 2149.
+
+
+Overfull \hbox (6.67241pt too wide) in paragraph at lines 2149--2151
+[]\OT1/ptm/m/n/10 This the-o-rem can be proved by in-duct-ing on the for-mu-la 
+$\OML/cmm/m/it/10 '$ \OT1/ptm/m/n/10 and sup-pos-ing $[]\OT1/cmr/m/n/10 (\OML/c
+mm/m/it/10 '\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 \$
+ []
+
+
+Overfull \hbox (11.55002pt too wide) in paragraph at lines 2225--2235
+\OT1/ptm/m/n/10 (b) We will show that for each $\OT1/cmr/m/n/10 (\OML/cmm/m/it/
+10 s; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R$\OT1/ptm/m/n/1
+0 , there is a $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 ) \OM
+S/cmsy/m/n/10 2 \OML/cmm/m/it/10 R[]$ \OT1/ptm/m/n/10 such that $[][]\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[]$
+ []
+
+
+Overfull \hbox (22.08885pt too wide) in paragraph at lines 2225--2235
+$[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . S
+-ince $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )
+ \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][
+](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , then $\OT1/cmr/m/n/1
+0 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]
+\OT1/cmr/m/n/10 = [][] []$\OT1/ptm/m/n/10 .
+ []
+
+
+Overfull \hbox (19.74727pt too wide) in paragraph at lines 2225--2235
+\OT1/ptm/m/n/10 There-fore, for each $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; s[]\
+OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R$ \OT1/ptm/m/n/10 there i
+s a $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/
+10 2 \OML/cmm/m/it/10 R[]$ \OT1/ptm/m/n/10 such that $\OT1/cmr/m/n/10 (\OMS/cms
+y/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/
+m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr
+/m/n/10 ))$\OT1/ptm/m/n/10 .
+ []
+
+
+Overfull \hbox (8.48996pt too wide) in paragraph at lines 2225--2235
+\OT1/ptm/m/n/10 (c) We will show that for each $\OT1/cmr/m/n/10 (\OML/cmm/m/it/
+10 s[]; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R[]$ \OT1/ptm/
+m/n/10 there is a $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; s[]\OT1/cmr/m/n/10 ) \O
+MS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R$ \OT1/ptm/m/n/10 such that $[][]\OT1/cmr/m/
+n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[]$
+ []
+
+
+Overfull \hbox (10.29262pt too wide) in paragraph at lines 2225--2235
+$[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . S
+-ince $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )
+ \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][
+](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , then $\OT1/cmr/m/n/1
+0 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]
+\OT1/cmr/m/n/10 = [][] [][]\OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m
+/it/10 s[]\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 .
+ []
+
+
+Overfull \hbox (15.85837pt too wide) in paragraph at lines 2225--2235
+\OT1/ptm/m/n/10 There-fore, for each $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[
+]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R[]$ \OT1/ptm/m/n/10 the
+re is a $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/
+n/10 2 \OML/cmm/m/it/10 R$ \OT1/ptm/m/n/10 such that $\OT1/cmr/m/n/10 (\OMS/cms
+y/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/
+m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr
+/m/n/10 )$\OT1/ptm/m/n/10 .
+ []
+
+
+Overfull \hbox (9.70244pt too wide) in paragraph at lines 2271--2282
+$\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]
+\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [][] []$  \OT1/ptm/m/n/
+10 ($[]\OT1/cmr/m/n/10 ([][] [] \OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$\OT1/ptm
+/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2271--2282
+
+ []
+
+[27]
+Overfull \hbox (60.542pt too wide) in paragraph at lines 2305--2311
+$\OMS/cmsy/m/n/10 )$ $8\OML/cmm/m/it/10 s[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10
+ S[]$\OT1/ptm/m/n/10 , $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ;
+ s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[
+]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ! 
+[] ^ [][] []$
+ []
+
+
+Overfull \hbox (39.11905pt too wide) in paragraph at lines 2305--2311
+\OT1/ptm/m/n/10 (I) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
+]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\O
+T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ! [
+]$ $^$ $[][] []$
+ []
+
+
+Overfull \hbox (12.56828pt too wide) in paragraph at lines 2305--2311
+\OT1/ptm/m/n/10 (III) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; 
+s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = []$ $\OMS/cmsy/m/n/1
+0 ^$ $[][] []$  \OT1/ptm/m/n/10 ((I),(II)) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2305--2311
+
+ []
+
+
+Overfull \hbox (36.98964pt too wide) in paragraph at lines 2313--2325
+\OT1/ptm/m/n/10 (5) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
+]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\O
+T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ! [
+] ^ [][] []$
+ []
+
+
+Overfull \hbox (9.92009pt too wide) in paragraph at lines 2313--2325
+\OT1/ptm/m/n/10 (8) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
+]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^ 
+[][] []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2313--2325
+
+ []
+
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 2330--2335
+
+ []
+
+
+Overfull \hbox (0.90154pt too wide) detected at line 2350
+[]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '; V\OT1/cmr/m/n/10 )) = [](\OMS/cmsy/m/
+n/10 f\OML/cmm/m/it/10 \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 j
+[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; 
+V\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g\OT1/cmr/m/n/10 ) = []([] \OMS/cmsy/m/n/10 
+F[]\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ))\
+OML/cmm/m/it/10 :
+ []
+
+
+Overfull \hbox (5.27689pt too wide) in paragraph at lines 2353--2354
+[]\OT1/ptm/m/n/10 Secondly, sup-pose that $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[
+]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is a mod-el-s of $\OM
+S/cmsy/m/n/10 f\OML/cmm/m/it/10 \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ' \OMS/cmsy
+/m/n/10 j[]\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/
+it/10 ; V\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$\OT1/ptm/m/n/10 . Thus, $\OT1/cmr
+/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$
+ []
+
+
+Overfull \hbox (6.34596pt too wide) in paragraph at lines 2372--2373
+$\OMS/cmsy/m/n/10 $[]$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s
+\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 vi-a a bi-na-ry re-la-tion $\OMS/cmsy/m/n/10
+ B$\OT1/ptm/m/n/10 . We con-struc-t an ini-tial Krip-ke struc-ture $\OT1/cmr/m/
+n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$
+ []
+
+[29]
+
+LaTeX Warning: Command \O invalid in math mode on input line 2431.
+
+[30]
+Overfull \hbox (11.32796pt too wide) in paragraph at lines 2450--2455
+$\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s
+[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [][]([](\OML/cmm/m/it
+/10 ; V\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , e-s-pe-cial-ly, let $\OT1/cmr/m/n/
+10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) = (\OMS/cmsy/m/
+n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 , we have $\OT1
+/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/c
+msy/m/n/10 j[]\OT1/cmr/m/n/10 =$
+ []
+
+
+Overfull \hbox (3.34665pt too wide) in paragraph at lines 2456--2460
+[]$\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 (\OT1/cmr/m/n/10 )$ $\OMS/cmsy/m/n/10 8$ $
+\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \O
+MS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 ([][]([](\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/1
+0 )))$\OT1/ptm/m/n/10 , then there ex-ist-s a sub-structure $\OT1/cmr/m/n/10 (\
+OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$
+ []
+
+[31]
+(D:\（博士）我的资料\Git\fry\论文备份\fragment-VB\fragment-VB\wsc-s
+nc-forget-ctl-fragment.bbl
+Underfull \hbox (badness 1199) in paragraph at lines 15--18
+\OT1/ptm/m/n/9 nal of Ex-per-i-men-tal & The-o-ret-i-cal Ar-ti-fi-cial In-tel-l
+i-gence \OT1/ptm/b/n/9 11\OT1/ptm/m/n/9 (1), 77--93 (1999). http-
+ []
+
+
+Underfull \hbox (badness 6047) in paragraph at lines 20--24
+[]\OT1/ptm/m/n/9 Browne, M.C., Clarke, E.M., Grum-berg, O.: Char-ac-ter-iz-ing 
+fi-nite krip-ke struc-
+ []
+
+
+Underfull \hbox (badness 4181) in paragraph at lines 20--24
+\OT1/ptm/m/n/9 tures in propo-si-tion-al tem-po-ral log-ic. The-o-r. Com-put. S
+-ci. \OT1/ptm/b/n/9 59\OT1/ptm/m/n/9 , 115--131 (1988).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--24
+\OT1/ptm/m/n/9 https://doi.org/10.1016/0304-3975(88)90098-9, $\OT1/pcr/m/n/9 ht
+tps : / / doi . org / 10 . 1016 /$
+ []
+
+[32]) [33]
+(D:\（博士）我的资料\Git\fry\论文备份\fragment-VB\fragment-VB\wsc-s
+nc-forget-ctl-fragment.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4209 strings out of 495354
+ 53504 string characters out of 3183188
+ 138463 words of memory out of 3000000
+ 7284 multiletter control sequences out of 15000+200000
+ 45434 words of font info for 92 fonts, out of 3000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 34i,21n,33p,1074b,467s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Application/Ctex/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<D:/Application/C
+tex/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Application/Ctex/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Application/Ctex/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi5.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmmi7.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmmi9.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.
+pfb><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/App
+lication/Ctex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/Application/Ct
+ex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/Application/Ctex/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Application/Ctex/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy5.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy9.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pf
+b><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D
+:/Application/Ctex/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><D:/Application/Ct
+ex/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><D:/Application/Ctex/MiKTeX/fonts/ty
+pe1/urw/times/utmbi8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utm
+r8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on wsc-snc-forget-ctl-fragment.pdf (33 pages, 382756 bytes).
+PDF statistics:
+ 195 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+
