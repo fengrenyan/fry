@@ -83,7 +83,15 @@ cSubTerm((~(?F)), CT) :- X1=nf(af, F), CT=[X1].
 cSubTerm(F, CT) :- X1 = nf(cpl, F), CT=[X1].
 
 
-ctlforget(F, V, R) :- gain_prop(F, P), toClassicalTerm(F, CT), ctlforgetT(CT, V, R2), toCTL(R2, R).
+ctlforget(F, V, Filename) :- gain_prop(F, P), toClassicalTerm(F, CT), ctlforgetT(CT, V, R2), toCTL(R2, CTL),
+	string_concat(Filename, '/', File1), 
+	string_concat(File1, 'result', File2),
+	string_concat(File2, '.txt', Filename1), 
+	open(Filename1, write, Str), 
+	write("CTL="), write(CTL),
+	write("\n"),
+	write("Exist="), write(Exist),
+	write(Str, CTL), nl(Str).
 
 toCTL([], []).
 toCTL([L], R) :- toCTL_term(L, R).

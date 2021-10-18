@@ -1,4 +1,4 @@
-\begin{thebibliography}{167}
+\begin{thebibliography}{160}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -1065,66 +1065,6 @@ KAUSHIK~R, NAUGHTON~J~F, BOHANNON~P, et~al.
 Proceedings of VLDB'02.
 \newblock [S.l.]: Elsevier, 2002: 239-250.
 
-\bibitem[{Dwork} et~al.(2015){Dwork}, {Feldman}, {Hardt}, {Pitassi},
-  {Reingold}, and {Roth}]{dwork2015the}
-{Dwork}~C, {Feldman}~V, {Hardt}~M, et~al.
-\newblock The reusable holdout: Preserving validity in adaptive data
-  analysis\allowbreak[J].
-\newblock Science, 2015, 349\penalty0 (6248):\penalty0 636-638.
-
-\bibitem[张啸剑\ 等(2014)张啸剑 and 孟小峰]{zhangxiaojian2014}
-张啸剑, 孟小峰.
-\newblock 面向数据发布和分析的差分隐私保护\allowbreak[J].
-\newblock 计算机学报, 2014\penalty0 (4):\penalty0 927-949.
-
-\bibitem[{McSherry} et~al.(2007){McSherry} and {Talwar}]{mcsherry2007mechanism}
-{McSherry}~F, {Talwar}~K.
-\newblock Mechanism design via differential privacy\allowbreak[C]//\allowbreak
-48th Annual IEEE Symposium on Foundations of Computer Science (FOCS'07).
-\newblock Providence, RI, USA: IEEE, 2007: 94-103.
-
-\bibitem[{Boreale} et~al.(2015){Boreale} and
-  {Pampaloni}]{boreale2015quantitative}
-{Boreale}~M, {Pampaloni}~F.
-\newblock Quantitative information flow under generic leakage functions and
-  adaptive adversaries\allowbreak[J/OL].
-\newblock Logical Methods in Computer Science, 2015, 11\penalty0 (4):\penalty0
-  1-31.
-\newblock \url{https://doi.org/10.2168/LMCS-11(4:5)2015}.
-
-\bibitem[彭长根\ 等(2016)彭长根, 丁红发, 朱义杰, 田有亮, and
-  符祖峰]{peng2016}
-彭长根, 丁红发, 朱义杰, 等.
-\newblock 隐私保护的信息熵模型及其度量方法\allowbreak[J].
-\newblock 软件学报, 2016, 27\penalty0 (8):\penalty0 1891-1903.
-
-\bibitem[吴振强\ 等(2019)吴振强, 胡静, 田堉攀, 史武超, and
-  颜军]{zhenqiangwu2019}
-吴振强, 胡静, 田堉攀, 等.
-\newblock 社交网络下的不确定图隐私保护算法\allowbreak[J].
-\newblock 软件学报, 2019, 30\penalty0 (4):\penalty0 1106-1120.
-
-\bibitem[{Wang} et~al.(2015){Wang}, {Ying}, and {Zhang}]{wang2015a}
-{Wang}~W, {Ying}~L, {Zhang}~J.
-\newblock A minimax distortion view of differentially private query
-  release\allowbreak[C]//\allowbreak
-2015 49th Asilomar Conference on Signals, Systems and Computers.
-\newblock Pacific Grove, CA, USA: IEEE, 2015: 1046-1050.
-
-\bibitem[{Kalantari} et~al.(2016){Kalantari}, {Sankar}, and
-  {Sarwate}]{kalantari2016optimal}
-{Kalantari}~K, {Sankar}~L, {Sarwate}~A~D.
-\newblock Optimal differential privacy mechanisms under hamming distortion for
-  structured source classes\allowbreak[C]//\allowbreak
-2016 IEEE International Symposium on Information Theory (ISIT).
-\newblock Barcelona, Spain: IEEE, 2016: 2069-2073.
-
-\bibitem[吴宁博\ 等(2020)吴宁博, 彭长根, 田有亮, 牛坤, and
-  丁红发]{ningbowu2020}
-吴宁博, 彭长根, 田有亮, 等.
-\newblock 基于率失真的差分隐私效用优化模型\allowbreak[J].
-\newblock 计算机学报, 2020, 43\penalty0 (8):\penalty0 1463-1478.
-
 \bibitem[{Csisz\'{a}r} et~al.(1984){Csisz\'{a}r} and
   {Tusn\'{a}dy}]{csiszar1984information}
 {Csisz\'{a}r}~I, {Tusn\'{a}dy}~G~E.
@@ -1182,6 +1122,12 @@ Proceedings of the 21th ACM SIGKDD International Conference on Knowledge
   Discovery and Data Mining.
 \newblock Sydney, NSW, Australia: ACM, 2015: 129-138.
 
+\bibitem[{McSherry} et~al.(2007){McSherry} and {Talwar}]{mcsherry2007mechanism}
+{McSherry}~F, {Talwar}~K.
+\newblock Mechanism design via differential privacy\allowbreak[C]//\allowbreak
+48th Annual IEEE Symposium on Foundations of Computer Science (FOCS'07).
+\newblock Providence, RI, USA: IEEE, 2007: 94-103.
+
 \bibitem[{Li} et~al.(2016){Li} and {Pan}]{li2016structural}
 {Li}~A, {Pan}~Y.
 \newblock Structural information and dynamical complexity of
@@ -1211,6 +1157,14 @@ Advances in Neural Information Processing Systems 26.
 \newblock A privacy-preserving game model for local differential privacy by
   using information-theoretic approach\allowbreak[J].
 \newblock IEEE Access, 2020, 8:\penalty0 216741-216751.
+
+\bibitem[{Kalantari} et~al.(2016){Kalantari}, {Sankar}, and
+  {Sarwate}]{kalantari2016optimal}
+{Kalantari}~K, {Sankar}~L, {Sarwate}~A~D.
+\newblock Optimal differential privacy mechanisms under hamming distortion for
+  structured source classes\allowbreak[C]//\allowbreak
+2016 IEEE International Symposium on Information Theory (ISIT).
+\newblock Barcelona, Spain: IEEE, 2016: 2069-2073.
 
 \bibitem[{Jin} et~al.(2019){Jin}, {He}, and {Dai}]{jin2019on}
 {Jin}~R, {He}~X, {Dai}~H.

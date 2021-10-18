@@ -2,12 +2,12 @@
 {\em 
 已有结果显示，任意的$\CTL$公式可以转换为$\CTLsnf$子句的集合。归结是一种以子句为计算对象的判断可满足性的方法，本章提出一种基于归结的计算遗忘理论的方法。
 其主要思想是：首先将给定的$\CTL$公式转换为$\CTLsnf$子句的集合，其次在相应的原子命题上使用归结规则得到归结结果，最后“消除”之前引入的索引和$\start$，最终得到遗忘的结果。其主要流程图如图~\ref{Fig:chapter05:v1uv2}所示。
-正如本章所要说明的那样，$\CTL$不具有均匀插值这一属性，基于归结的方法在有的情况下是不能计算出遗忘结果的。然而，在有的$\CTL$子类下，本章提出的方法是能够计算出其遗忘结果的。}
+正如本章所要说明的那样，$\CTL$不具有均匀插值这一属性，基于归结的方法在有的情况下是不能计算出遗忘结果的。然而，在有些$\CTL$子类下，本章提出的方法能够计算出其遗忘结果。}
 \begin{figure*}[!htb]
 	\centering
 	% Requires \usepackage{graphicx}
 	\includegraphics[width=15cm]{chapter04/frame.png}\\
-	\caption{$\MPK$-结构之间的$V$-互模拟关系}
+	\caption{基于归结的遗忘的主要流程图}
 	\label{Fig:chapter05:v1uv2}
 \end{figure*}
 
@@ -49,10 +49,43 @@
 	\end{algorithmic}
 \end{algorithm}
 
-算法~\ref{alg:compute:forgetting:by:Resolution}对于输入$\varphi$和$V$，输出结果记为$ERes(\varphi, V)$。
-为了实现这一目标，第一个亟待解决的关键问题为如何表示$\CTL$公式和带索引的$\CTL$公式之间的关系。如在第三章中所展示的那样，将一个$\CTL$公式转换
 
-本章其余部分组织如下：首先，第\ref{chapter05-system-model}节介绍系统模型与研究问题，给出相关的定义和基本的符号表示。其次，第\ref{chapter05-optimal-model}节阐述本章针对权衡隐私与效用问题所提出的优化模型，并形式化的给出模型表述。第\ref{chapter05-optimazation-mechanism} 节对本章提出优化模型的求解方法及算法进行详细的阐述。第\ref{chapter04-experiment}节利用公开数据集对所提出的方法和算法进行实验分析。最后，第\ref{chapter04-conclusion}节对本章的主要工作进行总结。
+算法~\ref{alg:compute:forgetting:by:Resolution}对于输入$\varphi$和$V$，输出结果记为$ERes(\varphi, V)$。
+为了实现这一目标，需要解决如下两个主要问题：
+\begin{itemize}
+	\item[(1)] 如何表示$\CTL$公式和带索引的$\CTL$公式之间的关系？如在第三章中所展示的那样，将一个$\CTL$公式转换为$\CTLsnf$子句的集合会引入新的原子命题和索引。虽然已有的研究说明了$\CTL$公式可以转换为带索引的公式的集合并保证其可满足性，然而并没有表明这两种形式的公式之间的模型具有怎样的联系。本章给出一种扩展的互模拟定义，以描述两种公式的模型之间的关系。
+	\item[(2)] 如何“移除”无关的原子命题（包括需要遗忘的原子命题和转换过程中引入的新的原子命题），以及如何“消除”索引？为此，本章给出“移除”原子命题的一般操作，对应算法~\ref{alg:compute:forgetting:by:Resolution}中的$\emph{Removing\_atoms}(Res, V)$过程，并提出一种一般化的Ackermann引理。为了“消除”索引，探索几个几个逻辑等价关系，对应算法~\ref{alg:compute:forgetting:by:Resolution}中的$\emph{Removing\_index}(\emph{RemA})$过程。
+\end{itemize}
+
+本章其余部分组织如下：首先，第\ref{chapter4:sub:biVB}节给出二元互模拟的定义及其相关性质。其次，第\ref{chapter4:transform}节介绍将$\CTL$公式转换为$\CTLsnf$子句的集合的过程。第\ref{chapter4:resolution}节阐述基于归结的计算过程。
+
+第\ref{chapter05-optimal-model}节阐述本章针对权衡隐私与效用问题所提出的优化模型，并形式化的给出模型表述。第\ref{chapter05-optimazation-mechanism} 节对本章提出优化模型的求解方法及算法进行详细的阐述。第\ref{chapter04-experiment}节利用公开数据集对所提出的方法和算法进行实验分析。最后，第\ref{chapter04-conclusion}节对本章的主要工作进行总结。
+
+\section{二元互模拟}
+\label{chapter4:sub:biVB}
+对于给定的初始$\Ind$-结构，这里定义一种$\tuple{V, I}$-互模拟关系。为了与一元的（只考虑原子命题的集合）$V$-互模拟对应，称$\tuple{V, I}$-互模拟为二元互模拟。其在$V$-互模拟的基础上又考虑了索引的集合在结构间关系。
+\begin{definition}[二元互模拟] \label{def:VInd:bisimulation}
+	令$V\subseteq \Ha$、$I\subseteq \Ind$分别是原子命题和索引的集合，$\Hm_i=(S_i, R_i, L_i, [\_],s_0^i)$ $(i=1,2)$是$\Ind$-Kripke结构，${\cal K}_i=(\Hm_i,s^i)$是初始$\Ind$-结构。称${\cal K}_1$和${\cal K}_2$是$\tuple{V, I}$-互模拟的（记为${\cal K}_1 \lrto_{\tuple{V, I}} {\cal K}_2$），当且仅当${\cal K}_1 \lrto_V {\cal K}_2$且$\forall j\in (\Ind - I)$有：
+	\begin{itemize}
+		\item 对任意的$(s,s_1) \in [j]_1$，存在$(s',s_1')\in [j]_2$使得$s\lrto_V s'$且$s_1 \lrto_V s_1'$；
+		\item 对任意的$(s',s_1') \in [j]_2$，存在$(s,s_1)\in [j]_1$使得$s\lrto_V s'$且$s_1 \lrto_V s_1'$。
+	\end{itemize}
+	
+\end{definition}
+
+由定义~\ref{def:VInd:bisimulation}可知，当探讨的公式为$\CTL$公式时，因为不用考虑索引，$\lrto_{\tuple{V, I}}$“降维”为$\lrto_V$。
+与$\lrto_V$类似，下面$\lrto_{\tuple{V, I}}$在本文中至关重要的两个性质。
+\begin{proposition}
+	令$V_1,V_2\subseteq \Ha$为原子命题的集合，$I_1, I_2 \subseteq \Ind$为索引的集合，${\cal K}_i = (\Hm_i, s_0^i)$ $(i=1,2,3)$为初始$\Ind$-结构。若${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$和${\cal K}_2 \lrto_{\tuple{V_2,I_2}} {\cal K}_3$，则：
+	\begin{itemize}
+		\item[(i)] ${\cal K}_1 \lrto_{\tuple{V_1\cup V_2,I_1\cup I_2}} {\cal K}_3$；
+		\item[(ii)] 如果$V_1 \subseteq V_2$且$I_1 \subseteq I_2$，则${\cal K}_1 \lrto_{\tuple{V_2,I_2}} {\cal K}_2$。
+	\end{itemize}
+\end{proposition}
+\begin{proof}
+	content...
+\end{proof}
+
 
 \section{系统模型与问题提出}\label{chapter05-system-model}
 
