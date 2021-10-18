@@ -1600,9 +1600,7 @@ Let $\Pi=\psi \wedge \ALL \NEXT \varphi$ with $\psi$ and $\varphi$ are DNF formu
 (ii) and (iii) can be proved as (i).
 \end{proof}
 
-\[
-\Hm \models \varphi
-\]
+
 
 
 \subsection{\{\ALL \FUTURE, \ALL \GLOBAL\}-fragment}
@@ -2008,6 +2006,34 @@ Let $\Hm_i=(S_i, R_i, L_i)$ with $i = 1,2$ be two transition systems. Then
  O((|S_1| + |S_2|)*|V| + (|R_1|+|R_2|)* log(|S_1| + |S_2|)).
  \]
  \end{corollary}
+
+
+\section{Examples of minimal set}
+
+The following example shows that the atoms appearing in the counterexample do not help to computing the minimal set.
+\begin{example}
+	Let $\varphi = \ALL\NEXT((tl1.state=green) \wedge (tl2.state=green)) \wedge (tl1.state=red) \wedge (tl1.state=green)$, $\Hm$ is a system of traffic light in the figure.
+	There is $\Hm \not \models \varphi$ and the NuSMV products a counterexample as follows:
+%	\begin{itemize}
+%		\itme Trace Description: CTL Counterexample:
+%		\item -> State: 1.1 <-
+%		\item tl1.state = red
+%		\item tl2.state = red
+%	\end{itemize}
+ \begin{itemize}
+	\item Trace Description: CTL Counterexample:
+	\begin{itemize}
+	\item $\rto$ State: 1.1 $\lto$
+	\item tl1.state = red
+	\item tl2.state = red
+\end{itemize}
+\end{itemize}
+
+We have that the minimal set $V$ is:
+ $$V=\{tl1.state=green, tl1.state=green\}$$ and 
+ $$V \cap \{tl1.state = red, tl2.state = red\} = \emptyset$$.
+\end{example}
+
 \section{Related work}
 As we know that transition systems can model a piece of software or hardware at various abstraction levels.
 The lower the abstraction level, the more implementation details are present. At high
