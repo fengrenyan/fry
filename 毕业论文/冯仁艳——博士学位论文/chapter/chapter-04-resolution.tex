@@ -75,7 +75,7 @@
 
 由定义~\ref{def:VInd:bisimulation}可知，当探讨的公式为$\CTL$公式时，因为不用考虑索引，$\lrto_{\tuple{V, I}}$“降维”为$\lrto_V$。
 与$\lrto_V$类似，下面$\lrto_{\tuple{V, I}}$在本文中至关重要的两个性质。
-\begin{proposition}
+\begin{proposition}\label{pro:VI:div}
 	令$V_1,V_2\subseteq \Ha$为原子命题的集合，$I_1, I_2 \subseteq \Ind$为索引的集合，${\cal K}_i = (\Hm_i, s_0^i)$ $(i=1,2,3)$为初始$\Ind$-结构。若${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$和${\cal K}_2 \lrto_{\tuple{V_2,I_2}} {\cal K}_3$，则：
 	\begin{itemize}
 		\item[(i)] ${\cal K}_1 \lrto_{\tuple{V_1\cup V_2,I_1\cup I_2}} {\cal K}_3$；
@@ -83,7 +83,17 @@
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	content...
+	(i) 由定义~\ref{def:VInd:bisimulation}可知${\cal K}_1 \lrto_{V_1} {\cal K}_2$，${\cal K}_2 \lrto_{V_2} {\cal K}_3$，因此由命题~\ref{pro:div}可知${\cal K}_1 \lrto_{V_1\cup V_2} {\cal K}_3$。
+	
+	${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$\\
+	$\Rto$ $\forall j\in (\Ind-(I_1\cup I_2))$有：$\forall(s,s_1) \in [j]_1$，$\exists (s', s_1')\in [j]_2$使得$s\lrto_{V_1} s'$，$s_1\lrto_{V_1} s_1'$\\
+	$\Rto$ 又因为${\cal K}_2 \lrto_{\tuple{V_2,I_2}} {\cal K}_3$，所以$\exists (s'', s_1'')\in [j]_3$使得$s'\lrto_{V_2} s''$，$s_1'\lrto_{V_2} s_1''$  \hfill \\
+	$\Rto$ $s \lrto_{V_1\cup V_2} s''$且$s_1 \lrto_{V_1\cup V_2} s_1''$
+	
+	同理可证，$\forall (s'',s_1'')\in [j]_3$，$\exists (s,s_1)\in [j]_1$使得$s \lrto_{V_1\cup V_2} s''$且$s_1 \lrto_{V_1\cup V_2} s_1''$。
+	因此，由定义~\ref{def:VInd:bisimulation}可知${\cal K}_1 \lrto_{\tuple{V_1\cup V_2,I_1\cup I_2}} {\cal K}_3$。
+	
+	(ii)可以由命题~\ref{pro:div}中的(ii)可得。
 \end{proof}
 
 
