@@ -195,6 +195,13 @@ $\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
 	\end{itemize}
 \end{definition}
 
+%\begin{proposition}
+%	令$\varphi_0 \wedge \ALL\FUTURE\varphi_1 \wedge \ALL\GLOBAL\varphi_2$是一个$\CTL$公式，$p$是一个原子命题，其中$\varphi_i$($i=0,1,2$)为命题公式，则：
+%	\[
+%	\CTLforget(\varphi_0 \wedge \ALL\FUTURE\varphi_1 \wedge \ALL\GLOBAL\varphi_2,\{p\}) \equiv \Forget(\varphi_0) \wedge \ALL\GLOBAL(\Forget(\varphi_2,\{p\})) \wedge \ALL\FUTURE(\Forget(\varphi_1 \wedge \varphi_2, \{p\})).
+%	\]
+%\end{proposition}
+
 与Browne和Bolotov等人的工作类似，本文只将初始$\MPK$-结构作为模型的候选项\cite{browne1988characterizing,Bolotov:1999:JETAI}。换句话说，对于给定的$\MPK$-结构$(\Hm,s)$和$\CTL$公式$\varphi$，如果$(\Hm,s)\models \varphi$且$s = s_0$，则称$(\Hm,s)$为公式$\varphi$的一个\emph{模型}。更清楚地说，对于给定的初始$\MPK$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称$\cal K$是$\varphi$的一个模型。
 
 为了符号的统一，这里列出文中出现的一些记号的含义。给定公式$\varphi$，公式的所有模型构成的集合记为$\Mod(\varphi)$。此时就很容易定义公式的可满足性，即：如果$\Mod(\varphi)\not = \emptyset$，则称$\varphi$是\emph{可满足}的。给定两个公式$\varphi_1$和$\varphi_2$，若$\Mod(\varphi_1)\subseteq \Mod(\varphi_2)$，则称$\varphi_1$\emph{逻辑地蕴涵}$\varphi_2$，记为$\varphi_1\models \varphi_2$。特别地，当$\varphi_1\models \varphi_2$且$\varphi_2\models \varphi_1$时，即$\Mod(\varphi_1)= \Mod(\varphi_2)$，则称$\varphi_1$和$\varphi_2$为\emph{逻辑等值公式}（简称为\emph{等值公式}），记作$\varphi_1 \equiv \varphi_2$。

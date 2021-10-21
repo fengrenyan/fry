@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  21 OCT 2021 11:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  21 OCT 2021 15:39
 entering extended mode
 **wsc-snc-forget-ctl-fragment.tex
 
@@ -330,6 +330,9 @@ nc-forget-ctl-fragment.aux
 
 LaTeX Warning: Label `thm:AX:Dcon' multiply defined.
 
+
+LaTeX Warning: Label `def:V-bisimulation' multiply defined.
+
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
@@ -573,7 +576,7 @@ LaTeX Font Info:    Font shape `OMS/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1606.
 
 [17]
-Overfull \hbox (6.85622pt too wide) detected at line 1619
+Overfull \hbox (6.85622pt too wide) detected at line 1620
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '[] \OMS/cmsy/m/n/10 ^ [][]\OML/cmm/m/it/10
  '[] \OMS/cmsy/m/n/10 ^ [][]\OML/cmm/m/it/10 '[]; p\OT1/cmr/m/n/10 ) \OMS/cmsy/
 m/n/10  []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 '[]; p\OT1/cmr/m/n/10 ) \OMS/cmsy/
@@ -584,20 +587,20 @@ m/n/10 ^ [][]\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '[]; p\OT1/cmr/m/n/10 )) \OMS
 
 [18] [19]
 
-LaTeX Warning: Command \O invalid in math mode on input line 1801.
+LaTeX Warning: Command \O invalid in math mode on input line 1802.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1823.
+LaTeX Warning: Command \O invalid in math mode on input line 1824.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1823.
+LaTeX Warning: Command \O invalid in math mode on input line 1824.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1823.
+LaTeX Warning: Command \O invalid in math mode on input line 1824.
 
 [20]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1895.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1896.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -605,38 +608,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [21]
 
 LaTeX Warning: The counter will not be printed.
-             The label is:  on input line 1904.
+             The label is:  on input line 1905.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [22]
 
-LaTeX Warning: Command \O invalid in math mode on input line 1906.
+LaTeX Warning: Command \O invalid in math mode on input line 1907.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1923.
+LaTeX Warning: Command \O invalid in math mode on input line 1924.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1923.
+LaTeX Warning: Command \O invalid in math mode on input line 1924.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1923.
+LaTeX Warning: Command \O invalid in math mode on input line 1924.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1930.
+LaTeX Warning: Command \O invalid in math mode on input line 1931.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1935.
+LaTeX Warning: Command \O invalid in math mode on input line 1936.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1935.
+LaTeX Warning: Command \O invalid in math mode on input line 1936.
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1945.
+LaTeX Warning: Command \O invalid in math mode on input line 1946.
 
 [23]
-Overfull \hbox (6.11337pt too wide) detected at line 1955
+Overfull \hbox (6.11337pt too wide) detected at line 1956
 []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; C; C[] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/
 10 C\OT1/cmr/m/n/10 ) = []([](\OML/cmm/m/it/10 ; C\OT1/cmr/m/n/10 )\OML/cmm/m/
 it/10 ; C[] \OMS/cmsy/m/n/10 n \OML/cmm/m/it/10 C\OT1/cmr/m/n/10 ) = [] [](\OML
@@ -645,10 +648,10 @@ ML/cmm/m/it/10 :
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 1956.
+LaTeX Warning: Command \O invalid in math mode on input line 1957.
 
 
-Overfull \hbox (3.43991pt too wide) in paragraph at lines 2000--2004
+Overfull \hbox (3.43991pt too wide) in paragraph at lines 2001--2005
 \OT1/ptm/m/n/10 where $\OMS/cmsy/m/n/10 ]$ \OT1/ptm/m/n/10 s-tand-s for dis-joi
 n-t u-nion and where $\OML/cmm/m/it/10 L\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s\OT1
 /cmr/m/n/10 ) = \OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s\OT1/cmr
@@ -658,7 +661,7 @@ m/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[]$
  []
 
 
-Overfull \hbox (21.186pt too wide) in paragraph at lines 2000--2004
+Overfull \hbox (21.186pt too wide) in paragraph at lines 2001--2005
 $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$\OT
 1/ptm/m/n/10 , \OT1/ptm/m/it/10 i.e.  \OT1/ptm/m/n/10 there is $\OML/cmm/m/it/1
 0 C \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 S[] \OMS/cmsy/m/n/10 ] \OML/cmm/m/it/10
@@ -671,17 +674,17 @@ B \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[
 
 [24] [25] [26]
 
-LaTeX Warning: Command \O invalid in math mode on input line 2175.
+LaTeX Warning: Command \O invalid in math mode on input line 2176.
 
 
-Overfull \hbox (6.67241pt too wide) in paragraph at lines 2175--2177
+Overfull \hbox (6.67241pt too wide) in paragraph at lines 2176--2178
 []\OT1/ptm/m/n/10 This the-o-rem can be proved by in-duct-ing on the for-mu-la 
 $\OML/cmm/m/it/10 '$ \OT1/ptm/m/n/10 and sup-pos-ing $[]\OT1/cmr/m/n/10 (\OML/c
 mm/m/it/10 '\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 \$
  []
 
 
-Overfull \hbox (11.55002pt too wide) in paragraph at lines 2251--2261
+Overfull \hbox (11.55002pt too wide) in paragraph at lines 2252--2262
 \OT1/ptm/m/n/10 (b) We will show that for each $\OT1/cmr/m/n/10 (\OML/cmm/m/it/
 10 s; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R$\OT1/ptm/m/n/1
 0 , there is a $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 ) \OM
@@ -690,7 +693,7 @@ S/cmsy/m/n/10 2 \OML/cmm/m/it/10 R[]$ \OT1/ptm/m/n/10 such that $[][]\OT1/cmr/m
  []
 
 
-Overfull \hbox (22.08885pt too wide) in paragraph at lines 2251--2261
+Overfull \hbox (22.08885pt too wide) in paragraph at lines 2252--2262
 $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . S
 -ince $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )
  \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][
@@ -700,7 +703,7 @@ $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . S
  []
 
 
-Overfull \hbox (19.74727pt too wide) in paragraph at lines 2251--2261
+Overfull \hbox (19.74727pt too wide) in paragraph at lines 2252--2262
 \OT1/ptm/m/n/10 There-fore, for each $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; s[]\
 OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R$ \OT1/ptm/m/n/10 there i
 s a $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/
@@ -711,7 +714,7 @@ m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr
  []
 
 
-Overfull \hbox (8.48996pt too wide) in paragraph at lines 2251--2261
+Overfull \hbox (8.48996pt too wide) in paragraph at lines 2252--2262
 \OT1/ptm/m/n/10 (c) We will show that for each $\OT1/cmr/m/n/10 (\OML/cmm/m/it/
 10 s[]; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R[]$ \OT1/ptm/
 m/n/10 there is a $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; s[]\OT1/cmr/m/n/10 ) \O
@@ -720,7 +723,7 @@ n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $[]$
  []
 
 
-Overfull \hbox (10.29262pt too wide) in paragraph at lines 2251--2261
+Overfull \hbox (10.29262pt too wide) in paragraph at lines 2252--2262
 $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . S
 -ince $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s\OT1/cmr/m/n/10 )
  \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][
@@ -731,7 +734,7 @@ $[][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . S
  []
 
 
-Overfull \hbox (15.85837pt too wide) in paragraph at lines 2251--2261
+Overfull \hbox (15.85837pt too wide) in paragraph at lines 2252--2262
 \OT1/ptm/m/n/10 There-fore, for each $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 R[]$ \OT1/ptm/m/n/10 the
 re is a $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s; s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/
@@ -742,7 +745,7 @@ m/n/10 = \OMS/cmsy/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr
  []
 
 [27]
-Overfull \hbox (9.70244pt too wide) in paragraph at lines 2297--2308
+Overfull \hbox (9.70244pt too wide) in paragraph at lines 2298--2309
 $\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]
 \OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [][] []$  \OT1/ptm/m/n/
 10 ($[]\OT1/cmr/m/n/10 ([][] [] \OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 )$\OT1/ptm
@@ -750,12 +753,12 @@ $\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2297--2308
+Underfull \hbox (badness 10000) in paragraph at lines 2298--2309
 
  []
 
 [28]
-Overfull \hbox (60.542pt too wide) in paragraph at lines 2331--2337
+Overfull \hbox (60.542pt too wide) in paragraph at lines 2332--2338
 $\OMS/cmsy/m/n/10 )$ $8\OML/cmm/m/it/10 s[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10
  S[]$\OT1/ptm/m/n/10 , $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ;
  s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[
@@ -764,7 +767,7 @@ $\OMS/cmsy/m/n/10 )$ $8\OML/cmm/m/it/10 s[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10
  []
 
 
-Overfull \hbox (39.11905pt too wide) in paragraph at lines 2331--2337
+Overfull \hbox (39.11905pt too wide) in paragraph at lines 2332--2338
 \OT1/ptm/m/n/10 (I) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\O
 T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ! [
@@ -772,19 +775,19 @@ T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ! [
  []
 
 
-Overfull \hbox (12.56828pt too wide) in paragraph at lines 2331--2337
+Overfull \hbox (12.56828pt too wide) in paragraph at lines 2332--2338
 \OT1/ptm/m/n/10 (III) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; 
 s[]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = []$ $\OMS/cmsy/m/n/1
 0 ^$ $[][] []$  \OT1/ptm/m/n/10 ((I),(II)) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2331--2337
+Underfull \hbox (badness 10000) in paragraph at lines 2332--2338
 
  []
 
 
-Overfull \hbox (36.98964pt too wide) in paragraph at lines 2339--2351
+Overfull \hbox (36.98964pt too wide) in paragraph at lines 2340--2352
 \OT1/ptm/m/n/10 (5) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 F[]\O
 T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ! [
@@ -792,24 +795,24 @@ T1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s[]\OT1/cmr/m/n/10 )) \OMS/cmsy/m/n/10 ! [
  []
 
 
-Overfull \hbox (9.92009pt too wide) in paragraph at lines 2339--2351
+Overfull \hbox (9.92009pt too wide) in paragraph at lines 2340--2352
 \OT1/ptm/m/n/10 (8) $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[
 ]\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10 ^ 
 [][] []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2339--2351
+Underfull \hbox (badness 10000) in paragraph at lines 2340--2352
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2356--2361
+Underfull \hbox (badness 10000) in paragraph at lines 2357--2362
 
  []
 
 
-Overfull \hbox (0.90154pt too wide) detected at line 2376
+Overfull \hbox (0.90154pt too wide) detected at line 2377
 []\OT1/cmr/m/n/10 ([](\OML/cmm/m/it/10 '; V\OT1/cmr/m/n/10 )) = [](\OMS/cmsy/m/
 n/10 f\OML/cmm/m/it/10 \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ' \OMS/cmsy/m/n/10 j
 []\OT1/cmr/m/n/10 = \OML/cmm/m/it/10 ; []\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ; 
@@ -819,7 +822,7 @@ OML/cmm/m/it/10 :
  []
 
 [29]
-Overfull \hbox (5.27689pt too wide) in paragraph at lines 2379--2380
+Overfull \hbox (5.27689pt too wide) in paragraph at lines 2380--2381
 []\OT1/ptm/m/n/10 Secondly, sup-pose that $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[
 ]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 is a mod-el-s of $\OM
 S/cmsy/m/n/10 f\OML/cmm/m/it/10 \OMS/cmsy/m/n/10 j\OML/cmm/m/it/10 ' \OMS/cmsy
@@ -829,7 +832,7 @@ it/10 ; V\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 g$\OT1/ptm/m/n/10 . Thus, $\OT1/cmr
  []
 
 
-Overfull \hbox (6.34596pt too wide) in paragraph at lines 2398--2399
+Overfull \hbox (6.34596pt too wide) in paragraph at lines 2399--2400
 $\OMS/cmsy/m/n/10 $[]$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M\OML/cmm/m/it/10 ; s
 \OT1/cmr/m/n/10 )$ \OT1/ptm/m/n/10 vi-a a bi-na-ry re-la-tion $\OMS/cmsy/m/n/10
  B$\OT1/ptm/m/n/10 . We con-struc-t an ini-tial Krip-ke struc-ture $\OT1/cmr/m/
@@ -838,10 +841,10 @@ n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 )$
 
 [30]
 
-LaTeX Warning: Command \O invalid in math mode on input line 2457.
+LaTeX Warning: Command \O invalid in math mode on input line 2458.
 
 
-Overfull \hbox (11.32796pt too wide) in paragraph at lines 2476--2481
+Overfull \hbox (11.32796pt too wide) in paragraph at lines 2477--2482
 $\OMS/cmsy/m/n/10 )$ $\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s
 []\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 = [][]([](\OML/cmm/m/it
 /10 ; V\OT1/cmr/m/n/10 ))$\OT1/ptm/m/n/10 , e-s-pe-cial-ly, let $\OT1/cmr/m/n/
@@ -852,7 +855,7 @@ msy/m/n/10 j[]\OT1/cmr/m/n/10 =$
  []
 
 
-Overfull \hbox (3.34665pt too wide) in paragraph at lines 2482--2486
+Overfull \hbox (3.34665pt too wide) in paragraph at lines 2483--2487
 []$\OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 (\OT1/cmr/m/n/10 )$ $\OMS/cmsy/m/n/10 8$ $
 \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10 M[]\OML/cmm/m/it/10 ; s[]\OT1/cmr/m/n/10 ) \O
 MS/cmsy/m/n/10 2 []\OT1/cmr/m/n/10 ([][]([](\OML/cmm/m/it/10 ; V\OT1/cmr/m/n/1
@@ -899,7 +902,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4209 strings out of 495354
  53504 string characters out of 3183188
- 136463 words of memory out of 3000000
+ 136464 words of memory out of 3000000
  7284 multiletter control sequences out of 15000+200000
  45434 words of font info for 92 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
