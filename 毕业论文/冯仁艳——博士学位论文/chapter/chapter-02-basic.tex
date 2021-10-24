@@ -181,6 +181,8 @@ $\CTL$的时序算子是路径量词和时序操作符的组合（路径量词�
 	 \ALL \GLOBAL \varphi& \ \overset{def}{=}\  \neg \EXIST \FUTURE \neg \varphi
 \end{alignat}
 
+此外，对于给定的公式$\varphi$，其否定范式（negation normal form, NNF）是将否定联结词“$\neg$”的出现通过上述定义变化到只出现在原子命题之前的形式。
+
 $\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
 \begin{definition}[$\CTL$的语义]\label{def:ctl:semantic}
 	给定$\CTL$公式$\varphi$，初始结构$\Hm=(S,R,L,s_0)$和状态$s\in S$。$(\Hm,s)$与$\varphi$之间的可满足关系$(\Hm,s)\models \varphi$定义如下：

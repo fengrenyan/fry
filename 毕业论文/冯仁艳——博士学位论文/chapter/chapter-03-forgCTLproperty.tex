@@ -14,7 +14,7 @@
 为此，首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$（或$\Hm_i=(S_i,R_i,L_i,[\_]_i,s_0^i)$）是初始结构（$\Ind$-Kripke结构），${\cal K}_i=(\Hm_i, s_i)$是$\MPK$-结构（或$\Ind$-结构）。$\Hb_n^V$被递归定义如下：
 \begin{itemize}
 	\item 若$L_1(s_1)-V=L_2(s_2)$，则$({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
-	\item 对任意$n\ge 0$，若满足下面几个条件，则$({\cal K_1},{\cal K_2})\in \Hb_{n+1}^V$成立：
+	\item 对任意$n\ge 0$，若满足下面几个条件，则$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^V$成立：
 		\begin{itemize}
 			\item $({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
 			\item 对任意$(s_1,s_1')\in R_1$，存在$(s_2,s_2')\in R_2$使得$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$；
@@ -29,7 +29,7 @@
 	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是$\MPK$-结构（或$\Ind$-结构）。
 	\begin{itemize}
 		\item ${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，当且仅当对所有的$n \ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，则记为${\cal K}_1 \lrto_V {\cal K}_2$。
-		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$都有${\cal K}_{1,j} \lrto {\cal K}_{2,j}$，则$\pi_1 \lrto_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
+		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}_{\ge 1}$是大于等于1的整数的集合。}都有${\cal K}_{1,j} \lrto {\cal K}_{2,j}$，则$\pi_1 \lrto_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
 	\end{itemize}
 \end{definition}
 
@@ -51,7 +51,7 @@
 	\end{figure*}
 \end{example}
 
- 为了简化书写和看起来简洁，当从上下文中能明确知道所指的初始结构和$\Ind$-Kripke结构（为了方便，将这两种结构通称为结构），则可以使用状态来表示这些结构之间的$V$-互模拟，即使用$s_1 \lrto_V s_2$替代$(\Hm_1, s_1)\lrto (\Hm_2,s_2)$。
+ 为了简化书写和看起来简洁，当从上下文中能明确知道所指的初始结构和$\Ind$-Kripke结构（为了方便，将这两种结构通称为\emph{结构}），则可以使用状态来表示这些结构之间的$V$-互模拟，即使用$s_1 \lrto_V s_2$替代$(\Hm_1, s_1)\lrto (\Hm_2,s_2)$。
  
  $V$-互模拟给出了两个结构之间相互模仿的行为关系，下面的命题给出了这种关系一些关键的性质。
  \begin{proposition}\label{pro:div}

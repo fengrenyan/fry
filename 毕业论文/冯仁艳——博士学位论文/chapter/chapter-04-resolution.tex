@@ -12,7 +12,7 @@
 \end{figure*}
 
 \section{引言}
-本章展示如何使用表~\ref{tab:res}中的归结则来计算$\CTL$下的遗忘理论。
+本章展示如何使用表~\ref{tab:res}中的归结规则来计算$\CTL$下的遗忘理论。
 在本章给定如下约定的记号。令$V\subseteq \Ha$是要遗忘的原子命题的集合，$I\subseteq \Ind$是索引的集合，$V'$表示计算过程所引入的原子命题的集合且满足$V'\cap V=\emptyset$。
 此外，$\varphi$是$\CTL$公式，且$T_{\varphi}$是在$\varphi$上使用表~\ref{tab:trans}中的转换规则得到的$\CTLsnf$子句的集合。
 显然可以知道，$V'=\Var(T_{\varphi})-\Var(\varphi)$。
@@ -36,16 +36,16 @@
 			%$SD$&:鞍点策略的支付量
 		\end{tabular}
 		\IF{$\varphi$ 是不可满足的}
-		\RETURN $\bot$
+		\RETURN $\bot$;
 		\ENDIF
 		\IF{$V=\Var(\varphi)$}
-		\RETURN $\bot$
+		\RETURN $\bot$;
 		\ENDIF
-		\STATE $T_{\varphi}, V' \lto \emph{Transform}(\varphi)$
-		\STATE $Res \lto \emph{Resolution}(T_{\varphi}, V\cup V')$
-		\STATE $\emph{RemA} \lto \emph{Removing\_atoms}(Res, V)$
-		\STATE $\NI \lto \emph{Removing\_index}(\emph{RemA})$
-		\RETURN $\bigwedge_{\psi \in \NI_{\CTL}} \psi$
+		\STATE $T_{\varphi}, V', I \lto \emph{Transform}(\varphi)$;
+		\STATE $Res \lto \emph{Resolution}(T_{\varphi}, V\cup V')$;
+		\STATE $\emph{RemA} \lto \emph{Removing\_atoms}(Res, V)$;
+		\STATE $\NI \lto \emph{Removing\_index}(\emph{RemA})$;
+		\RETURN $\bigwedge_{\psi \in \NI_{\CTL}} \psi$;
 	\end{algorithmic}
 \end{algorithm}
 
@@ -74,16 +74,16 @@
 \end{definition}
 
 由定义~\ref{def:VInd:bisimulation}可知，当探讨的公式为$\CTL$公式时，因为不用考虑索引，$\lrto_{\tuple{V, I}}$“降维”为$\lrto_V$。
-与$\lrto_V$类似，下面$\lrto_{\tuple{V, I}}$在本文中至关重要的两个性质。
+与$\lrto_V$类似，$\lrto_{\tuple{V, I}}$在本文中至关重要的两个性质如下。
 \begin{proposition}\label{pro:VI:div}
-	令$V_1,V_2\subseteq \Ha$为原子命题的集合，$I_1, I_2 \subseteq \Ind$为索引的集合，${\cal K}_i = (\Hm_i, s_0^i)$ $(i=1,2,3)$为初始$\Ind$-结构。若${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$和${\cal K}_2 \lrto_{\tuple{V_2,I_2}} {\cal K}_3$，则：
+	令$V_1,V_2\subseteq \Ha$为原子命题的集合，$I_1, I_2 \subseteq \Ind$为索引的集合，${\cal K}_i = (\Hm_i, s_0^i)$ $(i=1,2,3)$为初始$\Ind$-结构。若${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$、${\cal K}_2 \lrto_{\tuple{V_2,I_2}} {\cal K}_3$，则：
 	\begin{itemize}
 		\item[(i)] ${\cal K}_1 \lrto_{\tuple{V_1\cup V_2,I_1\cup I_2}} {\cal K}_3$；
 		\item[(ii)] 如果$V_1 \subseteq V_2$且$I_1 \subseteq I_2$，则${\cal K}_1 \lrto_{\tuple{V_2,I_2}} {\cal K}_2$。
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	(i) 由定义~\ref{def:VInd:bisimulation}可知${\cal K}_1 \lrto_{V_1} {\cal K}_2$，${\cal K}_2 \lrto_{V_2} {\cal K}_3$，因此由命题~\ref{pro:div}可知${\cal K}_1 \lrto_{V_1\cup V_2} {\cal K}_3$。
+	(i) 由定义~\ref{def:VInd:bisimulation}可知${\cal K}_1 \lrto_{V_1} {\cal K}_2$、${\cal K}_2 \lrto_{V_2} {\cal K}_3$，因此由命题~\ref{pro:div}可知${\cal K}_1 \lrto_{V_1\cup V_2} {\cal K}_3$。
 	
 	${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$\\
 	$\Rto$ $\forall j\in (\Ind-(I_1\cup I_2))$有：$\forall(s,s_1) \in [j]_1$，$\exists (s', s_1')\in [j]_2$使得$s\lrto_{V_1} s'$，$s_1\lrto_{V_1} s_1'$\\
@@ -96,6 +96,98 @@
 	(ii)可以由命题~\ref{pro:div}中的(ii)可得。
 \end{proof}
 
+对于给定的$\Ind$-Kripke结构$\Hm=(S,R,L,[\_],s_0)$和$\Hm'=(S',R',L',[\_],s_0')$，$\Hm$和$\Hm'$之间的二元互模拟关系$\lrto_{\tuple{V,I}}$给描述公式间在二元组$\tuple{V,I}$上的等价关系提供了前提条件。这同时也为解决本章引言部分提出的问题$(1)$奠定了基础。
+
+\begin{definition}
+	给定两个公式（或公式的集合）$T_1$和$T_2$，$I\subseteq \Ind$是索引的集合，$V''\subseteq \Ha$是原子命题的集合。如果下面条件被满足，则称$T_1$和$T_2$在二元组$\tuple{V,I}$上逻辑等价（记为$T_1\equiv_{\tuple{V,I}} T_2$）：
+	\begin{itemize}
+		\item $\forall (\Hm,s_0)\in \Mod(T_1)$，$\exists (\Hm',s_0')\in \Mod(T_2)$使得$(\Hm,s_0) \lrto_{\tuple{V, I}} (\Hm',s_0')$，且
+		\item $\forall (\Hm',s_0')\in \Mod(T_2)$，$\exists (\Hm,s_0)\in \Mod(T_1)$使得$(\Hm,s_0) \lrto_{\tuple{V, I}} (\Hm',s_0')$。
+	\end{itemize}
+	
+\end{definition}
+
+在后面的小节中，将围绕之前提出的两个问题和算法~\ref{alg:compute:forgetting:by:Resolution}中的几个关键步骤（第7到第11行）来证明$ERes(\varphi, V) \equiv_{\tuple{V',\emptyset}} \CTLforget(\varphi, V)$。在这个等价关系中$\varphi$为$\CTL$公式，$V$为需要遗忘的原子命题的集合，$V'$是将$\varphi$转换为$\CTLsnf$子句集合过程中引入的新的原子命题的集合。这个结论告诉我们，如果$ERes(\varphi, V)$公式中不包含$V'$的元素，或者$\IR(ERes(\varphi, V), V')$，则$ERes(\varphi, V)$就是从$\varphi$中遗忘掉$V$中的原子命题之后得到的结果。
+
+\section{将$\CTL$公式转换为$\CTLsnf$子句的集合}
+将$\CTL$公式$\varphi$转换为$\CTLsnf$子句的集合这一过程（记为$Trangsform(\varphi)$）对应算法~\ref{alg:compute:forgetting:by:Resolution}中的第7行所代表的过程。
+对于输入$\varphi$，该过程事先将$\varphi$转换为其否定范式（记为$\nnf(\varphi)$），然后通过下面的等价关系\cite{zhang2014resolution,DBLP:books/el/leeuwen90/Emerson90}将出现在公式中的$\top$和$\bot$“去掉”（记为$\simp(\nnf(\varphi))$）。
+\begin{align*}
+	& (\varphi \wedge \top) \equiv \varphi && (\varphi \wedge \bot) \equiv \bot && (\varphi \vee \top)\equiv \top && (\varphi \vee \bot) \equiv \varphi \\
+	& \neg \top \equiv \bot && \neg \bot \equiv \top && QT \bot \equiv \bot && QT \top \equiv \top  \\
+	& Q(\varphi \UNTILL \bot) \equiv \bot  && Q(\varphi \UNTILL \top) \equiv \top && Q(\bot \UNTILL \varphi) \equiv \varphi && Q(\top \UNTILL \varphi) \equiv Q\FUTURE \varphi\\
+	& Q(\varphi \UNLESS \bot) \equiv Q \GLOBAL \varphi  && Q(\varphi \UNLESS \top) \equiv \top && Q(\bot \UNLESS \varphi) \equiv \varphi && Q(\top \UNLESS \varphi) \equiv \top
+\end{align*}
+在上述等价关系中，$Q\in \{\ALL,\EXIST\}$是路径量词，$T\in \{\FUTURE, \GLOBAL, \NEXT\}$是时序操作符。
+
+在得到$\simp(\nnf(\varphi))$后，将$T_{\varphi}$初始化为$\{\ALL \GLOBAL(\start \rto p), \ALL \GLOBAL(p \rto \simp(\nnf(\varphi)))\}$，然后转换过程从表~\ref{tab:trans}中找到匹配的规则来将$T_{\varphi}$中的非$\CTLsnf$子句形式的公式转换为$\CTLsnf$子句，并将得到的结果更新$T_{\varphi}$直到$T_{\varphi}$中不存在非$\CTLsnf$子句形式的公式。这个转换过程被写为算法~\ref{alg:compute:trans}。
+
+
+\begin{algorithm}[htbp]
+	\small
+	\setstretch{1.2}
+	\caption{\emph{Transform}$(\varphi)$}
+	\label{alg:compute:trans}
+	\begin{algorithmic}[1]
+		\REQUIRE ~~\\
+		\begin{tabular}[t]{p{8mm}l}
+			$\varphi$&:$\CTL$公式
+		\end{tabular}
+		\ENSURE ~~\\
+		\begin{tabular}[t]{p{8mm}l}
+			$T_{\varphi}$&: $\CTLsnf$子句的集合\\
+			$V'$& : 新引入的原子命题的集合\\
+			$I$ &: 引入的索引的集合
+			%$SD$&:鞍点策略的支付量
+		\end{tabular}
+		\STATE $T_{\varphi}\lto \{\ALL \GLOBAL(\start \rto p), \ALL \GLOBAL(p \rto \simp(\nnf(\varphi)))\}$;（其中$p\in {\cal A}-var(\varphi)$）
+		\STATE $V'\lto \{p\}$;
+		\STATE $I\lto \emptyset$;
+		\WHILE{$\exists \psi \in T_{\varphi}$使得$\psi$不是$\CTLsnf$子句}
+		\STATE $T_{\varphi} \lto T_{\varphi}-\{\psi\}$;
+		\STATE $T_{\varphi} \lto Trans(\psi) \cup T_{\varphi}$;
+		\IF{$Trans(\psi)$引入了一个新原子命题$q$}
+		\STATE $V'\lto V' \cup \{q\}$;
+		\ENDIF
+		\IF{$Trans(\psi)$引入了一个新的索引$ind$}
+		\STATE $I\lto I \cup \{ind\}$;
+		\ENDIF
+		\ENDWHILE
+		\RETURN $T_{\varphi}, V', I$;
+	\end{algorithmic}
+\end{algorithm}
+
+
+在算法~\ref{alg:compute:trans}中，$Trans(\psi)$表示使用表~\ref{tab:trans}中的某一条规则来转换$\psi$（规则中长横线上面的部分），并返回规则的结果（规则中长横线下面的部分）、引入的新原子命题和索引。这里使用规则\textbf{Trans(6)}为例来描述这一过程。令$\psi=q \rto \ALL \NEXT \phi$，可以看出当$\phi$不是经典子句的时候$\psi$不是$\CTLsnf$子句，且规则\textbf{Trans(6)}是能使用的（匹配的）规则，则$Trans(\psi)$对$\psi$使用规则\textbf{Trans(6)}并返回结果$\{q \rto \ALL \NEXT q', q' \rto \phi\}$（在这里，引入了新的原子命题$q'$，但是没有引入新的索引）。
+
+\begin{proposition}
+	令$\varphi$是一个$\CTL$公式，$(T_{\varphi}, V', I) = Transform(\varphi)$，则$\varphi \equiv_{\tuple{V',I}} T_{\varphi}$。
+\end{proposition}
+\begin{proof}
+	为了讨论方便，令$Transform(\varphi)$过程产生了一个公式集合的序列，$T_0, T_1, \dots, T_n=T_{\varphi}$，其中$p$是不出现在$\varphi$中的原子命题，$T_0=\{\ALL \GLOBAL(\start \rto p), \ALL \GLOBAL(p \rto \simp(\nnf(\varphi)))\}$且对任意的$i$（$0\leq i < n$）有$T_{i+1} = (T_i-\{\psi\}) \cup R_i$（$Trans(\psi)$返回的结果为$R_i$）。此外，在这一过程中，所有的公式都是其否定范式的形式。
+	
+	为了证明命题中的结论成立，只需证明，对任意的$i$（$0\leq i < n$）有$T_i \equiv_{\tuple{V',I}} T_{i+1}$成立。由于$T_{i+1}$是由$T_i$通过表~\ref{tab:trans}中的规则作用于$T_i$中的某一个公式得到，因此证明过程分为两个部分：（1）从$\varphi$到$T_0$部分；（2）对表~\ref{tab:trans}中的规则做归纳的部分。
+	
+	（1）这里将证明$\varphi \equiv_{\tuple{\{p\},\emptyset}} T_0$。
+	
+	$(\Rto)$ $\forall (\Hm_1, s_1) \in \Mod(\varphi)$ （$\Hm_1=(S_1,R_1,L_1,[\_],s_1)$），可以构造一个$\Ind$-Kripke结构$\Hm_2=(S_2,R_2,L_2,[\_],s_2)$使得$\Hm_2$除了$L_2(s_2)=L_1(s_1) \cup \{p\}$（默认不出现在$\varphi$中的原子命题都不出现在状态的标签中），其他的元素都与$\Hm_1$中元素相同。显然，$(\Hm_2,s_2)\models T_0$且$(\Hm_1,s_1) \lrto_{\tuple{\{p\}, \emptyset}} (\Hm_2, s_2)$。
+	
+	$(\Lto)$ $\forall (\Hm_1,s_1) \in \Mod(T_0)$，由$\start$的语义可以知道$(\Hm_1,s_1) \models \varphi$。
+	
+	（2）这里将证明对任意的$i$（$0\leq i < n$）有$T_i \equiv_{\tuple{V',I}} T_{i+1}$成立，其中$T_{i+1} = (T_i-\{\psi\}) \cup R_i$。为了方便，用$\psi \rto_t R_i$表示$R_i$是使用规则$t$在公式$\psi$上得到的结果，且$T_i=X\cup \{\psi\}$（显然，$T_{i+1}=X\cup R_i$）。下面证明规则$t\in \{$\textbf{Trans(1), Trans(4), Trans(6)}$\}$的情形，其他情形可以类似地证明。
+	
+	
+	
+\end{proof}
+
+下面的结论表示，对于给定的$\CTL$公式$\varphi$，通过上述的转换过程得到的$\CTLsnf$子句的集合$T_{\varphi}$与$\varphi$
+%令$(T_{\varphi}, V', I) = Transform(\varphi)$，那么
+
+
+
+
+
+\section{归结过程}
 
 \section{系统模型与问题提出}\label{chapter05-system-model}
 
