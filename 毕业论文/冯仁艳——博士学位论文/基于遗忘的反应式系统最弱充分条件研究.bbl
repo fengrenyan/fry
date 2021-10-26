@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -102,7 +102,7 @@ BOLOTOV~A, FISHER~M.
   11\penalty0 (1):\penalty0 77-93.
 \newblock \url{https://doi.org/10.1080/095281399146625}.
 
-\bibitem[Zhang et~al.(2009)Zhang and Zhou]{Yan:AIJ:2009}
+\bibitem[Zhang et~al.(2009{\natexlab{a}})Zhang and Zhou]{Yan:AIJ:2009}
 ZHANG~Y, ZHOU~Y.
 \newblock Knowledge forgetting: Properties and applications\allowbreak[J].
 \newblock Artificial Intelligence, 2009, 173\penalty0 (16-17):\penalty0
@@ -123,5 +123,17 @@ VAN LEEUWEN~J.
   and Semantics.
 \newblock Elsevier and {MIT} Press, 1990: 995-1072.
 \newblock \url{https://doi.org/10.1016/b978-0-444-88074-1.50021-4}.
+
+\bibitem[Bolotov(2000)]{bolotov2000clausal}
+BOLOTOV~A.
+\newblock Clausal resolution for branching-time temporal logic.\allowbreak[D].
+\newblock [S.l.]: Manchester Metropolitan University, 2000.
+
+\bibitem[Zhang et~al.(2009{\natexlab{b}})Zhang, Hustadt, and
+  Dixon]{zhang2009refined}
+ZHANG~L, HUSTADT~U, DIXON~C.
+\newblock A refined resolution calculus for {CTL}\allowbreak[C]//\allowbreak
+International Conference on Automated Deduction.
+\newblock [S.l.]: Springer, 2009{\natexlab{b}}: 245-260.
 
 \end{thebibliography}

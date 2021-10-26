@@ -233,17 +233,80 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 \end{proof}
 
 命题~\ref{pro:TranE}表示，对于给定的$\CTL$公式$\varphi$，通过上述的转换过程得到的$\CTLsnf$子句的集合$T_{\varphi}$与$\varphi$在二元组$\tuple{V',I}$上逻辑等价。
+下面给出本章的运行示例来展示每一个过程。
 %令$(T_{\varphi}, V', I) = Transform(\varphi)$，那么
 
-
+\begin{example}[运行示例]
+	\label{examp:Tran}
+	给定公式$\varphi=\ALL((p\wedge q) \UNTILL (f\vee m)) \wedge r$和原子命题的集合$V=\{p,r\}$。$(T_{\varphi}, V', I) = Transform(\varphi)$，其中$V'=\{x,y,z,w\}$（$w$是与子句$z \rto \ALL \FUTURE x$对应的新引入的原子命题~\footnote{注意：本文中对每个$Q$-某时子句（$Q\in \{\EXIST, \ALL\}$）都产生一个新的原子变量$w$与之对应。}），$I=\emptyset$且$T_{\varphi}$中的元素如下：\\
+	$
+	\begin{array}{llll}
+		\centering
+		1. \start\rto z & 2. \top \rto \neg z \vee r \qquad & 3.\top \rto \neg x\vee f \vee m  & 4. \top \rto \neg z \vee x \vee y \\
+		5.\top \rto \neg y \vee p &  6.\top \rto \neg y \vee q &
+		7. z \rto \ALL \FUTURE x & 8. y \rto \ALL \NEXT(x\vee y).\\
+	\end{array}
+	$
+\end{example}
 
 
 
 \section{归结过程}
+本节的归结过程在转换过程之后执行。给定的公式$\varphi$和原子命题的集合$V$，令$(T_{\varphi}, V', I) = Transform(\varphi)$。在$T_{\varphi}$和$V\cup V'$上的归结过程（记为$Resolution(T_{\varphi}, V \cup V')$）产生一个子句集合的序列$T_0=T_{\varphi}, T_1, T_2$, $\dots$, $T_n=Res$并返回$Res$。在这个序列中，对所有的$0\leq i \leq n$都有$T_{i+1}=T_i\cup R_i$（$R_i$是由表~\ref{tab:res}中的某条归结规则作用到$T_i$中的某些子句上得到的结果），且在$Res$中不能再由任何的归结规则产生新的子句（或者产生了矛盾，即子句$\start\rto \bot$和子句$\top \rto \bot$，因为在此情况下可以得出$\CTLforget(\varphi, V) \equiv \bot$）。
+值得注意的是，在这一过程中产生的$T_i$（$0\leq i \leq n$）是$\CTLsnf$子句的集合。
 
-\section{系统模型与问题提出}\label{chapter05-system-model}
+下面的命题表示$T_{\varphi}$与归结过程得到的结果在二元组$\tuple{V\cup V',\emptyset}$上逻辑等价。
 
-本节给出本章的基本模型定义与符号表示，并阐述本章中的研究问题。
+\begin{proposition}
+	\label{pro:ResE}
+	给定公式$\varphi$和原子命题的集合$V$。若$(T_{\varphi}, V', I) = Transform(\varphi)$，则$T_{\varphi} \equiv_{\tuple{V\cup V', \emptyset}} Resolution(T_{\varphi}, V \cup V')$。
+\end{proposition}
+\begin{proof}
+这一结论可以通过证明$T_i \equiv_{\tuple{V\cup V', \emptyset}} T_{i+1}$（$0\leq i < n$），其中$T_{i+1}=T_i\cup R_i$。记$\Pi\rto_r R_i$为通过对$\Pi\subseteq T_i$和原子命题$p\in (V\cap \Var(\Pi))$使用表~\ref{tab:res}中的归结规则$r$得到$R_i$。
+
+（1）	这里证明若$r\in \{\textbf{(SRES1)},$ $\dots,$ $\textbf{(SRES8)},$ $(\textbf{RW1}),$ $(\textbf{RW2})\}$，则$T_i \equiv_{\tuple{\{p\}, {\O}}} T_{i+1}$。
+
+一方面可以证明$\Pi\models R_i$，因而$T_{i+1} \models T_i$。另一方面，由于$T_i\subseteq T_{i+1}$，所以$T_{i+1} \models T_i$。显然$T_i \equiv T_{i+1}$，又$\emptyset \subseteq (V\cup V')$且$\emptyset \subseteq \emptyset$，由命题~\ref{pro:VI:div}可知$T_i \equiv_{\tuple{V\cup V', \emptyset}} T_{i+1}$。
+
+（2）这里证明若$r=$\textbf{(ERES1)}，则$T_i \equiv_{\tuple{\{l, w_{\neg l}^{\ALL}\}, {\O}}} T_{i+1}$，其中$w_{\neg l}^{\ALL}\in V'$是与子句$Q \rto \ALL \FUTURE \neg l$相关的新的原子命题，$l$是文字（即：$p$或者$\neg p$）。
+
+在文章~\cite{bolotov2000clausal}中已经证明$\Pi \models R_i$，因此有$T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL}$，其中$\Lambda_{\neg l}^{\ALL}$是通过使用表~\ref{tab:trans}中的转换规则作用到$R_i$上得到的$\CTLsnf$子句的集合（请查看文章~\cite{zhang2009refined}获取更加详细的描述）。显然，对所有的$(\Hm_1,s_1) \in \Mod(T_i= X \cup \Pi)$都存在一个$(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$使得$(\Hm_1, s_1) \lrto_{\tuple{\{p, w_{\neg l}^{\ALL}\}, {\O}}} (\Hm_2, s_2)$，且对任意的$(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$也存在一个$(\Hm_1,s_1) \in \Mod(T_i= X \cup \Pi)$使得$(\Hm_1, s_1) \lrto_{\tuple{\{p, w_{\neg l}^{\ALL}\}, {\O}}} (\Hm_2, s_2)$。
+又$\{p, w_{\neg l}^{\ALL}\} \subseteq (V\cup V')$且$\emptyset \subseteq \emptyset$，由命题~\ref{pro:VI:div}可知$T_i \equiv_{\tuple{V\cup V', \emptyset}} T_{i+1}$。
+
+当规则为$\textbf{(ERES2)}$时可以类似地证明。
+\end{proof}
+
+命题~\ref{pro:ResE}和命题~\ref{pro:TranE}表明$\varphi \equiv_{\tuple{V'', \emptyset}} Resolution(T_{\varphi}, V'')$，即对任意的公式$\psi$，$\IR(\psi, V'')$蕴涵“$\varphi \models \psi$当且仅当$Resolution(T_{\varphi}, V'') \models \psi$”，其中$V''=V\cup V'$。
+
+\begin{example}[例~\ref{examp:Tran}的延续]\label{examp:Res}
+	对例~\ref{examp:Tran}中的$T_{\varphi}$和$V\cup V'$使用上述归结过程，除了例~\ref{examp:Tran}中的子句，还得到如下子句:
+	% The \textcolor{red}{resolvent} \textcolor{blue}{resolvents} of $T_{\varphi}$ obtained from Example~\ref{examp:Tran} by executing the resolution process on $T_{\varphi}$ and $V\cup V'$ are the following clauses (in addition to the ones in Example~\ref{examp:Tran}):
+	\begin{align*}
+		&(1)\ \start \rto r && (1,2,\textbf{SRES5})
+		&&(2)\ \start \rto x \vee y && (1,4,\textbf{SRES5})\\
+		% \end{align*}
+		% \begin{align*}
+		&(3)\ \top \rto \neg z \vee y \vee f \vee m && (3, 4, \textbf{SRES8})
+		&&(4)\ y \rto \ALL\NEXT(f\vee m\vee y) && (3,8, \textbf{SRES6})\\
+		&(5)\ \top \rto \neg z \vee x \vee p && (4,5, \textbf{SRES8})
+		&&(6)\ \top \rto \neg z \vee x \vee q && (4,6, \textbf{SRES8})\\
+		&(7)\ y \rto \ALL\NEXT(x\vee p) && (5, 8, \textbf{SRES6})
+		&&(8)\ y \rto \ALL\NEXT(x\vee q) && (6, 8, \textbf{SRES6})\\
+		&(9)\ \start \rto f\vee m \vee y && (3,(2), \textbf{SRES5}) 
+		% \end{align*}
+		% \begin{align*}
+		&&(10)\ \start \rto x \vee p && (5,(2),\textbf{SRES5}) \\
+		&(11)\ \start \rto x \vee q && (6,(2), \textbf{SRES5})
+		&& (12)\ \top \rto p \vee \neg z \vee f \vee m && (5,(3), \textbf{SRES8})\\
+		& (13)\ \top \rto q \vee \neg z \vee f \vee m && (6,(3), \textbf{SRES8})
+		&&(14)\ y \rto \ALL\NEXT(p \vee f\vee m) && (5, (4), \textbf{SRES6})\\
+		&(15)\ y \rto \ALL\NEXT(q \vee f\vee m) && (6, (4), \textbf{SRES6}) 
+		%\end{align*}
+		%\begin{align*}
+		&&(16)\ \start \rto f\vee m \vee p && (5, (9), \textbf{SRES5}) \\
+		&(17)\ \start \rto f\vee m \vee q && (6, (9), \textbf{SRES5})
+	\end{align*}
+\end{example}
 
 \subsection{数据模型}
 通常，有关个体的信息可以表述为表\ref{tab:origin}具有的形式，即是由元组和属性组成的二维矩阵。本质上，这是一个关系数据模型，其中的数据是由元组信息组成的集合，每个元组是有关特定个体的一组属性描述信息。例如，表\ref{tab:origin}中元组由Age、Sex、Race等属性组成，又如，医疗数据中通常包含姓名、性别、出生日期、社保账号、疾病等信息。然而，在这样的数据集合中，通常有些属性值被认为是私有的敏感隐私信息(如表\ref{tab:origin}中的Marital-status、医疗数据中的疾病信息等)，理应属于受保护的隐私数据。
@@ -291,7 +354,38 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 
 基于上述定义\ref{def:achievechannel}，本章中的研究是在满足差分隐私与给定失真度的$(\epsilon,\delta)$可达信道中寻找概率分布$q(\hat{x}|x)$。 由期望失真公式\ref{eq:chapter03-ED}易知可行集是超平面的闭半空间，并且半空间是凸的\cite{boyd2004convex}，封闭的，凸的且满足$\sum_{\hat{x}}q(\hat{x}|x)=1, q(\hat{x}|x)\geq 0$。由此，利用凸集合交集的保凸运算规则，$(\epsilon,\delta)$可达信道集合依然保持凸性。此外，文献\mycite{xiong2016randomized}中已经从下水平集的角度证明了$\epsilon$参数的计算函数是拟凸函数。基于此，本章中的研究是在凸可行集中计算最优分布$q(\hat{x}|x)$优化问题。
 
+\section{“移除”过程}
+本节意在“移除”如何将归结过程得到的结果中含有$V$中原子命题的子句，而保证其在二元组$\tuple{V\cup V, I}$上的逻辑等价关系，这一过程对应算法~\ref{alg:compute:forgetting:by:Resolution}中的第9行。
+给定$\CTLsnf$子句$C$和原子命题的集合$V$：
+\[Removing\_atoms(C, V) \equiv
+\left\{
+\begin{array}{ll}
+	\top, \qquad \hbox{$\Var(C) \cap V \not = \emptyset$;} \\
+	C,  \qquad  \hbox{otherwise.}
+\end{array}
+\right.
+\]
+此外，对于$\CTLsnf$子句的集合$\Pi$，
+\[Removing\_atoms(\Pi, V) = \{Removing\_atoms(r, V) \mid r \in \Pi\}.\]
+可以看出，通过这一过程后得到的子句集合里的子句不再包含$V$中的原子命题的集合。
 
+\begin{proposition}\label{pro:remove}
+	%Let $V''=V \cup V'$, then we have
+	对于给定的公式$\varphi$和原子命题的集合，有：
+	$$Resolution(T_{\varphi}, V \cup V') \equiv_{\tuple{V \cup V', \emptyset}}   Removing\_atoms(Resolution(T_{\varphi}, V \cup V'), V)$$.
+\end{proposition}
+\begin{proof}
+	因为要考虑的索引集合为空集，所以只需证明：
+	$$Resolution(T_{\varphi}, V \cup V') \equiv_{V \cup V'}   Removing\_atoms(Resolution(T_{\varphi}, V \cup V'), V)$$
+	其中$\equiv_V$与$\equiv_{\tuple{V,I}}$的定义类似，只是不考虑索引部分。
+	为了证明这一过程，下面给出两个事实：
+	\begin{itemize}
+		\item \textbf{(GNA)} 对任意的$p\in \Var(\varphi)$，$p$都不出现在$\CTLsnf$子句的左边；
+		\item \textbf{(PI)} 对任意的$p\in V'$，如果$p$出现在$\CTLsnf$子句的左边，那么$p$为负出现。
+	\end{itemize}
+
+不失一般性地，假设$V=\{p\}$，$Res=Resolution(T_{\varphi}, V \cup V')$，$C_i$是经典子句且$l$是$p$或者$\neg p$。
+\end{proof}
 
 \subsection{问题提出}\label{chapter05-problem-statement}
 
