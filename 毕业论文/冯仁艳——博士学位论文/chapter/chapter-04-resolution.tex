@@ -208,7 +208,7 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
    可以如下构造$\Ind$-Kripke结构$\Hm_2$：
    \begin{itemize}
    	\item $S_2=S_1$，$R_2=R_1$，$[\_]_2$与$[\_]_1$一样且$s_2=s_1$；
-   	\item $L_2$与$L_1$类似，除了：若$(\Hm_1, s_1') \models \neg q$则$L_2(s_1') = L_1(s_1')$，否则“若$(\Hm_1,s_1') \models \varphi_1$则$L_2(s_1')=L_1(s_1')$，否则$L_2(s_1')=L_1(s_1') \cup \{p\}$”。
+   	\item $L_2$与$L_1$类似，除了：若$(\Hm_1, s_1') \models \neg q$则$L_2(s_1') = L_1(s_1')$，否则“若$(\Hm_1,s_1') \models \varphi_1$ 则 $L_2(s_1')=L_1(s_1')$，否则$L_2(s_1')=L_1(s_1') \cup \{p\}$”。
    \end{itemize}
    显然，$(\Hm_2,s_1') \models (q\rto \varphi_1 \vee p) \wedge (p \rto \varphi_2)$且$(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$, 因而$(\Hm_2,s_1) \models T_{i+1}$。
 	
@@ -311,6 +311,7 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 
 
 \section{“移除”过程}
+\label{sec:remV}
 本节意在“移除”如何将归结过程得到的结果中含有$V$中原子命题的子句，而保证其在二元组$\tuple{V\cup V, I}$上的逻辑等价关系，这一过程对应算法~\ref{alg:compute:forgetting:by:Resolution}中的第9行。
 给定$\CTLsnf$子句$C$和原子命题的集合$V$：
 \[Removing\_atoms(C, V) \equiv
@@ -323,7 +324,7 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 \]
 此外，对于$\CTLsnf$子句的集合$\Pi$，
 \[Removing\_atoms(\Pi, V) = \{Removing\_atoms(r, V) \mid r \in \Pi\}.\]
-可以看出，通过这一过程后得到的子句集合里的子句不再包含$V$中的原子命题的集合。
+可以看出，通过这一过程后得到的子句集合里的子句不再包含$V$中的原子命题的集合且与原集合满足下面关系。
 
 \begin{proposition}\label{pro:remove}
 	%Let $V''=V \cup V'$, then we have
@@ -337,11 +338,11 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 	为了证明这一过程，下面给出两个事实：
 	\begin{itemize}
 		\item \textbf{(GNA)} 对任意的$p\in \Var(\varphi)$，$p$都不出现在$\CTLsnf$子句的左边；
-		\item \textbf{(PI)} 对任意的$p\in V'$，如果$p$出现在$\CTLsnf$子句的左边，那么$p$为负出现。
+		\item \textbf{(PI)} 对任意的$p\in V'$，如果$p$出现在$\CTLsnf$子句的左边，那么$p$为负出现，即该子句关于$p$是负的。
 	\end{itemize}
 
-不失一般性地，假设$V=\{p\}$，$Res=Resolution(T_{\varphi}, V \cup V')$，$C_i$是经典子句且$l$是$p$或者$\neg p$。
-显然，$Res \models \emph{Removing\_atoms}(Res, V)$，这里将证明对任意的${\cal K}=(\Hm, s)$ ${\cal K}\in \Mod(\emph{Removing\_atoms}(Res, V))$（$\Hm=(S, R, L, s)$），存在一个初始结构${\cal K}'=(\Hm', s')$使得${\cal K} \lrto_{V''} {\cal K}'$且${\cal K}' \models Res$。 
+不失一般性地，假设$V=\{p\}$，且规定$Res=Resolution(T_{\varphi}, V \cup V')$、$V''=V\cup V'$、$C_i$是经典子句、$l$是$p$或者$\neg p$。
+显然，$Res \models \emph{Removing\_atoms}(Res, V)$，这里将证明对任意的${\cal K}=(\Hm, s)$（${\cal K}\in \Mod(\emph{Removing\_atoms}(Res, V))$且$\Hm=(S, R, L, s)$），存在一个初始结构${\cal K}'=(\Hm', s')$使得${\cal K} \lrto_{V''} {\cal K}'$且${\cal K}' \models Res$。 
 接下来从两个大点证明这一结论。
 
 （1）假设全局子句$C=\top\rto C_1 \vee l \in Res$，其中$\Var(l)=\{p\}$。
@@ -373,7 +374,7 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 
 
 \begin{example}[例~\ref{examp:Res}的延续]\label{examp:remA}
-	在移除掉$Resolution(T_{\varphi}, V'')$中的包含$V$中元素的子句后，得到如下子句的集合：\\
+	在移除掉$Resolution(T_{\varphi}, V'')$中包含$V$中元素的子句后，得到如下子句的集合：\\
 	$
 	\begin{array}{llll}
 		\start\rto z, & 
@@ -399,8 +400,8 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 \section{“移除”索引和“$\start$”}
 算法~\ref{alg:compute:forgetting:by:Resolution}中的一个关键的步骤就是将转换过程中引入的索引和$\start$“移除”。
 通过表~\ref{tab:trans}里的规则可知，没有两个$\EXIST$-某时子句有相同的索引，且在归结过程中没有$\EXIST$-某时子句产生。
-因而可以通过下面的等价关系事先将“$\EXIST_{\tuple{ind}} \FUTURE \varphi$”转换为“$\varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi$”。
-$$\EXIST_{\tuple{ind}} \FUTURE \varphi \equiv \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi.$$
+因而可以通过等价关系$\EXIST_{\tuple{ind}} \FUTURE \varphi \equiv \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi.$事先将“$\EXIST_{\tuple{ind}} \FUTURE \varphi$”转换为“$\varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi$”。
+%$$\EXIST_{\tuple{ind}} \FUTURE \varphi \equiv \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi.$$
 
 
 \begin{lemma}~\label{lem:Ind:EF}
@@ -455,7 +456,7 @@ $$\EXIST_{\tuple{ind}} \FUTURE \varphi \equiv \varphi \vee \EXIST_{\tuple{ind}} 
 
 需要指出的是，例~\ref{examp:remA}中没有索引需要移除。
 
-给定公式$\varphi$，下面定义从$\varphi$中“移除”$\start$的操作：
+给定公式$\varphi$，下面定义从$\varphi$中“移除”$\start$的操作，结果记为$\varphi_{\CTL}$：
 \[\varphi_{\CTL} \equiv
 \left\{
 \begin{array}{ll}
@@ -465,6 +466,46 @@ $$\EXIST_{\tuple{ind}} \FUTURE \varphi \equiv \varphi \vee \EXIST_{\tuple{ind}} 
 \right.
 \]
 
+此外，对于给定的公式的集合$\Pi$，$\Pi_{\CTL}=\{\varphi_{CTL} \mid \varphi\in \Pi\}$。
+因此，由$\varphi \equiv \ALL \GLOBAL (\start \rto \varphi)$~\cite{bolotov2000clausal}可知$\Pi \equiv \Pi_{\CTL}$。
+
+到此为止，已经介绍完了算法~\ref{alg:compute:forgetting:by:Resolution}中的每个步骤。综上所述，通过算法~\ref{alg:compute:forgetting:by:Resolution}得到的结果$ERes(\varphi,V)$与原公式$\varphi$在二元组$\tuple{V\cup V', \emptyset}$上逻辑等价。在接下来的小节中将着重探讨本章开头提出的算法的一些相关计算属性，并提出一种一般的Ackermann引理来尽可能地使$ERes(\varphi,V)$逼近从$\varphi$中遗忘掉原子命题集合$V$的结果。
+
+\section{“移除”$V'$中的原子}
+尽管在~\ref{sec:remV}节中已经定义了“移除”与$V$中元素相关的子句的操作，但是由转换过程可知新的原子命题（即$V'$中的原子命题）被引入而还没被处理过。为了尽可能多地“移除”这些原子命题，这部分扩展Szalas提出的Ackermann引理~\cite{szalas2002second}如下。在此之前，先约定一些记号：对于给定的公式（或公式的集合）$\Gamma$，用$\Gamma[x/\varphi]$表示将$\Gamma$中的所有$x$的出现用$\varphi$替换得到的结果；在公式$Qt {\cal T} C$中，$Qt$（${\cal T}$）为空字符或者$Qt \in \{\ALL, \EXIST\}$且${\cal T}\in \{\NEXT, \FUTURE\}$。
+
+\begin{theorem}[一般化的Ackermann引理] \label{thm:Aclm}
+	令$\Delta = \{\top \rto \neg x \vee C_1$, \dots, $\top \rto \neg x \vee C_n, x \rto B_1, \dots, x \rto B_m\}$、$\Gamma'$是算法~\ref{alg:compute:forgetting:by:Resolution}中$\NI$的子集，$\Gamma = \Delta\cup$ $ \Gamma'$。其中，$x\in V'$、
+	$C_i$ $(1 \leq i \leq n)$是不包含原子命题$x$的经典子句、$B_j$ ($1 \leq j \leq m$)是形如$Qt {\cal T} C$形式的公式的吸取或者合取（其中$C$为不包含原子命题$x$的$\CTL$公式）。
+	令$\varphi = \bigwedge_{i=1}^n C_i$ $\wedge$ $\bigwedge_{j=1}^m B_j$，那么
+	如果$\Gamma'$关于$x$是正的，则$\Gamma'[x/\varphi] \equiv_{\tuple{\{x\}, \emptyset}} \Gamma$。
+\end{theorem}
+
+这一结论帮助尽量“去掉”$V'$中的原子命题。下面的例子展示了这一过程。
+\begin{example}[Continued from Example~\ref{examp:remA}]
+	假定例~\ref{examp:remA}中的子句的集合为$\Gamma$。显然，$\Delta = \{\top \rto \neg x \vee f \vee m\}$且$\Gamma'=\Gamma-\Delta$。
+	则使用定理~\ref{thm:Aclm}在$\Delta$上（关于$x$），然后在使用定理~\ref{thm:Aclm}在$\{\top$ $\rto$ $\neg z \vee f \vee m \vee y, \top \rto \neg z \vee f \vee m\vee q, \top \rto \neg z \vee \ALL \FUTURE (f \vee m)\}$上（关于$z$）得到下面的公式的集合：\\
+	$\begin{array}{lll}
+		\start\rto (f \vee m \vee y) \wedge (f \vee m\vee q) \wedge \ALL \FUTURE (f \vee m), &
+		\start \rto f\vee m \vee q, &
+		\top \rto \neg y \vee q, \\
+		y \rto \ALL \NEXT(f \vee m \vee y), &
+		\start \rto f \vee m \vee y, & 
+		y \rto \ALL\NEXT(f \vee m\vee q). 
+	\end{array}
+	$
+\end{example}
+
+此外，在上面的例子的结果中使用“移除”$\start$过程得到下面的公式的集合:\\
+$\begin{array}{lll}
+	(f \vee m \vee y) \wedge (f \vee m\vee q) \wedge \ALL \FUTURE (f \vee m), &
+	f\vee m \vee q, &
+	\ALL\GLOBAL(\top \rto \neg y \vee q), \\
+	\ALL\GLOBAL(y \rto \ALL \NEXT(f \vee m \vee y)), &
+	f \vee m \vee y, & 
+	\ALL\GLOBAL(y \rto \ALL\NEXT(f \vee m\vee q)).
+\end{array}
+$
 
 \subsection{问题提出}\label{chapter05-problem-statement}
 
