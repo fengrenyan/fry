@@ -308,51 +308,7 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 	\end{align*}
 \end{example}
 
-\subsection{数据模型}
-通常，有关个体的信息可以表述为表\ref{tab:origin}具有的形式，即是由元组和属性组成的二维矩阵。本质上，这是一个关系数据模型，其中的数据是由元组信息组成的集合，每个元组是有关特定个体的一组属性描述信息。例如，表\ref{tab:origin}中元组由Age、Sex、Race等属性组成，又如，医疗数据中通常包含姓名、性别、出生日期、社保账号、疾病等信息。然而，在这样的数据集合中，通常有些属性值被认为是私有的敏感隐私信息(如表\ref{tab:origin}中的Marital-status、医疗数据中的疾病信息等)，理应属于受保护的隐私数据。
 
-基于关系代数理论，给出上述表达的关系模型表示。正式的，一个关系型数据集$\mathcal{D}$含有$n$个元组，其中的每个元组由$k$个属性组成，表示为$\mathcal{D}=\{d_1,\cdots,d_n\}$。以$k$属性组成的元组为单位，并假设其取值于一个域$\mathcal{X}$。其中的，$\mathcal{X}$表示所有$k$个属性域集合元素的笛卡尔积，基数$|\mathcal{X}|=M$，满足$M \geq 2$，代表数据域中离散的$M$个原子符号。对于任意的元组$d_i(1\leq i \leq n)$都是数据取值域全集$\mathcal{X}$的一个具体实例。由此，采用离散型随机变量$X$表示数据集，取值于有限域$\mathcal{X}$。对于任意两个数据集实例$x,x' \in \mathcal{X}$，汉明距离$d(x,x')$度量两个数据集实例之间不同元组的数目。如果汉明距离满足 $d(x,x')\leq 1$，则称$x,~x'$为相邻数据集，记作$x\sim x'$。基于以上的数据模型表示，差分隐私数据发布框架中，随机化隐私机制是一个算法$Q$，其接受原始数据库$\mathcal{D}$
-输入，随机扰动输出噪声结果$Q(\mathcal{D})\rightarrow \mathbb{R}^{n}$\cite{dwork2014algorithmic}。由此，差分隐私保护机制的噪声扰动的随机化函数映射，与Shannon信息论中的噪声信道模型$\{X~Q(\hat{X}|X)~\hat{X}\}$\cite{xiong2016randomized,alvim2011differential}不谋而合。以此为基本的出发点，本章\ref{chapter05-achieve-channel}节从信息论的角度给出具体的阐述与分析。
-
-\subsection{信道模型}\label{chapter05-achieve-channel}
-
-本节在\ref{sec:communication_model_of_dp}节介绍的差分隐私通信模型的基础上，给出更详细的信道模型细节描述。首先，在差分隐私的离线数据发布应用场景中，差分隐私随机化机制接受原始数据输入，概率性映射输出原始数据的近似净化副本。差分隐私机制与Shannon通信系统在数据处理流程方面具有相似之处。基于此，可以从Shannon信息论的角度，将差分隐私机制表述为从字母表$\mathcal{X}$到再生字母表$\mathcal{\hat{X}}$的条件概率映射。本节以此为基本的出发点，将对数据集的差分隐私保护建模为信息论信道模型。为方便理解，首先给出以下简单示例。对于``是''和``否''问题类型的二进制数据集$\mathcal{D}=\{0,1\}^{n}$，$p_x(0)$和$p_x(1)$分别表示概率分布，$q_{\hat{X}|X}(\hat{x}|x),(x,\hat{x}\in \{0,1\})$表达随机化隐私机制$X\xrightarrow{Q} \hat{X}$，本质上该表达是信息论二元对称信道(Binary Symmetric Channel，BSC)模型。除此之外，对于如表\ref{tab:origin}中Marital-status、医疗数据中疾病信息等离散类别型数据，都可以使用条件概率$q(\cdot|\cdot)$形式表示为两个有限离散集合之间的概率性映射关系。对此，本章中延承差分隐私基本通信模型开展本章隐私机制的研究。
-
-上述分析奠定了信道模型的理论基础，本节中结合差分隐私离线数据发布的数据混淆原理，将其建模为原始数据信源$X$到混淆、扰动数据信宿$\hat{X}$之间的点对点通信模型$\{X~Q(\hat{X}|X)~\hat{X}\}$，扰动输出仅统计依赖于原始输入的离散无记忆信道(Discrete Memoryless Channel，DMC)模型。正式的，$\mathcal{X}$和$\mathcal{\hat{X}}$分别表示有限的离散字母表集合，随机化函数映射$Q:\mathcal{X}\rightarrow\hat{\mathcal{X}}$表示为条件概率$q(\hat{x}|x)$矩阵形式。为了捕捉类别型数据的语义完整性，不失一般性考虑$\mathcal{X}=\hat{\mathcal{X}}$的情况，对字母表$\mathcal{X}$中原子符号序列化表示$1,2,\cdots,M$，则有
-\begin{equation}\label{Eq:MRR_5.2.2}\nonumber
-	q(\hat{x}|x)=\begin{pmatrix}
-		q_{(1|1)}& q_{(2|1)}&\cdots &q_{(j|1)}&\cdots & q_{(M|1)}\\
-		q_{(1|2)}& q_{(2|2)}&\cdots &q_{(j|2)}&\cdots & q_{(M|2)}\\
-		\vdots & \vdots & \vdots &\vdots &\vdots & \vdots \\
-		q_{(1|i)}  & q_{(2|i)} &\cdots & q_{(j|i)}& \cdots &q_{(M|i)}\\
-		\vdots & \vdots & \vdots &\vdots &\vdots & \vdots \\
-		q_{(1|M)}& q_{(2|M)}&\cdots &q_{(j|M)}&\cdots & q_{(M|M)}
-	\end{pmatrix}
-\end{equation}
-基于上述信道模型的条件概率$q(\hat{x}|x)$表示，信道概率分布的统计性质反映了差分隐私的随机化特性。由此，结合本章上下文给出以下差分隐私的定义。
-\begin{definition}\textup{\cite{alvim2011differential,wang2016on}}\label{def:chapter05-dp}对于$\epsilon \in \mathbb{R}^{+}$，一个离散无记忆信道模型$\mathcal{Q}:\mathcal{X}\times \mathcal{\hat{X}}\rightarrow \mathbb{R}^{+} $ 满足$\epsilon$-差分隐私($\epsilon$-DP)，当且仅当对所有的$x$,$x'\in \mathcal{X}$，汉明$d(x,x')\leq 1$和$\hat{x}\in \mathcal{\hat{X}}$，信道条件概率$q(\cdot|\cdot)$满足$\epsilon$-概率不可区分性
-	\begin{equation}
-		q(\hat{x}|x)\leq \exp (\epsilon) \times q(\hat{x}|x')
-	\end{equation}
-\end{definition}
-
-\begin{remark}
-{\em 定义\textup{\ref{def:chapter05-dp}}的表述依赖于信道模型条件概率分布$q(\hat{x}|x)$，反映了信道统计特性。由此，差分隐私的隐私保护水平定义为
-\begin{equation}\label{eq:chapter05-epsilon}
-	\epsilon^{*}\triangleq \inf \left(\epsilon: \ln \frac{q(\hat{x}|x)}{q(\hat{x}|x')}\right),x,x'\in \mathcal{X}\text{和}\hat{x}\in \mathcal{\hat{X}}
-\end{equation}
-}
-\end{remark}
-信道模型的信息传输率$R$和期望失真$\mathbb{E}\left[d(X,\hat{X})\right]$与信道条件概率$q(\hat{x}|x)$和先验分布$p(x)$密切相关。信息论差分隐私模型中考虑数据先验分布$p(x)$的影响，基于隐私与失真关系约束数据质量损失的$(\epsilon,\delta)$可达信道集合可以定义为
-
-%噪声信道条件概率与信息传输率$R$和失真紧密联系，从满足失真约束的角度，可以定义$(\epsilon,\delta)$可达信道集合。
-\begin{definition}\label{def:achievechannel}对于给定的数据分布$p(x)$和失真函数$d(x,\hat{x})$，期望失真$\mathbb{E}\left[d(X,\hat{X})\right]$不超过给定的失真门限$\delta$的所有$\epsilon$-差分隐私信道$q(\hat{x}|x)$称为$(\epsilon,\delta)$可达信道集合，则有
-	\begin{equation}
-		(\epsilon,\delta)\stackrel{\text{def}}{=} \left\{q(\hat{x}|x):\sum_{x,\hat{x}}p(x)q(\hat{x}|x)d(x,\hat{x})\leq \delta\right\}
-	\end{equation}
-\end{definition}
-
-基于上述定义\ref{def:achievechannel}，本章中的研究是在满足差分隐私与给定失真度的$(\epsilon,\delta)$可达信道中寻找概率分布$q(\hat{x}|x)$。 由期望失真公式\ref{eq:chapter03-ED}易知可行集是超平面的闭半空间，并且半空间是凸的\cite{boyd2004convex}，封闭的，凸的且满足$\sum_{\hat{x}}q(\hat{x}|x)=1, q(\hat{x}|x)\geq 0$。由此，利用凸集合交集的保凸运算规则，$(\epsilon,\delta)$可达信道集合依然保持凸性。此外，文献\mycite{xiong2016randomized}中已经从下水平集的角度证明了$\epsilon$参数的计算函数是拟凸函数。基于此，本章中的研究是在凸可行集中计算最优分布$q(\hat{x}|x)$优化问题。
 
 \section{“移除”过程}
 本节意在“移除”如何将归结过程得到的结果中含有$V$中原子命题的子句，而保证其在二元组$\tuple{V\cup V, I}$上的逻辑等价关系，这一过程对应算法~\ref{alg:compute:forgetting:by:Resolution}中的第9行。
@@ -372,7 +328,7 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 \begin{proposition}\label{pro:remove}
 	%Let $V''=V \cup V'$, then we have
 	对于给定的公式$\varphi$和原子命题的集合，有：
-	$$Resolution(T_{\varphi}, V \cup V') \equiv_{\tuple{V \cup V', \emptyset}}   Removing\_atoms(Resolution(T_{\varphi}, V \cup V'), V)$$.
+	$$Resolution(T_{\varphi}, V \cup V') \equiv_{\tuple{V \cup V', \emptyset}}   Removing\_atoms(Resolution(T_{\varphi}, V \cup V'), V).$$
 \end{proposition}
 \begin{proof}
 	因为要考虑的索引集合为空集，所以只需证明：
@@ -385,7 +341,130 @@ $\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$�
 	\end{itemize}
 
 不失一般性地，假设$V=\{p\}$，$Res=Resolution(T_{\varphi}, V \cup V')$，$C_i$是经典子句且$l$是$p$或者$\neg p$。
+显然，$Res \models \emph{Removing\_atoms}(Res, V)$，这里将证明对任意的${\cal K}=(\Hm, s)$ ${\cal K}\in \Mod(\emph{Removing\_atoms}(Res, V))$（$\Hm=(S, R, L, s)$），存在一个初始结构${\cal K}'=(\Hm', s')$使得${\cal K} \lrto_{V''} {\cal K}'$且${\cal K}' \models Res$。 
+接下来从两个大点证明这一结论。
+
+（1）假设全局子句$C=\top\rto C_1 \vee l \in Res$，其中$\Var(l)=\{p\}$。
+\begin{itemize}
+	\item[] (a) 如果不存在子句$C'\in Res$使得$C$和$C'$在$p$上是可归结的~\footnote{如果能在表~\ref{tab:res}中找到一条规则使得子句$C$和$C'$为该规则的横线上面部分，且相应的文字是$p$，则称$C$和$C'$在$p$上是可归结。}，这意味着在$Res$中不存在其他非$Pt$-某时子句包含有文字$\neg l$，其中$Pt\in \{\ALL,\EXIST\}$。则有两种情况需要讨论：
+	\begin{itemize}
+		\item[] (i) $p \not \in \Var(C')$。$\forall {\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$可以如下构造$(\Hm',s')$：令$\Hm'= (S, R, L',s)$ （即$s'=s$），其中$L'$与$L$ 一样，除了对于$s_1\in S$，如果$(\Hm, s_1) \not \models C_1 \vee l$则“若$l=p$，则令$L'(s_1) = L(s_1) \cup \{p\}$，否则令$L'(s_1) = L(s_1) - \{p\}$”。
+		\item[] (ii) 如果$C'= Q\rto Pt \FUTURE \neg l$。不失一般性地，假设$l=p$且$Q$为文字（$Q$为文字的合取的情形可以类似证明）。$\forall {\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$，如下构造$(\Hm',s')$：令 $\Hm'=(S', R', L', s')$，其中$S'=S$，$R'=R$，$s'=s$，且$L'=L$，除了$\forall s\in S'$，“如果$Q$为正文字，则令$L'(s) = L(s) - \{Q\}$，且若$(\Hm, s) \not \models C_1$，则$L'(s) = L(s) \cup \{p\}$”，否则令$L'(s) = L(s)$。
+	\end{itemize}
+	因此，有${\cal K} \lrto_{V''} {\cal K}'$且${\cal K}' \models Res$。
+	\item[] (b)	如果存在子句$C'\in Res$使得$C$和$C'$在$p$上是可归结的。
+		\begin{itemize}
+		\item[] (i) 若$C'= Q\rto Pt \NEXT (C_2 \vee \neg l)$（这里令$Pt=\GLOBAL$，当$Pt = \EXIST$时可以类似地证明），因此有$Q\rto \GLOBAL \NEXT(C_1 \vee C_2) \in Res$。$\forall {\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$，如下构造$(\Hm',s')$：令$\Hm'= (S, R, L',s)$（即：$s'=s$），其中$L'$与$L$类似，除了$\forall s_1\in S$，若$(\Hm, s_1) \not \models Q$，则“$\forall (s_1, s_2) \in R$，若“$(\Hm, s_2) \not \models C_1$，则“若$l=p$，则令$L'(s_2) = L(s_2) \cup \{p\}$，否则$L'(s_2) = L(s_2) - \{p\}$””，否则，若$(\Hm, s_2) \models  C_1 \wedge \neg C_2$，则“若$l=p$，则$L'(s_2) = L(s_2) - \{p\}$，否则$L'(s_2) = L(s_2) \cup \{p\}$””；否则若$(\Hm, s_2) \models \neg C_1 \wedge C_2$，则“若$l=p$，则令$L'(s_2) = L(s_2) \cup \{p\}$，否则$L'(s_2) = L(s_2) - \{p\}$”。显然，${\cal K} \lrto_{V''} {\cal K}'$且${\cal K}' \models C' \wedge C$。
+		\item[] (ii) 若$C' =  Q\rto Pt \FUTURE \neg l$。不失一般性地，假设$l=p$。由于$C$和$C'$在$p$上可归结，则存在$\CTLsnf$子句集合$\Pi=\{P_1^1 \rto * C_1^1$, \dots, $P_{m_1}^1 \rto * C_{m_1}^1$, $P_1^n \rto * C_1^n$, \dots, $P_{m_n}^1 \rto * C_{m_n}^1 \}$使得$\bigvee_{i=1}^n \bigwedge_{j=1}^{m_i} P_j^i \rto \EXIST \NEXT \EXIST \GLOBAL l$，其中$*$要么为空字符要么为集合$\{\GLOBAL \NEXT, \EXIST_{\tuple{ind}} \NEXT\}$中的某个元素。此外，$\neg C_1 \rto l\in \Pi$。因此，通过规则$\textbf{ERES1}$可以得到子句$C''=\top \rto \neg Q \vee \neg p \vee C_1$（对规则$\textbf{ERES2}$类似）。因此，在子句$C$和$C''$上使用规则$\textbf{SRES8}$可得$\top \rto \neg Q \vee C_1$。因此，$\forall {\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$，可以如下构造$(\Hm',s')$：令$\Hm'= (S, R, L',s)$（即：$s'=s$），其中$L'$与$L$类似，除了$\forall s_1\in S$，“若$(\Hm, s_1) \models Q$，则令$L'(s_1) = L(s_1) - \{p\}$，否则令$L'(s_1) = L(s_1) \cup \{p\}$”。显然，${\cal K} \lrto_{V''} {\cal K}'$且${\cal K}' \models C' \wedge C$。  
+	\end{itemize}
+\end{itemize}
+
+（2）这里考虑$Pt$-步子句，令$C\in Res$为子句$Q \rto \ALL \NEXT(C_1 \vee \neg l)$。不失一般性地，假设存在子句$C'\in Res$使得$C$和$C'$在$p$上可归结，且$l=p$.
+
+若$C'= Q_1\rto Pt \NEXT (C_2 \vee l)$（$Pt=\EXIST_{ind}$，$Pt = \ALL$可以类似地证明），则有$Q \wedge Q_1 \rto \EXIST_{ind} \NEXT(C_1 \vee C_2) \in Res$。因此，$\forall {\cal K}=(\Hm, s)\in \Mod(\emph{Removing\_atoms}(Res, V))$，构造$(\Hm',s')$：$\Hm'= (S, R, L',s)$（令$s'=s$），其中$L'$与$L$ 类似，除了$\forall s_1\in S$：
+\begin{itemize}
+	\item[] (i) 若$(\Hm, s_1) \not \models Q \wedge Q_1$则“若$(\Hm, s_1) \models \neg Q \wedge Q_1$，则（对于$(s_1, s_2') \in \pi_s^{\tuple{ind}}$，若$(\Hm, s_2') \not \models C_2$，则令$L'(s_2') = L(s_2') - \{p\}$，否则令$L'(s_2') = L(s_2')$），否则，若$(\Hm, s_1) \models Q \wedge \neg Q_1$，则$\forall (s_1, s_2) \in R$ （若$(\Hm, s_2) \not \models C_1$ ，则令$L'(s_2) = L(s_2) \cup \{p\}$，否则令$L'(s_2') = L(s_2')$），否则令$L'(s_2') = L(s_2')$”。
+	\item[] (ii) 否则，若$(\Hm, s_1) \models Q \wedge Q_1$，则对$(s_1, s_2) \in \pi_s^{\tuple{ind}}$，有$(\Hm,s_2') \models C_1 \vee C_2$。因此，若$(\Hm, s_2') \models C_1 \wedge \neg C_2$，则$L'(s_2') = L(s_2') - \{p\}$，否则，若$(\Hm, s_2') \models \neg C_1 \wedge C_2$，则令$L'(s_2) = L(s_2) \cup \{p\}$，否则$L'(s_2') = L(s_2')$。对于其他状态$s_2$（$(s_1, s_2) \in R$且$s_2 \not = s_2'$），若$(\Hm, s_1) \models Q$且$(\Hm, s_2) \models \neg C_1$，则令$L'(s_2) = L(s_2) \cup \{p\}$，否则令$L'(s_2') = L(s_2')$。
+\end{itemize}
+显然，${\cal K} \lrto_{V''} {\cal K}'$且${\cal K}' \models C' \wedge C$，其中${\cal K}' = (\Hm',s')$。 
+
+其他情形的组合都可以从上述描述中找到或者类似，因此不在这里赘述。
 \end{proof}
+
+
+\begin{example}[例~\ref{examp:Res}的延续]\label{examp:remA}
+	在移除掉$Resolution(T_{\varphi}, V'')$中的包含$V$中元素的子句后，得到如下子句的集合：\\
+	$
+	\begin{array}{llll}
+		\start\rto z, & 
+		\top \rto \neg x\vee f \vee m, &
+		\top \rto q \vee \neg z \vee f \vee m, &
+		y \rto \ALL \NEXT(x\vee y), \\ 
+		\start \rto f\vee m \vee q,  & 
+		\top \rto \neg z \vee x \vee q, &
+		z \rto \ALL \FUTURE x, &  
+		\top \rto \neg z \vee x \vee y, \\
+		y \rto \ALL\NEXT(q \vee f\vee m), &
+		\start \rto x \vee y, &
+		y \rto \ALL\NEXT(x\vee q), &
+		\top \rto \neg z \vee y \vee f \vee m,\\
+		\top \rto \neg y \vee q,  & 
+		\start \rto f\vee m \vee y, &
+		y \rto \ALL\NEXT(f\vee m\vee y), &
+		\start \rto x \vee q.
+	\end{array}
+	$
+\end{example}
+
+\section{“移除”索引和“$\start$”}
+算法~\ref{alg:compute:forgetting:by:Resolution}中的一个关键的步骤就是将转换过程中引入的索引和$\start$“移除”。
+通过表~\ref{tab:trans}里的规则可知，没有两个$\EXIST$-某时子句有相同的索引，且在归结过程中没有$\EXIST$-某时子句产生。
+因而可以通过下面的等价关系事先将“$\EXIST_{\tuple{ind}} \FUTURE \varphi$”转换为“$\varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi$”。
+$$\EXIST_{\tuple{ind}} \FUTURE \varphi \equiv \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi.$$
+
+
+\begin{lemma}~\label{lem:Ind:EF}
+	给定$\CTLsnf$ 公式$\EXIST_{\tuple{ind}} \FUTURE \varphi$，下面等价关系成立：
+	\[
+	\EXIST_{\tuple{ind}} \FUTURE \varphi \equiv \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi.
+	\]
+\end{lemma}
+
+\begin{proof}
+	($\Rto$) 令$(\Hm, s_0) \in \Mod(\EXIST_{\tuple{ind}} \FUTURE \varphi)$，存在一条路径$\pi_{s_0}^{\tuple{ind}} = (s_0, s_1, \dots)$使得对于某些$s_j \in \pi_s^{\tuple{ind}}$（$j \ge 0$）有$(\Hm, s_j) \models \varphi$。因此，$j=0$或者$j > 0$，所以有$(\Hm, s_0) \models  \varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi$。
+	
+	($\Lto$) 令$(\Hm, s_0) \in \Mod(\varphi \vee \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi)$，因此有$(\Hm,s_0) \models \varphi$或者存在一条路径$\pi_{s_0}^{\tuple{ind}} = (s_0, s_1, \dots)$使得$(\Hm, s_1) \models \EXIST_{\tuple{ind}}\FUTURE \varphi$。因此，由$\EXIST_{\tuple{ind}}\FUTURE$的语义，有$(\Hm, s_0) \models \EXIST_{\tuple{ind}} \FUTURE \varphi$。
+\end{proof}
+
+
+此外，要移除索引，还需要引入以下等价关系。
+\begin{lemma}~\label{lem:In2NI}
+	令$P$，$P_i$和$\varphi_i$为$\CTL$公式，则：
+	\begin{itemize}
+		\item $\bigwedge_{i=1}^n (P\rto \EXIST_{\tuple{ind}} \NEXT \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\rto \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$；
+		\item $\bigwedge_{i=1}^n (P_i\rto \EXIST_{\tuple{ind}} \NEXT \varphi_i) \equiv_{\tuple{\emptyset, \{ind\}}} \bigwedge_{e \in 2^{\{1,\dots, n\}} \setminus \{\emptyset\}}(\bigwedge_{i\in e}P_i\rto \EXIST \NEXT (\bigwedge_{i\in e}\varphi_i))$；
+		\item $\bigwedge_{i=1}^n (P\rto \EXIST_{\tuple{ind}} \FUTURE \varphi_i)  \equiv_{\tuple{\emptyset, \{ind\}}} P\rto \bigvee\EXIST\FUTURE (\varphi_{j_1} \wedge \EXIST\FUTURE(\varphi_{j_2} \wedge \EXIST\FUTURE(\dots \wedge \EXIST\FUTURE \varphi_{j_n})))$，其中$(j_1, \dots, j_n)$为集合$\{1, \dots, n\}$中的所有元素构成的序列；
+		\item $(P\rto (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1)) \wedge (P \rto \EXIST_{\tuple{ind}} \NEXT \varphi_2) \equiv_{\tuple{\emptyset, \{ind\}}} P \rto ((C \wedge \EXIST \NEXT \varphi_2) \vee \EXIST \NEXT (\varphi_1 \wedge \varphi_2))$；
+		%   \item $(P\rto (C \vee \EXIST_{\tuple{ind}} \NEXT \varphi_1)) \vee (P \rto \EXIST_{\tuple{ind}} \NEXT \varphi_2) \equiv_{\tuple{\emptyset, \{ind\}}} P \rto (C \vee \EXIST \NEXT (\varphi_1 \vee \varphi_2))$,
+		\item $(P_1 \rto \varphi \vee \EXIST_{\tuple{ind}}\NEXT \EXIST_{\tuple{ind}}\FUTURE \varphi_1) \wedge (P_2 \rto \EXIST_{\tuple{ind}}\NEXT \varphi_2)$ $\equiv_{\tuple{\emptyset, \{ind\}}} (P_1 \rto \varphi \vee \EXIST \NEXT \EXIST \FUTURE \varphi_1) \wedge (P_2 \rto \EXIST \NEXT \varphi_2) \wedge (P_1 \wedge P_2 \rto ((\varphi \wedge \EXIST \NEXT \varphi_2) \vee \EXIST \NEXT (\varphi_2 \wedge \EXIST \FUTURE \varphi_1)))$。
+	\end{itemize}
+\end{lemma}
+\begin{proof}
+	(i) $\forall (\Hm, s_0) \in \Mod(\bigwedge_{i=1}^n (P\rto \EXIST_{\tuple{ind}} \NEXT \varphi_i))$，若$(\Hm, s_0) \models P$，则存在$(s_0, s_1)\in [ind]$使得$(\Hm, s_1) \models \varphi_1$, \dots, $(\Hm, s_1) \models \varphi_n$。因此存在$(s_0, s_1)\in R$使得$(\Hm, s_1) \models \bigwedge_{i=1}^n \varphi_i$，即$(\Hm, s_0) \models P\rto \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i$。
+	
+	$\forall (\Hm, s_0) \in \Mod(P\rto \EXIST \NEXT \bigwedge_{i=1}^n \varphi_i)$，假定存在$(s_0, s_1)\in R$使得$(\Hm, s_1) \models \bigwedge_{i=1}^n \varphi_i$。容易构造一个初始\Ind-结构$(\Hm', s_0)$使得$(\Hm', s_0)$与$(\Hm, s_0)$相同，除了$(s_0, s_1) \in [ind]$，即：$(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$。
+	
+	(ii) $(\Rto)$ 对等式左手边公式的任意模型$(\Hm,s_0)$，若$(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$（$j_i \in \{1, \dots, n\}$ 且 $1\leq m \leq n$），则存在$s_0$的下一个状态$s_1$（即：$(s_0, s_1) \in [ind]$）使得$(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$。通过$[ind]$的定义，有$(s_0, s_1) \in R$，因此$(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \rto \EXIST \NEXT (\bigwedge_{i=1}^m \varphi_{j_i})$。另一边类似(i)的证明。%The other side can be similarly proved as (i).
+	
+	(iii) $(\Lto)$ 对等式右手边公式的任意模型$(\Hm,s_0)$，如果$(\Hm,s_0) \models P$，则存在一条路径$\pi_{s_0} = (s_0, s_1, \dots)$使得$ (\Hm, s_{j_i}) \models \varphi_{j_i}$（$1\leq i \leq n$）。构造一个初始\Ind-结构$(\Hm', s_0)$使得$(\Hm', s_0)$与$(\Hm, s_0)$相同，除了对$\pi_{s_0}$上的任意$(s_j, s_{j+1})$，存在$(s_j, s_{j+1}) \in [ind]$ $(0\leq j)$。显然，$(\Hm', s_0) \models \bigwedge_{i=1}^n (P\rto \EXIST_{\tuple{ind}} \FUTURE \varphi_i)$且$(\Hm, s_0) \lrto_{\tuple{\emptyset, \{ind\}}} (\Hm', s_0)$。另一个方向与(ii)中的证明类似。
+	%  The other side can be shown similarly as in (ii).
+	
+	其他结果显然时成立的，类似上面的证明。
+\end{proof}
+
+给定子句集合$\Pi$，$Removing\_index(\Pi)$这一过程使用引理~\ref{lem:In2NI}中的等价关系将出现在$\Pi$中的子句中的索引“去掉”，并返回不具有索引的公式的集合。
+\begin{proposition}\label{lem:No:Ind}
+	%\textbf{(NI-BRemain)}
+	令$\Pi$是$\CTLsnf$子句的集合，且对于任意的索引$i$，至多包含一个索引为$i$的
+	$\EXIST$-某时子句。因此，$$\Pi\equiv_{\tuple{\emptyset, I}}  Removing\_index(\Pi)$$
+	其中$I$是出现在$\Pi$中的索引的集合.
+\end{proposition}
+\begin{proof}
+	由于$\Pi$没有两个$\EXIST$-某时子句有相同的索引，所以事先使用引理~\ref{lem:Ind:EF}中的等价关系将显示出$\EXIST_{ind}\NEXT$时序操作词，然后使用引理~\ref{lem:In2NI}中的等价关系“移除”掉$\EXIST_{ind}\NEXT$中的索引。
+\end{proof}
+
+需要指出的是，例~\ref{examp:remA}中没有索引需要移除。
+
+给定公式$\varphi$，下面定义从$\varphi$中“移除”$\start$的操作：
+\[\varphi_{\CTL} \equiv
+\left\{
+\begin{array}{ll}
+	D, \qquad \hbox{如果$\varphi$是$\ALL\GLOBAL(\start\rto D)$这种形式;} \\
+	\varphi,  \qquad  \hbox{否则。}
+\end{array}
+\right.
+\]
+
 
 \subsection{问题提出}\label{chapter05-problem-statement}
 
