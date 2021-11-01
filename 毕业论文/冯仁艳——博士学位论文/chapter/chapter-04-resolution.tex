@@ -534,15 +534,15 @@ $
 
 这里需要说明的是，有的情况下算法~\ref{alg:compute:forgetting:by:Resolution}不能完全替换掉$V'$中的原子命题，
 这与$\CTL$不具有均匀插值性~\cite{Maksimova:JANCL:1991}一致。
-否则，若对于任意的\CTL\ 公式$\varphi$和原子命题集合$V$，存在一个\CTL\ 公式$\psi$使得$\IR(\psi, V\cup V')$且$\psi \equiv \emph{ERes}(\varphi,V)$，则通过定理~\ref{thm:TotalCon}可知$\CTLforget(\varphi,V)$总是存在。这与$\CTL$不具有均匀插值性形成矛盾。
+否则，若对于任意的$\CTL$公式$\varphi$和原子命题集合$V$，存在一个$\CTL$公式$\psi$使得$\IR(\psi, V\cup V')$且$\psi \equiv \emph{ERes}(\varphi,V)$，则通过定理~\ref{thm:TotalCon}可知$\CTLforget(\varphi,V)$总是存在。这与$\CTL$不具有均匀插值性形成矛盾。
 
 尽管如此，有的$\CTL$公式的遗忘结果总是存在的，如下面的结论所示。
 \begin{proposition} \label{pro:fogCTL}
-给定\CTL\ 公式$\varphi$，若$\varphi$满足下面约束：$\varphi$中不包括操作符$Pt {\cal T}$（其中$Pt \in \{\ALL, \EXIST\}$且${\cal T} \in \{\UNTILL, \GLOBAL\}$），且对于任意的原子命题$p\in V$， 若$p$和$\neg p$出现在同一时序算子的范围内；则$\emph{ERes}(\varphi,V) \equiv \CTLforget(\varphi, V)$。
+给定$\CTL$公式$\varphi$，若$\varphi$满足下面约束：$\varphi$中不包括操作符$Pt {\cal T}$（其中$Pt \in \{\ALL, \EXIST\}$且${\cal T} \in \{\UNTILL, \GLOBAL\}$），且对于任意的原子命题$p\in V$， 若$p$和$\neg p$出现在同一时序算子的范围内；则$\emph{ERes}(\varphi,V) \equiv \CTLforget(\varphi, V)$。
 \end{proposition}
 \begin{proof}
 	不失一般性地假设$V = \{p\}$。
-	对任意上述所说形式的\CTL\ 公式$\varphi$，假定$\varphi = \varphi_1 \wedge \ALL \NEXT \EXIST \FUTURE \varphi_2$，其中$p\not \in \Var(\varphi_1)$且$\varphi_2$是一个包含子句$C_1 = \neg p \vee \psi_1$和$C_2 = p \vee \psi_2$的CNF(conjunctive normal form)公式。$\varphi$可以被转换为包含集合$\Pi = \{\top \rto \neg x \vee p \vee  \psi_1,  \top \rto \neg x \vee \neg p \vee \psi_2\}$的子句的集合$\Sigma$，其中$x$为新引入的原子命题，$\psi_i$（$i=1,2$）为经典子句。除此之外，$\Sigma$中不包含其他含有$p$的公式。
+	对任意上述所说形式的$\CTL$公式$\varphi$，假定$\varphi = \varphi_1 \wedge \ALL \NEXT \EXIST \FUTURE \varphi_2$，其中$p\not \in \Var(\varphi_1)$且$\varphi_2$是一个包含子句$C_1 = \neg p \vee \psi_1$和$C_2 = p \vee \psi_2$的CNF(conjunctive normal form)公式。$\varphi$可以被转换为包含集合$\Pi = \{\top \rto \neg x \vee p \vee  \psi_1,  \top \rto \neg x \vee \neg p \vee \psi_2\}$的子句的集合$\Sigma$，其中$x$为新引入的原子命题，$\psi_i$（$i=1,2$）为经典子句。除此之外，$\Sigma$中不包含其他含有$p$的公式。
 	
 	由归结过程可产生子句$\top \rto \neg \vee \psi_1 \vee \psi_2$，由定理~\ref{thm:Aclm}可知，$x$可以被$\psi_1 \vee \psi_2$替换。
 	又因为公式$\varphi$中不包含$Pt {\cal T}$时序算子，因而不会产生引入嵌套原子命题（同时出现在$\rto$两边的原子命题），此时对新引入的其余的原子命题都可使用定理~\ref{thm:Aclm}。
@@ -557,7 +557,7 @@ $
 
 
 \begin{proposition}\label{pro:complexity}
-	给定\CTL\ 公式$\varphi$和原子命题集合$V \subseteq \Ha$，令$(T_{\varphi}, V', I)=Transform(\varphi)$.
+	给定$\CTL$公式$\varphi$和原子命题集合$V \subseteq \Ha$，令$(T_{\varphi}, V', I)=Transform(\varphi)$.
 	算法~\ref{alg:compute:forgetting:by:Resolution}的时间和空间复杂性为$O((m+1)2^{4(n+n')})$，其中$n=|\Var(\varphi)|$、$n'=|V'|$且$m=|I|$。
 \end{proposition}
 \begin{proof}
