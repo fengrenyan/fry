@@ -11,37 +11,123 @@
 %小模型理论，公式的长度有限
 %描述数（特征数）来区分同意结构内那些状态在一定程度上是相同的，如果超过这个度，肯定不同。此时，就可以使用CTL公式来描述这些状态及其关系。
 %描述forgetting的四个规则。
-随着普适性计算和群智感知技术的发展，对于感知数据的收集和分析已成为调查分析、提高服务质量、决策制定的重要支撑。例如，谷歌\cite{erlingsson2014rappor}浏览器Chrome收集浏览器默认主页和搜索引擎设置，用于分析恶意劫持。然而，收集的用户数据或许包含标识个体的信息，由此引起隐私泄露问题。例如，医疗数据可以被收集、分析，用于辅助病人健康监测。由于识别、推断攻击，隐私信息遭受到了潜在的泄露风险。为了解决数据收集阶段的隐私保护问题，差分隐私\cite{dwork2006differential,dwork2006calibrating,dwork2014algorithmic}的本地模型，本地化差分隐私(Local Differential Privacy，LDP)\cite{duchi2013local}被提出，确保了在保护用户隐私的前提下，维持收集数据的统计可用性。相对于中心化差分隐私，本地化差分隐私中不存在可信数据管理者，不可信数据聚合者收集、存储扰动保护后的数据。在本地模型中，每一个用户在上报数据给不可信数据聚合者之前，独立地扰动自己的原始数据得到伪装后的数据，然后上报扰动后的伪装数据。随机化响应(RR)是有效实现数据混淆、扰动的技术手段。通过使用随机化响应技术，LDP可以有效阻止用户的隐私信息被推断，同时，保持较好的统计特性。近些年，针对不同环境的隐私保护需求，LDP得到了广泛的研究\cite{wang2019collecting,gu2020providing,murakami2019utility}。据我们所知，很多著名先进的LDP机制(如$k$-RR\cite{kairouz2016extremal}，RAPPOR\cite{fanti2016building,erlingsson2014rappor}等)被先后提出，并应用于不同的隐私保护场景。
 
+计算树逻辑是由Clarke和Emerson提出的一种分支时间时序逻辑，它能很好的描述并发系统的一些性质。
+Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满足的，那么它在一个小的有限模型下是可满足的~\cite{DBLP:journals/jcss/EmersonH85}。
+具体说来，对于给定的$\CTL$公式$\varphi$，如果公式的长度\footnote{给定公式$\varphi$，出现在该公式里的符号的个数为公式的长度，记为$|\varphi|$。}为$n$（记为：$|\varphi| = n$），则存在一个状态数为$n8^n$的初始$\MPK$-结构$(\Hm,s_0)$使得$(\Hm,s_0)\models \varphi$。
 
-本地化差分隐私中的隐私和效用权衡依然是隐私保护机制设计阶段需要解决的一个关键问题。尽管这个问题在一系列的文献中已经得到了研究\cite{holohan2017optimal,kalantari2018robust,rassouli2020optimal}，但是，由于以下的原因，这个问题还没有被充分的解决。
+此外，现实情况下能处理的系统都是有限的，且在某一固定环境下所涉及到的原子命题是有限的。因此，在这部分讨论一种约束的$\CTL$，即：（1）出现在$\CTL$公式中的原子命题的个数是有限的（即$\Ha$是有限的）；（2）初始结构的状态空间$S$是一个有限的固定状态空间${\cal S}=\{b_1,\ldots,b_m\}$的子集（即$S \subseteq {\cal S}$），且使得对于任意约束长度的$\CTL$公式$\varphi$，若$\varphi$是可满足的，则存在一个初始$\MPK$-结构$(\Hm,s_0)$使得$(\Hm,s_0)\models \varphi$且其状态空间是${\cal S}$的子集。由此可见，在这种情形下只有有限个初始结构应该被考虑。
 
-(1) 现有的LDP机制研究了如何保护单个或低维数据的隐私(如文献\mycite{kairouz2016extremal,fanti2016building,erlingsson2014rappor,holohan2017optimal})。 不幸的是，如果直接地扩展当前的工作去处理多维数据，现有的方法将很难获得合理的扩展性和期望的数据可用性。除此之外，这些方法仍然面临着乘积域空间足够大、数据稀疏性的挑战。例如，如果将单个属性或属性的笛卡尔积建模为数据全集，如此将会在寻找最优隐私机制时导致隐私的脆弱性和不可计算的问题。鉴于此，研究处理多维数据的处理方案是一项非平凡的工作。
-
-(2) 为了解决上述提到的挑战，很多应用于多维数据处理的随机响应方案已经被提出(如文献\mycite{wang2019collecting,wang2016using})。在这些LDP方案中，我们注意到它们将所有的属性看作为等价敏感的，并提供相同的隐私保护级别。事实上，由于用户的隐私偏好，不同的数据可能具有不同的敏感度等级\cite{murakami2019utility,gu2020providing}。例如，如果考虑两个不同的，有明显区别的属性，婚姻状态和疾病。通常情况下，婚姻状态的敏感等级要低于疾病的敏感度。对于这种情况，疾病应该比婚姻状态有更加严格的隐私保护强度。由于这样的隐私保护需求，当前的LDP机制不能恰当的处理具有不同敏感性的多维数据。
-
-%\begin{itemize}
-%\item  现有的LDP机制研究了如何保护单个或低维数据的隐私(如\cite{kairouz2016extremal,fanti2016building,erlingsson2014rappor,holohan2017optimal})。不幸的是，如果直接地扩展当前的工作去处理多维数据，现有的方法将很难获得合理的扩展性和期望的数据可用性。除此之外，这些方法仍然面临着乘积域空间足够大、数据稀疏性的挑战。例如，如果将单个属性或属性的笛卡尔积建模为数据全集，如此将会在寻找最优隐私机制时导致隐私的脆弱性和不可计算的问题。鉴于此，研究处理多维数据的处理方案是一项非平凡的工作。
-%
-%\item 为了解决这些挑战，很多应用于多维数据处理的随机响应方案已经被提出(如\cite{wang2019collecting,wang2016using})。在这些LDP方案中，我们注意到它们将所有的属性看作为等价敏感的，并提供相同的隐私保护级别。事实上，由于用户的隐私偏好，不同的数据可能具有不同的敏感度等级\cite{murakami2019utility,gu2020providing}。例如，如果考虑两个不同的，有明显区别的属性，婚姻状态和疾病。通常情况下，对于婚姻状态的敏感等级要低于疾病的敏感度。如此这样，疾病应该比婚姻状态有更加严格的隐私保护强度。对于这样的隐私保护需求，当前的LDP机制不能恰当的处理具有不同敏感性的多维数据。
-%\end{itemize}
-
-基于上述的分析，本章的目标是面向多维属性，针对不同的属性敏感等级寻找最优的隐私保护机制，实现多维数据的混淆扰动。为了达到这个目的，基本的度量应该被提前解决。本章中隐私信息泄露采用互信息度量，量化给定扰动报告数据时有关原始数据的不确定度减少量。事实上，这个度量提供了平均情况下的隐私量化，可以被解释为敌手平均意义上需要的比特数，确保能够完全的识别出一个单一用户的敏感数据\cite{oya2017back}。而且，这样的度量已经在文献\mycite{kalantari2018robust,calmon2012privacy,sarwate2014a,cuff2016differential,wang2016on}中使用。除此之外，基于失真的数据效用度量是有损失压缩问题\cite{sarwate2014a}发展而来的。受这个思想的启发，隐私保护的概率性映射机制被考虑为一个从原始数据到报告数据的损失压缩机制。然后，基于信息论方法再生数据的质量由一个失真函数测量。由此，隐私与效用权衡问题的形式化表述和著名的率失真(参见文献\mycite{cover2006elements})具有相似的形式。确切的说，率失真理论在差分隐私的应用是非常有意义的。
-
-受到这些工作的启发和上述挑战与弱点的激励，本章中提出有序随机响应扰动(Orderly Randomized Response Perturbation，ORRP)方案，对于多维属性分别计算、寻找最优的隐私保护扰动概率分布，进而实现隐私保护的多维数据收集。首先，基于多维属性拆分，本章中依此对每个属性考虑将满足数据质量损失要求条件下最小化互信息泄露，形式化为单属性的一个互信息隐私最优化模型。事实上，这个优化模型是在满足给定约束条件下寻找一个最优概率密度函数的问题。其次，将上述思想推广到包含数值型和类别型属性的多维数据情景，使用提出的基本理论作为构建块设计ORRP方案，并提出了相应的算法解决上述过程中的计算问题。最后，通过理论的分析和真实数据集的实验结果说明提出方案的有效性。理论上的分析说明了所提出的隐私机制保证一个差分隐私推广的$d_{\mathcal{X}}$-privacy\cite{chatzikokolakis2013broadening,bordenabe2014optimal}，geo-indistinguishability\cite{oya2017back}。现有的工作中，最小化互信息隐私泄露，并将其应用到多维数据处理获得有序随机响应，还尚缺乏具体的研究。鉴于此，本章中的主要贡献可以总结如下：
-
-(1) 通过考虑用户对属性的隐私偏好，提出属性级最优隐私的概念，可以实现对不同的属性提供有区分的隐私保护。此外，为了满足特定的隐私和数据质量需求，提出面向属性级别的最优化模型寻找隐私保护机制的最优输出概率分布。
-
-
-(2) 基于所建立的优化模型，推广到多维属性提出有序随机响应扰动(ORRP)机制，并设计了相应的算法。本章中提出的ORRP方案不需要区分数值型和类别型属性，可以提供一个统一的数据处理步骤。此外，对比分段机制\cite{wang2019collecting}，所提出的隐私的机制可以更好的保持数据的完整性和语义约束。
-
-(3) 考虑多维属性可能存在的属性关联，提出属性结构图的网络结构信息量测量相关度损失。具体来说，本章构造了关联依赖图处理多维属性的相关性，然后，利用结构信息的变化量测量属性相关性的改变。
-
-(4) 实验结果表明所提出的隐私机制在相同等级的失真条件下，拥有较小的隐私泄露。另外，研究了参数对隐私机制的影响，讨论分析了选取合适参数的因素。
+下文将表明在这一约束条件下$\CTL$中的遗忘是封闭的。
 
 本章其余部分组织如下：首先，第\ref{sec:chapter06_system_model}节介绍本章的基本定义、系统模型，提出研究问题。其次，第\ref{sec:chapter06_our_scheme}节阐述本章中提出的优化模型和ORRP方案。进一步，第\ref{sec:chapter06_privacy_utility_analysis}节给出所提方案在理论上的性能分析。随后，第\ref{sec:chapter05-experiment}节给出真实数据集上的实验结果。最后，在第\ref{sec:chapter05-conclusion}节中进行本章工作总结。
 
-\section{系统模型与问题提出}\label{sec:chapter06_system_model}
+\section{描述初始$\MPK$-结构}\label{sec:chapter06_chaIntC}
+本节介绍与一个初始$\MPK$-结构相关的$\CTL$公式——特征公式是如何得到的。
+%对于一个给定的有限初始结构（状态个数和$\Ha$都是有限的），其不循环的计算树（状态不重复出现）的深度最多为其状态数的个数。
+对于一个给定的初始$\MPK$-结构，其特征公式其计算树的特征公式密切相关。
+为此，本节首先介绍计算树之间的$V$-互模拟关系，然后给出计算树的特征公式的定义，最后给出初始$\MPK$-结构的特征公式。
+
+\subsection{计算树的$V$-互模拟}
+给定原子命题集合$V\subseteq \Ha$和初始结构$\Hm_i$（$i = 1, 2$）。如果下面条件同时被满足，则称$\Hm_1$的计算树$\Tr_n(s_1)$和$\Hm_2$的计算树$\Tr_n(s_2)$是$V$-互模拟的（记为$({\cal M}_1,\Tr_n(s_1))\lrto_V({\cal M}_2,\Tr_n(s_2))$，简写为$\Tr_n(s_1)\lrto_V\Tr_n(s_2)$）：
+\begin{itemize}
+	\item $L_1(s_1)- V=L_2(s_2)- V$,
+	%   \item For every subtree $\Tr_{n-1}(s_i')$ of $\Tr_n(s_i)$,
+	%   $\Tr_n(s_{(i \mod 2)+1})$ has a subtree $\Tr_{n-1}(s_{(i \mod 2)+1}')$ such that
+	%   $\Tr_{n-1}(s_i')\lrto_V\Tr_{n-1}(s_{(i \mod 2)+1}')$.
+	\item 对$\Tr_n(s_1)$的任意子树$\Tr_{n-1}(s_1')$，都存在  $\Tr_n(s_2)$的一棵子树$\Tr_{n-1}(s_2')$使得 
+	$\Tr_{n-1}(s_1')\lrto_V\Tr_{n-1}(s_2')$，且
+	\item 对任意$\Tr_n(s_2)$的子树$\Tr_{n-1}(s_2')$，都存在$\Tr_n(s_1)$的一棵子树$\Tr_{n-1}(s_1')$使得
+	$\Tr_{n-1}(s_1')\lrto_V\Tr_{n-1}(s_2')$。
+\end{itemize}
+
+在上述定义中，当$n=0$时，只需考虑第一个条件。
+
+\begin{proposition}\label{B_to_T}
+	给定原子命题集合$V\subseteq\cal A$和$\MPK$结构$({\cal M}_i,s_i)$（$i=1,2$）。
+	则：
+	\[(s_1,s_2)\in{\cal B}_n\mbox{当且仅当对任意的$0\le j\le n$有}
+	\Tr_j(s_1)\lrto_V\Tr_j(s_2)\mbox{。}\]
+\end{proposition}
+\begin{proof}
+	这里从下面两个方面来证明这一结论：
+	
+	$(\Rto)$ 这里证明“如果$(s_1, s_2) \in \Hb_n$，则对于任意的$0 \leq j \leq n$有$Tr_j(s_1) \lrto_V Tr_j(s_2)$”成立。$(s_1, s_2) \in \Hb_n$意味着$Tr_n(s_1)$和$Tr_n(s_2)$的根有同样的标签（除了$V$里的元素之外）。
+	此外，对任意的$(s_1, s_{1,1}) \in R_1$，存在一个$(s_2, s_{2,1})\in R_2$使得$(s_{1,1}, s_{2,1}) \in \Hb_{n-1}$；且对任意的$(s_2, s_{2,1})\in R_2$，存在一个$(s_1, s_{1,1}) \in R_1$使得$(s_{1,1}, s_{2,1}) \in \Hb_{n-1}$。
+	因此，由定义可知$Tr_1(s_1) \lrto_V Tr_1(s_2)$。递归地使用上述方法可得对任意的$0 \leq j \leq n$都有$Tr_j(s_1) \lrto_V Tr_j(s_2)$。
+	
+	$(\Lto)$这里证明“如果对于任意的$0 \leq j \leq n$有$Tr_j(s_1) \lrto_V Tr_j(s_2)$，则$Tr_j(s_1) \lrto_V Tr_j(s_2)$”成立。
+	由$Tr_0(s_1) \lrto_V Tr_0(s_2)$可知$L(s_1) - V = L'(s_2) - V$，因而$(s_1, s_2) \in \Hb_0$。
+	由$Tr_1(s_1) \lrto_V Tr_1(s_2)$可知$L(s_1) - V = L'(s_2)- V$，且对于一棵树根的任意后继状态$s$，都能找到另一棵树根的一个后继状态$s'$使得$(s, s')\in \Hb_0$。
+	因此有$(s_1, s_2) \in \Hb_1$。同理可证$(s_1, s_2) \in \Hb_2$, \dots, $(s_1, s_2) \in \Hb_n$。
+\end{proof}
+
+命题~\ref{B_to_T}表明如果任意两个初始结构中的两个状态$s_1$和$s_2$能够在$\Ha-V$上相互模拟对方直到$n$步，当且仅当分别以$s_1$和$s_2$为根的计算树能在$\Ha-V$上相互模拟直到深度为$n$。
+由此可知，如果同一初始结构的两个状态$s$和$s'$不是$V$-互模拟的，则存在一个数$k\in \mathbb{N}$使得分别以$s$和$s'$为根的计算树$\Tr_k(s)$和$\Tr_k(s')$不是$V$-互模拟的。
+\begin{proposition}\label{pro:k}
+	给定原子命题集合$V\subseteq \Ha$、初始结构$\Hm$和两个状态$s,s'\in S$。
+	若$s\not\lrto_V s'$，则存在一个最小整数$k$使得$\Tr_k(s)$和$\Tr_k(s')$不是$V$-互模拟的。
+\end{proposition}
+\begin{proof}
+	若$s\not\lrto_V s'$，则存在一个最小的数$c$使得$(s_i, s_j) \notin \Hb_c$。因此，由命题~\ref{B_to_T}可知，存在一个最小整数$m$（$m \leq c$）使得$\Tr_m(s_i)$和 $\Tr_m(s_j)$不是$V$-互模拟的。令$k=m$可得上述结论。
+\end{proof}
+
+\subsection{计算树的特征公式}
+由上面小节的讨论可知，$V$-互模拟可以将计算树分别开来\footnote{Similar approaches has been taken in the literature e.g., in~\cite{DBLP:conf/birthday/1997ehrenfeucht},  a class (namely, $\equiv_{\overline{k}}$-class) of structures of monadic formulas has been characterized by Hintikka formulas~\cite{hintikka1953distributive}. Another example is Yankov-Fine construction in \cite{yankov1968three}.}。本节讨论如何使用$\CTL$公式描述一棵计算树，且表明具有（或没有）$V$-互模拟关系之间的计算树的特征公式又有怎么样的关系。为此，首先给出计算树的特征公式的定义。
+\begin{definition}\label{def:V:char:formula}
+	给定原子命题集合$V\subseteq \Ha$、初始结构$\Hm =(S,R,L,s_0)$和状态$s\in S$。
+	定义在$V$上的计算树$\Tr_n(s)$的特征公式（记为${\cal F}_V(\Tr_n(s))$，$n\geq 0$）被递归定义如下：
+	\begin{align*}
+		{\cal F}_V(\Tr_0(s)) &=  \bigwedge_{p \in V\cap L(s)}p
+		\wedge \bigwedge_{q\in V-L(s)} \neg q,\\
+		{\cal F}_V(\Tr_{k+1}(s))& = \bigwedge_{(s,s')\in R}
+		\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
+		\wedge 
+		\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s)) \hbox{ （$k\ge 0$）。}
+	\end{align*}
+\end{definition}
+
+由定义~\ref{def:V:char:formula}可知，计算树的特征公式从三个方面展示了计算树的信息：（1）只考虑$V$中的原子命题；（2）突出了树节点的内容，即：对于任意原子命题$p\in V$，若$p$在节点的标签中，则其正出现在特征公式中，否则负出现在特征公式中；（3）公式中的时序算子表示了状态之间的转换关系。
+通俗地讲，${\cal F}_V(\Tr_0(s))$表明了节点$s$的在$V$上的内容；$\EXIST \NEXT$的合取部分和$\ALL \NEXT$部分保证以$s$的每个直接后继状态$s'$为根深度为$k$的计算树都有一个$\CTL$公式来描述。
+
+下面的结论表明，若两个计算树是$V$-互模拟的，则他们在$V$上的特征公式是逻辑等价的。
+\begin{lemma}\label{lem:Vb:TrFormula:Equ}
+	给定原子命题集合$V\subseteq \Ha$、初始结构$\Hm=(S,R,L,s_0)$和$\Hm'=(S',R',L',s_0')$、$s\in S$、$s'\in S'$且 $n\ge 0$。若$\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$，则${\cal F}_V(\Tr_n(s)) \equiv {\cal F}_V(\Tr_n(s'))$。
+\end{lemma}
+\begin{proof}
+	通过归纳计算树的深度$n$来证明。
+	
+	\textbf{基始（$n=0$）.} 对任意的$s_x\in S$和$s_x' \in S'$，若$\Tr_0(s_x) \lrto_{\overline V} \Tr_0(s_x')$，则由$L(s_x) - \overline V = L'(s_x') - \overline V$可知${\cal F}_V(\Tr_0(s_x)) \equiv {\cal F}_V(\Tr_0(s_x'))$。
+	
+	\textbf{归纳步（$n>0$）.} 假定对任意的$k=m$（$0< m \leq n$），若$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$，则${\cal F}_V(\Tr_{n-k}(s_k)) \equiv {\cal F}_V(\Tr_{n-k}(s_k'))$。因此，要证原结论成立，只需要证明若$\Tr_{n-k+1}(s_{k-1}) \lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$，则${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。显然，由计算树的特征公式可知：
+	\begin{align*}
+		{\cal F}_V(\Tr_{n-k+1}(s_{k-1})) &  =
+		\left(\bigwedge_{(s_{k-1},s_k)\in R}
+		\EXIST \NEXT {\cal F}_V(\Tr_{n-k}(s_k))\right)
+		\wedge \\
+		&\ALL \NEXT\left(\bigvee_{(s_{k-1},s_k)\in R}
+		{\cal F}_V(\Tr_{n-k}(s_k) )\right)
+		\wedge {\cal F}_V(\Tr_0(s_{k-1}))
+	\end{align*}
+	and
+	\begin{align*}
+		{\cal F}_V(\Tr_{n-k+1}(s_{k-1}')) &  =
+		\left(\bigwedge_{(s_{k-1}',s_k')\in R}
+		\EXIST \NEXT {\cal F}_V(\Tr_{n-k}(s_k'))\right)
+		\wedge \\
+		&\ALL \NEXT\left(\bigvee_{(s_{k-1}',s_k')\in R}
+		{\cal F}_V(\Tr_{n-k}(s_k') )\right)
+		\wedge {\cal F}_V(\Tr_0(s_{k-1}')).
+	\end{align*} 
+
+	又因为$\Tr_{n-k+1}(s_{k-1})$ $\lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$，所以对任意的$(s_{k-1}, s_k) \in R$存在$(s_{k-1}', s_k') \in R'$使得$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$，且对任意的$(s_{k-1}', s_k') \in R'$存在$(s_{k-1}, s_k) \in R$使得$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$。
+	因此，由归纳假设可知${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。
+\end{proof}
+
+
+
+
+\subsection{初始$\MPK$-结构的特征公式}
 
 本节中介绍相关的定义、系统模型以及研究问题的形式化表述，是本章研究工作的基本出发点和理论模型的基础。
 
