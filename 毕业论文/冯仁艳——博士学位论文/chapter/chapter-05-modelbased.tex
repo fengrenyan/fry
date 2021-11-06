@@ -29,6 +29,71 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 为此，本节首先介绍计算树之间的$V$-互模拟关系，然后给出计算树的特征公式的定义，最后给出初始$\MPK$-结构的特征公式。
 
 \subsection{计算树的$V$-互模拟}
+**********
+\begin{lemma}
+给定原子命题集合$V\subseteq \Ha$和$\MPK$-结构，其中$i=1,2$且$\Hm_i=(S_i, R_i, L_i, s_0^i)$为有限初始结构。$(s_1, s_2)\in \Hb$当且仅当$s_1 \lrto_V s_2$。
+\end{lemma}
+\begin{proof}
+	%由于$\Hb$是${\cal K}_1$和${\cal K}_2$的约束互模拟关系，所以$(s_1, s_2)\in \Hb$。
+	值得注意的是对任意的$n\geq 0$，都有$\Hb_{n+1} \subseteq \Hb_n$。又因为$\Hb_0\subseteq S_1 \times S_2$ 是有限的，因而存在一个数$k$使得$\Hb_{k+1}=\Hb_k = \Hb$。
+	
+	（1）证明若$(s_1, s_2)\in \Hb$则$s_1 \lrto_V s_2$。
+	显然，$(s_1, s_2)\in \Hb$。所以，只需要证明$\Hb$是$\Hm_1$和$\Hm_1$之间的一个$V$-互模拟关系。
+	下面证明对任意的$r_1\in S_1$和$r_2\in S_2$，$(r_1,r_2) \in \Hb$当且仅当
+	\begin{itemize}
+		\item[](a) $L_1(r_1)-V = L_2(r_2)-V$;
+		\item[](b) $\forall w_1\in S_1$, if $(r_1, w_1)\in R_1$, then $\exists w_2 \in S_2$ s.t. $(r_2,w_2) \in R_2$ and $(w_1, w_2) \in \Hb$; and 
+		\item[](c) $\forall w_2\in S_2$, if $(r_2, w_2)\in R_2$, then $\exists w_1 \in S_1$ s.t. $(r_1,w_1) \in R_1$ and $(w_1, w_2)\in \Hb $.
+	\end{itemize}
+
+	$(\Rto)$ $(r_1,r_2) \in \Hb$\\
+	$\Rto$ $\forall n\geq 0$，$(r_1,r_2)\in \Hb_n$\\
+	$\Rto$ $(r_1,r_2)\in \Hb_0$且$\forall n > 0$，$(r_1,r_2)\in \Hb_n$\\
+	$\Rto$ $L_1(r_1)-V = L_2(r_2)-V$ （因此，(a)成立），
+	
+	且$\forall n\geq 0$，$(r_1,r_2)\in \Hb_{n+1}$意味着下面几点成立：
+	\begin{itemize}
+		\item $L_1(r_1)-V = L_2(r_2)-V$；
+		\item $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_n$；且
+		\item $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_n$。
+	\end{itemize}
+	
+	因为存在一个数$k$使得$\Hb_{k+1}=\Hb_k = \Hb$，所以对这样的$k$有$(r_1,r_2)\in \Hb_{k+1}$使得：
+	\begin{itemize}
+		\item $L_1(r_1)-V = L_2(r_2)-V$;
+		\item $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_k$\\
+		$\Rto$ $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb$ （因此，(b)成立）。
+		\item $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_k$\\
+		$\Rto$ $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb$ （因此，(c)成立）。
+	\end{itemize}
+	
+因此，$\Hb$是$\Hm_1$和$\Hm_1$之间的一个$V$-互模拟关系。又因为$(s_1, s_2)\in \Hb$，所以$s_1 \lrto_V s_2$。
+
+$(\Lto)$ 假定(a)、(b)和(c)成立，这里证明$(r_1, r_2)\in \Hb$，即：对于任意的$n\geq 0$都有$(r_1, r_2)\in \Hb_n$。
+
+\begin{itemize}
+	\item[(1)]  由(a)可知$(r_1, r_2) \in \Hb_0$，即：$L_1(r_1)-V = L_2(r_2)-V$。
+	\item[(2)] 由(b)可知：$\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则 $\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$\forall n\geq 0$都有$(w_1, w_2) \in \Hb_n$ \\ 
+	$\Rto$ $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$\forall n > 0$都有$(w_1, w_2) \in \Hb_{n-1}$\\
+	$\Rto$ $\forall n > 0$，$\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_{n-1}$。
+	\item[(3)] 由(c)可知：$\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则 $\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$\forall n\geq 0$都有$(w_1, w_2)\in \Hb_n$\\
+	$\Rto$ $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$\forall n > 0$都有$(w_1, w_2)\in \Hb_{n-1}$\\
+	$\Rto$ $\forall n > 0$，$\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_{n-1}$。
+\end{itemize}
+
+因此，$\forall n > 0$有：
+\begin{itemize}
+	\item $(r_1, r_2) \in \Hb_0$;
+	\item $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_{n-1}$；且
+	\item $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_{n-1}$。
+\end{itemize}
+	
+所以对于任意的$n\geq 0$都有$(r_1, r_2)\in \Hb$，即：$(r_1, r_2)\in \Hb$。
+
+（ii） 由$s_1 \lrto_V s_2$可知存在$\Hm_1$和$\Hm_1$之间的一个$V$-互模拟关系${\cal R}$使得$(s_1, s_2)\in {\cal R}$。令$\Hb={\cal R}$，显然对任意的$n\geq 0$有$(s_1,s_2)\in \Hb_n$。
+	
+\end{proof}
+
 给定原子命题集合$V\subseteq \Ha$和初始结构$\Hm_i$（$i = 1, 2$）。如果下面条件同时被满足，则称$\Hm_1$的计算树$\Tr_n(s_1)$和$\Hm_2$的计算树$\Tr_n(s_2)$是$V$-互模拟的（记为$({\cal M}_1,\Tr_n(s_1))\lrto_V({\cal M}_2,\Tr_n(s_2))$，简写为$\Tr_n(s_1)\lrto_V\Tr_n(s_2)$）：
 \begin{itemize}
 	\item $L_1(s_1)- V=L_2(s_2)- V$,
@@ -99,7 +164,12 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	
 	\textbf{基始（$n=0$）.} 对任意的$s_x\in S$和$s_x' \in S'$，若$\Tr_0(s_x) \lrto_{\overline V} \Tr_0(s_x')$，则由$L(s_x) - \overline V = L'(s_x') - \overline V$可知${\cal F}_V(\Tr_0(s_x)) \equiv {\cal F}_V(\Tr_0(s_x'))$。
 	
-	\textbf{归纳步（$n>0$）.} 假定对任意的$k=m$（$0< m \leq n$），若$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$，则${\cal F}_V(\Tr_{n-k}(s_k)) \equiv {\cal F}_V(\Tr_{n-k}(s_k'))$。因此，要证原结论成立，只需要证明若$\Tr_{n-k+1}(s_{k-1}) \lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$，则${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。显然，由计算树的特征公式可知：
+	\textbf{归纳步（$n>0$）.} 假设对任意的$0\leq m \leq n$若$\Tr_m(s) \lrto_{\overline V} \Tr_m(s')$，则${\cal F}_V(\Tr_m(s)) \equiv {\cal F}_V(\Tr_m(s'))$。
+	这里要证明若$\Tr_{n+1}(s) \lrto_{\overline V} \Tr_{n+1}(s')$，则${\cal F}_V(\Tr_{n+1}(s)) \equiv {\cal F}_V(\Tr_{n+1}(s'))$。
+	
+	由归纳假设可知，对任意的$k=m$、$s_k\in S$ 和$s_k'\in S'$，若$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$，则${\cal F}_V(\Tr_{n-k}(s_k)) \equiv {\cal F}_V(\Tr_{n-k}(s_k'))$。
+	因此，要证原结论成立，只需要证明若$\Tr_{n-k+1}(s_{k-1}) \lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$，则${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。其中，$(s_{k-1},s_k)\in R$且$(s_{k-1}',s_k')\in R'$。
+	显然，由计算树的特征公式可知：
 	\begin{align*}
 		{\cal F}_V(\Tr_{n-k+1}(s_{k-1})) &  =
 		\left(\bigwedge_{(s_{k-1},s_k)\in R}
@@ -124,12 +194,32 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	因此，由归纳假设可知${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。
 \end{proof}
 
-
-
+%在引理~\ref{lem:Vb:TrFormula:Equ}中，若令$s'=s$
 
 \subsection{初始$\MPK$-结构的特征公式}
+由$V$-互模拟的定义和命题~\ref{pro:k}可以自然地得到一个$V$-互模拟的补概念——$V$-可区分的。
+特别地，在命题~\ref{pro:k}中，若初始结构$\Hm$的两个状态$s$和$s'$不是$\overline{V}$-互模拟的（即：$s\not\lrto_{\overline{V}} s'$），则称$s$和$s'$是\emph{$V$-可区分的}。
+且用$\dis_V({\cal M},s,s',k)$表示状态$s$和$s'$在命题~\ref{pro:k}中所说的最小数$k$下是$V$-可区分的。
+正如下文所说，$V$-可区分这一概念是定义初始$\MPK$-结构的特征公式重要概念。
 
-本节中介绍相关的定义、系统模型以及研究问题的形式化表述，是本章研究工作的基本出发点和理论模型的基础。
+此外，对于给定的初始结构$\Hm$和原子命题集合$V$，若在$\Hm$中存在两个状态$s$和$s'$是$V$-可区分的，则称$\Hm$是$V$-可区分的。
+而对于一个$V$-可区分的初始结构$\Hm$，存在一个一个最小的数$k$使得对于该结构上的任意两个状态$s$和$s'$，若$s$和$s'$是可区分的，则$(s,s')\not \in \Hb_k$。本文称这样的数为$\Hm$关于$V$的\emph{特征数}，记为$ch({\cal M},V)$，其定义如下：
+\[ch({\cal M},V)=
+\left\{
+\begin{array}{ll}
+	\max\{k\mid s,s'\in S \text{ 且 }\dis_V({\cal M},s,s',k)\}, \qquad \hbox{${\cal M}$ 是 $V$-可区分的；} \\
+	\min\{k\mid {\cal B}_{k}={\cal B}_{k+1}, k\ge 0\}, \ \ \ \quad  \qquad \qquad \qquad \hbox{否则。}
+\end{array}
+\right.
+\]
+
+由$ch({\cal M},V)$定义可知，对于任意的$\Hm$和$V$，$ch({\cal M},V)$总是存在的，这体现在两个方面：（1）若$\Hm$是$V$-可区分的，存在两个状态$s$和$s'$是$V$-可区分的，由命题~\ref{pro:k}可知，存在一个数$k$使得$\dis_V({\cal M},s,s',k)$成立；（2）若对于任意$k\geq 0$和$\Hm$上的两个状态$s$和$s'$都有$(s,s')\in \Hb_k$且$\Hb_k =\Hb_{k+1}$，则$ch({\cal M},V)=0$。
+
+非形式化地说，特征数$c=ch({\cal M},V)$将$\Hm$上的状态分为两大类：第一类中的任意两个状态$s$和$s'$是$V$-可区分的，且$(s,s')\not \in \Hb_c$；第二类中状态都是$V$-不可区分的。
+现在给出初始$\MPK$-结构的特征公式的定义。
+
+
+
 
 \subsection{基本定义}\label{sec:chapter06_basic_definitions}
 
