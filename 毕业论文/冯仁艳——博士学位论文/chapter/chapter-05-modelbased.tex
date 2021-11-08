@@ -162,9 +162,9 @@ $(\Lto)$ 假定(a)、(b)和(c)成立，这里证明$(r_1, r_2)\in \Hb$，即：�
 \begin{proof}
 	通过归纳计算树的深度$n$来证明。
 	
-	\textbf{基始（$n=0$）.} 对任意的$s_x\in S$和$s_x' \in S'$，若$\Tr_0(s_x) \lrto_{\overline V} \Tr_0(s_x')$，则由$L(s_x) - \overline V = L'(s_x') - \overline V$可知${\cal F}_V(\Tr_0(s_x)) \equiv {\cal F}_V(\Tr_0(s_x'))$。
+	\textbf{基始（$n=0$）：} 对任意的$s_x\in S$和$s_x' \in S'$，若$\Tr_0(s_x) \lrto_{\overline V} \Tr_0(s_x')$，则由$L(s_x) - \overline V = L'(s_x') - \overline V$可知${\cal F}_V(\Tr_0(s_x)) \equiv {\cal F}_V(\Tr_0(s_x'))$。
 	
-	\textbf{归纳步（$n>0$）.} 假设对任意的$0\leq m \leq n$若$\Tr_m(s) \lrto_{\overline V} \Tr_m(s')$，则${\cal F}_V(\Tr_m(s)) \equiv {\cal F}_V(\Tr_m(s'))$。
+	\textbf{归纳步（$n>0$）：} 假设对任意的$0\leq m \leq n$若$\Tr_m(s) \lrto_{\overline V} \Tr_m(s')$，则${\cal F}_V(\Tr_m(s)) \equiv {\cal F}_V(\Tr_m(s'))$。
 	这里要证明若$\Tr_{n+1}(s) \lrto_{\overline V} \Tr_{n+1}(s')$，则${\cal F}_V(\Tr_{n+1}(s)) \equiv {\cal F}_V(\Tr_{n+1}(s'))$。
 	
 	由归纳假设可知，对任意的$k=m$、$s_k\in S$ 和$s_k'\in S'$，若$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$，则${\cal F}_V(\Tr_{n-k}(s_k)) \equiv {\cal F}_V(\Tr_{n-k}(s_k'))$。
@@ -194,6 +194,52 @@ $(\Lto)$ 假定(a)、(b)和(c)成立，这里证明$(r_1, r_2)\in \Hb$，即：�
 	因此，由归纳假设可知${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。
 \end{proof}
 
+此外，对于初始结构$\Hm$上的状态$s$和$s'$，若$(\Hm,s)$是定义在$V$上的根为$s'$深度为$n$的计算树的特征公式，则$s$和$s'$至少属于$\Hb_n$，即：$s$和$s'$能想互模拟至少到第$n$层深度。
+
+\begin{lemma}\label{Bn:to:Tn}
+	令$V\subseteq \Ha$、$\Hm=(S, R, L,s_0)$、$\Hm'=(S', R', L',s_0')$、$s\in S$、$s'\in S'$且$n\ge 0$，则：
+	\begin{itemize}
+		\item[(i)] $({\cal M},s)\models{\cal F}_V(\Tr_n(s))$；
+		\item[(ii)] 若$({\cal M},s)\models{\cal F}_V(\Tr_n(s'))$，则
+		$\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$。
+	\end{itemize}
+\end{lemma}
+\begin{proof}
+	(i) \textbf{基始（$n=0$）：}从树的特征公式定义可知${\cal F}_V(\Tr_0(s))$是显然的。
+
+	\textbf{归纳步（$n>0$）：} 假设对任意的$k\geq 0$，$({\cal M},s)\models{\cal F}_V(\Tr_k(s))$，下面证明$({\cal M},s)\models{\cal F}_V(\Tr_{k+1}(s))$，即：
+	\begin{equation*}
+		({\cal M},s)\models \left(\bigwedge_{(s,s')\in R}
+		\EXIST \NEXT T(s')\right)
+		\wedge \ALL \NEXT\left(\bigvee_{(s,s')\in R}
+		T(s')\right)
+		\wedge {\cal F}_V(\Tr_0(s)).
+	\end{equation*}
+	其中$T(s') ={\cal F}_V(\Tr_k(s'))$。 
+	由基始可知$({\cal M},s)\models {\cal F}_V(\Tr_0(s))$。
+	由归纳假设可知，对任意的$(s,s') \in R$有$({\cal M}, s') \models {\cal F}_V(\Tr_k(s'))$。因此有$({\cal M},s)\models \EXIST \NEXT {\cal F}_V(\Tr_k(s')$，从而$({\cal M},s)\models \bigwedge_{(s,s')\in R}
+	\EXIST \NEXT {\cal F}_V(\Tr_k(s'))$。
+	
+	同理，对任意的$(s,s') \in R$都有$({\cal M}, s') \models \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s') )$。因此，
+	$$({\cal M},s)\models \ALL \NEXT\left(\bigvee_{(s,s')\in R}
+	{\cal F}_V(\Tr_k(s') )\right)$$
+	
+	从而可知对任意的$n\geq 0$，$({\cal M},s)\models{\cal F}_V(\Tr_n(s))$。
+	
+	
+	
+	(ii) \textbf{基始（$n=0$）：}若$(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$ ，则$L(s) - \overline V = L'(s') - \overline V$。因此$\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$。
+	
+	\textbf{归纳步（$n>0$）：} 假定若$({\cal M},s)\models{\cal F}_V(\Tr_{n-1}(s'))$，则$\Tr_{n-1}(s) \lrto_{\overline V} \Tr_{n-1}(s')$。下面证明若$({\cal M},s)\models{\cal F}_V(\Tr_n(s'))$，则
+	$\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$。
+	
+	\begin{itemize}
+		\item[(a)] 由基始知$L(s) - \overline V = L'(s') - \overline V$；
+		\item[(b)] 因为$(\Hm, s) \models {\cal F}_V(\Tr_n(s'))$，所以$(\Hm, s) \models \ALL \NEXT\left(\bigvee_{(s',s_1')\in R}{\cal F}_V(\Tr_{n-1}(s_1') )\right)$。由此，对于任意的$(s, s_1) \in R$，存在$(s', s_1') \in R'$使得$(\Hm, s_1) \models {\cal F}_V(\Tr_{n-1}(s_1') )$。由归纳假设可知$\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$。即：$\forall (s, s_1) \in R$，$\exists (s', s_1') \in R'$使得$\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$。
+		\item[(c)] 因为$(\Hm, s) \models {\cal F}_V(\Tr_n(s'))$，所以$(\Hm, s) \models  \bigwedge_{(s',s_1')\in R'} \EXIST \NEXT {\cal F}_V(\Tr_{n-1}(s_1'))$。由此，对于任意的$(s',s_1')\in R'$，存在$(s,s_1)\in R$使得$(\Hm, s_1) \models {\cal F}_V(\Tr_{n-1}(s_1')$。由归纳假设可知$\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$。即：$\forall (s',s_1')\in R'$，$\exists (s,s_1)\in R$使得$\Tr_{n-1}(s_1) \lrto_{\overline V} \Tr_{n-1}(s_1')$。
+	\end{itemize}
+\end{proof}
+
 %在引理~\ref{lem:Vb:TrFormula:Equ}中，若令$s'=s$
 
 \subsection{初始$\MPK$-结构的特征公式}
@@ -215,10 +261,175 @@ $(\Lto)$ 假定(a)、(b)和(c)成立，这里证明$(r_1, r_2)\in \Hb$，即：�
 
 由$ch({\cal M},V)$定义可知，对于任意的$\Hm$和$V$，$ch({\cal M},V)$总是存在的，这体现在两个方面：（1）若$\Hm$是$V$-可区分的，存在两个状态$s$和$s'$是$V$-可区分的，由命题~\ref{pro:k}可知，存在一个数$k$使得$\dis_V({\cal M},s,s',k)$成立；（2）若对于任意$k\geq 0$和$\Hm$上的两个状态$s$和$s'$都有$(s,s')\in \Hb_k$且$\Hb_k =\Hb_{k+1}$，则$ch({\cal M},V)=0$。
 
-非形式化地说，特征数$c=ch({\cal M},V)$将$\Hm$上的状态分为两大类：第一类中的任意两个状态$s$和$s'$是$V$-可区分的，且$(s,s')\not \in \Hb_c$；第二类中状态都是$V$-不可区分的。
-现在给出初始$\MPK$-结构的特征公式的定义。
+非形式化地说，特征数$c=ch({\cal M},V)$将$\Hm$上的状态分为两大类：第一类中的任意两个状态$s$和$s'$是$V$-可区分的，且$(s,s')\not \in \Hb_c$；第二类中状态都是$V$-不可区分的。这也在计算树的特征公式上：
+
+\begin{lemma}\label{div_s}
+	令$V\subseteq \Ha$、$\Hm=(S,R,L,s_0)$、$k={ch({\cal M},V)}$且$s\in S$，则
+	%There is a formula $\phi$ such that
+	\begin{itemize}
+		\item[(i)] $(\Hm, s)\models {\cal F}_V(\Tr_k(s))$；
+		\item[(ii)] 对任意的$s'\in S$，$({\cal M},s) \lrto_{\overline V} ({\cal M},s')$
+		当且仅当$({\cal M},s')\models{\cal F}_V(\Tr_k(s))$。
+	\end{itemize}
+\end{lemma}
+\begin{proof}
+	(i) 这由引理~\ref{Bn:to:Tn}易知。
+	
+	(ii) 令$\phi = {\cal F}_V(\Tr_k(s))$（$k$为$\Hm$关于$V$的特征数）。由(i)知 $(\Hm, s) \models \phi$，从而对任意的$s' \in S$，若$s \lrto_{\overline V} s'$，由定理~\ref{thm:V-bisimulation:EQ}和$\IR(\phi, \Ha - V)$知$(\Hm, s') \models \phi$。
+	
+	假定$(\Hm, s')\models \phi$。若$s \nleftrightarrow_{\overline V} s'$，则$\Tr_k(s) \not \lrto_{\overline V} \Tr_k(s')$，因而由引理~\ref{Bn:to:Tn}可知$(\Hm, s')\not \models \phi$，这与假定矛盾。
+\end{proof}
+
+由此，可定义初始$\MPK$-结构的特征公式如下。
+
+\begin{definition}[特征公式]
+	给定原子命题集合$V\subseteq\cal A$he和初始\MPK-结构${\cal K}=({\cal M},s_0)$，其中$c=ch({\cal M},V)$。对任意$\Hm$上得状态$s' \in S$，记$T(s') = {\cal F}_V(\Tr_c(s'))$。
+	则$\cal K$关于$V$的{\em 特征公式} ${\cal F}_V({\cal K})$为：
+	\[T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
+	T(s) \rto
+	\bigwedge_{(s,s')\in R}
+	\EXIST \NEXT T(s')
+	\wedge
+	\ALL \NEXT \bigg(\bigvee_{(s,s')\in R}T(s')\bigg)
+	\right)
+	\]
+	
+\end{definition}
+
+有时为了凸显出初始结构及其初始状态，也把特征公式写为${\cal F}_V(\Hm, s_0)$。显然，$\IR({\cal F}_V(\Hm, s_0), \overline V)$。此外，在特征公式的定义中，使用了深度为$c$（即：特征数）的计算树的特征公式意在表明对任意$\Hm$上的两个状态$s$和$s'$，$s$和$s'$是$V$-可区分的当且仅当${\cal F}_V(\Tr_c(s))\not \equiv {\cal F}_V(\Tr_c(s'))$。特别地，$T(s_0)$确保了初始\MPK-结构的初始状态被$\CTL$公式描述；其余部分表明了结构$\Hm$上状态之间的转换关系。
+下面的例子给出了计算特征公式的一般步骤：
+
+\begin{example}[Continued from Example~\ref{ex:2}]\label{ex:4}
+	考虑图~\ref{fig:K2Tree}中左边的初始$\MPK$-结构${\cal K}_2= (\Hm, s_0)$（其最初出现在图~\ref{v1uv2}中）。左边的为$\Hm$上的四棵计算树：从左到右表示以$s_0$为根、深度分别为0、1、2和3的计算树（为简化图，计算树的标签没有给出，但是每个树节点的标签可从${\cal K}_2$找到。）。令$V=\{d\}$，则 $\overline{V}=\{s, se\}$。
+	
+	因为$L(s_1) - \overline{V} = L(s_2) - \overline{V}$，所以有$\Tr_0(s_1) \lrto_{\overline{V}} \Tr_0(s_2)$。由于存在$(s_1, s_2)\in R$使得对任意的$(s_2, s') \in R$都有$L(s_2)- \overline V \neq L(s') - \overline V$，所以$\Tr_1(s_1) \not \lrto_{\overline{V}} \Tr_1(s_2)$。
+	由此可知$s_1$和$s_2$是$V$-可区分的，且$\dis_{V}(\Hm, s_1, s_2, 1)$。
+	
+	 同样，我们可得到：$\dis_{ V}(\Hm, s_0, s_1, 0)$、$\dis_{V}(\Hm, s_1, s_3', 1)$、$\dis_{V}(\Hm, s_0, s_2, 0)$和$\dis_{ V}(\Hm,$ $s_0, s_3', 0)$。此外，$s_2 \lrto_{\overline V} s_3'$。因此可以计算$\Hm$关于$V$的特征数为：
+	 $$ch(\Hm, V)=\max\{k\mid s,s'\in S \text{ and } \dis_{V}({\cal M},s,s',k)\} = 1.$$
+	 
+	  
+	所以，可以由以下步骤计算${\cal K}_2$关于$V$的特征公式：
+	\begin{align*}
+		{\cal F}_V(\Tr_0(s_0)) &= d, \qquad \quad {\cal F}_V(\Tr_0(s_1)) = \neg d, \\
+		{\cal F}_V(\Tr_0(s_2)) &= \neg d,  \qquad  {\cal F}_V(\Tr_0(s_3')) = \neg d,\\
+		{\cal F}_V(\Tr_1(s_0)) &= \EXIST\NEXT \neg d \wedge \ALL\NEXT \neg d \wedge d \equiv \ALL\NEXT \neg d \wedge d, \\
+		{\cal F}_V(\Tr_1(s_1)) &= \EXIST\NEXT \neg d \wedge \EXIST\NEXT \neg d  \wedge \ALL\NEXT (\neg d \vee \neg d) \wedge \neg d 
+		\equiv \ALL\NEXT \neg d \wedge \neg d, \\
+		{\cal F}_V(\Tr_1(s_2)) &= \EXIST\NEXT d  \wedge \ALL\NEXT d \wedge \neg d \equiv \ALL\NEXT d \wedge \neg d,\\
+		{\cal F}_V(\Tr_1(s_3')) &\equiv {\cal F}_V(\Tr_1(s_2)),\\
+		{\cal F}_V(\Hm, s_0)&\equiv \ALL\NEXT \neg d \wedge d \wedge \\
+		& \ALL \GLOBAL(\ALL\NEXT \neg d \wedge d \rto \ALL\NEXT(\ALL\NEXT \neg d \wedge \neg d))\wedge \\
+		& \ALL \GLOBAL(\ALL\NEXT \neg d \wedge \neg d \rto \ALL\NEXT(\ALL\NEXT d \wedge \neg d)) \wedge\\
+		& \ALL \GLOBAL(\ALL\NEXT d \wedge \neg d \rto \ALL\NEXT(\ALL\NEXT \neg d \wedge d)).
+	\end{align*}
+	
+	
+	
+	\begin{figure*}
+		\centering
+		\includegraphics[width=10cm]{chapter05/NK2Tree1.png}
+		\caption{左图为初始$\MPK$-结构$\mathcal{K}_2$ (源于图~\ref{v1uv2})； 右图：从左到右表示以$s_0$为根、深度分别为0、1、2和3的计算树（为简化图，计算树的标签没有给出，但是每个树节点的标签可从${\cal K}_2$找到。）}\label{fig:K2Tree}
+	\end{figure*}
+
+%\begin{figure*}[!htb]
+%	\centering
+%	% Requires \usepackage{graphicx}
+%	\includegraphics[width=15cm]{chapter04/frame.png}\\
+%	\caption{基于归结的遗忘的主要流程图}
+%	\label{Fig:chapter05:v1uv2}
+%\end{figure*}
+
+\end{example}
 
 
+下面的定理表示上述定义的特征公式确实描述了一个初始\MPK-结构，此时对系统结构的操作就可转换为对其特征公式的操作，如下文将要讲的给定系统下的最弱充分条件计算。更直观地说，特征公式保持了给定初始$\MPK$-结构在原子命题集合$V$上的所有特性，即：具有$\overline{V}$-互模拟的两个初始$\MPK$-结构关于$V$的特征公式逻辑等价。
+
+\begin{theorem}\label{CF}
+	令$V\subseteq \Ha$、$\Hm=(S,R,L,s_0)$且$\Hm'=(S',R', L',s_0')$，则：
+	\begin{itemize}
+		\item[(i)] $(\Hm',s_0') \models {\cal F}_V({\cal M},s_0)
+		\text{ 当且仅当 }
+		({\cal M},s_0) \lrto_{\overline V} ({\cal M}',s_0')$；
+		
+		\item[(ii)] 若$s_0 \lrto_{\overline V} s_0'$则${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$。
+	\end{itemize}
+	
+\end{theorem}
+\begin{proof}
+	(i) 令${\cal F}_V(\Hm, s_0)$为$(\Hm, s_0)$关于$V$的特征公式。显然，$\IR({\cal F}_V(\Hm, s_0), \overline V)$。为了证明上述结论成立，下面证明首先证明$(\Hm, s_0) \models {\cal F}_V(\Hm, s_0)$。
+	
+	令$c={ch({\cal M},V)}$，由引理~\ref{Bn:to:Tn}可知$(\Hm, s_0) \models {\cal F}_V(\Tr_c(s_0))$。下面证明特征公式里的另一部分，即：$(\Hm, s_0) \models \bigwedge_{s\in S} \ALL\GLOBAL\ G(\Hm, s)$，其中
+	\[G(\Hm, s) = {\cal F}_V(\Tr_c(s)) \rto \left(\bigwedge_{(s,s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)\wedge \ALL \NEXT \left(\bigvee_{(s,s_1) \in R} {\cal F}_V(\Tr_c(s_1))\right).\]
+	
+	为此，下面证明$(\Hm, s_0) \models \ALL\GLOBAL\ G(\Hm, s)$。考虑下面两种情况：
+	\begin{itemize}
+		\item  若$(\Hm, s_0) \not \models {\cal F}_V(\Tr_c(s))$，显然$(\Hm, s_0) \models G(\Hm, s)$；
+		\item 若$(\Hm, s_0) \models {\cal F}_V(\Tr_c(s))$：\\
+		$(\Hm, s_0) \models {\cal F}_V(\Tr_c(s))$\\
+		$\Rto$  $s_0 \lrto_{\overline V} s$ \hfill （引理~\ref{div_s}）
+		
+		$\forall (s, s_1)\in R$：\\
+		$(\Hm, s_1) \models {\cal F}_V(\Tr_c(s_1))$  \hfill  （$s_1 \lrto_{\overline V} s_1$）\\
+		$\Rto$ $(\Hm, s) \models \bigwedge_{(s,s_1)\in R}\EXIST \NEXT {\cal F}_V(\Tr_c(s_1))$\\
+		$\Rto$ $(\Hm, s_0) \models$ $\bigwedge_{(s,s_1)\in R}\EXIST \NEXT {\cal F}_V(\Tr_c(s_1))$    \qquad  （$\IR(\bigwedge_{(s,s_1)\in R}\EXIST \NEXT {\cal F}_V(\Tr_c(s_1)), \overline V)$, $s_0 \lrto_{\overline V} s$）
+		
+		$\forall (s, s_1) \in R$：\\
+		$(\Hm, s_1) \models \bigvee_{(s, s_2)\in R}{\cal F}_V(\Tr_c(s_2))$\\
+		$\Rto$ $(\Hm, s) \models \ALL \NEXT \left( \bigvee_{(s, s_2)\in R} {\cal F}_V(\Tr_c(s_2)) \right)$ \\
+		$\Rto$ $(\Hm, s_0) \models$  $\ALL \NEXT \left( \bigvee_{(s, s_2)\in R} {\cal F}_V(\Tr_c(s_2)) \right)$   \hfill   （$\IR(\ALL \NEXT \left( \bigvee_{(s, s_2)\in R} {\cal F}_V(\Tr_c(s_2)) \right), \overline V)$, $s_0 \lrto_{\overline V} s$）\\
+		$\Rto$ $(\Hm, s_0) \models G(\Hm, s)$。\\
+		% where $s_i$ and $s_j$ are the successors of $s$.
+	\end{itemize}
+	
+	对任意其他能从$s_0$可达的状态$s'$，都可以类似地证明$(\Hm,s')\models G(\Hm, s)$。
+	因此，对任意的$s\in S$，$(\Hm, s_0) \models \ALL\GLOBAL\ G(\Hm, s)$，从而$(\Hm, s_0) \models {\cal F}_V(\Hm, s_0)$。
+	
+	下面从两个方面证明(i)成立：
+	
+	$(\Lto)$ 证明：若$s_0 \lrto_{\overline V} s_0'$，则$(\Hm',s_0') \models {\cal F}_V(M,s_0)$。因为$(\Hm, s_0) \models {\cal F}_V(\Hm, s_0)$且 $\IR({\cal F}_V(\Hm, s_0), \overline V)$，由定理~\ref{thm:V-bisimulation:EQ}可知
+	$(\Hm',s_0') \models {\cal F}_V(M,s_0)$。
+	
+	$(\Rto)$ 证明：若$(\Hm',s_0') \models {\cal F}_V(M,s_0)$，则$s_0 \lrto_{\overline V} s_0'$。为此，下面证明对任意的$n \geq 0$，$Tr_n(s_0) \lrto_{\overline V} Tr_n(s_0')$。
+	
+	
+	\textbf{基始（$n=0$）：} 由特征公式的定义，显然$Tr_0(s_0) \equiv Tr_0(s_0')$成立。
+	
+	\textbf{归纳步骤（$n>0$）：} 假定对任意的$k > 0$都有$\Tr_k(s_0) \lrto_{\overline V} \Tr_k(s_0')$，下面证明$\Tr_{k+1}(s_0) \lrto_{\overline V} \Tr_{k+1}(s_0')$。令$(s_0, s_1), (s_1, s_2)$, $\dots$, $(s_{k-1}, s_k) \in R$且$(s_0', s_1'), (s_1', s_2'), \dots, (s_{k-1}', s_k') \in R'$，即对于任意的$0 \leq i \leq k-1$，$s_{i+1}$（$s_{i+1}'$）是$s_i$ ($s_i'$)的直接后继状态。
+	由归纳假设可知，只需证明$\Tr_1(s_k) \lrto_{\overline V} \Tr_1(s_k')$。
+	
+	(a) 由归纳假设可知$L(s_k) - \overline V = L'(s_k') - \overline V$。
+	
+	在讨论其他点时，首先考虑下面事实（\textbf{fact}）：\\
+	$(\Hm',s_0') \models {\cal F}_V(\Hm,s_0)$\\
+	$\Rto$ $\forall s'\in S'$，$\forall s\in S$，\\ $(\Hm', s')\models {\cal F}_V(\Tr_c(s)) \rto$  $\left(\bigwedge_{(s,s_1)\in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)\wedge \ALL \NEXT \left( \bigvee_{(s,s_1)\in R} {\cal F}_V(\Tr_c(s_1))\right)$  \\
+	(I) $(\Hm', s_0') \models {\cal F}_V(\Tr_c(s_0)) \rto \left(\bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)$ $\wedge$ $\ALL \NEXT \left(\bigvee_{(s_0, s_1) \in R} {\cal F}_V(\Tr_c(s_1)) \right)$     \\
+	(II) $(\Hm', s_0') \models {\cal F}_V(\Tr_c(s_0)))$  \hfill  (已知)\\
+	(III) $(\Hm', s_0') \models \left(\bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))\right)$ $\wedge$ $\ALL \NEXT \left(\bigvee_{(s_0, s_1) \in R} {\cal F}_V(\Tr_c(s_1)) \right)$  \hfill  ((I),(II))\\
+	
+	% It is apparent that $L'(s_0') - \overline V = L(s_0) - \overline V$;\\
+	(b) 这里证明$\forall (s_k, s_{k+1}) \in R$，存在$(s_k', s_{k+1}') \in R'$使得$L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$。\\
+	(1) $(\Hm', s_0') \models \bigwedge_{(s_0, s_1) \in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_1))$  \hfill  (III)\\
+	(2) $\forall (s_0, s_1) \in R$，$\exists (s_0', s_1') \in R'$ 使得 $(\Hm', s_1') \models {\cal F}_V(\Tr_c(s_1))$  \hfill  (1)\\
+	(3) $\Tr_c(s_1) \lrto_{\overline V} \Tr_c(s_1')$  \hfill  ((2), 引理~\ref{Bn:to:Tn}) \\
+	(4) $L(s_1) - \overline V = L'(s_1') - \overline V$  \hfill   ((3), $c \geq 0)$\\
+	(5) $(\Hm', s_1') \models {\cal F}_V(\Tr_c(s_1)) \rto \left(\bigwedge_{(s_1,s_2)\in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_2))\right) \wedge \ALL \NEXT \left(\bigvee_{(s_1,s_2)\in R} {\cal F}_V(\Tr_c(s_2))\right)$     \hfill  \textbf{(fact)}\\
+	(6) $(\Hm', s_1') \models \left(\bigwedge_{(s_1,s_2)\in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_2))\right) \wedge \ALL \NEXT \left(\bigvee_{(s_1,s_2)\in R} {\cal F}_V(\Tr_c(s_2))\right)$ \hfill ((2), (5))\\
+	(7) $\dots \dots$ \\
+	(8) $(\Hm', s_k') \models \left(\bigwedge_{(s_k,s_{k+1})\in R} \EXIST \NEXT {\cal F}_V(\Tr_c(s_{k+1}))\right) \wedge \ALL \NEXT \left(\bigvee_{(s_k,s_{k+1})\in R} {\cal F}_V(\Tr_c(s_{k+1}))\right)$       \hfill (与(6)类似)\\
+	(9) $\forall (s_k, s_{k+1}) \in R$，$\exists (s_k', s_{k+1}') \in R'$ 使得$(\Hm', s_{k+1}') \models {\cal F}_V(\Tr_c(s_{k+1}))$  \hfill  (8)\\
+	(10) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((9), 引理~\ref{Bn:to:Tn}) \\
+	(11) $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$  \hfill   ((10), $c \geq 0)$\\
+	
+	(c) 这里证明$\forall (s_k', s_{k+1}') \in R'$，存在$(s_k, s_{k+1})\in R$ 使得$L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$。\\
+	(1) $(\Hm', s_k') \models \ALL \NEXT \left(\bigvee_{(s_k,s_{k+1})\in R} {\cal F}_V(\Tr_c(s_{k+1}))\right)$  \hfill (上面的(8))\\
+	(2) $\forall (s_k', s_{k+1}') \in R'$，$\exists (s_k, s_{k+1}) \in R$ 使得$(\Hm', s_{k+1}') \models {\cal F}_V(\Tr_c(s_{k+1}'))$  \hfill (1) \\
+	(3) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((2), 引理~\ref{Bn:to:Tn}) \\
+	(4) $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$  \hfill   ((3), $c \geq 0)$\\
+	
+	(ii) 由引理~\ref{lem:Vb:TrFormula:Equ}和初始\MPK-结构${\cal K}$关于$V$的特征公式的定义易知。
+	
+\end{proof}
 
 
 \subsection{基本定义}\label{sec:chapter06_basic_definitions}
