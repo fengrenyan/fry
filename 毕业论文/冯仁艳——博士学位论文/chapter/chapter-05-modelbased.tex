@@ -427,10 +427,30 @@ $(\Lto)$ 假定(a)、(b)和(c)成立，这里证明$(r_1, r_2)\in \Hb$，即：�
 	(3) $\Tr_c(s_{k+1}) \lrto_{\overline V} \Tr_c(s_{k+1}')$    \hfill ((2), 引理~\ref{Bn:to:Tn}) \\
 	(4) $L(s_{k+1}) - \overline V = L'(s_{k+1}') - \overline V$  \hfill   ((3), $c \geq 0)$\\
 	
-	(ii) 由引理~\ref{lem:Vb:TrFormula:Equ}和初始\MPK-结构${\cal K}$关于$V$的特征公式的定义易知。
+	(ii) 由引理~\ref{lem:Vb:TrFormula:Equ}和\ref{div_s}易知。
 	
 \end{proof}
 
+\section{遗忘理论的封闭性}
+当给定的$\CTL$公式的长度（字符的个数）为$n$，由小模型理论可知定义在状态个数为$k=n8^n$的状态空间${\cal S}=\{s_1,s_2,\dots, s_k\}$上的初始结构就能保证公式的可满足性~\cite{DBLP:journals/jcss/EmersonH85}。
+对于其他拥有同样大小的状态空间上的任意初始$\MPK$-结构，都能在${\cal S}$状态空间上找到一个初始$\MPK$-结构与之互模拟，且由定理~\ref{CF}可知他们有相同的特征公式。
+因此，只有有限个初始$\MPK$-结构作为该公式的候选模型。因此下面结论成立。
+%这一事实可以用下面引理表示。
+
+\begin{lemma}\label{lem:models:formula}
+	给定$\CTL$公式$\varphi$，下面等式成立：
+	\begin{equation*}
+		\varphi\equiv \bigvee_{(\Hm, s_0)\in\Mod(\varphi)}{\cal F}_{\cal A}(\Hm, s_0).
+	\end{equation*}
+\end{lemma}
+\begin{proof}
+	令$(\Hm', s_0')$为$\varphi$的模型。由定理~\ref{CF}可知$(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm', s_0')$，则：
+	$$(\Hm', s_0') \models \bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0).$$
+	
+	另一方面，假定$(\Hm', s_0')$为$\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$的模型。则存在$(\Hm, s_0)\in \Mod(\varphi)$使得 $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm,$ $s_0)$。由定理~\ref{CF}可知$(\Hm, s_0) \lrto_{\emptyset} (\Hm', s_0')$，从而由定理~\ref{thm:V-bisimulation:EQ}可知$(\Hm, s_0)$ 是 $\varphi$的一个模型。
+\end{proof}
+
+这一结论表明：任意的$\CTL$公式都与其模型的特征公式的吸取逻辑等价。这对遗忘理论的封闭性提供了重要的理论支撑，也即是从公式里遗忘掉原子命题集合$V$中的元素只需找到与给定公式的模型$V$-互模拟的那些模型就能确定遗忘的结果。形式化地，对于给定的公式$\varphi$和原子命题集合$V$，从$\varphi$
 
 \subsection{基本定义}\label{sec:chapter06_basic_definitions}
 
