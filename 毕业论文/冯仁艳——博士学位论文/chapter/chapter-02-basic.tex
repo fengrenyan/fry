@@ -149,9 +149,9 @@ $\Hm=\tuple{W,w}$称为公式$\varphi$的$\MPK$-\emph{模型}（$\MPK$-model）�
 $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。$\CTL$的语言${\cal L}$由下面的几类符号构成：
 \begin{itemize}
 	\item 原子命题的集合$\Ha$；
-	\item 常量符号：$\top$和$\bot$；
-	\item 联结符号：$\vee$和$\neg$；
-	\item 路径量词：$\ALL$和$\EXIST$；
+	\item 常量符号：$\top$和$\bot$，分别表示“真”和“假”；
+	\item 联结符号：$\vee$和$\neg$，分别表示“吸取”和“否定”；
+	\item 路径量词：$\ALL$和$\EXIST$，分别表示“所有”和“存在”；
 	\item 时序操作符：$\NEXT$、$\FUTURE$、$\GLOBAL$、$\UNTILL$和$\UNLESS$，分别表示“下一个状态”、“将来某一个状态”、“将来所有状态”、“直到”和“除非”；
 	\item 标点符号：“(”和“)”。
 \end{itemize}
@@ -173,8 +173,8 @@ $\CTL$的时序算子是路径量词和时序操作符的组合（路径量词�
 	 \varphi \wedge \psi& \ \overset{def}{=}\ \neg (\neg \varphi \vee \neg \psi)\\
 	 \varphi \rto \psi& \ \overset{def}{=}\ \neg \varphi \vee \psi\\
 	 \ALL(\varphi \UNTILL \psi)& \ \overset{def}{=}\ \neg\EXIST(\neg \psi \UNTILL(\neg \varphi \wedge \neg \psi)) \wedge \neg \EXIST \GLOBAL \neg \psi\\
-	 \ALL(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\EXIST((\varphi \wedge \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
-	 \EXIST(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\ALL((\varphi \wedge \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
+	 \ALL(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\EXIST((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
+	 \EXIST(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\ALL((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
 	 \ALL\FUTURE \varphi& \ \overset{def}{=}\ 	\ALL(\top \UNTILL \psi)\\
 	 \EXIST\FUTURE \varphi& \ \overset{def}{=}\ \EXIST(\top \UNTILL \psi)\\
 	 \ALL \NEXT \varphi& \ \overset{def}{=}\  \neg \EXIST \NEXT \neg \varphi\\
@@ -211,6 +211,7 @@ $\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
 此外，给定一个公式的集合$\Pi$和一个初始$\MPK$-结构$\cal K$，若对于$\Pi$中的任意一个公式$\varphi$都有${\cal K} \models \varphi$，则${\cal K} \models \Pi$。
 
 对于给定的公式$\varphi$，将出现在$\varphi$中的原子命题的集合记为$\Var(\varphi)$。此外，给定公式$\varphi$和原子命题的集合$V$，如果存在一个公式$\psi$使得$\Var(\psi) \cap V = \emptyset$且$\varphi \equiv \psi$，那么说$\varphi$与$V$中的原子命题\emph{无关}，简称为\emph{$V$-无关}（ \emph{$V$-irrelevant}），写作$\IR(\varphi,V)$。
+一种特殊的形式是$\Var(\varphi) \subseteq V$，此时称$\varphi$为集合$V$上的公式。
 可以类似定义公式的集合与原子命题集合的无关性，也即是：如果对于公式的集合$\Pi$中的任意一个公式$\varphi$，$\IR(\varphi,V)$都成立，则$\Pi$与$V$中的原子命题无关，记为$\IR(\Pi,V)$。
 
 \subsection{$\CTL$的标准形式}
@@ -443,7 +444,92 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句�
 
 
 \subsection{$\mu$-演算}
+$\mu$-演算是一种表达能力与S2S\footnote{无限完全二叉树下的一元二阶理论（monadic second order theory of the infinite complete binary tree），简称为S2S。}相同的逻辑语言，LTL（线性时序逻辑，linear temporal logic）、CLT和CTL$^*$能表达的属性都能用$\mu$-演算来表示。
+$\mu$-演算是模态逻辑的扩展，本文讨论Kozen提出的命题$\mu$-演算~\cite{DBLP:journals/cacm/Kozen83}。构成$\mu$-演算语言的符号有：
+\begin{itemize}
+	\item 原子命题符号的集合：$\cal A$；
+	\item 变元符号的可数集：$\cal V$；
+	\item 常量符号：$\bot$和$\top$；
+	\item 布尔联结符号：$\vee$，$\wedge$，和$\neg$;
+	\item 路径量词符号：$\ALL$和$\EXIST$;
+	\item 时序操作符号：\NEXT\ 用于用于表示“下一个状态”;
+	\item 不动点符号：$\mu$和$\nu$，分别表示“最小不动点”和“最大不动点”。
+\end{itemize}
 
+通常认为$\ALL\NEXT$和$\EXIST\NEXT$的优先级比布尔连接符高~\cite{bradfield2018mu}，为了保证文章的统一性，本文规定各类符号之间的如下优先级：
+\[
+\neg\qquad \EXIST\NEXT\qquad \ALL\NEXT\qquad \wedge\qquad \vee\qquad \mu\qquad \nu.
+\]
+此时可如下定义$\mu$-演算的公式：
+\[
+\varphi := \top \mid \bot \mid p\mid \neg p\mid  X\mid \varphi \vee \varphi \mid \varphi \wedge \varphi \mid \EXIST\NEXT \varphi\mid \ALL\NEXT \varphi \mid \mu X. \varphi\mid \nu X. \varphi
+\]
+其中$p\in \Ha$且$X\in {\cal V}$。称出现在$\mu X. \varphi$和$\nu X. \varphi$中的变元$X$是\emph{受约束的}（bound），不受约束的变元称为\emph{自由变元}。
+原子命题和变元符号及其各自的否定称为\emph{文字}，出现在公式$\varphi$中的原子命题的集合记为$\Var(\varphi)$。
+
+由上述定义可以看出，“$\neg$”符号只能出现在原子命题符号的前面。但在$\mu$-演算公式的一般定义中，“$\neg$”符号可以出现在变元符号的前面，但是要求变元符号前的“$\neg$”符号的个数为偶数。尽管如此，这两种方式定义的公式具有相同的表达能力。
+
+对于给定的公式$\varphi$，若出现在其中的自由变元与受约束变元不同，且每个变元最多被约束一次，则称公式$\varphi$是\emph{取名恰当的}（well-named）。此外，若公式$\delta X.\varphi(X)$（$\delta \in \{\mu, \nu\}$）中变元$X$的每次出现都是在$\EXIST\NEXT$或$\ALL\NEXT$的辖域\footnote{给定公式$*\varphi$（$*\in \{\neg, \EXIST\NEXT,\ALL\NEXT, \mu X, \nu X\}$），则称$\varphi$为$*$在公式$*\varphi$中的\textbf{辖域}。对于公式$\varphi * \psi$（$*\in \{\vee, \wedge\}$），则分别称$\varphi$和$\psi$为他们之间的$*$在$\varphi * \psi$中的左辖域和右辖域。}内，则称变元在公式$\delta X.\varphi(X)$中是\emph{受保护的}（guarded）。
+一个没有自由变元出现的公式称为\emph{$\mu$-句子}（sentence）。在本文中所谈到的公式指的是取名恰当的、受保护的$\mu$-句子。
+
+与$\CTL$公式类似，$\mu$-演算公式（简称为$\mu$-公式或公式）的语义定义在Kripke结构上。但是，与$\CTL$不同的是，这里不要求$\Hm=(S,R,L,r)$中的$r$为初始状态，且这里的$r$称为\emph{根}（root）。
+\begin{definition}
+	给定$\mu$-演算公式$\varphi$、初始结构$\Hm$和一个赋值函数$v: {\cal V} \rto 2^S$。公式在$\Hm$和$v$上的解释是$S$的一个子集$\left\| \varphi\right\|_v^{\Hm}$（当$\Hm$在上下文中是显然的，则可以省去上标）：
+	\begin{align*}
+		& \left \| p\right \|_v = \{s\mid p \in L(s)\} \ ,\ \left\|\top\right\|_v = S \ ,\ \left\|\bot\right\|_v = \emptyset, \\
+		& \left\|\neg p\right\|_v = S- \left\| p\right\|_v,\\
+		& \left\| X\right\|_v = v(X),\\
+		& \left\|\varphi_1 \vee \varphi_2\right\|_v = \left\|\varphi_1\right\|_v \cup \left\|\varphi_2\right\|_v,\\
+		& \left\|\varphi_1 \wedge \varphi_2\right\|_v = \left\|\varphi_1\right\|_v \cap \left\|\varphi_2\right\|_v,\\
+		& \left\|\EXIST \NEXT \varphi\right\|_v = \{s\mid \exists s'. (s, s') \in R \wedge s' \in \left\|\varphi\right\|_v\},\\
+		& \left\|\ALL \NEXT \varphi\right\|_v = \{s\mid \forall s'. (s, s') \in R \Rto s' \in \left\|\varphi\right\|_v\},\\
+		& \left\| \mu X. \varphi\right\|_v = \bigcap\{S' \subseteq S \mid \left\|\varphi\right\|_{v[X:= S']} \subseteq S'\},\\
+		& \left\| \nu X. \varphi\right\|_v = \bigcup\{S' \subseteq S \mid S' \subseteq \left\|\varphi\right\|_{v[X:= S']}\}.
+	\end{align*}
+其中，$v[X:= S']$是一个赋值函数，它除了$v[X:= S'](X)=S'$之外，和$v$完全相同。也即是，对任意的$Y\in {\cal V}$：
+\[v[X:= S'](Y) =
+\left\{
+\begin{array}{ll}
+	S'\hbox{，} \ \ \qquad \qquad \qquad \hbox{若$Y = X$；} \\
+	v(Y)\hbox{，} \ \ \ \qquad \qquad \ \ \hbox{否则。}
+\end{array}
+\right.
+\]
+\end{definition}
+
+在下文中，若$s\in \left\| \varphi \right\|_v$，则称$s$“满足”$\varphi$，记为$(\Hm, s, v) \models \varphi$。
+此时，若$(\Hm, r, v) \models \varphi$，则称$(\Hm, r, v)$为$\varphi$的一个模型。
+当公式$\varphi$为$\mu$-句子时，可以将赋值函数$v$省略，记为$(\Hm, s) \models \varphi$。
+记$\Mod(\varphi)$为$\varphi$的模型的集合。其他记号与$\CTL$情形类似，这里不再赘述。
+
+\subsection{$\mu$-公式的析取范式}
+Janin等人首先提出了$\mu$-演算的析取范式~\cite{janin1995automata}，后来被逐步完善，本文使用文章~\cite{d2006modal}中的析取$\mu$-公式的定义。
+
+在给出该定义之前，事先给出$\mu$-公式的另一种定义，称为\emph{覆盖-语法}（cover-syntax）。该定义是将上述$\mu$-公式的定义中的$\EXIST\NEXT$用\emph{覆盖操作}（cover operator）的集合来替换得到。在覆盖-语法中，
+\begin{itemize}
+	\item $Cover(\emptyset)$；
+	\item 对任意的$n\geq 1$，若$\varphi_1,\dots, \varphi_n$是公式，则$Cover(\varphi_1, \dots, \varphi_n)$是公式。
+\end{itemize}
+对于给定的初始结构$\Hm=(S,R,L,r)$和赋值函数$v$：
+\begin{itemize}
+	\item $(\Hm,r,v) \models Cover(\emptyset)$当且仅当$r$没有任何的后继状态；
+	\item $(\Hm, s,v ) \models Cover(\varphi_1, \dots, \varphi_n)$当且仅当
+	\begin{itemize}
+		\item 对任意的$i = 1, . . . , n$，存在$(s, t) \in R$使得$(\Hm, t,v) \models \varphi_i$;
+		\item 对任意的$(s, t) \in R$，存在$i\in \{1, . . . , n\}$使得$(\Hm, t,v) \models \varphi_i$。
+	\end{itemize}
+\end{itemize}
+
+尽管覆盖-语法在形式上与上一小节中$\mu$-公式的定义大相径庭，但是已经证明这两种定义是等价的\cite{d2006modal}。
+基于此，可以给出析取$\mu$-公式的形式定义如下：
+\begin{definition}[析取$\mu$-公式~\cite{d2006modal}]
+	析取$\mu$-公式的集合${\cal F}_d$是包含$\top$、$\bot$和不矛盾的文字的合取且封闭于下面几条规则的最小集合:
+	\begin{itemize}
+		\item[(1)] 吸取式（disjunctions）：若$\alpha, \beta \in {\cal F}_d$，则$\alpha \vee \beta \in {\cal F}_d$；
+		\item[(2)] 特殊合取式（special conjunctions）：若$\varphi_1, \dots, \varphi_n\in {\cal F}_d$且$\delta$为不矛盾的文字的合取，则$\delta \wedge Cover(\varphi_1, \dots, \varphi_n) \in {\cal F}_d$；
+		\item[(3)] 固定点操作（fixpoint operators）：若$\varphi\in  {\cal F}_d$，且对任意的公式$\psi$，$\varphi$不含有形如$X \wedge \psi$的子公式，则$\mu X. \varphi$和$\nu X. \varphi$都在 ${\cal F}_d$中。
+	\end{itemize}	
+\end{definition}
 
 \section{模型检测}
 

@@ -8,42 +8,18 @@
 \contentsline {figure}{\numberline {1.4}{\ignorespaces 本文的章节内容组织结构图\relax }}{15}{figure.caption.12}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces $\textsc {k}$-结构之间的$V$-互模拟关系\relax }}{30}{figure.caption.16}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces $\textsc {k}$-结构之间的$V$-互模拟关系\relax }}{33}{figure.caption.16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 基于归结的遗忘的主要流程图\relax }}{40}{figure.caption.17}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 基于归结的遗忘的主要流程图\relax }}{43}{figure.caption.17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces 左图为初始$\textsc {k}$-结构$\mathcal {K}_2$ (源于图\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces \ref {v1uv2})； 右图：从左到右表示以$s_0$为根、深度分别为0、1、2和3的计算树（为简化图，计算树的标签没有给出，但是每个树节点的标签可从${\cal K}_2$找到。）\relax }}{64}{figure.caption.18}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces 面向多维数据收集的系统模型\relax }}{69}{figure.caption.19}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces ORRP方案实现的两个阶段\relax }}{71}{figure.caption.20}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces ORRP方案对多维数据的有序随机扰动\relax }}{75}{figure.caption.21}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces 多维数据有序随机扰动的两个阶段示意图\relax }}{76}{figure.caption.22}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces 不同隐私机制的信息泄露和失真对比\relax }}{86}{figure.caption.24}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Adult数据集}}}{86}{figure.caption.24}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NLTCS数据集}}}{86}{figure.caption.24}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Credit Approval数据集}}}{86}{figure.caption.24}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces ORRP方案隐私信息泄露的参数影响\relax }}{87}{figure.caption.25}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Adult数据集}}}{87}{figure.caption.25}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NLTCS数据集}}}{87}{figure.caption.25}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Credit Approval数据集}}}{87}{figure.caption.25}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces ORRP方案数据质量损失的参数影响\relax }}{87}{figure.caption.26}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Adult数据集}}}{87}{figure.caption.26}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {NLTCS数据集}}}{87}{figure.caption.26}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Credit Approval数据集}}}{87}{figure.caption.26}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 左图为初始$\textsc {k}$-结构$\mathcal {K}_2$ (源于图\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces \ref {v1uv2})； 右图：从左到右表示以$s_0$为根、深度分别为0、1、2和3的计算树（为简化图，计算树的标签没有给出，但是每个树节点的标签可从${\cal K}_2$找到。）\relax }}{67}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces 隐私保护数据收集的系统模型\relax }}{92}{figure.caption.28}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces 理性决策过程的描述说明\relax }}{100}{figure.caption.31}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces $|\mathcal {X}|=6$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{102}{figure.caption.34}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces $|\mathcal {X}|=12$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{102}{figure.caption.34}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces 隐私保护数据收集的系统模型\relax }}{106}{figure.caption.35}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces 理性决策过程的描述说明\relax }}{114}{figure.caption.38}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces $|\mathcal {X}|=6$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{116}{figure.caption.41}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces $|\mathcal {X}|=12$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{116}{figure.caption.41}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces 隐私保护数据收集的系统模型\relax }}{120}{figure.caption.42}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces 理性决策过程的描述说明\relax }}{128}{figure.caption.45}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces $|\mathcal {X}|=6$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{130}{figure.caption.48}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces $|\mathcal {X}|=12$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{130}{figure.caption.48}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces 隐私保护数据收集的系统模型\relax }}{83}{figure.caption.19}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces 理性决策过程的描述说明\relax }}{91}{figure.caption.22}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces $|\mathcal {X}|=6$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{93}{figure.caption.25}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces $|\mathcal {X}|=12$时$I(X;\mathaccentV {hat}05E{X})/H(X)$\relax }}{93}{figure.caption.25}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

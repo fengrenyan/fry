@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "name": "FM Racer",
+            "path": "."
+        }
+    ],
+    "extensions": {
+        "recommendations": [
+            "ms-vscode-remote.remote-containers"
+        ]
+    }
+}

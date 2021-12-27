@@ -1,0 +1,35 @@
+{
+    "name": "Python 3",
+    
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "VARIANT": "3.9-bullseye",
+        }
+    },
+    
+    "settings": {
+        "python.defaultInterpreterPath": "./.venv/bin/python",
+        "python.linting.flake8Enabled": true,
+        "python.linting.mypyEnabled": true,
+        "python.formatting.provider": "black",
+        "python.terminal.activateEnvironment": true,
+
+        "[python]": {
+            "editor.rulers": [
+                99
+            ],
+            "editor.formatOnSave": true
+        }
+    },
+
+    "extensions": [
+        "bungcip.better-toml",
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "streetsidesoftware.code-spell-checker",
+    ],
+
+    "remoteUser": "vscode"
+}

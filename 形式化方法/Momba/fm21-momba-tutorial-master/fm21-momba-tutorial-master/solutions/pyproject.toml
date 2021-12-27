@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "fmracer"
+version = "0.0.1"
+description = "A tutorial on Momba at FM21."
+authors = [
+    "Maximilian Köhl <koehl@cs.uni-saarland.de>"
+]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/udsdepend/fm21-momba-tutorial"
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 2 - Pre-Alpha",
+    "Operating System :: OS Independent"
+]
+
+[tool.poetry.dependencies]
+# required Python version
+python = "^3.8"
+momba = {version = "^0.5.4", extras = ["engine", "docker"]}
+asciimatics = "^1.13.0"
+click = "^8.0.3"
+matplotlib = "^3.4.3"
+
+[tool.poetry.dev-dependencies]
+black = { version = "^21.9b0", allow-prereleases = true }
+flake8 = "^3.7.9"
+flake8-bugbear = "^20.1.2"
+pep8-naming = "^0.9.1"
+mypy = "^0.812"
+
+[tool.poetry.scripts]
+fmracer = "fmracer.__main__:main"
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

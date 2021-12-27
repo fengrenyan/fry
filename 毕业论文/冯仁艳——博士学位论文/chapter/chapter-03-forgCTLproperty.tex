@@ -1,5 +1,5 @@
 
-\chapter{CTL下的遗忘理论的定义及其语义属性}\label{chapter03}
+\chapter{遗忘理论的定义及其语义属性}\label{chapter03}
 {\em 本章首先通过扩展互模拟的概念，给出$\CTL$下遗忘理论的定义。其次，探索遗忘理论的一般通用属性，这些属性包括：模块化（Modularity）性质、交换性（Commutativity）、齐次性（Commutativity）等属性。}
 
 \section{引言}
@@ -244,7 +244,7 @@
 \end{proof}
 
 遗忘理论的另一个重要的属性与$V$-无关性密切相关。直观地说，对于给定的公式$\psi=\varphi \wedge (q\lrto \alpha)$，如果$\IR(\varphi \wedge \alpha, \{q\})$，那么从$\psi$中遗忘掉$q$后得到的结果为$\varphi$。这一性质与后文中将要介绍的$SNC$（$WSC$）的计算密切相关。但是由于其也是遗忘理论的性质，因而本文将其放在此处来探讨。
-\begin{lemma}
+\begin{lemma}\label{lem:KF:eq}
 	给定两个公式$\varphi$和$\alpha$，且$q \in \overline{\Var(\varphi) \cup \Var(\alpha)}$。则$\CTLforget(\varphi \wedge (q \lrto \alpha), q)\equiv \varphi$。
 \end{lemma}
 \begin{proof}
