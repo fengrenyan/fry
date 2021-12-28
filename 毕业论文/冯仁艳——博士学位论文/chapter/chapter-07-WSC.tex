@@ -76,7 +76,8 @@
 	由引理\ref{lem:KF:eq}可知$\Gamma \models \varphi \rto \varphi'$，因此$\emph{SNC}(\varphi,\alpha,V, \Gamma)$成立。
 \end{proof}
 
-	下面的例子给出了关于给定原子命题集合下的公式的最弱充分条件的具体体现。
+为了对给定原子命题集合下的公式的最弱充分条件有个直观的认识，下面给出一个简单的例子。
+	%下面的例子给出了关于给定原子命题集合下的公式的最弱充分条件的具体体现。
 
 \begin{example}[Continued from Example~\ref{ex:2}]\label{examp:WSC}
 	本例来源于图~\ref{v1uv2}中的初始结构${\cal K}_2$。令$\psi = \EXIST \NEXT(s \wedge (\EXIST \NEXT se \vee \EXIST \NEXT \neg d))$、$\varphi = \EXIST \NEXT(s \wedge \EXIST \NEXT \neg d)$、$\Ha =\{d, s, se\}$和$V = \{s, d\}$。下面证明$\varphi$是$\psi$在$V$和${\cal K}_2$上的WSC：
@@ -87,6 +88,44 @@
 	\end{itemize}
 \end{example}
 
+
+如何使用遗忘理论计算SNC（WSC）是本章讨论的关键问题。下面首先给出其理论基础，然后再做直观的解释。
+
+\begin{theorem}\label{thm:SNC:WSC:forget}
+	给定公式$\varphi$、原子命题的集合$V\subseteq\Var(\varphi)$和原子命题$q\in\Var(\varphi)- V$。
+	\begin{itemize}
+		\item[(i)] $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\}) - V)$ 是$q$在$V$和$\varphi$上的SNC；
+		\item[(ii)]  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\}) - V)$是$q$在$V$和$\varphi$上的WSC。
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	(i) 令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。
+	
+	
+	“NC”部分：由遗忘理论的定义可知$\varphi \wedge q \models {\cal F}$。因此，$\varphi\models q \rto {\cal F}$，即：${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC。
+	
+	“SNC”部分：假设$\psi'$为$q$在$V$和$\varphi$上的任意NC，即：$\varphi\models q \rto \psi'$。由定理~\ref{thm:V-bisimulation:EQ} 和 $\emph{IR}(\psi', (\Var(\varphi) \cup \{q\})- V)$可知，若$\varphi \wedge q \models \psi'$，则${\cal F} \models \psi'$。
+	由假设可知$\varphi\models q \rto \psi'$，所以$\varphi \wedge {\cal F} \models \psi'$，因此$\varphi \models {\cal F} \rto \psi'$。
+	
+	由上面两部分可知，${\cal F}$是$q$在$V$和$\varphi$上的SNC。
+	
+	(ii) 令${\cal F}=\neg \CTLforget(\varphi \wedge \neg q, (\Var(\varphi) \cup \{q\})- V)$。
+	由命题~\ref{dual}可知，对任意的命题$q'$，$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，当且仅当
+	$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。
+	由(i)可知$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，所以$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。令$q=\neg q'$，可得${\cal F}$ 是 $q$ 在 $V$ 和 $\varphi$上的WSC。
+\end{proof}
+
+令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。上面的定理可以直观地解释如下：由遗忘理论的定义可知$\varphi \wedge q \models \beta$，这说明
+${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi) \cup \{q\})- V$无关的公式$\psi$，若$\varphi \wedge q \models \psi$，则由定理~\ref{}可知$\beta \models \psi$。
+
+由第\ref{chapter05}章可知，任意的有限的初始$\MPK$-结构都能由一个$\CTL$公式表示，所以由上面的定理自然地就能得到给定有限初始$\MPK$-结构下的SNC和WSC。
+\begin{corollary}\label{thm:inK:SNC}
+	令${\cal K}= (\Hm, s)$为初始\MPK-结构，其中$\Hm=(S,R,L,s_0)$ 为有限原子命题集合$\Ha$上的初始-Kripke结构，$V \subseteq \Ha$且$q\in V' = \Ha - V$。则：
+	\begin{itemize}
+		\item[(i)] $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$是$q'$在$V$和${\cal K}$上的SNC；
+		\item[(ii)] $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$是$q'$在$V$和${\cal K}$上的WSC。
+	\end{itemize}
+\end{corollary}
 
 \section{知识更新}\label{sec:chapter07-knowledge-update}
 
