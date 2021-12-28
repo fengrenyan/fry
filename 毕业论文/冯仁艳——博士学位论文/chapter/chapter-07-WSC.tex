@@ -127,8 +127,96 @@ ${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi)
 	\end{itemize}
 \end{corollary}
 
-\section{知识更新}\label{sec:chapter07-knowledge-update}
+\section{$\mu$-演算下的知识更新}\label{sec:chapter07-knowledge-update}
 本小节介绍遗忘理论的另一个应用：知识更新（Knowledge update）。
+具体说来，本节将使用遗忘理论定义知识更新，使得用这种方式定义的知识更新满足下面由Katsuno和Mendelzon的基本条件：
+\begin{itemize}
+	\item (U1)  $\Gamma \diamond \phi \models \phi$；
+	\item (U2) 若$\Gamma \models \phi$，则$\Gamma \diamond \phi \equiv \Gamma$；
+	\item (U3) 若$\Gamma$和$\phi$都是可满足的，则$\Gamma \diamond \phi$是可满足的；
+	\item (U4) 若$\Gamma_1\equiv \Gamma_2$且$\phi_1 \equiv \phi_2$，则$\Gamma_1 \diamond \phi_1 \equiv \Gamma_2 \diamond \phi_2$；
+	\item (U5) $(\Gamma \diamond \phi) \wedge \psi \models \Gamma \diamond(\phi \wedge \psi)$；
+	\item (U6) 若$\Gamma \diamond \phi \models \psi$且$\Gamma \diamond \psi \models \phi$，则$\Gamma \diamond \phi \equiv \Gamma \diamond \psi$；
+	\item (U7) 若$\Gamma$有唯一一个模型，则$(\Gamma \diamond \phi) \wedge (\Gamma \diamond \psi) \models \Gamma \diamond (\phi \vee \psi)$；
+	\item (U8) $(\Gamma_1 \vee \Gamma_2) \diamond \phi                                                                                                                    / (\Gamma_1 \diamond \phi) \vee  (\Gamma_2 \diamond \phi)$。
+\end{itemize}
+其中，$\diamond$为知识更新操作，$\varphi \diamond \psi$表示用$\psi$更新$\varphi$得到的结果。
+
+本小节假设所有的初始$\MPK$-结构都是有限的，即：状态来源于有限的状态空间且$\Ha$为有限的原子命题的集合。下面定理显然成立：
+\begin{theorem}\label{thm:initModel}
+	给定$\mu$-句子$\phi$和原子命题的集合$V \subseteq \cal A$。存在一个$\mu$-句子$\psi$使得：
+	\[
+	\Hm \models \psi \mbox{ 当且仅当存在 } \Hm'\in\Mod(\phi) \mbox{ 使得 } \Hm \lrto_V \Hm' % \mbox{ and } \Hm' \models \phi.
+	\]
+	其中$\Hm$和$\Hm'$都是有限的初始结构。
+\end{theorem}
+\begin{proof}
+	Let $\psi=\Muforget(\phi, V)$. We have that for each $\Hm \models \psi$, there is a $\Hm' \models \phi$ with $\Hm \lrto_V \Hm'$ by Theorem~\ref{thm:exist} and Definition~\ref{def:V:forgetting}, and for each $\Hm' \in \Mod(\phi)$, there is $\phi \models \psi$.
+	In this case, we can easily prove that for each initial structure $\Hm$, if $\Hm \models \psi$ then we can obtain an initial structure $\Hm'$ s.t. $\Hm' \models \phi$ and $\Hm \lrto_V \Hm'$. In addition, for each $\Hm' \in \Mod(\phi)$, there is $\Hm' \models \psi$ by (\W).
+\end{proof}
+
+
+定理~\ref{thm:initModel}表明模型结构被限制到有限初始结构下的$\mu$-演算下遗忘理论也是封闭的。
+此外，由？？可知，任意$\Ha$上的有限初始$\MPK$-结构${\cal K}$都能用一个$\CTL$公式——特征公式${\cal F}_{\Ha}({\cal K})$来表示，此公式也是$\mu$-句子。
+
+对于给给定的$\Ha$和$V_{min}\subseteq \Ha$，记$\varphi = \Muforget({\cal F}_{\Ha}({\cal K}), V_{min})$，其中$V_{min} \subseteq \Ha$是使得$\varphi$可满足的极小子集。
+此外，公式
+$$\bigcup_{V_{min}\subseteq \Ha} \Mod(\Muforget({\cal F}_{\Ha}({\cal K}), V_{min}))$$
+表示所有$\Muforget({\cal F}_{\Ha}({\cal K}), V_{min})$的模型集合的并集。
+此时，可如下定义$\mu$-演算下的知识更新操作$V_{min}$：
+
+
+\begin{definition}\label{def:KU}
+	给定$\mu$-句子$\Gamma$和$\phi$。知识更新操作$\diamond_{\mu}$定义如下：
+	\[
+	\Mod(\Gamma \diamond_{\mu} \phi) = \bigcup_{{\cal K} \in \Mod(\Gamma)} \bigcup_{V_{min}\subseteq \Ha} \Mod(\Muforget({\cal F}_{\Ha}({\cal K}), V_{min}) \wedge \phi),
+	\]
+	其中，${\cal F}_{\Ha}({\cal K})$是${\cal K}$在$\Ha$上的特征公式，$V_{min} \subseteq \Ha$ 是使得$\Muforget({\cal F}_{\Ha}({\cal K})$可满足的极小子集。
+\end{definition}
+
+从直观上来说，$\Gamma \diamond_{\mu} \phi$表示通过极小化改变$\Gamma$的模型到$\phi$的模型来更新$\Gamma$。换句话说，定义~\ref{def:KU}通过极小化改变$\Gamma$的每个模型，使得该模型能够满足$\phi$来更新原有的知识$\Gamma$。从这个角度看，这样定义的知识更新是一种基于模型的知识更新方法。
+
+此外，$\mu$-演算下的知识更新也可以通过像命题逻辑里的那样来定义：令$I$，$J_1$和$J_2$为三个赋值，即：原子命题的集合；则$J_1$比$J_2$更接近$I$（记为：$J_1 \leq_{I,pam} J_2$）当且仅当$\Diff(I, J_1) \subseteq \Diff(I, J_2)$，其中$\Diff(X, Y) =\{p\in \Ha \mid X(p) \not = Y(p)\}$。那么命题逻辑里的知识更新——用$\psi$更新$\Gamma$，即为$\psi$的关于偏序关系$\leq_{I,pam}$的所有极小模型的集合（$I$是$\Gamma$的模型），即：
+$$\Mod(\Gamma \diamond_{pam} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi), \leq_{I,pam}).$$
+其中，$Min(\Mod(\psi), \leq_{I,pam})$是$\psi$的关于偏序关系$\leq_{I,pam}$的极小模型的集合。
+
+类似地，这里定理有限初始结构之间关于另一个初始结构的偏序关系。
+\begin{definition}\label{def:closer}
+	给定三个有限初始结构$\Hm$、$\Hm_1$和$\Hm_2$，$\Hm_1$比$\Hm_2$更接近$\Hm$（记为$\Hm_1 \leq_{\Hm} \Hm_2$）当且仅当对任意使得$\Hm_2 \lrto_{V_2} \Hm$成立的$V_2 \subseteq \Atom$都存在一个$V_1 \subseteq V_2$使得$\Hm_1 \lrto_{V_1} \Hm$。
+	 $\Hm_1 <_{\Hm} \Hm_2$当且仅当$\Hm_1 \leq_{\Hm} \Hm_2$且$\Hm_2 \not \leq_{\Hm} \Hm_1$。
+\end{definition}
+
+给定有限初始结构的集合$M$和有限初始结构$\Hm$，用$Min(M,$ $\leq_{\Hm})$表示$M$中关于偏序关系$\leq_{\Hm}$的极小有限初始结构的集合。则$\leq_{\Hm}$与知识更新操作$\diamond_{\mu}$有如下关系。
+
+\begin{theorem}\label{thm:minU}
+	给定$\mu$-句子$\Gamma$和$\phi$，则：
+	\[\Mod(\Gamma \diamond_{\mu} \phi) = \bigcup_{\Hm\in \Mod(\Gamma)} Min(\Mod(\phi), \leq_{\Hm}).
+	\]
+\end{theorem}
+\begin{proof}
+	For each initial structure $\Hm'\in \Mod(\Gamma \diamond_{\mu} \phi)$, we will show that there exists some $\Hm \in \Mod(\Gamma)$ s.t. $\Hm' \in  Min(\Mod(\phi), \leq_{\Hm})$. According to Definition~\ref{def:KU}, we know that there exists some $\Hm\in Mod(\Gamma)$  s.t. $\Hm'\in \Mod(\Muforget({\cal F}_{\Ha}(\Hm)$, $V_{min}) \wedge \phi)$. Further, there is a particular $V'\subseteq \Ha$ (i.e. $V' = V_{min}$) s.t. $\Hm' \lrto_{V'} \Hm$ and $\Hm' \in \Mod(\phi)$. Since such $V'$ is a minimal subset of $\Ha$ satisfying these properties, it concludes that for any other models $\Hm''$ of $\phi$ with $\Hm'' \lrto_{V_{min}} \Hm$, we have $\Hm' \leq_{\Hm} \Hm''$ by the definitions of forgetting and characterizing  formula. Therefore, $\Hm' \in Min(\Mod(\phi), \leq_{\Hm})$.
+	
+	For each initial structure $\Hm'\in \bigcup_{\Hm\in \Mod(\Gamma)} Min(\Mod(\phi), \leq_{\Hm})$, there exists some $\Hm \in \Mod(\Gamma)$ s.t. $\Hm' \in  Min(\Mod(\phi), \leq_{\Hm})$. Let $V_{min}$ be a minimal subset of atoms s.t. $\Hm' \lrto_{V_{min}} \Hm$. Then according to the definition of $\leq_{\Hm}$, we know that there does not exist another $\Hm''\in \Mod(\phi)$ s.t. $\Hm'' \lrto_{V'} \Hm$ and $V' \subset V_{min}$. This follows that $\Hm' \in \Mod(\Muforget({\cal F}_{\Ha}(\Hm), V_{min}) \wedge \phi)$, and hence $\Hm' \in \Mod(\Gamma \diamond_{\mu} \phi)$.
+\end{proof}
+
+从定理~\ref{thm:minU}可以看出，通过遗忘理论定义的知识更新操作与通过有限初始结构间的偏序关系定义的知识更新一致，且通过遗忘理论定义的知识更新操作满足Katsuno和Mendelzon提出的八条基本条件。
+
+\begin{theorem}\label{thm:U1toU8}
+	知识更新操作$\diamond_{\mu}$满足Katsuno和Mendelzon提出的基本条件(U1)-(U8)。
+\end{theorem}
+\begin{proof}
+	For (U1), we know that $\Mod(\Gamma \diamond_{\mu} \phi) \subseteq \Mod(\phi)$ by Theorem~\ref{thm:minU}, hence $\Gamma \diamond_{\mu} \phi \models \phi$.
+	
+	For (U2), we will prove $\Gamma \diamond_{\mu} \phi \models \Gamma$ at first. For each model $\Hm$ of $\Gamma \diamond_{\mu} \phi$, there is a $\Hm_1 \in \Mod(\Gamma)$ and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Then we have $V_{min} = \emptyset$ due to $\Gamma \models \phi$. Similarly, for each model $\Hm$ of $\Gamma$, there is a $\Hm_1\in \Mod(\Gamma \diamond_{\mu} \phi)$ and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. We have $V_{min} = \emptyset$ due to $\Gamma \models \phi$. Hence $\Gamma \models \Gamma \diamond_{\mu} \phi$.
+	
+	It is easy to show that $\diamond_{\mu}$ satisfies (U3) and (U4). We now prove (U5). For each model $\Hm$ of $(\Gamma \diamond_{\mu} \phi) \wedge \psi$, there is a $\Hm_1 \in \Mod(\Gamma)$ and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Besides, we can see that $\Hm \models \phi \wedge \psi$. Therefore, we have $\Hm \models \Gamma \diamond_{\mu} (\phi \wedge \psi)$.
+	
+	For (U6), we will prove $\Gamma \diamond_{\mu} \phi \models \Gamma \diamond_{\mu} \psi$, and the other direction can be proved in a similar way. For each model $\Hm$ of $\Gamma \diamond_{\mu} \phi$, $\Hm$ is also a model of $\psi$. There is a $\Hm_1 \in \Mod(\Gamma)$ and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Therefore $\Hm$ is a model of $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$. This shows that $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$ is consistent. Moreover, $V_{min}$ is also the minimal set s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$ is consistent. Otherwise, suppose that $V\subset V_{min}$ s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V) \wedge \psi$ is consistent as well. Then, $\Muforget({\cal F}_{\Ha}(\Hm_1), V)$ $\wedge \phi$ should also be consistent by $\Gamma \diamond_{\mu} \phi \models \psi$, which contradicts to the fact that $V_{min}$ is the minimal set of atoms s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \phi$ is consistent. Hence, $\Hm$ is also a model of $\Gamma \diamond_{\mu} \psi$.
+	
+	Now we prove (U7). Suppose that $\Gamma$ has the unique model $\Hm$. For each $\Hm_1 \in \Mod((\Gamma \diamond_{\mu} \phi) \wedge (\Gamma \diamond_{\mu} \psi))$ there exists $V_1$ and $V_2$ which are minimal s.t. $\Hm \lrto_{V_1} \Hm_1$ and $\Hm \lrto_{V_2} \Hm_1$, i.e., $\Hm_1$ is a model of both $\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge \phi$ and $\Muforget({\cal F}_{\Ha}(\Hm),$ $V_2) \wedge \psi$. Therefore $\Hm_1 \lrto_{V_1 \cap V_2} \Hm$. Thus, $\Hm_1$ is a model of $\Muforget({\cal F}_{\Ha}(\Hm), V_1 \cap V_2)$. Then we have $V_1 = V_2$, otherwise $V_1$ (or $V_2$) is not the minimal set. $\Hm_1$ is a model of $\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\phi \vee \psi)$ as well. Moreover, $V_1$ is the minimal set s.t. $\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\phi \vee \psi)$ is satisfiable. Otherwise, suppose that $V_3\subset V_1$ s.t. $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge (\phi \vee \psi)$ is satisfiable. Then $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \phi$ or $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \psi$ is satisfiable. Without loss of generality, suppose that $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \phi$ is satisfiable, $V_1$ is not the minimal set, a contradiction. Therefore $\Hm_1$ is also a model of $\Gamma \diamond_{\mu} (\phi \vee \psi)$.
+	
+	For (U8), we will prove $(\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi \models (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi)$ at first. For each $\Hm \in \Mod((\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi)$, there is a $\Hm_1 \in \Mod(\Gamma_1)$ (or $\Hm_1\in \Mod(\Gamma_2)$) and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Therefore, we have $\Hm \models  (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi)$. Similarly, for each $\Hm \in \Mod( (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi))$, there is a $\Hm_1\in \Mod(\Gamma_1)$ (or $\Hm_1 \in \Mod(\Gamma_2)$) and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Hence, $\Hm \models (\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi$.
+\end{proof}
 
 \section{本章小结}\label{sec:chapter07-conclusion}
 
