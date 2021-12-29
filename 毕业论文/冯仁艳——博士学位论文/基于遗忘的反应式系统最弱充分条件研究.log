@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  28 DEC 2021 21:07
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  28 DEC 2021 22:27
 entering extended mode
 **基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -4730,12 +4730,27 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 LaTeX Warning: Reference `thm:exist' on page 81 undefined on input line 154.
 
 
+LaTeX Warning: Reference `' on page 81 undefined on input line 157.
+
+
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
 [81]
+Overfull \hbox (8.84589pt too wide) in paragraph at lines 201--202
+\C70/rm/m/n/12.05/4e  \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.05/57 ( \C70/rm/m/
+n/12.05/51 v \C70/rm/m/n/12.05/4e �$\OMS/ztmcm/m/n/12.05 M[] 2 []\OT1/ztmcm/m/n
+/12.05 (\OML/ztmcm/m/it/12.05 \OT1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.05/4f  \C
+70/rm/m/n/12.05/5f �$\OMS/ztmcm/m/n/12.05 M[] $[] M$ \C70/rm/m/n/12.05/4e $\OM
+L/ztmcm/m/it/12.05 V[] \OMS/ztmcm/m/n/12.05  \OML/ztmcm/m/it/12.05 V[]$|\C70/r
+m/m/n/12.05/30 | \C70/rm/m/n/12.05/56 � \C70/rm/m/n/12.05/80 $\OMS/ztmcm/m/n/
+12.05 M[] 2 []\OT1/ztmcm/m/n/12.05 ([](\OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/1
+2.05 (\OMS/ztmcm/m/n/12.05 M\OT1/ztmcm/m/n/12.05 )\OML/ztmcm/m/it/12.05 ; V[]\O
+T1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 ^$
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4922,7 +4937,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [86]
-<./figures/Application_architecture.jpg, id=1546, 729.38498pt x 327.02174pt>
+<./figures/Application_architecture.jpg, id=1545, 729.38498pt x 327.02174pt>
 File: ./figures/Application_architecture.jpg Graphic file (type jpg)
 
 <use ./figures/Application_architecture.jpg>
@@ -5052,7 +5067,7 @@ Overfull \hbox (19.5728pt too wide) in paragraph at lines 264--276
 []$[]$ 
  []
 
-<./figures/decision.jpg, id=1642, 134.1813pt x 83.8332pt>
+<./figures/decision.jpg, id=1641, 134.1813pt x 83.8332pt>
 File: ./figures/decision.jpg Graphic file (type jpg)
 
 <use ./figures/decision.jpg>
@@ -5094,14 +5109,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 Package natbib Warning: Citation `kairouz2016extremal' on page 97 undefined on 
 input line 350.
 
-<./figures/Fig3.jpg, id=1661, 194.6472pt x 153.6942pt>
+<./figures/Fig3.jpg, id=1660, 194.6472pt x 153.6942pt>
 File: ./figures/Fig3.jpg Graphic file (type jpg)
 
 <use ./figures/Fig3.jpg>
 Package pdftex.def Info: ./figures/Fig3.jpg used on input line 358.
 (pdftex.def)             Requested size: 199.1731pt x 144.54524pt.
 
-<./figures/Fig4.jpg, id=1662, 215.8464pt x 153.6942pt>
+<./figures/Fig4.jpg, id=1661, 215.8464pt x 153.6942pt>
 File: ./figures/Fig4.jpg Graphic file (type jpg)
 
 <use ./figures/Fig4.jpg>
@@ -5190,7 +5205,7 @@ n/12.05 [J]. \C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.05/7b � \C70/rm/m/n/12.05/67
 pdfTeX warning: pdflatex.exe (file D:/（博士）我的资料/Git/fry/毕业�
 �文/冯仁艳——博士学位论文/figures/shengming.pdf): PDF inclusion: f
 ound PDF version <1.7>, but at most version <1.5> allowed
-<figures/shengming.pdf, id=1721, 597.50829pt x 845.0471pt>
+<figures/shengming.pdf, id=1720, 597.50829pt x 845.0471pt>
 File: figures/shengming.pdf Graphic file (type pdf)
 
 <use figures/shengming.pdf>
@@ -5366,9 +5381,9 @@ es/utmb8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><D:
 /Application/Ctex/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/Application/Ctex/
 MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on 基于遗忘的反应式系统最弱充分条件研究.pdf (1
-21 pages, 3718257 bytes).
+21 pages, 3718187 bytes).
 PDF statistics:
- 2546 PDF objects out of 2984 (max. 8388607)
+ 2545 PDF objects out of 2984 (max. 8388607)
  395 named destinations out of 1000 (max. 500000)
  1053 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -151,8 +151,10 @@ ${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi)
 	其中$\Hm$和$\Hm'$都是有限的初始结构。
 \end{theorem}
 \begin{proof}
-	Let $\psi=\Muforget(\phi, V)$. We have that for each $\Hm \models \psi$, there is a $\Hm' \models \phi$ with $\Hm \lrto_V \Hm'$ by Theorem~\ref{thm:exist} and Definition~\ref{def:V:forgetting}, and for each $\Hm' \in \Mod(\phi)$, there is $\phi \models \psi$.
-	In this case, we can easily prove that for each initial structure $\Hm$, if $\Hm \models \psi$ then we can obtain an initial structure $\Hm'$ s.t. $\Hm' \models \phi$ and $\Hm \lrto_V \Hm'$. In addition, for each $\Hm' \in \Mod(\phi)$, there is $\Hm' \models \psi$ by (\W).
+	令$\psi=\Muforget(\phi, V)$。由定理~\ref{thm:exist}和遗忘理论的定义可知，对任意的$\Hm \models \psi$存在一个$\Hm' \models \phi$使得$\Hm \lrto_V \Hm'$，且对每一个$\Hm' \in \Mod(\phi)$都有$\Hm' \models \psi$。
+	此时，容易证明对任意的有限初始结构$\Hm$，若$\Hm \models \psi$，则存在一个$\Hm'$使得$\Hm' \models \phi$且$\Hm \lrto_V \Hm'$。
+	
+	此外，对任意的$\Hm' \in \Mod(\phi)$，由(\W)可知存在$\Hm' \models \psi$。又$\Hm \lrto_V \Hm'$，所以由定理~\ref{}可知$\Hm \models \psi$。
 \end{proof}
 
 
@@ -194,9 +196,9 @@ $$\Mod(\Gamma \diamond_{pam} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi)
 	\]
 \end{theorem}
 \begin{proof}
-	For each initial structure $\Hm'\in \Mod(\Gamma \diamond_{\mu} \phi)$, we will show that there exists some $\Hm \in \Mod(\Gamma)$ s.t. $\Hm' \in  Min(\Mod(\phi), \leq_{\Hm})$. According to Definition~\ref{def:KU}, we know that there exists some $\Hm\in Mod(\Gamma)$  s.t. $\Hm'\in \Mod(\Muforget({\cal F}_{\Ha}(\Hm)$, $V_{min}) \wedge \phi)$. Further, there is a particular $V'\subseteq \Ha$ (i.e. $V' = V_{min}$) s.t. $\Hm' \lrto_{V'} \Hm$ and $\Hm' \in \Mod(\phi)$. Since such $V'$ is a minimal subset of $\Ha$ satisfying these properties, it concludes that for any other models $\Hm''$ of $\phi$ with $\Hm'' \lrto_{V_{min}} \Hm$, we have $\Hm' \leq_{\Hm} \Hm''$ by the definitions of forgetting and characterizing  formula. Therefore, $\Hm' \in Min(\Mod(\phi), \leq_{\Hm})$.
+	对每一个初始结构$\Hm'\in \Mod(\Gamma \diamond_{\mu} \phi)$，这里证明存在一个$\Hm \in \Mod(\Gamma)$使得$\Hm' \in  Min(\Mod(\phi), \leq_{\Hm})$。由定义~\ref{def:KU}可知，存在$\Hm\in Mod(\Gamma)$使得$\Hm'\in \Mod(\Muforget({\cal F}_{\Ha}(\Hm)$, $V_{min}) \wedge \phi)$。 此外，存在一个特殊的$V'\subseteq \Ha$（即：$V' = V_{min}$） 使得$\Hm' \lrto_{V'} \Hm$和$\Hm' \in \Mod(\phi)$。因为$V'$是使得$\Hm' \lrto_{V'} \Hm$成立的极小子集，因此对任意使得$\Hm'' \lrto_{V_{min}} \Hm$成立的$\phi$的模型$\Hm''$，由遗忘理和特征公式论的定义可知$\Hm' \leq_{\Hm} \Hm''$。 因此，$\Hm' \in Min(\Mod(\phi), \leq_{\Hm})$。
 	
-	For each initial structure $\Hm'\in \bigcup_{\Hm\in \Mod(\Gamma)} Min(\Mod(\phi), \leq_{\Hm})$, there exists some $\Hm \in \Mod(\Gamma)$ s.t. $\Hm' \in  Min(\Mod(\phi), \leq_{\Hm})$. Let $V_{min}$ be a minimal subset of atoms s.t. $\Hm' \lrto_{V_{min}} \Hm$. Then according to the definition of $\leq_{\Hm}$, we know that there does not exist another $\Hm''\in \Mod(\phi)$ s.t. $\Hm'' \lrto_{V'} \Hm$ and $V' \subset V_{min}$. This follows that $\Hm' \in \Mod(\Muforget({\cal F}_{\Ha}(\Hm), V_{min}) \wedge \phi)$, and hence $\Hm' \in \Mod(\Gamma \diamond_{\mu} \phi)$.
+	对每一个初始结构$\Hm'\in \bigcup_{\Hm\in \Mod(\Gamma)} Min(\Mod(\phi), \leq_{\Hm})$，存在$\Hm \in \Mod(\Gamma)$使得$\Hm' \in  Min(\Mod(\phi), \leq_{\Hm})$。设$V_{min}$是使得$\Hm' \lrto_{V_{min}} \Hm$成立的极小子集。根据$\leq_{\Hm}$的定义可知，不存在其他$\Hm''\in \Mod(\phi)$使得$\Hm'' \lrto_{V'} \Hm$ 且$V' \subset V_{min}$。因而$\Hm' \in \Mod(\Muforget({\cal F}_{\Ha}(\Hm), V_{min}) \wedge \phi)$，所以$\Hm' \in \Mod(\Gamma \diamond_{\mu} \phi)$。
 \end{proof}
 
 从定理~\ref{thm:minU}可以看出，通过遗忘理论定义的知识更新操作与通过有限初始结构间的偏序关系定义的知识更新一致，且通过遗忘理论定义的知识更新操作满足Katsuno和Mendelzon提出的八条基本条件。
