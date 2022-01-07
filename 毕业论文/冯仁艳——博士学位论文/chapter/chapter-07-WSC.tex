@@ -207,17 +207,35 @@ $$\Mod(\Gamma \diamond_{pam} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi)
 	知识更新操作$\diamond_{\mu}$满足Katsuno和Mendelzon提出的基本条件(U1)-(U8)。
 \end{theorem}
 \begin{proof}
-	For (U1), we know that $\Mod(\Gamma \diamond_{\mu} \phi) \subseteq \Mod(\phi)$ by Theorem~\ref{thm:minU}, hence $\Gamma \diamond_{\mu} \phi \models \phi$.
+	(U1). 由定理~\ref{thm:minU}可知$\Mod(\Gamma \diamond_{\mu} \phi) \subseteq \Mod(\phi)$，因此$\Gamma \diamond_{\mu} \phi \models \phi$。
 	
-	For (U2), we will prove $\Gamma \diamond_{\mu} \phi \models \Gamma$ at first. For each model $\Hm$ of $\Gamma \diamond_{\mu} \phi$, there is a $\Hm_1 \in \Mod(\Gamma)$ and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Then we have $V_{min} = \emptyset$ due to $\Gamma \models \phi$. Similarly, for each model $\Hm$ of $\Gamma$, there is a $\Hm_1\in \Mod(\Gamma \diamond_{\mu} \phi)$ and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. We have $V_{min} = \emptyset$ due to $\Gamma \models \phi$. Hence $\Gamma \models \Gamma \diamond_{\mu} \phi$.
+	 
 	
-	It is easy to show that $\diamond_{\mu}$ satisfies (U3) and (U4). We now prove (U5). For each model $\Hm$ of $(\Gamma \diamond_{\mu} \phi) \wedge \psi$, there is a $\Hm_1 \in \Mod(\Gamma)$ and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Besides, we can see that $\Hm \models \phi \wedge \psi$. Therefore, we have $\Hm \models \Gamma \diamond_{\mu} (\phi \wedge \psi)$.
+	(U2). 首先证明$\Gamma \diamond_{\mu} \phi \models \Gamma$。对$\Gamma \diamond_{\mu} \phi$的任意一个模型$\Hm$，存在一个$\Hm_1 \in \Mod(\Gamma)$ 和 $V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。又$\Gamma \models \phi$，因此$V_{min} = \emptyset$，即$\Hm \models  \Gamma$。类似地，对$\Gamma$的每一个模型$\Hm$，存在一个$\Hm_1\in \Mod(\Gamma \diamond_{\mu} \phi)$和一个$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。又$\Gamma \models \phi$，因此$V_{min} = \emptyset$。所以，$\Gamma \models \Gamma \diamond_{\mu} \phi$。
 	
-	For (U6), we will prove $\Gamma \diamond_{\mu} \phi \models \Gamma \diamond_{\mu} \psi$, and the other direction can be proved in a similar way. For each model $\Hm$ of $\Gamma \diamond_{\mu} \phi$, $\Hm$ is also a model of $\psi$. There is a $\Hm_1 \in \Mod(\Gamma)$ and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Therefore $\Hm$ is a model of $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$. This shows that $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$ is consistent. Moreover, $V_{min}$ is also the minimal set s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$ is consistent. Otherwise, suppose that $V\subset V_{min}$ s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V) \wedge \psi$ is consistent as well. Then, $\Muforget({\cal F}_{\Ha}(\Hm_1), V)$ $\wedge \phi$ should also be consistent by $\Gamma \diamond_{\mu} \phi \models \psi$, which contradicts to the fact that $V_{min}$ is the minimal set of atoms s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \phi$ is consistent. Hence, $\Hm$ is also a model of $\Gamma \diamond_{\mu} \psi$.
+	 
 	
-	Now we prove (U7). Suppose that $\Gamma$ has the unique model $\Hm$. For each $\Hm_1 \in \Mod((\Gamma \diamond_{\mu} \phi) \wedge (\Gamma \diamond_{\mu} \psi))$ there exists $V_1$ and $V_2$ which are minimal s.t. $\Hm \lrto_{V_1} \Hm_1$ and $\Hm \lrto_{V_2} \Hm_1$, i.e., $\Hm_1$ is a model of both $\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge \phi$ and $\Muforget({\cal F}_{\Ha}(\Hm),$ $V_2) \wedge \psi$. Therefore $\Hm_1 \lrto_{V_1 \cap V_2} \Hm$. Thus, $\Hm_1$ is a model of $\Muforget({\cal F}_{\Ha}(\Hm), V_1 \cap V_2)$. Then we have $V_1 = V_2$, otherwise $V_1$ (or $V_2$) is not the minimal set. $\Hm_1$ is a model of $\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\phi \vee \psi)$ as well. Moreover, $V_1$ is the minimal set s.t. $\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\phi \vee \psi)$ is satisfiable. Otherwise, suppose that $V_3\subset V_1$ s.t. $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge (\phi \vee \psi)$ is satisfiable. Then $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \phi$ or $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \psi$ is satisfiable. Without loss of generality, suppose that $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \phi$ is satisfiable, $V_1$ is not the minimal set, a contradiction. Therefore $\Hm_1$ is also a model of $\Gamma \diamond_{\mu} (\phi \vee \psi)$.
+	容易证明$\diamond_{\mu}$满足(U3)和(U4)。
 	
-	For (U8), we will prove $(\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi \models (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi)$ at first. For each $\Hm \in \Mod((\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi)$, there is a $\Hm_1 \in \Mod(\Gamma_1)$ (or $\Hm_1\in \Mod(\Gamma_2)$) and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Therefore, we have $\Hm \models  (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi)$. Similarly, for each $\Hm \in \Mod( (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi))$, there is a $\Hm_1\in \Mod(\Gamma_1)$ (or $\Hm_1 \in \Mod(\Gamma_2)$) and $V_{min}$ s.t. $\Hm \lrto_{V_{min}} \Hm_1$. Hence, $\Hm \models (\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi$.
+	(U5). 对$(\Gamma \diamond_{\mu} \phi) \wedge \psi$的每一个模型$\Hm$，存在一个$\Hm_1 \in \Mod(\Gamma)$和一个$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。
+	此外，可知$\Hm \models \phi \wedge \psi$，因此，$\Hm \models \Gamma \diamond_{\mu} (\phi \wedge \psi)$。
+	 
+	(U6). 这里给出$\Gamma \diamond_{\mu} \phi \models \Gamma \diamond_{\mu} \psi$的证明，另一个方向可以类似地证明。
+	对$\Gamma \diamond_{\mu} \phi$的每一个模型$\Hm$，$\Hm$也是$\psi$的模型，且存在$\Hm_1 \in \Mod(\Gamma)$和$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。
+	因此，$\Hm$是$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$的模型，也即是$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$可满足的。
+	%此外，$V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$可满足的极小子集，否则
+	设$V\subset V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V) \wedge \psi$可满足的原子命题的集合，由$\Gamma \diamond_{\mu} \psi \models \phi$可知$\Muforget({\cal F}_{\Ha}(\Hm_1), V)$ $\wedge \phi$是可满足的，这与$V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \phi$可满足的极小子集。因此，$V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$可满足的极小子集，所以，$\Hm$是$\Gamma \diamond_{\mu} \psi$的模型。
+	
+	
+	(U7). 设$\Gamma$有唯一的模型$\Hm$。对每一个$\Hm_1 \in \Mod((\Gamma \diamond_{\mu} \phi) \wedge (\Gamma \diamond_{\mu} \psi))$，存在两个关于$\leq_{\Hm_1}$的极小子集$V_1$和$V_2$使得$\Hm \lrto_{V_1} \Hm_1$和$\Hm \lrto_{V_2} \Hm_1$成立，即：$\Hm_1$是$\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge \phi$和$\Muforget({\cal F}_{\Ha}(\Hm),$ $V_2) \wedge \psi$的模型。因此，$\Hm_1 \lrto_{V_1 \cap V_2} \Hm$，即$\Hm_1$是$\Muforget({\cal F}_{\Ha}(\Hm), V_1 \cap V_2)$的模型。所以，$V_1 = V_2$，否则$V_1$ （或$V_2$）不是关于$\leq_{\Hm_1}$的极小子集。此外，$\Hm_1$也是$\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\phi \vee \psi)$的模型。
+	
+	设$V_3\subset V_1$是使得$\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge (\phi \vee \psi)$可满足的原子命题集合，则有$\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \phi$ 或$\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \psi$是可满足的。不失一般性地，设$\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \phi$是可满足的，则$V_1$不是关于$\leq_{\Hm_1}$的极小子集，与前面的描述矛盾。
+	因此，$V_1$是使得$\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\phi \vee \psi)$可满足的极小子集。
+	所以，$\Hm_1$是$\Gamma \diamond_{\mu} (\phi \vee \psi)$的模型。
+	
+	(U8) 对每一个$\Hm \in \Mod((\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi)$都存在一个$\Hm_1 \in \Mod(\Gamma_1)$（或$\Hm_1\in \Mod(\Gamma_2)$）和一个$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。因此，$\Hm \models  (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi)$成立。
+	
+	类似地，对每一个$\Hm \in \Mod( (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi))$都存在一个$\Hm_1\in \Mod(\Gamma_1)$ （或$\Hm_1 \in \Mod(\Gamma_2)$）和一个$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。因此，$\Hm \models (\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi$成立。
 \end{proof}
 
 \section{本章小结}\label{sec:chapter07-conclusion}
