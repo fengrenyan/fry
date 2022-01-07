@@ -154,6 +154,20 @@ S5、K和KD模态逻辑系统具有均匀插值性质~\cite{DBLP:journals/aml/Ie
 在非单调推理（non-monotonic reasoning）环境中，科研工作者们也从遗忘的基本条件的角度研究了
 基于回答集语义的逻辑程序的遗忘，这些工作包括Zhang、Wang等人发表在AI和JAIR上的文章~\cite{DBLP:Zhang:AIJ2006,DBLP:journals/ai/EiterW08,Wong:PhD:Thesis,DBLP:journals/jair/WangZZZ14,wang2013forgetting,DBLP:journals/jair/Delgrande17,gonccalves2020limits}，Eiter、Gonccalves等人的综述~\cite{eiter2019brief,gonccalves2021forgetting}。
 
+
+%应用
+在现实生活中，遗忘有很多应用。下面列出几点：
+\begin{itemize}
+	\item 计算后继状态公理：在规划问题中，根据最强必要条件和最弱充分条件有利于求出后继状态公理\cite{DBLP:journals/jair/Lin03}。在该文章中，最强必要条件和最弱充分条件都用遗忘来计算；
+	\item 信息隐藏：在有的关键领域，为实现隐私保护，敏感信息必须被隐藏。而有的系统现在都基于本体，要做到隐私保护，只需要将那些敏感的概念（concept）和角色（role）符号隐藏（遗忘）就行了；
+	\item 计算逻辑差：
+	\item 知识更新：在许多场景，知识不是一层不变的，随着时间或空间的推移，会有新的知识加入，如何用新加入的信息更新原有知识而保证知识库的一致性是知识更新需要解决的问题。此外，知识更新也需要满足一些基本条件，在这些基本条件中，Katsuno和Mendelzon提出$(U1)-(U8)$较为常用，本文也使用这几个基本条件；
+	\item 提取本体的概要：当一个本体工程师想要快速了解并测试一个本体的内容时，能事先快速地提取出该本体的概要是非常有用的。如果一个本体含有很多无关信息时，这将使得事半功倍。
+\end{itemize}
+
+
+
+
 差分隐私的基本思想是在隐私数据中引入随机性来阻止个人的信息被推断。显然地，随机化的程度越高，隐私保护效果越好，对应的数据可用性则降低。这就是隐私与效用原则\cite{sankar2013utility}，也就是著名的隐私与效用权衡问题\cite{basciftci2016on,alvim2011differential}。该问题是隐私保护研究关注的核心问题，学术研究者围绕该问题做出了一系列有意义的研究工作。这些工作大致可以分为寻找更加有效的扰动机制\cite{ghosh2012universally,wang2016on,alvim2011differential}和研究有效的噪声注入方式\cite{geng2016the}两类。如文献\mycite{ghosh2012universally} 提出了几何机制(Truncated $\frac{1}{2}$-geometric mechanism)实现最优的差分隐私扰动。为了提高数据效用， 文献\mycite{xiao2011differential}提出在注入噪声之前，对数据进行小波变换(Wavelet Transforms)，克服了Dwork方案中Laplace噪声扰动大的问题。文献\mycite{xu2017dppro}利用随机投影的方式研究了差分隐私高维数据发布的问题，解决了扰动误差大的问题。结合具体的应用场景，以下阐述差分隐私的学术研究动态。
 
 

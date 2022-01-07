@@ -1,4 +1,4 @@
-\begin{thebibliography}{74}
+\begin{thebibliography}{75}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -249,6 +249,15 @@ The Thirty-Fourth {AAAI} Conference on Artificial Intelligence, {AAAI} 2020,
 \newblock {AAAI} Press, 2020: 3073-3079.
 \newblock \url{https://aaai.org/ojs/index.php/AAAI/article/view/5702}.
 
+\bibitem[Gabbay et~al.(2008{\natexlab{a}})Gabbay, Schmidt, and
+  Szalas]{DBLP:books/daglib/0023036}
+GABBAY~D~M, SCHMIDT~R~A, SZALAS~A.
+\newblock Studies in logic : Mathematical logic and foundations: volume~12\quad
+  second-order quantifier elimination - foundations, computational aspects and
+  applications\allowbreak[M/OL].
+\newblock College Publications, 2008{\natexlab{a}}.
+\newblock \url{http://collegepublications.co.uk/logic/mlf/?00009}.
+
 \bibitem[Zhang et~al.(2009{\natexlab{a}})Zhang and Zhou]{Yan:AIJ:2009}
 ZHANG~Y, ZHOU~Y.
 \newblock Knowledge forgetting: Properties and applications\allowbreak[J].
@@ -281,15 +290,6 @@ SCHUMM~G~F.
 \newblock Some failures of interpolation in modal logic\allowbreak[J/OL].
 \newblock Notre Dame J. Formal Log., 1986, 27\penalty0 (1):\penalty0 108-110.
 \newblock \url{https://doi.org/10.1305/ndjfl/1093636529}.
-
-\bibitem[Gabbay et~al.(2008{\natexlab{a}})Gabbay, Schmidt, and
-  Szalas]{DBLP:books/daglib/0023036}
-GABBAY~D~M, SCHMIDT~R~A, SZALAS~A.
-\newblock Studies in logic : Mathematical logic and foundations: volume~12\quad
-  second-order quantifier elimination - foundations, computational aspects and
-  applications\allowbreak[M/OL].
-\newblock College Publications, 2008{\natexlab{a}}.
-\newblock \url{http://collegepublications.co.uk/logic/mlf/?00009}.
 
 \bibitem[Zhang et~al.(2006)Zhang and Foo]{DBLP:Zhang:AIJ2006}
 ZHANG~Y, FOO~N~Y.
@@ -350,6 +350,13 @@ EITER~T, KERN-ISBERNER~G.
 GON{\c{C}}ALVES~R, KNORR~M, LEITE~J.
 \newblock Forgetting in answer set programming--a survey\allowbreak[J].
 \newblock arXiv preprint arXiv:2107.07016, 2021.
+
+\bibitem[Lin(2003)]{DBLP:journals/jair/Lin03}
+LIN~F.
+\newblock Compiling causal theories to successor state axioms and strips-like
+  systems\allowbreak[J/OL].
+\newblock J. Artif. Intell. Res., 2003, 19:\penalty0 279-314.
+\newblock \url{https://doi.org/10.1613/jair.1135}.
 
 \bibitem[Maksimova(1991)]{Maksimova:JANCL:1991}
 MAKSIMOVA~L.
