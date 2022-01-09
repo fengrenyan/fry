@@ -48,7 +48,7 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 \begin{definition}[真假赋值]\label{def:pro:interp}
 	真假赋值是以所有命题符号的集为定义域，以真假值的集$\{0,1\}$为值域的函数$v:{\cal A}\rto \{0,1\}$。
 \end{definition}
-为了方便，后文中也将$\top$代表$1$，$\bot$代表$0$（此时真假赋值为$v:\Ha \rto \{\bot, \top\}$），且满足对任意的真假赋值$v$都有$\top^v=1$和$\bot^v=0$。由该定义可知，真假赋值的个数为$2^{|{\cal A}|}$个，因为一个真假赋值要同时给${\cal A}$中的所有命题符号指派一个真假值。真假赋值$v$给公式$\varphi$指派的值记作$\varphi^v$，其被形式化定义为如下：
+为了方便，后文中也将$\top$代表$1$，$\bot$代表$0$（此时真假赋值为$v:\Ha \rto \{\bot, \top\}$），且满足对任意的真假赋值$v$都有$\top^v=1$和$\bot^v=0$。由该定义可知，一个真假赋值要同时给${\cal A}$中的所有命题符号指派一个真假值，所以真假赋值的个数为$2^{|{\cal A}|}$。真假赋值$v$给公式$\varphi$指派的值记作$\varphi^v$，可形式化定义为如下：
 \begin{definition}[公式的真假值]\label{def:pro:vformula}
 	真假赋值$v$给公式指派的真假值递归定义如下：
 	\begin{itemize}
@@ -371,8 +371,8 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句�
 	\end{tabular}
 \end{table}
 
-下面通过一个简单的例子来展示上述转换步骤：
-\begin{example}
+下面通过一个简单的例子~\cite{zhang2014resolution}来展示上述转换步骤：
+\begin{example}\label{exmp:transbot}
 	令$\varphi=\neg \ALL \FUTURE p \wedge \ALL\FUTURE(p \wedge \top)$，下面给出将$\varphi$转换为$\CTLsnf$的详细步骤。
 	(1) 将公式$\varphi$转换为其NNF形式：$\EXIST\GLOBAL \neg p \wedge \ALL\FUTURE(p \wedge \top)$；
 	
@@ -398,49 +398,14 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句�
 
 因此，得到的$\varphi$对应的$\CTLsnf$公式为：
 \begin{align*}
-	&1.\ \start \rto z && 4.\ z \rto \ALL\FUTURE p && 8.\ x\rto \EXIST_{\tuple{1}} \GLOBAL x\\
-	&9.\ \top \rto \neg z \vee x && 10.\ \top \rto \neg x \vee \neg p.
+	&1.\ \start \rto z && 2.\ z \rto \ALL\FUTURE p && 3.\ x\rto \EXIST_{\tuple{1}} \GLOBAL x\\
+	&4.\ \top \rto \neg z \vee x && 5.\ \top \rto \neg x \vee \neg p.
 \end{align*}
 \end{example}
 
 
 
-\subsection{$\CTL$下的归结}
 
-\emph{归结}是一种用于判定给定的命题公式（或一阶公式）是否可满足的规则，该技术可以追溯到1960年Davis等的工作~\cite{DBLP:journals/jacm/DavisP60}，之后被Robinson加以完善~\cite{DBLP:journals/jacm/Robinson65}。对于给定的公式，归结给出一个反驳定理证明过程。
-%除了公式的可满足性证明，归结还被用于计算命题逻辑里的遗忘。
-
-在看见了归结在在命题逻辑和一阶逻辑中取得成就之后，科研工作者们开始将精力致力于其他非经典逻辑中，并取得了相当显著的理论成果，如：模态逻辑（K系统，Q系统，T系统，S4和S5系统）中的归结~\cite{DBLP:journals/tcs/EnjalbertC89}和时态逻辑（尤其是线性时序逻辑（LTL）和\CTL）中的归结~\cite{DBLP:conf/cade/CavalliC84,DBLP:journals/jetai/BolotovF99}。
-
-这里主要介绍与本文直接相关的$\CTL$下的归结。$\CTL$下的归结起源于BolotovF的研究\cite{DBLP:journals/jetai/BolotovF99}，之后被Zhang等人完善~\cite{zhang2014resolution}。不论是在BolotovF的工作还是在Zhang等人的工作中，其关键点都是将$\CTL$公式转换为一个$\CTLsnf$子句的集合。本文使用Zhang等人在~\cite{zhang2014resolution}中的规则，如表所示。
-
-\begin{table}[tb]%[width=.9\linewidth,cols=4,pos=h]
-	%\footnotesize
-	\small
-	\centering
-	\caption{归结规则}\label{tab:res}
-	\begin{tabular}{l}
-		\toprule
-		$
-		\begin{aligned}
-			& \textbf{(SRES1)}\frac{P\rto \ALL\NEXT(C\vee l), Q\rto \ALL\NEXT(D\vee \neg l)}{P\wedge Q \rto \ALL\NEXT(C\vee D)};
-			&& \textbf{(SRES2)} \frac{P\rto \EXIST_{\tuple{ind}} \NEXT(C\vee l), Q\rto \ALL\NEXT(D\vee \neg l)}{P\wedge Q \rto \EXIST_{\tuple{ind}}\NEXT(C\vee D)};\\
-			& \textbf{(SRES3)} \frac{P\rto \EXIST_{\tuple{ind}}\NEXT(C\vee l), Q \rto \EXIST_{\tuple{ind}}\NEXT(D\vee \neg l)}{P\wedge Q\rto\EXIST_{\tuple{ind}}\NEXT(C\vee D)};  
-			&&   \textbf{(SRES4)} \frac{\start \rto C\vee l, \start \rto D \vee \neg l}{\start \rto C\vee D}; \\
-			& \textbf{(SRES5)} \frac{\top \rto C\vee l, \start \rto D \vee \neg l}{\start \rto C \vee D};
-			&&  \textbf{(SRES6)} \frac{\top \rto C \vee l, Q \rto \ALL\NEXT(D \vee \neg l)}{Q\rto \ALL \NEXT(C\vee D)}; \\
-			& \textbf{(SRES7)} \frac{\top \rto C \vee l, Q \rto \EXIST_{\tuple{ind}} \NEXT(D \vee \neg l)}{Q\rto \EXIST_{\tuple{ind}}\NEXT(C\vee D)}; 
-			&&  \textbf{(SRES8)} \frac{\top \rto C\vee l, \top \rto D \vee \neg l}{\top \rto C \vee D};\\
-			& \textbf{(RW1)} \frac{\bigwedge_{i=1}^n m_i \rto \ALL\NEXT \perp}{\top \rto \bigvee_{i=1}^n \neg m}; 
-			&& \textbf{(RW2)} \frac{\bigwedge_{i=1}^n m_i \rto \EXIST_{\tuple{ind}}\NEXT \perp}{\top \rto \bigvee_{i=1}^n \neg m}; \\
-			& \textbf{(ERES1)} \frac{\Lambda \rto \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\GLOBAL l, Q \rto \ALL \FUTURE \neg l}{Q \rto \ALL(\neg \Lambda \UNLESS \neg l)};
-			&& \textbf{(ERES2)} \frac{\Lambda \rto \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\GLOBAL l, Q \rto \EXIST_{\tuple{ind}} \FUTURE \neg l}{Q \rto \EXIST_{\tuple{ind}}(\neg \Lambda \UNLESS \neg l)}.
-		\end{aligned}
-		$\\
-		\bottomrule
-	\end{tabular}
-\end{table}
-在表~\ref{tab:res}中$P$和$Q$是文字的合取，$C$和$D$是文字的吸取，$l$是一个文字。此外，$\Lambda=\bigvee_{i=1}^n \bigwedge_{i=1}^{m_i}P_j^i$和$P_j^i$是文字的吸取，且$1\leq i\leq n$和$1\leq j\leq m$。值得注意的是，规则 $\textbf{(ERES1)}$ 和 $\textbf{(ERES2)}$ 的结果都可以转换为$\CTLsnf$子句的集合（更多详情可以查看文章~\cite{zhang2014resolution}）。
 
 
 \subsection{$\mu$-演算}
@@ -531,13 +496,162 @@ Janin等人首先提出了$\mu$-演算的析取范式~\cite{janin1995automata}�
 	\end{itemize}	
 \end{definition}
 
-\section{模型检测}
+\section{$\CTL$下的归结}
+
+\emph{归结}是一种用于判定给定的命题公式（或一阶公式）是否可满足的规则，该技术可以追溯到1960年Davis等的工作~\cite{DBLP:journals/jacm/DavisP60}，之后被Robinson加以完善~\cite{DBLP:journals/jacm/Robinson65}。对于给定的公式，归结给出一个反驳定理证明过程。
+%除了公式的可满足性证明，归结还被用于计算命题逻辑里的遗忘。
+
+在看见了归结在在命题逻辑和一阶逻辑中取得成就之后，科研工作者们开始将精力致力于其他非经典逻辑中，并取得了相当显著的理论成果，如：模态逻辑（K系统，Q系统，T系统，S4和S5系统）中的归结~\cite{DBLP:journals/tcs/EnjalbertC89}和时态逻辑（尤其是线性时序逻辑（LTL）和\CTL）中的归结~\cite{DBLP:conf/cade/CavalliC84,DBLP:journals/jetai/BolotovF99}。
+
+这里主要介绍与本文直接相关的$\CTL$下的归结。$\CTL$下的归结起源于BolotovF的研究\cite{DBLP:journals/jetai/BolotovF99}，之后被Zhang等人完善~\cite{zhang2014resolution}。不论是在BolotovF的工作还是在Zhang等人的工作中，其关键点都是将$\CTL$公式转换为一个$\CTLsnf$子句的集合。本文使用Zhang等人在~\cite{zhang2014resolution}中的规则，如表所示。
+
+\begin{table}[tb]%[width=.9\linewidth,cols=4,pos=h]
+	%\footnotesize
+	\small
+	\centering
+	\caption{归结规则}\label{tab:res}
+	\begin{tabular}{l}
+		\toprule
+		$
+		\begin{aligned}
+			& \textbf{(SRES1)}\frac{P\rto \ALL\NEXT(C\vee l), Q\rto \ALL\NEXT(D\vee \neg l)}{P\wedge Q \rto \ALL\NEXT(C\vee D)};
+			&& \textbf{(SRES2)} \frac{P\rto \EXIST_{\tuple{ind}} \NEXT(C\vee l), Q\rto \ALL\NEXT(D\vee \neg l)}{P\wedge Q \rto \EXIST_{\tuple{ind}}\NEXT(C\vee D)};\\
+			& \textbf{(SRES3)} \frac{P\rto \EXIST_{\tuple{ind}}\NEXT(C\vee l), Q \rto \EXIST_{\tuple{ind}}\NEXT(D\vee \neg l)}{P\wedge Q\rto\EXIST_{\tuple{ind}}\NEXT(C\vee D)};  
+			&&   \textbf{(SRES4)} \frac{\start \rto C\vee l, \start \rto D \vee \neg l}{\start \rto C\vee D}; \\
+			& \textbf{(SRES5)} \frac{\top \rto C\vee l, \start \rto D \vee \neg l}{\start \rto C \vee D};
+			&&  \textbf{(SRES6)} \frac{\top \rto C \vee l, Q \rto \ALL\NEXT(D \vee \neg l)}{Q\rto \ALL \NEXT(C\vee D)}; \\
+			& \textbf{(SRES7)} \frac{\top \rto C \vee l, Q \rto \EXIST_{\tuple{ind}} \NEXT(D \vee \neg l)}{Q\rto \EXIST_{\tuple{ind}}\NEXT(C\vee D)}; 
+			&&  \textbf{(SRES8)} \frac{\top \rto C\vee l, \top \rto D \vee \neg l}{\top \rto C \vee D};\\
+			& \textbf{(RW1)} \frac{\bigwedge_{i=1}^n m_i \rto \ALL\NEXT \perp}{\top \rto \bigvee_{i=1}^n \neg m}; 
+			&& \textbf{(RW2)} \frac{\bigwedge_{i=1}^n m_i \rto \EXIST_{\tuple{ind}}\NEXT \perp}{\top \rto \bigvee_{i=1}^n \neg m}; \\
+			& \textbf{(ERES1)} \frac{\Lambda \rto \EXIST \NEXT \EXIST\GLOBAL l, Q \rto \ALL \FUTURE \neg l}{Q \rto \ALL(\neg \Lambda \UNLESS \neg l)};
+			&& \textbf{(ERES2)} \frac{\Lambda \rto \EXIST_{\tuple{ind}} \NEXT \EXIST_{\tuple{ind}}\GLOBAL l, Q \rto \EXIST_{\tuple{ind}} \FUTURE \neg l}{Q \rto \EXIST_{\tuple{ind}}(\neg \Lambda \UNLESS \neg l)}.
+		\end{aligned}
+		$\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+在表~\ref{tab:res}中$P$和$Q$是文字的合取，$C$和$D$是文字的吸取，$l$是一个文字。此外，$\Lambda=\bigvee_{i=1}^n \bigwedge_{i=1}^{m_i}P_j^i$和$P_j^i$是文字的吸取，且$1\leq i\leq n$和$1\leq j\leq m$。
+
+规则$\textbf{SRES1-8}$被叫做\emph{步-归结规则}（step resolution rule）、$\textbf{RW1-2}$被叫做\emph{重写规则}（rewrite rule）、$\textbf{ERES1-2}$被叫做\emph{可能归结规则}（eventuality resolution rule）。
+值得注意的是，规则 $\textbf{ERES1}$ 的前提“$\Lambda \rto \EXIST \NEXT \EXIST\GLOBAL l$”表示如下子句的集合$\Lambda_{\EXIST\GLOBAL}$：
+\begin{align*}
+	& P_1^1\rto *C_1^1, & & & P_1^n\rto *C_1^n,\\
+	& \vdots & && \vdots\\
+	& P_{m_1}^1 \rto * C_{m_1}^1, & \ldots && P_{m_n}^n\rto *C_{m_n}^n,
+\end{align*}
+其中，对任意的$i~(1\le i\le n)$，
+\begin{itemize}
+	\item 存在一个索引$ind \in {\cal I}$ 使得 $*$ 要么为空符号，要么为 $\{\ALL\NEXT, \EXIST_{\tuple{ind}}\NEXT\}$中的一个，
+	\item $\left(\bigwedge_{j=1}^{m_i} C_j^i\right) \rto l$成立，且
+	\item $\left(\bigwedge_{j=1}^{m_i} C_j^i\right) \rto \left(\bigvee_{i=1}^n\bigwedge_{j=1}^{m_i} P_j^i\right)$成立。
+\end{itemize}
+
+上面的最后两个条件确保了子句集合$\Lambda_{\EXIST\GLOBAL}$能够蕴涵$\Lambda \rto \EXIST \NEXT \EXIST\GLOBAL l$。规则$\textbf{ERES2}$的第一个前提与$\textbf{ERES1}$的类似。$\textbf{ERES1}$的结果能通过表~\ref{tab:trans}中的转换规则转换成等价可满足的全局和$\ALL$-步子句的集合，$\textbf{ERES2}$的结果则通过表~\ref{tab:trans}中的规则转换成等价可满足的全局和$\EXIST$-步子句的集合。值得注意的是在转换$\textbf{ERES1-2}$的结果为子句集合的过程中会引入一个新的原子命题~\cite{zhang2014resolution}。
+从这个角度来看，每个归结规则的前件和结果都是子句形式。
+
+对于给定的$\CTL$公式，使用上述的归结规则可以到处一个子句的集合。
+形式化地说，源于$\CTLsnf$子句集合$S$的一个\emph{推导}（derivation）是一个满足如下条件的$\CTLsnf$子句集合的序列$S_0, S_1, S_2, \ldots, $：
+\begin{itemize}
+	\item $S_0=S$，和
+	\item $S_{i+1} = S_i\cup \{\alpha\}~(i\ge 0)$，其中$\alpha\notin S_i$是对$S_i$的某些子句使用一条归结规则得到的结果。
+\end{itemize}
+
+$\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S_1, S_2, \ldots, S_i$，且$S_i$（$i\geq 0$）中包含一个矛盾——公式$\top\rto\bot$ 或 $\start\rto\bot$。
+
+为了判定$\CTL$公式$\varphi$的可满足性，基于归结的判定过程用于检查$T_{\varphi}$是否有反驳存在。定理 5.6、5.30和6.1~\cite{zhang2014resolution}已经证明这一过程是可靠和完备的。因而，下面的推论显然成立。
+\begin{corollary}
+	给定两个$\CTL$公式$\varphi$和$\psi$。 则$\varphi\models\psi$ 当且仅当当且仅当 $T_{\varphi\land\neg\psi}$有一个反驳。
+\end{corollary}
+
+\begin{example}[例~\ref{exmp:transbot}的扩展]\label{exmp:resbot}
+	对例~\ref{exmp:transbot}中的子句使用表~\ref{tab:res}中的归结规则，得到如下子句：
+	\begin{align*}
+		&(1)\ \start \rto x  && (1, 4, \textbf{SRES5})\\
+		&(2)\ w \rto \ALL\NEXT (p \vee \neg x) && (2, 3,5,\textbf{ERES1})\\
+		&(3)\ \top \rto  \neg z \vee p \vee \neg x  && (2, 3,5,\textbf{ERES1})\\
+		&(4)\ \top \rto \neg z \vee l \vee w && (2, 3,5,\textbf{ERES1})\\
+		&(5)\ w \rto \ALL \NEXT(x \vee w) && (2, 3,5,\textbf{ERES1})\\
+		&(6)\ \top \rto \neg z \vee \neg x && (5, (3), \textbf{SRES8})\\
+		&(7)\ \start \rto \neg x && (1, (6), \textbf{SRES5}) \\
+		% \end{align*}
+		% \begin{align*}
+		&(8)\ \start \rto \bot && ((1), (7), \textbf{SRES4}).
+	\end{align*}
+	由于在这一推导中有一个子句集合包含一个矛盾，即：$\start \rto \bot$，所以$T_{\varphi}$存在一个反驳。因此，$\varphi$是不可满足的。
+\end{example}
 
 
-\section{遗忘理论}
+\section{遗忘理论基础和SNC（WSC）}
+这部分主要介绍遗忘理在经典逻辑和模态逻辑S5下的定义，以及基于遗忘的SNC（WSC）的计算方法。
+\subsection{经典逻辑下的遗忘}
+遗忘一词起源于经典逻辑（包括命题逻辑和一阶逻辑）~\cite{lin1994forget}，给定一个命题公式$\varphi$和一个原子命题$p$，下面将介绍一下在$\varphi$中遗忘（forget）掉$p$。
+在\ref{chapter01:forgetting}中，从$\varphi$中遗忘掉$p$ 得到的结果为$\Forget(\varphi, \{p\}) \equiv \varphi[p/\top] \vee \varphi[p/\bot]$。
 
 
+\begin{example}\label{exmp:fish}
+	某学校有$a$和$b$两个食堂，学生要么去$a$食堂吃饭要么去$b$食堂吃饭，如果想吃烤鱼（fish，$f$）就去$a$食堂吃饭，如果想吃炒饭（rice，$r$）就去$b$食堂吃饭。这一知识可表示为命题公式$\varphi=(a \vee b) \wedge (f\rto a) \wedge (r \rto b)$。如果此时不考虑鱼，即：由于某种原因$a$食堂就不在卖烤鱼了，此时就应该“遗忘”烤鱼。这一计算过程表示如下：
+	\begin{align*}
+		\Forget(\varphi, \{f\}) & \equiv \varphi[f/\top] \vee \varphi[f/\bot] \\
+		& \equiv [(a \vee b) \wedge (\top \rto a) \wedge (r \rto b)] \vee  [(a \vee b) \wedge (\bot \rto a) \wedge (r \rto b)]\\
+		& \equiv [(a \vee b) \wedge a \wedge (r \rto b)] \vee  [(a \vee b) \wedge (r \rto b)]\\
+		& \equiv (a \vee b) \wedge (r \rto b).
+	\end{align*}
+\end{example}
 
+直观上来看，这个结果应该比原始的公式$\varphi$还要弱，但是能够蕴含同样的任何不包含$f$的句子（sentence），也就是说遗忘只能影响与$f$相关的语义。
+这一性质可由互模拟这一词来表示。对于解释之间的互模拟来说，对于原子命题$p$，如果对任意的$q\in \Ha-\{p\}$有$q \in I_1$当且仅当$q \in I_2$，则称解释$I_1$与$I_2$是$p$互模拟的，记为：$I_1 \sim_{p} I_2$。
+
+
+在一阶逻辑中，一阶逻辑语言${\cal L}_f$的解释有两种：${\cal L}_f$和结构有联系或没有联系，互模拟的定义就要困难一些。这里考虑和结构有联系的情形，一个\emph{一阶结构}由论域（domain）、指定的个体、关系和函数构成。此时，${\cal L}_f$中的个体符合、$n$-元关系符号和$m$-元函数符号分别被解释为这个结构中指定的论域中的个体、论域上的$n$-元关系和$m$-元全函数（即处处有定义的函数）。对于给定的一阶结构$M$和$X\in \{\hbox{元组，关系符号，函数符号}\}$，$M[X]$表示结构$M$对$X$的解释，且$M[(a_1, a_2, \dots, a_i)]$ = $(M[a_1],$ $M[a_2], \dots, M[a_i])$。
+
+给定实例化（ground atom）原子$P(\vec{t})$（$\vec{t}$是一个$n$元组）、$M_1$和$M_2$为一阶结构（论域（domain）、指定的个体、关系和函数构成一个一阶结构），则$M_1 \sim_{P(\vec{t})} M_2$ 当且仅当除了$P(\vec{t})$的真值$M_1$和$M_2$相同，即：
+\begin{itemize}
+	\item[(i)] $M_1$和$M_2$有相同的论域，且每个函数符号被解释成相同的函数；
+	\item[(ii)] 对于和$P$不同的任意关系符号$Q$，$M_1[Q]=M_2[Q]$;
+	\item[(iii)] 令$\vec{u} = M_1[\vec{t}]$，则对于该论域中任意与$\vec{u}$不同的元组$\vec{d}$，$\vec{d} \in M_1[P]$ 当且仅当$\vec{d} \in M_2[P]$。
+\end{itemize}
+
+现在给出如下一阶逻辑中遗忘实例化原子的形式化定义：
+\begin{definition}[定义 1~\cite{lin1994forget}]\label{def:fol_fogetting}
+	给定一个句子（sentence）$\varphi$和实例化原子$p$，$\varphi'$是从$\varphi$中遗忘掉$p$的结果当且仅当对任意的结构$M$，$M$是$\varphi'$的模型当且仅当存在一个$\varphi$的模型$M'$使得$M \sim_p M'$。
+\end{definition}
+
+从句子$\varphi$中遗忘掉实例化原子$P(\vec{t})$比命题逻辑下的遗忘多了一步，即事先将$\varphi$中的所有$P(\vec{t'})$的出现用$(\vec{t
+} = \vec{t'}\wedge P(\vec{t})) \vee (\vec{t} \not= \vec{t'}\wedge P(\vec{t'}))$来替换，这一结果记为$\varphi[P(\vec{t})]$。
+
+\begin{example}
+	令$\varphi=J(mo) \vee J(fa) \vee B(sm)$、$p = J(mo)$，则：
+	\begin{align*}
+		\varphi[p] & = (mo = mo \wedge J(mo)) \vee (mo \not = mo \wedge J(mo)) \vee \\
+		& (mo = fa \wedge J(mo)) \vee (mo \not = fa \wedge J(fa)) \vee B(sm).
+	\end{align*}
+%	$$\varphi[p] = (mo = mo \wedge J(mo)) \vee (mo \not = mo \wedge J(mo)) \vee (mo = fa \wedge J(mo)) \vee (mo \not = fa \wedge J(fa)) \vee B(sm)$$
+	\begin{align*}
+		\Forget(\varphi, p) & = \varphi[p][p/\top] \vee \varphi[p][p/\bot]\\
+		& =  (mo = mo \wedge \top) \vee (mo \not = mo \wedge \top) \vee  (mo = fa \wedge \top) \vee (mo \not = fa \wedge J(fa)) \vee B(sm) \\
+		&\vee (mo = mo \wedge \bot) \vee (mo \not = mo \wedge \bot) \vee  (mo = fa \wedge \bot) \vee (mo \not = fa \wedge J(fa)) \vee B(sm)\\
+		& = (mo = mo )\vee (mo \not = mo) \vee  (mo = fa ) \vee  (mo \not = fa \wedge J(fa)) \vee B(sm).
+	\end{align*}
+\end{example}
+
+然而，遗忘掉一整个关系（谓词）而不是其实例得到的结果是一个二阶公式，且结构间在谓词上的互模拟与上述在实例上的有所不同：对于谓词$P$和结构$M_1$、$M_2$，$M_1 \sim_{P} M_2$ 当且仅当：
+\begin{itemize}
+	\item[(i)] $M_1$和$M_2$有相同的论域，且每个函数符号被解释成相同的函数；
+	\item[(ii)] 对于和$P$不同的任意关系符号$Q$，$M_1[Q]=M_2[Q]$。
+	%\item[(iii)] 令$\vec{u} = M_1[\vec{t}]$，则对于该论域中任意与$\vec{u}$不同的元组$\vec{d}$，$\vec{d} \in M_1[P]$ 当且仅当$\vec{d} \in M_2[P]$。
+\end{itemize}
+也即是排除了实例情形下的第三个条件，因为此时考虑的是整个谓词。而遗忘掉谓词的定义与遗忘掉实例的定义类似，知识将$M \sim_p M'$变为$M \sim_P M'$。
+
+由定理~8~\cite{lin1994forget}可知，从句子$\varphi$中遗忘掉谓词$P$的结果为$\Forget(\varphi, P) = (\exists R) \varphi[P/R]$，其中$P$是$n$-元谓词，$R$是$n$-元谓词变量。
+正如前面所说的，一阶逻辑下的遗忘不是封闭的，此时不一定能找到一个与$(\exists R) \varphi[P/R]$等价的一阶公式。
+
+遗忘的定义种类很多，本文的定义采用的是上述所说的互模拟方式，因此这里不再赘述其他定义，感兴趣的读者可以参考Eiter的文章~\cite{eiter2019brief}。
+\subsection{模态逻辑S5里的遗忘}
+
+%\subsection{描述逻辑里的遗忘}
+
+\subsection{基于遗忘的SNC（WSC）计算}
 
 
 

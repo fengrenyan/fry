@@ -1,4 +1,4 @@
-\begin{thebibliography}{75}
+\begin{thebibliography}{79}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -351,12 +351,41 @@ GON{\c{C}}ALVES~R, KNORR~M, LEITE~J.
 \newblock Forgetting in answer set programming--a survey\allowbreak[J].
 \newblock arXiv preprint arXiv:2107.07016, 2021.
 
-\bibitem[Lin(2003)]{DBLP:journals/jair/Lin03}
+\bibitem[Lin(2003{\natexlab{a}})]{DBLP:journals/jair/Lin03}
 LIN~F.
 \newblock Compiling causal theories to successor state axioms and strips-like
   systems\allowbreak[J/OL].
 \newblock J. Artif. Intell. Res., 2003, 19:\penalty0 279-314.
 \newblock \url{https://doi.org/10.1613/jair.1135}.
+
+\bibitem[Dijkstra(1975)]{DBLP:journals/cacm/Dijkstra75}
+DIJKSTRA~E~W.
+\newblock Guarded commands, {N}ondeterminacy and {F}ormal {D}erivation of
+  {P}rograms\allowbreak[J/OL].
+\newblock Commun. {ACM}, 1975, 18\penalty0 (8):\penalty0 453-457.
+\newblock \url{https://doi.org/10.1145/360933.360975}.
+
+\bibitem[Lin(2003{\natexlab{b}})]{lin2003compiling}
+LIN~F.
+\newblock Compiling causal theories to successor state axioms and strips-like
+  systems\allowbreak[J].
+\newblock Journal of Artificial Intelligence Research, 2003, 19:\penalty0
+  279-314.
+
+\bibitem[Lin(2001)]{DBLP:Lin:AIJ:2001}
+LIN~F.
+\newblock On strongest necessary and weakest sufficient
+  conditions\allowbreak[J].
+\newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
+
+\bibitem[Doherty et~al.(2001)Doherty, Lukaszewicz, and
+  Szalas]{DBLP:conf/ijcai/DohertyLS01}
+DOHERTY~P, LUKASZEWICZ~W, SZALAS~A.
+\newblock Computing strongest necessary and weakest sufficient conditions of
+  first-order formulas\allowbreak[C]//\allowbreak
+NEBEL~B.
+\newblock Proceedings of IJCAI'01.
+\newblock [S.l.]: Morgan Kaufmann, 2001: 145-154.
 
 \bibitem[Maksimova(1991)]{Maksimova:JANCL:1991}
 MAKSIMOVA~L.
