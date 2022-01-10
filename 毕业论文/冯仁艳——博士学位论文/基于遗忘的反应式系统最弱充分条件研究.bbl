@@ -1,4 +1,4 @@
-\begin{thebibliography}{88}
+\begin{thebibliography}{89}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -589,6 +589,14 @@ FANG~L, LIU~Y, VAN DITMARSCH~H.
 \newblock Forgetting in multi-agent modal logics\allowbreak[J/OL].
 \newblock Artif. Intell., 2019, 266:\penalty0 51-80.
 \newblock \url{https://doi.org/10.1016/j.artint.2018.08.003}.
+
+\bibitem[Feng et~al.(2018)Feng, Wang, Chen, and Zhou]{feng2018strongest}
+FENG~R, WANG~Y, CHEN~P, et~al.
+\newblock Strongest necessary and weakest sufficient conditions in
+  s5\allowbreak[C]//\allowbreak
+Data Science and Knowledge Engineering for Sensing Decision Support:
+  Proceedings of the 13th International FLINS Conference (FLINS 2018).
+\newblock [S.l.]: World Scientific, 2018: 832-839.
 
 \bibitem[Lin(2001{\natexlab{b}})]{DBLP:journals/ai/Lin01}
 LIN~F.

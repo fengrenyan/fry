@@ -25,59 +25,62 @@
 \contentsline {subsection}{\numberline {2.4.1}经典逻辑下的遗忘}{26}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}模态逻辑S5里的遗忘}{29}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}遗忘的计算方法}{31}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}基于遗忘的SNC（WSC）计算}{31}{subsection.2.4.4}
-\contentsline {section}{\numberline {2.5}本章小结}{32}{section.2.5}
-\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}遗忘理论的定义及其语义属性}{34}{chapter.3}
-\contentsline {section}{\numberline {3.1}引言}{34}{section.3.1}
-\contentsline {section}{\numberline {3.2}$V$-互模拟}{34}{section.3.2}
-\contentsline {section}{\numberline {3.3}遗忘理论及其语义属性}{40}{section.3.3}
-\contentsline {section}{\numberline {3.4}本章小结}{44}{section.3.4}
-\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}计算CTL下的遗忘：基于归结的方法}{46}{chapter.4}
-\contentsline {section}{\numberline {4.1}引言}{46}{section.4.1}
-\contentsline {section}{\numberline {4.2}二元互模拟}{48}{section.4.2}
-\contentsline {section}{\numberline {4.3}基于归结的方法计算遗忘}{49}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}将$\textrm {CTL}$公式转换为${\textsc {SNF}_{\textsc {ctl}}^g}$子句的集合}{49}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}归结过程}{52}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}“移除”过程}{54}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}索引和“$\textbf {start}$”的“消除”}{56}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}替换$V'$中的原子}{58}{subsection.4.3.5}
-\contentsline {section}{\numberline {4.4}算法的可终止性和计算复杂性}{60}{section.4.4}
-\contentsline {section}{\numberline {4.5}本章小结}{60}{section.4.5}
-\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}基于模型的方法计算$\textrm {CTL}$下的遗忘}{62}{chapter.5}
-\contentsline {section}{\numberline {5.1}引言}{62}{section.5.1}
-\contentsline {section}{\numberline {5.2}描述初始$\textsc {k}$-结构}{62}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}计算树的$V$-互模拟}{63}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}计算树的特征公式}{66}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}初始$\textsc {k}$-结构的特征公式}{68}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}遗忘理论的封闭性}{73}{section.5.3}
-\contentsline {section}{\numberline {5.4}基于模型的遗忘理论计算方法}{75}{section.5.4}
-\contentsline {section}{\numberline {5.5}本章小结}{75}{section.5.5}
-\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}$\mu $-演算中的遗忘理论}{76}{chapter.6}
-\contentsline {section}{\numberline {6.1}引言}{76}{section.6.1}
-\contentsline {section}{\numberline {6.2}系统模型与问题提出}{78}{section.6.2}
-\contentsline {section}{\numberline {6.3}本章小结}{78}{section.6.3}
-\contentsline {chapter}{\numberline {第七章\hspace {0.3em}}遗忘理论的应用}{79}{chapter.7}
-\contentsline {section}{\numberline {7.1}引言}{79}{section.7.1}
-\contentsline {section}{\numberline {7.2}最强必要条件和最弱充分条件}{81}{section.7.2}
-\contentsline {section}{\numberline {7.3}$\mu $-演算下的知识更新}{83}{section.7.3}
-\contentsline {section}{\numberline {7.4}本章小结}{87}{section.7.4}
-\contentsline {chapter}{\numberline {第八章\hspace {0.3em}}差分隐私策略机制的均衡优化模型}{88}{chapter.8}
-\contentsline {section}{\numberline {8.1}引言}{88}{section.8.1}
-\contentsline {section}{\numberline {8.2}系统模型与问题提出}{90}{section.8.2}
-\contentsline {subsection}{\numberline {8.2.1}系统模型}{90}{subsection.8.2.1}
-\contentsline {subsection}{\numberline {8.2.2}敌手模型}{91}{subsection.8.2.2}
-\contentsline {subsection}{\numberline {8.2.3}问题提出}{91}{subsection.8.2.3}
-\contentsline {section}{\numberline {8.3}隐私保护攻防博弈}{93}{section.8.3}
-\contentsline {subsection}{\numberline {8.3.1}博弈模型}{93}{subsection.8.3.1}
-\contentsline {subsection}{\numberline {8.3.2}均衡分析}{95}{subsection.8.3.2}
-\contentsline {section}{\numberline {8.4}策略优化选择算法}{97}{section.8.4}
-\contentsline {section}{\numberline {8.5}实验与分析}{99}{section.8.5}
-\contentsline {subsection}{\numberline {8.5.1}实例分析}{99}{subsection.8.5.1}
-\contentsline {subsection}{\numberline {8.5.2}数值分析}{100}{subsection.8.5.2}
-\contentsline {section}{\numberline {8.6}本章小结}{101}{section.8.6}
-\contentsline {chapter}{\numberline {第九章\hspace {0.3em}}总结与展望}{102}{chapter.9}
-\contentsline {section}{\numberline {9.1}工作总结}{102}{section.9.1}
-\contentsline {section}{\numberline {9.2}研究展望}{103}{section.9.2}
-\contentsline {chapter}{参考文献}{105}{chapter*.22}
-\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{113}{chapter*.23}
-\contentsline {chapter}{攻读博士学位期间科研和论文情况}{114}{chapter*.24}
+\contentsline {subsection}{\numberline {2.4.4}基于遗忘的SNC（WSC）计算}{32}{subsection.2.4.4}
+\contentsline {section}{\numberline {2.5}本章小结}{34}{section.2.5}
+\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}遗忘理论的定义及其语义属性}{36}{chapter.3}
+\contentsline {section}{\numberline {3.1}引言}{36}{section.3.1}
+\contentsline {section}{\numberline {3.2}$V$-互模拟}{36}{section.3.2}
+\contentsline {section}{\numberline {3.3}遗忘理论及其语义属性}{42}{section.3.3}
+\contentsline {section}{\numberline {3.4}本章小结}{46}{section.3.4}
+\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}计算CTL下的遗忘：基于归结的方法}{48}{chapter.4}
+\contentsline {section}{\numberline {4.1}引言}{48}{section.4.1}
+\contentsline {section}{\numberline {4.2}二元互模拟}{50}{section.4.2}
+\contentsline {section}{\numberline {4.3}基于归结的方法计算遗忘}{51}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}将$\textrm {CTL}$公式转换为${\textsc {SNF}_{\textsc {ctl}}^g}$子句的集合}{51}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}归结过程}{54}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}“移除”过程}{56}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}索引和“$\textbf {start}$”的“消除”}{58}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}替换$V'$中的原子}{60}{subsection.4.3.5}
+\contentsline {section}{\numberline {4.4}算法的可终止性和计算复杂性}{62}{section.4.4}
+\contentsline {section}{\numberline {4.5}实验与分析}{62}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}遗忘实验分析}{62}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}SNC计算结果分析}{63}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}本章小结}{63}{section.4.6}
+\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}基于模型的方法计算$\textrm {CTL}$下的遗忘}{64}{chapter.5}
+\contentsline {section}{\numberline {5.1}引言}{64}{section.5.1}
+\contentsline {section}{\numberline {5.2}描述初始$\textsc {k}$-结构}{64}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}计算树的$V$-互模拟}{65}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}计算树的特征公式}{68}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}初始$\textsc {k}$-结构的特征公式}{70}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}遗忘理论的封闭性}{75}{section.5.3}
+\contentsline {section}{\numberline {5.4}基于模型的遗忘理论计算方法}{77}{section.5.4}
+\contentsline {section}{\numberline {5.5}本章小结}{77}{section.5.5}
+\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}$\mu $-演算中的遗忘理论}{78}{chapter.6}
+\contentsline {section}{\numberline {6.1}引言}{78}{section.6.1}
+\contentsline {section}{\numberline {6.2}系统模型与问题提出}{80}{section.6.2}
+\contentsline {section}{\numberline {6.3}本章小结}{80}{section.6.3}
+\contentsline {chapter}{\numberline {第七章\hspace {0.3em}}遗忘理论的应用}{81}{chapter.7}
+\contentsline {section}{\numberline {7.1}引言}{81}{section.7.1}
+\contentsline {section}{\numberline {7.2}最强必要条件和最弱充分条件}{83}{section.7.2}
+\contentsline {section}{\numberline {7.3}$\mu $-演算下的知识更新}{85}{section.7.3}
+\contentsline {section}{\numberline {7.4}本章小结}{89}{section.7.4}
+\contentsline {chapter}{\numberline {第八章\hspace {0.3em}}实现与实验}{90}{chapter.8}
+\contentsline {section}{\numberline {8.1}引言}{90}{section.8.1}
+\contentsline {section}{\numberline {8.2}系统模型与问题提出}{92}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}系统模型}{92}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}敌手模型}{93}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}问题提出}{93}{subsection.8.2.3}
+\contentsline {section}{\numberline {8.3}隐私保护攻防博弈}{95}{section.8.3}
+\contentsline {subsection}{\numberline {8.3.1}博弈模型}{95}{subsection.8.3.1}
+\contentsline {subsection}{\numberline {8.3.2}均衡分析}{97}{subsection.8.3.2}
+\contentsline {section}{\numberline {8.4}策略优化选择算法}{99}{section.8.4}
+\contentsline {section}{\numberline {8.5}实验与分析}{101}{section.8.5}
+\contentsline {subsection}{\numberline {8.5.1}实例分析}{101}{subsection.8.5.1}
+\contentsline {subsection}{\numberline {8.5.2}数值分析}{102}{subsection.8.5.2}
+\contentsline {section}{\numberline {8.6}本章小结}{103}{section.8.6}
+\contentsline {chapter}{\numberline {第九章\hspace {0.3em}}总结与展望}{104}{chapter.9}
+\contentsline {section}{\numberline {9.1}工作总结}{104}{section.9.1}
+\contentsline {section}{\numberline {9.2}研究展望}{105}{section.9.2}
+\contentsline {chapter}{参考文献}{107}{chapter*.22}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{116}{chapter*.23}
+\contentsline {chapter}{攻读博士学位期间科研和论文情况}{117}{chapter*.24}

@@ -12,7 +12,8 @@
 \end{figure*}
 
 \section{引言}
-本章展示如何使用表~\ref{tab:res}中的归结规则来计算$\CTL$下的遗忘理论。
+虽然在第\ref{chapter02}章详细介绍了命题逻辑和模态逻辑S5下的基于归结的计算遗忘的方法，但是值得注意的是$\CTL$公式没有像这两种逻辑一样有标准的自身语言子句形式，而$\CTL$的子句是有索引的。这就注定了$\CTL$下的基于归结的遗忘与上述两者的不同，而且也应该要复杂一些（虽有不同，但也可以借鉴）。
+本章展示如何使用第~\ref{chapter02:CTLres}节中表~\ref{tab:res}中的归结规则来计算$\CTL$下的遗忘理论。
 在本章给定如下约定的记号。令$V\subseteq \Ha$是要遗忘的原子命题的集合，$I\subseteq \Ind$是索引的集合，$V'$表示计算过程所引入的原子命题的集合且满足$V'\cap V=\emptyset$。
 此外，$\varphi$是$\CTL$公式，且$T_{\varphi}$是在$\varphi$上使用表~\ref{tab:trans}中的转换规则得到的$\CTLsnf$子句的集合。
 显然可以知道，$V'=\Var(T_{\varphi})-\Var(\varphi)$。
@@ -567,6 +568,16 @@ $
 \end{proof}
 
 在上述结论中值得注意的是$m$的大小不会大于公式$\varphi$中出现的时序算子的个数，因此可以得出算法~\ref{alg:compute:forgetting:by:Resolution}的计算复杂性仅与出现在$\varphi$的原子命题个数和时序算子的个数相关。
+
+\section{实验与分析}
+本节给出所提出的基于归结的遗忘计算的实验结果，并分析实验结果。本章提出的算法~\ref{alg:compute:forgetting:by:Resolution}用Prolog语言实现，并在Linux服务器上进行了实验，该服务器是具有8个Intel核和32GB内存的i7CPU，其锁频和主频分别为4770 K，3.50 GHz。
+实验分析有两个部分：(1) 在随机数据集和标准数据集上的遗忘；(2) 在随机数据集上命题逻辑公式和$\CTL$公式的SNC计算。
+
+\subsection{遗忘实验分析}
+这部的分实验数据分为两组：一组是来源于标准数据集，一组是随机生成的数据。
+标准数据集来源于$\CTL$-RP~\footnote{\url{https://sourceforge.net/projects/ctlrp/}}。但是由于数据集里的大部分公式是不可满足的，这种情形遗忘的结果总是为$\bot$，因此，这里对数据集进行了简单的处理：
+
+\subsection{SNC计算结果分析}
 
 
 \section{本章小结}\label{chapter04-conclusion}

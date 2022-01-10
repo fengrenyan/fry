@@ -496,7 +496,7 @@ Janin等人首先提出了$\mu$-演算的析取范式~\cite{janin1995automata}�
 	\end{itemize}	
 \end{definition}
 
-\section{$\CTL$下的归结}
+\section{$\CTL$下的归结}\label{chapter02:CTLres}
 
 \emph{归结}是一种用于判定给定的命题公式（或一阶公式）是否可满足的规则，该技术可以追溯到1960年Davis等的工作~\cite{DBLP:journals/jacm/DavisP60}，之后被Robinson加以完善~\cite{DBLP:journals/jacm/Robinson65}。对于给定的公式，归结给出一个反驳定理证明过程。
 %除了公式的可满足性证明，归结还被用于计算命题逻辑里的遗忘。
@@ -708,13 +708,13 @@ Zhang等人还提出了能精确描述知识遗忘的四个基本条件，给定
 	\end{itemize}
 \end{theorem}
 
-在本文中也将说明$\CTL$和$\mu$-演算的遗忘也有上述性质。值得注意的是任意的S5公式都能转换为与之等价的\emph{模态合取范式}（MCNF）~\cite{DBLP:conf/aaai/Bienvenu07}，其字句形式为：
+在本文中也将说明$\CTL$和$\mu$-演算的遗忘也有上述性质。值得注意的是任意的S5公式都能转换为与之等价的\emph{模态合取范式}（MCNF）~\cite{DBLP:conf/aaai/Bienvenu07}，其模态子句形式为：
 $$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n,$$
 或具有如下形式的公式的吸取——模态析取范式（MDNF）~\cite{Yongmei:IJCAI:2011,Zhang2008Properties}:
 \begin{align}\label{form:s5clause}
 	\varphi_0 \wedge \MPK \varphi_1 \wedge \MPB \varphi_2 \wedge \dots \wedge \MPB \varphi_n
 \end{align}
-其中$\varphi_i$为命题逻辑公式，$C_i$（$0\leq i \leq n$）为经典子句，且任意$\varphi_i$都可能缺失。
+其中$\varphi_i$（$0\leq i \leq n$）为命题逻辑公式，$C_i$（$0\leq i \leq n-1$）为经典子句，$C_n$为CNF公式，且任意$\varphi_i$都可能缺失。
 从子句\ref{form:s5clause}遗忘掉原子命题$p$可以转换成命题逻辑中的遗忘，即：
 \begin{align*}
 	&\KForget(\varphi_0 \wedge \MPK \varphi_1 \wedge \MPB \varphi_2 \wedge \dots \wedge \MPB \varphi_n)\\
@@ -732,14 +732,75 @@ $$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n,$$
 总的来说，这些方法分为两类：“代替”的方法和归结的方法。其中“代替”法是将要遗忘的原子命题在公式里用“$\top$”或“$\bot$”代替，归结的方法主要使用归结规则来“消除”需要遗忘的原子命题。然而，在上文中并没有对归结方法进行详细的介绍，所以这部分给出命题情形下归结方法的详细描述。%此外，计算遗忘的方法还有基于Ackermann引理的方法，本节也将详细讨论。
 
 归结方法取决于子句的形式，子句的形式决定了归结规则的复杂性。经典命题逻辑中的子句形式比较单一，就只有一种——文字的吸取，因此归结规则就比较简单，即：
-$$\frac{C_1 \vee p, C_2 \vee \neg p}{C_1 \vee C_2},$$
+$$\frac{C_1 \vee p \qquad C_2 \vee \neg p}{C_1 \vee C_2},$$
 其中$C_1$和$C_2$是子句，$p$是原子命题。在这种情况下，基于归结的方法就如定义~\ref{def:resforgetting}那样简单。
 在一阶逻辑中，将公式转换为子句形式的过程比较复杂，而归结规则也相对复杂一些。但是在一阶情形下归结，归结系统R~\cite{gabbay2008second}是可靠的且归结反驳是完备的。
 
 
-在上一节中已经说明任意的S5公式能够转化成子句$C_0 \vee \MPK Ci_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n$的合取，因此S5下的归结系统RS5~\cite{DBLP:journals/tcs/EnjalbertC89}如下：
+在上一节中已经说明任意的S5公式能够转化成模态子句$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n$的合取，因此S5下的归结系统RS5~\cite{DBLP:journals/tcs/EnjalbertC89}如下：
+\begin{align*}
+	&  (\MPK\MPB) \frac{C \vee \MPK(l\vee D)\qquad C' \vee \MPB(\neg l \vee D', E)}{C \vee C' \vee \MPB(D\vee D', \neg l \vee D', E)}; && (\MPK\bot) \frac{C \vee \MPK \bot}{C};\\
+	& (\MPK\MPK) \frac{C \vee \MPK(l\vee D)\qquad C' \vee \MPK(\neg l \vee D')}{C \vee C' \vee \MPK(D\vee D')}; && (\MPB\bot) \frac{C \vee \MPB(\bot, E)}{C};\\
+	& (\MPK) \frac{C\vee \MPK(l\vee D)\qquad C' \vee \neg l}{C \vee C' \vee D}; && (Clas) \frac{C \vee l\qquad C'\vee \neg l}{C \vee C'};\\
+	& (\MPB) \frac{C \vee \MPB(l\vee D, \neg \vee D', E)}{C \vee \MPB(D\vee D', l \vee D, \neg \vee D', E)};  && (Fact) \frac{E[D \vee D\vee C])}{E[D \vee C]}.
+\end{align*}
+
+其中$l$为文字，$C$、$C'$、$D$、$D'$为子句，$E$为子句的集合；对于子句的集合$S$，$\MPB(S)$表示$\MPB(\bigwedge S)$；$E[\psi]$表示$\psi$是$E$的子公式。
+
+Feng等人提出了基于上述归结系统RS5的计算遗忘的算法~\cite{feng2018strongest}，为了更清楚地描述该算法，这里还需要介绍两个概念：模态子句的包蕴（subsume）和清除（suppressing）。
+给定两个模态子句$C=C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n$和$C'=C_0' \vee \MPK C_1' \vee \dots \vee \MPK C_{m-1}' \vee \MPB C_m'$，如果下面三个条件满足，则说$C$包蕴$C'$：
+\begin{itemize}
+	\item $C$包蕴$C'$，即$Lit(C) \subseteq Lit(C')$；
+	\item $\forall C_i$（$1\leq i \leq n-1$），$\exists C_j'$（$1\leq j \leq m-1$）使得$C_i$包蕴$C_j$；
+	\item 对$C_m'$中的任意合取项$e'$，存在$C_n$中的一个合取项$e$使得$e$包蕴$e'$。
+\end{itemize}
+其中$Lit(X)$为出现在$X$中文字的集合。
+
+“清除”操作主要是用于移除那些包含要遗忘的原子命题的公式。具体地，令$\phi$为子句，$V\subseteq \Ha$为原子命题的集合，$\phi$在$V$上的清楚操作记为$Supp(V,\phi)$，且：
+ \[Supp(V, \phi) =
+\left\{
+\begin{array}{ll}
+	\top, \ \ \ \qquad \qquad \ \  \hbox{若存在$V$中的元素$p$使得$p\in \Var(\phi)$；} \\
+	\phi, \ \ \ \qquad \qquad \ \ \hbox{否则。}
+\end{array}
+\right.
+\]
+
+令$\phi=C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n$为模态子句，$\phi$在$V$上的清楚操作也记为$Supp(V,\phi)$，且：
+$$Supp(V, C_0) \vee \left(\bigvee_{1\leq i\leq n-1} \MPK Supp(V, C_i)\right) \vee \MPB\left(\bigwedge_{\alpha\hbox{ is a conjunct of $C_n$}} Supp(V, \alpha)\right).$$
+
+模态S5下基于归结的算法如算法~\ref{alg:compute:s5:forgetting}所示。在该算法中，第7-9行用于移除具有形式$p\vee D$或$\neg p \vee D$（$p\in V$）的子句，以免产生无用的结果，因为这些结果在第11行也会被移除。
 
 
+\begin{algorithm}[htbp]
+	\small
+	\setstretch{1.2}
+	\caption{S5下基于归结的遗忘计算~\cite{feng2018strongest}}
+	\label{alg:compute:s5:forgetting}
+	\begin{algorithmic}[1]
+		\REQUIRE ~~\\
+		\begin{tabular}[t]{p{8mm}l}
+			$\Gamma, V$：& S5公式，原子命题的集合
+		\end{tabular}
+		\ENSURE ~~\\
+		\begin{tabular}[t]{p{8mm}l}
+			$\KForget(\Gamma, V)$：  & \qquad \quad 从$\Gamma$中遗忘掉$V$中原子的结果
+			%$SD$&:鞍点策略的支付量
+		\end{tabular}
+		\STATE 将$\Gamma$转换为模态子句的集合$\Gamma'$；
+		\STATE $\Gamma_2=\{C\mid C\in \Gamma', \Var(C) \cap V = \emptyset\}$，$\Gamma_1=\Gamma' - \Gamma_2$
+		\IF{$V =\emptyset$}
+		\STATE 跳转到 11;
+		\ENDIF
+		\STATE 从$V$中随机选择一个原子$p$，且令$V = V -\{p\}$;
+		\STATE 化简$\Gamma_1$（$C_1, C'\in \Gamma$）：
+		\STATE \qquad 若$C'$包蕴$C_1$，则从$\Gamma_1$中删除$C_1$；
+		\STATE \qquad 若$C_1$形如$p\vee D$或$\neg p \vee D$，则从$\Gamma_1$中删除$C_1$（$D$为模态子句）
+		\STATE 跳转到 2;
+		\STATE $\Gamma_3=\{Supp(V, \phi) \mid \phi \in \Gamma_1\}$;
+		\RETURN $\Gamma \cup \Gamma_3$.
+	\end{algorithmic}
+\end{algorithm}
 
 %归结是SOQE的基础，掌握了归结方法，
 
@@ -767,7 +828,7 @@ SNC和WSC的定义最先由Lin提出~\cite{DBLP:journals/ai/Lin01}，这部分�
 基于遗忘的计算SNC（WSC）的详细算法为算法~\ref{alg:compute:pro:forgetting}，其中一个子句集合的极小集（minimal set of clauses）为满足下面性质的集合：
 \begin{itemize}
 	\item 所有的单元子句都被替换为true；
-	\item 没有一个子句被集合中的另一个子句包蕴。其中，对于子句$C$和$C'$，若$\Var(C) \subseteq \Var(C')$，则说子句$C$包蕴$C'$。
+	\item 没有一个子句被集合中的另一个子句包蕴。
 \end{itemize}
 此外，对于公式集合$S$，$S[X/Y]$为将$S$每个公式中$X$的出现全都替换成$Y$，即$S[X/Y]=\{\varphi[X/Y]\mid \varphi\in S\}$。
 
@@ -799,13 +860,31 @@ SNC和WSC的定义最先由Lin提出~\cite{DBLP:journals/ai/Lin01}，这部分�
 		\STATE \qquad 移除$T_3$中被$T_0$包蕴的子句；
 		\STATE \qquad 对$T_3$中的每个子句$\alpha$，将$(T_3-\{\alpha\}) \cup T_0$转换为极小子句集$T_{\alpha}$；
 		\STATE \qquad 如果$\alpha$被$T_{\alpha}$中的某个子句包蕴，则将$\alpha$从$T_3$中删除；
-		\RETURN 返回$T_3$中子句的合取
+		\RETURN $T_3$中子句的合取
 	\end{algorithmic}
 \end{algorithm}
 
-在一阶逻辑中，SNC和WSC的定义和命题逻辑下相似，且也可
+在一阶逻辑中，SNC和WSC的定义和命题逻辑下相似，且也可用遗忘来计算。但是一阶逻辑中的遗忘计算比较麻烦，且遗忘的结果不一定能用一阶语言表示出来。
+\begin{theorem}[引理4.1\cite{DBLP:conf/ijcai/DohertyLS01}]
+对任意一阶公式$\alpha$关系符号的集合$P$ 和句子$Th$:
+	\begin{itemize}
+		\item $\alpha$在$P$和$Th$上的SNC为 $\exists\overline{\Phi}.[Th \wedge \alpha]$，
+		\item $\alpha$在$P$和$Th$上的WSC为 $\forall\overline{\Phi}.[Th \rto \alpha]$,
+	\end{itemize}
+其中 $\overline{\Phi}$是出现在$Th\wedge\alpha $且不出现在$P$中的关系符号的集合。
+\end{theorem}
+正如前面所说，一阶逻辑下的遗忘主要使用归结和SOQE的方法来计算，但由于本文不涉及相关知识，所以这里就不详细介绍一阶逻辑下遗忘的计算。
 
 
+在模态逻辑S5中，SNC和WSC也可以通过遗忘来计算。
+\begin{theorem}[定理4.1~\cite{feng2018strongest}]\label{thm:S5:SNC}
+	给定S5公式$\Gamma$和原子命题集合$V\subseteq \Ha$，$q\in \Var(\Gamma) -V$，则：
+	\begin{itemize}
+		\item[(i)]  $q$在$V$和$\Gamma$上的SNC为$\KForget(\Gamma \wedge q, \Var(\Gamma)-V)$；
+		\item[(ii)] $q$在$V$和$\Gamma$上的WSC为$\neg \KForget(\Gamma \wedge \neg q, \Var(\Gamma)-V)$。
+	\end{itemize}
+\end{theorem}
+此时，由算法~\ref{alg:compute:s5:forgetting}不难得出计算SNC和WSC的算法，这里就不在赘述。
 
 
 \section{本章小结}
