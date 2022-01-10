@@ -86,19 +86,7 @@
 
 
 
-差分隐私(differential privacy，DP)是一种严格的隐私保护模型，为个体隐私信息提供了强隐私保障。标准形式的差分隐私\cite{dwork2006differential,dwork2006calibrating}定义相邻兄弟数据集的查询输出结果满足概率$\epsilon$-不可区分性($\epsilon$-indistinguishability)，其中$\epsilon$ 是足够小的非负实数。差分隐私利用随机化的方式能够实现在保护个体隐私信息的同时保持数据的统计信息
-\cite{dwork2006differential,dwork2006calibrating,dwork2008differential}，现已逐渐成为数据隐私的标准。通常，{\em 差分隐私被划分为中心化差分隐私和本地化差分隐私两种架构模式}\cite{dwork2014algorithmic}。中心化模型(centered model)假设系统中存在一个可信的数据管理者能够访问原始数据，并利用隐私保护机制得到扰动数据。与之对应的，本地化差分隐私(local differential privacy，LDP)\cite{kasiviswanathan2011what,duchi2013local}是差分隐私(DP)的本地化应用，它是系统中无可信数据管理者的特殊情景。其主要应用于隐私保护的数据收集场景。在本地模型(local model)中，每个用户本地的执行LDP 隐私协议扰动其真实数据得到扰动数据(perturbed data)，并将扰动数据报告给数据收集者。然后，数据聚合者收集、存储、分析这些用户上报的扰动数据。当前，差分隐私已成为隐私保护研究的标准，对其应用的研究涉及社交网络\cite{wei2020asgldp,kasiviswanathan2013analyzing}、推荐服务\cite{xiao2020deep}、移动众包计算\cite{sei2017differential}等领域，%隐私保护的数据类型从关系数据延申至图数据、键-值型数据、地理数据等不同数据类别。
-图\ref{fig:chapter02-application-research}描绘了差分隐私的主要应用领域和具体场景中的核心研究问题。
-本文中，围绕个人数据生命周期阶段，结合差分隐私的具体应用场景，{\em 从隐私保护的数据发布、隐私保护的数据收集、隐私保护的数据分析}角度介绍目前国内外学术研究的动态与趋势。%随后，本文分析了在差分隐私的应用研究中需要关注的关键问题。
 
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width = 0.85\linewidth]{./figures/chapter02_3.jpg}
-	\caption{差分隐私的应用研究}
-	\label{fig:chapter02-application-research}
-\end{figure}
-
-接下来，综述近些年差分隐私应用研究中与本文研究相关的主要代表性成果，进一步分析差分隐私研究的发展趋势。
 
 \subsection{遗忘理论}\label{chapter01:forgetting}
 遗忘这一词源于Lin等人关于一阶逻辑（first-order logic， FOL）工作~\cite{lin1994forget}，在此之前的研究中多提到的是均匀插值~\cite{visser1996uniform,konev2009forgetting}和SOQE~\cite{ackermann1935untersuchungen}。
@@ -168,69 +156,7 @@ S5、K和KD模态逻辑系统具有均匀插值性质~\cite{DBLP:journals/aml/Ie
 
 
 
-差分隐私的基本思想是在隐私数据中引入随机性来阻止个人的信息被推断。显然地，随机化的程度越高，隐私保护效果越好，对应的数据可用性则降低。这就是隐私与效用原则\cite{sankar2013utility}，也就是著名的隐私与效用权衡问题\cite{basciftci2016on,alvim2011differential}。该问题是隐私保护研究关注的核心问题，学术研究者围绕该问题做出了一系列有意义的研究工作。这些工作大致可以分为寻找更加有效的扰动机制\cite{ghosh2012universally,wang2016on,alvim2011differential}和研究有效的噪声注入方式\cite{geng2016the}两类。如文献\mycite{ghosh2012universally} 提出了几何机制(Truncated $\frac{1}{2}$-geometric mechanism)实现最优的差分隐私扰动。为了提高数据效用， 文献\mycite{xiao2011differential}提出在注入噪声之前，对数据进行小波变换(Wavelet Transforms)，克服了Dwork方案中Laplace噪声扰动大的问题。文献\mycite{xu2017dppro}利用随机投影的方式研究了差分隐私高维数据发布的问题，解决了扰动误差大的问题。结合具体的应用场景，以下阐述差分隐私的学术研究动态。
 
-
-
-首先，隐私保护的数据发布场景中，可信数据管理者发布数据以供进一步的数据分析\cite{aggarwal2008privacy}，目标是发布数据的聚合信息而不泄露用户的个体隐私。差分隐私的数据发布包含有交互式发布和非交互式发布两种类型，其中，交互式数据发布包含有事务型数据发布、直方图数据发布、流数据发布、图数据发布；非交互式数据发布主要有批量查询发布、合成数据集发布\cite{zhu2017differentially}。隐私保护的数据发布场景中，发布数据的精确度与隐私泄露权衡是主要关注的核心问题。{\em 为了解决数据发布中存在的隐私泄露问题，差分隐私的机制是研究的核心关注点}。近年来，以Dwork的方法
-\cite{dwork2006calibrating}为基础，针对不同的发布数据类型，研究者提出了诸多的差分隐私数据发布模型及算法。
-表\ref{tab:survey_dp_publishing}列出了差分隐私数据发布的主要部分研究工作。
-
-\begin{table}[htbp]
-\caption{差分隐私的数据发布方法}
-\label{tab:survey_dp_publishing}
-\centering
-\fontsize{10pt}{\baselineskip}\selectfont
-\begin{tabular}{p{0.10\textwidth}p{0.05\textwidth}p{0.30\textwidth}p{0.30\textwidth}}
-\toprule
-	\textbf{工作模式}& &\textbf{数据发布类型}&\textbf{主要研究}\\
-	\midrule
-   交互式数据发布& &\makecell[l]{事务型数据发布 \\ 直方图数据发布 \\ 流数据发布\\ 图数据发布} &\makecell[l]{
-IDC\cite{gupta2012iterative}\\Laplace\cite{dwork2006calibrating}，Partitioning\cite{chen2011publishing}\\ Pan-Privacy\cite{dwork2010differential}，P-Sums\cite{chan2011private}\\ Edge DP\cite{zhang2015private}, Node DP\cite{kasiviswanathan2013analyzing}} \\
-   \midrule
-非交互式数据发布& &\makecell[l]{批量查询发布\\ 合成数据集发布} & \makecell[l]{Batch Query\cite{yuan2012low}\\ Sanitization\cite{dwork2009on}}\\
-
-  \bottomrule
-\end{tabular}
-\end{table}
-
-其次，本地化差分隐私的应用研究\cite{yeqingqing2018}已逐渐成为差分隐私的另一个重要研究方向，在隐私保护的数据收集、数据发布场景中都得到了不同程度的应用。围绕本地化差分隐私的应用，主要是研究如何设计可获得的隐私机制实现预期的目标。本地隐私模型中，随机化响应(Randomized Response，RR)\cite{warner1965randomized}技术是一种获得LDP的有效方式，现已发展成为本地化差分隐私机制设计的基本构建模块，在本地差分隐私中的应用取得了显著的效果。近年来，很多著名的LDP隐私机制(如$k$-RR \cite{kairouz2016extremal}，$O$-RR\cite{kairouz2016discrete}，RAPPOR \cite{erlingsson2014rappor,fanti2016building}，MeanEst\cite{duchi2013localprivacy}等)已经被研究者提出。周异辉等\cite{zhouyihui2019}针对隐私-效用均衡问题，从优化理论的角度给出了效用优化模型，并分析了随机响应机制的最优性条件和相应的效用最优机制。此外，对于其它数据结构的本地化差分隐私也得到了研究，如set-value的本地化差分隐私
-\cite{wang2018privset,qin2016heavy}、key-value类型数据的本地化差分隐私\cite{ye2019privkv}以及图数据结构的本地化差分隐私\cite{wei2020asgldp}。本地化差分隐私的应用涉及到社交网络\cite{qin2017generating}、移动众包计算\cite{sei2017differential}、数据合成发布\cite{ren2018textsf,yang2017copula}等场景，也因此日渐受到关注。本地化模型中，攻击模型通常被假设为半诚实(Semi-honest)的敌手模型，也就是说，数据聚合者诚实的执行隐私协议但是试图从报告的扰动数据中推断用户个体的隐私信息\cite{sei2017differential}。在本地化模型中，隐私与效用的权衡问题仍然是学术研究关注的重点。
-
-最后，隐私保护的数据分析是在保持数据分析的精确度的同时保护个体的隐私信息\cite{wang2016on}。近年来，基于学习理论的方法在差分隐私中得到了具体的应用，包括数据分析与机器学习的方法在差分隐私中的应用\cite{kasiviswanathan2011what,ye2017optimal,sarwate2013signal}(如概率分布估计\cite{Murakami2018Toward}，数据训练\cite{xu2019ganobfuscator})。2018年，Ren 等\cite{ren2018textsf} 使用~(Expectation Maximization，EM)~和~Lasso~的方法进行分布估计，用于得到联合概率分布，支撑发布数据集合成。2019年，Wang等\cite{wang2019collecting}基于机器学习的线性回归(Linear Regression)、逻辑回归(Logistic Regression)、支持向量机(Support Vector Machines，SVM)分类算法分析了所提出分段机制(Piecewise Mechanism，PM)和混合机制(Hybrid Mechanism，HM)的性能。由此可知，隐私保护的数据分析主要是学习数据的统计特征，体现出扰动数据的质量。
-
-鉴于上述分析可知，差分隐私在隐私保护中占据着重要的地位，它已经涉及到了具有隐私保护需求的各种信息系统应用。现阶段，差分隐私在面向低维数据和独立同分布数据情景的研究相对比较成熟。针对低维的数值型数据和类别型数据，目前已有诸多的隐私保护方案(如Duchi等人\cite{duchi2018minimax}提出的数值型方案，Wang等人\cite{wang2017locally}提出的类别型Optimized Unary Encoding，OUE方案)。但是，随着应用系统的需求升级，面向多维数据且存在数据关联的情景时，直接地拓展当前的方案到多维情景，则会面临性能和效用降低的挑战。此外，多维属性的用户隐私敏感偏好表达也是亟待解决的问题。针对这些问题，研究者积极的探索新的解决方案，以下给出研究进展及现状的介绍。
-
-
-
-(1) {\em 面向多维数据的差分隐私}
-
-随着用户数据维度的增加，多维或高维数据具有笛卡尔乘积空间大、数据稀疏性的特点，给差分隐私数据处理带来新的挑战。具体地说，差分隐私对于多维数据或高维数据的处理主要面临着隐私脆弱性、计算复杂度高等问题。为了解决这些问题，数据降维是一种通常采用的处理方法。将有关个体的数据元组，拆分为多个属性分量，然后独立的应用差分隐私机制，该处理思想以差分隐私的并行组合原理\cite{dwork2014algorithmic}为基础，其基本的处理流程如图\ref{fig:chapter02-multidimension-data}描述。
-
-\begin{figure}[htbp]
-	\centering
-	\includegraphics[width = 0.85\linewidth]{./figures/chapter02_4.jpg}
-	\caption{差分隐私多维数据处理流程}
-	\label{fig:chapter02-multidimension-data}
-\end{figure}
-
-针对差分隐私的多维数据处理，研究者做了一些有意义的探索，提出了差分隐私的多维数据处理方案。2017年，Xu等\cite{xu2017dppro}针对多维数据发布中存在的扰动误差增加和计算复杂性问题，通过随机投影的方法提出了高维数据发布的DPPro方案。此外的本地化差分隐私模型中，Wang等\cite{wang2019collecting}针对多维数据的收集和分析场景，推广并改进了Duchi等人\cite{duchi2018minimax}的方案，提出了分段机制(PM)和混合机制(HM)，其思想是将属性分为数值型和类别型数据，然后依赖于单一数值型扰动方案和存在的任意类别型扰动方案(如OUE\cite{wang2017locally})，实现多维混合数值型和类别型数据的处理。Ren等\cite{ren2018textsf}将基于Bloom Filter和RR实现的RAPPOR机制拓展应用到高维数据情景，利用属性值拆分、扰动合并和差分隐私的组合定理\cite{kairouz2017the}，考虑了差分隐私高维数据发布的问题，提出了LoPub。其基本思想是将元组进行属性拆分，然后利用Hash函数和Bloom Filter映射属性值到比特串，并逐比特的进行随机扰动，产生扰动的元组。该方法首先将原始数据哈希得到``0''和``1''的比特串，然后随机响应实现随机的扰动。Yang等\cite{yang2017copula}基于随机响应技术本地转化用户数据到比特串，实现多维数据合成和发布的机制。事实证明这是一种相对有效的处理方法，且被广泛的应用在隐私保护的多维数据情景。该思想在基于地理位置的隐私保护系统中也有相应的应用。如混淆扰动一个元组时，独立的应用存在的隐私保护机制到元组的每一个位置点，然后得到整个响应的混淆元组\cite{andres2013geo}。近年来，面向多维数据的差分隐私研究逐渐成为一个重要的研究点，但是，目前针对混合数值型和类别型多维数据处理的差分隐私最优化机制的研究还相对较少。面向多维数据处理的差分隐私机制设计仍然是一个重要的研究方向，尚需要进一步的研究。
-
-
-(2) {\em 面向数据关联的差分隐私}
-
-现有的差分隐私处理方法大多假设数据抽样独立，然而实际应用中，多维数据通常不是独立存在，而是存在着相互关联的情况。事实上，这些关联可以分为数据的记录关联、属性关联或隐私攻击者的关联辅助背景知识关联等情况。文献\mycite{kifer2011no}揭示了相关数据上的隐私机制将比期望的泄露更多的信息。为此，近些年数据关联的差分隐私机制设计问题受到研究者关注。
-
-{\em 例如，数据集中属性年龄、职业可能和婚姻状态存在属性关联，这种关联使得敌手能够以较高的置信推断用户的隐私信息，从而增加隐私泄露风险。针对数据关联隐私泄露问题，文献}\mycite{zhu2015correlated}{\em 揭示由属性导致的元组相关，增加了流感疾病隐私泄露风险；文献}\mycite{li2019impact}{\em 分析了敌手背景知识对隐私泄露的影响。}针对数据关联的隐私泄露影响，研究者开展了相关的研究工作。
-2014年，Zhang 等\cite{zhang2014privbayes}利用贝叶斯网络考虑了数据集属性关联的情景，借助互信息分析属性之间的相关度\cite{reshef2011detecting,liangjy2016}，提出利用贝叶斯网络实现差分隐私的高维数据发布。2015年，Zhu等\cite{zhu2015correlated}针对非独立同分布的数据集记录关联，改进了差分隐私的敏感度计算方法，减少了噪声注入提升了数据效用。Yang等\cite{yang2015bayesian}研究了数据相关对隐私的影响，敌手先验知识对隐私的影响和数据相关时的扰动算法设计，提出了贝叶斯差分隐私。2017年，Song等\cite{song2017pufferfish}提出Pufferfish privacy保护关联数据的隐私。2019 年，Li 等\cite{li2019impact} 基于皮尔逊的相关度分析方法，从强关联、弱关联、正相关和负相关的角度，考虑了隐私攻击者的背景知识和数据关联对差分隐私数据发布的影响。鉴于上述分析，由数据的记录关联、属性关联或隐私攻击者的关联辅助背景知识，导致的隐私泄露问题，或是存在数据关联的高维数据发布问题仍然是学术研究关注的焦点。数据相关的隐私度量分析成为隐私机制设计首要解决的问题。
-
-(3) {\em 面向用户偏好的差分隐私}
-
-差分隐私模型扩展应用于多维数据时，差分隐私的隐私特性($\epsilon$-度量)由其组合性质保障。通常情况下，差分隐私把多维属性看作等价敏感，提供相同等级的隐私保护。例如，用户个体的隐私数据包含$d$个属性维度，差分隐私机制的隐私预算设置$\epsilon/k$，然后依据序列组合性质，隐私保护总体满足$\epsilon$- 差分隐私。但是，多维的属性之间可能存在不同的隐私敏感度，也就是用户的隐私敏感偏好。为了更好的阐述这个问题，首先给出以下问题引例。
-
-{\em 假设个体数据元组由年龄、性别、教育程度、婚姻状态组成，这些数据项都是有关个体的隐私信息。但是，在这些数据项中，用户对其数据具有不同的隐私感受。通常情况下，一个人的性别可能不被认为是隐私数据或者具有较低的隐私敏感性。然而，一个人的婚姻状态(如离婚)是想保持私密性的敏感数据，其隐私私密性高于其它属性。}为了能够解决诸如此类的问题，这就要求差分隐私能够提供不同敏感等级的隐私保护对于有区分的属性，满足所提出的隐私保护需求。
-
-针对上述问题，研究者依据属性敏感度等级，提出了有区别隐私数据的个性化差分隐私保护方案\cite{chen2016private}。2015年，Jorgensen等\cite{jorgensen2015conservative}考虑个人数据的不同隐私保护需求，提出了个性化差分隐私(Personalized Differential Privacy，PDP)的概念。2019 年，Wang 等\cite{wang2019personalized}利用泛化的$d_{\mathcal{X}}$-privacy\cite{chatzikokolakis2013broadening}研究了个性化隐私保护。Murakami 等\cite{murakami2019utility} 提出了效用最优的本地化差分隐私方案(Utility-optimized LDP，ULDP)用于隐私保护的数据收集与分析。通过划分个体数据为敏感数据和非敏感数据两部分，推广Mangat\cite{mangat1994an}随机响应到多元字母表情景，提出了ULDP方案，对于敏感数据提供和LDP 等价的隐私保障。2020年，Gu 等\cite{gu2020providing}通过考虑不同输入数据具有不同的隐私敏感度，提出了一种输入区分(Input-discriminiative)的隐私保护机制(Input-discriminiative LDP，ID-LDP)。由此可见，考虑用户隐私偏好，设计差分隐私机制，实现为不同敏感度的用户数据提供有区分的隐私保护成为一种新的研究方向。
 
 
 \subsection{SNC和WSC}
@@ -251,23 +177,7 @@ IDC\cite{gupta2012iterative}\\Laplace\cite{dwork2006calibrating}，Partitioning\
 
 
 
-Shannon\cite{shannon1948a}为解决信息度量问题提出信息熵的概念之后，信息熵在通信、密码学等领域发挥了重要的作用。近年来，基于信息度量的量化信息流思想(Quantitative Information Flow，QIF)\cite{smith2009on}逐渐在隐私保护中得到应用。此外，博弈均衡理论作为一种有效的分析工具在隐私保护中也得到了应用。针对差分隐私应用中存在的隐私与效用的平衡问题，基于信息论、博弈论以及交叉学科的方法开展研究逐渐成为一个重要的研究方向。以下从两个方面综述密切相关且具有代表性的研究成果。
 
-(1) {\em 差分隐私的信息论方法}\label{subsec:information_dp}
-
-隐私保护模型的本质是数据混淆、扰动机制，它可以表达为一种概率性的函数映射，与信息论的方法密切相关\cite{Duchi2019information}。由此，在隐私保护研究中，信息熵发展成为一种有效的隐私度量方法\cite{issa2016an,Chatzikokolakis2008Anonymity}。以信息熵为基础定义的R\'{e}nyi熵\cite{renyi1961on,erven2014renyi,mironov2017renyi}、条件熵、联合熵、互信息量等在隐私保护研究中得到了应用\cite{wang2019consistent,mcgregor2010the,du2015Fundamental,lopuhaa-zwakenberg2019information}。{\em 首先，隐私度量方面}，Mir 等\cite{mir2012information}利用信息熵、条件熵、互信息量研究了隐私信息的度量问题，奠定了差分隐私的信息论方法研究基础。Barthe 等\cite{barthe2011information} 利用信息熵研究了差分隐私的隐私边界问题。Issa等\cite{issa2016an,2016Maximal}提出Maximal leakage方法测量隐私泄露，随后，Liao等\cite{liao2019tunable}对其扩展提出$\alpha$-leakage。{\em 其次，信息论的方法对于差分隐私的机制研究}也有一定的应用\cite{diaz2020on,kairouz2016extremal,wang2016on}。2011年，Alvim 等\cite{alvim2011differential,alvim2011on,alvim2015on}几乎是最早提出基于量化信息流(QIF) 的思想，将信息熵应用到差分隐私中量化隐私信息的不确定度，抽象差分隐私噪声机制为信息论噪声信道，并从信息论的角度考虑了平衡隐私度与数据效用的方法，同时提出信息论对称信道机制能够达到理论上的最优性。{\em 随后，信息论方法研究的差分隐私与标准差分隐私之间的关系}得到研究者关注\cite{mcgregor2010the}。Cuff 等\cite{cuff2016differential}基于互信息的概念给出了与标准差分隐私等价的信息论差分隐私定义。文献\mycite{calmon2012privacy,makhdoumi2013privacy}研究建立了互信息约束与差分隐私的关系。进一步，Wang 等\cite{wang2016on}提出可辨识识别(Identifiability)的概念、并研究了与差分隐私(Differential Privacy) 和互信息隐私(Mutual Information Privacy) 三个不同隐私概念之间的基本联系。{\em 更重要地是，信息论中著名的信源编码定理、限失真编码定理(保真度准则)}\cite{cover2006elements}{\em 在隐私保护中均得到了相应地研究}\cite{rebollo-monedero2010from,du2015Fundamental}。如Sankar等\cite{sankar2013utility}针对统计数据库隐私泄露问题，构建了统计数据库的概率模型，从最佳信源编码、译码方案的角度考虑了信息论方法在数据库中平衡隐私与效用的应用。在允许部分失真的情况下，最小信息传输率的率失真理论在差分隐私\cite{mir2012information,wang2016on}最优机制研究中也受到了关注。
-
-随机响应技术是实现本地化差分隐私的有效方法，信息论方法对于随机响应的研究也得到了广泛的应用。事实上，本地化差分隐私的随机响应实现是根据特定的概率密度函数(Probability Density Function，PDF)随机响应。在此方面的研究关键在于设计满足差分隐私的概率密度函数。{\em 近年来，信息论方法的研究已从二元随机响应发展到多元随机响应，逐步向复杂数据类型拓展延伸}。具体的研究工作从信息论的本地化差分隐私度量
-\cite{lopuhaa-zwakenberg2019information}，向最优机制设计发展。Sarwate 等\cite{sarwate2014a}抽象二元离散随机响应机制为Shannon 信息论\cite{shannon1948a}离散噪声信道，基于率失真理论\cite{cover2006elements} 对本地化差分隐私的二元随机响应机制进行了研究，指出对称信道机制能达到最优性。但是，二元随机响应仅能处理`` 是''和``否''的问题，其应用具有局限性。随后，研究者对其进行了拓展研究，发展了多元随机响应(Multivariate Randomized Response，MRR) 技术。Kairouz等\cite{kairouz2016extremal} 基于互信息提出了$k$-RR机制，并在此后被进一步研究，发展了一系列先进的差分隐私机制。Kalantari 等\cite{kalantari2018robust}考虑不同先验概率分布情况，研究了汉明失真下平衡隐私度与数据效用的最佳差分隐私信道机制问题，指出对称信道机制和非对称信道机制的最优性对不同分布的最优性。Xiong 等\cite{xiong2016randomized}在隐私保护的数据收集场景，利用信息论的方法，将差分隐私的数据扰动机制抽象为离散无记忆的噪声信道机制，从限失真约束条件定义差分隐私信道集合，研究了本地化差分隐私的机制问题。
-
-{\em 基于这些相关的研究工作，可以看出信息论的方法应用于差分隐私研究，主要是解决两个方面的问题}：(1) {\em 隐私信息的度量问题}；(2) {\em 差分隐私的机制设计问题}。首先，前者的研究主要是从熵的内涵角度理解隐私泄露问题，该研究可用于评估隐私泄露风险(例如，定量分析隐私泄露的界)，同时也是信息论方法对差分隐私机制研究的基础；其次，为了解决隐私与效用的平衡问题，后者的研究主要关注于最优的差分隐私实现机制。对于该问题的解决，信息论方法是从噪声信道角度寻找满足给定约束条件的最优条件概率分布。由此，基于优化理论建模\cite{iyengar2019towards}、求解该问题是一种理想的选择。如极大极小定理、Karush-Kuhn-Tucker (KKT)条件等\cite{boyd2004convex}得到了具体的应用。结合凸性或拟凸性形式化隐私与效用平衡问题为拟凸优化问题\cite{xiong2016randomized}、隐私失真最优化问题\cite{wang2016on}(信息论领域的率失真问题)
-是较好的解决方法。但是，现阶段信息论方法总是假设数据抽样独立，对多维数据情景、多维属性存在关联、混合数值型和类别型的最优差分隐私机制问题尚未充分研究。
-
-(2) {\em 差分隐私的博弈论方法}
-
-隐私与效用的平衡问题(Privacy-utility Tradeoff)是隐私保护数据收集、隐私保护数据发布等应用场景中广泛关注的矛盾冲突问题。直观地，隐私保护效果越好，则噪声扰动导致的数据质量损失越大，从而数据效用降低。反之，数据效用越高，则隐私保护强度减弱，由此引发的隐私泄露量较大，这被称为隐私与效用原则\cite{sankar2013utility}。在隐私保护的模型与算法研究中，如何平衡隐私与效用是一个研究的关键问题。针对此，上述优化理论的方法是一种行之有效的解决方案。除此之外，基于最优性发展起来的博弈论\cite{Neumann1944The}也为隐私保护提供了有效的分析手段。博弈分析方法从理性的角度分析存在矛盾冲突情景下的参与者最优策略选择问题。近年来，在差分隐私研究中得到了一定程度的应用，其基本思想是分析隐私保护系统中参与者的理性行为，以均衡的思想解决隐私保护与数据效用平衡问题。
-
-2013年，Hsu等\cite{hsu2013differential} 在差分隐私框架下针对隐私查询发布问题，建立了数据拥有者和数据查询者之间的两方零和博弈模型，提出一种新的隐私机制。2017年，Wu等\cite{Wu2017Game}构建了一个多方的有限策略型博弈，利用纯策略纳什均衡的存在性条件\cite{Glicksberg1952A}研究了差分隐私关联数据集发布的隐私预算参数选取问题。2019年，Qu等\cite{cui2019improving}针对隐私与数据效用之间的权衡问题，提出了一种基于社会距离的个性化差分隐私方法，在用户和敌手之间建立了静态贝叶斯博弈，从贝叶斯纳什均衡的角度权衡隐私与效用。此外，非合作的微分博弈\cite{gao2019a}和斯坦伯格博弈(Stackelberg)\cite{fioretto2020differential,shokri2015privacy} 也都在差分隐私中得到了研究。值得强调的是，Alvim 等\cite{alvim2017information,alvim2018leakage}基于量化信息流的思想，采用信息论方法度量隐私泄露，构建了隐私保护攻击与防御的两方零和博弈模型，进一步，基于极大极小理论\cite{du1995minimax}分析了隐私防护者与隐私攻击者的最佳策略选择。该研究工作将信息论的方法融入到博弈模型中，标志着一种新的研究趋势。但是，该研究工作没有针对具体的差分隐私保护模型展开研究，因此，在该方面仍然存在较大的研究提升空间。博弈模型用于差分隐私的研究，关键问题在于分析具体应用场景中隐私保护参与者和策略集，定义合理的收益函数，解决均衡的问题。
 
 \section{研究目标及主要结果}
 

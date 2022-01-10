@@ -1,4 +1,4 @@
-\begin{thebibliography}{79}
+\begin{thebibliography}{88}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -372,7 +372,7 @@ LIN~F.
 \newblock Journal of Artificial Intelligence Research, 2003, 19:\penalty0
   279-314.
 
-\bibitem[Lin(2001)]{DBLP:Lin:AIJ:2001}
+\bibitem[Lin(2001{\natexlab{a}})]{DBLP:Lin:AIJ:2001}
 LIN~F.
 \newblock On strongest necessary and weakest sufficient
   conditions\allowbreak[J].
@@ -452,6 +452,38 @@ ZHANG~L, HUSTADT~U, DIXON~C.
 \newblock {AI} Commun., 2010, 23\penalty0 (2-3):\penalty0 111-136.
 \newblock \url{https://doi.org/10.3233/AIC-2010-0463}.
 
+\bibitem[Kozen(1983)]{DBLP:journals/cacm/Kozen83}
+KOZEN~D.
+\newblock Results on the propositional mu-calculus\allowbreak[J/OL].
+\newblock Theor. Comput. Sci., 1983, 27:\penalty0 333-354.
+\newblock \url{https://doi.org/10.1016/0304-3975(82)90125-6}.
+
+\bibitem[Bradfield et~al.(2018)Bradfield and Walukiewicz]{bradfield2018mu}
+BRADFIELD~J~C, WALUKIEWICZ~I.
+\newblock The {\(\mu\)}-calculus and model
+  checking\allowbreak[M/OL]//\allowbreak
+CLARKE~E~M, HENZINGER~T~A, VEITH~H, et~al.
+\newblock Handbook of Model Checking.
+\newblock 2018: 871-919.
+\newblock \url{https://doi.org/10.1007/978-3-319-10575-8\_26}.
+
+\bibitem[Janin et~al.(1995)Janin and Walukiewicz]{janin1995automata}
+JANIN~D, WALUKIEWICZ~I.
+\newblock Automata for the modal {\(\mu\)}-calculus and related
+  results\allowbreak[C/OL]//\allowbreak
+WIEDERMANN~J, H{\'{A}}JEK~P.
+\newblock Lecture Notes in Computer Science: volume 969\quad Mathematical
+  Foundations of Computer Science 1995, 20th International Symposium, MFCS'95,
+  Prague, Czech Republic, August 28 - September 1, 1995, Proceedings.
+\newblock 1995: 552-562.
+\newblock \url{https://doi.org/10.1007/3-540-60246-1\_160}.
+
+\bibitem[D'Agostino et~al.(2006{\natexlab{b}})D'Agostino and Lenzi]{d2006modal}
+D'AGOSTINO~G, LENZI~G.
+\newblock On modal mu-calculus with explicit interpolants\allowbreak[J/OL].
+\newblock J. Appl. Log., 2006, 4\penalty0 (3):\penalty0 256-278.
+\newblock \url{https://doi.org/10.1016/j.jal.2005.06.008}.
+
 \bibitem[Davis et~al.(1960)Davis and Putnam]{DBLP:journals/jacm/DavisP60}
 DAVIS~M, PUTNAM~H.
 \newblock A computing procedure for quantification theory\allowbreak[J/OL].
@@ -485,37 +517,85 @@ BOLOTOV~A, FISHER~M.
   11\penalty0 (1):\penalty0 77-93.
 \newblock \url{https://doi.org/10.1080/095281399146625}.
 
-\bibitem[Kozen(1983)]{DBLP:journals/cacm/Kozen83}
-KOZEN~D.
-\newblock Results on the propositional mu-calculus\allowbreak[J/OL].
-\newblock Theor. Comput. Sci., 1983, 27:\penalty0 333-354.
-\newblock \url{https://doi.org/10.1016/0304-3975(82)90125-6}.
+\bibitem[Delgrande(2014)]{DBLP:conf/kr/Delgrande14}
+DELGRANDE~J~P.
+\newblock Towards a knowledge level analysis of
+  forgetting\allowbreak[C/OL]//\allowbreak
+BARAL~C, GIACOMO~G~D, EITER~T.
+\newblock Principles of Knowledge Representation and Reasoning: Proceedings of
+  the Fourteenth International Conference, {KR} 2014, Vienna, Austria, July
+  20-24, 2014.
+\newblock {AAAI} Press, 2014.
+\newblock \url{http://www.aaai.org/ocs/index.php/KR/KR14/paper/view/7979}.
 
-\bibitem[Bradfield et~al.(2018)Bradfield and Walukiewicz]{bradfield2018mu}
-BRADFIELD~J~C, WALUKIEWICZ~I.
-\newblock The {\(\mu\)}-calculus and model
-  checking\allowbreak[M/OL]//\allowbreak
-CLARKE~E~M, HENZINGER~T~A, VEITH~H, et~al.
-\newblock Handbook of Model Checking.
-\newblock 2018: 871-919.
-\newblock \url{https://doi.org/10.1007/978-3-319-10575-8\_26}.
+\bibitem[Koopmann et~al.(2013)Koopmann and
+  Schmidt]{DBLP:conf/frocos/KoopmannS13}
+KOOPMANN~P, SCHMIDT~R~A.
+\newblock Uniform interpolation of -ontologies using
+  fixpoints\allowbreak[C/OL]//\allowbreak
+FONTAINE~P, RINGEISSEN~C, SCHMIDT~R~A.
+\newblock Lecture Notes in Computer Science: volume 8152\quad Frontiers of
+  Combining Systems - 9th International Symposium, FroCoS 2013, Nancy, France,
+  September 18-20, 2013. Proceedings.
+\newblock Springer, 2013: 87-102.
+\newblock \url{https://doi.org/10.1007/978-3-642-40885-4\_7}.
 
-\bibitem[Janin et~al.(1995)Janin and Walukiewicz]{janin1995automata}
-JANIN~D, WALUKIEWICZ~I.
-\newblock Automata for the modal {\(\mu\)}-calculus and related
-  results\allowbreak[C/OL]//\allowbreak
-WIEDERMANN~J, H{\'{A}}JEK~P.
-\newblock Lecture Notes in Computer Science: volume 969\quad Mathematical
-  Foundations of Computer Science 1995, 20th International Symposium, MFCS'95,
-  Prague, Czech Republic, August 28 - September 1, 1995, Proceedings.
-\newblock 1995: 552-562.
-\newblock \url{https://doi.org/10.1007/3-540-60246-1\_160}.
+\bibitem[Zhao(2018)]{DBLP:phd/ethos/Zhao18a}
+ZHAO~Y.
+\newblock Automated semantic forgetting for expressive description
+  logics\allowbreak[D/OL].
+\newblock 2018.
+\newblock \url{http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.740373}.
 
-\bibitem[D'Agostino et~al.(2006{\natexlab{b}})D'Agostino and Lenzi]{d2006modal}
-D'AGOSTINO~G, LENZI~G.
-\newblock On modal mu-calculus with explicit interpolants\allowbreak[J/OL].
-\newblock J. Appl. Log., 2006, 4\penalty0 (3):\penalty0 256-278.
-\newblock \url{https://doi.org/10.1016/j.jal.2005.06.008}.
+\bibitem[Koopmann(2015)]{DBLP:phd/ethos/Koopmann15}
+KOOPMANN~P.
+\newblock Practical uniform interpolation for expressive description
+  logics\allowbreak[D/OL].
+\newblock University of Manchester, {UK}, 2015.
+\newblock \url{http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.674705}.
+
+\bibitem[Zhao et~al.(2018)Zhao and Schmidt]{DBLP:conf/cade/ZhaoS18}
+ZHAO~Y, SCHMIDT~R~A.
+\newblock {FAME:} an automated tool for semantic forgetting in expressive
+  description logics\allowbreak[C/OL]//\allowbreak
+GALMICHE~D, SCHULZ~S, SEBASTIANI~R.
+\newblock Lecture Notes in Computer Science: volume 10900\quad Automated
+  Reasoning - 9th International Joint Conference, {IJCAR} 2018, Held as Part of
+  the Federated Logic Conference, FloC 2018, Oxford, UK, July 14-17, 2018,
+  Proceedings.
+\newblock Springer, 2018: 19-27.
+\newblock \url{https://doi.org/10.1007/978-3-319-94205-6\_2}.
+
+\bibitem[Bienvenu(2007)]{DBLP:conf/aaai/Bienvenu07}
+BIENVENU~M.
+\newblock Prime implicates and prime implicants in modal
+  logic\allowbreak[C/OL]//\allowbreak
+Proceedings of the Twenty-Second {AAAI} Conference on Artificial Intelligence,
+  July 22-26, 2007, Vancouver, British Columbia, Canada.
+\newblock {AAAI} Press, 2007: 379-384.
+\newblock \url{http://www.aaai.org/Library/AAAI/2007/aaai07-059.php}.
+
+\bibitem[Liu et~al.(2011)Liu and Wen]{Yongmei:IJCAI:2011}
+LIU~Y, WEN~X.
+\newblock On the progression of knowledge in the situation
+  calculus\allowbreak[C]//\allowbreak
+IJCAI 2011, Proceedings of the 22nd International Joint Conference on
+  Artificial Intelligence.
+\newblock Barcelona, Catalonia, Spain: IJCAI/AAAI, 2011: 976-982.
+
+\bibitem[Fang et~al.(2019)Fang, Liu, and van
+  Ditmarsch]{DBLP:journals/ai/FangLD19}
+FANG~L, LIU~Y, VAN DITMARSCH~H.
+\newblock Forgetting in multi-agent modal logics\allowbreak[J/OL].
+\newblock Artif. Intell., 2019, 266:\penalty0 51-80.
+\newblock \url{https://doi.org/10.1016/j.artint.2018.08.003}.
+
+\bibitem[Lin(2001{\natexlab{b}})]{DBLP:journals/ai/Lin01}
+LIN~F.
+\newblock On strongest necessary and weakest sufficient
+  conditions\allowbreak[J/OL].
+\newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
+\newblock \url{https://doi.org/10.1016/S0004-3702(01)00070-4}.
 
 \bibitem[Kaushik et~al.(2002)Kaushik, Naughton, Bohannon, and
   Shenoy]{kaushik2002updates}

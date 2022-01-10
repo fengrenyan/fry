@@ -584,7 +584,7 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 
 \section{遗忘理论基础和SNC（WSC）}
 这部分主要介绍遗忘理在经典逻辑和模态逻辑S5下的定义，以及基于遗忘的SNC（WSC）的计算方法。
-\subsection{经典逻辑下的遗忘}
+\subsection{经典逻辑下的遗忘}\label{chapter:sub:proforgetting}
 遗忘一词起源于经典逻辑（包括命题逻辑和一阶逻辑）~\cite{lin1994forget}，给定一个命题公式$\varphi$和一个原子命题$p$，下面将介绍一下在$\varphi$中遗忘（forget）掉$p$。
 在\ref{chapter01:forgetting}中，从$\varphi$中遗忘掉$p$ 得到的结果为$\Forget(\varphi, \{p\}) \equiv \varphi[p/\top] \vee \varphi[p/\bot]$。
 
@@ -646,18 +646,168 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 由定理~8~\cite{lin1994forget}可知，从句子$\varphi$中遗忘掉谓词$P$的结果为$\Forget(\varphi, P) = (\exists R) \varphi[P/R]$，其中$P$是$n$-元谓词，$R$是$n$-元谓词变量。
 正如前面所说的，一阶逻辑下的遗忘不是封闭的，此时不一定能找到一个与$(\exists R) \varphi[P/R]$等价的一阶公式。
 
-遗忘的定义种类很多，本文的定义采用的是上述所说的互模拟方式，因此这里不再赘述其他定义，感兴趣的读者可以参考Eiter的文章~\cite{eiter2019brief}。
-\subsection{模态逻辑S5里的遗忘}
 
+本文采用了基于归结的方法来计算$\CTL$中的遗忘，因此这里给出命题逻辑下基于归结的遗忘定义~\cite{DBLP:conf/kr/Delgrande14}。
+
+\begin{definition}\label{def:resforgetting}
+	给定命题公式$\varphi$和原子命题$p$，
+	$$\Forget(\varphi, p) = \{C\in CNF(\varphi)\mid \hbox{ $p$ 不出现在$C$中 }\} \cup Res(CNF(\varphi), p)$$
+	其中 $CNF(\varphi)$表示形成$\varphi$的合取范式的子句构成的集合，$Res(S, p)=\{C_1 \vee C_2 \mid C_1 \vee p , C_2 \vee \neg p \in S\}$。
+\end{definition}
+
+从定义\ref{def:resforgetting}不难看出计算从$\varphi$中遗忘$p$的结果可以分为三个步骤：（1）计算$\varphi$的合取范式，并得到$CNF(\varphi)$；（2）计算$Res(CNF(\varphi), p)$；（3）去除$CNF(\varphi)$包含$p$的子句。
+遗忘的定义种类很多，本文的定义采用的是上述所说的互模拟方式，因此这里不再赘述其他定义，感兴趣的读者可以参考Eiter的文章~\cite{eiter2019brief}。
+
+在描述逻辑中，如果遗忘的结果是可以用当前讨论的描述逻辑来表示的，则该结果就是一个均匀插值。而判定均匀插值的存在性通常是很费时的，如：在${\cal ALC}$ 和${\cal EL}$中是双指数时间的。因此，不难看出描述逻辑中的遗忘通常也是很困难的，尽管如此也有很多方法克服这些问题，其中扩展描述语言（如：从${\cal ALC}$到${\cal ALC}_v$~\cite{DBLP:conf/frocos/KoopmannS13}）或引入新的辅助符号~\cite{DBLP:phd/ethos/Zhao18a}是常用的方法。一些计算遗忘的工具是：基于skolem化和SOQE的SCAN~\footnote{http://www.mettel-prover.org/scan/index.html}、基于归结的Lethe~\cite{DBLP:phd/ethos/Koopmann15}和基于Ackermann引理的FAME~\cite{DBLP:conf/cade/ZhaoS18}。
+
+\subsection{模态逻辑S5里的遗忘}\label{chapter:sub:s5forgetting}
+
+由于时序逻辑是模态逻辑的一种，其语义是Kripke语义，这里介绍与其密切相关且基础的模态逻辑S5中的遗忘。
+与经典逻辑中的遗忘相似，S5中的遗忘也是用互模拟的概念来定义。
+
+原子命题的集合$w_1$和$w_2$是$V$-互模拟的，当且仅当$w_1 -V = w_2 -V$，记为$w_1 \sim_V w_2$，其中$w_1, w_2, V \subseteq \Ha$。
+给定原子命题的集合$V\subseteq \Ha$、两个$\MPK$-解释$\Hm=\tuple{W,w}$和$\Hm'=\tuple{W,s}$，则称$\Hm$和$\Hm'$是$V$-互模拟的（记为$\Hm \lrto_{V} \Hm'$）~\cite{Zhang2008Properties}，当且仅当存在一个二元关系$\sigma \subseteq W \times W'$使得$(w,w') \in \sigma$，且：
+\begin{itemize}
+	\item[(i)] $\forall w_1 \in W$，$\exists w_2\in W'$使得$(w_1, w_2) \in \sigma$；
+	\item[(ii)] $\forall w_2 \in W'$，$\exists w_1\in W'$使得$(w_1, w_2) \in \sigma$；
+	\item[(iii)] 若$(w_1, w_2) \in \sigma$则$w_1\sim_V w_2$。
+\end{itemize}
+
+条件(i)和(ii)分别称为前向条件（forth condition）和后向条件（back condition）。需要注意的是，即使$M$和$M'$有$V$-互模拟关系，$M$和$M'$也可能有不同数量的世界个数。除此之外，从定义中不难看出，如果$\Hm \lrto_{V} \Hm'$，则有$Atom(W)-V=Atom(W' )-V$，其中$A(X)$（$X$是可能世界的集合）是由出现在$X$中的世界中的原子构成的集合。从定义中还可得出$\lrto_V$是一个等价关系。
 %\subsection{描述逻辑里的遗忘}
 
+S5关于$V$-互模拟是不变的（invariant）：如果两个$\MPK$-解释$M$和$M'$有$V$-互模拟关系，那么对于任何不包含$V$中任何原子的公式$\varphi$，$M$和$M'$同时满足或不满足公式$\varphi$。
+
+\begin{definition}[定义 1~\cite{Zhang2008Properties}, knowledge forgetting]\label{def:s5forgetting}
+	给定模态S5公司$\varphi$和$V\subseteq \Ha$。
+	如果下面的等式成立，则称知识集$\KForget(\varphi,V)$是从$\varphi$遗忘掉$V$得到的结果：
+	$$\Mod(\KForget(\varphi, V)) = \{\Hm' \mid \exists \Hm \in \Mod(\varphi), \Hm \lrto_V \Hm'\}.$$
+\end{definition}
+
+Zhang等人还提出了能精确描述知识遗忘的四个基本条件，给定两个公式$\varphi$和$\varphi'=\KForget(\varphi,V)$，$V\subseteq\Ha$是原子命题的集合。知识遗忘满足以下的性质：
+\begin{itemize}
+	\item[] (\W) 弱性质（Weaking）: $\varphi \models \varphi'$；
+	\item[] (\NgP) 正向支持（Positive Persistence）：如果$\IR(\phi,V)$并且$\varphi \models \phi$，则$\varphi' \models \phi$；
+	\item[] (\PP) 反向支持（Negative Persistence）：如果$\IR(\phi,V)$并且$\varphi \not \models \phi$，则$\varphi' \not \models \phi$；
+	\item[] (\textbf{IR}) 无关性（Irrelevance）：$\IR(\varphi',V)$。
+\end{itemize}
+直观地说，(\W)和(\textbf{IR})表明“遗忘”削弱了公式$\varphi$且得到的结果与$V$无关，(\PP)和(\NgP)表明对任意与$V$无关的公式$\phi$，$\varphi \models \phi$当且仅当$\varphi' \models \phi$。总而言之，遗忘得到的结果能推出所有与$V$无关且能被$\varphi$推出的结果，且不能推出所有与$V$无关且不能被$\varphi$推出的结果。
+从数据库和安全的层面讲，遗忘相当于从已有的关系表中构建出一个视图，达到了隐私保护的作用。
+
+
+这四个条件与知识遗忘的关系为：
+\begin{theorem}[定理 1~\cite{Zhang2008Properties}]
+	%Let $\varphi$, $\varphi'$ and $\phi$ be \CTL\
+	给定$\CTL$公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题的集合。
+	%Then t
+	下面的陈述是等价的：
+	\begin{itemize}
+		\item[(i)] $\varphi' \equiv \CTLforget(\varphi, V)$,
+		\item[(ii)] $\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ and } \IR(\phi, V)\}$,
+		\item[(iii)] 若$\varphi$、$\varphi'$和$V$为(i)和(ii)中提到的符号，则公设(\W)、(\PP)、(\NgP)和(\textbf{IR})成立. 
+	\end{itemize}
+\end{theorem}
+
+在本文中也将说明$\CTL$和$\mu$-演算的遗忘也有上述性质。值得注意的是任意的S5公式都能转换为与之等价的\emph{模态合取范式}（MCNF）~\cite{DBLP:conf/aaai/Bienvenu07}，其字句形式为：
+$$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n,$$
+或具有如下形式的公式的吸取——模态析取范式（MDNF）~\cite{Yongmei:IJCAI:2011,Zhang2008Properties}:
+\begin{align}\label{form:s5clause}
+	\varphi_0 \wedge \MPK \varphi_1 \wedge \MPB \varphi_2 \wedge \dots \wedge \MPB \varphi_n
+\end{align}
+其中$\varphi_i$为命题逻辑公式，$C_i$（$0\leq i \leq n$）为经典子句，且任意$\varphi_i$都可能缺失。
+从子句\ref{form:s5clause}遗忘掉原子命题$p$可以转换成命题逻辑中的遗忘，即：
+\begin{align*}
+	&\KForget(\varphi_0 \wedge \MPK \varphi_1 \wedge \MPB \varphi_2 \wedge \dots \wedge \MPB \varphi_n)\\
+	&\equiv \Forget(\varphi_0, \{p\}) \wedge \MPK(\Forget(\varphi_1, \{p\})) \wedge \bigwedge_{i=1}^{n}\MPB(\Forget(\varphi_1 \wedge \varphi_i, \{p\})).
+\end{align*}
+%$$ \Forget(\varphi_0, \{p\}) \wedge \MPK(\Forget(\varphi_1, \{p\})) \wedge \bigwedge_{i=1}^{n}\MPB(\Forget(\varphi_1 \wedge \varphi_i, \{p\})).$$
+由此可以得出任意S5公式下的遗忘都能转换为命题逻辑中的遗忘，而命题逻辑下的遗忘已有算法和实现，这将在计算SNC和WSC部分给出。
+
+
+
+当然，模态一阶逻辑S5中的遗忘也得到了研究~\cite{Yongmei:IJCAI:2011}，由于本文只考虑命题情形下时序逻辑的遗忘，就不再赘述。此外，Fang等人也讨论了关于多模态（multi-modal）$K_n$、 $D_n$、 $T_n$、$K45_n$、 $KD45_n$情形下的遗忘的存在性~\cite{DBLP:journals/ai/FangLD19}——这些逻辑里的遗忘总是存在的，其中$n$为智能体的个数。
+
+\subsection{遗忘的计算方法}
+在第~\ref{chapter:sub:proforgetting}和\ref{chapter:sub:s5forgetting}小节中详细介绍了经典逻辑和模态逻辑S5下遗忘的定义和一些直接的计算方法。
+总的来说，这些方法分为两类：“代替”的方法和归结的方法。其中“代替”法是将要遗忘的原子命题在公式里用“$\top$”或“$\bot$”代替，归结的方法主要使用归结规则来“消除”需要遗忘的原子命题。然而，在上文中并没有对归结方法进行详细的介绍，所以这部分给出命题情形下归结方法的详细描述。%此外，计算遗忘的方法还有基于Ackermann引理的方法，本节也将详细讨论。
+
+归结方法取决于子句的形式，子句的形式决定了归结规则的复杂性。经典命题逻辑中的子句形式比较单一，就只有一种——文字的吸取，因此归结规则就比较简单，即：
+$$\frac{C_1 \vee p, C_2 \vee \neg p}{C_1 \vee C_2},$$
+其中$C_1$和$C_2$是子句，$p$是原子命题。在这种情况下，基于归结的方法就如定义~\ref{def:resforgetting}那样简单。
+在一阶逻辑中，将公式转换为子句形式的过程比较复杂，而归结规则也相对复杂一些。但是在一阶情形下归结，归结系统R~\cite{gabbay2008second}是可靠的且归结反驳是完备的。
+
+
+在上一节中已经说明任意的S5公式能够转化成子句$C_0 \vee \MPK Ci_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n$的合取，因此S5下的归结系统RS5~\cite{DBLP:journals/tcs/EnjalbertC89}如下：
+
+
+
+%归结是SOQE的基础，掌握了归结方法，
+
 \subsection{基于遗忘的SNC（WSC）计算}
+%定义、算法
+SNC和WSC的定义最先由Lin提出~\cite{DBLP:journals/ai/Lin01}，这部分给出其在命题逻辑和一阶逻辑下的形式化定义和计算方法。
+
+\begin{definition}
+	令$\varphi$是一个命题公式，$V\subseteq \varphi$，$q$是一个出现在$\varphi$中但是不出现在$V$中的命题。对于$V$上的公式$\phi$，若$\varphi \models q \rto \phi$（$\varphi \models \phi \rto q$），则称公式$\phi$是$q$在$V$和$\varphi$上的必要条件（充分条件）。如果对于任意$q$在$V$和$\varphi$上的必要条件（充分条件）$\phi'$都有$\varphi \models \phi \rto \phi'$（$\varphi \models \phi' \rto \phi$），则称$\phi$是$q$在$V$和$\varphi$上的最强必要条件（最弱充分条件）。
+\end{definition}
+
+由定命题5和3~\cite{DBLP:journals/ai/Lin01}分别可知SNC和WSC是一个对偶概念，且任意公式的SNC（WSC）都能转换称原子命题的形式计算，因此这里只讨论原子命题情形下的SNC的定义及其计算。
+
+\begin{theorem}[定理 2~\cite{DBLP:journals/ai/Lin01}]\label{chaper02:thm:SNCforgetting}
+	给定命题公式$\varphi$、原子命题集合$V\subseteq \Var(\varphi)$和原子命题$q\in (\Var(\varphi)-V)$。令$V'= \Var(\varphi) - (V\cup \{q\})$，则
+	\begin{itemize}
+		\item $q$在$V$和$\varphi$上的SNC是$\Forget(\varphi[q/\top], V')$；
+		\item $q$在$V$和$\varphi$上的WSC是$\neg \Forget(\varphi[q/\bot], V')$。
+	\end{itemize}
+\end{theorem}
+%定义16 令T是一个命题理论，α是一个公式，P是一个出现在T∪{α}中的命题的集合。则说P的公式φ是α在P上的必要条件当且仅当T⊨α⊃φ。如果对于任意的α在P上的必要条件φ'都有T⊨φ⊃φ',则称φ是α在P上的最强必要条件。充分条件和最弱充分条件有相似的定义。
 
 
+定理~\ref{chaper02:thm:SNCforgetting}表明可以用遗忘计算SNC和WSC。
+基于遗忘的计算SNC（WSC）的详细算法为算法~\ref{alg:compute:pro:forgetting}，其中一个子句集合的极小集（minimal set of clauses）为满足下面性质的集合：
+\begin{itemize}
+	\item 所有的单元子句都被替换为true；
+	\item 没有一个子句被集合中的另一个子句包蕴。其中，对于子句$C$和$C'$，若$\Var(C) \subseteq \Var(C')$，则说子句$C$包蕴$C'$。
+\end{itemize}
+此外，对于公式集合$S$，$S[X/Y]$为将$S$每个公式中$X$的出现全都替换成$Y$，即$S[X/Y]=\{\varphi[X/Y]\mid \varphi\in S\}$。
+
+\begin{algorithm}[htbp]
+	\small
+	\setstretch{1.2}
+	\caption{命题逻辑下基于遗忘的SNC计算~\cite{DBLP:journals/ai/Lin01}}
+	\label{alg:compute:pro:forgetting}
+	\begin{algorithmic}[1]
+		\REQUIRE ~~\\
+		\begin{tabular}[t]{p{8mm}l}
+			$\Gamma, V, q$：& 子句集合，原子命题的集合，出现在$\Gamma$且不出现在$V$中的原子命题
+		\end{tabular}
+		\ENSURE ~~\\
+		\begin{tabular}[t]{p{8mm}l}
+			$\phi$：& $V$上的公式（$\phi$是$q$在集合$V$和$\Gamma$上的最强必要条件）
+			%$SD$&:鞍点策略的支付量
+		\end{tabular}
+		\STATE $T_1=\{C\mid C\in \Gamma\hbox{是$V$上的一个子句}\}$，$T_2=\Gamma - T_1$
+		\STATE 将出现在$T_2$中的$q$用$\top$代替，并将得到的结果和$T_1$分别转换成为子句集合的极小集$T_3$和$T_0$.
+		\STATE 令$V'=\Var(T_3) - V$; 
+		%\STATE 若$V' =\emptyset$，则跳转到post-processing，否则令$V'=$
+		\IF{$V' =\emptyset$}
+		\STATE 跳转到 post-processing;
+		\ENDIF
+		\STATE 从$V'$中随机选择一个原子$p$，且令$V'=V' -\{p\}$;
+		\STATE 将$T_3[p/\top] \cup T_3[p/\bot]$转换为极小集得到结果$T_3$，跳转到4；
+		\STATE post-processing：根据下面步骤化简$T_3$：
+		\STATE \qquad 移除$T_3$中被$T_0$包蕴的子句；
+		\STATE \qquad 对$T_3$中的每个子句$\alpha$，将$(T_3-\{\alpha\}) \cup T_0$转换为极小子句集$T_{\alpha}$；
+		\STATE \qquad 如果$\alpha$被$T_{\alpha}$中的某个子句包蕴，则将$\alpha$从$T_3$中删除；
+		\RETURN 返回$T_3$中子句的合取
+	\end{algorithmic}
+\end{algorithm}
+
+在一阶逻辑中，SNC和WSC的定义和命题逻辑下相似，且也可
 
 
 
 
 \section{本章小结}
-
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 围绕本文的研究工作，本章首先介绍了隐私以及隐私泄露的定义，明确了本文中隐私保护的研究范畴，随后，介绍了差分隐私模型并给出标准形式的定义。其次，介绍了本文研究需要的Shannon信息论知识，包括基本通信模型、信息熵、条件熵、联合熵、互信息量等概念。在此基础上，对信息论中两个重要的不等式和率失真理论进行了简要的叙述。进一步，介绍了本文将使用的优化理论知识以及在对策博弈模型中的应用。最后，结合本章内容，给定了本文中所研究的差分隐私均衡优化的定义。针对差分隐私模型中隐私保护与数据可用性之间的矛盾问题，利用均衡优化思想研究差分隐私最优化机制是本文研究的核心。本章中所介绍内容为后续章节提供了基本模型与定义，是开展后续研究工作的理论出发点。
