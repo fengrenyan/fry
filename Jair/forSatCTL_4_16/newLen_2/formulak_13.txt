@@ -1,0 +1,13 @@
+P1=[y1,y3]
+T=((-y1\/y3\/y4)&(y1\/y2\/y4)&(y2\/ -y3\/ -y4)&(y1\/y3\/ -y4)&(y2\/y3\/y4)&(y1\/y3\/y4)&(y1\/y2\/ -y4)&(-y2\/ -y3\/ -y4)&(-y2\/y3\/y4)&(y1\/ -y3\/ -y4)&(y2\/ -y3\/y4)&(-y1\/y2\/y3)&(-y1\/ -y2\/y4)&(y2\/y3\/ -y4)&(-y1\/y3\/ -y4)&(-y1\/ -y3\/y4))&(~ * ((-y1\/y3\/ -y4)&(-y2\/ -y3\/ -y4)&(-y2\/ -y3\/y4)&(-y1\/y2\/ -y4)&(-y1\/ -y3\/ -y4)&(-y1\/y2\/ -y3)&(y1\/y3\/y4)&(y2\/ -y3\/y4)&(y1\/ -y2\/y3)&(-y1\/ -y2\/y4)&(-y1\/y2\/y4)&(y1\/ -y2\/y4)&(y1\/y2\/ -y3)&(y1\/y2\/y4)&(y2\/ -y3\/ -y4)&(y2\/y3\/ -y4)))&(^ * ((-y1\/y3\/y4)&(-y1\/ -y2\/y3)&(-y1\/y2\/ -y3)&(y1\/y3\/ -y4)&(y1\/ -y2\/ -y3)&(y1\/ -y2\/y3)&(y1\/y2\/ -y3)&(y1\/ -y2\/ -y4)&(-y1\/y2\/y4)&(-y1\/ -y3\/y4)&(-y1\/ -y2\/y4)&(y1\/y2\/y4)&(-y1\/ -y3\/ -y4)&(y1\/ -y3\/ -y4)&(-y1\/ -y2\/ -y4)&(-y2\/y3\/ -y4)))
+UsedInf:23192276
+UsedTime:4.28134854999999
+Wall:4.320019006729126
+Res===========: [formula_ind(ex,[z],[[x1],[y2,y4],[y4,-x2,-y2],[y4,-y2],[-x2,-y4],[-y2,-y4],[-y4],[-y4,-z]]),formula_ind(ax,[z],[[x2]]),formula_ind(ax,[z],[[y2,y4]]),formula_ind(ax,[z],[[y2,y4,-x1]]),formula_ind(ax,[z],[[y2,-y4]]),formula_ind(ax,[z],[[y4,-y2]]),formula_ind(ax,[z],[[-x1,-y4]]),formula_ind(ax,[z],[[-y2,-y4]]),formula_ind(ax,[z],[[-y4,-z]]),formula_ind(start,[start],[[y2,y4]]),formula_ind(start,[start],[[y2,-x1,-y4]]),formula_ind(start,[start],[[y2,-x2,-y4]]),formula_ind(start,[start],[[y2,-y4]]),formula_ind(start,[start],[[y4,-x2,-y2]]),formula_ind(start,[start],[[z]]),formula_ind(start,[start],[[-x1,-y4]]),formula_ind(start,[start],[[-x2,-y4]]),formula_ind(start,[start],[[-y2,-y4]]),formula_ind(true,[true],[[y2,y4,-x1]]),formula_ind(true,[true],[[y2,y4,-x1,-x2]]),formula_ind(true,[true],[[y2,y4,-x2]]),formula_ind(true,[true],[[y2,y4,-z]]),formula_ind(true,[true],[[y2,-x1,-y4,-z]]),formula_ind(true,[true],[[y2,-x2,-y4]]),formula_ind(true,[true],[[y2,-x2,-y4,-z]]),formula_ind(true,[true],[[y2,-y4,-z]]),formula_ind(true,[true],[[y4,-x1,-y2]]),formula_ind(true,[true],[[y4,-x2,-y2]]),formula_ind(true,[true],[[y4,-x2,-y2,-z]]),formula_ind(true,[true],[[-x1,-x2,-y4]]),formula_ind(true,[true],[[-x1,-y2,-y4]]),formula_ind(true,[true],[[-x1,-y4,-z]]),formula_ind(true,[true],[[-x2,-y2,-y4]]),formula_ind(true,[true],[[-x2,-y4,-z]]),formula_ind(true,[true],[[-y2,-y4,-z]])]
+ArcM===========: [pair(x1,((((((-y4\/ -z)&(-y2\/ -y4))&(-x2\/ -y4))&(y4\/ -y2))&(y2\/ -y4\/ -z))&(y2\/y4\/ -x2))&(y2\/y4)),pair(x2,((((((((-y4\/ -z)&(-y2\/ -y4))&(-x1\/ -y4))&(y4\/ -y2\/ -z))&(y4\/ -y2))&(y2\/ -y4\/ -z))&(y2\/ -y4))&(y2\/y4))&(y2\/y4\/ -x1))]
+LenSNF=51
+LenSNF=35
+SAT: true
+Exist: 0
+...............................................
+SAT:true

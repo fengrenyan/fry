@@ -1,0 +1,8 @@
+P1=[c,b,a]
+T=a&b&c& -d&(~ @ (-a&b&c&d&a&b& -c&d->(~ * (-a&b& -c&d))))&(~ @ (a&b& -c&d->(~ * (-a&b& -c&d))))
+UsedInf:1896388
+UsedTime:0.22587285000000001
+Wall:0.22627520561218262
+Res===========: [formula_ind(ax,[x3],[[d]]),formula_ind(ax,[x3],[[x5]]),formula_ind(ax,[x3],[[-z]]),formula_ind(ax,[x4],[[d]]),formula_ind(ax,[x4],[[x6]]),formula_ind(ax,[x4],[[-z]]),formula_ind(start,[start],[[z]]),formula_ind(start,[start],[[-d]]),formula_ind(start,[start],[[-x5]]),formula_ind(start,[start],[[-x6]]),formula_ind(true,[true],[[-x5,d]]),formula_ind(true,[true],[[-x5,-z]]),formula_ind(true,[true],[[-x6,d]]),formula_ind(true,[true],[[-x6,-z]]),formula_ind(true,[true],[[-z,-d]])]
+ArcM===========: [pair(z,(-d& -x6)& -x5),pair(x1,true),pair(x2,true),pair(x3,((~ * (-z))&(~ *x5))&(~ *d)),pair(x4,((~ * (-z))&(~ *x6))&(~ *d)),pair(x5,-z&d),pair(x6,-z&d)]
+...............................................

@@ -1,0 +1,13 @@
+P1=[y2,y3]
+T=((-y1\/ -y2\/y3)&(y1\/y3\/y4)&(y1\/y3\/ -y4)&(y1\/y2\/ -y4)&(-y1\/y2\/ -y4)&(-y1\/y3\/ -y4)&(y1\/ -y2\/ -y3)&(-y1\/ -y3\/ -y4)&(-y2\/ -y3\/y4)&(y1\/ -y2\/ -y4)&(y2\/ -y3\/ -y4)&(-y2\/ -y3\/ -y4)&(-y1\/ -y2\/ -y4)&(y1\/y2\/y4)&(-y1\/ -y2\/y4)&(y1\/y2\/y3))&(~ * ((y1\/ -y2\/ -y4)&(y1\/y2\/y4)&(y2\/y3\/y4)&(y1\/ -y2\/ -y3)&(-y1\/y2\/ -y3)&(y1\/ -y3\/ -y4)&(y1\/y2\/y3)&(-y1\/y2\/y3)&(-y1\/y2\/y4)&(-y2\/ -y3\/ -y4)&(-y1\/ -y2\/y4)&(y1\/ -y3\/y4)&(-y1\/ -y2\/y3)&(-y2\/ -y3\/y4)&(y1\/y3\/y4)&(-y1\/ -y3\/ -y4)))&(^ * ((y1\/ -y2\/ -y3)&(-y1\/ -y2\/y3)&(y1\/y3\/ -y4)&(-y1\/y3\/ -y4)&(y1\/ -y2\/y4)&(-y1\/ -y2\/ -y3)&(-y1\/ -y3\/y4)&(-y2\/y3\/y4)&(-y2\/y3\/ -y4)&(-y1\/y2\/ -y3)&(-y2\/ -y3\/ -y4)&(y1\/y2\/ -y4)&(y2\/y3\/ -y4)&(y1\/y2\/ -y3)&(-y1\/y2\/y3)&(-y1\/ -y3\/ -y4)))
+UsedInf:26421197
+UsedTime:4.941285185000012
+Wall:4.953492641448975
+Res===========: [formula_ind(ex,[z],[[x1],[y1,y4],[y1,y4,-x2],[y1,y4,-z],[y1,-y4],[y4,-y1],[-y1],[-y1,-y4],[-y4,-z]]),formula_ind(ax,[z],[[x2]]),formula_ind(ax,[z],[[y1,y4]]),formula_ind(ax,[z],[[y1,y4,-x1]]),formula_ind(ax,[z],[[y1,-y4]]),formula_ind(ax,[z],[[y4,-x1,-y1]]),formula_ind(ax,[z],[[y4,-y1]]),formula_ind(ax,[z],[[y4,-y1,-z]]),formula_ind(ax,[z],[[-x1,-y1,-y4]]),formula_ind(ax,[z],[[-y1,-y4]]),formula_ind(start,[start],[[y1,y4]]),formula_ind(start,[start],[[y1,y4,-x1]]),formula_ind(start,[start],[[y1,-y4]]),formula_ind(start,[start],[[z]]),formula_ind(start,[start],[[-x1,-y4]]),formula_ind(start,[start],[[-y1,-y4]]),formula_ind(true,[true],[[y1,y4,-x1,-x2]]),formula_ind(true,[true],[[y1,y4,-x1,-z]]),formula_ind(true,[true],[[y1,y4,-x2]]),formula_ind(true,[true],[[y1,y4,-z]]),formula_ind(true,[true],[[y1,-x1,-x2,-y4]]),formula_ind(true,[true],[[y1,-x1,-y4]]),formula_ind(true,[true],[[y1,-x2,-y4]]),formula_ind(true,[true],[[y1,-y4,-z]]),formula_ind(true,[true],[[y4,-x2,-y1]]),formula_ind(true,[true],[[-x1,-x2,-y1,-y4]]),formula_ind(true,[true],[[-x1,-y1]]),formula_ind(true,[true],[[-x1,-y4,-z]]),formula_ind(true,[true],[[-x2,-y1,-y4]]),formula_ind(true,[true],[[-y1,-y4,-z]])]
+ArcM===========: [pair(x1,((((((-y4\/ -z)& -y1)&(-x2\/ -y1\/ -y4))&(y1\/ -y4))&(y1\/ -x2\/ -y4))&(y1\/y4\/ -z))&(y1\/y4\/ -x2)),pair(x2,((((((-y1\/ -y4)&(-x1\/ -y1\/ -y4))&(y4\/ -y1))&(y1\/ -y4))&(y1\/ -x1\/ -y4))&(y1\/y4))&(y1\/y4\/ -x1))]
+LenSNF=51
+LenSNF=30
+SAT: true
+Exist: 0
+...............................................
+SAT:true

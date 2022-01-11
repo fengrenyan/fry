@@ -1,0 +1,13 @@
+P1=[y1,y3,y2]
+T=((-y1\/ -y2\/ -y4)&(y1\/y3\/y4)&(-y1\/ -y3\/ -y4)&(-y1\/y2\/y4)&(-y1\/y2\/ -y4)&(y1\/y2\/ -y3)&(-y2\/y3\/y4)&(-y2\/ -y3\/ -y4)&(-y1\/ -y2\/y3)&(-y1\/ -y3\/y4)&(-y1\/y3\/ -y4)&(y1\/ -y2\/y4)&(y1\/y2\/y3)&(y2\/ -y3\/y4)&(-y2\/ -y3\/y4)&(y2\/ -y3\/ -y4))&(~ * ((-y1\/y2\/ -y4)&(-y1\/y2\/ -y3)&(y2\/ -y3\/ -y4)&(y1\/ -y2\/ -y3)&(y2\/y3\/ -y4)&(y2\/y3\/y4)&(-y2\/ -y3\/y4)&(-y1\/y2\/y3)&(y1\/y2\/ -y4)&(y1\/y2\/ -y3)&(-y1\/y3\/y4)&(y1\/ -y3\/ -y4)&(-y1\/ -y3\/ -y4)&(-y2\/y3\/ -y4)&(-y2\/ -y3\/ -y4)&(-y1\/ -y3\/y4)))&(^ * ((y2\/ -y3\/y4)&(-y1\/y2\/ -y4)&(y1\/y2\/ -y3)&(-y1\/ -y3\/ -y4)&(-y1\/ -y2\/ -y4)&(y2\/y3\/y4)&(-y2\/y3\/y4)&(y1\/y2\/y4)&(-y2\/ -y3\/y4)&(-y1\/y3\/y4)&(y1\/ -y2\/ -y4)&(y1\/y2\/y3)&(-y1\/y2\/ -y3)&(y1\/y3\/y4)&(-y1\/ -y2\/ -y3)&(y1\/ -y2\/ -y3)))
+UsedInf:43519680
+UsedTime:8.982190810000006
+Wall:9.031830787658691
+Res===========: [formula_ind(ex,[z],[[x1],[y4],[-y4]]),formula_ind(ax,[z],[[x2]]),formula_ind(ax,[z],[[y4,-z]]),formula_ind(ax,[z],[[-y4]]),formula_ind(start,[start],[[y4]]),formula_ind(start,[start],[[y4,-x2]]),formula_ind(start,[start],[[z]]),formula_ind(true,[true],[[y4,-x1]]),formula_ind(true,[true],[[y4,-x2,-z]]),formula_ind(true,[true],[[y4,-z]]),formula_ind(true,[true],[[-x1,-y4]]),formula_ind(true,[true],[[-x2,-y4]])]
+ArcM===========: [pair(x1,-y4&y4),pair(x2,-y4&(y4\/ -z))]
+LenSNF=51
+LenSNF=12
+SAT: true
+Exist: 0
+...............................................
+SAT:true

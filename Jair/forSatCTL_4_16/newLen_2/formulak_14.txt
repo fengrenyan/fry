@@ -1,0 +1,13 @@
+P1=[y1,y4]
+T=((y1\/y2\/y3)&(-y2\/ -y3\/y4)&(-y2\/y3\/ -y4)&(-y1\/ -y3\/y4)&(y1\/ -y2\/ -y4)&(-y1\/ -y2\/y3)&(y1\/y2\/ -y4)&(-y2\/y3\/y4)&(-y1\/ -y2\/ -y3)&(-y1\/y3\/ -y4)&(y1\/ -y3\/ -y4)&(y2\/y3\/ -y4)&(-y1\/ -y3\/ -y4)&(y1\/ -y2\/y3)&(y1\/y3\/y4)&(-y1\/y2\/ -y3))&(~ * ((y1\/ -y2\/y4)&(-y1\/ -y2\/y3)&(y1\/y2\/y4)&(y1\/y2\/ -y3)&(-y1\/ -y2\/y4)&(y1\/ -y2\/ -y4)&(y1\/ -y2\/ -y3)&(-y1\/y2\/y3)&(y2\/ -y3\/y4)&(y2\/ -y3\/ -y4)&(y2\/y3\/y4)&(-y2\/y3\/ -y4)&(-y2\/y3\/y4)&(y1\/y3\/ -y4)&(y1\/y2\/y3)&(y2\/y3\/ -y4)))&(^ * ((-y1\/ -y2\/ -y4)&(y2\/ -y3\/ -y4)&(y1\/y3\/ -y4)&(y1\/ -y2\/ -y3)&(y1\/y2\/y4)&(-y1\/y3\/ -y4)&(-y1\/y2\/ -y3)&(-y2\/y3\/ -y4)&(-y1\/y2\/ -y4)&(-y1\/y2\/y4)&(y1\/ -y2\/y3)&(-y1\/ -y2\/y3)&(y1\/y2\/ -y4)&(y1\/y3\/y4)&(y1\/ -y3\/ -y4)&(y1\/ -y3\/y4)))
+UsedInf:21406221
+UsedTime:5.066376044000009
+Wall:5.126541614532471
+Res===========: [formula_ind(ex,[z],[[x1],[y2],[y3,-y2],[-x2,-y2],[-y2],[-y3,-z]]),formula_ind(ax,[z],[[x2]]),formula_ind(ax,[z],[[y2,y3]]),formula_ind(ax,[z],[[y2,-y3]]),formula_ind(ax,[z],[[y2,-y3,-z]]),formula_ind(ax,[z],[[y3,-y2]]),formula_ind(ax,[z],[[-x1,-y2]]),formula_ind(ax,[z],[[-y2,-y3,-z]]),formula_ind(start,[start],[[y2,-x2,-y3]]),formula_ind(start,[start],[[y3,-y2]]),formula_ind(start,[start],[[z]]),formula_ind(start,[start],[[-x1,-y2,-y3]]),formula_ind(start,[start],[[-x1,-y3]]),formula_ind(start,[start],[[-x2,-y2,-y3]]),formula_ind(start,[start],[[-y2,-y3]]),formula_ind(true,[true],[[y2,y3,-x2]]),formula_ind(true,[true],[[y2,-x1]]),formula_ind(true,[true],[[y2,-x1,-x2,-y3]]),formula_ind(true,[true],[[y2,-x1,-y3]]),formula_ind(true,[true],[[y2,-x2,-y3]]),formula_ind(true,[true],[[y2,-x2,-y3,-z]]),formula_ind(true,[true],[[y3,-x1,-y2]]),formula_ind(true,[true],[[y3,-x2,-y2]]),formula_ind(true,[true],[[y3,-y2,-z]]),formula_ind(true,[true],[[-x1,-x2,-y2]]),formula_ind(true,[true],[[-x1,-y2,-y3,-z]]),formula_ind(true,[true],[[-x1,-y3,-z]]),formula_ind(true,[true],[[-x2,-y2,-y3,-z]]),formula_ind(true,[true],[[-y2,-y3,-z]])]
+ArcM===========: [pair(x1,((((((-y3\/ -z)&(-y2\/ -y3\/ -z))&(-x2\/ -y2))&(y3\/ -y2))&(y2\/ -y3))&(y2\/ -x2\/ -y3))&y2),pair(x2,((((((-y2\/ -y3\/ -z)&(-x1\/ -y2))&(y3\/ -y2))&(y2\/ -y3\/ -z))&(y2\/ -y3))&(y2\/ -x1\/ -y3))&(y2\/y3))]
+LenSNF=51
+LenSNF=29
+SAT: true
+Exist: 0
+...............................................
+SAT:true
