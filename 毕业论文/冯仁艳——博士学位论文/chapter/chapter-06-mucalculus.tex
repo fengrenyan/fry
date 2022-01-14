@@ -303,27 +303,27 @@ $\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得�
 \end{proposition}
 \begin{proof}
 	令${\cal M}_1=(S_1, s_1, R_1, L_1)$为 $\Muforget(\varphi, \{p\} \cup V)$的模型。由遗忘的定义可知，存在$\varphi$的一个模型 $\Hm$ (${\cal M} = (S, s, R,L)$) 使得 $\Hm_1$ $\lrto_{\{p\} \cup V}$ $\Hm$。如下构造Kripke结构 ${\cal M}_2 = (S_2, s_2, R_2, L_2)$：
-	\begin{enumerate}[(1)]
-		\item 对与$s_2$，令$s_2$为满足下列条件的状态：
+	\begin{itemize}
+		\item[(1)] 对与$s_2$，令$s_2$为满足下列条件的状态：
 		\begin{itemize}
 			\item $p \in L_2(s_2)$当且仅当$p \in L_1(s_1)$，
 			\item 对任意的$q \in V$，$q \in L_2(s_2)$ 当且仅当 $q\in L(s)$，
 			\item 对于其他的原子命题 $q'$， $q' \in L_2(s_2)$ 当且仅当 $q' \in L_1(s_1)$ 当且仅当 $q'\in L(s)$。
 		\end{itemize}
-		\item 其他情形：假定$\Hm_1$和$\Hm$有$\{p\} \cup V$-互模拟关系${\cal B}$。
-		\begin{enumerate}[(i)]
-			\item 对任意的 $w \in S$ 和 $w_1 \in S_1$ 且 $(w,w_1)\in {\cal B}$，令$w_2 \in S_2$和
+		\item[(2)] 其他情形：假定$\Hm_1$和$\Hm$有$\{p\} \cup V$-互模拟关系${\cal B}$。
+		\begin{itemize}
+			\item[(i)] 对任意的 $w \in S$ 和 $w_1 \in S_1$ 且 $(w,w_1)\in {\cal B}$，令$w_2 \in S_2$和
 			\begin{itemize}
 				\item $p \in L_2(w_2)$ 当且仅当 $p \in L_1(w_1)$，
 				\item 对任意的$q \in V$，$q \in L_2(w_2)$ 当且仅当 $q\in L(w)$，
 				\item 对其他原子命题$q'$，$q' \in L_2(w_2)$ 当且仅当 $q' \in L_1(w_1)$ 当且仅当 $q'\in L(w)$。
 			\end{itemize}
-			\item 若$(w_1', w_1)\in R_1$，且$w_2$ 是由 $w_1$构造，$w_2'\in S_2$ 由 $w_1'$构造，则$(w_2', w_2)\in R_2$。
+			\item[(ii)] 若$(w_1', w_1)\in R_1$，且$w_2$ 是由 $w_1$构造，$w_2'\in S_2$ 由 $w_1'$构造，则$(w_2', w_2)\in R_2$。
 			%And if $w' \Hr^i w$, $w_2$ is constructed based on $w$ and $w_2'\in \Hw_2$ is constructed based on $w'$, then $w_2' \Hr_2^i w_2$
 			%\item if $\exists w_1'\in \Hw_1$ such that $w_1' \Hr_1 w_1$, then let $w_2' \in \Hw_2$, $w_2' \Hr_2 w_2$, and if $w_1' \neq s_1$ then do (i) for $w_2'$, else let$w_2' = s_2$.
-		\end{enumerate}
+		\end{itemize}
 		\item 删除 $S_2$和 $R_2$中重复的元素。
-	\end{enumerate}
+	\end{itemize}
 	可以容易检查 $\Hm \lrto_{\{p\}} \Hm_2$ 和 $\Hm_2 \lrto_V \Hm_1$。因此，$(\Hm_2, s_2) \models \Muforget(\varphi, p)$，所以 $(\Hm_1, s_1) \models \Muforget(\Muforget(\varphi, p), V)$。
 	
 	另一方面，假设 $\Hm_1$ 是$\Muforget(\Muforget(\varphi, p), V)$的一个模型 \\
@@ -356,9 +356,9 @@ $\Muforget$ 的另一个属性是关于$\ALL\NEXT$ 和 $\EXIST \NEXT$模态词�
 \begin{proof}
 	令$\Hm=(S, s,R, L)$、 $M_i = (S_i, s_i, R_i, L_i)$ （$i \in \textmd{N}$） 且 $\Hm'=(S', s', R', L')$，若下面条件满足，则称 $\Hm'=(S', s', R', L')$为$\Hm$的一个子结构：
 	\begin{itemize}
-		\item $S' \subseteq S$ and $S'=\{s' \mid s'$ is reachable from $s'\}\ \cup $ $\{s'' \mid s''$ can not be reached from both $s$ and $s'$$\}$,
+		\item $S' \subseteq S$ 和 $S'=\{s' \mid s'$ is reachable from $s'\}\ \cup $ $\{s'' \mid s''$ can not be reached from both $s$ and $s'$$\}$,
 		\item $R' =\{(s_1, s_2)\mid s_1, s_2 \in S'$ and $(s_1, s_2) \in R\}$,
-		\item $L': S' \rto 2^\Ha$ and $\forall s_1 \in S'$ there is $L'(s_1) = L(s_1)$, and
+		\item $L': S' \rto 2^\Ha$ and $\forall s_51 \in S'$ there is $L'(s_1) = L(s_1)$, and
 		\item $s'$ is $s$ or a state reachable from $s$.
 	\end{itemize}
 	
@@ -434,7 +434,23 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题�
 		\item[(ii)] 若 $\varphi$ 是一个吸取 $\mu$-公式，则判定 $\Hm \models^? \Muforget(\varphi, V)$在 \textsc{NP}$\cap$co-\textsc{NP}中。
 	\end{itemize}
 \end{proposition}
-
+\begin{proof}
+	对于一个$\mu$-公式$\varphi$，如果该公式为一个吸取$\mu$-公式可在多项式时间内构造一个 $\mu$-自动机（也叫模态自动机~\cite{bradfield2018mu}） $A_{\varphi}$，否则需要指数时间构造其对应的$\mu$-自动机$\textsc{Exptime}$\footnote{Personal communication: Giovanna D'Agostino, 2020.}.
+	这里证明(ii)，(i)可以类似地证明。
+	
+	令$A_{\varphi}$为一个$\mu$-自动机 且满足对任意的 Kripke ${\cal N}$， %there is
+	$A_{\varphi}$ 接受 ${\cal N}$ 当且仅当 ${\cal N} \models \varphi$，其中 $A_{\varphi} = (Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$、 $\Sigma_p = \Var(\varphi)$。不是一般性地，假定$V \subseteq \Var(\varphi)$ 和 $V=\{p\}$。因此，构造一个 $\mu$-自动机 ${\cal B}= (Q, \Sigma_p - V, \Sigma_r, q_0, \delta', \Omega)$ 使得对任意的$q\in Q$ 和 $L\subseteq \Sigma_p - V$，
+	\[
+	\delta'(q, L) = \delta(q, L) \cup \delta(q, L \cup \{p\}).
+	\]
+	
+	已有结论表明，对任意的Kripke结构${\cal N}$， ${\cal B}$ 接受 ${\cal N}$当且仅当存在$\varphi$的一个模型${\cal N}'$使得${\cal N} \lrto_{\{p\}} {\cal N}'$~\cite{d1996uniform}，即${\cal B}$对应于和$\Muforget(\varphi, V)$等价的$\mu$-句子。
+	
+	
+	在这种情况下，判定 $\Hm \models^? \Muforget(\varphi, V)$问题被归约到判定是否 ${\cal B}$ 接受 $\Hm$的问题。
+	而${\cal B}$ 从根$r$接受一个Kripke结构$\Hm=(S, r, R,L)$当且仅当Eve在参数游戏（parity game）${\cal G}(\Hm, \Ha)$上有一个从$(r,q^0)$开始的赢的策略，这一问题在\textsc{NP}$\cap$co-\textsc{NP}~\cite{bradfield2018mu}中。
+	%In this case, the problem $\Hm \models^? \Muforget(\varphi, V)$ is reduced to decide whether $B$ accepts $\Hm$, which is in \textsc{NP}$\cap$co-\textsc{NP}~\cite{bradfield2018mu}.
+\end{proof}
 
 给定$\mu$-句子 $\varphi$和 $\psi$， $V$ 为原子命题的集合。从知识是进化的角度来看，以下推理问题（在命题逻辑里也有研究~\cite{wang2015forgetting}） 是值得探索的：
 %we are also interested in the following reasoning problems about forgetting, which are explored in CPL~\cite{wang2015forgetting}:
@@ -456,7 +472,21 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题�
 		\item[(iii)] 判定 $\Muforget(\varphi, V) \models^? \Muforget(\psi, V)$。
 	\end{itemize}
 \end{theorem}
-
+\begin{proof}
+	这里给出 (i)的证明，其他的结论能够类似地证明。
+	
+	% There are two method to prove (i).
+	% \textbf{Method 1:}
+	
+	Membership: 令 $A_{\varphi}$ 和 $A_{\psi}$ 分别为$\varphi$ 和 $\psi$的$\mu$-自动机，由命题~\ref{pro:MC}的证明可从 $A_{\varphi}$构造$\Muforget(\varphi, V )$的$\mu$-自动机 we can construct the $\mu$-automaton ${\cal B}$ of $\Muforget(\varphi, V )$ from $A_{\varphi}$。由命题 7.3.2~\cite{comon1997tree}可知，可以在线性时间内构造$A_\psi$的补自动机$C$，因此可以在线性时间内构造$C$ 和 ${\cal B}$的交自动机$A_{C \cap {\cal B}}$。此时，判定问题 $\Muforget(\varphi, V ) \models^? \psi$被规约称判定 $A_{C \cap {\cal B}}$接受的语言是否为空，这一问题时$\textsc{Exptime}$-完全的 (定理 7.5.1~\cite{comon1997tree})。
+	
+	因此，判定是否$\Muforget(\varphi, V ) \models^? \psi$是$\textsc{Exptime}$的。 
+	
+	Hardness: 对任意的 $\mu$-句子存在一个等价的 $\mu$-自动机，且对任意的 $\mu$-自动机存在一个等价的 $\mu$-句子~\cite{bradfield2018mu}。
+因此，判定问题$\Muforget(\varphi, V ) \models^? \psi$规约成其对应的 $\mu$-自动机是否为空的问题。
+	% Our goal is to reduce the emptiness problem for modal automata to  the same problem for alternating automata on binary trees. 
+	因此，hareness直接来源于定义 6.3~\cite{DBLP:journals/siamcomp/EmersonJ99}。
+\end{proof}
 
 与上面的几个推论问题类似，下面考虑这几个等价问题：Lang等人提出的“var-independence”和“var-equivalence”问题~\cite{lang2003propositional}，及“Var-match”问题:
 \begin{itemize}
