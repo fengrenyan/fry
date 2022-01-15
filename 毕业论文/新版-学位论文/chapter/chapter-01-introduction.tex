@@ -1,0 +1,284 @@
+\chapter{绪论}\label{chapter01}
+{\em 本章首先介绍研究的立项背景，分析保障系统正确的重要性，并阐述研究意义。其次，综述分析遗忘理论、最强必要（最弱充分）条件等关键技术的国内外研究动态，以及遗忘理论在形式化验证中的应用研究趋势。然后，围绕研究对象凝练出关键问题与目标。进一步，介绍本文的核心研究内容以及研究取得的主要成果。最后，给出具体章节组织安排。}
+\section{研究背景与意义}
+\subsection{研究背景}
+
+形式化验证是一种广泛应用在硬件\cite{lam2007,lv2000,jani2007Verilog}和软件系统中\cite{yuan2008,gu2005}的有别于测试的、采用数学方法证明系统满足给定特性的验证（verification）技术。软件和硬件的缺陷会导致严重的后果，如表\ref{tab:systemEvents_1.1}中列出的几个重大事件。近年来，为了减少系统（尤其是像火箭发射系统和卫星发射系统等关键领域的系统）错误带来的损失，形式化方法的研究与应用越来越受到人们的重视。包括INTEL、AMD、IBM、NVIDIA、CADENCE、 Motorola、西门子和微软等在内的大型公司纷纷引入了形式化验证方法。与此同时，学术界也在形式化验证领域取得了突破性的成果，比如：剑桥大学进行了ARM6处理器的验证\cite{DBLP:conf/tphol/Fox03}，德国的Verisoft项目验证了一个一万行的操作系统内核\cite{DBLP:conf/sefm/DaumSS09}。
+
+\begin{table}[htbp]
+\caption{由系统故障引起的重大事件概览}
+\label{tab:systemEvents_1.1}
+\centering
+\fontsize{10pt}{\baselineskip}\selectfont
+\begin{tabular}{p{0.12\textwidth}p{0.35\textwidth}p{0.35\textwidth}}%
+	\toprule
+	\textbf{发生时间}&\textbf{事故事件（系统错误）}&\textbf{造成的损失}\\
+	\midrule
+    1991年 & 美国爱国者导弹系统舍入错误 & 28名士兵死亡、100人受伤等\\
+	1996年 & 阿丽亚娜5型运载火箭因软件不同飞行条件下代码重用 & 导致其与其他卫星在瞬间灰飞烟灭\\
+	1999年 & 火星探测器用错度量单位 & 引起探测器坠毁并造成了3.27亿美元的损失\\
+	2011年 & 温州7.23动车信号设备在设计上存在严重的缺陷导致 &导致动车脱节脱轨、多人失去生命\\
+	
+\bottomrule
+\end{tabular}
+\end{table}
+
+形式化验证有两种主要的验证方法：自动定理证明（Automated theorem proving）和模型检测（Model checking)。
+在自动定理证明中，系统模型和规范（specification）被同一形式化语言分别描述为$\varphi_{imp}$和$\varphi_{spec}$，剩下的任务就是证明性质，如:$\varphi_{imp}\rto \varphi_{spec}$或$\varphi_{imp}\lrto\varphi_{spec}$。
+常用的自动定理证明方式有基于规约（Resolution）\cite{DBLP:journals/jacm/Robinson65}和常用于模态逻辑的基于表推理（tableau）\cite{hughes1996new}的方法。
+然而，在自动定理证明中寻找不变式（invariant）是一个相当困难的问题。
+因此，为了避免像Hoare逻辑\cite{Hoare1969}、动态逻辑\cite{harel1979first}和分离逻辑\cite{DBLP:conf/lics/Reynolds02}在形式化验证中寻找不变式，Fangzhen Lin提出将一个程序（program）转换为一阶理论，
+然后再使用一阶理论中的自动定理证明方法来验证\cite{DBLP:journals/ai/Lin16}。
+
+形式化验证的模型检测首先由Clarke提出，并用于解决并发系统验证问题\cite{DBLP:conf/spin/Clarke08}。Clarke和Emerson在文章\cite{clarke1981design}中指出，在有限状态的并发系统中使用时态逻辑的推演系统（deductive system）中的公理和推理规则进行构造性证明（proof construction）的方法来证明该系统是否满足给定的规范是不必要的。因为在有限状态并发系统中，该并发系统可以被看作是一个Kripke结构$\Hm$，与此同时，一个规范被表示成一个逻辑公式$\varphi$。此时，该验证问题就变成检验一个Kripke结构是否满足该公式，即模型检测（$\Hm\models \varphi$）: 判断$\Hm$是否是$\varphi$的一个模型。
+
+近年来，模型检测问题在知识表示与推理（KRR）领域的推进下取得了丰富的科研成果，例如：基于SAT的有界（bounded）模型检测\cite{DBLP:journals/ac/BiereCCSZ03}和基于OBDD的符号模型检测\cite{burch1992symbolic}已经使得模型检测问题在时间和空间效率上取得了很大的进步，在一定程度上缓解了其固有的状态空间爆炸问题。此外，大量优质的模型验证器（如：NuSMV\footnote{http://nusmv.fbk.eu/}、SPIN\footnote{http://spinroot.com/spin/whatispin.html}、Uppaal\footnote{http://www.uppaal.org/} 等）也相继发展起来，并且大部分的验证器都可以用来验证多种时态逻辑描述的公式。  
+       
+时态逻辑作为描述系统规范的形式化语言，它研究状态随时间变化的系统的逻辑特性。由于软件和硬件的运行的本质是状态变化的过程，所以时态逻辑在软件程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, \CTL）是分支时态逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用其他时态逻辑表示的\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本文将要研究的描述规范的逻辑语言限制到$\CTL$和$\mu$-演算下。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
+
+
+
+从知识抽取（或“剪掉”）的角度来看。出于安全考虑，查看信息时需要将有的信息隐藏掉而只抽取关注的部分信息。
+此外，随着时间的推移，由于某些原因使得系统的部分信息过时，此时就需要将这样的过时的信息在不影响其他信息的情况下“剪掉”。
+考虑如下示例：
+\begin{example}[汽车制造企业模型]\label{car_manufacturing}
+	一个汽车制造企业能够生产两种汽车：小轿车($se$)和跑车($sp$)。每隔一段时间，该企业都会做一个生产决策($d$)，即：合理的生产计划。
+	刚开始的时候，该企业做出了具有三个选择和方案：（1）先生产足够的$se$，然后在生产$sp$；（2）先生产足够的$sp$，然后在生产$se$；（3）同时生产$se$和$sp$。
+	这一过程可以有图~\ref{BVM}中的Kripke结构（带标志的状态转换图）$\Hm=(S,R,L)$形式化地展现出来，其中:
+	\begin{itemize}
+		\item $V=\{d,s, se, sp\}$为该工厂所需要考虑的原子命题的集合；
+		\item $S=\{s_0,s_1,s_2,s_3,s_4\}$为状态空间；
+		\item $R = \{(s_0, s_1), (s_1,s_2), (s_1,s_3), (s_1,s_4), (s_2,s_0), (s_3,s_0),(s_4,s_0)\}$为状态转换关系的集合；
+		\item $L: S \rto 2^V$为标签函数，具体地：$L(s_0) = \{d\}$、$L(s_1) = \{s\}$、 $L(s_2)=\{se\}$、 $L(s_3) = \{sp\}$和$L(s_4) = \{se,sp\}$。
+	\end{itemize}
+	\begin{figure*}[ht]
+		\centering
+		\includegraphics[width=4cm]{NnewCar.png}\\
+		\caption{汽车制造企业模型}\label{BVM}
+	\end{figure*}
+\end{example}
+
+日常生活中也有很多上述例子中的场景，如：商业交易过程、软件开发过程等~\cite{Baier:PMC:2008}。
+但是对于给定原子命题的集合，从这些大型系统中“移除”掉这些原子而保持与这些原子无关的性质是一个复杂的问题。
+此外，在这种情形下，两个重要的概念：最强必要条件（SNC）和最弱充分条件（WSC）问题也随之产生，其中SNC是指最一般的结论，WSC指最特殊的诱因。
+
+基于上述存在的问题，本文在下面的研究意义部分给出对应的解决方案和其意义所在。
+
+\subsection{研究意义}
+在实际应用中，对于给定的$\Hm\models \varphi$问题，当$\Hm$满足$\varphi$时一般的验证器都会返回“yes”以表示满足，当$\Hm$不满足$\varphi$时验证器会给出一个使得$\varphi$不被$\Hm$满足的负例。此时，如何对$\Hm$进行修正使得其满足给定的规范是一个重要的问题。
+
+最强后件（SP）和最弱前件（WP）（分别对应于上文提到的SNC和WSC）是形式化验证中的两个重要的概念，其不仅被用于汇编语言程序推理~\cite{legato2002weakest}和制定验证条件\cite{DBLP:journals/ipl/Leino05}，还被应用于形式化验证过程中的负例生成\cite{dailler2018instrumenting}和系统精化（refinement）\cite{woodcock1990refinement}。
+当$\Hm\not \models \varphi$时，若知道某个性质$\psi$使得若$\Hm$按照此性质进行修改后得到的新模型$\Hm'$能满足$\varphi$，即$\psi$为使得$\Hm\models \varphi$成立的充分条件（$\Hm \models \psi\rto \varphi$）。
+然而，现有的方法不能直接应用于计算当$\Hm$为不终止系统（如：反应式系统（reactive system））时使得“$\Hm\models \varphi$”为真的最强必要条件（SNC）和最弱充分条件（WSC）
+（其详细原因将在下文指出）。此时，探索在$\Hm$下使得$\varphi$满足的定义在某个符号集合上的SNC和WSC将更进一步完善模型检测问题，
+同时也为基于WSC的负例生成和精化提供了理论依据和新的计算方法。
+
+此外，在上文中提到现有的方法不能直接应用于计算当$\Hm$为不终止系统时使得“$\Hm\models \varphi$”为真的最强必要条件（SNC）和最弱充分条件（WSC），在本文中将探索一种叫做\emph{遗忘理论}（forgetting）的方法来计算充分（必要）条件。正如下文将要说到的，遗忘理论作为知识表示与推理（KRR）中重要理论，具有较长的科研历史，且在许多逻辑中都有了较为成熟的研究。然而，在时序逻辑方面的研究目前还不成熟。因此，作为本文一个重要的研究意义，本文的研究将为时序逻辑下的遗忘理论的研究提供一个理论框架。
+与此同时，借助遗忘理论计算上述形式化验证问题中的充分（必要）条件，这架起了KRR与形式化验证的桥梁。
+
+\section{相关研究工作回顾}
+
+遗忘（forgetting）是一种重要的知识抽取工具，它具有均匀插值（uniform interpolation）和二阶量化消解（second-order quantifier elimination，SOQE）两种称呼。
+在很长一段时间内，遗忘被用于描述逻辑中本体（ontology）摘要的提取、敏感信息的隐藏和软件工程中计算两个文件的逻辑差（logic differences）。此外，其也被用于包括信念更新（belief update）、修改（repair）、规划（planning）和知识独立性的其他领域。
+
+在规划中，遗忘主要用来计算其对应的后继状态公里所需要的SNC和WSC。下面就与本文密切相关的遗忘理论和SNC（WSC）进行详细的回顾。
+
+
+
+
+
+
+\subsection{遗忘理论}\label{chapter01:forgetting}
+遗忘这一词源于Lin等人关于一阶逻辑（first-order logic， FOL）工作~\cite{lin1994forget}，在此之前的研究中多提到的是均匀插值~\cite{visser1996uniform,konev2009forgetting}和SOQE~\cite{ackermann1935untersuchungen}。
+
+在命题逻辑中（propositional logic，PL），从公式$\varphi$里遗忘掉一个原子命题$p$通常记为$\Forget(\varphi,\{p\})$，得到的结果为$\varphi[p/\bot] \vee \varphi[p/\top]$（其与$\exists p\varphi$等价），其中$\varphi[X/Y]$为将$\varphi$中的$X$的全部出现替换为$Y$得到的结果。
+%在Lin等人的文章中也将$\varphi[p/\bot] \vee \varphi[p/\top]$用$\exists p\varphi$来表示~\cite{lin1994forget}。
+从公式中$\varphi$遗忘掉有限的原子命题的集合$P$被定义如下：
+\begin{alignat*}{2}
+	&  \Forget(\varphi, \emptyset) = \varphi, \qquad \\ % \nonumber
+	&  \Forget(\varphi, P \cup \{q\})  = \Forget(\Forget(\varphi, \{q\}), P).
+	\nonumber
+\end{alignat*}
+
+在FOL中，遗忘通常被看为SOQE问题的一个实例。
+特别地，从FOL公式$\varphi$中遗忘掉一个$n$-元为此$P$得到结果为一个二阶公式$\exists R \varphi[P/R]$~\cite{lin1994forget}。
+从这个角度看来，遗忘就是找到一个与二阶公式$\exists R \varphi[P/R]$等价的一阶公式。
+然而，二阶逻辑的表达能力是严格大于一阶逻辑的，因而可以容易得出FOL下的遗忘不是封闭的，也就是说从有的一阶公式中遗忘掉某些谓词得到的结果不可以用一阶公式来表示。
+作为FOL的一个子类，描述逻辑公式的遗忘也不总是存在的~\cite{DBLP:journals/ai/KonevL0W13}，甚至对最基本的描述逻辑{\cal ALC}而言，遗忘的存在性问题都是不可判定的。
+尽管如此，描述逻辑作为一种在语义网领域很重要的语言，其子类（包括{\cal ALCOHI}和{\cal ALCOIH}）中的遗忘通常被用来抽取视图（review）~\cite{Wang:AMAI:2010,DBLP:conf/ijcai/LutzW11,Konev:JAIR:2012,DBLP:conf/ijcai/ZhaoS17,DBLP:conf/aaai/ZhaoSWZF20}。
+
+现有的研究一阶逻辑和描述逻辑下的遗忘的方法有基于消解（resolution）和基于Ackermann引理的方法~\cite{DBLP:books/daglib/0023036}。
+其中基于消解的方法是一种基于子句的归结反驳方法，消解规则是其基础。通常在这种方法中首先要把公式转换为其子句形式，然后再使用消解规则，最后将得到的子句集合中包含有要遗忘的谓词（原子命题）“移除”掉后得到结果可能就为遗忘的结果（在后文中会详细介绍与本文相关的消解规则和转换规则）。
+基于Ackermman引理的方法主要是直接或间接（扩展）下面的Ackermann引理得到的。
+\begin{lemma}[Lemma 6.1 of~\cite{DBLP:books/daglib/0023036}]
+	给定关系变元$X$和一阶公式$\alpha(\overline{x}, \overline{z})$和$\beta(X)$，其中$\overline{x}$和$\overline{z}$为普通变元构成的多元组、$\overline{x}$中变元的个数与$X$的参数个数相同、且$\alpha$中不包括$X$。
+	\begin{itemize}
+		\item 若$\beta(X)$关于$X$是正的，即：$X$在$\beta(X)$中的每次出现前面都有偶数个“$\neg$”符号，则：
+		$$\exists X \{\forall \overline{x} [X(\overline{x}) \rto \alpha(\overline{x},\overline{z})] \wedge \beta(X)\} \equiv \beta(X)_{\alpha(\overline{x},\overline{z})}^{X(\overline{x})}\hbox{。}$$
+		\item 若$\beta(X)$关于$X$是负的，即：$X$在$\beta(X)$中的每次出现前面都有奇数个“$\neg$”符号，则：
+		$$\exists X \{\forall \overline{x} [ \alpha(\overline{x},\overline{z}) \rto X(\overline{x})] \wedge \beta(X)\} \equiv \beta(X)_{\alpha(\overline{x},\overline{z})}^{X(\overline{x})}\hbox{。}$$
+	\end{itemize}
+\end{lemma}
+
+
+
+\emph{知识遗忘}（knowledge forgetting）在模态逻辑S5中首先被提出并被用于推理智能体的知识状态（知识或者信念）~\cite{Yan:AIJ:2009}。
+模态逻辑中的遗忘与经典逻辑下的遗忘不同，因为模态逻辑系统中引入了模态词，此时就不能以简单的谓词（命题）替换的方式获取遗忘的结果，如：
+\begin{example}\cite{Zhang2008Properties}
+	令S5公式$\varphi=\MPK p \wedge \neg \MPK q \wedge \neg \MPK \neg q$，则如果使用命题逻辑下的计算方法得到的结果为$\varphi[q/\top] \vee \varphi[q/\bot]$。
+	这显然是不正确的，因为在遗忘$q$之后智能体的知识库不应该变得不一致。
+\end{example}
+为此，新的计算方法和四个能精确描述知识遗忘的基本条件被给出，值得注意的是这四个条件与知识遗忘形成了“当且仅当”的关系。换句话说，当知道某一个公式满足那四个条件则该公式为遗忘的结果，当知道某一结果为遗忘结果时它一定满足那四个基本条件。
+
+均匀插值作为遗忘的一个对偶概念，这里有必要介绍一下模态逻辑系统的这一性质的研究现状。
+S5、K和KD模态逻辑系统具有均匀插值性质~\cite{DBLP:journals/aml/Iemhoff19}，
+而模态逻辑系统没有均匀插值性质，如：模态逻辑量化的S5~\cite{DBLP:journals/jsyml/Fine79}和K4、和S4及其扩展都没有均匀插值性质~\cite{DBLP:journals/ndjfl/Schumm86}，因此其遗忘也不是封闭的。
+因此，在研究这些具有均匀插值性质的模态逻辑下的遗忘时可以借鉴S5系统下的遗忘方法，也可以参考K系统下的基于消解计算均匀插值的方法。
+对于那些没有均匀插值的模态逻辑系统可以考虑模态逻辑下的Ackermann引理~\cite{DBLP:books/daglib/0023036}。
+
+
+%此外，Feng等人也研究了S5下如
+
+在非单调推理（non-monotonic reasoning）环境中，科研工作者们也从遗忘的基本条件的角度研究了
+基于回答集语义的逻辑程序的遗忘，这些工作包括Zhang、Wang等人发表在AI和JAIR上的文章~\cite{DBLP:Zhang:AIJ2006,DBLP:journals/ai/EiterW08,Wong:PhD:Thesis,DBLP:journals/jair/WangZZZ14,wang2013forgetting,DBLP:journals/jair/Delgrande17,gonccalves2020limits}，Eiter、Gonccalves等人的综述~\cite{eiter2019brief,gonccalves2021forgetting}。
+
+
+%应用
+在现实生活中，遗忘有很多应用。下面列出几点：
+\begin{itemize}
+	\item 计算后继状态公理：在规划问题中，根据最强必要条件和最弱充分条件有利于求出后继状态公理\cite{DBLP:journals/jair/Lin03}。在该文章中，最强必要条件和最弱充分条件都用遗忘来计算；
+	\item 信息隐藏：在有的关键领域，为实现隐私保护，敏感信息必须被隐藏。而有的系统现在都基于本体，要做到隐私保护，只需要将那些敏感的概念（concept）和角色（role）符号隐藏（遗忘）就行了；
+	\item 计算逻辑差：
+	\item 知识更新：在许多场景，知识不是一层不变的，随着时间或空间的推移，会有新的知识加入，如何用新加入的信息更新原有知识而保证知识库的一致性是知识更新需要解决的问题。此外，知识更新也需要满足一些基本条件，在这些基本条件中，Katsuno和Mendelzon提出$(U1)-(U8)$较为常用，本文也使用这几个基本条件；
+	\item 提取本体的概要：当一个本体工程师想要快速了解并测试一个本体的内容时，能事先快速地提取出该本体的概要是非常有用的。如果一个本体含有很多无关信息时，这将使得事半功倍。
+\end{itemize}
+
+
+
+
+
+
+
+\subsection{SNC和WSC}
+
+
+正如前面所说，WSC（SNC）对于软件工程中系统的形式化验证有着及其重要的作用。
+一般说来，最强必要条件（SNC）是最一般的推论（the most general consequence），即：命题成立时能推出的最强的后件（the strongest post-condition, SP），SNC能够蕴涵所有的必要条件；最弱充分条件（WSC）是最特殊的诱因（the most specific abduction），即：使得命题成立的最弱的前提条件（the weakest precondition，WP）。
+
+特别地，给定一个程序（program）$S$和某一状态（state）的规范（specification）$Q$，则$S$关于$Q$的WSC是一个能够描述$S$初始状态的规范，其中$S$满足以下两个条件：（i） $S$必须终止，（ii）$S$执行完成后必须到达能满足$Q$的状态。Dijkstra提出了四条规则来计算这样的后件，程序语言里的四种语句（即：赋值语句（assignment rule）、顺序语句（sequence rule）、条件语句（conditional rule）和循环语句（loop rule））分别对应了这四种规则~\cite{DBLP:journals/cacm/Dijkstra75}。
+此外，这两个概念还可用于系统精化~\cite{woodcock1990refinement}、模型检测中的负例产生~\cite{dailler2018instrumenting}、汇编语言程序的推理~\cite{legato2002weakest}和制定验证条件~\cite{DBLP:journals/ipl/Leino05}。
+
+
+在知识表示与推理中，SNC和WSC为因果理论中后继状态公理的计算提供了一种方法~\cite{lin2003compiling}，SNC和WSC都可以用遗忘来计算~\cite{DBLP:Lin:AIJ:2001,DBLP:conf/ijcai/DohertyLS01}。
+之后，SNC和WSC被扩展到FOL下，且用SOQE实现了SNC和WSC的计算~\cite{DBLP:conf/ijcai/DohertyLS01}。
+
+这里对SNC和WSC的发展和应用只做了简单的概述，在背景知识部分再对其在命题逻辑和一阶逻辑这两种情形进行详细介绍（包括其定义和算法）。
+
+
+
+
+
+
+\section{研究目标及主要结果}
+
+相关研究工作表明现存方法不能很好的解决反应式系统下的WSC（SNC）的求解。然而，WSC是一种进行系统修改的重要知识，寻求一种有效的求解方法有利于系统正确性的确保。
+在知识表示与推理中，一种叫做遗忘的技术可以用于求解给定理论（公式）的WSC（SNC）。
+但是，就如上面所述时序逻辑下的遗忘理论尚处于不成熟阶段，没有一个统一的理论框架。
+此外，如何用遗忘来计算给定系统模型和性质的WSC（SNC）也是一个重要问题。
+
+基于此，{\em 本文从遗忘理论的角度出发，拟研究反应式系统的SNC和WSC的计算，从而为计算不终止类系统下的定义在某个符号集上的SNC和WSC提供了新的方法，架起形式化验证与KRR之间的桥梁。}
+%特别地，本文将规范的描述语言限制到$\CTL$和$\mu$-演算下。
+为了实现这一目标，本文\textbf{主要研究内容及结果}如下：
+
+(1) {\em $CTL$和$\mu$-演算的遗忘理论}
+
+本文研究了$\CTL$中遗忘理论的方法和性质，特别是其遗忘结果的存在性、复杂性等，为探索用遗忘理论计算SNC和WSC提供理论基础。具体说来，遗忘理论具有削弱（Weakening，(W)）、正维持（Positive Persistence，(PP)）、负维持（Negative Persistence，(NP)）、无关性（Irrelevance，(IR)）等基本性质\cite{Yan:AIJ:2009}。本文探索$\CTL$和$\mu$-演算的遗忘理论的以上性质，并探讨其与存在性之间的关系。此外，本文深入研究了 $\CTL$和$\mu$-演算 遗忘理论的基本准则、发现计算$\CTL$和$\mu$-演算遗忘结果的算法以及探讨$\CTL$和$\mu$-演算子类与遗忘相关问题的计算复杂度，为研究计算SNC和WSC的性质、算法以及基本准则等作好铺垫。具体说来，有以下两点：
+\begin{itemize}
+	\item \textbf{$\CTL$的遗忘理论：}
+	$\CTL$不具有均匀插值（uniform interpolation）性质\cite{Maksimova:JANCL:1991}，即：不存在一个算法使得对于任意的$\CTL$公式，其遗忘掉任意原子命题的集合得到的结果仍然是$\CTL$公式。在这种情况下，本文除了探讨了上述$\CTL$中遗忘的性质，还研究了$\CTL$子类的遗忘理论，特别是能保证其遗忘结果仍然是$\CTL$可表达的子类。在这些子类中，一个特殊的子类为约束$\CTL$（bunded \CTL）。在这种情形下，每个公式的模型是有限个数个，且每一个模型都能用一个$\CTL$表示。因此，其遗忘理论是封闭的。
+	
+	\item \textbf{$\mu$-演算的遗忘理论：}
+	与$\CTL$不同，$\mu$-演算虽然表达能力比$\CTL$强，其可满足性问题也比$\CTL$的复杂，但是$\mu$-演算具有均匀插值性质\cite{DBLP:DAgostino:JAL:2006}。这意味着对于在任意的$\mu$-演算句子中遗忘掉任意的原子命题的集合得到的结果仍然是$\mu$-演算公式。本文给出了$\mu$-演算下遗忘理论的主要框架：包括上述遗忘理论的性质和计算遗忘的方法。
+	特别地，表明了本文提出的$\mu$-演算下的遗忘定义与均匀插值是一对对偶概念，即本文中的遗忘理论的性质也是均匀插值的性质，这位研究均匀插值提供了另一种途径。
+	此外，本文还说明了当$\mu$-公式为吸取$\mu$-公式时，计算遗忘理论可以在多项式时间内完成，这为$\mu$-演算下的遗忘的计算提供了一种有效的方法。
+\end{itemize}
+
+
+(2) {\em $CTL$下遗忘理论的算法的研究及实现}
+
+基于上述研究结果，设计并实现一个计算$\CTL$和$\mu$-演算遗忘结果的原型系统，并从实验角度研究其计算代价以启发快速的计算遗忘结果的算法。
+具体说来，本文给出了一种基于消解的计算$\CTL$遗忘的算法，并使用Prolog实现了该算法。
+
+(3) {\em 遗忘理论在形式化验证和知识更新中的应用}
+
+给出了使用遗忘理论计算给定有限系统模型的SNC和WSC。如上所述，一个有限的系统模型能够被一个$\CTL$公式描述，因而可以使用遗忘理论计算其SNC和WSC。
+此外，知识更新是一种使用新发现的性质更新已有理论的技术，本文探讨了如何使用遗忘理论更新$\CTL$和$\mu$-演算下的理论。
+表明了使用遗忘理论定义的知识更新满足现有的知识更新的八条准则。
+
+~\\
+针对上述几个内容，解决了以下4个\textbf{关键问题}：
+
+(1) {\em $\CTL$的遗忘什么情形下存在？如何计算遗忘？}
+
+$\CTL$是一种分支时序逻辑，已有文献表明$\CTL$不具有均匀插值性质。与此同时，$\CTL$还引入了时态算子（temporal operator）。在此情形下，研究$\CTL$的遗忘就不能像已有的经典命题逻辑和模态逻辑S5那样，因为遗忘与均匀插值是一对对偶概念，即：它们可以互相证明彼此的存在性。为此，本文深度刨析现存的消解规则，提出了一种基于消解的计算遗忘的方法。该方法表明，当所有在转换为$\CTL$标准形式过程中引入的新的原子命题都被“消除”掉时，使用这一方法得到的结果即为遗忘的结果，即：这一方法是可靠的。
+尽管$\CTL$的遗忘理论不是封闭的，但是本文给出：当被消解的原子命题只能同时出现在同一模态词下的命题公式里时，遗忘总是存在的。
+
+此外，考虑到现实生活中有的情形下只需要考虑有限模型，所以本文研究了约束$\CTL$下的遗忘理论。研究表明，这种情况下的遗忘结果可以由有限个模型的特征公式（一种$\CTL$公式）的吸取来表示，从而说明了这种情形下的遗忘是封闭（存在）的。
+
+(2) {\em 遗忘理论与反应式系统的SNC和WSC的关系}
+
+在经典命题逻辑和一阶逻辑中，遗忘理论与SNC和WSC的关系分别已经被Lin 和 Doherty等人分别提出[22][23]。特别地，经典命题逻辑中的SNC和WSC被用于规划问题中的后继状态公理的计算。这里所说的SNC和WSC都是在给定的命题公式或一阶公式下的。本文给出，当给定一个有限反应式系统（Kripke structure）时，将该系统表示为其特征公式时就可使用
+上述所说的$\CTL$和$\mu$-演算的遗忘理论计算SNC和WSC。
+
+
+
+(3) {\em $CTL$和$\mu$-演算的遗忘在推理问题上的复杂性}
+
+计算复杂性理论致力于将可计算问题根据它们本身的复杂性分类。研究表明，在经典命题逻辑中：CNF（Conjunctive normal form）公式的遗忘的推理问题最难是$\Pi_2^P$完全的，DNF（Disjunctive normal form）公式的遗忘的推理问题是co-NP-C的；在模态逻辑S5中，遗忘的模型检测问题是NP-C的，对应的推理问题是$\Pi_2^P$完全的。基于此，本文从现有复杂性结果和自动机理论研究$\CTL$和$\mu$-演算的遗忘在模型检测和推理问题上的复杂性。
+研究表明$\mu$-演算下的复杂性。。。。。。
+
+
+
+
+
+
+
+
+\section{论文组织结构}
+本文研究了计算树逻辑和$\mu$-演算下的遗忘理论，并探讨如何使用遗忘技术来计算SNC（WSC）和知识更新。全文共分为七章，组织结构如图\ref{fig:chapter1-research-structure}所示，各章节内容的具体安排如下：
+
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 0.7\linewidth]{./figures/chapter01_2.jpg}
+	\caption{本文的章节内容组织结构图}
+	\label{fig:chapter1-research-structure}
+\end{figure}
+
+第\ref{chapter01}章为\textit{绪论}，首先阐述了本文的研究背景及意义，并分析给出了存在的问题，凝练出本文研究需要解决的关键问题。基于上述分析，阐述了本文的研究内容和研究取得的主要成果。最后给出了本文的章节组织结构安排。
+
+
+第\ref{chapter02}章为{\em 背景知识}，介绍了本文研究所设计的语言的语法语义即相关技术。首先，给出了经典命题逻辑下解释（赋值）的定义，并基于此描述了解释本文研究的语言的模型结构——Kripke结构。
+在解释清楚语言所依赖的模型结构之后，本章给出CTL和$\mu$-演算的语法和语义。
+最后介绍与上述逻辑语言密切相关的两个技术：遗忘和消解。
+
+
+
+第\ref{chapter03}章为{\em 给出CTL下的遗忘的定义及其基本性质}。首先，给出原子命题集合上的模型间互模拟的定义，并介绍这一定义的基本属性；其次，根据互模拟来定义CTL下的遗忘，并研究遗忘的属性，包括表达性属性（representation theory）和复杂性结果等。
+
+建立差分隐私与信息论的基本联系，奠定本文的研究基础。首先，基于Shannon基本通信模型，介绍了差分隐私基本通信模型，并给出了形式化的模型表达。其次，以差分隐私的基本通信模型为基础，引入信息熵、互信息、失真的概念对隐私与效用进行度量，提出信息熵度量模型及方法。进一步，在基本的度量基础上，针对多维关联属性的情景，提出面向关联属性的差分隐私信息熵度量方法，本章中的度量模型及方法为开展后续章节的研究奠定了基础。
+
+第\ref{chapter04}章为{\em 基于消解的CTL遗忘计算}。首先，给出
+
+研究了隐私与数据效用权衡的最优差分隐私机制。首先，基于第\ref{chapter02}章基础、第\ref{chapter03}章差分隐私通信模型及度量方法，分析了隐私系统的目标，借鉴率失真理论构建了面向差分隐私数据发布的优化模型。其次，在基本的通信模型基础上引入敌手模型，并考虑了敌手拥有关联辅助背景知识对隐私泄露的影响，提出了基于联合事件的互信息隐私度量。随后，修改率失真表述形式，提出了最小化隐私泄露的优化模型，用于获得隐私机制的概率分布函数。此外，设计了互信息隐私最优信道机制的近似迭代求解算法，并给出具体的验证分析。
+
+第\ref{chapter05}章为{\em 约束CTL下的遗忘}，围绕隐私保护机制设计的两个阶段，研究了面向数据收集的多维数据最优隐私机制。首先，以第\ref{chapter03}章的度量为基础，形式化互信息隐私(MI-privacy)最优化模型，设计模型求解算法寻找最优机制的概率密度函数。随后，将其作为基本构建模块应用到多维数据，提出有序随机响应扰动(ORRP)方案。最后，针对提出的ORRP方案，介绍了隐私、数据效用以及相关度损失的评估与分析，并利用真实数据集给出了所提方案的实验分析。
+
+
+第\ref{chapter06}章为{\em $\mu$-演算下的遗忘}，应用博弈均衡理论研究了差分隐私策略机制选择问题。通过分析隐私保护系统参与者的隐私目标，基于信息熵度量模型及方法将隐私目标形式化为隐私泄露的极大极小问题。然后，分析系统参与者的可行策略，构建了隐私保护的攻防博弈(PPAD)模型。针对本文关注的应用，实例化PPAD为两方零和对策博弈模型，并提供了均衡的理论分析以及算法实现。最后，阐述了均衡在隐私保护中的内涵及意义。
+
+
+第\ref{chapter07}章为\textit{应用与实验}，首先讲述如何将遗忘应用于计算SNC（WSC）和知识更新，其次给出基于消解的算法实现模型的实验结果。
+
+
+第\ref{chapter08}章为\textit{总结与展望}，首先总结了本文的研究工作，进一步，展望了未来研究工作的方向和重点。

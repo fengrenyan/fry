@@ -1,0 +1,243 @@
+\chapter{遗忘理论的应用}\label{chapter07}
+{\em 本章针对差分隐私存在策略型攻击问题，基于差分隐私通信模型，提出隐私保护的攻防博弈模型，以实现隐私保护的隐私与数据效用均衡。首先，定义差分隐私保护系统中隐私保护者与攻击者(敌手)的隐私目标，并将其表述为隐私泄露的极大极小问题。针对该问题，以隐私度量为效用函数，构建两方零和对策博弈模型，并基于极大极小定理、凹凸博弈给出相应的博弈均衡分析。理论分析表明鞍点的存在，并进一步给出鞍点的内涵。其次，对于等价的$\epsilon$- 隐私机制，提出等价类隐私机制可比较的方法，解决$\epsilon$-隐私度量存在的不足。最后，基于交替最优响应设计鞍点计算的策略优化选择算法。理论分析及实验结果表明提出的方法可辅助隐私保护者评估隐私泄露风险。}
+\section{引言}
+近年来，私有敏感信息泄露问题引起了社会和学术研究领域的广泛关注，正在成为大数据时代的一个主要挑战。如医疗数据、在线社交活动、基于位置的服务等网络应用中对个人数据的使用，使得个人的隐私遭受到了潜在的风险，由此产生了用户隐私泄露问题。隐私泄露逐渐成为数据收集、发布、分析、感知等隐私计算\cite{Lifenghua16}任务中迫切需要解决的问题，技术层面上亟需有效的隐私保护模型与算法。围绕隐私保护的核心任务，学术研究已提出诸多的隐私保护模型及解决方案。其中，差分隐私\cite{dwork2006differential,dwork2006calibrating,dwork2014algorithmic}是广泛被接受的隐私保护模型。为了克服基本假设中存在可信实体的局限性，本地模型的差分隐私\cite{duchi2013local,duchi2013Minimax}(Local Differential Privacy，LDP)被提出，并主要应用于解决数据收集阶段的隐私保护问题。在差分隐私的本地模型中，每一个用户独立的扰动自己的原始数据，然后报告扰动后的数据给数据聚合者(收集者)。由于本地模型的显著特性，一经提出就受到学术研究和产业应用的关注。学术界围绕本地模型的应用，先后提出诸如RAPPOR\cite{fanti2016building,erlingsson2014rappor}、$k$-RR\cite{kairouz2016extremal}、OUE\cite{wang2017locally}等众多著名先进的隐私机制。产业界如Google Chrome 浏览器\cite{erlingsson2014rappor}、Apple公司操作系统\cite{tang2017privacy}等将其应用于隐私保护数据收集、分析场景。纵观研究工作，数据聚合者通常是半诚实的敌手模型，隐私性与数据质量依然是核心的关注问题，隐私保护难以实现完美无泄露，相对的寻找隐私保护策略均衡成为较为理想的权衡折中解决方案。
+
+实际的应用中，随机化响应\cite{warner1965randomized}技术是有效实现LDP的方法\cite{kairouz2016extremal,kairouz2016discrete,wang2016using,holohan2017optimal}，其已成为LDP方案设计的基本构建模块。本质上，随机化响应是从原始数据到扰动输出数据的一个概率性映射。基于此，隐私机制的随机性与隐私保护的隐私和数据质量密切相关，这就是权衡隐私与效用课题的研究内容。目前，这仍然是差分隐私保护中学术研究的重点。在差分隐私本地模型的数据收集应用中，数据聚合者收集、存储、分析用户报告的扰动数据\cite{sei2017differential}，扰动后的数据与原始数据之间的关联决定了隐私保护的隐私性与数据的可用性。为了解决权衡的问题，在寻找有效的折中方案过程中，隐私与数据质量的度量是基本的前提工作。当前，隐私预算参数$\epsilon$是一个量化差分隐私不可区分等级的事实标准。但是，这个度量是分布独立的，其存在着一些不足之处。例如，一个确定性的隐私协议$Q(x)=x$ mod $2$提供$\epsilon = \infty$的隐私保障，但是该隐私协议仍然可以阻止部分的隐私泄露\cite{lopuhaa-zwakenberg2019information}。除了上面提到的，这样的隐私度量无法在等价的$\epsilon$-隐私机制集合中区分那个隐私机制的性能更好，因为集合中的隐私机制都提供相同的$\epsilon$-不可区分等级。受这些问题的激励，度量也亟需新的评价方法。
+
+针对上述问题，从隐私信息流的角度，基于信息论的方法可以得到有效的解决\cite{wu2020a}。首先，上述有关LDP机制的数据处理过程，可以被建模为一个原始数据与扰动数据之间的噪声信道模型\cite{xiong2016randomized,kalantari2018robust}(参见\ref{sec:communication_model_of_dp}节内容)。然后，利用熵与互信息量定义隐私泄露度量，且已在诸多研究工作中得到了应用\cite{kairouz2016extremal,calmon2012privacy,sarwate2014a,kalantari2016optimal}。重要的，信息论的模型中考虑了数据分布和隐私机制对隐私泄露的影响，互信息隐私测量扰动数据包含原始数据的信息量，它捕捉住了隐私攻击者有关数据分布的先验知识。此外，隐私保护系统中仅有两方的参与者\cite{dwork2014algorithmic}，用户本地执行隐私协议旨在减少隐私泄露，其类似于隐私防护者。相似的，聚合者试图最大化隐私泄露，以至于推断用户的个人信息，类似于隐私攻击者。鉴于上述分析，本章中关注的问题演变为了有关隐私的攻防对抗问题。自然的，以博弈均衡的思想解决这个问题不失为一个理想的选择。现有存在的工作中，二人零和对策博弈\cite{hsu2013differential,alvim2017information,alvim2018leakage,jin2019on}、斯坦伯格博弈\cite{fioretto2020differential}、贝叶斯博弈\cite{cui2019improving}等在差分隐私框架下都有一定的应用。重要的，从量化信息流的角度构建的信息泄露博弈\cite{alvim2017information,alvim2018leakage}、量化信息流博弈\cite{jin2019on}是有效的隐私分析方法。
+
+
+鉴于上述的分析，本章中考虑在理性的框架下使用信息论的方法解决隐私与效用的均衡问题，通过分析隐私保护者与攻击者的隐私目标，首先将其形式化表述为隐私的极大极小问题。然后，基于差分隐私通信模型(\ref{sec:communication_model_of_dp}节)，提出隐私保护的攻防博弈模型，也即是一个二人的零和博弈模型。进一步，提出一个交替最优化算法计算提出的攻防博弈的鞍点，利用鞍点策略实现差分隐私的均衡优化。理论上的均衡分析和实验结果表明，提出的均衡思想是一种稳定的状态，可用于预测评估隐私泄露风险。本章的主要贡献可以总结如下：
+
+(1) 通过使用信息论的方法量化隐私攻击者的信息增益，提出了隐私保护的攻防博弈模型(PPAD)，用于分析用户和聚合者的理性策略行为。
+	
+(2) 在隐私与效用的原则下，分析隐私防护者与攻击者的隐私目标，形式化表述互信息隐私的极大极小问题，构建二人零和对策博弈求解形式化表述的极大极小问题，并利用交替最优响应策略，设计交替最优的策略优化选择算法。
+	
+(3) 对于等价的$\epsilon$-隐私机制，提出一种有效的比较分析方法，并进一步验证了互信息隐私泄露在最差情况下可以达到隐私泄露的上界，为隐私泄露风险评估提供了量化分析的方法。
+
+
+本章其余部分组织如下：首先，第\ref{sec:chapter06-system-model}节阐述本章的系统模型、敌手模型，提出研究问题。其次，第\ref{sec:chapter06-PPAD}节提出隐私保护的攻防博弈模型(PPAD)，并给出均衡分析。进一步，第\ref{sec:chapter06-algorithm}节介绍均衡求解的策略优化选择算法。最后，第\ref{sec:chapter06-experiment}节给出实验与分析，并在第\ref{sec:chapter06-conclusion}节总结本章的研究工作。
+
+\section{最强必要条件和最弱充分条件}\label{sec:chapter07-snc-wsc}
+这部分介绍如何使用遗忘理论计算最强必要条件和最弱充分条件。
+直观地说，最强必要条件指最一般的结果（the most general consequence），最弱充分条件指最特殊的诱因（the most specific abduction）。
+下面给出其形式化定义，本章所说的公式指的是$\mu$-句子或$\CTL$公式。
+\begin{definition}[充分和必要条件]\label{def:NC:SC}
+	给定两个公式$\phi$和$\psi$，$V \subseteq \Var(\phi)$，$q\in\Var(\phi)- V$
+	和$\Var(\psi)\subseteq V$。
+	\begin{itemize}
+		\item 若$\phi \models q \rto \psi$，则称$\psi$是$q$在$V$和$\phi$上的{\em 必要条件（necessary condition，NC）}；
+		\item 若$\phi \models \psi\rto q$，则称$\psi$是$q$在$V$和$\phi$上的{\em 充分条件（sufficient condition，SC）}；
+		\item 若$\psi$是$q$在$V$和$\phi$上的必要条件，且对于任意的$q$在$V$和$\phi$上的必要条件$\psi'$都有$\phi\models\psi\rto\psi'$，则称$\psi$是$q$在$V$和$\phi$上的{\em 最强必要条件（strongest necessary condition，SNC）}；
+		\item 若$\psi$是$q$在$V$和$\phi$上的充分条件，且对于任意的$q$在$V$和$\phi$上的充分条件$\psi'$都有$\phi\models\psi'\rto\psi$，则称$\psi$是$q$在$V$和$\phi$上的{\em 最弱充分条件（weakest sufficient condition，WSC）}；
+	\end{itemize}
+\end{definition}
+
+从上述定义可以看出，SNC（WSC）是$q$在$V$和$\phi$上的NC（SC）中最强（最弱）的一个，即：对任意的（或SC）$\psi'$，$\phi \models \hbox{SNC} \rto \psi'$（$\phi \models \psi' \rto \hbox{WSC}$）。此外，如果公式$\psi$和$\psi'$都是$q$在$V$和$\phi$上的SNC（WSC），则$\psi \equiv \psi'$。
+下面的命题表明SNC和WSC是一对对偶概念。
+
+\begin{proposition}[对偶性]\label{dual}
+	令$V$、$q$、$\varphi$和$\psi$为定义~\ref{def:NC:SC}出现的符号。
+	则$\psi$是$q$在$V$和$\phi$上的SNC（WSC）当且仅当$\neg \psi$是$\neg q$在$V$和$\phi$上的WSC（SNC）。
+\end{proposition}
+\begin{proof}
+	（i）假设$\psi$是$q$在$V$和$\phi$上的SNC。则$\varphi \models q \rto \psi$，因而$\varphi \models \neg \psi \rto \neg q$，即 $\neg \psi$ 是 $\neg q$ 在 $V$ 和 $\phi$上的SC. 设$\psi'$ 是 $\neg q$ 在 $V$ 和 $\phi$ 上的SC：$\varphi \models \psi' \rto \neg q$。则$\varphi \models q \rto \neg \psi'$，即$\neg \psi'$是 $q$ 在 $V$ 和 $\phi$ 上NC。
+	因此，由假设可知$\varphi \models \psi \rto \neg \psi'$，所以$\varphi \models \psi' \rto \neg \psi$。这证明了$\neg \psi$是 $\neg q$ 在 $V$ 和 $\phi$上的WSC。
+可以类似地证明另一部分。
+	
+	（ii）WSC的情形可以类似SNC的情形给出证明。
+\end{proof}
+
+在定义~\ref{def:NC:SC}中将$q$替换为任意的公式$\alpha$，$V\subseteq \Var(\alpha) \cup \Var(\phi)$，则定义~\ref{def:NC:SC}被推广到任意公式的最强必要条件和最弱充分条件的定义。
+下面的命题表示了原子命题的充分（必要）条件与公式的充分（必要）条件之间的关系：通过计算原子命题的充分（必要）条件来计算公式的充分（必要）条件。
+
+
+
+\begin{proposition}\label{formulaNS_to_p}
+	给定公式$\Gamma$和$\alpha$， $V \subseteq \Var(\alpha) \cup \Var(\Gamma)$，$q$是不出现在$\Gamma$和$\alpha$中的原子命题。
+	集合$V$上的公式$\varphi$是$\alpha$在$V$和$\Gamma$上的SNC（WSC） 当且仅当$\varphi$是$q$在$V$和$\Gamma'$上的SNC（WSC），其中$\Gamma' = \Gamma \cup \{q \lrto \alpha\}$。
+\end{proposition}
+\begin{proof}
+	这里给出SNC部分的证明，WSC部分的证明与其类似。
+	
+	对于任意的公式$\beta$，记$\emph{SNC}(\varphi,\beta,V,\Gamma)$为“$\varphi$是$\beta$在$V$和$\Gamma$上的SNC”，$\emph{NC}(\varphi,\beta,V,\Gamma)$为“$\varphi$是$\beta$在$V$和$\Gamma$上的NC”。
+	
+	
+	($\Rto$) 证明“若$\emph{SNC}(\varphi,\alpha,V,\Gamma)$，则$\emph{SNC}(\varphi,q,V,\Gamma')$”。
+	由$\emph{SNC}(\varphi,\alpha,V,\Gamma)$和$\alpha\equiv q$可知$\Gamma' \models q\rto \varphi$，即：$\varphi$是$q$在$V$和$\Gamma'$上的NC。
+	假设$\varphi'$是$q$在$V$和$\Gamma'$上的任意NC，由于$\alpha\equiv q$和$\emph{IR}(\alpha \rto \varphi', \{q\})$，因此，$\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$。由引理\ref{lem:KF:eq}可知$\Gamma \models \alpha \rto \varphi'$，即：$\emph{NC}(\varphi',\alpha,V,\Gamma)$。
+	
+	
+	($\Lto$) 证明“若$\emph{SNC}(\varphi,q,V,\Gamma')$，则$\emph{SNC}(\varphi,\alpha,V,\Gamma)$”。
+	由$\emph{SNC}(\varphi,q,V,\Gamma')$、$\emph{IR}(\alpha \rto \varphi, \{q\})$ 和 $(\PP)$ 可知$\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$，又由引理\ref{lem:KF:eq}可知$\Gamma \models \alpha \rto \varphi$，即：$\emph{NC}(\varphi,\alpha,V,\Gamma)$。
+	设 $\varphi'$ 是 $\alpha$ 在 $V$ 和 $\Gamma$ 上的任意NC。由$\alpha\equiv q$ 和 $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$ 可 知 $\Gamma' \models q \rto \varphi'$，即：$\emph{NC}(\varphi',q,V,\Gamma')$。
+	又因为$\emph{SNC}(\varphi,q,V,\Gamma')$、$\emph{IR}(\varphi \rto \varphi', \{q\})$ 和 $(\PP)$，所以 $\CTLforget(\Gamma', \{q\})\models \varphi \rto \varphi'$。
+	由引理\ref{lem:KF:eq}可知$\Gamma \models \varphi \rto \varphi'$，因此$\emph{SNC}(\varphi,\alpha,V, \Gamma)$成立。
+\end{proof}
+
+为了对给定原子命题集合下的公式的最弱充分条件有个直观的认识，下面给出一个简单的例子。
+	%下面的例子给出了关于给定原子命题集合下的公式的最弱充分条件的具体体现。
+
+\begin{example}[Continued from Example~\ref{ex:2}]\label{examp:WSC}
+	本例来源于图~\ref{v1uv2}中的初始结构${\cal K}_2$。令$\psi = \EXIST \NEXT(s \wedge (\EXIST \NEXT se \vee \EXIST \NEXT \neg d))$、$\varphi = \EXIST \NEXT(s \wedge \EXIST \NEXT \neg d)$、$\Ha =\{d, s, se\}$和$V = \{s, d\}$。下面证明$\varphi$是$\psi$在$V$和${\cal K}_2$上的WSC：
+	\begin{itemize}
+		\item[(i)] 由已知有$\varphi \models \psi$和$\Var(\varphi) \subseteq V$。此外，$(\Hm, s_0) \models \varphi \wedge \psi$，因此${\cal K}_2 \models \varphi \rto \psi$，即：$\varphi$是$\psi$在$V$和${\cal K}_2$上的SC;
+		\item[(ii)] 这里证明“对任意的$\psi$在$V$和${\cal K}_2$上的SC $\varphi'$都有${\cal K}_2 \models \varphi' \rto \varphi$”。易知若${\cal K}_2 \not \models \varphi'$，则${\cal K}_2\models \varphi' \rto \varphi$。
+		假设${\cal K}_2 \models \varphi'$。由$\varphi'$是$\psi$在$V$和${\cal K}_2$上的SC可知$\varphi' \models \EXIST \NEXT(s \wedge \phi)$，其中$\phi$是使得$\phi\models \EXIST \NEXT se \vee \EXIST \NEXT \neg d$成立的公式。又$\IR(\varphi', \overline V)$，所以$\phi \models \EXIST \NEXT \neg d$。因此，$\varphi' \models \varphi$且${\cal K}_2 \models \varphi' \rto \varphi$。
+	\end{itemize}
+\end{example}
+
+
+如何使用遗忘理论计算SNC（WSC）是本章讨论的关键问题。下面首先给出其理论基础，然后再做直观的解释。
+
+\begin{theorem}\label{thm:SNC:WSC:forget}
+	给定公式$\varphi$、原子命题的集合$V\subseteq\Var(\varphi)$和原子命题$q\in\Var(\varphi)- V$。
+	\begin{itemize}
+		\item[(i)] $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\}) - V)$ 是$q$在$V$和$\varphi$上的SNC；
+		\item[(ii)]  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\}) - V)$是$q$在$V$和$\varphi$上的WSC。
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	(i) 令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。
+	
+	
+	“NC”部分：由遗忘理论的定义可知$\varphi \wedge q \models {\cal F}$。因此，$\varphi\models q \rto {\cal F}$，即：${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC。
+	
+	“SNC”部分：假设$\psi'$为$q$在$V$和$\varphi$上的任意NC，即：$\varphi\models q \rto \psi'$。由定理~\ref{thm:V-bisimulation:EQ} 和 $\emph{IR}(\psi', (\Var(\varphi) \cup \{q\})- V)$可知，若$\varphi \wedge q \models \psi'$，则${\cal F} \models \psi'$。
+	由假设可知$\varphi\models q \rto \psi'$，所以$\varphi \wedge {\cal F} \models \psi'$，因此$\varphi \models {\cal F} \rto \psi'$。
+	
+	由上面两部分可知，${\cal F}$是$q$在$V$和$\varphi$上的SNC。
+	
+	(ii) 令${\cal F}=\neg \CTLforget(\varphi \wedge \neg q, (\Var(\varphi) \cup \{q\})- V)$。
+	由命题~\ref{dual}可知，对任意的命题$q'$，$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，当且仅当
+	$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。
+	由(i)可知$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，所以$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。令$q=\neg q'$，可得${\cal F}$ 是 $q$ 在 $V$ 和 $\varphi$上的WSC。
+\end{proof}
+
+令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。上面的定理可以直观地解释如下：由遗忘理论的定义可知$\varphi \wedge q \models \beta$，这说明
+${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi) \cup \{q\})- V$无关的公式$\psi$，若$\varphi \wedge q \models \psi$，则由定理~\ref{}可知$\beta \models \psi$。
+
+由第\ref{chapter05}章可知，任意的有限的初始$\MPK$-结构都能由一个$\CTL$公式表示，所以由上面的定理自然地就能得到给定有限初始$\MPK$-结构下的SNC和WSC。
+\begin{corollary}\label{thm:inK:SNC}
+	令${\cal K}= (\Hm, s)$为初始\MPK-结构，其中$\Hm=(S,R,L,s_0)$ 为有限原子命题集合$\Ha$上的初始-Kripke结构，$V \subseteq \Ha$且$q\in V' = \Ha - V$。则：
+	\begin{itemize}
+		\item[(i)] $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$是$q'$在$V$和${\cal K}$上的SNC；
+		\item[(ii)] $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$是$q'$在$V$和${\cal K}$上的WSC。
+	\end{itemize}
+\end{corollary}
+
+\section{$\mu$-演算下的知识更新}\label{sec:chapter07-knowledge-update}
+本小节介绍遗忘理论的另一个应用：知识更新（Knowledge update）。
+具体说来，本节将使用遗忘理论定义知识更新，使得用这种方式定义的知识更新满足下面由Katsuno和Mendelzon的基本条件：
+\begin{itemize}
+	\item (U1)  $\Gamma \diamond \phi \models \phi$；
+	\item (U2) 若$\Gamma \models \phi$，则$\Gamma \diamond \phi \equiv \Gamma$；
+	\item (U3) 若$\Gamma$和$\phi$都是可满足的，则$\Gamma \diamond \phi$是可满足的；
+	\item (U4) 若$\Gamma_1\equiv \Gamma_2$且$\phi_1 \equiv \phi_2$，则$\Gamma_1 \diamond \phi_1 \equiv \Gamma_2 \diamond \phi_2$；
+	\item (U5) $(\Gamma \diamond \phi) \wedge \psi \models \Gamma \diamond(\phi \wedge \psi)$；
+	\item (U6) 若$\Gamma \diamond \phi \models \psi$且$\Gamma \diamond \psi \models \phi$，则$\Gamma \diamond \phi \equiv \Gamma \diamond \psi$；
+	\item (U7) 若$\Gamma$有唯一一个模型，则$(\Gamma \diamond \phi) \wedge (\Gamma \diamond \psi) \models \Gamma \diamond (\phi \vee \psi)$；
+	\item (U8) $(\Gamma_1 \vee \Gamma_2) \diamond \phi                                                                                                                    / (\Gamma_1 \diamond \phi) \vee  (\Gamma_2 \diamond \phi)$。
+\end{itemize}
+其中，$\diamond$为知识更新操作，$\varphi \diamond \psi$表示用$\psi$更新$\varphi$得到的结果。
+
+本小节假设所有的初始$\MPK$-结构都是有限的，即：状态来源于有限的状态空间且$\Ha$为有限的原子命题的集合。下面定理显然成立：
+\begin{theorem}\label{thm:initModel}
+	给定$\mu$-句子$\phi$和原子命题的集合$V \subseteq \cal A$。存在一个$\mu$-句子$\psi$使得：
+	\[
+	\Hm \models \psi \mbox{ 当且仅当存在 } \Hm'\in\Mod(\phi) \mbox{ 使得 } \Hm \lrto_V \Hm' % \mbox{ and } \Hm' \models \phi.
+	\]
+	其中$\Hm$和$\Hm'$都是有限的初始结构。
+\end{theorem}
+\begin{proof}
+	令$\psi=\Muforget(\phi, V)$。由定理~\ref{thm:exist}和遗忘理论的定义可知，对任意的$\Hm \models \psi$存在一个$\Hm' \models \phi$使得$\Hm \lrto_V \Hm'$，且对每一个$\Hm' \in \Mod(\phi)$都有$\Hm' \models \psi$。
+	此时，容易证明对任意的有限初始结构$\Hm$，若$\Hm \models \psi$，则存在一个$\Hm'$使得$\Hm' \models \phi$且$\Hm \lrto_V \Hm'$。
+	
+	此外，对任意的$\Hm' \in \Mod(\phi)$，由(\W)可知存在$\Hm' \models \psi$。又$\Hm \lrto_V \Hm'$，所以由定理~\ref{}可知$\Hm \models \psi$。
+\end{proof}
+
+
+定理~\ref{thm:initModel}表明模型结构被限制到有限初始结构下的$\mu$-演算下遗忘理论也是封闭的。
+此外，由？？可知，任意$\Ha$上的有限初始$\MPK$-结构${\cal K}$都能用一个$\CTL$公式——特征公式${\cal F}_{\Ha}({\cal K})$来表示，此公式也是$\mu$-句子。
+
+对于给给定的$\Ha$和$V_{min}\subseteq \Ha$，记$\varphi = \Muforget({\cal F}_{\Ha}({\cal K}), V_{min})$，其中$V_{min} \subseteq \Ha$是使得$\varphi$可满足的极小子集。
+此外，公式
+$$\bigcup_{V_{min}\subseteq \Ha} \Mod(\Muforget({\cal F}_{\Ha}({\cal K}), V_{min}))$$
+表示所有$\Muforget({\cal F}_{\Ha}({\cal K}), V_{min})$的模型集合的并集。
+此时，可如下定义$\mu$-演算下的知识更新操作$V_{min}$：
+
+
+\begin{definition}\label{def:KU}
+	给定$\mu$-句子$\Gamma$和$\phi$。知识更新操作$\diamond_{\mu}$定义如下：
+	\[
+	\Mod(\Gamma \diamond_{\mu} \phi) = \bigcup_{{\cal K} \in \Mod(\Gamma)} \bigcup_{V_{min}\subseteq \Ha} \Mod(\Muforget({\cal F}_{\Ha}({\cal K}), V_{min}) \wedge \phi),
+	\]
+	其中，${\cal F}_{\Ha}({\cal K})$是${\cal K}$在$\Ha$上的特征公式，$V_{min} \subseteq \Ha$ 是使得$\Muforget({\cal F}_{\Ha}({\cal K})$可满足的极小子集。
+\end{definition}
+
+从直观上来说，$\Gamma \diamond_{\mu} \phi$表示通过极小化改变$\Gamma$的模型到$\phi$的模型来更新$\Gamma$。换句话说，定义~\ref{def:KU}通过极小化改变$\Gamma$的每个模型，使得该模型能够满足$\phi$来更新原有的知识$\Gamma$。从这个角度看，这样定义的知识更新是一种基于模型的知识更新方法。
+
+此外，$\mu$-演算下的知识更新也可以通过像命题逻辑里的那样来定义：令$I$，$J_1$和$J_2$为三个赋值，即：原子命题的集合；则$J_1$比$J_2$更接近$I$（记为：$J_1 \leq_{I,pam} J_2$）当且仅当$\Diff(I, J_1) \subseteq \Diff(I, J_2)$，其中$\Diff(X, Y) =\{p\in \Ha \mid X(p) \not = Y(p)\}$。那么命题逻辑里的知识更新——用$\psi$更新$\Gamma$，即为$\psi$的关于偏序关系$\leq_{I,pam}$的所有极小模型的集合（$I$是$\Gamma$的模型），即：
+$$\Mod(\Gamma \diamond_{pam} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi), \leq_{I,pam}).$$
+其中，$Min(\Mod(\psi), \leq_{I,pam})$是$\psi$的关于偏序关系$\leq_{I,pam}$的极小模型的集合。
+
+类似地，这里定理有限初始结构之间关于另一个初始结构的偏序关系。
+\begin{definition}\label{def:closer}
+	给定三个有限初始结构$\Hm$、$\Hm_1$和$\Hm_2$，$\Hm_1$比$\Hm_2$更接近$\Hm$（记为$\Hm_1 \leq_{\Hm} \Hm_2$）当且仅当对任意使得$\Hm_2 \lrto_{V_2} \Hm$成立的$V_2 \subseteq \Atom$都存在一个$V_1 \subseteq V_2$使得$\Hm_1 \lrto_{V_1} \Hm$。
+	 $\Hm_1 <_{\Hm} \Hm_2$当且仅当$\Hm_1 \leq_{\Hm} \Hm_2$且$\Hm_2 \not \leq_{\Hm} \Hm_1$。
+\end{definition}
+
+给定有限初始结构的集合$M$和有限初始结构$\Hm$，用$Min(M,$ $\leq_{\Hm})$表示$M$中关于偏序关系$\leq_{\Hm}$的极小有限初始结构的集合。则$\leq_{\Hm}$与知识更新操作$\diamond_{\mu}$有如下关系。
+
+\begin{theorem}\label{thm:minU}
+	给定$\mu$-句子$\Gamma$和$\phi$，则：
+	\[\Mod(\Gamma \diamond_{\mu} \phi) = \bigcup_{\Hm\in \Mod(\Gamma)} Min(\Mod(\phi), \leq_{\Hm}).
+	\]
+\end{theorem}
+\begin{proof}
+	对每一个初始结构$\Hm'\in \Mod(\Gamma \diamond_{\mu} \phi)$，这里证明存在一个$\Hm \in \Mod(\Gamma)$使得$\Hm' \in  Min(\Mod(\phi), \leq_{\Hm})$。由定义~\ref{def:KU}可知，存在$\Hm\in Mod(\Gamma)$使得$\Hm'\in \Mod(\Muforget({\cal F}_{\Ha}(\Hm)$, $V_{min}) \wedge \phi)$。 此外，存在一个特殊的$V'\subseteq \Ha$（即：$V' = V_{min}$） 使得$\Hm' \lrto_{V'} \Hm$和$\Hm' \in \Mod(\phi)$。因为$V'$是使得$\Hm' \lrto_{V'} \Hm$成立的极小子集，因此对任意使得$\Hm'' \lrto_{V_{min}} \Hm$成立的$\phi$的模型$\Hm''$，由遗忘理和特征公式论的定义可知$\Hm' \leq_{\Hm} \Hm''$。 因此，$\Hm' \in Min(\Mod(\phi), \leq_{\Hm})$。
+	
+	对每一个初始结构$\Hm'\in \bigcup_{\Hm\in \Mod(\Gamma)} Min(\Mod(\phi), \leq_{\Hm})$，存在$\Hm \in \Mod(\Gamma)$使得$\Hm' \in  Min(\Mod(\phi), \leq_{\Hm})$。设$V_{min}$是使得$\Hm' \lrto_{V_{min}} \Hm$成立的极小子集。根据$\leq_{\Hm}$的定义可知，不存在其他$\Hm''\in \Mod(\phi)$使得$\Hm'' \lrto_{V'} \Hm$ 且$V' \subset V_{min}$。因而$\Hm' \in \Mod(\Muforget({\cal F}_{\Ha}(\Hm), V_{min}) \wedge \phi)$，所以$\Hm' \in \Mod(\Gamma \diamond_{\mu} \phi)$。
+\end{proof}
+
+从定理~\ref{thm:minU}可以看出，通过遗忘理论定义的知识更新操作与通过有限初始结构间的偏序关系定义的知识更新一致，且通过遗忘理论定义的知识更新操作满足Katsuno和Mendelzon提出的八条基本条件。
+
+\begin{theorem}\label{thm:U1toU8}
+	知识更新操作$\diamond_{\mu}$满足Katsuno和Mendelzon提出的基本条件(U1)-(U8)。
+\end{theorem}
+\begin{proof}
+	(U1). 由定理~\ref{thm:minU}可知$\Mod(\Gamma \diamond_{\mu} \phi) \subseteq \Mod(\phi)$，因此$\Gamma \diamond_{\mu} \phi \models \phi$。
+	
+	 
+	
+	(U2). 首先证明$\Gamma \diamond_{\mu} \phi \models \Gamma$。对$\Gamma \diamond_{\mu} \phi$的任意一个模型$\Hm$，存在一个$\Hm_1 \in \Mod(\Gamma)$ 和 $V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。又$\Gamma \models \phi$，因此$V_{min} = \emptyset$，即$\Hm \models  \Gamma$。类似地，对$\Gamma$的每一个模型$\Hm$，存在一个$\Hm_1\in \Mod(\Gamma \diamond_{\mu} \phi)$和一个$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。又$\Gamma \models \phi$，因此$V_{min} = \emptyset$。所以，$\Gamma \models \Gamma \diamond_{\mu} \phi$。
+	
+	 
+	
+	容易证明$\diamond_{\mu}$满足(U3)和(U4)。
+	
+	(U5). 对$(\Gamma \diamond_{\mu} \phi) \wedge \psi$的每一个模型$\Hm$，存在一个$\Hm_1 \in \Mod(\Gamma)$和一个$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。
+	此外，可知$\Hm \models \phi \wedge \psi$，因此，$\Hm \models \Gamma \diamond_{\mu} (\phi \wedge \psi)$。
+	 
+	(U6). 这里给出$\Gamma \diamond_{\mu} \phi \models \Gamma \diamond_{\mu} \psi$的证明，另一个方向可以类似地证明。
+	对$\Gamma \diamond_{\mu} \phi$的每一个模型$\Hm$，$\Hm$也是$\psi$的模型，且存在$\Hm_1 \in \Mod(\Gamma)$和$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。
+	因此，$\Hm$是$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$的模型，也即是$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$可满足的。
+	%此外，$V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$可满足的极小子集，否则
+	设$V\subset V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V) \wedge \psi$可满足的原子命题的集合，由$\Gamma \diamond_{\mu} \psi \models \phi$可知$\Muforget({\cal F}_{\Ha}(\Hm_1), V)$ $\wedge \phi$是可满足的，这与$V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \phi$可满足的极小子集。因此，$V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$可满足的极小子集，所以，$\Hm$是$\Gamma \diamond_{\mu} \psi$的模型。
+	
+	
+	(U7). 设$\Gamma$有唯一的模型$\Hm$。对每一个$\Hm_1 \in \Mod((\Gamma \diamond_{\mu} \phi) \wedge (\Gamma \diamond_{\mu} \psi))$，存在两个关于$\leq_{\Hm_1}$的极小子集$V_1$和$V_2$使得$\Hm \lrto_{V_1} \Hm_1$和$\Hm \lrto_{V_2} \Hm_1$成立，即：$\Hm_1$是$\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge \phi$和$\Muforget({\cal F}_{\Ha}(\Hm),$ $V_2) \wedge \psi$的模型。因此，$\Hm_1 \lrto_{V_1 \cap V_2} \Hm$，即$\Hm_1$是$\Muforget({\cal F}_{\Ha}(\Hm), V_1 \cap V_2)$的模型。所以，$V_1 = V_2$，否则$V_1$ （或$V_2$）不是关于$\leq_{\Hm_1}$的极小子集。此外，$\Hm_1$也是$\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\phi \vee \psi)$的模型。
+	
+	设$V_3\subset V_1$是使得$\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge (\phi \vee \psi)$可满足的原子命题集合，则有$\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \phi$ 或$\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \psi$是可满足的。不失一般性地，设$\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \phi$是可满足的，则$V_1$不是关于$\leq_{\Hm_1}$的极小子集，与前面的描述矛盾。
+	因此，$V_1$是使得$\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\phi \vee \psi)$可满足的极小子集。
+	所以，$\Hm_1$是$\Gamma \diamond_{\mu} (\phi \vee \psi)$的模型。
+	
+	(U8) 对每一个$\Hm \in \Mod((\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi)$都存在一个$\Hm_1 \in \Mod(\Gamma_1)$（或$\Hm_1\in \Mod(\Gamma_2)$）和一个$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。因此，$\Hm \models  (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi)$成立。
+	
+	类似地，对每一个$\Hm \in \Mod( (\Gamma_1 \diamond_{\mu} \phi) \vee (\Gamma_2 \diamond_{\mu} \phi))$都存在一个$\Hm_1\in \Mod(\Gamma_1)$ （或$\Hm_1 \in \Mod(\Gamma_2)$）和一个$V_{min}$使得$\Hm \lrto_{V_{min}} \Hm_1$。因此，$\Hm \models (\Gamma_1 \vee \Gamma_2) \diamond_{\mu} \phi$成立。
+\end{proof}
+
+\section{本章小结}\label{sec:chapter07-conclusion}
+
+本章针对差分隐私数据收集应用中存在的策略型攻击问题，利用信息论、博弈均衡理论研究了隐私防护者与隐私攻击者的理性策略选择，提出了隐私保护的攻防博弈(PPAD)模型，以实现隐私与数据效用均衡。首先，基于信息论度量方法分析差分隐私保护系统中隐私保护者和攻击者的隐私目标，形式化表述为互信息隐私的极大极小问题。其次，针对上述提出的问题，考虑策略型的隐私攻击者和防护者，提出隐私保护的攻防博弈模型，并具体为二人的零和博弈模型。随后，给出博弈的凹凸性以及均衡分析。进一步，为了求解博弈模型鞍点，设计了策略优化选择算法。最后，通过实验阐述了所提出的方案可以用于比较等价的隐私机制，并阐述了隐私量化是最坏情况下的隐私泄露，也即是，隐私防护者的最大隐私泄露。
