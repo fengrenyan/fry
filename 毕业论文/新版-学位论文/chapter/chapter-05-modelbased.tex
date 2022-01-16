@@ -29,7 +29,35 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 为此，本节首先介绍计算树之间的$V$-互模拟关系，然后给出计算树的特征公式的定义，最后给出初始$\MPK$-结构的特征公式。
 
 \subsection{计算树的$V$-互模拟}
-**********
+
+为此，首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$（或$\Hm_i=(S_i,R_i,L_i,[\_]_i,s_0^i)$）是初始结构（$\Ind$-Kripke结构），${\cal K}_i=(\Hm_i, s_i)$是$\MPK$-结构（或$\Ind$-结构）。$\Hb_n^V$被递归定义如下：
+\begin{itemize}
+	\item 若$L_1(s_1)-V=L_2(s_2)$，则$({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
+	\item 对任意$n\ge 0$，若满足下面几个条件，则$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^V$成立：
+	\begin{itemize}
+		\item $({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
+		\item 对任意$(s_1,s_1')\in R_1$，存在$(s_2,s_2')\in R_2$使得$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$；
+		\item 对任意$(s_2,s_2')\in R_2$，存在$(s_1,s_1')\in R_1$使得$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$。
+	\end{itemize}
+\end{itemize}
+其中${\cal K}_i'=(\Hm_i,s_i')$。
+
+当所谈及的原子命题的集合$V$很显然的时候，上述$\Hb_n^V$中的$V$可以省略，记为$\Hb_n$。此外，当讨论的$\Hm_i$$(i=1,2)$是显然的时候，可以使用$(s_1,s_2) \in \Hb_n$代替$((\Hm_1,s_1),(\Hm_2,s_2)) \in \Hb_n$。
+此时，$V$-互模拟关系就可以定义如下：
+\begin{definition}[$V$-互模拟]\label{def:V-bisimulation}
+	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是$\MPK$-结构（或$\Ind$-结构）。
+	\begin{itemize}
+		\item ${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，当且仅当对所有的$n \ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，则记为${\cal K}_1 \lrto_V {\cal K}_2$。
+		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}_{\ge 1}$是大于等于1的整数的集合。}都有${\cal K}_{1,j} \lrto {\cal K}_{2,j}$，则$\pi_1 \lrto_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
+	\end{itemize}
+\end{definition}
+
+上述$V$-互模拟的定义是现有互模拟定义的一般化，这可以从下面几个方面来体现\footnote{在其他领域也有类似的定义，如：定义在数据库相关文献中的概念$k$-互模拟\cite{kaushik2002updates}。$k$-互模拟概念中涉及与本文$\Hb_n$类似的定义，只是其关系是从相反的方向（即：从孩子到父节点的方向）来说明的。此外，值得一提的是，本文的$V$-互模拟的概念是定义在$\MPK$-结构上的。}。
+首先，当给定的$V$为空集且谈论指定的初始状态时，本文的$V$-互模拟与定义在Baier等文章里的互模拟等价（定义7.1\cite{Baier:PMC:2008}）的概念一致。
+其次，在同一文章里的基于状态的互模拟（定义7.7\cite{Baier:PMC:2008}）是定义在给定结构的状态上的，因此与本文的$V$-互模拟（定义在结构的集合上）也不同。
+最后，本文的$\Hb_n$的定义与Browne的论文中的状态等价$E_n$类似，只是后者是定义在状态上\cite{browne1988characterizing}而本文的定义在$\MPK$-结构（或$\Ind$-结构）上。
+
+
 \begin{lemma}
 给定原子命题集合$V\subseteq \Ha$和$\MPK$-结构，其中$i=1,2$且$\Hm_i=(S_i, R_i, L_i, s_0^i)$为有限初始结构。$(s_1, s_2)\in \Hb$当且仅当$s_1 \lrto_V s_2$。
 \end{lemma}

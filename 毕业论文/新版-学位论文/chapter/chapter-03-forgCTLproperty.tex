@@ -11,32 +11,53 @@
 
 这部分给出定义在给定原子命题集合$V$上的互模拟的概念，本文称之为$V$-互模拟。尽管在文章~\cite{Yan:AIJ:2009}中给出了相似的概念，但是如在基础知识部分所述，$S5$的语义是定义在一种特殊的Kripke结构（$\MPK$-解释）下的，因而不具有一般性。接下来探讨一种更加一般的$V$-互模拟。
 
-为此，首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$（或$\Hm_i=(S_i,R_i,L_i,[\_]_i,s_0^i)$）是初始结构（$\Ind$-Kripke结构），${\cal K}_i=(\Hm_i, s_i)$是$\MPK$-结构（或$\Ind$-结构）。$\Hb_n^V$被递归定义如下：
-\begin{itemize}
-	\item 若$L_1(s_1)-V=L_2(s_2)$，则$({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
-	\item 对任意$n\ge 0$，若满足下面几个条件，则$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^V$成立：
-		\begin{itemize}
-			\item $({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
-			\item 对任意$(s_1,s_1')\in R_1$，存在$(s_2,s_2')\in R_2$使得$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$；
-			\item 对任意$(s_2,s_2')\in R_2$，存在$(s_1,s_1')\in R_1$使得$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$。
-		\end{itemize}
-\end{itemize}
-其中${\cal K}_i'=(\Hm_i,s_i')$。
 
-当所谈及的原子命题的集合$V$很显然的时候，上述$\Hb_n^V$中的$V$可以省略，记为$\Hb_n$。此外，当讨论的$\Hm_i$$(i=1,2)$是显然的时候，可以使用$(s_1,s_2) \in \Hb_n$代替$((\Hm_1,s_1),(\Hm_2,s_2)) \in \Hb_n$。
-此时，$V$-互模拟关系就可以定义如下：
-\begin{definition}[$V$-互模拟]\label{def:V-bisimulation}
-	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是$\MPK$-结构（或$\Ind$-结构）。
+\begin{definition}[$V$-互模拟]
+	\label{def:VInd:bisimulation}
+	给定原子命题集合$V\subseteq\cal A$、索引集合$I\subseteq \Ind$和初始$\Ind$-结构 $\Hm_i=(S_i, R_i,L_i, [\_]_i, s_0^i)~(i=1,2)$。
+	对关系 $\Hb_V \subseteq S_1 \times S_2$和任意的$s_1 \in S_1$和$s_2 \in S_2$，若$(s_1, s_2)\in \Hb_V$蕴涵下列条件，则称 $\Hb_V$ 是 $\Hm_1$ 和 $\Hm_2$之间的一个 $V$-互模拟关系：
 	\begin{itemize}
-		\item ${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，当且仅当对所有的$n \ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，则记为${\cal K}_1 \lrto_V {\cal K}_2$。
-		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}_{\ge 1}$是大于等于1的整数的集合。}都有${\cal K}_{1,j} \lrto {\cal K}_{2,j}$，则$\pi_1 \lrto_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
+		\item[(i)] $L_1(s_1) - V = L_2(s_2) -V$；
+		\item[(ii)] $\forall r_1\in S_1$， 若$(s_1, r_1)\in R_1$，则$\exists r_2 \in S_2$ 使得 $(s_2,r_2) \in R_2$ 和 $(r_1, r_2) \in \Hb_V$；
+		\item[(iii)] $\forall r_2\in S_2$，若$(s_2, r_2)\in R_2$，则 $\exists r_1 \in S_1$ 使得 $(s_1,r_1) \in R_1$ 和 $(r_1, r_2)\in \Hb_V$。
 	\end{itemize}
 \end{definition}
 
-上述$V$-互模拟的定义是现有互模拟定义的一般化，这可以从下面几个方面来体现\footnote{在其他领域也有类似的定义，如：定义在数据库相关文献中的概念$k$-互模拟\cite{kaushik2002updates}。$k$-互模拟概念中涉及与本文$\Hb_n$类似的定义，只是其关系是从相反的方向（即：从孩子到父节点的方向）来说明的。此外，值得一提的是，本文的$V$-互模拟的概念是定义在$\MPK$-结构上的。}。
-首先，当给定的$V$为空集且谈论指定的初始状态时，本文的$V$-互模拟与定义在Baier等文章里的互模拟等价（定义7.1\cite{Baier:PMC:2008}）的概念一致。
-其次，在同一文章里的基于状态的互模拟（定义7.7\cite{Baier:PMC:2008}）是定义在给定结构的状态上的，因此与本文的$V$-互模拟（定义在结构的集合上）也不同。
-最后，本文的$\Hb_n$的定义与Browne的论文中的状态等价$E_n$类似，只是后者是定义在状态上\cite{browne1988characterizing}而本文的定义在$\MPK$-结构（或$\Ind$-结构）上。
+
+若$\Hm_1$ 和 $\Hm_2$之间存在一个 $V$-互模拟关系$\Hb_V$使得$(s_1, s_2)\in \Hb_V$，则称两个 $\Ind$-结构 ${\cal K}_1 = (\Hm_1, s_1)$ 和 ${\cal K}_2 = (\Hm_2, s_2)$ 是 $V$-{\em 互模拟}，记为${\cal K}_1 \lrto_V {\cal K}_2$。
+令$i\in \{1,2\}$，$\pi_i=(s_{i,1},s_{i,2},\ldots)$为$\Hm_i$上的路径，若对任意的$j \ge 1$都有$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}$，则称这两条路径是$V$-{\em 互模拟}的，记为$\pi_1 \lrto_V \pi_2$，其中${\cal K}_{i,j}=(\Hm_i,s_{i,j})$。
+
+
+直观地说，若两个状态在不考虑$V\subseteq\cal A$中的元素时，其行为是相同的，则称这两个状态是“互模拟”的。
+当 $V=\emptyset$，$V$-互模拟的三个条件即为$\CTL$中的互模拟要满足的条件。
+下文中当初始$\Ind$-结构能从上写文中清楚地知道时，简写 ${\cal K}_1 \lrto_V {\cal K}_2$ 为 $s_1 \lrto_V s_2$。
+
+%为此，首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$（或$\Hm_i=(S_i,R_i,L_i,[\_]_i,s_0^i)$）是初始结构（$\Ind$-Kripke结构），${\cal K}_i=(\Hm_i, s_i)$是$\MPK$-结构（或$\Ind$-结构）。$\Hb_n^V$被递归定义如下：
+%\begin{itemize}
+%	\item 若$L_1(s_1)-V=L_2(s_2)$，则$({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
+%	\item 对任意$n\ge 0$，若满足下面几个条件，则$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^V$成立：
+%		\begin{itemize}
+%			\item $({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
+%			\item 对任意$(s_1,s_1')\in R_1$，存在$(s_2,s_2')\in R_2$使得$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$；
+%			\item 对任意$(s_2,s_2')\in R_2$，存在$(s_1,s_1')\in R_1$使得$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$。
+%		\end{itemize}
+%\end{itemize}
+%其中${\cal K}_i'=(\Hm_i,s_i')$。
+%
+%当所谈及的原子命题的集合$V$很显然的时候，上述$\Hb_n^V$中的$V$可以省略，记为$\Hb_n$。此外，当讨论的$\Hm_i$$(i=1,2)$是显然的时候，可以使用$(s_1,s_2) \in \Hb_n$代替$((\Hm_1,s_1),(\Hm_2,s_2)) \in \Hb_n$。
+%此时，$V$-互模拟关系就可以定义如下：
+%\begin{definition}[$V$-互模拟]\label{def:V-bisimulation}
+%	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是$\MPK$-结构（或$\Ind$-结构）。
+%	\begin{itemize}
+%		\item ${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，当且仅当对所有的$n \ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，则记为${\cal K}_1 \lrto_V {\cal K}_2$。
+%		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}_{\ge 1}$是大于等于1的整数的集合。}都有${\cal K}_{1,j} \lrto {\cal K}_{2,j}$，则$\pi_1 \lrto_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
+%	\end{itemize}
+%\end{definition}
+%
+%上述$V$-互模拟的定义是现有互模拟定义的一般化，这可以从下面几个方面来体现\footnote{在其他领域也有类似的定义，如：定义在数据库相关文献中的概念$k$-互模拟\cite{kaushik2002updates}。$k$-互模拟概念中涉及与本文$\Hb_n$类似的定义，只是其关系是从相反的方向（即：从孩子到父节点的方向）来说明的。此外，值得一提的是，本文的$V$-互模拟的概念是定义在$\MPK$-结构上的。}。
+%首先，当给定的$V$为空集且谈论指定的初始状态时，本文的$V$-互模拟与定义在Baier等文章里的互模拟等价（定义7.1\cite{Baier:PMC:2008}）的概念一致。
+%其次，在同一文章里的基于状态的互模拟（定义7.7\cite{Baier:PMC:2008}）是定义在给定结构的状态上的，因此与本文的$V$-互模拟（定义在结构的集合上）也不同。
+%最后，本文的$\Hb_n$的定义与Browne的论文中的状态等价$E_n$类似，只是后者是定义在状态上\cite{browne1988characterizing}而本文的定义在$\MPK$-结构（或$\Ind$-结构）上。
 
 
 下面例子呈现结构之间的$V$-互模拟。
@@ -51,92 +72,48 @@
 	\end{figure*}
 \end{example}
 
- 为了简化书写和看起来简洁，当从上下文中能明确知道所指的初始结构和$\Ind$-Kripke结构（为了方便，将这两种结构通称为\emph{结构}），则可以使用状态来表示这些结构之间的$V$-互模拟，即使用$s_1 \lrto_V s_2$替代$(\Hm_1, s_1)\lrto (\Hm_2,s_2)$。
+ 
  
  $V$-互模拟给出了两个结构之间相互模仿的行为关系，下面的命题给出了这种关系一些关键的性质。
- \begin{proposition}\label{pro:div}
+ \begin{proposition}\label{prop:bisimilar:V}
  	令$i$是属于集合$\{1,2\}$的变量，$V_1$和$V_2$是$\Ha$的子集，$s_1'$和$s_2'$是两个状态，$\pi_1'$和$\pi_2'$是两条路径，${\cal K}_j=(\Hm_j,s_j)$$(j=1,2,3)$是$\MPK$-结构（或$\Ind$-结构）。如果$({\cal K}_1 \lrto_{V_1} {\cal K}_2)$且$({\cal K}_2 \lrto_{V_2} {\cal K}_3)$，则：
  	\begin{itemize}
- 		\item[] (i) 若$s_1' \lrto_{V_i} s_2'$，则$s_1'\lrto_{V_1 \cup V_2} s_2'$；
- 		\item[] (ii) 若$\pi_1' \lrto_{V_i} \pi_2'$，则$\pi_1'\lrto_{V_1 \cup V_2} \pi_2'$；
- 		\item[] (iii) 对$\Hm_1$上的任意一条路径$\pi_{s_1}$，存在$\Hm_2$上的一条路径$\pi_{s_2}$使得$\pi_{s_1} \lrto_{V_1} \pi_{s_2}$；反之亦然；
- 		\item[] (iv) ${\cal K}_1 \lrto_{V_1 \cup V_2} {\cal K}_3$；
- 		\item[] (v) 若$V_1 \subseteq V_2$，则${\cal K}_1 \lrto_{V_2} {\cal K}_2$。
+ 		\item[(i)] ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$;
+ 		\item[(ii)] 若 $V_1 \subseteq V_2$ 则 ${\cal K}_1 \lrto_{V_2} {\cal K}_2$；
+ 		\item[(iii)] $s_1'\lrto_{V_i}s_2'~(i=1,2)$ 蕴涵$s_1'\lrto_{V_1\cup V_2}s_2'$；
+ 		\item[(iv)] $\pi_1'\lrto_{V_i}\pi_2'~(i=1,2)$ 蕴涵 $\pi_1'\lrto_{V_1\cup V_2}\pi_2'$；
+ 		\item[(v)] 对$\Hm_1$上的每条路径 $\pi_{s_1}$，存在$\Hm_2$上的一条路径 $\pi_{s_2}$ 使得 $\pi_{s_1} \lrto_{V_1} \pi_{s_2}$，反之也成立。
  	\end{itemize}
  \end{proposition}
 \begin{proof}
-	这里给出结构为$\MPK$-结构的证明，结构为$\Ind$-结构的情形可以类似地证明。
-	
-	(i) 假设$s_1'$和$s_2'$分别来源于$\Hm_1$和$\Hm_2$，${\cal K}_1=(\Hm_1,s_1)$，${\cal K}_2=(\Hm_2,s_2)$。为了证明$s_1'\lrto_{V_1 \cup V_2} s_2'$，只需证明对于任意的$n\ge 0$，$(s_1',s_2')\in \Hb_n^{V_1 \cup V_2}$。
-	
-	基始. 当$n=0$时显然是成立的。
-	
-	归纳步骤. 假设对于任意的$0\leq k \leq n$，若$({\cal K}_1, {\cal K}_2) \in \Hb_k^{V_1}$且$({\cal K}_1, {\cal K}_2) \in \Hb_k^{V_2}$，则$({\cal K}_1, {\cal K}_2) \in \Hb_k^{V_1\cup V_2}$。这里根据定义~\ref{def:V-bisimulation}证明对于若$({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1}$且$({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_2}$，则$({\cal K}_1, {\cal K}_2) \in \Hb_{n+1}^{V_1\cup V_2}$。
-	
-	（a）$L_1(s_1)-(V_1\cup V_2) = L_2(s_2) - (V_1 \cup V_2)$是显然成立的。
-	
-	（b）给定$i\in \{1,2\}$，$0< k \leq n+1$，${\cal K}_i^k=(\Hm_i, s_i^k)$。这里将证明对于任意的$(s_1,s_1^1)\in R_1$，存在一个$(s_2,s_2^1)\in R_2$使得$(s_1^1,s_2^1)\in \Hb_n^{V_1\cup V_2}$。
-	有归纳假设可知$({\cal K}_1,{\cal K}_2)\in \Hb_n^{V_1\cup V_2}$，因而有$({\cal K}_1^1, {\cal K}_2^1) \in \Hb_{n-1}^{V_1 \cup V_2}$。
-	因此，只需证明对于任意的$(s_1^n,s_1^{n+1})\in R_1$，存在$(s_2^n,s_2^{n+1}) \in R_2$使得$(s_1^{n+1},s_2^{n+1})\in \Hb_0^{V_1\cup V_2}$。
-	因为$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^{V_1}$且$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^{V_2}$，所以有$L_1(s_1^{n+1}) - (V_1 \cup V_2) = L_1(s_2^{n+1}) - (V_1 \cup V_2)$。
-	
-	（c）定义中的第三点可以类似（b）证明。
-	
-	因此，当令$s_1$和$s_2$分别为$s_1'$和$s_2'$，就可得到$s_1'\lrto_{V_1 \cup V_2} s_2'$。
-	
-	(ii) 根据定义和(i)很容易证明。
-	
-	(iii) 为了证明该结论成立，下面给出一个等价的$V$-互模拟的定义。令$V$是$\Ha$的一个子集，${\cal K}_i=(\Hm_i, s_i)$ $(i=1,2)$是$\MPK$($\Ind$)-结构，则${\cal K}_1\lrto_V {\cal K}_2$（也记为$({\cal K}_1,{\cal K}_2) \in \Hb$）当且仅当
+	%We prove the cases of $\MPK$-structures, and the cases of $\Ind$-structures are trivial.
+	(i) 令 ${\cal M}_j=(S_j,R_j,L_j,[\_]_j,s_0^j)~(j=1,2,3)$，$\Hb$为$s_1$和$s_2$之间的$V_1$-互模拟关系，即 $s_1 \lrto_{V_1} s_2$通过$\Hb$形成$V_1$-互模拟关系，$s_2 \lrto_{V_2} s_3$通过$\Hb''$形成$V_2$-互模拟关系。 令 $\Hb' = \{(w_1, w_3)\mid (w_1, w_2)\in \Hb$ 和 $(w_2, w_3)\in \Hb''\}$。为了证明 ${\cal K}_1\lrto_{V_1\cup V_2}{\cal K}_3$，这里证明$\Hb'$ 是一个 包含$(s_1, s_3)$的$V_1 \cup V_2$-互模拟关系。由于$(s_1,s_2)\in \Hb$ 和 $(s_2, s_3)\in \Hb''$，所以$(s_1, s_3) \in \Hb'$。
+	% 		from the (a), (b) and (c) of the previous step (iii) of $X$-bisimulation (where $X$ is a set of atoms).
+	对于所有 $(w_1, w_3) \in \Hb'$：
 	\begin{itemize}
-		\item[(a)] $L_1(s_1)-V = L_2(s_2)-V$；
-		\item[(b)] 对任意的$(s_1,s_1')\in R_1$，存在一个$(s_2,s_2')\in R_2$使得${\cal K}_1' \lrto_V {\cal K}_2'$；
-		\item[(c)] 对任意的$(s_2,s_2')\in R_2$，存在一个$(s_1,s_1')\in R_1$使得${\cal K}_1' \lrto_V {\cal K}_2'$。
+		\item[(a)] 存在一个 $w_2 \in S_2$使得 $(w_1,w_2)\in \Hb$ 和 $(w_2, w_3)\in \Hb''$，因此由 $w_1 \lrto_{V_1} w_2$可知， $L_1(w_1)-V_1 = L_2(w_2) - V_1$，且由$w_2 \lrto_{V_2} w_3$可知 $L_2(w_2) - V_2 = L_3(w_3) - V_2$。
+		%			for all $q \notin V_1$, $q \in L_1(w_1)$ iff $q \in L_2(w_2)$ by $w_1 \lrto_{V_1} w_2$ and for all $q' \notin V_2$, $q'\in L_2(w_2)$ iff $q'\in L_3(w_3)$ by $w_2 \lrto_{V_2} w_3$. 
+		所以有 $L_1(w_1) - (V_1 \cup V_2) = L_3(w_3) - (V_1 \cup V_2)$.
+		% for all $r\notin V_1 \cup V_2$, $r \in L_1(w_1)$ iff $r \in L_3(w_3)$.
+		\item[(b)] $\forall u_1\in S_1$，若 $(w_1, u_1) \in R_1$，则 $\exists u_2\in S_2$ 使得$(w_2, u_2) \in R_2$ 和 $(u_1,u_2)\in \Hb$ （由 $\Hb'$的定义可知$(w_1,w_2)\in \Hb$ 和 $(w_2, w_3) \in \Hb''$）； 因而 $\exists u_3 \in S_3$ 使得$(w_3, u_3) \in R_3$ 和 $(u_2, u_3) \in \Hb''$，所以由 $\Hb'$的定义可知 $(u_1, u_3) \in \Hb'$。
+		\item[(c)] $\forall u_3\in S_3$，若 $(w_3, u_3) \in R_3$，则 $\exists u_2\in S_2$ 使得 $(w_2, u_2) \in R_2$ 和 $(u_2, u_3) \in \Hb_2$；因此 $\exists u_1 \in S_1$ 使得  $(w_1, u_1) \in R_1$ 和 $(u_1, u_2) \in \Hb$，所以由 $\Hb'$的定义可知$(u_1, u_3) \in \Hb'$。
 	\end{itemize}
-	其中${\cal K}_i'=(\Hm_i, s_i')$。
-
-	下面从两个方面证明上述结论成立。
 	
-	($\Rto$) (a) 显然$L_1(s_1)-V = L_2(s_2)-V$成立。
-	
-	(b) ${\cal K}_1 \lrto_V {\cal K}_2$当且仅当对于所有的$n\ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。因此，对任意的$(s_1,s_1')\in R_1$，存在一个$(s_2,s_2')\in R_2$使得对于任意的$n >0$都有$({\cal K}_1', {\cal K}_2') \in \Hb_n$且$L_1(s_1')-V=L_2(s_2')-V$。因此，${\cal K}_1' \lrto_V {\cal K}_2'$。
-	
-	(c) 这点的证明与(b)的证明类似。
-	
-	($\Lto$) 显然，$L_1(s_1)-V = L_2(s_2)-V$蕴涵$(s_1,s_2)\in \Hb_0$。(b)蕴涵对于任意的$(s_1,s_1')\in R_1$，存在一个$(s_2,s_2')\in R_2$使得对于任意的$n\ge 0$都有$(s_1',s_2')\in \Hb_n$。(c) 蕴涵对于任意的$(s_2,s_2')\in R_2$，存在一个$(s_1,s_1')\in R_1$使得对于任意的$n\ge 0$都有$(s_1',s_2')\in \Hb_n$。因此，对于任意的$n\ge 0$都有$(s_1,s_2)\in \Hb_n$。如此就可以知道${\cal K}_1\lrto_V {\cal K}_2$。
-	
-	(iv) 令$\Hm_j=(S_j,R_j,L_j,s_j)$ $(j=1,2,3)$，$\Hb$是有$V_1$-互模拟关系的结构的集合（即：$s_1 \lrto_{V_1} s_2$当且仅当$(s_1,s_2)\in \Hb$），$\Hb''$是有$V_2$-互模拟关系的结构的集合。
-	
-	集合$\Hb'$是由$\Hb$和$\Hb''$共同约束下得到的，即$\Hb'=\{(w_1, w_3)\mid (w_1, w_2)\in \Hb$且$(w_2,w_3)\in \Hb''\}$。显然$(s_1,s_3)\in \Hb'$成立。
-	为了证明命题中的结论成立，下面从(iii)中的(a)，(b)和(c)三个方面来证明$\Hb'$是有$(V_1\cup V_2)$-互模拟关系的结构的集合。
-	
-	对于所有的$(w_1,w_3)\in \Hb'$：
+	(ii) 假定 $\Hb_{V_1}$是$\Hm_1$ 和 $\Hm_2$之间的一个 $V_1$-互模拟关系，且 $(s_1, s_2)\in \Hb_{V_1}$。这里证明 $\Hb_{V_1}$ 也是$\Hm_1$ 和 $\Hm_2$之间的一个 $V_2$-互模拟关系。
+	对任意的 $(w_1, w_2) \in \Hb_{V_1}$，有：
 	\begin{itemize}
-		\item[(a)] 存在$S_2$中的一个状态$w_2$使得$(w_1,w_2)\in \Hb$且$(w_2, w_3)\in \Hb''$。此外，由$(w_1, w_2)\in \Hb$可知对于任何不在$V_1$中的原子命题$q$，有$q\in L_1(w_1)$当且仅当$q\in L_2(w_2)$；由$(w_2, w_3)\in \Hb''$可知对于任何不在$V_2$中的原子命题$q'$，有$q'\in L_2(w_2)$当且仅当$q'\in L_3(w_3)$。因此可以得知，对于任意不在$V_1\cup V_2$中的原子命题$r$，有$r\in L_1(w_1)$当且仅当$r\in L_3(w_3)$，即：$L_1(s_1)-(V_1\cup V_2) = L_3(s_3)-(V_1 \cup V_2)$。
-		\item[(b)] 若$(w_1, u_1)\in R_1$，根据$\Hb'$的定义可知存在$w_2\in S_2$使得$(w_1,w_2)\in \Hb$和$(w_2,w_3)\in \Hb''$，则存在$u_2\in S_2$使得$(w_2, u_2)\in R_2$和$(u_1,u_2)\in \Hb$成立。因此，存在一个$u_3\in S_3$使得$(w_3,u_3)\in R_3$和$(u_2,u_3)\in\Hb''$成立。因此，有$(u_1,u_3)\in \Hb'$成立。
-		\item[(c)] 与(b)的证明类似，可以证明对于任意$(w_3,u_3)\in R_3$，存在$(w_1,u_1)\in R_1$使得$(u_1,u_3)\in \Hb'$。
+		\item 因为$L_1(w_1) - V_1 = L_2(w_2) -V_1$ 和 $V_1 \subseteq V_2$，所以 $L_1(w_1) - V_2 = L_2(w_2) -V_2$；
+		\item $\forall r_1 \in S_1$，若 $(w_1,r_1) \in R_1$，因为$\Hb_{V_1}$是$\Hm_1$ 和 $\Hm_2$之间的一个 $V_1$-互模拟关系， 则 $\exists r_2\in S_2$ 使得 $(w_2,r_2)\in R_2$ 和 $(r_1,r_2) \in \Hb_{V_1}$；和
+		\item $\forall r_2 \in S_2$，若 $(w_2,r_2) \in R_2$，因为$\Hb_{V_1}$是$\Hm_1$ 和 $\Hm_2$之间的一个 $V_1$-互模拟关系，则 $\exists r_1\in S_1$使得 $(w_1,r_1)\in R_1$ 和 $(r_1,r_2) \in \Hb_{V_1}$。
 	\end{itemize}
-
-	因此有${\cal K}_1 \lrto_{V_1 \cup V_2} {\cal K}_3$成立。
 	
-	(v) 为了证明此结论，这里假定$x$和$k$是大于等于$0$的整数，${\cal K}_{i,x}=(\Hm_i, s_{i,x})$是结构。为了方便，用$(s_{i,k},s_{i,k+1})\in R_i$表示路径$(s_i=s_{i,0},s_{i,1}, s_{i,2}, \dots, s_{i,k}, s_{i,k+1},\dots)$上的第$k+2$个节点。接下来将展示对任意的$n\ge 0$都有$({\cal K}_1,{\cal K}_2)\in \Hb_n^{V_2}$。
+	由于$V_i \subseteq (V_1 \cup V_2)$（ $i = 1, 2$），则(iii) 是 (ii)的一种特殊情况 due to $V_i \subseteq (V_1 \cup V_2)$，因而(iv) 从(iii)可以容易得到。
 	
-	基始. $L_1(s_1)-V_1 = L_2(s_2)-V_1$ \hfill（已知）\\
-	$\Rto$ 对任意的$q\in (\Ha-V_1)$，有$q\in L_1(s_1)$当且仅当$q\in L_2(s_2)$\\
-	$\Rto$ 对任意的$q\in (\Ha-V_2)$，有$q\in L_1(s_1)$当且仅当$q\in L_2(s_2)$ \hfill （$V_1 \subseteq V_2$）\\
-	$\Rto$ $L_1(s_1)-V_2 = L_2(s_2)-V_2$，即：$({\cal K}_1, {\cal K}_2)\in \Hb_0^{V_2}$。
-	
-	归纳步骤. 假定对于任意的$0\leq n \leq k$ $(k > 0)$，若$({\cal K}_1, {\cal K}_2)\in \Hb_n^{V_1}$则$({\cal K}_1, {\cal K}_2)\in \Hb_n^{V_2}$成立，接下来证明若$({\cal K}_1, {\cal K}_2)\in \Hb_k^{V_1}$则$({\cal K}_1, {\cal K}_2)\in \Hb_{k+1}^{V_2}$。
-	
-	(a) 显然$L_1(s_1)-V_2 = L_2(s_2)-V_2$成立。
-	
-	(b) 对于任意的$(s_1,s_{1,1})\in R_1$，下面证明存在一个$(s_2,s_{2,1})\in R_2$使得$({\cal K}_{1,1}, {\cal K}_{2,1}) \in \Hb_k^{V_2}$。
-	由归纳假设可知$({\cal K}_{1,1}, {\cal K}_{2,1}) \in \Hb_{k-1}^{V_2}$，因而只需要证明：\textcircled{1} 对于所有的$(s_{1,k},s_{1,k+1})\in R_1$存在一个$(s_{2,k},s_{2,k+1})\in R_2$使得$({\cal K}_{1,k+1}, {\cal K}_{2,k+1}) \in \Hb_0^{V_2}$由于$({\cal K}_{1,1}, {\cal K}_{2,1}) \in \Hb_k^{V_1}$。因此，类似与基始里的证明方法，可得$L_1(s_{1,k+1})-V_2 = L_2(s_{2,k+1})-V_2$成立，即：$({\cal K}_{1,k+1}, {\cal K}_{2,k+1}) \in \Hb_0^{V_2}$。
-	\textcircled{2} 可以类似\textcircled{1}证明对任意的$(s_{2,k},s_{2,k+1})\in R_1$存在一个$(s_{1,k},s_{1,k+1})\in R_2$使得$({\cal K}_{1,k+1}$, ${\cal K}_{2,k+1}) \in \Hb_0^{V_2}$。
-	
-	(c) 对于任意的$(s_2,s_{2,1}) \in R_2$，类似(b)可以证明存在$(s_1,s_{1,1}) \in R_1$使得$({\cal K}_{1,1}, {\cal K}_{2,1}) \in \Hb_k^{V_2}$。
+	(v) 可以从$V$-互模拟的定义容易得到，因为$s_1 \lrto_{V_1} s_2$ （即：${\cal K}_1\lrto_{V_1}{\cal K}_2$）。	
 \end{proof}
+
  
- 在命题~\ref{pro:div}中，性质(i)-(iii)是$V$-互模拟的标准属性，含义比较直观。性质(iv)表示如果一个结构分别与另外的两个结构具有$V_1$和$V_2$-互模拟关系，则这两个结构是$V_1\cup V_2$-互模拟的（如图~\ref{Fig:chapter05:v1uv2}所示）。如后文所示，这一性质对遗忘理论性质的探索至关重要。性质(v)表示若两个结构是$V_1$-互模拟的，则对于任意的$V_2$，若$V_1 \subseteq V_2$则这两个结构是$V_2$-互模拟的。
+ 在命题~\ref{pro:div}中，性质(iii)-(v)是$V$-互模拟的标准属性，含义比较直观。性质(i)表示如果一个结构分别与另外的两个结构具有$V_1$和$V_2$-互模拟关系，则这两个结构是$V_1\cup V_2$-互模拟的（如图~\ref{Fig:chapter05:v1uv2}所示）。如后文所示，这一性质对遗忘理论性质的探索至关重要。性质(ii)表示若两个结构是$V_1$-互模拟的，则对于任意的$V_2$，若$V_1 \subseteq V_2$则这两个结构是$V_2$-互模拟的。
  
  从互模拟的定义上来看，如果两个结构是$V$-互模拟的，那么对于与$V$中的原子命题无关的公式$\varphi$来说，这两个结构同时满足或不满足$\varphi$。这一性质可以形式化地描述如下：
  
@@ -192,9 +169,67 @@
 	$\LRto$ $(\Hm',s')\models \Phi$。
 \end{proof}
 
+值得注意的上，上述定理中个公式 $\phi$ 必须不包含索引。否则， ${\cal I}$-结构 中的索引函数可能会影响公式可满足性。
+例：令 $\phi=\EXIST_{\tuple{1}}\NEXT p$、
+${\cal K}=(\Hm,s)$ 和 $\Hm=(S,R,L,[\_],s_0)$，其中 $S=\{s_0,s_1\}$, $L(s_0)=\emptyset$、 $L(s_1)=\{p\}$、
+$R=\{(s_0,s_1),(s_0,s_0),(s_1,s_1), (s_1,s_0)\}$ 和 $[1]=\{(s_0,s_1), (s_1,s_1)\}$。容易检查${\cal K}\models\phi$。
+令 ${\cal K}'=(\Hm',s)$ 和 $\Hm'=(S,R,L,[\_]',s_0)$，其中 $[1]'=\{(s_0,s_0),(s_1,s_1)\}$。
+显然 ${\cal K}\lrto_{\{q\}}{\cal K}'$， $\IR(\phi,\{q\})$。但是，${\cal K}'\not\models\phi$。
+
 \begin{example}
 	令$\varphi_1 = d \wedge \EXIST\FUTURE se \wedge \ALL\GLOBAL(se \rto \ALL\NEXT d)$和$\varphi_2=d \wedge \ALL\NEXT se$是两个$\CTL$公式，且$\IR(\varphi_1,\{sp\})$ 和 $\IR(\varphi_2,\{sp\})$成立。因此可以验证图~\ref{Fig:chapter05:v1uv2}中的${\cal K}_1$和${\cal K}_2$都满足$\varphi_1$，但是都不满足$\varphi_2$。
 \end{example}
+
+\begin{definition}[互模拟等价(bisimilar equivalence)]\label{def:bisimular:equivalene}
+	给定原子命题的集合$V\subseteq {\cal A}$，公式$\varphi$ 和 $\psi$。若对任意的 ${\cal K}\models \varphi$都存在一个${\cal K}'\models\psi$使得${\cal K}\lrto_V{\cal K}'$，且对任意的${\cal K}'\models\psi$都存在一个${\cal K}\models \varphi$使得${\cal K}\lrto_V{\cal K}'$，则称公式$\varphi$ 和 $\psi$ 是 {\em $V$-互模拟等价的(bisimilar equivalence)}，记为 $\varphi\equiv_V\psi$。
+\end{definition}
+
+由定义~\ref{def:VInd:bisimulation} 和 \ref{def:bisimular:equivalene}，和命题~\ref{prop:bisimilar:V}可容易得出下列引理。
+\begin{lemma}~\label{lem:eqR}
+	对任意的$V\subseteq\cal A$，  $\lrto_V$  和 $\equiv_V$ 为等价关系。
+\end{lemma}
+\begin{proof}
+  由命题~\ref{prop:bisimilar:V}(i)可知 $\lrto_V$是传递的。显然也是自反和对称的。因此其是一个等价关系。
+
+  关系 $\equiv_V$显然是自反和对称的。
+  假设$\varphi\equiv_V\psi$ 和 $\psi\equiv_V\xi$。则有对任意的 ${\cal K}\models\varphi$，由$\varphi\equiv_V\psi$可知存在一个 ${\cal K}'\models\psi$ \hbox{使得} ${\cal K}'\lrto_V{\cal K}$，且由$\psi\equiv_V\xi$可知存在一个 ${\cal K}''\models\xi$ \hbox{使得}
+  ${\cal K}'\lrto_V{\cal K}''$。又因为$\lrto_V$是一个等价关系，因此有
+  ${\cal K}\lrto_V{\cal K}''$。类似地，对任意的 ${\cal K}''\models\xi$，存在 ${\cal K}\models \varphi$
+  \hbox{使得} ${\cal K}''\lrto_V{\cal K}$。这蕴含$\equiv_V$是传递的。因此$\equiv_V$是等价关系。
+\end{proof} 
+
+此外，上面的定义和命题~\ref{prop:bisimilar:V} 蕴涵下面的推论。
+% 	The below corollary follows from the above definition and Proposition~\ref{prop:bisimilar:V}.
+\begin{corollary}~\label{cor:eqbi}
+	令 $V,V_1,V_2$ 为$\cal A$的子集，$\varphi$ 和 $\psi$ 为公式。
+	\begin{itemize}
+		\item[(i)] 若 $\varphi\equiv\psi$ 则 $\varphi\equiv_V\psi$。
+		\item[(ii)] 若$\varphi$ 和 $\psi$不包括索引，且 $\varphi\equiv_\emptyset\psi$ 则 $\varphi\equiv\psi$。
+		\item[(iii)] 若 $\varphi\equiv_{V_i}\psi~(i=1,2)$ 则 $\varphi\equiv_{V_1\cup V_2}\psi$。
+		\item[(iv)] 若 $\varphi\equiv_{V_1}\psi$ 和 $V_1\subseteq V_2$ 则 $\varphi\equiv_{V_2}\psi$。
+	\end{itemize}
+\end{corollary}
+\begin{proof}
+	(i) 对任意$\varphi$ （或 $\psi$）的模型 ${\cal K}$和$V \subseteq \Ha$，存在 一个${\cal K} \lrto_V {\cal K}$。因此， $\varphi\equiv_V\psi$。
+	
+	(ii) 对任意$\varphi$的模型${\cal K}$，存在$\psi$ 的一个模型${\cal K}'$ 使得 ${\cal K} \lrto_{\emptyset} {\cal K}'$。显然 $\IR(\psi, \emptyset)$，因此由定理~\ref{thm:V-bisimulation:EQ}可知${\cal K} \models \psi$。类似地，对任意的${\cal K}' \models \psi$，存在 ${\cal K} \models \varphi$使得 ${\cal K} \lrto_{\emptyset} {\cal K}'$，因此${\cal K}'\models \varphi$。
+	
+	(iii) 对任意的 ${\cal K} \models \varphi$，存在${\cal K}' \models \psi$ 使得 ${\cal K} \lrto_{V_i} {\cal K}'$ ($i=1,2$)。因此，由命题~\ref{prop:bisimilar:V}(i)可知 ${\cal K} \lrto_{V_1\cup V_2} {\cal K}'$。类似地，对任意的${\cal K}' \models \psi$， 存在 ${\cal K} \models \varphi$ 使得 ${\cal K} \lrto_{V_1\cup V_2} {\cal K}'$。因此，$\varphi\equiv_{V_1\cup V_2}\psi$。
+	
+	(iv) 可类似于 (iii)证明。
+\end{proof}
+
+请注意，在上述结论(ii)中  ``$\varphi$ 和 $\psi$ 中不包含索引是必要的。否则，令 $\varphi=\EXIST_{\tuple{1}}\NEXT p $ 和
+$\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$，但是 $\varphi\not\equiv\psi$。
+
+%%%Note that the bisimular relation $\lrto_V$ is transitive by (i) of Proposition~\ref{prop:bisimilar:V} an equivalent relation
+
+
+\begin{proposition}\label{prop:transform:V:EQ}
+	令 $\varphi$为一个$\CTL$公式。则$\varphi\equiv_UT_\varphi$，其中 $T_\varphi=\CTLsnf(\varphi)$ 和
+	$U=\Var(T_\varphi)-\Var(\varphi)$。
+\end{proposition}
+
 
 \section{遗忘理论及其语义属性}
 这部分将给出$\CTL$下的遗忘理论的定义及其相关属性。

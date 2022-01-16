@@ -119,15 +119,29 @@ $\Hm=\tuple{W,w}$称为公式$\varphi$的$\MPK$-\emph{模型}（$\MPK$-model）�
 
 
 \subsection{Kripke结构的定义及相关术语}
-通常一个转换系统（transition system）能够被抽象为一个Kripke结构\cite{Baier:PMC:2008}。如上文所说，一个Kripke结构是一个三元组$\Hm=(S,R,L)$，其中：
+给一个可数无限索引的集合$\Ind$，一个初始$\Ind$-Kripke结构是一个五元组$\Hm=(S,R,L,[\_],s_0)$，其中：
 \begin{itemize}
-	\item $S$是状态的非空集合；
-	\item $R \subseteq S \times S$是状态转换函数；
-	\item $L:S\rto 2^{\Ha}$是一个标签函数。
+	\item $S$是状态的非空集合，$s_0$是$\Hm$的初始状态（下面详细介绍）；
+	\item $R \subseteq S \times S$是状态转换函数，且对任意的$s\in S$，存在$s'\in S$使得$(s,s') \in R$；
+	\item $L:S\rto 2^{\Ha}$是一个标签函数；
+	\item $[\_]: \Ind \rto 2^{S \times S}$是一个将索引集合$\Ind$中的元素$ind$映射为后继函数$[ind]$使得对任意的$s\in S$都存在唯一一个状态$s'\in S$使得$(s,s')\in [ind] \cap R$。
 \end{itemize}
-在本文中，要求$R$是一个串行关系（serial relation），也即是对于$S$中的任意元素$s$，都存在$S$中的一个元素$s'$使得$(s,s')\in R$。
 
-给定一个Kripke结构$\Hm=(S,R,L)$，$\Hm$上的一条\emph{路径}是一个无限的状态序列$\pi=(s_0,s_1,\dots)$且满足对于任意的$j\ge 0$都有$(s_j,s_{j+1})\in R$，路径上的状态$s$被记为$s\in \pi$。当给路径$\pi$引入一个状态$s$作为下标，记为$\pi_s$，则称该路径是起点为该状态$s$的一条路径。如果对于$\Hm$中的任意状态$s'$，都有一条以$s$为起点的路径$\pi_{s}$使得$s'\in \pi_{s}$，那么称状态$s$为一个\emph{初始状态}。给定$s_0$为$\Hm$中的一个初始状态，为了容易看出该初始状态，将该Kripke结构写为四元组$(S,R,L,s_0)$，并称该结构为\emph{初始结构}以区分于原来的三元组。
+Kripke结构$\Hm=(S,R,L)$上的{\em 路径}是$\Hm$上的状态构成的无限序列$\pi=(s_0, s_{1}, s_{2},\dots)$，其中对任意的$j\ge 0$都有$(s_j, s_{j+1}) \in R$。
+用$s'\in \pi$表示$s'$是路径$\pi$上的一个状态。特别地，用$\pi_{s}$表示从$s$开始的$\Hm$上的一条路径。
+如果对$\Hm$中任意的状态$s'$都有一条路径$\pi_s$使得$s'\in \pi_s$，那么称$s$为\emph{初始状态}。
+$\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^{\tuple{ind}}$（$ind \in \Ind$）是一条路劲$(s_0(=s),$ $s_{1},$ $s_{2},$ $\dots)$ 且对任意的$j \geq 0$有$(s_j, s_{j+1}) \in [ind]$。
+
+从初始$\Ind$-Kripke结构$\Hm$中去掉$[\_]$元素得到的结构称为初始Kripke结构；从初始$\Ind$-Kripke结构$\Hm$中去掉初始状态$s_0$得到的结构称为$\Ind$-Kripke结构；
+从初始$\Ind$-Kripke结构$\Hm$中同时去掉$[\_]$和$s_0$得到的结构称为Kripke结构。
+一个\emph{($\Ind$-)结构}是一个二元组${\cal K}=(\Hm, s)$，其中$\Hm$是一个初始($\Ind$-)Kripke结构，$s$是$\Hm$中的一个状态。
+如果$s$为$\Hm$上的初始状态，则称${\cal K}$为{\em 初始 ($\Ind$-)结构}。
+上面的关于(索引)路径的概念对于这些结构也可相似地定义。
+ 
+通常一个转换系统（transition system）能够被抽象为一个Kripke结构\cite{Baier:PMC:2008}。
+
+
+
 
 \emph{树}是一种只有一个根节点（没有其他节点指向且可达于其他节点的节点）无环图。
 给定一个初始结构$\Hm=(S,R,L,s_0)$和一个状态$s\in S$，定义在$\Hm$上以$s$为根节点的深度为为$n$（$n\ge 0$）的\emph{计算树}$\Tr_n^{\Hm}(s)$被递归定义如下\cite{browne1988characterizing}：
@@ -146,54 +160,81 @@ $\Hm=\tuple{W,w}$称为公式$\varphi$的$\MPK$-\emph{模型}（$\MPK$-model）�
 时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化的系统的逻辑特性。由于软件和硬件的运行的本质是状态变化的过程，所以时态逻辑在软件程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时态逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用其他时态逻辑表示的[18]。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
 \subsection{计算树逻辑（\CTL）}
-$\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。$\CTL$的语言${\cal L}$由下面的几类符号构成：
+$\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。这里给出带索引的$\CTL$公式定义，而$\CTL$公式是该种公式的子类。带索引的$\CTL$的语言${\cal L}$由下面的几类符号构成：
 \begin{itemize}
 	\item 原子命题的集合$\Ha$；
+	\item 可数无限索引集合$\Ind$；
+	\item 命题常量$\start$；
 	\item 常量符号：$\top$和$\bot$，分别表示“真”和“假”；
 	\item 联结符号：$\vee$和$\neg$，分别表示“吸取”和“否定”；
-	\item 路径量词：$\ALL$和$\EXIST$，分别表示“所有”和“存在”；
+	\item 路径量词：$\ALL$、$\EXIST$和$\EXIST_{ind}$，分别表示“所有”、“存在”和“存在索引为$ind\in \Ind$”的路径；
 	\item 时序操作符：$\NEXT$、$\FUTURE$、$\GLOBAL$、$\UNTILL$和$\UNLESS$，分别表示“下一个状态”、“将来某一个状态”、“将来所有状态”、“直到”和“除非”；
 	\item 标点符号：“(”和“)”。
 \end{itemize}
-$\CTL$的时序算子是路径量词和时序操作符的组合（路径量词在前，时序操作符在后），如：$\ALL \NEXT$，$\EXIST \NEXT$， $\ALL \FUTURE$等。
-与经典命题逻辑一样，给联结符号规定优先级，有时候会带来意想不到的方便。$\CTL$中的联结符号的优先级如下序列所示，每个左边的联结符号优先于右边的联结符号：
-\[
-\neg \quad \EXIST\FUTURE \quad \EXIST\GLOBAL \quad \ALL\NEXT \quad \ALL\FUTURE \quad \ALL\GLOBAL \quad \wedge \quad \vee \quad \EXIST\UNTILL \quad \EXIST\UNLESS \quad \ALL\UNLESS \quad \rto
-\]
-
-因此，语言$\cal L$的\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
-\begin{equation}\label{def:CTL:formulas}
-	\phi ::=  \bot \mid \top \mid p \mid\neg\phi \mid \phi\lor\phi \mid
+带索引的$\CTL$公式（简称公式）的时序算子与$\CTL$公式的时序算子相同，是路径量词和时序操作符的组合（路径量词在前，时序操作符在后），如：$\ALL \NEXT$、$\EXIST \NEXT$、$\EXIST_{ind} \NEXT$、 $\ALL \FUTURE$等。
+此时，语言$\cal L$的\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
+	\begin{align*}
+	\phi  ::= & \ \start\mid \bot %\mid \top
+	\mid p \mid\neg\phi \mid \phi\lor\phi \mid
 	\EXIST \NEXT \phi \mid
 	\EXIST \GLOBAL \phi \mid
-	\EXIST (\phi\ \UNTILL\ \phi)
-\end{equation}
-其中，$p\in \Ha$。$\cal L$中其他形式的公式可以通过下面的定义（使用上述定义中(\ref{def:CTL:formulas})的形式）得到：
-\begin{alignat}{2}
-	 \varphi \wedge \psi& \ \overset{def}{=}\ \neg (\neg \varphi \vee \neg \psi)\\
-	 \varphi \rto \psi& \ \overset{def}{=}\ \neg \varphi \vee \psi\\
-	 \ALL(\varphi \UNTILL \psi)& \ \overset{def}{=}\ \neg\EXIST(\neg \psi \UNTILL(\neg \varphi \wedge \neg \psi)) \wedge \neg \EXIST \GLOBAL \neg \psi\\
-	 \ALL(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\EXIST((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
-	 \EXIST(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\ALL((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
-	 \ALL\FUTURE \varphi& \ \overset{def}{=}\ 	\ALL(\top \UNTILL \psi)\\
-	 \EXIST\FUTURE \varphi& \ \overset{def}{=}\ \EXIST(\top \UNTILL \psi)\\
-	 \ALL \NEXT \varphi& \ \overset{def}{=}\  \neg \EXIST \NEXT \neg \varphi\\
-	 \ALL \GLOBAL \varphi& \ \overset{def}{=}\  \neg \EXIST \FUTURE \neg \varphi
-\end{alignat}
+	%	\EXIST \FUTURE \phi \mid
+	\EXIST (\phi\ \UNTILL\ \phi)\mid
+	% 	& \EXIST (\phi\ \UNLESS\ \phi)\mid
+	% 	\ALL \NEXT \phi \mid
+	% 	\ALL \GLOBAL \phi \mid
+	% 	\ALL \FUTURE \phi \mid
+	% 	\ALL (\phi\ \UNTIL\ \phi)\mid
+	% 	\ALL (\phi\ \UNLESS\ \phi)\mid \\
+	\EXIST_{\tuple{ind}}\NEXT \phi  \mid
+	%   \EXIST_{\tuple{ind}}\FUTURE \phi \mid
+	\EXIST_{\tuple{ind}}\GLOBAL \phi \mid
+	\EXIST_{\tuple{ind}}(\phi \UNTILL \phi) %\mid
+	%	\EXIST_{\tuple{ind}}(\phi \UNLESS \phi)
+\end{align*}
 
+其中，$p\in \Ha$，$ind \in \Ind$。$\cal L$中其他形式的公式可以通过下面的定义（使用上述定义中的形式）得到：
+\begin{alignat}{2}
+	\varphi \wedge \psi& \ \overset{def}{=}\ \neg (\neg \varphi \vee \neg \psi)\\
+	\varphi \rto \psi& \ \overset{def}{=}\ \neg \varphi \vee \psi\\
+	\ALL(\varphi \UNTILL \psi)& \ \overset{def}{=}\ \neg\EXIST(\neg \psi \UNTILL(\neg \varphi \wedge \neg \psi)) \wedge \neg \EXIST \GLOBAL \neg \psi\\
+	\ALL(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\EXIST((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
+	\EXIST(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\ALL((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
+	\ALL\FUTURE \varphi& \ \overset{def}{=}\ 	\ALL(\top \UNTILL \psi)\\
+	\EXIST\FUTURE \varphi& \ \overset{def}{=}\ \EXIST(\top \UNTILL \psi)\\
+	\ALL \NEXT \varphi& \ \overset{def}{=}\  \neg \EXIST \NEXT \neg \varphi\\
+	\ALL \GLOBAL \varphi& \ \overset{def}{=}\  \neg \EXIST \FUTURE \neg \varphi
+\end{alignat}
+没有索引和$\start$的公式称为$\CTL$公式。
 此外，对于给定的公式$\varphi$，其否定范式（negation normal form, NNF）是将否定联结词“$\neg$”的出现通过上述定义变化到只出现在原子命题之前的形式。
 
-$\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
-\begin{definition}[$\CTL$的语义]\label{def:ctl:semantic}
-	给定$\CTL$公式$\varphi$，初始结构$\Hm=(S,R,L,s_0)$和状态$s\in S$。$(\Hm,s)$与$\varphi$之间的可满足关系$(\Hm,s)\models \varphi$定义如下：
+与经典命题逻辑一样，给联结符号规定优先级，有时候会带来意想不到的方便。带索引的$\CTL$中的联结符号的优先级如下序列所示，每个左边的联结符号优先于右边的联结符号：
+\begin{align*}
+	& \neg, \EXIST\NEXT, \EXIST\FUTURE, \EXIST\GLOBAL, \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL, \EXIST_{\tuple{ind}}\NEXT, \EXIST_{\tuple{ind}}\FUTURE, \EXIST_{\tuple{ind}}\GLOBAL
+	,\land, \lor,
+	& \EXIST\UNTILL, \ALL\UNTILL, \EXIST \UNLESS, \ALL\UNLESS, \EXIST_{\tuple{ind}}\UNTILL, \EXIST_{\tuple{ind}} \UNLESS, \rto.
+\end{align*}
+
+给定一个不包含“$\rto$”的公式$\varphi$和原子命题$p$，若如果$p$ 在 $\varphi$中的出现之前有偶数个否定$\neg$，则称$p$ 在$\varphi$ 中的出现为\emph{正出现}，否则为\emph{负出现}。若$\varphi$中所有$p$的出现都为正出现（或负出现），则称$\varphi$关于$p$是正的（或负的）。
+
+带索引的$\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
+\begin{definition}[带索引的$\CTL$的语义]\label{def:ctl:semantic}
+	给定带索引的$\CTL$公式$\varphi$，初始$\Ind$-结构$\Hm=(S,R,L,[\_],s_0)$和状态$s\in S$。$(\Hm,s)$与$\varphi$之间的可满足关系$(\Hm,s)\models \varphi$定义如下：
 	\begin{itemize}
-		\item $(\Hm,s) \not \models \bot$且$(\Hm, s) \models \top$；
+		\item $({\cal M},s) \models \start$ 当且仅当 $s=s_0$；
+		\item $(\Hm,s) \not \models \bot$；%且$(\Hm, s) \models \top$；
 		\item $(\Hm,s)\models p$ 当且仅当$p\in L(s)$；
 		\item $(\Hm,s) \models \varphi_1 \vee \varphi_2$当且仅当$(\Hm,s)\models \varphi_1$或$(\Hm,s)\models \varphi_2$；
 		\item $(\Hm,s)\models \neg \varphi$当且仅当$(\Hm,s)\not \models \varphi$；
 		\item $(\Hm,s)\models \EXIST\NEXT \varphi$当且仅当存在$S$中的一个状态$s_1$，使得$(s,s_1)\in R$且$(\Hm,s_1)\models \varphi$；
 		\item $(\Hm,s)\models \EXIST\GLOBAL\varphi$当且仅当存在$\Hm$上的一条路径$\pi_s=(s_1=s, s_2,\dots)$，使得对每一个$i\ge 1$都有$(\Hm,s_i)\models \varphi$；
-		\item $(\Hm,s)\models \EXIST(\varphi \UNTILL \psi)$当且仅当存在$\Hm$上的一条路径$\pi_s=(s_1=s, s_2,\dots)$，使得对某一个$i\ge 1$有$(\Hm,s_i)\models \psi$，同时对任意的$1\leq j < i$有$(\Hm,s_j)\models \varphi$。
+		\item $(\Hm,s)\models \EXIST(\varphi \UNTILL \psi)$当且仅当存在$\Hm$上的一条路径$\pi_s=(s_1=s, s_2,\dots)$，使得对某一个$i\ge 1$有$(\Hm,s_i)\models \psi$，同时对任意的$1\leq j < i$有$(\Hm,s_j)\models \varphi$；
+		\item $({\cal M},s)\models \EXIST_{\tuple{ind}} \NEXT \psi$ 当且仅当对索引路劲$\pi_{s}^{\tuple{ind}}$， $(\Hm, s')\models \psi$ 且 $(s, s') \in [ind]$;
+		\item $({\cal M},s)\models \EXIST_{\tuple{ind}}\GLOBAL\psi$ 当且仅当
+		对任意的 $s' \in  \pi_{s}^{\tuple{ind}}$, %occurring in $\pi_{s}^{\tuple{ind}}$,
+		$(\Hm,s') \models \psi$;
+		\item $({\cal M},s)\models \EXIST_{\tuple{ind}}(\psi_1\UNTILL\psi_2)$ 当且仅当
+		存在 $ \pi_{s}^{\tuple{ind}} = (s=s_1, s_2, \dots)$中的 $s_j$ ($1\leq j$)使得$(\Hm,s_j) \models \psi_2$且对任意的 $s_k \in \pi_{s}^{\tuple{ind}}$，若$1\leq k < j$，则 $(\Hm,s_k) \models \psi_1$。
 	\end{itemize}
 \end{definition}
 
@@ -204,7 +245,7 @@ $\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
 %	\]
 %\end{proposition}
 
-与Browne和Bolotov等人的工作类似，本文只将初始$\MPK$-结构作为模型的候选项\cite{browne1988characterizing,Bolotov:1999:JETAI}。换句话说，对于给定的$\MPK$-结构$(\Hm,s)$和$\CTL$公式$\varphi$，如果$(\Hm,s)\models \varphi$且$s = s_0$，则称$(\Hm,s)$为公式$\varphi$的一个\emph{模型}。更清楚地说，对于给定的初始$\MPK$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称$\cal K$是$\varphi$的一个模型。
+与Browne和Bolotov等人的工作类似，本文只将初始$\Ind$-结构作为模型的候选项\cite{browne1988characterizing,Bolotov:1999:JETAI}。换句话说，对于给定的$\Ind$-结构$(\Hm,s)$和带索引的$\CTL$公式$\varphi$，如果$(\Hm,s)\models \varphi$且$s = s_0$，则称$(\Hm,s)$为公式$\varphi$的一个\emph{模型}。更清楚地说，对于给定的初始$\Ind$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称$\cal K$是$\varphi$的一个模型。
 
 为了符号的统一，这里列出文中出现的一些记号的含义。给定公式$\varphi$，公式的所有模型构成的集合记为$\Mod(\varphi)$。此时就很容易定义公式的可满足性，即：如果$\Mod(\varphi)\not = \emptyset$，则称$\varphi$是\emph{可满足}的。给定两个公式$\varphi_1$和$\varphi_2$，若$\Mod(\varphi_1)\subseteq \Mod(\varphi_2)$，则称$\varphi_1$\emph{逻辑地蕴涵}$\varphi_2$，记为$\varphi_1\models \varphi_2$。特别地，当$\varphi_1\models \varphi_2$且$\varphi_2\models \varphi_1$时，即$\Mod(\varphi_1)= \Mod(\varphi_2)$，则称$\varphi_1$和$\varphi_2$为\emph{逻辑等值公式}（简称为\emph{等值公式}），记作$\varphi_1 \equiv \varphi_2$。
 值得注意的是，上述的记号也适用于讨论的对象为公式的集合的情形。
@@ -214,47 +255,82 @@ $\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
 一种特殊的形式是$\Var(\varphi) \subseteq V$，此时称$\varphi$为集合$V$上的公式。
 可以类似定义公式的集合与原子命题集合的无关性，也即是：如果对于公式的集合$\Pi$中的任意一个公式$\varphi$，$\IR(\varphi,V)$都成立，则$\Pi$与$V$中的原子命题无关，记为$\IR(\Pi,V)$。
 
+根据上面的定义，以下结论是显然的。
+\begin{lemma} \label{lem:equivAG}
+	Let $\varphi$ and $\psi$ be two formulas. Then the following holds.
+	\begin{itemize}
+		\item[(i)] $\ALL\GLOBAL (\varphi\land\psi)\equiv (\ALL\GLOBAL \varphi) \land (\ALL\GLOBAL\psi)$.
+		\item[(ii)] $\ALL\GLOBAL \ALL\GLOBAL (\varphi)\equiv \ALL\GLOBAL (\varphi)$.
+		%\item $\ALL\GLOBAL (\alpha\rto\varphi)\equiv \varphi$ where $\alpha\in\{\start\textcolor{red}{,\top}\}$.
+		\item[(iii)] $\ALL\GLOBAL (\start \rto\varphi)\equiv \varphi$
+	\end{itemize}
+\end{lemma}
+\begin{proof}
+	(i) $(\Rto)$ For each model $(\Hm, s)$ of $\ALL\GLOBAL (\varphi\land\psi)$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi \wedge \psi$ for all $i\geq 0$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi$ and $(\Hm,s_i) \models \psi$ for all $i\geq 0$\\
+	$\Rto$ $(\Hm,s) \models (\ALL\GLOBAL \varphi) \land (\ALL\GLOBAL\psi)$.
+	
+	$(\Lto)$ For each model $(\Hm,s)$ of $(\ALL\GLOBAL \varphi) \land (\ALL\GLOBAL\psi)$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi$ and $(\Hm,s_i) \models \psi$ for all $i\geq 0$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi \wedge \psi$ for all $i\geq 0$\\
+	$\Rto$ $(\Hm, s) \models \ALL\GLOBAL (\varphi\land\psi)$.
+	
+	(ii) $(\Rto)$ For each model $(\Hm, s)$ of $\ALL\GLOBAL \ALL\GLOBAL (\varphi)$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \ALL\GLOBAL (\varphi)$ for all $i\geq 0$\\
+	$\Rto$ $(\Hm,s) \models \ALL\GLOBAL (\varphi)$.
+%	$\Rto$ $\forall \pi=(s_i, s_{i+1}, \dots)$ there is $(\Hm,s_j) \models \varphi$ for all $i\geq 0$ and $j \geq i$
+
+	$(\Lto)$ For each model $(\Hm, s)$ of $\ALL\GLOBAL (\varphi)$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi$ for all $i\geq 0$\\
+	$\Rto$ $\forall \pi'=(s_i, s_{i+1}, \dots)$ there is $(\Hm,s_j) \models \varphi$ for all $i\geq 0$ and $j \geq i$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \ALL\GLOBAL (\varphi)$ for all $i\geq 0$\\ 
+	$\Rto$ $(\Hm,s) \models\ALL\GLOBAL \ALL\GLOBAL (\varphi)$.
+	
+	(iii) $(\Rto)$ For each model $(\Hm,s)$ of $\ALL\GLOBAL (\start \rto\varphi)$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \start \rto\varphi$ for all $i\geq 0$\\
+	$\Rto$ $(\Hm,s) \models \varphi$ since $(\Hm,s) \models \start$
+	
+	$(\Lto)$ For each model $(\Hm, s)$ of $\varphi$\\
+	$\Rto$ $(\Hm,s) \models \start\rto \varphi$ since $(\Hm,s) \models \start$\\
+	$\Rto$ $(\Hm,s') \models \start\rto \varphi$ since $(\Hm,s') \not \models \start$ for any $s'\not = s$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \start \rto\varphi$ for all $i\geq 0$\\ 
+	$\Rto$ $(\Hm,s') \models \ALL\GLOBAL (\start \rto\varphi)$.
+\end{proof}
+
+给定两个带索引的$\CTL$公式$\varphi$ 和 $\psi$，若$\varphi$是可满足的当且仅当$\psi$是可满足的，则称 $\varphi$ 和 $\psi$ 是 {\em 等价可满足的（equi-satisfiable）}。可以看出，相互等价（等值）的公式是等价可满足的，但是反过来去不成立。例：公式$\EXIST_{\tuple{1}}\NEXT p$和
+ $\EXIST_{\tuple{2}}\NEXT p$是等价可满足的，但是他们不是等价的。
+基于此，下面的引理是显然的。
+\begin{lemma}\label{lem:indno}
+	令 $\varphi$为带索引的 $\CTL$公式
+	\begin{itemize}
+		\item[(i)] $\varphi$ 和 $\varphi'$ 是等价可满足的，其中$\varphi'$ 是由 $\varphi$通过用新的索引命名现有的一些索引得到的公式，即$\varphi$是将出现在其中的一些索引用不出现在其中的索引全部替换得到，不同的索引对应不同新索引。
+		\item[(ii)] $\varphi\models\varphi''$，其中 $\varphi''$ 是移除掉 $\varphi$中的索引得到的公式。
+	\end{itemize}
+\end{lemma}
+\begin{proof}
+	(i) Without loss of generality, let $\varphi'=\varphi[i/j]$ be the formula obtained from $\varphi$ by renaming index $i$ with a fresh index $j$.
+	
+	 $(\Rto)$ For each model $(\Hm,s)$ of $\varphi$ with $\Hm = (S,R,L,[\_], s)$ \\
+	 $\Rto$ $(\Hm',s) \lrto_{\emptyset} (\Hm,s)$ and $(\Hm',s) \models \varphi'$, where $\Hm' = (S,R,L,[\_]',s)$ and for each $x \in \Ind$
+	 \[[x]'=
+	 \left\{
+	 \begin{array}{ll}
+	 	[i], \qquad \hbox{$x = j$;} \\
+	 	{[x]}, \qquad \hbox{otherwise.}
+	 \end{array}
+	 \right.
+	 \]
+	 
+	 We can similarly prove that for each model $(\Hm,s)$ of $\varphi'$, there is $(\Hm',s)$ s.t. $(\Hm',s) \lrto_{\emptyset} (\Hm,s)$ and $(\Hm',s) \models \varphi$.
+	 
+	 (i) It is evident from the semantics of the indexed $\CTL$ formula.
+\end{proof}
+值得注意的是，引理中的(ii)的逆命题不成立。例如：令$\varphi=\EXIST_{\tuple{1}}\NEXT p \land \EXIST_{\tuple{1}}\NEXT \neg p$，显然$\varphi'' = \EXIST\NEXT p \land \EXIST\NEXT \neg p$是可满足的，但是 $\varphi$不可满足。因此，$\varphi''\not\models\varphi$。
+
 \subsection{$\CTL$的标准形式}
 
-在讲述$\CTL$的标准形式之前，先引入一种带有索引的$\CTL$，记为$\CTL_{ind}$。
-这种语言是在$\CTL$的已有符号下加入下面几种符号得到：
-\begin{itemize}
-	\item 命题常量符号$\start$；
-	\item 一个可数无限的索引集$\Ind$；
-	\item 带有索引$ind$（$ind \in \Ind$）的时序算子：$\EXIST_{\tuple{ind}} \NEXT$, $\EXIST_{\tuple{ind}} \FUTURE$, $\EXIST_{\tuple{ind}} \GLOBAL$, $\EXIST_{\tuple{ind}} \UNTILL$, 和 $\EXIST_{\tuple{ind}} \UNLESS$。
-\end{itemize}
-与$\CTL$公式的定义类似，其公式可以递归地定义如下：
-\begin{equation}\label{def:CTL_ind:formulas}
-	\phi ::=  \bot \mid \top \mid p \mid\neg\phi \mid \phi\lor\phi \mid
-	\EXIST \NEXT \phi \mid
-	\EXIST \GLOBAL \phi \mid
-	\EXIST (\phi\ \UNTILL\ \phi)\mid
-	\EXIST_{ind} \NEXT \phi \mid
-	\EXIST_{ind} \GLOBAL \phi \mid
-	\EXIST_{ind} (\phi\ \UNTILL\ \phi)
-\end{equation}
 
-与$\CTL$不同的是，$\CTL_{ind}$的语义定义在一种扩展的初始-Kripke结构上，该结构被称为$\Ind$-Kripke结构。
-一个$\Ind$-Kripke结构是一个五元组$\Hm=(S,R,L,[\_],s_0)$，且除了$[\_]$，其余元素都跟初始结构中的元素对应。该五元组中的$[\_]$是一个以$\Ind$为定义域，$2^{S\times S}$为值域的后继函数，即$[\_]:\Ind \rto 2^{S\times S}$，且满足对于任意的$s\in S$都存在唯一一个$s'\in S$使得$(s,s')\in [ind]\cap R$。
-记$\pi_{s_i}^{ind}$是$\Hm$上的一条路径$(s_i,s_{i+1},s_{i+2},\dots)$，且对于任意的$j\ge i$都有：
-\[
-(s_j,s_{j+1}) \in [ind] \qquad 
-\]
-一个$\Ind$-Kripke结构$\Hm$和其上的一个状态$s$构成一个$ind$-结构，记为$(\Hm,s)$。同理，如果$s$是初始状态$s_0$，则称$(\Hm,s_0)$为初始$ind$-结构。
-
-令$\varphi$是一个$\CTL_{ind}$公式、${\cal K}=(\Hm,s_0)$是一个初始$ind$-结构、且$s$是$\Hm$上的一个状态，则$\varphi$和$(\Hm,s_0)$的可满足关系$(\Hm,s_0)\models \varphi$被定义如下（这里只列出带有索引的公式的可满足关系，其余公式的可参加$\CTL$部分的定义）：
-\begin{itemize}
-	\item $({\cal M},s) \models \start$当且仅当$s=s_0$；
-	\item $({\cal M},s)\models \EXIST_{\tuple{ind}} \NEXT \psi$当且仅当对于路径$\pi_{s}^{\tuple{ind}}$，有$(\Hm, s')\models \psi$且$(s, s') \in [ind]$;
-	\item $({\cal M},s)\models \EXIST_{\tuple{ind}}\GLOBAL\psi$当且仅当对于任意的$s' \in  \pi_{s}^{\tuple{ind}}$，%occurring in $\pi_{s}^{\tuple{ind}}$,
-	$(\Hm,s') \models \psi$;
-	\item $({\cal M},s)\models \EXIST_{\tuple{ind}}(\psi_1\UNTILL\psi_2)$
-	当且仅当存在路径$\pi_{s}^{\tuple{ind}} = (s=s_1, s_2, \dots)$上的状态$s_j$（$j\ge 1$），使得$(\Hm,s_j) \models \psi_2$，且对于任意的$s_k \in \pi_{s}^{\tuple{ind}}$，若$1\leq k < j$，则$(\Hm,s_k) \models \psi_1$；
-	\item $(\Hm,s) \models \EXIST_{\tuple{ind}} \FUTURE \psi$当且仅当$(\Hm,s) \models \EXIST_{\tuple{ind}}(\top \UNTILL\psi)$；
-	\item $({\cal M},s)\models \EXIST_{\tuple{ind}}(\varphi\UNLESS\psi)$当且仅当$(\Hm,s) \models \EXIST_{\tuple{ind}}\GLOBAL \varphi$或$({\cal M},s)\models \EXIST_{\tuple{ind}}(\varphi\UNTILL\psi)$。
-\end{itemize}
-
-对于给定的公式$\varphi$和初始$ind$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称${\cal K}$是$\varphi$的一个\emph{$\Ind$-模型}，也称${\cal K}$满足$\varphi$。其他的术语与$\CTL$部分的类似，这里不再赘述。
 
 已有结果表明，任意的$\CTL$公式能够在多项式时间内被转换为$\CTL$的全局子句分离的范式（separated normal form with global clauses for \CTL，$\CTLsnf$子句）\cite{zhang2008first,zhang2014resolution}。
 $\CTLsnf$子句是具有下面几种形式的公式：
@@ -312,7 +388,16 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句�
 \begin{itemize}
 	\item[] (1) 将公式$\CTL$转换为其NNF（negation normal form）\footnote{如果公式中的否定符号“$\neg$”仅出现在原子命题之前，且联结符号只有“$\vee$”和“$\wedge$”这两种，则称该公式是NNF形式的公式。}形式，记为$nnf(\varphi)$；
 	\item[] (2) 使用表~\ref{tab:simp}中的等价公式化简$nnf(\varphi)$，得到$simp(nnf(\varphi))$；
-	\item[] (3) 使用表~\ref{tab:trans}中的规则将$\{\ALL\GLOBAL(\start\rto z), \ALL\GLOBAL(z \rto simp(nnf(\varphi)))\}$化简为$\CTLsnf$子句的集合。
+	\item[] (3) 使用表~\ref{tab:trans}中的规则将$\{\ALL\GLOBAL(\start\rto z), \ALL\GLOBAL(z \rto simp(nnf(\varphi)))\}$化简为$\CTLsnf$子句的集合$T_{\varphi}$。形式化地，
+	$T_\varphi$由\emph{导出（derivation）}序列生成：
+	\[ T_0=\{\ALL\GLOBAL(\start\rto p), \ALL\GLOBAL(p\rto {\bf simp}({\bf nnf}(\varphi)))\}, T_1, \ldots, T_n=T_\varphi\]
+	其中
+	\begin{itemize}
+		\item $p$是一个新的原子命题， \ie $p\notin \{\start\}\cup\Var(\varphi)$；
+		\item $T_{t+1} = (T_t - \{\psi\}) \cup R_t~(t\ge 0)$，其中 $\psi$在$T_t$中的非$\CTLsnf$子句，且 $R_t$
+	时使用一条匹配的归罪作用到 $\psi$上得到的结果；
+		\item  $T_n$中的每个公式都为$\CTLsnf$字句形式。
+	\end{itemize}
 \end{itemize}
 
 %\begin{table}[h!]
@@ -370,6 +455,31 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句�
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+接下来也将$\CTLsnf(\varphi)$记为由$\varphi$通过转换规则获得的 $\CTLsnf$ 子句的集合。
+因此，下面的引理是显然的。
+
+
+\begin{lemma} \label{lem:ResTransPt}
+	给定$\CTL$公式 $\varphi$。
+	\begin{itemize}
+		\item[(i)] 对$\varphi$中的每一个路径量词$\EXIST$，有且仅有一个新的索引在转换过程中被引入，即 $\CTLsnf(\varphi)$ 中对$\varphi$中的每一个$\EXIST$都有唯一一个带索引的存在路径量词。
+		\item[(ii)] $\CTLsnf(\varphi)$中不存在两个$\EXIST$-某时子句有相同的索引，即
+		若 $P_i\rto \EXIST_{\tuple{j_i}}\FUTURE l_i~(i=1,2)$在$\CTLsnf(\varphi)$ 中，则
+		$j_1\neq j_2$。
+		\item[(iii)] 原子命题$p \in\Var(\varphi)$不会出现在$\CTLsnf(\varphi)$中的子句蕴含式的左手边。
+		%\item  For each $p\in V'$, if $p$ occurs in the left-hand side of a $\CTLsnf$ clause, then $p$ occurs negatively.
+	\end{itemize}
+\end{lemma}
+\begin{proof}
+	(i) It is evident that $\textbf{Trans(1)}$ and $\textbf{Trans(2)}$ introduce a fresh index for each occurrence of the path quantifier $\EXIST$. Moreover, once the path quantifier $\EXIST$ is labeled by an index, it will not be labeled by another index.
+	%According to the transformation rules in Table~\ref{tab:trans},  
+	
+	(ii) We know that there is an exact one fresh index for each occurrence of the path quantifier $\EXIST$ by (i). Moreover, there will not produce new $\EXIST$-sometime clauses in the derivation.
+	%Therefore, (ii) holds.
+	
+	(iii) It is obvious from the transformation and resolution rules.
+\end{proof}
 
 下面通过一个简单的例子~\cite{zhang2014resolution}来展示上述转换步骤：
 \begin{example}\label{exmp:transbot}
@@ -503,7 +613,7 @@ Janin等人首先提出了$\mu$-演算的析取范式~\cite{janin1995automata}�
 
 在看见了归结在在命题逻辑和一阶逻辑中取得成就之后，科研工作者们开始将精力致力于其他非经典逻辑中，并取得了相当显著的理论成果，如：模态逻辑（K系统，Q系统，T系统，S4和S5系统）中的归结~\cite{DBLP:journals/tcs/EnjalbertC89}和时态逻辑（尤其是线性时序逻辑（LTL）和\CTL）中的归结~\cite{DBLP:conf/cade/CavalliC84,DBLP:journals/jetai/BolotovF99}。
 
-这里主要介绍与本文直接相关的$\CTL$下的归结。$\CTL$下的归结起源于BolotovF的研究\cite{DBLP:journals/jetai/BolotovF99}，之后被Zhang等人完善~\cite{zhang2014resolution}。不论是在BolotovF的工作还是在Zhang等人的工作中，其关键点都是将$\CTL$公式转换为一个$\CTLsnf$子句的集合。本文使用Zhang等人在~\cite{zhang2014resolution}中的规则，如表所示。
+这里主要介绍与本文直接相关的$\CTL$下的归结。$\CTL$下的归结起源于BolotovF的研究\cite{DBLP:journals/jetai/BolotovF99}，之后被Zhang等人完善~\cite{zhang2014resolution}。不论是在BolotovF的工作还是在Zhang等人的工作中，其关键点都是将$\CTL$公式转换为一个$\CTLsnf$子句的集合。本文使用Zhang等人提出的规则~\cite{zhang2014resolution}，如表~\ref{tab:res}所示。
 
 \begin{table}[tb]%[width=.9\linewidth,cols=4,pos=h]
 	%\footnotesize
