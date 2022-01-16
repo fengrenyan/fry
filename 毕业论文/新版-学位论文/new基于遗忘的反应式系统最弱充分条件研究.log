@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  15 JAN 2022 21:24
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  16 JAN 2022 11:32
 entering extended mode
 **new基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -2000,7 +2000,14 @@ C70/rm/m/n/12.05/60 ' \C70/rm/m/n/12.05/54 � \C70/rm/m/n/12.05/7c � \C70/rm/m/n
 [7
 
 ]
-Overfull \hbox (7.94196pt too wide) in paragraph at lines 33--34
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+Overfull \hbox (7.94196pt too wide) in paragraph at lines 43--44
 []\OT1/ptm/m/n/12.05 3. \C70/rm/m/n/12.05/63 � \C70/rm/m/n/12.05/51 � \C70/rm/m
 /n/12.05/4e � \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/5e � \C70/rm/m/n/12.05/9
 6 � \C70/rm/m/n/12.05/67 : \C70/rm/m/n/12.05/54 � \C70/rm/m/n/12.05/5e � \C70/r
@@ -2009,13 +2016,6 @@ m/m/n/12.05/62 p \C70/rm/m/n/12.05/52 � \C70/rm/m/n/12.05/65 � \C70/rm/m/n/12.0
 m/m/n/12.05/ff | \OT1/ptm/m/n/12.05 ORRP)|\C70/rm/m/n/12.05/30 |
  []
 
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[8]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4543,7 +4543,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  36469 strings out of 495354
  607450 string characters out of 3183859
- 752171 words of memory out of 3000000
+ 750171 words of memory out of 3000000
  37136 multiletter control sequences out of 15000+200000
  282970 words of font info for 808 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -4704,7 +4704,7 @@ bol/usyr.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/f
 onts/type1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.p
 fb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on new基于遗忘的反应式系统最弱充分条件研究.pdf
- (131 pages, 2821083 bytes).
+ (131 pages, 2824026 bytes).
 PDF statistics:
  2811 PDF objects out of 2984 (max. 8388607)
  496 named destinations out of 1000 (max. 500000)
