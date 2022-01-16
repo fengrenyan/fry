@@ -229,13 +229,82 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 	令 $\varphi$为一个$\CTL$公式。则$\varphi\equiv_UT_\varphi$，其中 $T_\varphi=\CTLsnf(\varphi)$ 和
 	$U=\Var(T_\varphi)-\Var(\varphi)$。
 \end{proposition}
+\begin{proof}
+	为了讨论方便，转换过程产生了一个公式集合的序列，$T_0, T_1, \dots, T_n=T_{\varphi}$，其中$p$是不出现在$\varphi$中的原子命题，$T_0=\{\ALL \GLOBAL(\start \rto p), \ALL \GLOBAL(p \rto \simp(\nnf(\varphi)))\}$且对任意的$i$（$0\leq i < n$）有$T_{i+1} = (T_i-\{\psi\}) \cup R_i$（$Trans(\psi)$返回的结果为$R_i$）。此外，在这一过程中，所有的公式都是其否定范式的形式。
+	
+	为了证明命题中的结论成立，只需证明，对任意的$i$（$0\leq i < n$）有$T_i \equiv_{V'} T_{i+1}$成立。由于$T_{i+1}$是由$T_i$通过表~\ref{tab:trans}中的规则作用于$T_i$中的某一个公式得到，因此证明过程分为两个部分：（1）从$\varphi$到$T_0$部分；（2）对表~\ref{tab:trans}中的规则做归纳的部分。为了方便，下面假设$\Hm_1=(S_1,R_1,L_1,[\_],s_1)$和$\Hm_2=(S_2,R_2,L_2, [\_]_2, s_2)$。
+	
+	（1）这里将证明$\varphi \equiv_{\{p\}} T_0$。
+	
+	$(\Rto)$ $\forall (\Hm_1, s_1) \in \Mod(\varphi)$，可以构造一个$\Ind$-Kripke结构$\Hm_2=(S_2,R_2,L_2,[\_],s_2)$使得$\Hm_2$除了$L_2(s_2)=L_1(s_1) \cup \{p\}$（默认不出现在$\varphi$中的原子命题都不出现在状态的标签中），其他的元素都与$\Hm_1$中元素相同。显然，$(\Hm_2,s_2)\models T_0$且$(\Hm_1,s_1) \lrto_{\{p\}} (\Hm_2, s_2)$。
+	
+	$(\Lto)$ $\forall (\Hm_1,s_1) \in \Mod(T_0)$，由$\start$的语义可以知道$(\Hm_1,s_1) \models \varphi$。
+	
+	（2）这里将证明对任意的$i$（$0\leq i < n$）有$T_i \equiv_{V'} T_{i+1}$成立，其中$T_{i+1} = (T_i-\{\psi\}) \cup R_i$。为了方便，用$\psi \rto_t R_i$表示$R_i$是使用规则$t$在公式$\psi$上得到的结果，且$T_i=X\cup \{\psi\}$（显然，$T_{i+1}=X\cup R_i$）。下面证明规则$t\in \{$\textbf{Trans(1), Trans(4), Trans(6)}$\}$的情形，其他情形可以类似地证明。
+	
+	（a）$t=\textbf{Trans(1)}$。
+	
+	$(\Rto)$ $\forall (\Hm_1,s_1)\in \Mod(T_i)$，即$(\Hm_1, s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$\\
+	$\Rto$ $(\Hm_1,s_1) \models X$，且对任意路径$\pi$上的状态$s_{1,j}$ $(j\geq 1)$有：$(\Hm,s_{1,j}) \not \models \neg q$或存在一个状态$s_{1,j+1}$使得$(s_{1,j},s_{1,j+1})
+	\in R_1$且$(\Hm,s_{1,j+1}) \models \varphi$。
+	
+	由此可以构造一个$\Ind$-Kripke结构$\Hm_2$使得$\Hm_2$与$\Hm_1$相同，除了对使用规则$\textbf{Trans(1)}$在公式$\ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$上而引入的新索引$ind$有$[ind]_2=\bigcup_{s\in S} R_s \cup R_y$。其中：
+	\begin{itemize}
+		\item $R_{s_{1,j}}=\{(s_{1,j}, s_{1,j+1}), (s_{1,j+1}, s_{1,j+2}),\dots\}$ $(j\geq 1)$，其满足“若$(\Hm_1,s_{1,j}) \models q$，则$(\Hm_1,s_{1,j+1})$ $\models \varphi$”且“对于任意的$i\geq j$，若$(s_{1,i}, s') \in R_s\ (s \not= s_{1,j})$，则$s'=s_{1,i+1}$”；
+		\item $R_y=\{(s_x,s_y)\mid s_x\in S$，若$\forall(s_1',s_2') \in \bigcup_{s\in S} R_s$， $s_1'\not= s_x$，则找一个状态$s_y\in S_2$使得$(s_x,s_y)\in R_2\}$。
+	\end{itemize}
+	
+	显然，$(\Hm_1,s_1) \lrto_{\tuple{\emptyset,\{ind\}}} (\Hm_2,s_2)$\\
+	$\Rto$ 对任意从$s_2$开始的路径$\pi=( s_2= s_{2,1} , s_{2,2}, \dots)$，如果$s_{2,j} \in \pi$，则$(\Hm_2,s_{2,j}) \models \neg q$或者$(\Hm_2,s_{2,j}) \models \EXIST_{\tuple{ind}} \NEXT \varphi$\\
+	$\Rto$ $(\Hm_2,s_2)\models \ALL\GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi)$\\
+	$\Rto$ $(\Hm_2,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi)$
+	
+	$(\Lto)$ $\forall (\Hm_1,s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL \GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi )$\\
+	$\Rto$ $(\Hm_1,s_1) \models X$且$(\Hm_1,s_1) \models \ALL \GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi)$\\
+	$\Rto$ 对任意的以$s_1$为始点的路径上的任意状态$s_{1,j}$，$(\Hm_1,s_{1,j}) \models \neg q$或$(\Hm_1,s_{1,j}) \models \EXIST\NEXT\varphi$\\
+	$\Rto$ $(\Hm_1,s_1) \models \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$\\
+	$\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$。
+	
+	（b）$t=\textbf{Trans(4)}$。
+	
+	$(\Rto)$	$\forall(\Hm_1,s_1) \in \Mod(T_i)$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q \rto \varphi_1 \vee \varphi_2)$ \\
+	$\Rto$ $(\Hm_1,s_1) \models X$且$\forall s_1'\in S_1$，$(\Hm_1, s_1') \models q \rto \varphi_1 \vee \varphi_2$\\
+	$\Rto$ $(\Hm_1,s_1')\models \neg q$或$(\Hm_1,s_1')\models \varphi_1 \vee \varphi_2$。
+	
+	可以如下构造$\Ind$-Kripke结构$\Hm_2$：
+	\begin{itemize}
+		\item $S_2=S_1$，$R_2=R_1$，$[\_]_2$与$[\_]_1$一样且$s_2=s_1$；
+		\item $L_2$与$L_1$类似，除了：若$(\Hm_1, s_1') \models \neg q$则$L_2(s_1') = L_1(s_1')$，否则“若$(\Hm_1,s_1') \models \varphi_1$ 则 $L_2(s_1')=L_1(s_1')$，否则$L_2(s_1')=L_1(s_1') \cup \{p\}$”。
+	\end{itemize}
+	显然，$(\Hm_2,s_1') \models (q\rto \varphi_1 \vee p) \wedge (p \rto \varphi_2)$且$(\Hm_1, s_1) \lrto_{\{p\}} (\Hm_2, s_2)$, 因而$(\Hm_2,s_1) \models T_{i+1}$。
+	
+	$(\Lto)$  $\forall (\Hm_1, s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q\rto \varphi_1 \vee p) \wedge \ALL\GLOBAL(p \rto \varphi_2)$。 显然，$(\Hm_1, s_1) \models T_i$。
+	
+	（c）$t$=\textbf{Trans(6)}。
+	
+	这里证明$\EXIST_{\tuple{ind}} \NEXT$的情形，$\ALL \NEXT$情形可以类似地证明。
+	
+	$(\Rto)$ $\forall(\Hm_1,s_1) \in \Mod(T_i)$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST_{\tuple{ind}}\NEXT \varphi)$\\
+	$\Rto$ $(\Hm_1,s_1) \models X$且对任意的$s_1'\in S, (\Hm_1,s_1') \models q \rto \EXIST_{\tuple{ind}} \NEXT \varphi$\\
+	$\Rto$ $(\Hm_1,s_1') \models \neg q$或者存在一个状态$s'$使得$(s_1', s') \in [ind]$且$(\Hm_1,s') \models \varphi$\\
+	
+	可以如下构造$\Ind$-Kripke结构$\Hm_2$：
+	\begin{itemize}
+		\item $S_2=S_1$，$R_2=R_1$，$[\_]_2$与$[\_]_1$一样且$s_2=s_1$；
+		\item $L_2$与$L_1$类似，除了：若$(\Hm_1, s_1') \models \neg q$则$L_2(s_1') = L_1(s_1')$，否则“若$(\Hm_1,s_1') \models q$则$L_2(s')$ $=L_1(s')\cup \{p\}$ $((s_1',s')\in R_2)$”。
+	\end{itemize}
+	显然，$(\Hm_2,s_2) \models \ALL\GLOBAL(q\rto \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \rto \varphi)$, $(\Hm_2,s_2) \models T_{i+1}$且$(\Hm_1, s_1) \lrto_{\{p\}} (\Hm_2, s_2)$ ($s_2=s_1$)。
+	
+	$(\Lto)$ $\forall(\Hm_1, s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q\rto \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \rto \varphi)$。显然，$(\Hm_1, s_1) \models T_i$。
+\end{proof}
 
 
 \section{遗忘理论及其语义属性}
 这部分将给出$\CTL$下的遗忘理论的定义及其相关属性。
 
 \begin{definition}[遗忘理论]\label{def:V:forgetting}
-	令$V$是$\Ha$的一个子集，$\Phi$是一个公式。如果一个公式$\psi$满足下面条件，则称$\psi$为从$\Phi$中遗忘掉$V$后得到结果，记为$\CTLforget(\Phi, V)$：
+	令$V$是$\Ha$的一个子集，$\Phi$是一个公式。如果一个公式$\psi$满足下面条件，则称$\psi$为从$\Phi$中遗忘掉$V$后得到结果：
+	%，记为$\CTLforget(\Phi, V)$：
 	\begin{itemize}
 		\item $\psi$与$V$中原子命题无关（即：$\Var(\psi) \cap V= \emptyset$）；
 		\item $\Mod(\psi)=\{{\cal K}\mid {\cal K} \mbox{是一个初始$\MPK$-结构}, \exists {\cal K}'\in\Mod(\phi)\ \text{ \st }\ {\cal K}'\lrto_V{\cal K}\}$
@@ -244,8 +313,87 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 \end{definition}
 
 	
-从定义~\ref{def:V:forgetting}可以看出，如果有两个公式$\psi$和$\psi'$都是从$\Phi$中遗忘掉$V$中元素后得到的结果，则有$\psi\equiv \psi'$。从这个角度来看，可以说从$\Phi$中遗忘掉$V$中元素后得到的结果之间是语义等价的。此外，当$V$中只包含一个元素的时候，可以省略掉集合符号，即：$\CTLforget(\Phi, \{p\}) \equiv \CTLforget(\Phi, p)$。
-值得指出的是，遗忘理论的定义与均匀插值的语义定义等价，也即是遗忘理论与均匀插值是一对对偶概念，这与其他逻辑（包括模态逻辑S4、S5和经典命题逻辑）中的说法一致~\cite{gfdf}。
+从定义~\ref{def:V:forgetting}可以看出，如果有两个公式$\psi$和$\psi'$都是从$\Phi$中遗忘掉$V$中元素后得到的结果，则有$\psi\equiv \psi'$。从这个角度来看，可以说从$\Phi$中遗忘掉$V$中元素后得到的结果之间是语义等价的。
+将遗忘的结果记为$\CTLforget(\phi,V)$，不做其他说明的情况下，这表示从$\phi$中遗忘掉$V$是$\CTL$可表示的。
+此外，当$V$中只包含一个元素的时候，可以省略掉集合符号，即：$\CTLforget(\Phi, \{p\}) \equiv \CTLforget(\Phi, p)$。
+
+%值得指出的是，遗忘理论的定义与均匀插值的语义定义等价，也即是遗忘理论与均匀插值是一对对偶概念，这与其他逻辑（包括模态逻辑S4、S5和经典命题逻辑）中的说法一致~\cite{gfdf}。
+
+
+在上述的遗忘理论的定义中说明了如果公式$\psi$的任意一个模型${\cal K}$都能找到$\varphi$的一个模型${\cal K}'$使得${\cal K} \lrto_V {\cal K}'$，则称$\psi$为从$\varphi$中遗忘掉$V$中原子命题后得到的结果。为刻画S5逻辑下该概念的直观含义，Zhang等人提出了如下遗忘理论特性——这些特性被称为\emph{遗忘理论公设}（forgetting postulates）~\cite{Yan:AIJ:2009}。
+给定$\CTL$公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$和原子命题集合$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，遗忘理论公设如下：
+\begin{itemize}
+	\item[] (\W) 弱（Weakening）属性：$\varphi \models \varphi'$；
+	\item[] (\PP) 正支持性（Positive Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
+	\item[] (\NgP) 负支持性（Negative Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \not \models \eta$则$\varphi' \not \models \eta$；
+	\item[] (\textbf{IR}) 无关性（Irrelevance）： $\IR(\varphi', V)$
+\end{itemize}
+直观地说，(\W)和(\textbf{IR})表明“遗忘”削弱了公式$\varphi$且得到的结果与$V$无关，(\PP)和(\NgP)表明对任意与$V$无关的公式$\eta$，$\varphi \models \eta$当且仅当$\varphi' \models \eta$。总而言之，遗忘得到的结果能推出所有与$V$无关且能被$\varphi$推出的结果，且不能推出所有与$V$无关且不能被$\varphi$推出的结果。
+从数据库和安全的层面讲，遗忘相当于从已有的关系表中构建出一个视图，达到了隐私保护的作用。
+下面的定理表明$\CTL$中的遗忘理论与上述公设也具有当且仅当的关系。
+
+\begin{theorem}[Representation Theorem]\label{thm:close}
+	%Let $\varphi$, $\varphi'$ and $\phi$ be \CTL\
+	给定$\CTL$公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题的集合。
+	%Then t
+	下面的陈述是等价的：
+	\begin{itemize}
+		\item[(i)] $\varphi' \equiv \CTLforget(\varphi, V)$,
+		\item[(ii)] $\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ and } \IR(\phi, V)\}$,
+		\item[(iii)] 若$\varphi$、$\varphi'$和$V$为(i)和(ii)中提到的符号，则公设(\W)、(\PP)、(\NgP)和(\textbf{IR})成立. 
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	$(i) \LRto (ii)$. 为了证明这个结论，只需证明如下等式成立：
+	\[
+	\Mod(\CTLforget(\varphi, V)) = \Mod(\{\phi \mid \varphi \models \phi, \IR(\phi, V)\}).\]
+	$(\Rto)$ 对任意$\CTLforget(\varphi, V)$的模型${\cal K}'$ \\
+	$\Rto$  $\exists {\cal K}$使得${\cal K} \models \varphi$且${\cal K} \lrto_V {\cal K}'$ \hfill (定义~\ref{def:V:forgetting}) \\
+	$\Rto$ $\forall \phi$，若$\varphi \models \phi$且$\IR(\phi, V)$则${\cal K}' \models \phi$  \hfill (定理~\ref{thm:V-bisimulation:EQ})\\
+	$\Rto$ ${\cal K}' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$
+	
+	$(\Lto)$ 因为$\IR(\CTLforget(\varphi, V),V)$且$\varphi \models \CTLforget(\varphi, V)$，由定义~\ref{def:V:forgetting}可知$\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \CTLforget(\varphi, V)$。
+	
+	$(ii) \Rto (iii)$.令$A = \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$。 
+	首先，由于对任意的$\phi'\in A$都有$\varphi \models \phi'$，所以$\varphi \models \varphi'$。
+	其次，对任意的公式$\phi$，若$\IR(\phi, V)$且$\varphi \models \phi$则$\phi \in A$，因此$\varphi' \models \phi$.
+	第三， 对任意的公式$\phi$，若$\IR(\phi, V)$且$\varphi \not \models \phi$则$\phi \not \in A$。因此$\varphi' \not \models \phi$。
+	最后，因为对任意的$\phi' \in A$都有$\IR(\varphi',V)$ ，所以$\IR(\phi',V)$。
+	
+	$(iii) \Rto (ii)$.一方面，由(\PP) 和 (\NgP)可知，对任意的公式$\phi'$且$\IR(\phi',V)$，$\varphi \models \phi'$当且仅当$\varphi' \models \phi'$。所以对任意的$\phi'\in \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$都有$\varphi' \models \phi'$，因而$\varphi' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$。 
+	另一方面，由 (\W) 和 (\textbf{IR})可知$\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \varphi'$。因此，$\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ and } \IR(\phi, V)\}$。
+\end{proof}
+
+尽管上面的表达性定理描述了遗忘及其基本准则之间“当且仅当”的关系，值得注意的是上面的定义~\ref{def:V:forgetting}并不表示遗忘的结果一定存在。
+事实上，存在一个$\CTL$公式和原子命题的集合，使得从该公式里遗忘掉集合里的元素的结果不可用$\CTL$公式表示。
+例：令$p$ 和 $x$为两个不同的命题，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集合$\Var(\varphi)=\{p,x\}$的公式。}为下面公式合取~\cite{Maksimova:JANCL:1991}：
+\begin{align*}
+	&\ALL\GLOBAL(\neg x \wedge \neg \ALL \GLOBAL p \rto \neg \ALL \NEXT \neg x),
+	\qquad \ALL\GLOBAL(\neg \ALL\NEXT \neg x \rto \ALL \NEXT x),\\
+	& \ALL\GLOBAL(\ALL\NEXT x \rto \neg x \wedge \neg \ALL \GLOBAL p),
+	\qquad \ALL\GLOBAL(x \rto \neg \ALL\GLOBAL p),
+	\qquad \ALL\GLOBAL(\ALL \FUTURE \ALL \GLOBAL p).
+\end{align*}
+\citeauthor{Maksimova:JANCL:1991}证明$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$且不存在$\CTL$公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)\models x\lrto \psi$，即$\CTL$不具有Beth属性。
+这一结论蕴涵如下命题：
+\begin{proposition}\label{pro:uniforget}
+$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 $\CTL$中是不可表示的。
+\end{proposition}
+\begin{proof}
+令 $\psi(p)=\CTLforget(x\land \varphi(p,x), \{x\})$为一个$\CTL$公式。
+有 \\
+$\varphi(p,x)\land \varphi(p,y)\vdash x\lrto y$\\
+$\Rto$ $\varphi(p,x)\land x \vdash \varphi(p,y)\rto y$\\
+$\Rto$ $\varphi(p,x)\land x\vdash \psi(p)$ 和 $\psi(p)\vdash \varphi(p,y)\rto p(y)$ (定理~\ref{thm:close})\\
+$\Rto$ $\varphi(p,x)\vdash x\rto\psi(p)$， 和$\varphi(p,y)\vdash \psi(p)\rto p(y)$，这意味着 $\varphi(p,x)\vdash \psi(p)\rto p(x)$\\
+$\Rto$ $\varphi(p,x)\vdash x\lrto \psi(p)$，这是一个矛盾。
+\end{proof}
+
+事实上，遗忘结果的存在性（可表达性）与均匀插值（或Craig插值）性质密切相关。
+从形式上说，如果一个逻辑系统${\cal L}$中任意的公式$\varphi$和$\psi$，若$\varphi(p,x)\models x\lrto \psi$，则存在一个公式$\xi$使得$\varphi\vdash_{\cal L}\xi$、$\xi\vdash_{\cal L}\psi$和 $\Var(\xi)\subseteq \Var(\varphi)\cap \Var(\psi)$，
+则${\cal L}$具有均匀插值（或Craig插值）性质。
+研究表明，LTL、$\CTL$和$\CTL^*$不具有均匀插值性质~\cite{Maksimova:JANCL:1991,DAgostino:synthese:2008}。
+
 
 从命题公式$\varphi$中遗忘掉原子命题$p$得到的结果记为：$\Forget(\varphi,\{p\})\equiv\varphi[p/\bot] \vee \varphi[p/\top]$。
 值得注意的是，本文的遗忘理论的定义与Lin等人于1994提出命题逻辑下的遗忘理论一致。换句话说，本文将命题逻辑下的遗忘理论扩展到了$\CTL$下。下面命题展示了上述结论：

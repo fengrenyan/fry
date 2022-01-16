@@ -1,4 +1,4 @@
-\begin{thebibliography}{90}
+\begin{thebibliography}{92}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -605,12 +605,19 @@ LIN~F.
 \newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
 \newblock \url{https://doi.org/10.1016/S0004-3702(01)00070-4}.
 
-\bibitem[Kaushik et~al.(2002)Kaushik, Naughton, Bohannon, and
-  Shenoy]{kaushik2002updates}
-KAUSHIK~R, NAUGHTON~J~F, BOHANNON~P, et~al.
-\newblock Updates for structure indexes\allowbreak[C]//\allowbreak
-Proceedings of VLDB'02.
-\newblock [S.l.]: Elsevier, 2002: 239-250.
+\bibitem[D'Agostino(2008)]{DAgostino:synthese:2008}
+D'AGOSTINO~G.
+\newblock Interpolation in non-classical logics\allowbreak[J].
+\newblock Synthese, 2008, 164\penalty0 (3):\penalty0 421-435.
+
+\bibitem[Feng et~al.(2020)Feng, Acar, Schlobach, Wang, and
+  Liu]{renyansfirstpaper}
+FENG~R, ACAR~E, SCHLOBACH~S, et~al.
+\newblock On sufficient and necessary conditions in bounded {CTL}: A forgetting
+  approach\allowbreak[C]//\allowbreak
+Proceedings of the International Conference on Principles of Knowledge
+  Representation and Reasoning: volume~17.
+\newblock [S.l.: s.n.], 2020: 361-370.
 
 \bibitem[Emerson(1990)]{DBLP:books/el/leeuwen90/Emerson90}
 EMERSON~E~A.
@@ -648,6 +655,13 @@ EMERSON~E~A, HALPERN~J~Y.
 \newblock Journal of computer and system sciences, 1985, 30\penalty0
   (1):\penalty0 1-24.
 \newblock \url{https://doi.org/10.1016/0022-0000(85)90001-7}.
+
+\bibitem[Kaushik et~al.(2002)Kaushik, Naughton, Bohannon, and
+  Shenoy]{kaushik2002updates}
+KAUSHIK~R, NAUGHTON~J~F, BOHANNON~P, et~al.
+\newblock Updates for structure indexes\allowbreak[C]//\allowbreak
+Proceedings of VLDB'02.
+\newblock [S.l.]: Elsevier, 2002: 239-250.
 
 \bibitem[Mycielski et~al.(1997)Mycielski, Rozenberg, and
   Salomaa]{DBLP:conf/birthday/1997ehrenfeucht}

@@ -62,51 +62,51 @@
 
 
 
-\section{二元互模拟}
-\label{chapter4:sub:biVB}
-对于给定的初始$\Ind$-结构，这里定义一种$\tuple{V, I}$-互模拟关系。为了与一元的（只考虑原子命题的集合）$V$-互模拟对应，称$\tuple{V, I}$-互模拟为二元互模拟。其在$V$-互模拟的基础上又考虑了索引的集合在结构间关系。
-\begin{definition}[二元互模拟] \label{def:VInd:bisimulation}
-	令$V\subseteq \Ha$、$I\subseteq \Ind$分别是原子命题和索引的集合，${\cal K}_i=(\Hm_i,s^i)$是初始$\Ind$-结构，其中$\Hm_i=(S_i, R_i, L_i, [\_],s_0^i)$ $(i=1,2)$。称${\cal K}_1$和${\cal K}_2$是 $\tuple{V, I}$-互模拟的（记为${\cal K}_1 \lrto_{\tuple{V, I}} {\cal K}_2$），当且仅当${\cal K}_1 \lrto_V {\cal K}_2$且$\forall j\in (\Ind - I)$有：
-	\begin{itemize}
-		\item 对任意的$(s,s_1) \in [j]_1$，存在$(s',s_1')\in [j]_2$使得$s\lrto_V s'$且$s_1 \lrto_V s_1'$；
-		\item 对任意的$(s',s_1') \in [j]_2$，存在$(s,s_1)\in [j]_1$使得$s\lrto_V s'$且$s_1 \lrto_V s_1'$。
-	\end{itemize}
-	
-\end{definition}
-
-由定义~\ref{def:VInd:bisimulation}可知，当探讨的公式为$\CTL$公式时，因为不用考虑索引，$\lrto_{\tuple{V, I}}$“降维”为$\lrto_V$。
-与$\lrto_V$类似，$\lrto_{\tuple{V, I}}$在本文中至关重要的两个性质如下。
-\begin{proposition}\label{pro:VI:div}
-	令$V_1,V_2\subseteq \Ha$为原子命题的集合，$I_1, I_2 \subseteq \Ind$为索引的集合，${\cal K}_i = (\Hm_i, s_0^i)$ $(i=1,2,3)$为初始$\Ind$-结构。若${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$、${\cal K}_2 \lrto_{\tuple{V_2,I_2}} {\cal K}_3$，则：
-	\begin{itemize}
-		\item[(i)] ${\cal K}_1 \lrto_{\tuple{V_1\cup V_2,I_1\cup I_2}} {\cal K}_3$；
-		\item[(ii)] 如果$V_1 \subseteq V_2$且$I_1 \subseteq I_2$，则${\cal K}_1 \lrto_{\tuple{V_2,I_2}} {\cal K}_2$。
-	\end{itemize}
-\end{proposition}
-\begin{proof}
-	(i) 由定义~\ref{def:VInd:bisimulation}可知${\cal K}_1 \lrto_{V_1} {\cal K}_2$、${\cal K}_2 \lrto_{V_2} {\cal K}_3$，因此由命题~\ref{pro:div}可知${\cal K}_1 \lrto_{V_1\cup V_2} {\cal K}_3$。
-	
-	${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$\\
-	$\Rto$ $\forall j\in (\Ind-(I_1\cup I_2))$有：$\forall(s,s_1) \in [j]_1$，$\exists (s', s_1')\in [j]_2$使得$s\lrto_{V_1} s'$，$s_1\lrto_{V_1} s_1'$\\
-	$\Rto$ 又因为${\cal K}_2 \lrto_{\tuple{V_2,I_2}} {\cal K}_3$，所以$\exists (s'', s_1'')\in [j]_3$使得$s'\lrto_{V_2} s''$，$s_1'\lrto_{V_2} s_1''$  \hfill \\
-	$\Rto$ $s \lrto_{V_1\cup V_2} s''$且$s_1 \lrto_{V_1\cup V_2} s_1''$
-	
-	同理可证，$\forall (s'',s_1'')\in [j]_3$，$\exists (s,s_1)\in [j]_1$使得$s \lrto_{V_1\cup V_2} s''$且$s_1 \lrto_{V_1\cup V_2} s_1''$。
-	因此，由定义~\ref{def:VInd:bisimulation}可知${\cal K}_1 \lrto_{\tuple{V_1\cup V_2,I_1\cup I_2}} {\cal K}_3$。
-	
-	(ii)可以由命题~\ref{pro:div}中的(ii)可得。
-\end{proof}
-
-对于给定的$\Ind$-Kripke结构$\Hm=(S,R,L,[\_],s_0)$和$\Hm'=(S',R',L',[\_],s_0')$，$\Hm$和$\Hm'$之间的二元互模拟关系$\lrto_{\tuple{V,I}}$给描述公式间在二元组$\tuple{V,I}$上的等价关系提供了前提条件。这同时也为解决本章引言部分提出的问题$(1)$奠定了基础。
-
-\begin{definition}
-	给定两个公式（或公式的集合）$T_1$和$T_2$，$I\subseteq \Ind$是索引的集合，$V''\subseteq \Ha$是原子命题的集合。如果下面条件被满足，则称$T_1$和$T_2$在二元组$\tuple{V,I}$上逻辑等价（记为$T_1\equiv_{\tuple{V,I}} T_2$）：
-	\begin{itemize}
-		\item $\forall (\Hm,s_0)\in \Mod(T_1)$，$\exists (\Hm',s_0')\in \Mod(T_2)$使得$(\Hm,s_0) \lrto_{\tuple{V, I}} (\Hm',s_0')$，且
-		\item $\forall (\Hm',s_0')\in \Mod(T_2)$，$\exists (\Hm,s_0)\in \Mod(T_1)$使得$(\Hm,s_0) \lrto_{\tuple{V, I}} (\Hm',s_0')$。
-	\end{itemize}
-	
-\end{definition}
+%\section{二元互模拟}
+%\label{chapter4:sub:biVB}
+%对于给定的初始$\Ind$-结构，这里定义一种$\tuple{V, I}$-互模拟关系。为了与一元的（只考虑原子命题的集合）$V$-互模拟对应，称$\tuple{V, I}$-互模拟为二元互模拟。其在$V$-互模拟的基础上又考虑了索引的集合在结构间关系。
+%\begin{definition}[二元互模拟] \label{def:VInd:bisimulation}
+%	令$V\subseteq \Ha$、$I\subseteq \Ind$分别是原子命题和索引的集合，${\cal K}_i=(\Hm_i,s^i)$是初始$\Ind$-结构，其中$\Hm_i=(S_i, R_i, L_i, [\_],s_0^i)$ $(i=1,2)$。称${\cal K}_1$和${\cal K}_2$是 $\tuple{V, I}$-互模拟的（记为${\cal K}_1 \lrto_{\tuple{V, I}} {\cal K}_2$），当且仅当${\cal K}_1 \lrto_V {\cal K}_2$且$\forall j\in (\Ind - I)$有：
+%	\begin{itemize}
+%		\item 对任意的$(s,s_1) \in [j]_1$，存在$(s',s_1')\in [j]_2$使得$s\lrto_V s'$且$s_1 \lrto_V s_1'$；
+%		\item 对任意的$(s',s_1') \in [j]_2$，存在$(s,s_1)\in [j]_1$使得$s\lrto_V s'$且$s_1 \lrto_V s_1'$。
+%	\end{itemize}
+%	
+%\end{definition}
+%
+%由定义~\ref{def:VInd:bisimulation}可知，当探讨的公式为$\CTL$公式时，因为不用考虑索引，$\lrto_{\tuple{V, I}}$“降维”为$\lrto_V$。
+%与$\lrto_V$类似，$\lrto_{\tuple{V, I}}$在本文中至关重要的两个性质如下。
+%\begin{proposition}\label{pro:VI:div}
+%	令$V_1,V_2\subseteq \Ha$为原子命题的集合，$I_1, I_2 \subseteq \Ind$为索引的集合，${\cal K}_i = (\Hm_i, s_0^i)$ $(i=1,2,3)$为初始$\Ind$-结构。若${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$、${\cal K}_2 \lrto_{\tuple{V_2,I_2}} {\cal K}_3$，则：
+%	\begin{itemize}
+%		\item[(i)] ${\cal K}_1 \lrto_{\tuple{V_1\cup V_2,I_1\cup I_2}} {\cal K}_3$；
+%		\item[(ii)] 如果$V_1 \subseteq V_2$且$I_1 \subseteq I_2$，则${\cal K}_1 \lrto_{\tuple{V_2,I_2}} {\cal K}_2$。
+%	\end{itemize}
+%\end{proposition}
+%\begin{proof}
+%	(i) 由定义~\ref{def:VInd:bisimulation}可知${\cal K}_1 \lrto_{V_1} {\cal K}_2$、${\cal K}_2 \lrto_{V_2} {\cal K}_3$，因此由命题~\ref{pro:div}可知${\cal K}_1 \lrto_{V_1\cup V_2} {\cal K}_3$。
+%	
+%	${\cal K}_1 \lrto_{\tuple{V_1,I_1}} {\cal K}_2$\\
+%	$\Rto$ $\forall j\in (\Ind-(I_1\cup I_2))$有：$\forall(s,s_1) \in [j]_1$，$\exists (s', s_1')\in [j]_2$使得$s\lrto_{V_1} s'$，$s_1\lrto_{V_1} s_1'$\\
+%	$\Rto$ 又因为${\cal K}_2 \lrto_{\tuple{V_2,I_2}} {\cal K}_3$，所以$\exists (s'', s_1'')\in [j]_3$使得$s'\lrto_{V_2} s''$，$s_1'\lrto_{V_2} s_1''$  \hfill \\
+%	$\Rto$ $s \lrto_{V_1\cup V_2} s''$且$s_1 \lrto_{V_1\cup V_2} s_1''$
+%	
+%	同理可证，$\forall (s'',s_1'')\in [j]_3$，$\exists (s,s_1)\in [j]_1$使得$s \lrto_{V_1\cup V_2} s''$且$s_1 \lrto_{V_1\cup V_2} s_1''$。
+%	因此，由定义~\ref{def:VInd:bisimulation}可知${\cal K}_1 \lrto_{\tuple{V_1\cup V_2,I_1\cup I_2}} {\cal K}_3$。
+%	
+%	(ii)可以由命题~\ref{pro:div}中的(ii)可得。
+%\end{proof}
+%
+%对于给定的$\Ind$-Kripke结构$\Hm=(S,R,L,[\_],s_0)$和$\Hm'=(S',R',L',[\_],s_0')$，$\Hm$和$\Hm'$之间的二元互模拟关系$\lrto_{\tuple{V,I}}$给描述公式间在二元组$\tuple{V,I}$上的等价关系提供了前提条件。这同时也为解决本章引言部分提出的问题$(1)$奠定了基础。
+%
+%\begin{definition}
+%	给定两个公式（或公式的集合）$T_1$和$T_2$，$I\subseteq \Ind$是索引的集合，$V''\subseteq \Ha$是原子命题的集合。如果下面条件被满足，则称$T_1$和$T_2$在二元组$\tuple{V,I}$上逻辑等价（记为$T_1\equiv_{\tuple{V,I}} T_2$）：
+%	\begin{itemize}
+%		\item $\forall (\Hm,s_0)\in \Mod(T_1)$，$\exists (\Hm',s_0')\in \Mod(T_2)$使得$(\Hm,s_0) \lrto_{\tuple{V, I}} (\Hm',s_0')$，且
+%		\item $\forall (\Hm',s_0')\in \Mod(T_2)$，$\exists (\Hm,s_0)\in \Mod(T_1)$使得$(\Hm,s_0) \lrto_{\tuple{V, I}} (\Hm',s_0')$。
+%	\end{itemize}
+%	
+%\end{definition}
 
 
 
@@ -168,74 +168,74 @@
 \begin{proposition}\label{pro:TranE}
 	令$\varphi$是一个$\CTL$公式，$(T_{\varphi}, V', I) = Transform(\varphi)$，则$\varphi \equiv_{\tuple{V',I}} T_{\varphi}$。
 \end{proposition}
-\begin{proof}
-	为了讨论方便，令$Transform(\varphi)$过程产生了一个公式集合的序列，$T_0, T_1, \dots, T_n=T_{\varphi}$，其中$p$是不出现在$\varphi$中的原子命题，$T_0=\{\ALL \GLOBAL(\start \rto p), \ALL \GLOBAL(p \rto \simp(\nnf(\varphi)))\}$且对任意的$i$（$0\leq i < n$）有$T_{i+1} = (T_i-\{\psi\}) \cup R_i$（$Trans(\psi)$返回的结果为$R_i$）。此外，在这一过程中，所有的公式都是其否定范式的形式。
-	
-	为了证明命题中的结论成立，只需证明，对任意的$i$（$0\leq i < n$）有$T_i \equiv_{\tuple{V',I}} T_{i+1}$成立。由于$T_{i+1}$是由$T_i$通过表~\ref{tab:trans}中的规则作用于$T_i$中的某一个公式得到，因此证明过程分为两个部分：（1）从$\varphi$到$T_0$部分；（2）对表~\ref{tab:trans}中的规则做归纳的部分。为了方便，下面假设$\Hm_1=(S_1,R_1,L_1,[\_],s_1)$和$\Hm_2=(S_2,R_2,L_2, [\_]_2, s_2)$。
-	
-	（1）这里将证明$\varphi \equiv_{\tuple{\{p\},\emptyset}} T_0$。
-	
-	$(\Rto)$ $\forall (\Hm_1, s_1) \in \Mod(\varphi)$，可以构造一个$\Ind$-Kripke结构$\Hm_2=(S_2,R_2,L_2,[\_],s_2)$使得$\Hm_2$除了$L_2(s_2)=L_1(s_1) \cup \{p\}$（默认不出现在$\varphi$中的原子命题都不出现在状态的标签中），其他的元素都与$\Hm_1$中元素相同。显然，$(\Hm_2,s_2)\models T_0$且$(\Hm_1,s_1) \lrto_{\tuple{\{p\}, \emptyset}} (\Hm_2, s_2)$。
-	
-	$(\Lto)$ $\forall (\Hm_1,s_1) \in \Mod(T_0)$，由$\start$的语义可以知道$(\Hm_1,s_1) \models \varphi$。
-	
-	（2）这里将证明对任意的$i$（$0\leq i < n$）有$T_i \equiv_{\tuple{V',I}} T_{i+1}$成立，其中$T_{i+1} = (T_i-\{\psi\}) \cup R_i$。为了方便，用$\psi \rto_t R_i$表示$R_i$是使用规则$t$在公式$\psi$上得到的结果，且$T_i=X\cup \{\psi\}$（显然，$T_{i+1}=X\cup R_i$）。下面证明规则$t\in \{$\textbf{Trans(1), Trans(4), Trans(6)}$\}$的情形，其他情形可以类似地证明。
-	
-	（a）$t=\textbf{Trans(1)}$。
-	
-	$(\Rto)$ $\forall (\Hm_1,s_1)\in \Mod(T_i)$，即$(\Hm_1, s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$\\
-	$\Rto$ $(\Hm_1,s_1) \models X$，且对任意路径$\pi$上的状态$s_{1,j}$ $(j\geq 1)$有：$(\Hm,s_{1,j}) \not \models \neg q$或存在一个状态$s_{1,j+1}$使得$(s_{1,j},s_{1,j+1})
-	 \in R_1$且$(\Hm,s_{1,j+1}) \models \varphi$。
-	
-	由此可以构造一个$\Ind$-Kripke结构$\Hm_2$使得$\Hm_2$与$\Hm_1$相同，除了对使用规则$\textbf{Trans(1)}$在公式$\ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$上而引入的新索引$ind$有$[ind]_2=\bigcup_{s\in S} R_s \cup R_y$。其中：
-	\begin{itemize}
-		\item $R_{s_{1,j}}=\{(s_{1,j}, s_{1,j+1}), (s_{1,j+1}, s_{1,j+2}),\dots\}$ $(j\geq 1)$，其满足“若$(\Hm_1,s_{1,j}) \models q$，则$(\Hm_1,s_{1,j+1})$ $\models \varphi$”且“对于任意的$i\geq j$，若$(s_{1,i}, s') \in R_s\ (s \not= s_{1,j})$，则$s'=s_{1,i+1}$”；
-		\item $R_y=\{(s_x,s_y)\mid s_x\in S$，若$\forall(s_1',s_2') \in \bigcup_{s\in S} R_s$， $s_1'\not= s_x$，则找一个状态$s_y\in S_2$使得$(s_x,s_y)\in R_2\}$。
-	\end{itemize}
-
-显然，$(\Hm_1,s_1) \lrto_{\tuple{\emptyset,\{ind\}}} (\Hm_2,s_2)$\\
-$\Rto$ 对任意从$s_2$开始的路径$\pi=( s_2= s_{2,1} , s_{2,2}, \dots)$，如果$s_{2,j} \in \pi$，则$(\Hm_2,s_{2,j}) \models \neg q$或者$(\Hm_2,s_{2,j}) \models \EXIST_{\tuple{ind}} \NEXT \varphi$\\
-$\Rto$ $(\Hm_2,s_2)\models \ALL\GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi)$\\
-$\Rto$ $(\Hm_2,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi)$
-
-$(\Lto)$ $\forall (\Hm_1,s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL \GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi )$\\
-$\Rto$ $(\Hm_1,s_1) \models X$且$(\Hm_1,s_1) \models \ALL \GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi)$\\
-$\Rto$ 对任意的以$s_1$为始点的路径上的任意状态$s_{1,j}$，$(\Hm_1,s_{1,j}) \models \neg q$或$(\Hm_1,s_{1,j}) \models \EXIST\NEXT\varphi$\\
-$\Rto$ $(\Hm_1,s_1) \models \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$\\
-$\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$。
-
-	（b）$t=\textbf{Trans(4)}$。
-	
-   $(\Rto)$	$\forall(\Hm_1,s_1) \in \Mod(T_i)$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q \rto \varphi_1 \vee \varphi_2)$ \\
-   $\Rto$ $(\Hm_1,s_1) \models X$且$\forall s_1'\in S_1$，$(\Hm_1, s_1') \models q \rto \varphi_1 \vee \varphi_2$\\
-   $\Rto$ $(\Hm_1,s_1')\models \neg q$或$(\Hm_1,s_1')\models \varphi_1 \vee \varphi_2$。
-   
-   可以如下构造$\Ind$-Kripke结构$\Hm_2$：
-   \begin{itemize}
-   	\item $S_2=S_1$，$R_2=R_1$，$[\_]_2$与$[\_]_1$一样且$s_2=s_1$；
-   	\item $L_2$与$L_1$类似，除了：若$(\Hm_1, s_1') \models \neg q$则$L_2(s_1') = L_1(s_1')$，否则“若$(\Hm_1,s_1') \models \varphi_1$ 则 $L_2(s_1')=L_1(s_1')$，否则$L_2(s_1')=L_1(s_1') \cup \{p\}$”。
-   \end{itemize}
-   显然，$(\Hm_2,s_1') \models (q\rto \varphi_1 \vee p) \wedge (p \rto \varphi_2)$且$(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$, 因而$(\Hm_2,s_1) \models T_{i+1}$。
-	
-	$(\Lto)$  $\forall (\Hm_1, s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q\rto \varphi_1 \vee p) \wedge \ALL\GLOBAL(p \rto \varphi_2)$。 显然，$(\Hm_1, s_1) \models T_i$。
-	
-	（c）$t$=\textbf{Trans(6)}。
-	
-	这里证明$\EXIST_{\tuple{ind}} \NEXT$的情形，$\ALL \NEXT$情形可以类似地证明。
-	
-	$(\Rto)$ $\forall(\Hm_1,s_1) \in \Mod(T_i)$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST_{\tuple{ind}}\NEXT \varphi)$\\
-	$\Rto$ $(\Hm_1,s_1) \models X$且对任意的$s_1'\in S, (\Hm_1,s_1') \models q \rto \EXIST_{\tuple{ind}} \NEXT \varphi$\\
-	$\Rto$ $(\Hm_1,s_1') \models \neg q$或者存在一个状态$s'$使得$(s_1', s') \in [ind]$且$(\Hm_1,s') \models \varphi$\\
-	
-	可以如下构造$\Ind$-Kripke结构$\Hm_2$：
-	\begin{itemize}
-		\item $S_2=S_1$，$R_2=R_1$，$[\_]_2$与$[\_]_1$一样且$s_2=s_1$；
-		\item $L_2$与$L_1$类似，除了：若$(\Hm_1, s_1') \models \neg q$则$L_2(s_1') = L_1(s_1')$，否则“若$(\Hm_1,s_1') \models q$则$L_2(s')$ $=L_1(s')\cup \{p\}$ $((s_1',s')\in R_2)$”。
-	\end{itemize}
-	显然，$(\Hm_2,s_2) \models \ALL\GLOBAL(q\rto \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \rto \varphi)$, $(\Hm_2,s_2) \models T_{i+1}$且$(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$ ($s_2=s_1$)。
-	
-	$(\Lto)$ $\forall(\Hm_1, s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q\rto \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \rto \varphi)$。显然，$(\Hm_1, s_1) \models T_i$。
-\end{proof}
+%\begin{proof}
+%	为了讨论方便，令$Transform(\varphi)$过程产生了一个公式集合的序列，$T_0, T_1, \dots, T_n=T_{\varphi}$，其中$p$是不出现在$\varphi$中的原子命题，$T_0=\{\ALL \GLOBAL(\start \rto p), \ALL \GLOBAL(p \rto \simp(\nnf(\varphi)))\}$且对任意的$i$（$0\leq i < n$）有$T_{i+1} = (T_i-\{\psi\}) \cup R_i$（$Trans(\psi)$返回的结果为$R_i$）。此外，在这一过程中，所有的公式都是其否定范式的形式。
+%	
+%	为了证明命题中的结论成立，只需证明，对任意的$i$（$0\leq i < n$）有$T_i \equiv_{\tuple{V',I}} T_{i+1}$成立。由于$T_{i+1}$是由$T_i$通过表~\ref{tab:trans}中的规则作用于$T_i$中的某一个公式得到，因此证明过程分为两个部分：（1）从$\varphi$到$T_0$部分；（2）对表~\ref{tab:trans}中的规则做归纳的部分。为了方便，下面假设$\Hm_1=(S_1,R_1,L_1,[\_],s_1)$和$\Hm_2=(S_2,R_2,L_2, [\_]_2, s_2)$。
+%	
+%	（1）这里将证明$\varphi \equiv_{\tuple{\{p\},\emptyset}} T_0$。
+%	
+%	$(\Rto)$ $\forall (\Hm_1, s_1) \in \Mod(\varphi)$，可以构造一个$\Ind$-Kripke结构$\Hm_2=(S_2,R_2,L_2,[\_],s_2)$使得$\Hm_2$除了$L_2(s_2)=L_1(s_1) \cup \{p\}$（默认不出现在$\varphi$中的原子命题都不出现在状态的标签中），其他的元素都与$\Hm_1$中元素相同。显然，$(\Hm_2,s_2)\models T_0$且$(\Hm_1,s_1) \lrto_{\tuple{\{p\}, \emptyset}} (\Hm_2, s_2)$。
+%	
+%	$(\Lto)$ $\forall (\Hm_1,s_1) \in \Mod(T_0)$，由$\start$的语义可以知道$(\Hm_1,s_1) \models \varphi$。
+%	
+%	（2）这里将证明对任意的$i$（$0\leq i < n$）有$T_i \equiv_{\tuple{V',I}} T_{i+1}$成立，其中$T_{i+1} = (T_i-\{\psi\}) \cup R_i$。为了方便，用$\psi \rto_t R_i$表示$R_i$是使用规则$t$在公式$\psi$上得到的结果，且$T_i=X\cup \{\psi\}$（显然，$T_{i+1}=X\cup R_i$）。下面证明规则$t\in \{$\textbf{Trans(1), Trans(4), Trans(6)}$\}$的情形，其他情形可以类似地证明。
+%	
+%	（a）$t=\textbf{Trans(1)}$。
+%	
+%	$(\Rto)$ $\forall (\Hm_1,s_1)\in \Mod(T_i)$，即$(\Hm_1, s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$\\
+%	$\Rto$ $(\Hm_1,s_1) \models X$，且对任意路径$\pi$上的状态$s_{1,j}$ $(j\geq 1)$有：$(\Hm,s_{1,j}) \not \models \neg q$或存在一个状态$s_{1,j+1}$使得$(s_{1,j},s_{1,j+1})
+%	 \in R_1$且$(\Hm,s_{1,j+1}) \models \varphi$。
+%	
+%	由此可以构造一个$\Ind$-Kripke结构$\Hm_2$使得$\Hm_2$与$\Hm_1$相同，除了对使用规则$\textbf{Trans(1)}$在公式$\ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$上而引入的新索引$ind$有$[ind]_2=\bigcup_{s\in S} R_s \cup R_y$。其中：
+%	\begin{itemize}
+%		\item $R_{s_{1,j}}=\{(s_{1,j}, s_{1,j+1}), (s_{1,j+1}, s_{1,j+2}),\dots\}$ $(j\geq 1)$，其满足“若$(\Hm_1,s_{1,j}) \models q$，则$(\Hm_1,s_{1,j+1})$ $\models \varphi$”且“对于任意的$i\geq j$，若$(s_{1,i}, s') \in R_s\ (s \not= s_{1,j})$，则$s'=s_{1,i+1}$”；
+%		\item $R_y=\{(s_x,s_y)\mid s_x\in S$，若$\forall(s_1',s_2') \in \bigcup_{s\in S} R_s$， $s_1'\not= s_x$，则找一个状态$s_y\in S_2$使得$(s_x,s_y)\in R_2\}$。
+%	\end{itemize}
+%
+%显然，$(\Hm_1,s_1) \lrto_{\tuple{\emptyset,\{ind\}}} (\Hm_2,s_2)$\\
+%$\Rto$ 对任意从$s_2$开始的路径$\pi=( s_2= s_{2,1} , s_{2,2}, \dots)$，如果$s_{2,j} \in \pi$，则$(\Hm_2,s_{2,j}) \models \neg q$或者$(\Hm_2,s_{2,j}) \models \EXIST_{\tuple{ind}} \NEXT \varphi$\\
+%$\Rto$ $(\Hm_2,s_2)\models \ALL\GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi)$\\
+%$\Rto$ $(\Hm_2,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi)$
+%
+%$(\Lto)$ $\forall (\Hm_1,s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL \GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi )$\\
+%$\Rto$ $(\Hm_1,s_1) \models X$且$(\Hm_1,s_1) \models \ALL \GLOBAL(q \rto \EXIST_{\tuple{ind}} \NEXT \varphi)$\\
+%$\Rto$ 对任意的以$s_1$为始点的路径上的任意状态$s_{1,j}$，$(\Hm_1,s_{1,j}) \models \neg q$或$(\Hm_1,s_{1,j}) \models \EXIST\NEXT\varphi$\\
+%$\Rto$ $(\Hm_1,s_1) \models \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$\\
+%$\Rto$ $(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$。
+%
+%	（b）$t=\textbf{Trans(4)}$。
+%	
+%   $(\Rto)$	$\forall(\Hm_1,s_1) \in \Mod(T_i)$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q \rto \varphi_1 \vee \varphi_2)$ \\
+%   $\Rto$ $(\Hm_1,s_1) \models X$且$\forall s_1'\in S_1$，$(\Hm_1, s_1') \models q \rto \varphi_1 \vee \varphi_2$\\
+%   $\Rto$ $(\Hm_1,s_1')\models \neg q$或$(\Hm_1,s_1')\models \varphi_1 \vee \varphi_2$。
+%   
+%   可以如下构造$\Ind$-Kripke结构$\Hm_2$：
+%   \begin{itemize}
+%   	\item $S_2=S_1$，$R_2=R_1$，$[\_]_2$与$[\_]_1$一样且$s_2=s_1$；
+%   	\item $L_2$与$L_1$类似，除了：若$(\Hm_1, s_1') \models \neg q$则$L_2(s_1') = L_1(s_1')$，否则“若$(\Hm_1,s_1') \models \varphi_1$ 则 $L_2(s_1')=L_1(s_1')$，否则$L_2(s_1')=L_1(s_1') \cup \{p\}$”。
+%   \end{itemize}
+%   显然，$(\Hm_2,s_1') \models (q\rto \varphi_1 \vee p) \wedge (p \rto \varphi_2)$且$(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$, 因而$(\Hm_2,s_1) \models T_{i+1}$。
+%	
+%	$(\Lto)$  $\forall (\Hm_1, s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL (q\rto \varphi_1 \vee p) \wedge \ALL\GLOBAL(p \rto \varphi_2)$。 显然，$(\Hm_1, s_1) \models T_i$。
+%	
+%	（c）$t$=\textbf{Trans(6)}。
+%	
+%	这里证明$\EXIST_{\tuple{ind}} \NEXT$的情形，$\ALL \NEXT$情形可以类似地证明。
+%	
+%	$(\Rto)$ $\forall(\Hm_1,s_1) \in \Mod(T_i)$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q \rto \EXIST_{\tuple{ind}}\NEXT \varphi)$\\
+%	$\Rto$ $(\Hm_1,s_1) \models X$且对任意的$s_1'\in S, (\Hm_1,s_1') \models q \rto \EXIST_{\tuple{ind}} \NEXT \varphi$\\
+%	$\Rto$ $(\Hm_1,s_1') \models \neg q$或者存在一个状态$s'$使得$(s_1', s') \in [ind]$且$(\Hm_1,s') \models \varphi$\\
+%	
+%	可以如下构造$\Ind$-Kripke结构$\Hm_2$：
+%	\begin{itemize}
+%		\item $S_2=S_1$，$R_2=R_1$，$[\_]_2$与$[\_]_1$一样且$s_2=s_1$；
+%		\item $L_2$与$L_1$类似，除了：若$(\Hm_1, s_1') \models \neg q$则$L_2(s_1') = L_1(s_1')$，否则“若$(\Hm_1,s_1') \models q$则$L_2(s')$ $=L_1(s')\cup \{p\}$ $((s_1',s')\in R_2)$”。
+%	\end{itemize}
+%	显然，$(\Hm_2,s_2) \models \ALL\GLOBAL(q\rto \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \rto \varphi)$, $(\Hm_2,s_2) \models T_{i+1}$且$(\Hm_1, s_1) \lrto_{\tuple{\{p\}, {\O}}} (\Hm_2, s_2)$ ($s_2=s_1$)。
+%	
+%	$(\Lto)$ $\forall(\Hm_1, s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q\rto \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \rto \varphi)$。显然，$(\Hm_1, s_1) \models T_i$。
+%\end{proof}
 
 命题~\ref{pro:TranE}表示，对于给定的$\CTL$公式$\varphi$，通过上述的转换过程得到的$\CTLsnf$子句的集合$T_{\varphi}$与$\varphi$在二元组$\tuple{V',I}$上逻辑等价。
 下面给出本章的运行示例来展示每一个过程。

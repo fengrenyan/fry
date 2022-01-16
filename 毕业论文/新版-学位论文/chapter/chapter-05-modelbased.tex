@@ -484,49 +484,49 @@ $(\Lto)$ 假定(a)、(b)和(c)成立，这里证明$(r_1, r_2)\in \Hb$，即：�
 \end{equation*}
 
 
-在上述的遗忘理论的定义中说明了如果公式$\psi$的任意一个模型${\cal K}$都能找到$\varphi$的一个模型${\cal K}'$使得${\cal K} \lrto_V {\cal K}'$，则称$\psi$为从$\varphi$中遗忘掉$V$中原子命题后得到的结果。为刻画S5逻辑下该概念的直观含义，Zhang等人提出了如下遗忘理论特性——这些特性被称为\emph{遗忘理论公设}（forgetting postulates）~\cite{Yan:AIJ:2009}。
-给定$\CTL$公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$和原子命题集合$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，遗忘理论公设如下：
-\begin{itemize}
-	\item[] (\W) 弱（Weakening）属性：$\varphi \models \varphi'$；
-	\item[] (\PP) 正支持性（Positive Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
-	\item[] (\NgP) 负支持性（Negative Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \not \models \eta$则$\varphi' \not \models \eta$；
-	\item[] (\textbf{IR}) 无关性（Irrelevance）： $\IR(\varphi', V)$
-\end{itemize}
-直观地说，(\W)和(\textbf{IR})表明“遗忘”削弱了公式$\varphi$且得到的结果与$V$无关，(\PP)和(\NgP)表明对任意与$V$无关的公式$\eta$，$\varphi \models \eta$当且仅当$\varphi' \models \eta$。总而言之，遗忘得到的结果能推出所有与$V$无关且能被$\varphi$推出的结果，且不能推出所有与$V$无关且不能被$\varphi$推出的结果。
-从数据库和安全的层面讲，遗忘相当于从已有的关系表中构建出一个视图，达到了隐私保护的作用。
-下面的定理表明$\CTL$中的遗忘理论与上述公设也具有当且仅当的关系。
-
-\begin{theorem}[Representation Theorem]\label{thm:close}
-	%Let $\varphi$, $\varphi'$ and $\phi$ be \CTL\
-	给定$\CTL$公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题的集合。
-	%Then t
-	下面的陈述是等价的：
-	\begin{itemize}
-		\item[(i)] $\varphi' \equiv \CTLforget(\varphi, V)$,
-		\item[(ii)] $\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ and } \IR(\phi, V)\}$,
-		\item[(iii)] 若$\varphi$、$\varphi'$和$V$为(i)和(ii)中提到的符号，则公设(\W)、(\PP)、(\NgP)和(\textbf{IR})成立. 
-	\end{itemize}
-\end{theorem}
-\begin{proof}
-	$(i) \LRto (ii)$. 为了证明这个结论，只需证明如下等式成立：
-	\[
-	\Mod(\CTLforget(\varphi, V)) = \Mod(\{\phi \mid \varphi \models \phi, \IR(\phi, V)\}).\]
-	$(\Rto)$ 对任意$\CTLforget(\varphi, V)$的模型${\cal K}'$ \\
-	$\Rto$  $\exists {\cal K}$使得${\cal K} \models \varphi$且${\cal K} \lrto_V {\cal K}'$ \hfill (定义~\ref{def:V:forgetting}) \\
-	$\Rto$ $\forall \phi$，若$\varphi \models \phi$且$\IR(\phi, V)$则${\cal K}' \models \phi$  \hfill (定理~\ref{thm:V-bisimulation:EQ})\\
-	$\Rto$ ${\cal K}' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$
-	
-	$(\Lto)$ 因为$\IR(\CTLforget(\varphi, V),V)$且$\varphi \models \CTLforget(\varphi, V)$，由定义~\ref{def:V:forgetting}可知$\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \CTLforget(\varphi, V)$。
-	
-	$(ii) \Rto (iii)$.令$A = \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$。 
-	首先，由于对任意的$\phi'\in A$都有$\varphi \models \phi'$，所以$\varphi \models \varphi'$。
-	其次，对任意的公式$\phi$，若$\IR(\phi, V)$且$\varphi \models \phi$则$\phi \in A$，因此$\varphi' \models \phi$.
-	第三， 对任意的公式$\phi$，若$\IR(\phi, V)$且$\varphi \not \models \phi$则$\phi \not \in A$。因此$\varphi' \not \models \phi$。
-	最后，因为对任意的$\phi' \in A$都有$\IR(\varphi',V)$ ，所以$\IR(\phi',V)$。
-	
-	$(iii) \Rto (ii)$.一方面，由(\PP) 和 (\NgP)可知，对任意的公式$\phi'$且$\IR(\phi',V)$，$\varphi \models \phi'$当且仅当$\varphi' \models \phi'$。所以对任意的$\phi'\in \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$都有$\varphi' \models \phi'$，因而$\varphi' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$。 
-	另一方面，由 (\W) 和 (\textbf{IR})可知$\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \varphi'$。因此，$\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ and } \IR(\phi, V)\}$。
-\end{proof}
+%在上述的遗忘理论的定义中说明了如果公式$\psi$的任意一个模型${\cal K}$都能找到$\varphi$的一个模型${\cal K}'$使得${\cal K} \lrto_V {\cal K}'$，则称$\psi$为从$\varphi$中遗忘掉$V$中原子命题后得到的结果。为刻画S5逻辑下该概念的直观含义，Zhang等人提出了如下遗忘理论特性——这些特性被称为\emph{遗忘理论公设}（forgetting postulates）~\cite{Yan:AIJ:2009}。
+%给定$\CTL$公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$和原子命题集合$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，遗忘理论公设如下：
+%\begin{itemize}
+%	\item[] (\W) 弱（Weakening）属性：$\varphi \models \varphi'$；
+%	\item[] (\PP) 正支持性（Positive Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
+%	\item[] (\NgP) 负支持性（Negative Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \not \models \eta$则$\varphi' \not \models \eta$；
+%	\item[] (\textbf{IR}) 无关性（Irrelevance）： $\IR(\varphi', V)$
+%\end{itemize}
+%直观地说，(\W)和(\textbf{IR})表明“遗忘”削弱了公式$\varphi$且得到的结果与$V$无关，(\PP)和(\NgP)表明对任意与$V$无关的公式$\eta$，$\varphi \models \eta$当且仅当$\varphi' \models \eta$。总而言之，遗忘得到的结果能推出所有与$V$无关且能被$\varphi$推出的结果，且不能推出所有与$V$无关且不能被$\varphi$推出的结果。
+%从数据库和安全的层面讲，遗忘相当于从已有的关系表中构建出一个视图，达到了隐私保护的作用。
+%下面的定理表明$\CTL$中的遗忘理论与上述公设也具有当且仅当的关系。
+%
+%\begin{theorem}[Representation Theorem]\label{thm:close}
+%	%Let $\varphi$, $\varphi'$ and $\phi$ be \CTL\
+%	给定$\CTL$公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题的集合。
+%	%Then t
+%	下面的陈述是等价的：
+%	\begin{itemize}
+%		\item[(i)] $\varphi' \equiv \CTLforget(\varphi, V)$,
+%		\item[(ii)] $\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ and } \IR(\phi, V)\}$,
+%		\item[(iii)] 若$\varphi$、$\varphi'$和$V$为(i)和(ii)中提到的符号，则公设(\W)、(\PP)、(\NgP)和(\textbf{IR})成立. 
+%	\end{itemize}
+%\end{theorem}
+%\begin{proof}
+%	$(i) \LRto (ii)$. 为了证明这个结论，只需证明如下等式成立：
+%	\[
+%	\Mod(\CTLforget(\varphi, V)) = \Mod(\{\phi \mid \varphi \models \phi, \IR(\phi, V)\}).\]
+%	$(\Rto)$ 对任意$\CTLforget(\varphi, V)$的模型${\cal K}'$ \\
+%	$\Rto$  $\exists {\cal K}$使得${\cal K} \models \varphi$且${\cal K} \lrto_V {\cal K}'$ \hfill (定义~\ref{def:V:forgetting}) \\
+%	$\Rto$ $\forall \phi$，若$\varphi \models \phi$且$\IR(\phi, V)$则${\cal K}' \models \phi$  \hfill (定理~\ref{thm:V-bisimulation:EQ})\\
+%	$\Rto$ ${\cal K}' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$
+%	
+%	$(\Lto)$ 因为$\IR(\CTLforget(\varphi, V),V)$且$\varphi \models \CTLforget(\varphi, V)$，由定义~\ref{def:V:forgetting}可知$\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \CTLforget(\varphi, V)$。
+%	
+%	$(ii) \Rto (iii)$.令$A = \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$。 
+%	首先，由于对任意的$\phi'\in A$都有$\varphi \models \phi'$，所以$\varphi \models \varphi'$。
+%	其次，对任意的公式$\phi$，若$\IR(\phi, V)$且$\varphi \models \phi$则$\phi \in A$，因此$\varphi' \models \phi$.
+%	第三， 对任意的公式$\phi$，若$\IR(\phi, V)$且$\varphi \not \models \phi$则$\phi \not \in A$。因此$\varphi' \not \models \phi$。
+%	最后，因为对任意的$\phi' \in A$都有$\IR(\varphi',V)$ ，所以$\IR(\phi',V)$。
+%	
+%	$(iii) \Rto (ii)$.一方面，由(\PP) 和 (\NgP)可知，对任意的公式$\phi'$且$\IR(\phi',V)$，$\varphi \models \phi'$当且仅当$\varphi' \models \phi'$。所以对任意的$\phi'\in \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$都有$\varphi' \models \phi'$，因而$\varphi' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$。 
+%	另一方面，由 (\W) 和 (\textbf{IR})可知$\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \varphi'$。因此，$\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ and } \IR(\phi, V)\}$。
+%\end{proof}
 
 \section{基于模型的遗忘理论计算方法}
 
