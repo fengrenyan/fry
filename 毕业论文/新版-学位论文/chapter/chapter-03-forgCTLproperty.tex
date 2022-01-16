@@ -260,7 +260,7 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 	
 	一方面，对于$\CTLforget(\varphi, V)$的任意一个模型$(\Hm, s)$，由遗忘理论的定义可知存在一个$\varphi$的模型$(\Hm',s')$使得$(\Hm, s)\lrto_V (\Hm',s')$。因而有$(s,s')\in \Hb_0$，这意味着$(\Hm,s)\models \Forget(\varphi,V)$。
 	
-	另一方面，对于$\Forget(\varphi,V)$的任意一个模型$(\Hm, s)$（$\Hm=(S,R,L,s)$），存在一个$\varphi$的模型$(\Hm',s')$（$\Hm'=(S',R',L',s')$）使得$(s,s')\in \Hb_0$。此时可以构建一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$\Hm_1=(S_1,R_1,L_1,s_1)$，其中：
+	另一方面，对于$\Forget(\varphi,V)$的任意一个模型$(\Hm, s)$（$\Hm=(S,R,L,[\_],s)$），存在一个$\varphi$的模型$(\Hm',s')$（$\Hm'=(S',R',L',[\_]',s')$）使得$(s,s')\in \Hb_0$。此时可以构建一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$\Hm_1=(S_1,R_1,L_1,[\_],s_1)$，其中：
 	\begin{itemize}
 		\item $S_1=(S-\{s\})\cup \{s_1\}$；
 		\item $R_1$由将$R$出现的$s$替换为$s_1$得到；
@@ -288,7 +288,7 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
    $(\Hm',s')\models \varphi$显然成立。
    此外，由于$\IR(\varphi, \{q\})$且$(\Hm,s)\lrto_{\{q\}}(\Hm',s')$，由定理~\ref{thm:V-bisimulation:EQ}可知$(\Hm,s)\models \varphi$。
    
-   为了证明另一个方向，令$\Hm=(S,R,L,s)$且$(\Hm,s)\in \Mod(\varphi)$。下面初始$\MPK$-结构构造$(\Hm',s)$使得$\Hm'=(S,R,L',s)$，其中：
+   为了证明另一个方向，令$\Hm=(S,R,L,[\_],s)$且$(\Hm,s)\in \Mod(\varphi)$。下面初始$\MPK$-结构构造$(\Hm',s)$使得$\Hm'=(S,R,L',[\_],s)$，其中：
    	\begin{align*}
    	& L':S \rto \Ha\ \mbox{和}\ \forall s^*\in S, \hbox{ 若}\ (\Hm, s^*) \not \models \alpha, \hbox{ 则 } L'(s^*) = L(s^*)-\{q\}\,  \hbox{ 否则 }\ L'(s^*) = L(s^*)\cup\{q\}, \\
    	& \hbox{ 若}\ (\Hm, s) \models \alpha, \hbox{ 则 } L'(s) = L(s) \cup\{q\}, \ \hbox{ 否则}\ L'(s) = L(s)-\{q\}.
@@ -310,9 +310,9 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 \begin{proof}
 	要证明上述结论成立，只需证明等式左右两边的公式有相同的模型。
 	
-	一方面，令$\Hm_1=(S_1,R_1,L_1,s_1)$是一个初始结构，$(\Hm_1,s_1)$是$\CTLforget(\varphi,\{p\}\cup V)$的一个模型。由遗忘理论的定义可知，存在$\varphi$的一个模型$(
-	Hm,s)$（$\Hm=(S,R,L,s)$）使得$(\Hm_1,s_1)\lrto_{\{p\}\cup V} (\Hm,s)$。
-	此时，可以如下构建一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$\Hm_2=(S_2,R_2,L_2,s_2)$且：
+	一方面，令$\Hm_1=(S_1,R_1,L_1,[\_],s_1)$是一个初始$\Ind$-Kripke结构，$(\Hm_1,s_1)$是$\CTLforget(\varphi,\{p\}\cup V)$的一个模型。由遗忘理论的定义可知，存在$\varphi$的一个模型$(
+	\Hm,s)$（$\Hm=(S,R,L,[\_],s)$）使得$(\Hm_1,s_1)\lrto_{\{p\}\cup V} (\Hm,s)$。
+	此时，可以如下构建一个初始$\Ind$-结构$(\Hm_2,s_2)$使得$\Hm_2=(S_2,R_2,L_2,[\_],s_2)$且：
 	\begin{itemize}
 		\item[(1)] 对于$s_2$情形：令$s_2$是满足下面条件的状态：
 		\begin{itemize}
@@ -333,6 +333,9 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 		\end{itemize}
 		\item[(3)] 删除掉$S_2$和$R_2$中重复的元素。
 	\end{itemize}
+则$(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$ 和 $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$。 所以，$(\Hm_2, s_2) \models \CTLforget(\varphi, p)$。 因此 $(\Hm_1, s_1) \models \CTLforget(\CTLforget(\varphi, p), V)$。
+
+另一方面，假定 $(\Hm_1, s_1)$是$\CTLforget(\CTLforget(\varphi, p), V)$的一个模型，则存在一个初始-$\Ind$结构 $(\Hm_2, s_2)$ 使得 $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$ 和 $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$，且存在 $(\Hm, s)$使得$(\Hm, s) \models \varphi$ 和 $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$。因此，由命题~\ref{prop:bisimilar:V}(i)可知 $(\Hm, s) \lrto_{\{p\} \cup V} (\Hm_1, s_1)$，所以， $(\Hm_1, s_1) \models \CTLforget(\varphi, \{p\} \cup V)$。
 \end{proof}
 
 不难看出，从公式中遗忘掉原子命题的集合中的元素，可以将该集合拆成两个集合后遗忘。
@@ -343,7 +346,7 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 	\]
 \end{corollary}
 
-如同被遗忘的原子命题的集合能被拆成两个集合的遗忘一样，下面将介绍有些情况下从带路径时序词的公式中遗忘掉一些原子命题可以将这些时许词提到遗忘操作的前面。
+如同被遗忘的原子命题的集合能被拆成两个集合的遗忘一样，下面将介绍有些情况下从带路径时序词的公式中遗忘掉一些原子命题可以将这些时序词提到遗忘操作的前面。
 \begin{proposition}
 	令$V\subseteq \Ha$为原子命题的集合，$\phi$为$\CTL$公式，则下面等式成立：
 	\begin{itemize}
@@ -354,7 +357,7 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	为了证明上述结论成立，这里新引入一个叫做“子结构”的概念。对于给定的初始结构$\Hm=(S,R,L,s_0)$，称满足下面约束的初始$\MPK$-结构$(\Hm',s_0')$为$(\Hm,s_0)$的一个子结构：
+	为了证明上述结论成立，这里新引入一个叫做“子结构”的概念。对于给定的初始$\Ind$-Kripke结构$\Hm=(S,R,L,s_0)$，称满足下面约束的初始$\MPK$-结构$(\Hm',s_0')$为$(\Hm,s_0)$的一个子结构：
 	\begin{itemize}
 		\item $S'\subseteq S$且$S'=\{s'\mid s' \hbox{ 从$s_0'$是可达的}\}$，
 		\item $R'=\{(s_1,s_2)\mid s_1,s_2\in S' \hbox{ 和$(s_1,s_2)\in R$}\}$，
