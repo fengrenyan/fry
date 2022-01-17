@@ -460,7 +460,7 @@ $\Rto$ $\varphi(p,x)\vdash x\lrto \psi(p)$，这是一个矛盾。
    为了证明另一个方向，令$\Hm=(S,R,L,[\_],s)$且$(\Hm,s)\in \Mod(\varphi)$。下面初始$\MPK$-结构构造$(\Hm',s)$使得$\Hm'=(S,R,L',[\_],s)$，其中：
    	\begin{align*}
    	& L':S \rto \Ha\ \mbox{和}\ \forall s^*\in S, \hbox{ 若}\ (\Hm, s^*) \not \models \alpha, \hbox{ 则 } L'(s^*) = L(s^*)-\{q\}\,  \hbox{ 否则 }\ L'(s^*) = L(s^*)\cup\{q\}, \\
-   	& \hbox{ 若}\ (\Hm, s) \models \alpha, \hbox{ 则 } L'(s) = L(s) \cup\{q\}, \ \hbox{ 否则}\ L'(s) = L(s)-\{q\}.
+   	& \hbox{ 若}\ (\Hm, s) \models \alpha, \hbox{ 则 } L'(s) = L(s) \cup\{q\}, \ \hbox{ 否则}\ L'(s) = L(s)-\{q\}。
    \end{align*}
 
 	可以看出$(\Hm',s) \models \varphi$，$(\Hm',s)\models q \lrto \alpha$且$(\Hm',s) \lrto_{\{q\}} (\Hm,s)$。
@@ -522,51 +522,132 @@ $\Rto$ $\varphi(p,x)\vdash x\lrto \psi(p)$，这是一个矛盾。
 		\item[(i)] $\CTLforget(\ALL\NEXT\phi,V) \equiv \ALL \NEXT\CTLforget(\phi,V)$；
 		\item[(ii)] $\CTLforget(\EXIST\NEXT\phi,V) \equiv \EXIST \NEXT\CTLforget(\phi,V)$；
 		\item[(iii)] $\CTLforget(\ALL\FUTURE\phi,V) \equiv \ALL\FUTURE\CTLforget(\phi,V)$；
-		\item[(iv)] $\CTLforget(\EXIST\FUTURE\phi,V) \equiv \EXIST\FUTURE\CTLforget(\phi,V)$。
+		\item[(iv)] $\CTLforget(\EXIST\FUTURE\phi,V) \equiv \EXIST\FUTURE\CTLforget(\phi,V)$；
+		\item[(v)] $\CTLforget(\ALL \GLOBAL\phi,V)\equiv \ALL \GLOBAL\CTLforget(\phi,V)$；
+		\item[(vi)] $\CTLforget(\EXIST\GLOBAL\phi,V)\equiv\EXIST\GLOBAL \CTLforget(\phi,V)$。
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	为了证明上述结论成立，这里新引入一个叫做“子结构”的概念。对于给定的初始$\Ind$-Kripke结构$\Hm=(S,R,L,s_0)$，称满足下面约束的初始$\MPK$-结构$(\Hm',s_0')$为$(\Hm,s_0)$的一个子结构：
+	(i) $(\Rto)$ $(\Hm,s)\models\CTLforget(\ALL\NEXT\phi,V)$\\
+	$\Rto$ 有$(\Hm,s)\lrto_V(\Hm',s')$ 和 $(\Hm',s')\models \ALL\NEXT\phi$\\
+	$\Rto$  $(\Hm,s)\lrto_V(\Hm',s')$，且 对任意的$(s',s'')\in R'$有 $(\Hm',s'')\models \phi$  ($R'\in\Hm'$)\\
+	$\Rto$ 对任意的$(s,s_1)\in R$，存在 $(s',s'_1)\in R'$ 和 $(\Hm,s_1)\lrto_V(\Hm',s'_1)$，且对任意的 $(s',s'')\in R'$有
+	$(\Hm',s'')\models \phi$\\
+	$\Rto$ 对任意的 $(s,s_1)\in R$，有 $(\Hm,s_1)\lrto_V(\Hm',s'_1)$ 和 $(\Hm',s'_1)\models\phi$\\
+	$\Rto$ 对任意的 $(s,s_1)\in R$， $(\Hm,s_1)\models\CTLforget(\phi,V)$\\
+	$\Rto$ $(\Hm,s)\models\ALL\NEXT\CTLforget(\phi,V)$。
+	
+	$(\Lto)$ $(\Hm,s)\models\ALL\NEXT\CTLforget(\phi,V)$\\
+	$\Rto$ 对任意的 $(s,s')\in R$， $(\Hm,s')\models\CTLforget(\phi,V)$ ($R\in \Hm)$\\
+	$\Rto$ 对任意的 $(s,s')\in R$， 有 $(\Hm,s')\lrto_V(\Hm',s'')$ 和 $(\Hm',s'')\models\phi$\\
+	$\Rto$ 对任意的 $i\ge 0$，有 $(\Hm,s'_i)\lrto_V(\Hm'_i,s''_i)$ 和 $(\Hm'_i,s''_i)\models\phi$，
+	其中 $\{s'_0,s'_1,\ldots\}=\{s'\mid (s,s')\in R\}$和 $\Hm'_i=(S'_i,R'_i,L'_i,[\_]'_i,s''_i)$ (当$i\neq j$时，假定$S'_i\cap S'_j=\emptyset$)\\
+	$\Rto$ $(\Hm^*,s)\lrto_V(\Hm,s)$ 和 $(\Hm^*,s)\models\ALL\NEXT\phi$，其中
+	$\Hm^*=(S^*,R^*,L^*,[\_], s)$ 和
 	\begin{itemize}
-		\item $S'\subseteq S$且$S'=\{s'\mid s' \hbox{ 从$s_0'$是可达的}\}$，
-		\item $R'=\{(s_1,s_2)\mid s_1,s_2\in S' \hbox{ 和$(s_1,s_2)\in R$}\}$，
-		\item $L':S' \rto 2^{\Ha}$且对于所有的$s_1\in S'$有$L'(s_1)=L(s_1)$，且
-		\item $s_0'$要么是$s_0$本身，要么是从$s_0$可达的某一个状态。
+		\item $S^*=\{s\}\cup\bigcup_{i\ge 0}S'_i$，
+		\item $R^*=\{(s,s''_i)\mid i\ge 0\}\cup \bigcup_{i\ge 0} R'_i$，
+		\item $L^*=\bigcup_{i\ge 0}L'_i$ 和 $L^*(s)=L(s)$，其中 $L\in\Hm$。
 	\end{itemize}
-(i) 要证明$\CTLforget(\ALL\NEXT\phi,V) \equiv \ALL \NEXT\CTLforget(\phi,V)$，只需证明：
-\[
-\Mod(\CTLforget(\ALL\NEXT\phi,V)) = \Mod(\ALL \NEXT\CTLforget(\phi,V)).
-\]
+	$\Rto$ $(\Hm,s)\models \CTLforget(\ALL\NEXT\phi,V)$。
+	
+	(ii) $(\Rto)$ $(\Hm,s)\models\CTLforget(\EXIST\NEXT\phi,V)$\\
+	$\Rto$ 有 $(\Hm,s)\lrto_V(\Hm',s')$ 且 $(\Hm',s')\models \EXIST\NEXT\phi$\\
+	$\Rto$ 有$(\Hm,s)\lrto_V(\Hm',s')$，且对一些 $(s',s'')\in R'$有$(\Hm',s'')\models \phi$  ($R'\in\Hm'$)\\
+	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(s',s'_1)\in R'$ 和 $(\Hm,s_1)\lrto_V(\Hm',s'_1)$，且对一些$(s',s'')\in R'$有
+	$(\Hm',s'')\models \phi$ ($R\in \Hm$)\\
+	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(\Hm,s_1)\lrto_V(\Hm',s'_1)$ 和 $(\Hm',s'_1)\models\phi$\\
+	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(\Hm,s_1)\models\CTLforget(\phi,V)$\\
+	$\Rto$ $(\Hm,s)\models\EXIST\NEXT\CTLforget(\phi,V)$。
+	
+	$(\Lto)$ $(\Hm,s)\models\EXIST \NEXT\CTLforget(\phi,V)$\\
+	$\Rto$ 对一些 $(s,s')\in R$， $(\Hm,s')\models\CTLforget(\phi,V)$ ($R\in \Hm)$\\
+	$\Rto$ 对一些 $(s,s')\in R$，有$(\Hm,s')\lrto_V(\Hm',s'')$ 和 $(\Hm',s'')\models\phi$，其中 $\Hm'=(S',R',L',[\_]',s'')$ \\
+	%		$\Rto$ For every $i\ge 0$, there is $(\Hm,s'_i)\lrto_V(\Hm'_i,s''_i)$ and $(\Hm'_i,s''_i)\models\phi$
+	%		where $\{s'_0,s'_1,\ldots\}=\{s'\mid (s,s')\in R\}$ and $\Hm'_i=(S'_i,R'_i,L'_i,[\_]'_i,s''_i)$ (we assume $S'_i\cap S'_j=\emptyset$ when $i\neq j$)\\
+	$\Rto$ $(\Hm^*,s)\lrto_V(\Hm,s)$ 和 $(\Hm^*,s)\models\EXIST\NEXT\phi$，其中
+	$\Hm^*=(S^*,R^*,L^*,[\_], s)$，
+	\begin{itemize}
+		\item $S^*=S\cup S'$，
+		\item $R^*=\{(s,s'')\}\cup R \cup R'$，
+		\item $L^*= L \cup L'$ 和 $L^*(s)=L(s)$，其中 $L\in\Hm$。
+	\end{itemize}
+	$\Rto$ $(\Hm,s)\models \CTLforget(\EXIST\NEXT\phi,V)$。
+	
 
-$(\Rto)$ 对于任意$\CTLforget(\ALL\NEXT\phi,V)$的模型$(\Hm',s')$，存在一个初始$\MPK$-结构$(\Hm,s)$使得$(\Hm,s)\models \ALL\NEXT\phi$且$(\Hm,s)\lrto_V (\Hm',s')$\\
-$\Rto$ 对任意$(\Hm,s)$的子结构$(\Hm_1,s_1)$（其中$(s,s_1)\in R$），$(\Hm_1,s_1)\models \phi$\\
-$\Rto$ 存在一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$(\Hm_2,s_2)\models \CTLforget(\phi,V)$且$(\Hm_2,s_2) \lrto_V (\Hm_1,s_1)$\\
-$\Rto$ 由这些$(\Hm_2,s_2)$容易构造出一个初始$\MPK$-结构$(\Hm_3,s_3)$，使得$s_2$是$s_3$的直接后继状态，$(\Hm_2,s_2)$是$(\Hm_3,s_3)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
-$\Rto$ $(\Hm_3,s_3) \models \ALL \NEXT(\CTLforget(\phi,V))$且$(\Hm_3,s_3) \lrto_V (\Hm',s')$\\
-$\Rto$ $(\Hm',s')\models \ALL \NEXT(\CTLforget(\phi,V))$（由定理~\ref{thm:V-bisimulation:EQ}）
-
-$(\Lto)$ 令$(\Hm_3,s_3)$是$\ALL \NEXT(\CTLforget(\phi,V))$的模型，则对于任意$(\Hm_3,s_3)$的子结构$(\Hm_2,s_2)$（其中$(s_3,s_2)\in R_3$）有$(\Hm_2,s_2)\models \CTLforget(\phi,V)$\\
-$\Rto$ 对任意上述的$(\Hm_2,s_2)$，存在一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$(\Hm_1,s_1)\models \phi$且$(\Hm_1,s_1)\lrto_V (\Hm_2,s_2)$\\
-$\Rto$ 由这些$(\Hm_1,s_1)$容易构造出一个初始$\MPK$-结构$(\Hm,s)$，使得$s_1$是$s$的直接后继状态，$(\Hm_1,s_1)$是$(\Hm,s)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
-$\Rto$ $(\Hm,s)\models \ALL\NEXT\phi$且$(\Hm_3,s_3)\models \CTLforget(\ALL\NEXT\phi,V)$。
-
-(ii) 为了证明$\CTLforget(\EXIST \NEXT \phi, V) \equiv \EXIST\NEXT\CTLforget(\phi, V)$，只需证明：
-\[\Mod(\CTLforget(\EXIST \NEXT \phi, V)) = \Mod( \EXIST\NEXT\CTLforget(\phi, V)).\]
-
-$(\Rto)$ 对于任意$\CTLforget(\EXIST\NEXT\phi,V)$的模型$(\Hm',s')$，存在一个初始$\MPK$-结构$(\Hm,s)$使得$(\Hm,s)\models \ALL\NEXT\phi$且$(\Hm,s)\lrto_V (\Hm',s')$\\
-$\Rto$ 存在$(\Hm,s)$的子结构$(\Hm_1,s_1)$（其中$(s,s_1)\in R$），$(\Hm_1,s_1)\models \phi$\\
-$\Rto$ 存在一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$(\Hm_2,s_2)\models \CTLforget(\phi,V)$且$(\Hm_2,s_2) \lrto_V (\Hm_1,s_1)$\\
-$\Rto$ 由$(\Hm_2,s_2)$和$(\Hm,s)$的其他子结构容易构$(\Hm,s_x)$（$(s,s_x)\in S$）造出一个初始$\MPK$-结构$(\Hm_3,s_3)$，使得$s_2$是$s_3$的直接后继状态，$(\Hm_2,s_2)$是$(\Hm_3,s_3)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
-$\Rto$ $(\Hm_3,s_3) \models \EXIST \NEXT(\CTLforget(\phi,V))$且$(\Hm_3,s_3) \lrto_V (\Hm',s')$\\
-$\Rto$ $(\Hm',s')\models \EXIST \NEXT(\CTLforget(\phi,V))$（由定理~\ref{thm:V-bisimulation:EQ}）
-
-$(\Lto)$ 令$(\Hm_3,s_3)$是$\EXIST \NEXT(\CTLforget(\phi,V))$的模型，则存在一个$(\Hm_3,s_3)$的子结构$(\Hm_2,s_2)$（其中$(s_3,s_2)\in R_3$）有$(\Hm_2,s_2)\models \CTLforget(\phi,V)$\\
-$\Rto$ 对任意上述的$(\Hm_2,s_2)$，存在一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$(\Hm_1,s_1)\models \phi$且$(\Hm_1,s_1)\lrto_V (\Hm_2,s_2)$\\
-$\Rto$ 由$(\Hm_1,s_1)$和$(\Hm_3,s_3)$的其他子结构$(\Hm_3,s_x)$（$(s_3,s_x)\in S$）容易构造出一个初始$\MPK$-结构$(\Hm,s)$，使得$s_1$是$s$的直接后继状态，$(\Hm_1,s_1)$是$(\Hm,s)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
-$\Rto$ $(\Hm,s)\models \EXIST\NEXT\phi$且$(\Hm_3,s_3)\models \CTLforget(\EXIST\NEXT\phi,V)$。
-
-同理可证(iii)和(iv)成立。
+	
+	
+	(iii) 和 (iv) 可以分别类似 (i) 和 (ii)来证明。
+	
+	(v) $(\Rto)$ $(\Hm,s) \models \CTLforget(\ALL \GLOBAL \phi, V)$\\
+	$\Rto$ 有 $(\Hm',s') \models \ALL \GLOBAL \phi$ 和 $(\Hm,s) \lrto_V (\Hm',s')$\\
+	$\Rto$ 对$\Hm$上的每一条路径$\pi=(s=s_1, s_2, \dots)$，存在$\Hm'$上的一条路径$\pi'=(s'=s_1, s_2', \dots)$ 使得 $\pi \lrto_V \pi'$，反之也成立，且对任意的$i\geq 1$有 $(\Hm', s_i') \models \varphi$\\ 
+	%$\Rto$ For every $t' \in S'$, there is $(\Hm',t') \models \phi$ \quad ($S'\in \Hm'$) \\
+	% $\Rto$ For every $t' \in S'$, there is $(\Hm',t') \models \CTLforget(\phi, V)$\\
+	% $\Rto$ For every $t \in S$, there is $(\Hm,t) \models \CTLforget(\phi, V)$ \quad ($S\in \Hm$) \hfill ($\IR(\CTLforget(\phi, V), V)$)\\
+	$\Rto$ 对$\pi$上的任意$s_i'$（$i\geq 1$），有$(\Hm',s_i') \models \CTLforget(\phi, V)$\\
+	$\Rto$ 对$\pi'$上的任意$s_i$（$i\geq 1$），有$(\Hm,s_i) \models \CTLforget(\phi, V)$ \hfill ($\IR(\CTLforget(\phi, V), V)$)\\
+	$\Rto$ 对任意的 $t \in S$，有$(\Hm,t) \models \CTLforget(\phi, V)$ \quad ($S\in \Hm$)\\
+	$\Rto$ $(\Hm,s) \models \ALL \GLOBAL \CTLforget(\phi, V)$。
+	
+	$(\Lto)$ $(\Hm, s) \models \ALL \GLOBAL \CTLforget(\phi, V)$\\
+	$\Rto$ 对$\Hm$上的每一条路径 $\pi=(s=s_0, s_1, \dots)$，和对任意的 $i \geq 0$有 $(\Hm,s_i) \models \CTLforget(\phi, V)$  \\ 
+	$\Rto$ $\forall t \in S$， $(\Hm,t) \models \CTLforget(\phi, V)$ \quad ($S \in \Hm$)\\
+	$\Rto$ $\forall t \in S$，有 $(\Hm,t) \lrto_V (\Hm',t')$ 和 $(\Hm',t') \models \phi$\\
+	$\Rto$ $\forall s_i \in S$ （$i \geq 0$），有  $(\Hm,s_i) \lrto_V (\Hm_i',s_i')$ 和 $(\Hm_i',s_i') \models \phi$，其中$\Hm_i' = (S_i',R_i', L_i', [\_]_i',s_i')$\\
+	$\Rto$ $(\Hm^*,s^*) \lrto_V (\Hm,s)$ 和 $(\Hm^*,s^*) \models \ALL \GLOBAL \phi$，其中$\Hm^*= (S^*, R^*,L^*, [\_], s^*)$，
+	\begin{itemize}
+		\item $S^*= \bigcup S_i'$， %\{s_i \mid i \geq 0\}$,
+		\item $s* = s_0'$，
+		\item $R^* = \{(s_x', s_y') \mid (s_x, s_y) \in R,\ x, y \geq 0\} \cup \bigcup_{i \geq 0} R_i'$，其中 $R\in \Hm$，
+		\item 对任意的$t_i\in S_i'$，$L^*(t_i) = L_i'(t_i)$。
+	\end{itemize}
+	$\Rto$ $(\Hm,s) \models \CTLforget(\ALL \GLOBAL \phi, V)$。
+	
+	(vi) 可类似 (v)来证明。
 \end{proof}
+%\begin{proof}
+%	为了证明上述结论成立，这里新引入一个叫做“子结构”的概念。对于给定的初始$\Ind$-Kripke结构$\Hm=(S,R,L,s_0)$，称满足下面约束的初始$\MPK$-结构$(\Hm',s_0')$为$(\Hm,s_0)$的一个子结构：
+%	\begin{itemize}
+%		\item $S'\subseteq S$且$S'=\{s'\mid s' \hbox{ 从$s_0'$是可达的}\}$，
+%		\item $R'=\{(s_1,s_2)\mid s_1,s_2\in S' \hbox{ 和$(s_1,s_2)\in R$}\}$，
+%		\item $L':S' \rto 2^{\Ha}$且对于所有的$s_1\in S'$有$L'(s_1)=L(s_1)$，且
+%		\item $s_0'$要么是$s_0$本身，要么是从$s_0$可达的某一个状态。
+%	\end{itemize}
+%(i) 要证明$\CTLforget(\ALL\NEXT\phi,V) \equiv \ALL \NEXT\CTLforget(\phi,V)$，只需证明：
+%\[
+%\Mod(\CTLforget(\ALL\NEXT\phi,V)) = \Mod(\ALL \NEXT\CTLforget(\phi,V)).
+%\]
+%
+%$(\Rto)$ 对于任意$\CTLforget(\ALL\NEXT\phi,V)$的模型$(\Hm',s')$，存在一个初始$\MPK$-结构$(\Hm,s)$使得$(\Hm,s)\models \ALL\NEXT\phi$且$(\Hm,s)\lrto_V (\Hm',s')$\\
+%$\Rto$ 对任意$(\Hm,s)$的子结构$(\Hm_1,s_1)$（其中$(s,s_1)\in R$），$(\Hm_1,s_1)\models \phi$\\
+%$\Rto$ 存在一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$(\Hm_2,s_2)\models \CTLforget(\phi,V)$且$(\Hm_2,s_2) \lrto_V (\Hm_1,s_1)$\\
+%$\Rto$ 由这些$(\Hm_2,s_2)$容易构造出一个初始$\MPK$-结构$(\Hm_3,s_3)$，使得$s_2$是$s_3$的直接后继状态，$(\Hm_2,s_2)$是$(\Hm_3,s_3)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
+%$\Rto$ $(\Hm_3,s_3) \models \ALL \NEXT(\CTLforget(\phi,V))$且$(\Hm_3,s_3) \lrto_V (\Hm',s')$\\
+%$\Rto$ $(\Hm',s')\models \ALL \NEXT(\CTLforget(\phi,V))$（由定理~\ref{thm:V-bisimulation:EQ}）
+%
+%$(\Lto)$ 令$(\Hm_3,s_3)$是$\ALL \NEXT(\CTLforget(\phi,V))$的模型，则对于任意$(\Hm_3,s_3)$的子结构$(\Hm_2,s_2)$（其中$(s_3,s_2)\in R_3$）有$(\Hm_2,s_2)\models \CTLforget(\phi,V)$\\
+%$\Rto$ 对任意上述的$(\Hm_2,s_2)$，存在一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$(\Hm_1,s_1)\models \phi$且$(\Hm_1,s_1)\lrto_V (\Hm_2,s_2)$\\
+%$\Rto$ 由这些$(\Hm_1,s_1)$容易构造出一个初始$\MPK$-结构$(\Hm,s)$，使得$s_1$是$s$的直接后继状态，$(\Hm_1,s_1)$是$(\Hm,s)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
+%$\Rto$ $(\Hm,s)\models \ALL\NEXT\phi$且$(\Hm_3,s_3)\models \CTLforget(\ALL\NEXT\phi,V)$。
+%
+%(ii) 为了证明$\CTLforget(\EXIST \NEXT \phi, V) \equiv \EXIST\NEXT\CTLforget(\phi, V)$，只需证明：
+%\[\Mod(\CTLforget(\EXIST \NEXT \phi, V)) = \Mod( \EXIST\NEXT\CTLforget(\phi, V)).\]
+%
+%$(\Rto)$ 对于任意$\CTLforget(\EXIST\NEXT\phi,V)$的模型$(\Hm',s')$，存在一个初始$\MPK$-结构$(\Hm,s)$使得$(\Hm,s)\models \ALL\NEXT\phi$且$(\Hm,s)\lrto_V (\Hm',s')$\\
+%$\Rto$ 存在$(\Hm,s)$的子结构$(\Hm_1,s_1)$（其中$(s,s_1)\in R$），$(\Hm_1,s_1)\models \phi$\\
+%$\Rto$ 存在一个初始$\MPK$-结构$(\Hm_2,s_2)$使得$(\Hm_2,s_2)\models \CTLforget(\phi,V)$且$(\Hm_2,s_2) \lrto_V (\Hm_1,s_1)$\\
+%$\Rto$ 由$(\Hm_2,s_2)$和$(\Hm,s)$的其他子结构容易构$(\Hm,s_x)$（$(s,s_x)\in S$）造出一个初始$\MPK$-结构$(\Hm_3,s_3)$，使得$s_2$是$s_3$的直接后继状态，$(\Hm_2,s_2)$是$(\Hm_3,s_3)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
+%$\Rto$ $(\Hm_3,s_3) \models \EXIST \NEXT(\CTLforget(\phi,V))$且$(\Hm_3,s_3) \lrto_V (\Hm',s')$\\
+%$\Rto$ $(\Hm',s')\models \EXIST \NEXT(\CTLforget(\phi,V))$（由定理~\ref{thm:V-bisimulation:EQ}）
+%
+%$(\Lto)$ 令$(\Hm_3,s_3)$是$\EXIST \NEXT(\CTLforget(\phi,V))$的模型，则存在一个$(\Hm_3,s_3)$的子结构$(\Hm_2,s_2)$（其中$(s_3,s_2)\in R_3$）有$(\Hm_2,s_2)\models \CTLforget(\phi,V)$\\
+%$\Rto$ 对任意上述的$(\Hm_2,s_2)$，存在一个初始$\MPK$-结构$(\Hm_1,s_1)$使得$(\Hm_1,s_1)\models \phi$且$(\Hm_1,s_1)\lrto_V (\Hm_2,s_2)$\\
+%$\Rto$ 由$(\Hm_1,s_1)$和$(\Hm_3,s_3)$的其他子结构$(\Hm_3,s_x)$（$(s_3,s_x)\in S$）容易构造出一个初始$\MPK$-结构$(\Hm,s)$，使得$s_1$是$s$的直接后继状态，$(\Hm_1,s_1)$是$(\Hm,s)$的子结构且$(\Hm_3, s_3)\lrto_V (\Hm,s)$\\
+%$\Rto$ $(\Hm,s)\models \EXIST\NEXT\phi$且$(\Hm_3,s_3)\models \CTLforget(\EXIST\NEXT\phi,V)$。
+%
+%同理可证(iii)和(iv)成立。
+%\end{proof}
 
 %\section{基于归结的遗忘理论计算方法}
 
