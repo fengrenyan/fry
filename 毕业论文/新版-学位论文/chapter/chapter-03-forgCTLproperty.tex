@@ -298,6 +298,27 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 	$(\Lto)$ $\forall(\Hm_1, s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q\rto \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \rto \varphi)$。显然，$(\Hm_1, s_1) \models T_i$。
 \end{proof}
 
+\begin{example}
+	\label{examp:Tran}
+	令 $\varphi=\ALL((p\wedge q) \UNTILL (f\vee m)) \wedge r$。 $T_{\varphi}$是下面公式构成的集合：
+	\begin{align*}
+		&  1: \start\rto z, &&  2: \top \rto \neg z \vee r, &&  3:\top \rto \neg x\vee f \vee m, &&
+		4: \top \rto \neg z \vee x \vee y, \\
+		&  5: \top \rto \neg y \vee p, &&  6: \top \rto \neg y \vee q, &&  7:  z \rto \ALL \FUTURE x, &&  8: y \rto \ALL \NEXT(x\vee y)
+	\end{align*}
+	其中 $x,y,z$ 为新引入的原子命题。
+	%	$
+	%	\begin{array}{llll}
+	%		1. \start\rto z & 2. \top \rto \neg z \vee r \qquad & 3.\top \rto \neg x\vee f \vee m  & 4. \top \rto \neg z \vee x \vee y \\
+	%		5.\top \rto \neg y \vee p &  6.\top \rto \neg y \vee q &
+	%		7. z \rto \ALL \FUTURE x & 8. y \rto \ALL \NEXT(x\vee y),\\
+	%	\end{array}
+	%	$\\
+	%	with the set $V'=\{x, y,z\}$ of new atoms introduced in this process, in which $w$ is a new atom related to $z \rto \ALL \FUTURE x$
+	%~\footnote{Note that we always generate a new atom $w$ for each $Q$-sometime clause with $Q\in \{\EXIST, \ALL\}$ when this clause is produced during the transformation process.}. %~\cite{zhang2014resolution}.
+	% Besides, the set of new atoms introduced in this process is $V'=\{x, y,z, w\}$ in which $w$ is a new atom related to $z \rto \ALL \FUTURE x$~\footnote{Note that we always generate a new atom for each $T$-sometime clause with $T\in \{\EXIST, \ALL\}$ when this clause is produced during the transform process.}. %~\cite{zhang2014resolution}.
+\end{example}
+
 
 \section{遗忘理论及其语义属性}
 这部分将给出$\CTL$下的遗忘理论的定义及其相关属性。

@@ -9,22 +9,22 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces $\textsc {k}$-结构之间的$V$-互模拟关系\relax }}{39}{figure.caption.12}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces 基于归结的遗忘的主要流程图\relax }}{53}{figure.caption.13}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces $\varphi _i=12$时的计算结果\relax }}{66}{figure.caption.15}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{66}{figure.caption.15}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{66}{figure.caption.15}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces $\varphi _i=16$时的计算结果\relax }}{66}{figure.caption.16}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{66}{figure.caption.16}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{66}{figure.caption.16}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces 计算3-CNF公式的SNC所需的CPU时间情况\relax }}{67}{figure.caption.17}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{67}{figure.caption.17}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$|V|=25$时所使用CPU时间箱线图 }}}{67}{figure.caption.17}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces $\textrm {CTL}$下计算SNC的性能情况.\relax }}{67}{figure.caption.18}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{67}{figure.caption.18}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SNC存在的占比(\%)}}}{67}{figure.caption.18}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces $\varphi _i=12$时的计算结果\relax }}{64}{figure.caption.15}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{64}{figure.caption.15}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{64}{figure.caption.15}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces $\varphi _i=16$时的计算结果\relax }}{64}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{64}{figure.caption.16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{64}{figure.caption.16}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces 计算3-CNF公式的SNC所需的CPU时间情况\relax }}{65}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{65}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$|V|=25$时所使用CPU时间箱线图 }}}{65}{figure.caption.17}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces $\textrm {CTL}$下计算SNC的性能情况.\relax }}{65}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{65}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SNC存在的占比(\%)}}}{65}{figure.caption.18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces 左图为初始$\textsc {k}$-结构$\mathcal {K}_2$ (源于图\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces \ref {v1uv2})； 右图：从左到右表示以$s_0$为根、深度分别为0、1、2和3的计算树（为简化图，计算树的标签没有给出，但是每个树节点的标签可从${\cal K}_2$找到。）\relax }}{78}{figure.caption.19}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 左图为初始$\textsc {k}$-结构$\mathcal {K}_2$ (源于图\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces \ref {v1uv2})； 右图：从左到右表示以$s_0$为根、深度分别为0、1、2和3的计算树（为简化图，计算树的标签没有给出，但是每个树节点的标签可从${\cal K}_2$找到。）\relax }}{76}{figure.caption.19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces 两个 $\{ch\}$-互模拟的Kripke结构\relax }}{84}{figure.caption.20}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces 两个 $\{ch\}$-互模拟的Kripke结构\relax }}{82}{figure.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
