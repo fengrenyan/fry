@@ -257,45 +257,45 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 
 根据上面的定义，以下结论是显然的。
 \begin{lemma} \label{lem:equivAG}
-	Let $\varphi$ and $\psi$ be two formulas. Then the following holds.
+	给定连个公式 $\varphi$ 和 $\psi$，则下列结论成立：
 	\begin{itemize}
-		\item[(i)] $\ALL\GLOBAL (\varphi\land\psi)\equiv (\ALL\GLOBAL \varphi) \land (\ALL\GLOBAL\psi)$.
-		\item[(ii)] $\ALL\GLOBAL \ALL\GLOBAL (\varphi)\equiv \ALL\GLOBAL (\varphi)$.
+		\item[(i)] $\ALL\GLOBAL (\varphi\land\psi)\equiv (\ALL\GLOBAL \varphi) \land (\ALL\GLOBAL\psi)$；
+		\item[(ii)] $\ALL\GLOBAL \ALL\GLOBAL (\varphi)\equiv \ALL\GLOBAL (\varphi)$；
 		%\item $\ALL\GLOBAL (\alpha\rto\varphi)\equiv \varphi$ where $\alpha\in\{\start\textcolor{red}{,\top}\}$.
-		\item[(iii)] $\ALL\GLOBAL (\start \rto\varphi)\equiv \varphi$
+		\item[(iii)] $\ALL\GLOBAL (\start \rto\varphi)\equiv \varphi$。
 	\end{itemize}
 \end{lemma}
 \begin{proof}
-	(i) $(\Rto)$ For each model $(\Hm, s)$ of $\ALL\GLOBAL (\varphi\land\psi)$\\
-	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi \wedge \psi$ for all $i\geq 0$\\
-	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi$ and $(\Hm,s_i) \models \psi$ for all $i\geq 0$\\
+	(i) $(\Rto)$ 对$\ALL\GLOBAL (\varphi\land\psi)$的任意模型 $(\Hm, s)$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$，对任意的$i\geq 0$有 $(\Hm,s_i) \models \varphi \wedge \psi$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$，对任意的$i\geq 0$有 $(\Hm,s_i) \models \varphi$ 和 $(\Hm,s_i) \models \psi$\\
 	$\Rto$ $(\Hm,s) \models (\ALL\GLOBAL \varphi) \land (\ALL\GLOBAL\psi)$.
 	
-	$(\Lto)$ For each model $(\Hm,s)$ of $(\ALL\GLOBAL \varphi) \land (\ALL\GLOBAL\psi)$\\
-	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi$ and $(\Hm,s_i) \models \psi$ for all $i\geq 0$\\
-	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi \wedge \psi$ for all $i\geq 0$\\
-	$\Rto$ $(\Hm, s) \models \ALL\GLOBAL (\varphi\land\psi)$.
+	$(\Lto)$ 对$(\ALL\GLOBAL \varphi) \land (\ALL\GLOBAL\psi)$的任意模型 $(\Hm,s)$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$，对任意的$i\geq 0$有$(\Hm,s_i) \models \varphi$ 和 $(\Hm,s_i) \models \psi$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$，对任意的$i\geq 0$有$(\Hm,s_i) \models \varphi \wedge \psi$ \\
+	$\Rto$ $(\Hm, s) \models \ALL\GLOBAL (\varphi\land\psi)$。
 	
-	(ii) $(\Rto)$ For each model $(\Hm, s)$ of $\ALL\GLOBAL \ALL\GLOBAL (\varphi)$\\
-	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \ALL\GLOBAL (\varphi)$ for all $i\geq 0$\\
-	$\Rto$ $(\Hm,s) \models \ALL\GLOBAL (\varphi)$.
+	(ii) $(\Rto)$ 对$\ALL\GLOBAL \ALL\GLOBAL (\varphi)$的任意模型$(\Hm, s)$ \\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$，对任意的$i\geq 0$有 $(\Hm,s_i) \models \ALL\GLOBAL (\varphi)$\\
+	$\Rto$ $(\Hm,s) \models \ALL\GLOBAL (\varphi)$。
 %	$\Rto$ $\forall \pi=(s_i, s_{i+1}, \dots)$ there is $(\Hm,s_j) \models \varphi$ for all $i\geq 0$ and $j \geq i$
 
-	$(\Lto)$ For each model $(\Hm, s)$ of $\ALL\GLOBAL (\varphi)$\\
-	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \varphi$ for all $i\geq 0$\\
-	$\Rto$ $\forall \pi'=(s_i, s_{i+1}, \dots)$ there is $(\Hm,s_j) \models \varphi$ for all $i\geq 0$ and $j \geq i$\\
-	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \ALL\GLOBAL (\varphi)$ for all $i\geq 0$\\ 
-	$\Rto$ $(\Hm,s) \models\ALL\GLOBAL \ALL\GLOBAL (\varphi)$.
+	$(\Lto)$ 对$\ALL\GLOBAL (\varphi)$的任意模型 $(\Hm, s)$\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$，对任意的$i\geq 0$有$(\Hm,s_i) \models \varphi$ \\
+	$\Rto$ $\forall \pi'=(s_i, s_{i+1}, \dots)$，对任意的$i\geq 0$ 和 $j \geq i$有$(\Hm,s_j) \models \varphi$ \\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$，对任意的$i\geq 0$有 $(\Hm,s_i) \models \ALL\GLOBAL (\varphi)$ \\ 
+	$\Rto$ $(\Hm,s) \models\ALL\GLOBAL \ALL\GLOBAL (\varphi)$。
 	
-	(iii) $(\Rto)$ For each model $(\Hm,s)$ of $\ALL\GLOBAL (\start \rto\varphi)$\\
-	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \start \rto\varphi$ for all $i\geq 0$\\
-	$\Rto$ $(\Hm,s) \models \varphi$ since $(\Hm,s) \models \start$
+	(iii) $(\Rto)$ 对$\ALL\GLOBAL (\start \rto\varphi)$的任意模型 $(\Hm,s)$ \\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$，有对任意的$i\geq 0$有 $(\Hm,s_i) \models \start \rto\varphi$\\
+	$\Rto$ $(\Hm,s) \models \varphi$ （因为$(\Hm,s) \models \start$）
 	
-	$(\Lto)$ For each model $(\Hm, s)$ of $\varphi$\\
-	$\Rto$ $(\Hm,s) \models \start\rto \varphi$ since $(\Hm,s) \models \start$\\
-	$\Rto$ $(\Hm,s') \models \start\rto \varphi$ since $(\Hm,s') \not \models \start$ for any $s'\not = s$\\
-	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$ there is $(\Hm,s_i) \models \start \rto\varphi$ for all $i\geq 0$\\ 
-	$\Rto$ $(\Hm,s') \models \ALL\GLOBAL (\start \rto\varphi)$.
+	$(\Lto)$ 对$\varphi$的任意模型 $(\Hm, s)$\\
+	$\Rto$ $(\Hm,s) \models \start\rto \varphi$ （因为 $(\Hm,s) \models \start$）\\
+	$\Rto$ $(\Hm,s') \models \start\rto \varphi$ （因为对任意的 $s'\not = s$，$(\Hm,s') \not \models \start$）\\
+	$\Rto$ $\forall \pi=(s=s_0, s_1, \dots)$，对任意的$i\geq 0$有 $(\Hm,s_i) \models \start \rto\varphi$ \\ 
+	$\Rto$ $(\Hm,s') \models \ALL\GLOBAL (\start \rto\varphi)$。
 \end{proof}
 
 给定两个带索引的$\CTL$公式$\varphi$ 和 $\psi$，若$\varphi$是可满足的当且仅当$\psi$是可满足的，则称 $\varphi$ 和 $\psi$ 是 {\em 等价可满足的（equi-satisfiable）}。可以看出，相互等价（等值）的公式是等价可满足的，但是反过来去不成立。例：公式$\EXIST_{\tuple{1}}\NEXT p$和
@@ -309,10 +309,10 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 	\end{itemize}
 \end{lemma}
 \begin{proof}
-	(i) Without loss of generality, let $\varphi'=\varphi[i/j]$ be the formula obtained from $\varphi$ by renaming index $i$ with a fresh index $j$.
+	(i) 不失一般性地，令 $\varphi'=\varphi[i/j]$ 为用新的索引$j$ 替换$\varphi$中的索引得到的公式。
 	
-	 $(\Rto)$ For each model $(\Hm,s)$ of $\varphi$ with $\Hm = (S,R,L,[\_], s)$ \\
-	 $\Rto$ $(\Hm',s) \lrto_{\emptyset} (\Hm,s)$ and $(\Hm',s) \models \varphi'$, where $\Hm' = (S,R,L,[\_]',s)$ and for each $x \in \Ind$
+	 $(\Rto)$ 对 $\varphi$的任意模型 $(\Hm,s)$，其中$\Hm = (S,R,L,[\_], s)$ \\
+	 $\Rto$ $(\Hm',s) \lrto_{\emptyset} (\Hm,s)$ 和 $(\Hm',s) \models \varphi'$，其中 $\Hm' = (S,R,L,[\_]',s)$ 且对任意的 $x \in \Ind$
 	 \[[x]'=
 	 \left\{
 	 \begin{array}{ll}
@@ -322,9 +322,9 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 	 \right.
 	 \]
 	 
-	 We can similarly prove that for each model $(\Hm,s)$ of $\varphi'$, there is $(\Hm',s)$ s.t. $(\Hm',s) \lrto_{\emptyset} (\Hm,s)$ and $(\Hm',s) \models \varphi$.
+	 可以类似地证明对$\varphi'$的任意模型 $(\Hm,s)$，存在 $(\Hm',s)$ 使得  $(\Hm',s) \lrto_{\emptyset} (\Hm,s)$  和  $(\Hm',s) \models \varphi$。
 	 
-	 (i) It is evident from the semantics of the indexed $\CTL$ formula.
+	 (ii) 这可从带索引的$\CTL$的语义得出。
 \end{proof}
 值得注意的是，引理中的(ii)的逆命题不成立。例如：令$\varphi=\EXIST_{\tuple{1}}\NEXT p \land \EXIST_{\tuple{1}}\NEXT \neg p$，显然$\varphi'' = \EXIST\NEXT p \land \EXIST\NEXT \neg p$是可满足的，但是 $\varphi$不可满足。因此，$\varphi''\not\models\varphi$。
 
@@ -461,25 +461,30 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句�
 
 
 \begin{lemma} \label{lem:ResTransPt}
-	给定$\CTL$公式 $\varphi$。
+	给定$\CTL$公式 $\varphi$，
 	\begin{itemize}
 		\item[(i)] 对$\varphi$中的每一个路径量词$\EXIST$，有且仅有一个新的索引在转换过程中被引入，即 $\CTLsnf(\varphi)$ 中对$\varphi$中的每一个$\EXIST$都有唯一一个带索引的存在路径量词。
 		\item[(ii)] $\CTLsnf(\varphi)$中不存在两个$\EXIST$-某时子句有相同的索引，即
-		若 $P_i\rto \EXIST_{\tuple{j_i}}\FUTURE l_i~(i=1,2)$在$\CTLsnf(\varphi)$ 中，则
+		若 $P_i\rto \EXIST_{\tuple{j_i}}\FUTURE l_i~(i=1,2)$ 在 $\CTLsnf(\varphi)$ 中，则
 		$j_1\neq j_2$。
-		\item[(iii)] 原子命题$p \in\Var(\varphi)$不会出现在$\CTLsnf(\varphi)$中的子句蕴含式的左手边。
+		\item[(iii)] 原子命题$p \in\Var(\varphi)$不会出现在 $\CTLsnf(\varphi)$ 中的子句蕴含式的左手边。
 		%\item  For each $p\in V'$, if $p$ occurs in the left-hand side of a $\CTLsnf$ clause, then $p$ occurs negatively.
 	\end{itemize}
 \end{lemma}
 \begin{proof}
-	(i) It is evident that $\textbf{Trans(1)}$ and $\textbf{Trans(2)}$ introduce a fresh index for each occurrence of the path quantifier $\EXIST$. Moreover, once the path quantifier $\EXIST$ is labeled by an index, it will not be labeled by another index.
+	(i) 显然规则$\textbf{Trans(1)}$ 和 $\textbf{Trans(2)}$为每一个$\EXIST$路径量词引入一个新的索引。 
+	再者，一旦路径量词$\EXIST$被索引标记了，它就不会被其他索引标记。
 	%According to the transformation rules in Table~\ref{tab:trans},  
 	
-	(ii) We know that there is an exact one fresh index for each occurrence of the path quantifier $\EXIST$ by (i). Moreover, there will not produce new $\EXIST$-sometime clauses in the derivation.
+	(ii) 由(i)可知，每个$\EXIST$被唯一的索引标记。此外在转换过程中不会产生新的$\EXIST$-某时子句。因此结论成立。
 	%Therefore, (ii) holds.
 	
-	(iii) It is obvious from the transformation and resolution rules.
+	(iii) 从转换规则容易看出$\varphi$中的原子命题不会出现在$\CTLsnf$子句的左边。
 \end{proof}
+
+值得注意的是，每条转换规则的前件$\varphi$和结果$\psi$分别都是形如$\ALL\GLOBAL\varphi$ 和 $\ALL\GLOBAL\psi$的公式。
+此外，由规则 \textbf{Trans(11)}可知在$\CTLsnf(\varphi)$中，$\EXIST$-某时子句和 $\EXIST$-步子句可能由相同的索引。
+
 
 下面通过一个简单的例子~\cite{zhang2014resolution}来展示上述转换步骤：
 \begin{example}\label{exmp:transbot}
