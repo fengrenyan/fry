@@ -25,21 +25,8 @@
 
 (1) 探索$\CTL$中遗忘封闭的子类。在系统规范描述中，有时候用到的公式不一定很复杂，也不一定需要用到所有的时序词。为此，探索简单并足够表达某些性质的$\CTL$公示的子类，在这些子类下遗忘是容易计算的。
 
-(2) 探索如何使用计算出来的WSC（SNC）更新（修改）系统模型。特别地，当一个系统$\cal M$不满足规范$\phi$是，
-
-There remain some interesting directions that deserve further investigation: First, although the initial results for the  complexity analysis of some problems (including model checking and  Entailment of forgetting) for the $\CTL_{\ALL\FUTURE}$ fragment was reported in our earlier work  KR~\cite{renyansfirstpaper}, a thorough investigation is still needed for the general case (namely, \CTL). Second, we did not yet resolve whether the resolution-based method is complete for forgetting. Second, we still do not explore how can the WSC obtained by our algorithm be used to update the original model system.
-More specifically, when a transition system $\cal M$ does not satisfy a specification $\phi$, one can evaluate the weakest sufficient condition  $\psi$ over a signature $V$ under which ${\cal M}$ satisfies $\phi$, viz., ${\cal M}\models\psi\rto \phi$ and $\psi$ mentions only atoms from $V$. It is worthwhile to explore how the condition $\psi$ can guide the design of a new transition system ${\cal M}'$ satisfying $\phi$.
-Last but not least, different fragments, in which the result of forgetting always exists, is of central interest for the future research avenue.
+(2) 探索如何使用计算出来的WSC（SNC）更新（修改）系统模型。特别地，当一个系统$\cal M$不满足规范$\phi$时，可以计算在某个命题集合$V$上的最弱充分条件$\psi$使得$\Hm$满足，即${\cal M}\models\psi\rto \phi$且$\psi$是$V$上的公式。同时，如何使用获得的WSC来更新系统得到新系统$\Hm'$使其满足$\phi$也是重要的。
 
 
-当前，差分隐私在数据隐私保护中发挥重要的作用，应用范围涉及数据发布、数据收集、数据分析、机器学习等领域，对其应用的研究仍需要积极的推进。虽然本文基于信息论和对策博弈论的基础理论方法，从均衡优化的角度做出了一些有意义的探索工作，但是本文的研究中尚存在一些值得深入研究的问题。具体包括有：
-
-(1) 在隐私度量方面，研究表达用户隐私敏感偏好强度的度量方法，建立差分隐私$\epsilon$-度量、用户个性化隐私需求和信息熵度量的联系，为个性化的差分隐私研究奠定基础。进一步，在面向多维关联数据情景研究并提出个性化的差分隐私方案是一个值得深入研究的重要方向。
-
-(2) 在权衡隐私与效用的优化模型研究方面，研究最大化数据效用的优化模型，并设计具体的隐私机制是非常有价值的方向。其次，基于所建立的差分隐私通信模型，从信道容量的角度考虑差分隐私的最大信息传输率，对差分隐私保护系统中隐私信息率的定量化研究也是一个值得探索的方向。
-
-
-(3) 在隐私与效用的均衡优化方面，基于博弈均衡理论的指导，利用非完全信息的动态博弈、静态博弈，建立两方或多方的攻防博弈模型探讨差分隐私保护的最优策略问题仍然是值得研究的方向。此外，基于量化信息流思想，构建差分隐私的信息泄露博弈仍然是值得关注的研究点。
-
-%本文得到了国家自然科学基金项目和贵州省研究生科研基金项目的资助，现已发表《计算机学报》、《电子学报》等SCI/EI学术期刊论文3篇。此外，文中的部分内容已投稿至IEEE Transactions on Knowledge and Data Engineering(TKDE)期刊，目前论文大修后复审中(Under Review)。由于作者学识水平有限，下一步工作对上述展望的三个方面继续开展深入研究。
+(3) 尽管 $\CTL_{\ALL\FUTURE}$段下遗忘的模型检测和推理判定问题已经给出，但是更多的。。。。。。。
 

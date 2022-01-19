@@ -80,8 +80,8 @@
 为了对给定原子命题集合下的公式的最弱充分条件有个直观的认识，下面给出一个简单的例子。
 	%下面的例子给出了关于给定原子命题集合下的公式的最弱充分条件的具体体现。
 
-\begin{example}[Continued from Example~\ref{ex:2}]\label{examp:WSC}
-	本例来源于图~\ref{v1uv2}中的初始结构${\cal K}_2$。令$\psi = \EXIST \NEXT(s \wedge (\EXIST \NEXT se \vee \EXIST \NEXT \neg d))$、$\varphi = \EXIST \NEXT(s \wedge \EXIST \NEXT \neg d)$、$\Ha =\{d, s, se\}$和$V = \{s, d\}$。下面证明$\varphi$是$\psi$在$V$和${\cal K}_2$上的WSC：
+\begin{example}[例~\ref{exam:vB}的延续]\label{examp:WSC}
+	本例来源于图~\ref{exam:vB}中的初始结构${\cal K}_2$。令$\psi = \EXIST \NEXT(s \wedge (\EXIST \NEXT se \vee \EXIST \NEXT \neg d))$、$\varphi = \EXIST \NEXT(s \wedge \EXIST \NEXT \neg d)$、$\Ha =\{d, s, se\}$和$V = \{s, d\}$。下面证明$\varphi$是$\psi$在$V$和${\cal K}_2$上的WSC：
 	\begin{itemize}
 		\item[(i)] 由已知有$\varphi \models \psi$和$\Var(\varphi) \subseteq V$。此外，$(\Hm, s_0) \models \varphi \wedge \psi$，因此${\cal K}_2 \models \varphi \rto \psi$，即：$\varphi$是$\psi$在$V$和${\cal K}_2$上的SC;
 		\item[(ii)] 这里证明“对任意的$\psi$在$V$和${\cal K}_2$上的SC $\varphi'$都有${\cal K}_2 \models \varphi' \rto \varphi$”。易知若${\cal K}_2 \not \models \varphi'$，则${\cal K}_2\models \varphi' \rto \varphi$。
@@ -117,7 +117,7 @@
 \end{proof}
 
 令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。上面的定理可以直观地解释如下：由遗忘理论的定义可知$\varphi \wedge q \models \beta$，这说明
-${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi) \cup \{q\})- V$无关的公式$\psi$，若$\varphi \wedge q \models \psi$，则由定理~\ref{}可知$\beta \models \psi$。
+${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi) \cup \{q\})- V$无关的公式$\psi$，若$\varphi \wedge q \models \psi$，则由表达性定理可知$\beta \models \psi$。
 
 由第\ref{chapter05}章可知，任意的有限的初始$\MPK$-结构都能由一个$\CTL$公式表示，所以由上面的定理自然地就能得到给定有限初始$\MPK$-结构下的SNC和WSC。
 \begin{corollary}\label{thm:inK:SNC}
@@ -155,12 +155,12 @@ ${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi)
 	令$\psi=\Muforget(\phi, V)$。由定理~\ref{thm:exist}和遗忘理论的定义可知，对任意的$\Hm \models \psi$存在一个$\Hm' \models \phi$使得$\Hm \lrto_V \Hm'$，且对每一个$\Hm' \in \Mod(\phi)$都有$\Hm' \models \psi$。
 	此时，容易证明对任意的有限初始结构$\Hm$，若$\Hm \models \psi$，则存在一个$\Hm'$使得$\Hm' \models \phi$且$\Hm \lrto_V \Hm'$。
 	
-	此外，对任意的$\Hm' \in \Mod(\phi)$，由(\W)可知存在$\Hm' \models \psi$。又$\Hm \lrto_V \Hm'$，所以由定理~\ref{}可知$\Hm \models \psi$。
+	此外，对任意的$\Hm' \in \Mod(\phi)$，由(\W)可知存在$\Hm' \models \psi$。又$\Hm \lrto_V \Hm'$，所以$\Hm \models \psi$。
 \end{proof}
 
 
 定理~\ref{thm:initModel}表明模型结构被限制到有限初始结构下的$\mu$-演算下遗忘理论也是封闭的。
-此外，由？？可知，任意$\Ha$上的有限初始$\MPK$-结构${\cal K}$都能用一个$\CTL$公式——特征公式${\cal F}_{\Ha}({\cal K})$来表示，此公式也是$\mu$-句子。
+此外，由第~\ref{chapter05}章可知，任意$\Ha$上的有限初始$\MPK$-结构${\cal K}$都能用一个$\CTL$公式——特征公式${\cal F}_{\Ha}({\cal K})$来表示，此公式也是$\mu$-句子。
 
 对于给给定的$\Ha$和$V_{min}\subseteq \Ha$，记$\varphi = \Muforget({\cal F}_{\Ha}({\cal K}), V_{min})$，其中$V_{min} \subseteq \Ha$是使得$\varphi$可满足的极小子集。
 此外，公式

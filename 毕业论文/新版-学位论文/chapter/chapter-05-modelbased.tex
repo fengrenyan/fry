@@ -29,8 +29,9 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 为此，本节首先介绍计算树之间的$V$-互模拟关系，然后给出计算树的特征公式的定义，最后给出初始$\MPK$-结构的特征公式。
 
 \subsection{计算树的$V$-互模拟}
+在第\ref{chapter03}章中的定义~\ref{def:VInd:bisimulation}给出了$\Ind$-结构（$(\Hm,s_0)$中的$\Hm$为初始$\Ind$-Kripke结构）之间的$V$-互模拟定义及其相关性质，结构（$(\Hm,s_0)$中的$\Hm$为初始Kripke结构）之间的$V$-互模拟有相同的定义，且不难证明$\Ind$-结构之间$V$-互模拟有的性质结构之间$V$-互模拟也有。这里不再赘述，这里只给出结构之间的$V$-互模拟在有限结构下与下面将要给出的约束$V$-互模拟等价——与深度$n$关联的$V$-互模拟。但是为了方便，本章仍然引入约束$V$-互模拟的概念。
 
-首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$（或$\Hm_i=(S_i,R_i,L_i,[\_]_i,s_0^i)$）是初始结构（$\Ind$-Kripke结构），${\cal K}_i=(\Hm_i, s_i)$是$\MPK$-结构（或$\Ind$-结构）。$\Hb_n^V$被递归定义如下：
+首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$是初始Kripke结构，${\cal K}_i=(\Hm_i, s_i)$是结构。$\Hb_n^V$被递归定义如下：
 \begin{itemize}
 	\item 若$L_1(s_1)-V=L_2(s_2)$，则$({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
 	\item 对任意$n\ge 0$，若满足下面几个条件，则$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^V$成立：
@@ -44,83 +45,130 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 当所谈及的原子命题的集合$V$很显然的时候，上述$\Hb_n^V$中的$V$可以省略，记为$\Hb_n$。此外，当讨论的$\Hm_i$$(i=1,2)$是显然的时候，可以使用$(s_1,s_2) \in \Hb_n$代替$((\Hm_1,s_1),(\Hm_2,s_2)) \in \Hb_n$。
 此时，$V$-互模拟关系就可以定义如下：
-\begin{definition}[$V$-互模拟]\label{def:V-bisimulation}
-	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是$\MPK$-结构（或$\Ind$-结构）。
+\begin{definition}[约束$V$-互模拟]\label{def:V-bisimulation}
+	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是结构。
 	\begin{itemize}
-		\item ${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，当且仅当对所有的$n \ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若${\cal K}_1$和${\cal K}_2$是$V$-互模拟的，则记为${\cal K}_1 \lrto_V {\cal K}_2$。
-		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}_{\ge 1}$是大于等于1的整数的集合。}都有${\cal K}_{1,j} \lrto {\cal K}_{2,j}$，则$\pi_1 \lrto_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
+		\item ${\cal K}_1$和${\cal K}_2$是约束$V$-互模拟的，当且仅当对所有的$n \ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若${\cal K}_1$和${\cal K}_2$是约束$V$-互模拟的，则记为${\cal K}_1 \overset{B}{\lrto}_V {\cal K}_2$。
+		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}_{\ge 1}$是大于等于1的整数的集合。}都有${\cal K}_{1,j} \overset{B}{\lrto}_V {\cal K}_{2,j}$，则$\pi_1 \overset{B}{\lrto}_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
 	\end{itemize}
 \end{definition}
 
-上述$V$-互模拟的定义是现有互模拟定义的一般化，这可以从下面几个方面来体现\footnote{在其他领域也有类似的定义，如：定义在数据库相关文献中的概念$k$-互模拟\cite{kaushik2002updates}。$k$-互模拟概念中涉及与本文$\Hb_n$类似的定义，只是其关系是从相反的方向（即：从孩子到父节点的方向）来说明的。此外，值得一提的是，本文的$V$-互模拟的概念是定义在$\MPK$-结构上的。}。
-首先，当给定的$V$为空集且谈论指定的初始状态时，本文的$V$-互模拟与定义在Baier等文章里的互模拟等价（定义7.1\cite{Baier:PMC:2008}）的概念一致。
-其次，在同一文章里的基于状态的互模拟（定义7.7\cite{Baier:PMC:2008}）是定义在给定结构的状态上的，因此与本文的$V$-互模拟（定义在结构的集合上）也不同。
-最后，本文的$\Hb_n$的定义与Browne的论文中的状态等价$E_n$类似，只是后者是定义在状态上\cite{browne1988characterizing}而本文的定义在$\MPK$-结构（或$\Ind$-结构）上。
+值得注意的是，满足约束$V$互模拟关系的结构之间有且仅有一个$V$互模拟关系，即使得$\Hb_{k+1} = \Hb_k$的关系。
+%上述约束$V$-互模拟的定义是现有互模拟定义的一般化，这可以从下面几个方面来体现\footnote{在其他领域也有类似的定义，如：定义在数据库相关文献中的概念$k$-互模拟\cite{kaushik2002updates}。$k$-互模拟概念中涉及与本文$\Hb_n$类似的定义，只是其关系是从相反的方向（即：从孩子到父节点的方向）来说明的。此外，值得一提的是，本文的$V$-互模拟的概念是定义在$\MPK$-结构上的。}。
+%首先，当给定的$V$为空集且谈论指定的初始状态时，本文的$V$-互模拟与定义在Baier等文章里的互模拟等价（定义7.1\cite{Baier:PMC:2008}）的概念一致。
+%其次，在上述文章里的基于状态的互模拟（定义7.7\cite{Baier:PMC:2008}）是定义在给定结构的状态上的，因此与本文的$V$-互模拟（定义在结构的集合上）也不同。
+%最后，本文的$\Hb_n$的定义与Browne的论文中的状态等价$E_n$类似，只是后者是定义在状态上\cite{browne1988characterizing}而本文的定义在$\MPK$-结构（或$\Ind$-结构）上。
 
 
-\begin{lemma}
-给定原子命题集合$V\subseteq \Ha$和$\MPK$-结构，其中$i=1,2$且$\Hm_i=(S_i, R_i, L_i, s_0^i)$为有限初始结构。$(s_1, s_2)\in \Hb$当且仅当$s_1 \lrto_V s_2$。
+\begin{lemma} \label{lem:HbBis}
+	对于有限初始Kripke结构，约束 $V$-互模拟是一个 $V$-互模拟。
+	%Let $V \subseteq \Ha$ and ${\cal K}_i=({\cal M}_i,s_i)~(i\in\{1,2\})$ and $\Hm_i=(S_i, R_i,L_i, s_0^i)$ be finite initial structures. 
+	%Then every bounded $V$-bisimulation is a $V$-bisimulation between $\Hm_1$ and $\Hm_2$.
+	%If $s_1 \lrto_V s_2$, then the bounded $V$-bisimulation {\cal B}_V containing $(s_1, s_2)$ is also a $V$-bisimulation (containing $(s_1,s_2)$) between $\Hm_1$ and $\Hm_2$.
 \end{lemma}
+
 \begin{proof}
-	%由于$\Hb$是${\cal K}_1$和${\cal K}_2$的约束互模拟关系，所以$(s_1, s_2)\in \Hb$。
-	值得注意的是对任意的$n\geq 0$，都有$\Hb_{n+1} \subseteq \Hb_n$。又因为$\Hb_0\subseteq S_1 \times S_2$ 是有限的，因而存在一个数$k$使得$\Hb_{k+1}=\Hb_k = \Hb$。
-	
-	（1）证明若$(s_1, s_2)\in \Hb$则$s_1 \lrto_V s_2$。
-	显然，$(s_1, s_2)\in \Hb$。所以，只需要证明$\Hb$是$\Hm_1$和$\Hm_1$之间的一个$V$-互模拟关系。
-	下面证明对任意的$r_1\in S_1$和$r_2\in S_2$，$(r_1,r_2) \in \Hb$当且仅当
-	\begin{itemize}
-		\item[](a) $L_1(r_1)-V = L_2(r_2)-V$;
-		\item[](b) $\forall w_1\in S_1$, if $(r_1, w_1)\in R_1$, then $\exists w_2 \in S_2$ s.t. $(r_2,w_2) \in R_2$ and $(w_1, w_2) \in \Hb$; and 
-		\item[](c) $\forall w_2\in S_2$, if $(r_2, w_2)\in R_2$, then $\exists w_1 \in S_1$ s.t. $(r_1,w_1) \in R_1$ and $(w_1, w_2)\in \Hb $.
-	\end{itemize}
+	令 $V \subseteq \Ha$、 ${\cal K}_i=({\cal M}_i,s_i)~(i\in\{1,2\})$ 和 $\Hm_i=(S_i, R_i,L_i, s_0^i)$ 为有限的初始-Kripke 结构。
+	因为$S_i~(i=1,2)$，所以$\Hb_n\subseteq S_1\times S_2~(n\ge 0)$ 都是有限的。
+	由于对任意的$n\geq 0$都有 $\Hb_{n+1} \subseteq \Hb_n$。
+	因此，存在一个最小数$k$使得
+	$\Hb_{k+1} =\Hb_k$ （用 $\Hb$表示）。
 
-	$(\Rto)$ $(r_1,r_2) \in \Hb$\\
-	$\Rto$ $\forall n\geq 0$，$(r_1,r_2)\in \Hb_n$\\
-	$\Rto$ $(r_1,r_2)\in \Hb_0$且$\forall n > 0$，$(r_1,r_2)\in \Hb_n$\\
-	$\Rto$ $L_1(r_1)-V = L_2(r_2)-V$ （因此，(a)成立），
 	
-	且$\forall n\geq 0$，$(r_1,r_2)\in \Hb_{n+1}$意味着下面几点成立：
+	这里证明对任意的 $r_1\in S_1$ 和 $r_2 \in S_2$，有 $(r_1, r_2)\in \Hb$ 蕴涵 %if and only if
 	\begin{itemize}
-		\item $L_1(r_1)-V = L_2(r_2)-V$；
-		\item $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_n$；且
-		\item $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_n$。
+		\item[(a)] $L_1(r_1)-V = L_2(r_2)-V$；
+		\item[(b)] $\forall w_1\in S_1$，若$(r_1, w_1)\in R_1$，则 $\exists w_2 \in S_2$ 使得 $(r_2,w_2) \in R_2$ 和 $(w_1, w_2) \in \Hb$； 和
+		\item[(c)] $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则 $\exists w_1 \in S_1$ 使得 $(r_1,w_1) \in R_1$ 和 $(w_1, w_2)\in \Hb $。
 	\end{itemize}
 	
-	因为存在一个数$k$使得$\Hb_{k+1}=\Hb_k = \Hb$，所以对这样的$k$有$(r_1,r_2)\in \Hb_{k+1}$使得：
-	\begin{itemize}
-		\item $L_1(r_1)-V = L_2(r_2)-V$;
-		\item $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_k$\\
-		$\Rto$ $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb$ （因此，(b)成立）。
-		\item $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_k$\\
-		$\Rto$ $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb$ （因此，(c)成立）。
-	\end{itemize}
+	首先，由对任意的$n\ge 0$都有$(r_1, r_2)\in \Hb_n$可知 $(r_1, r_2) \in \Hb_0$，这意味着
+	$L_1(r_1)-V = L_2(r_2)-V$。因此(a)成立。
 	
-因此，$\Hb$是$\Hm_1$和$\Hm_1$之间的一个$V$-互模拟关系。又因为$(s_1, s_2)\in \Hb$，所以$s_1 \lrto_V s_2$。
-
-$(\Lto)$ 假定(a)、(b)和(c)成立，这里证明$(r_1, r_2)\in \Hb$，即：对于任意的$n\geq 0$都有$(r_1, r_2)\in \Hb_n$。
-
-\begin{itemize}
-	\item[(1)]  由(a)可知$(r_1, r_2) \in \Hb_0$，即：$L_1(r_1)-V = L_2(r_2)-V$。
-	\item[(2)] 由(b)可知：$\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则 $\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$\forall n\geq 0$都有$(w_1, w_2) \in \Hb_n$ \\ 
-	$\Rto$ $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$\forall n > 0$都有$(w_1, w_2) \in \Hb_{n-1}$\\
-	$\Rto$ $\forall n > 0$，$\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_{n-1}$。
-	\item[(3)] 由(c)可知：$\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则 $\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$\forall n\geq 0$都有$(w_1, w_2)\in \Hb_n$\\
-	$\Rto$ $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$\forall n > 0$都有$(w_1, w_2)\in \Hb_{n-1}$\\
-	$\Rto$ $\forall n > 0$，$\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_{n-1}$。
-\end{itemize}
-
-因此，$\forall n > 0$有：
-\begin{itemize}
-	\item $(r_1, r_2) \in \Hb_0$;
-	\item $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_{n-1}$；且
-	\item $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_{n-1}$。
-\end{itemize}
+	其次，令$w_1 \in S_1$ 和 $(r_1, w_1)\in R_1$。有 \\
+	$(r_1,r_2)\in \Hb$、 $w_1 \in S_1$ 和 $(r_1, w_1)\in R_1$\\
+	$\Rto$ 由$\Hb_{k+1}=\Hb$知$(r_1,r_2)\in \Hb_{k+1}$、 $w_1 \in S_1$ 和 $(r_1, w_1)\in R_1$\\
+	$\Rto$ 有定义可知$\exists w_2\in S_2$使得 $(r_2, w_2)\in R_2$ 和 $(w_1,w_2)\in \Hb_k$\\
+	$\Rto$ 由$\Hb=\Hb_k$可知$\exists w_2\in S_2$ 使得 $(r_2, w_2)\in R_2$ 和 $(w_1,w_2)\in \Hb$\\
+	$\Rto$ (b)成立。
 	
-所以对于任意的$n\geq 0$都有$(r_1, r_2)\in \Hb$，即：$(r_1, r_2)\in \Hb$。
-
-（ii） 由$s_1 \lrto_V s_2$可知存在$\Hm_1$和$\Hm_1$之间的一个$V$-互模拟关系${\cal R}$使得$(s_1, s_2)\in {\cal R}$。令$\Hb={\cal R}$，显然对任意的$n\geq 0$有$(s_1,s_2)\in \Hb_n$。
-	
+	可以类似地证明 (c)也成立。
+	因此， $\Hb$ 是一个$\Hm_1$ 和 $\Hm_2$之间的一个 $V$-互模拟关系。
 \end{proof}
+
+由引理~\ref{lem:HbBis}可知，$\Hb$既是一个约束$V$-互模拟关系也是一个$V$-互模拟关系，因此下面的推论是显然成立的。
+\begin{corollary} \label{lem:bounedToGe}
+	令 $V \subseteq \Ha$ 和 ${\cal K}_i=({\cal M}_i,s_i)$ （ $i\in\{1,2\}$），其中 $\Hm_i=(S_i, R_i,L_i, s_0^i)$ 是有限的初始Kripke结构。则
+	%$s_1 \overset{\Hb}{\lrto}_V s_2$ 
+	$s_1$ 和 $s_2$ 是约束 $V$-互模拟的当且仅当$s_1 \lrto_V s_2$。
+\end{corollary}
+
+%\begin{lemma}
+%给定原子命题集合$V\subseteq \Ha$和$\MPK$-结构，其中$i=1,2$且$\Hm_i=(S_i, R_i, L_i, s_0^i)$为有限初始结构。$(s_1, s_2)\in \Hb$当且仅当$s_1 \lrto_V s_2$。
+%\end{lemma}
+%\begin{proof}
+%	%由于$\Hb$是${\cal K}_1$和${\cal K}_2$的约束互模拟关系，所以$(s_1, s_2)\in \Hb$。
+%	值得注意的是对任意的$n\geq 0$，都有$\Hb_{n+1} \subseteq \Hb_n$。又因为$\Hb_0\subseteq S_1 \times S_2$ 是有限的，因而存在一个数$k$使得$\Hb_{k+1}=\Hb_k = \Hb$。
+%	
+%	（1）证明若$(s_1, s_2)\in \Hb$则$s_1 \lrto_V s_2$。
+%	显然，$(s_1, s_2)\in \Hb$。所以，只需要证明$\Hb$是$\Hm_1$和$\Hm_1$之间的一个$V$-互模拟关系。
+%	下面证明对任意的$r_1\in S_1$和$r_2\in S_2$，$(r_1,r_2) \in \Hb$当且仅当
+%	\begin{itemize}
+%		\item[(a)] $L_1(r_1)-V = L_2(r_2)-V$;
+%		\item[(b)] $\forall w_1\in S_1$， 若 $(r_1, w_1)\in R_1$，则 $\exists w_2 \in S_2$ 使得 $(r_2,w_2) \in R_2$ 和 $(w_1, w_2) \in \Hb$；和 
+%		\item[(c)] $\forall w_2\in S_2$，若 $(r_2, w_2)\in R_2$，则 $\exists w_1 \in S_1$ 使得 $(r_1,w_1) \in R_1$ 和 $(w_1, w_2)\in \Hb $。
+%	\end{itemize}
+%
+%	$(\Rto)$ $(r_1,r_2) \in \Hb$\\
+%	$\Rto$ $\forall n\geq 0$，$(r_1,r_2)\in \Hb_n$\\
+%	$\Rto$ $(r_1,r_2)\in \Hb_0$且$\forall n > 0$，$(r_1,r_2)\in \Hb_n$\\
+%	$\Rto$ $L_1(r_1)-V = L_2(r_2)-V$ （因此，(a)成立），
+%	
+%	且$\forall n\geq 0$，$(r_1,r_2)\in \Hb_{n+1}$意味着下面几点成立：
+%	\begin{itemize}
+%		\item $L_1(r_1)-V = L_2(r_2)-V$；
+%		\item $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_n$；且
+%		\item $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_n$。
+%	\end{itemize}
+%	
+%	因为存在一个数$k$使得$\Hb_{k+1}=\Hb_k = \Hb$，所以对这样的$k$有$(r_1,r_2)\in \Hb_{k+1}$使得：
+%	\begin{itemize}
+%		\item $L_1(r_1)-V = L_2(r_2)-V$;
+%		\item $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_k$\\
+%		$\Rto$ $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb$ （因此，(b)成立）。
+%		\item $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_k$\\
+%		$\Rto$ $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb$ （因此，(c)成立）。
+%	\end{itemize}
+%	
+%因此，$\Hb$是$\Hm_1$和$\Hm_1$之间的一个$V$-互模拟关系。又因为$(s_1, s_2)\in \Hb$，所以$s_1 \lrto_V s_2$。
+%
+%$(\Lto)$ 假定(a)、(b)和(c)成立，这里证明$(r_1, r_2)\in \Hb$，即：对于任意的$n\geq 0$都有$(r_1, r_2)\in \Hb_n$。
+%
+%\begin{itemize}
+%	\item[(1)]  由(a)可知$(r_1, r_2) \in \Hb_0$，即：$L_1(r_1)-V = L_2(r_2)-V$。
+%	\item[(2)] 由(b)可知：$\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则 $\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$\forall n\geq 0$都有$(w_1, w_2) \in \Hb_n$ \\ 
+%	$\Rto$ $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$\forall n > 0$都有$(w_1, w_2) \in \Hb_{n-1}$\\
+%	$\Rto$ $\forall n > 0$，$\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_{n-1}$。
+%	\item[(3)] 由(c)可知：$\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则 $\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$\forall n\geq 0$都有$(w_1, w_2)\in \Hb_n$\\
+%	$\Rto$ $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$\forall n > 0$都有$(w_1, w_2)\in \Hb_{n-1}$\\
+%	$\Rto$ $\forall n > 0$，$\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_{n-1}$。
+%\end{itemize}
+%
+%因此，$\forall n > 0$有：
+%\begin{itemize}
+%	\item $(r_1, r_2) \in \Hb_0$;
+%	\item $\forall w_1 \in S_1$，若$(r_1, w_1)\in R_1$，则$\exists w_2 \in S_2$使得$(r_2,w_2) \in R_2$且$(w_1, w_2) \in \Hb_{n-1}$；且
+%	\item $\forall w_2\in S_2$，若$(r_2, w_2)\in R_2$，则$\exists w_1 \in S_1$使得$(r_1,w_1) \in R_1$且$(w_1, w_2)\in \Hb_{n-1}$。
+%\end{itemize}
+%	
+%所以对于任意的$n\geq 0$都有$(r_1, r_2)\in \Hb$，即：$(r_1, r_2)\in \Hb$。
+%
+%（ii） 由$s_1 \lrto_V s_2$可知存在$\Hm_1$和$\Hm_1$之间的一个$V$-互模拟关系${\cal R}$使得$(s_1, s_2)\in {\cal R}$。令$\Hb={\cal R}$，显然对任意的$n\geq 0$有$(s_1,s_2)\in \Hb_n$。
+%	
+%\end{proof}
+
+
+本章只涉及有限的初始Kripke结构，因此，本章混用$\lrto_V$这个符号和$V$-互模拟这个概念。
 
 给定原子命题集合$V\subseteq \Ha$和初始结构$\Hm_i$（$i = 1, 2$）。如果下面条件同时被满足，则称$\Hm_1$的计算树$\Tr_n(s_1)$和$\Hm_2$的计算树$\Tr_n(s_2)$是$V$-互模拟的（记为$({\cal M}_1,\Tr_n(s_1))\lrto_V({\cal M}_2,\Tr_n(s_2))$，简写为$\Tr_n(s_1)\lrto_V\Tr_n(s_2)$）：
 \begin{itemize}
