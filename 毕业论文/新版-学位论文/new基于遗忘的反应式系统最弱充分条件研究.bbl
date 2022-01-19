@@ -1,4 +1,4 @@
-\begin{thebibliography}{92}
+\begin{thebibliography}{95}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -399,6 +399,16 @@ D'AGOSTINO~G, LENZI~G.
 \newblock On modal mu-calculus with explicit interpolants\allowbreak[J].
 \newblock Journal of Applied Logic, 2006, 4\penalty0 (3):\penalty0 256-278.
 
+\bibitem[Katsuno et~al.(1991)Katsuno and Mendelzon]{katsuno91mendelzon}
+KATSUNO~H, MENDELZON~A~O.
+\newblock On the difference between updating a knowledge base and revising
+  it\allowbreak[C]//\allowbreak
+ALLEN~J~F, FIKES~R, SANDEWALL~E.
+\newblock Proceedings of the 2nd International Conference on Principles of
+  Knowledge Representation and Reasoning (KR'91). Cambridge, MA, USA, April
+  22-25, 1991.
+\newblock [S.l.]: Morgan Kaufmann, 1991: 387-394.
+
 \bibitem[Gabbay et~al.(2008{\natexlab{b}})Gabbay, Schmidt, and
   Szalas]{gabbay2008second}
 GABBAY~D~M, SCHMIDT~R, SZALAS~A.
@@ -610,24 +620,6 @@ D'AGOSTINO~G.
 \newblock Interpolation in non-classical logics\allowbreak[J].
 \newblock Synthese, 2008, 164\penalty0 (3):\penalty0 421-435.
 
-\bibitem[Feng et~al.(2020)Feng, Acar, Schlobach, Wang, and
-  Liu]{renyansfirstpaper}
-FENG~R, ACAR~E, SCHLOBACH~S, et~al.
-\newblock On sufficient and necessary conditions in bounded {CTL}: A forgetting
-  approach\allowbreak[C]//\allowbreak
-Proceedings of the International Conference on Principles of Knowledge
-  Representation and Reasoning: volume~17.
-\newblock [S.l.: s.n.], 2020: 361-370.
-
-\bibitem[Emerson(1990)]{DBLP:books/el/leeuwen90/Emerson90}
-EMERSON~E~A.
-\newblock Temporal and modal logic\allowbreak[M/OL]//\allowbreak
-VAN LEEUWEN~J.
-\newblock Handbook of Theoretical Computer Science, Volume {B:} Formal Models
-  and Semantics.
-\newblock Elsevier and {MIT} Press, 1990: 995-1072.
-\newblock \url{https://doi.org/10.1016/b978-0-444-88074-1.50021-4}.
-
 \bibitem[Bolotov(2000)]{bolotov2000clausal}
 BOLOTOV~A.
 \newblock Clausal resolution for branching-time temporal logic.\allowbreak[D].
@@ -639,13 +631,6 @@ ZHANG~L, HUSTADT~U, DIXON~C.
 \newblock A refined resolution calculus for {CTL}\allowbreak[C]//\allowbreak
 International Conference on Automated Deduction.
 \newblock [S.l.]: Springer, 2009{\natexlab{b}}: 245-260.
-
-\bibitem[Szalas(2002)]{szalas2002second}
-SZALAS~A.
-\newblock Second-order quantifier elimination in modal
-  contexts\allowbreak[C]//\allowbreak
-European Workshop on Logics in Artificial Intelligence.
-\newblock [S.l.]: Springer, 2002: 223-232.
 
 \bibitem[Emerson et~al.(1985)Emerson and
   Halpern]{DBLP:journals/jcss/EmersonH85}
@@ -685,10 +670,42 @@ YANKOV~V~A.
 \newblock Izvestiya Rossiiskoi Akademii Nauk. Seriya Matematicheskaya, 1968,
   32\penalty0 (4):\penalty0 880-883.
 
+\bibitem[Wolper(1983)]{DBLP:journals/iandc/Wolper83}
+WOLPER~P.
+\newblock Temporal logic can be more expressive\allowbreak[J/OL].
+\newblock Inf. Control., 1983, 56\penalty0 (1/2):\penalty0 72-99.
+\newblock \url{https://doi.org/10.1016/S0019-9958(83)80051-5}.
+
 \bibitem[D'Agostino et~al.(1996)D'Agostino and Hollenberg]{d1996uniform}
 D'AGOSTINO~G, HOLLENBERG~M.
 \newblock Uniform interpolation, automata and the modal
   $\mu$-calculus\allowbreak[J].
 \newblock Logic Group Preprint Series, 1996, 165.
+
+\bibitem[Wang(2015)]{wang2015forgetting}
+WANG~Y.
+\newblock On forgetting in tractable propositional fragments\allowbreak[J/OL].
+\newblock CoRR, 2015, abs/1502.02799.
+\newblock \url{http://arxiv.org/abs/1502.02799}.
+
+\bibitem[Comon(1997)]{comon1997tree}
+COMON~H.
+\newblock Tree automata techniques and applications\allowbreak[J].
+\newblock http://www. grappa. univ-lille3. fr/tata, 1997.
+
+\bibitem[Emerson et~al.(1999)Emerson and
+  Jutla]{DBLP:journals/siamcomp/EmersonJ99}
+EMERSON~E~A, JUTLA~C~S.
+\newblock The complexity of tree automata and logics of
+  programs\allowbreak[J/OL].
+\newblock {SIAM} J. Comput., 1999, 29\penalty0 (1):\penalty0 132-158.
+\newblock \url{https://doi.org/10.1137/S0097539793304741}.
+
+\bibitem[Lang et~al.(2003)Lang, Liberatore, and Marquis]{lang2003propositional}
+LANG~J, LIBERATORE~P, MARQUIS~P.
+\newblock Propositional independence: Formula-variable independence and
+  forgetting\allowbreak[J/OL].
+\newblock J. Artif. Intell. Res., 2003, 18:\penalty0 391-443.
+\newblock \url{https://doi.org/10.1613/jair.1113}.
 
 \end{thebibliography}
