@@ -641,13 +641,6 @@ EMERSON~E~A, HALPERN~J~Y.
   (1):\penalty0 1-24.
 \newblock \url{https://doi.org/10.1016/0022-0000(85)90001-7}.
 
-\bibitem[Kaushik et~al.(2002)Kaushik, Naughton, Bohannon, and
-  Shenoy]{kaushik2002updates}
-KAUSHIK~R, NAUGHTON~J~F, BOHANNON~P, et~al.
-\newblock Updates for structure indexes\allowbreak[C]//\allowbreak
-Proceedings of VLDB'02.
-\newblock [S.l.]: Elsevier, 2002: 239-250.
-
 \bibitem[Mycielski et~al.(1997)Mycielski, Rozenberg, and
   Salomaa]{DBLP:conf/birthday/1997ehrenfeucht}
 MYCIELSKI~J, ROZENBERG~G, SALOMAA~A.
@@ -669,6 +662,15 @@ YANKOV~V~A.
   propositional logic\allowbreak[J].
 \newblock Izvestiya Rossiiskoi Akademii Nauk. Seriya Matematicheskaya, 1968,
   32\penalty0 (4):\penalty0 880-883.
+
+\bibitem[Lang et~al.(2003{\natexlab{a}})Lang, Liberatore, and
+  Marquis]{DBLP:journals/jair/LangLM03}
+LANG~J, LIBERATORE~P, MARQUIS~P.
+\newblock Propositional independence: Formula-variable independence and
+  forgetting\allowbreak[J/OL].
+\newblock Journal of Artificial Intelligence Research, 2003, 18:\penalty0
+  391-443.
+\newblock \url{https://doi.org/10.1613/jair.1113}.
 
 \bibitem[Wolper(1983)]{DBLP:journals/iandc/Wolper83}
 WOLPER~P.
@@ -701,7 +703,8 @@ EMERSON~E~A, JUTLA~C~S.
 \newblock {SIAM} J. Comput., 1999, 29\penalty0 (1):\penalty0 132-158.
 \newblock \url{https://doi.org/10.1137/S0097539793304741}.
 
-\bibitem[Lang et~al.(2003)Lang, Liberatore, and Marquis]{lang2003propositional}
+\bibitem[Lang et~al.(2003{\natexlab{b}})Lang, Liberatore, and
+  Marquis]{lang2003propositional}
 LANG~J, LIBERATORE~P, MARQUIS~P.
 \newblock Propositional independence: Formula-variable independence and
   forgetting\allowbreak[J/OL].

@@ -1,7 +1,7 @@
 \chapter{计算CTL下的遗忘：基于归结的方法}\label{chapter04}
 {\em 
 已有结果显示，任意的$\CTL$公式可以转换为$\CTLsnf$子句的集合。归结是一种以子句为计算对象的判断可满足性的方法，本章提出一种基于归结的计算遗忘理论的方法。
-其主要思想是：首先将给定的$\CTL$公式转换为$\CTLsnf$子句的集合，其次在相应的原子命题上使用归结规则得到归结结果，最后“消除”之前引入的索引和$\start$，最终得到遗忘的结果。其主要流程图如图~\ref{Fig:chapter05:v1uv2}所示。
+其主要思想是：首先将给定的$\CTL$公式转换为$\CTLsnf$子句的集合（这一部分在第\ref{chapter02}章已经给出了详细的介绍），其次在相应的原子命题上使用归结规则得到归结结果，最后“消除”之前引入的索引和$\start$，最终得到遗忘的结果。其主要流程图如图~\ref{Fig:chapter05:v1uv2}所示。
 正如本章所要说明的那样，$\CTL$不具有均匀插值这一属性，基于归结的方法在有的情况下是不能计算出遗忘结果的。然而，在有些$\CTL$子类下，本章提出的方法能够计算出其遗忘结果。}
 \begin{figure*}[!htb]
 	\centering
@@ -31,11 +31,11 @@
 	\item[(1)] 如何表示$\CTL$公式和带索引的$\CTL$公式之间的关系？如在第三章中所展示的那样，将一个$\CTL$公式转换为$\CTLsnf$子句的集合会引入新的原子命题和索引。虽然已有的研究说明了$\CTL$公式可以转换为带索引的公式的集合并保证其可满足性，然而并没有表明这两种形式的公式之间的模型具有怎样的联系。
 	本章从互模拟等价的角度探讨$\CTL$公式和带索引的公式之间的联系，为计算遗忘提供理论基础。
 	%本章给出一种扩展的互模拟定义，以描述两种公式的模型之间的关系。
-	\item[(2)] 如何“移除”无关的原子命题（包括需要遗忘的原子命题和转换过程中引入的新的原子命题），以及如何“消除”索引？为此，本章给出“移除”原子命题的一般操作，并提出一种一般化的Ackermann引理。为了“消除”索引，探索几个几个逻辑等价关系，详见，。。。。。
+	\item[(2)] 如何“移除”无关的原子命题（包括需要遗忘的原子命题和转换过程中引入的新的原子命题），以及如何“消除”索引？为此，本章给出“移除”原子命题的一般操作，并提出一种一般化的Ackermann引理。为了“消除”索引，探索几个几个逻辑等价关系，详见第\ref{cha4:sec:resf}节。
 	%对应算法~\ref{alg:compute:forgetting:by:Resolution}中的$\emph{Removing\_index}(\emph{RemA})$过程。
 \end{itemize}
 
-本章其余部分组织如下：首先，第\ref{chapter4:sub:biVB}节给出二元互模拟的定义及其相关性质。其次，第\label{chp4:sect:res}节从分节详细地介绍算法~\ref{alg:compute:forgetting:by:Resolution}如何使用基于归结的方法计算遗忘。第三，第~\ref{chp4:sect:complex}节分析算法~\ref{alg:compute:forgetting:by:Resolution}的可终止性及其时间和空间复杂性。最后总结本章的主要工作。
+本章其余部分组织如下：首先，第\ref{cha4:sec:resf}节给出归结过程的详细介绍。其次，第\label{cha4:sec:reIndex}节介绍如何将第\ref{cha4:sec:resf}节得到的结果转换成$\CTL$公式，具体分为两部分：移除索引和移除新引入的原子命题。第~\ref{cha4:sec:alg}节给出计算遗忘的算法，并分析算法的时间和空间复杂性。最后总结本章的主要工作。
 
 
 
@@ -87,10 +87,10 @@
 
 
 
-\section{基于归结的方法计算遗忘}
-\label{chp4:sect:resf}
+\section{归结过程}
+\label{cha4:sec:resf}
 这部分给出如何使用归结规则（表~\ref{tab:res}）来计算$\CTL$中的遗忘。
-只要思想是：首先将给定的$\CTL$公式转换为$\CTLsnf$子句的集合，然后计算需要遗忘的原子命题上所有可能的归结结果并移除包含要遗忘的原子的子句，最后将留下来的$\CTLsnf$子句转换为$\CTL$公式。
+这个过程的主要思想是将转换过程中获得的$\CTLsnf$子句在表~\ref{tab:res}中归结规则上做穷尽的归结，即直到不产生新的归结结果。值得注意的是该归结过程涉及的归结原子命题是需要遗忘的原子命题和转换过程中引入的新的原子命题，这是与判定可满足性下做所有原子命题的归结的不同。
 
 令$T$为$\CTLsnf$子句的集合，$p$为原子命题。$T$在$p$上的\emph{展开}（记为$\Unfolding(T,p)$）是集合$T$和如下集合的并集：
 \[\{\alpha\mid \mbox{$\alpha$ 是 $T$ 公式关于文字 $l\in\{p,\neg p\}$ 的归结结果}\}.  \]
@@ -226,6 +226,10 @@
 	可以看出，尽管 $\emph{ERes}(\varphi,V)$中不包含具有索引的公式，但是有的子句包含出现在 $T_\varphi$中的新原子命题。
 \end{example}
 
+
+\section{转换带索引的公式为$\CTL$公式}
+\label{cha4:sec:remIndex}
+在上一节中描述了归结过程，但是正如归结规则和转换规则所示，在这两个过程中会引入索引和新的原子命题。本章介绍如何移除掉这些新引入的元素。
 
 下面的引理表明，可以移除掉$\CTLsnf$子句集合中的索引而保持互模拟等价。
 
@@ -400,6 +404,9 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	因为$\Gamma''$  包含一个公式其关于 $y$既不是正的也不是负的，因此这里不能对$\Gamma''$ 和 $y$ 使用上述过程。 
 \end{example}
 
+
+\section{算及其复杂性分析}
+\label{cha4:sec:alg}
 现在可以给出计算$\CTL$下遗忘的算法——算法~\ref{alg:compute:forgetting:by:Resolution}。
 该算法的输入为一个$\CTL$公式$\varphi$和一个原子命题的集合，输出为一个与$\varphi$互模拟等价的$\CTL$公式。
 %
@@ -478,12 +485,12 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	
 	由归结过程可产生子句$\top \rto \neg \vee \psi_1 \vee \psi_2$，由定理~\ref{thm:Aclm}可知，$x$可以被$\psi_1 \vee \psi_2$替换。
 	又因为公式$\varphi$中不包含$Pt {\cal T}$时序算子，因而不会产生引入嵌套原子命题（同时出现在$\rto$两边的原子命题），此时对新引入的其余的原子命题都可使用定理~\ref{thm:Aclm}。
-	因此，由定理~\ref{thm:TotalCon}可知$\emph{ERes}(\varphi,V) \equiv \CTLforget(\varphi, V)$。
+	因此，由定理~\ref{thm:soundness:forget:algorithm}可知\CTL-forget$(\varphi,V)\equiv \CTLforget(\varphi, V)$。
 \end{proof}
 
 
 
-\section{算法的可终止性和计算复杂性}
+
 \label{chp4:sect:complex}
 已有结果表明，转换过程和归结过程会终止\cite{zhang2014resolution}。此外，$Remove\_atoms$、$Remove\_index$、替换$V'$中的原子命题和$T_{\CTL}$过程都会终止，因此算法~\ref{alg:compute:forgetting:by:Resolution}会终止。其具体的时间和空间复杂性如下面的结论所示。
 
@@ -621,7 +628,6 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 %综上所述，算法~\ref{alg:compute:forgetting:by:Resolution}大多数情况下能计算出SNC（WSC），且当需要遗忘的原子个数很少或公式长度较小的时候计算效率很高。
 
 \section{本章小结}\label{chapter04-conclusion}
-kdjfskdfjwiequroewqrjklsef
 
-本章针对差分隐私数据发布中的隐私保护问题，借鉴Shannon信息论基本通信模型，在隐私与数据效用的度量基础上，利用率失真理论构建了隐私与失真的最优化模型，研究了满足数据质量损失约束条件的互信息隐私最优化机制问题，给出差分隐私数据发布的互信息隐私优化模型。随后，在数据发布的隐私通信模型中，考虑了隐私攻击者可能具有的关联辅助背景知识对互信息隐私泄露的影响，提出了基于联合事件的最小化互信息隐私泄露的优化模型。对于模型求解计算信道条件概率分布的问题，利用拉格朗日乘子法和凸问题的KKT最优性条件，给出解的参量表达式。在迭代算法计算方面，基于率失真函数求解的Blahut-Arimoto算法设计了最优化信道条件概率的迭代求解算法。最后，通过真实数据集上的实验结果，阐述了本章理论部分的研究成果，分析了所提出模型及算法的有效性及优势。
+本章探索了如何使用\citeauthor{zhang2014resolution}提出的归结系统计算$\CTL$下的遗忘。为此，首先使用\citeauthor{zhang2014resolution}提出的转换规则将$\CTL$公式转换成$\CTLsnf$子句的集合，这一步骤在第\ref{chapter02}章讲述$\CTL$的标准形式时已经给出。基于此，使用归结规则在要遗忘的原子命题集合上做穷尽的归结。然后提出几个互模拟等价的消除索引的等式消除索引，并提出一般化的Ackermann引理用于移除一些新引入的原子命题。最后，给出了计算遗忘的算法，并分析了算法的复杂性，表明了使用该算法计算遗忘的时间和空间复杂性关于公式和要遗忘的原子命题的个数是指数时间的。
 

@@ -507,7 +507,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	
 \end{proof}
 
-\section{遗忘理论的封闭性}
+\section{遗忘理论的封闭性及复杂性结果}
 当给定的$\CTL$公式的长度（字符的个数）为$n$，由小模型理论可知定义在状态个数为$k=n8^n$的状态空间${\cal S}=\{s_1,s_2,\dots, s_k\}$上的初始结构就能保证公式的可满足性~\cite{DBLP:journals/jcss/EmersonH85}。
 对于其他拥有同样大小的状态空间上的任意初始$\MPK$-结构，都能在${\cal S}$状态空间上找到一个初始$\MPK$-结构与之互模拟，且由定理~\ref{CF}可知他们有相同的特征公式。
 因此，只有有限个初始$\MPK$-结构作为该公式的候选模型。因此下面结论成立。
@@ -531,6 +531,42 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	\bigvee_{{\cal K}\in  \{{\cal K}'\mid \exists {\cal K}''\in\Mod(\phi)\ \text{ and }\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
 \end{equation*}
 
+
+下面分析遗忘在$\CTL$段$\CTL_{\ALL\FUTURE}$下各种任务的复杂性结果，其中$\CTL_{\ALL\FUTURE}$表示$\CTL$公式只包含时序算子$\ALL \FUTURE$的子类。
+这一类公式在并发系统中的互斥和等待等属性描述中有重要作用~\cite{Baier:PMC:2008}，尽管这类公式是相对简单的，但是下面将要说明判定一个模型是否为从此类公式中遗忘掉原子命题集合得到的结果的模型是$\textsc{NP}$-完全的。
+\begin{proposition}[模型检测]
+	\label{modelChecking}
+	给定一个结构 $(\Hm,s_0)$、原子命题集合$V\subseteq{\cal A}$ 和公式 $\varphi \in \CTL_{\ALL\FUTURE}$，判定 $(\Hm,s_0) \models^? \CTLforget(\varphi, V)$ 是 \textsc{NP}-完全的。
+\end{proposition}
+
+关于遗忘的逻辑蕴涵问题也是值得考虑的，下面讨论$\CTL_{\ALL\FUTURE}$段下关于遗忘的逻辑蕴涵的复杂性。
+
+\begin{theorem}[Entailment]
+	\label{thm:comF}
+	令 $\varphi$ 和 $\psi$ 为$\CTL_{\ALL \FUTURE}$中的两个公式， $V$ 为原子命题的集合。则：
+	\begin{itemize}
+		\item[(i)] 判定  $\CTLforget(\varphi, V ) \models^? \psi$ 是 co-$\textsc{NP}$-完全的，
+		\item[(ii)] 判定  $\psi \models^? \CTLforget(\varphi, V)$ 是 $\Pi_2^{\textsc{P}}$-完全的，
+		\item[(iii)] 判定 $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)$ 是 $\Pi_2^{\textsc{P}}$-完全的。
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	(i) and (iii) is moved to supplementary material due to space restrictions.
+	(ii) Membership: We consider the complement of the
+	problem. Guess an initial \MPK-structure $(\Hm, s_0)$ which has  polynomial size in the size of $\psi$ satisfying $\psi$ and check $(\Hm,s_0)$ $\not \models \CTLforget($ $\varphi$, $V)$. By Proposition~\ref{modelChecking}, it is in $\Sigma_2^{\textsc{P}}$. So the original problem is in $\Pi_2^{\textsc{P}}$. Hardness: Let $\psi \equiv \top$. Then the problem is reduced to decide the validity of  $\CTLforget(\varphi, V )$. Since propositional forgetting is a special case by Theorem~\ref{thm:PL:CTL}, the hardness  follows from the proof of Proposition 24 in~\cite{DBLP:journals/jair/LangLM03}.
+\end{proof}
+
+
+
+定理~\ref{thm:comF}蕴涵下列结论。
+\begin{corollary}
+	令 $\varphi$ 和 $\psi$ 为 $\CTL_{\ALL \FUTURE}$中的两个公式，$V$原子公式的集合。则
+	\begin{itemize}
+		\item[(i)] 判定 $\psi \equiv^?\CTLforget(\varphi, V)$ 是 $\Pi_2^{\textsc{P}}$-完全的，
+		\item[(ii)] 判定 $\CTLforget(\varphi, V) \equiv^? \varphi$ 是 co-$\textsc{NP}$-完全的，
+		\item[(iii)] 判定 $\CTLforget(\varphi, V) \equiv^? \CTLforget(\psi, V)$ 是$\Pi_2^{\textsc{P}}$-完全的。
+	\end{itemize}
+\end{corollary}
 
 %在上述的遗忘理论的定义中说明了如果公式$\psi$的任意一个模型${\cal K}$都能找到$\varphi$的一个模型${\cal K}'$使得${\cal K} \lrto_V {\cal K}'$，则称$\psi$为从$\varphi$中遗忘掉$V$中原子命题后得到的结果。为刻画S5逻辑下该概念的直观含义，Zhang等人提出了如下遗忘理论特性——这些特性被称为\emph{遗忘理论公设}（forgetting postulates）~\cite{Yan:AIJ:2009}。
 %给定$\CTL$公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$和原子命题集合$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，遗忘理论公设如下：
@@ -576,10 +612,50 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 %	另一方面，由 (\W) 和 (\textbf{IR})可知$\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \varphi'$。因此，$\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ and } \IR(\phi, V)\}$。
 %\end{proof}
 
+
 \section{基于模型的遗忘理论计算方法}
+The technical developments we have presented in previous sections naturally induce a procedure to compute forgetting in CTL. We think that it is useful to outline such a procedure explicitly in the form of an algorithm.  It is a model-based approach (presented in Algorithm~\ref{alg:compute:forgetting:by:VB}); that is,  it will compute the forgetting applied to a formula, simply  by considering all the possible models of that formula.  Its correctness is guaranteed by Lemma~\ref{lem:models:formula} and Theorem~\ref{CF}.
+
+\begin{algorithm}[tb]
+	\caption{\small A Model-based \CTL\ Forgetting Procedure}
+	\label{alg:compute:forgetting:by:VB}
+	\LinesNumbered
+	\KwIn{A \CTL formula $\varphi$ and a set $V$ of atoms}
+	\KwOut{$\CTLforget(\varphi, V)$}% ????
+	$\psi \lto \bot$\;
+	\ForEach{initial \MPK-structure $\cal K$ (over $\cal A$ and $\cal S$)}{
+		\lIf{${\cal K}\not\models\varphi$}{{\bf continue}} \\
+		\ForEach{initial \MPK-structure ${\cal K}'$ with ${\cal K}\lrto_{ V}{\cal K}'$}{
+			$\psi \lto \psi \lor {\cal F}_{\overline V}({\cal K}')$\;
+		}
+	}
+	\Return $\psi$\;
+\end{algorithm}
+
+
+
+
+
+The example we give below echoes the initial example which was given in the introduction, and finalizes the running example with a simple intuition of forgetting. 
+\begin{example}\label{ex:6}
+	Recall the \MPK-structure ${\cal K}_1$  given in Figure~\ref{v1uv2}, and assume that we are given a property $\alpha = \EXIST\FUTURE(se \wedge sp)$. It is easy to see that ${\cal K}_1$ in Figure~\ref{v1uv2} satisfy $\alpha$. If $sp$ is intended to be removed, i.e., forgetting  $sp$ from $\alpha$,  then  $\CTLforget(\alpha,\{ sp\}) \equiv \EXIST\FUTURE se$. Hence, the company can use the new specification $\EXIST\FUTURE se$ to guide the new production process (which guarantees that the sedan car is eventually produced).
+\end{example}
+
+
+As we will show below, computing the forgetting by going through all the models is not very efficient, as one might expect. However, settling it is important from a theoretical point of view i.e., to see how costly is the naive approach. 
+
+\begin{proposition}\label{pro:time:alg1}
+	Let $\varphi$ be a \CTL\ formula and $V\subseteq \Ha$ with $|{\cal S}|=m$, $|\Ha|=n$ and $|V|=x$. Then the space complexity is $O((n-x)m^{2(m+2)}2^{nm}  \log m)$ and the time complexity of Algorithm~\ref{alg:compute:forgetting:by:VB} is at least the same as the space.
+\end{proposition}
+
+
+As expected, Algorithm~\ref{alg:compute:forgetting:by:VB} has a high cost; namely, \textsc{ExpSpace} complexity in the size of the state space and $\Ha$, which does not look encouraging. However, we believe that settling this result is important both from a theoretical and a practical point of view. Theoretically, it gives us a picture about the worst case, and urges us to come up with more efficient syntactical approaches which is a part of our future agenda. Moreover, we believe that model-based investigation and some of the structural observations we have made provide us with  informative valuable insights, which in turn could be useful in designing future algorithms which can exploit these observations, and potentially could lead to even efficient approximations with provably good bounds. Such future developments might prove important in developing practical algorithms as well.  
+
 
 
 
 
 \section{本章小结}\label{sec:chapter05-conclusion}
+dfjlasdjfleajf;jfojajfjsfdjas;lfja;s
+
 本章针对差分隐私数据收集中多维数据处理的隐私脆弱性和有效性问题，为了权衡隐私泄露与数据质量损失，利用信息论的方法提出了有序随机响应扰动(ORRP)方案。首先，对于元组的多维属性使用分治策略思想分解元组属性，构建本地扰动的独立并联信道模型。其次，针对单属性分量的隐私保护问题，基于信息论的度量方法形式化数据质量损失约束前提下最小化隐私信息泄露的最优化模型，用于计算最优概率密度函数(PDF)。然后，以B-A为基本构建模块设计ORRP，利用上述PDF实现有序随机响应，并给出算法描述。最后，给出理论分析和真实数据集上的实验结果。
