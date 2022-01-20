@@ -648,31 +648,37 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	令 $\varphi$ 为$\CTL$公式，$V\subseteq \Ha$为原子命题集合，状态空间的大小为 $|{\cal S}|=m$， $|\Ha|=n$ 和 $|V|=x$。则使用算法\ref{alg:compute:forgetting:by:VB}计算从$\varphi$中遗忘掉$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 \end{proposition}
 \begin{proof}
-假定每个状态或原子命题占据$\log m$的空间且$n\leq m$，则一个状态对$(s,s')$占据$2*\log m$位。对任意的$B \subseteq {\cal S}$ 且$s_0\in B$，构造如下初始Kripke结构$(\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$，则$R$中至多有$\frac{|B|^2}{2}$个状态对且$L$中至多$|B|*n$个$(s,A)$对（$A\subseteq \Ha$）。因此，$(\Hm,s_0)$至多占据$(|B|+|B|^2+|B|*n)*\log m$位。此外，对于状态集合$B$，初始状态有$|B|$种选择，有$|B|^{|B|}$种关系$R$，$(2^n)^{|B|}$种标签函数$L$。
+假定每个状态或原子命题占据$\log m$的空间且$n\leq m$，则一个状态对$(s,s')$占据$2*\log m$位（bit）。对任意的$B \subseteq {\cal S}$ 且$s_0\in B$，构造如下初始结构$(\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$，则$R$中至多有$\frac{|B|^2}{2}$个状态对且$L$中至多$|B|*n$个$(s,A)$对（$A\subseteq \Ha$）。因此，$(\Hm,s_0)$至多占据$(|B|+|B|^2+|B|*n)*\log m$位。此外，对于状态集合$B$，初始状态有$|B|$种选择，有$|B|^{|B|}$种关系$R$，$(2^n)^{|B|}$种标签函数$L$。
+
+在最坏的情形下（即$|B|=m$），可由构成$m * (m^m * 2^{nm} * m)$个初始结构。因此，最多有$m^{m+2} * 2^{nm}$个初始结构，且最多花费$(m^{m+2} * 2^{nm} * (m + m^2 + nm))* \log m$位。
+
+令 $k = n-x$，对任意有$i\geq 1$个状态的初始结构${\cal K} = (\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$。
+在最坏的情形下（即$ch(\Hm,V) = i$时），可以花费$N(i) = P_i(s_0) + i * (P_i(s) + i *P_i(s'))$位来存储${\cal K}$在$\overline{V}$上的特征公式。
+其中$s',s\in B$，$P_i(y)$是存储${\cal F}_{\overline{V}}(\Tr_i(y))$（$y\in B$）所用的空间（这里假定$\EXIST\NEXT$和$\ALL\NEXT$使用了相同的存储单位）。
+
+${\cal F}_{\overline{V}}(\Tr_i(y))$ （$0\leq n \leq i$）被递归地定义如下：
+\begin{align*}
+	&(1) n=0,  \qquad P_0(y) = k\\
+	&(2) n=1, \qquad  P_1(y) = k + i*k = k + i*P_0(y)\\
+	&(3) n=2, \qquad P_2(y) = k + i*(k + i*k) = k+i*P_1(y)\\
+	& \dots \qquad \qquad \dots\\
+	&(i+1) n = i, \quad P_i(y) = k + i * P_{i-1}(y).
+\end{align*}
+
+因此，有
+\begin{align*}
+	P_i(y) & = k + i*k + i^2 * k + \dots + i^i * k = \frac{i^i -1}{i-1} k,\\
+	N(i) & = P_i(s_0) + i* (P_i(s) + i * P_i(s'))\\
+	& = (i^2 + i +1) P_i(y) \\
+	& = (i^2 + i+1)\frac{i^i -1}{i-1} k.
+\end{align*}
 	
-	
-	
-	Let $k=n-x$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, i.e., $ch(\Hm,V)=i$, we will spend $N(i)$ space to store the characterizing formula. Where
-	\begin{align*}
-		& N(i)=(k+(\dots + (k + 2ik)*(2i))\dots *(2i))\\
-		& = (2i)^0k + 2ik + (2i)^2k+ \dots + (2i)^{(i-1)}k\\
-		& = \frac{(2i)^i -1}{2i-1} k.
-	\end{align*}
-	In the worst case, i.e., there is $m^{m+2}*2^{nm}$ initial \MPK-structures with $m$ nodes, we will spent $m^{m+2}*2^{nm}*N(m)$ bytes to store the result of forgetting.
-	
-	% It is obvious that computing the $V$-characterization number of any initial \MPK-structure $\cal K$ does not more than $O(i^2P)$ with $P$ expressing a polynomial function.
-	Therefore, the space complexity is $O((n-x)m^{2(m+1)}2^{nm})$ and the time complexity is at least the same as the space.
+在最坏的情形下（即具有$m$个状态的初始结构）有$m^{m+2} * 2^{nm}$初始结构，需要$(m^{m+2} * 2^{nm} * N(m)) * \log m$位来存储遗忘的结果。
+
+因此，空间复杂性为$O((n-x)m^{2(m+2)}2^{nm}* \log m)$。
 \end{proof}
 
 
-
-As expected, Algorithm~\ref{alg:compute:forgetting:by:VB} has a high cost; namely, \textsc{ExpSpace} complexity in the size of the state space and $\Ha$, which does not look encouraging. However, we believe that settling this result is important both from a theoretical and a practical point of view. Theoretically, it gives us a picture about the worst case, and urges us to come up with more efficient syntactical approaches which is a part of our future agenda. Moreover, we believe that model-based investigation and some of the structural observations we have made provide us with  informative valuable insights, which in turn could be useful in designing future algorithms which can exploit these observations, and potentially could lead to even efficient approximations with provably good bounds. Such future developments might prove important in developing practical algorithms as well.  
-
-
-
-
-
 \section{本章小结}\label{sec:chapter05-conclusion}
-dfjlasdjfleajf;jfojajfjsfdjas;lfja;s
+本章讨论了一种基于模型的计算约束$\CTL$下遗忘的计算。为此，本章第一节首先提出了一种约束$V$-互模拟概念，并证明了该约束$V$-互模拟与$V$-互模拟在有限结构下是等价的。此外，定义了给定深度的计算树在给定原子命题集合上的特征公式，由此定义了有限结构的特征公式。结论表明初始结构能够满足给定的特征公式当且仅当该初始结构与特征公式对应的初始结构在给定原子命题集合上互模拟。基于此，得出了任意公式语义等价于其所有模型的特征公式的吸取，因为可以计算遗忘的结果。最后，本章给出了基于模型的计算遗忘的算法，并分析该算法关于公式的大小是指数空间的。
 
-本章针对差分隐私数据收集中多维数据处理的隐私脆弱性和有效性问题，为了权衡隐私泄露与数据质量损失，利用信息论的方法提出了有序随机响应扰动(ORRP)方案。首先，对于元组的多维属性使用分治策略思想分解元组属性，构建本地扰动的独立并联信道模型。其次，针对单属性分量的隐私保护问题，基于信息论的度量方法形式化数据质量损失约束前提下最小化隐私信息泄露的最优化模型，用于计算最优概率密度函数(PDF)。然后，以B-A为基本构建模块设计ORRP，利用上述PDF实现有序随机响应，并给出算法描述。最后，给出理论分析和真实数据集上的实验结果。

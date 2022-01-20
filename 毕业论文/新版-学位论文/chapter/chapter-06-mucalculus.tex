@@ -310,7 +310,7 @@ $\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得�
 下面是关于$\mu$-演算的遗忘算子的其他性质。
 
 
-\begin{proposition}[Modularity]\label{chapter06:disTF}  给定$\mu$-句子 $\varphi$、原子命题的集合$V$ 和原子命题 $p$且 $p \notin V$，则：
+\begin{proposition}[模块性]\label{chapter06:disTF}  给定$\mu$-句子 $\varphi$、原子命题的集合$V$ 和原子命题 $p$且 $p \notin V$，则：
 	\[
 	\Muforget(\varphi, \{p\} \cup V) \equiv \Muforget(\Muforget(\varphi, \{p\}), V).
 	\]
@@ -441,15 +441,15 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题�
 
 %Nevertheless, we will show that the model checking problem of forgetting is intractable even if the given formula is disjunctive.
 尽管如此，关于遗忘的模型检测（即：检查一个结构是否为从$\mu$-句子中遗忘掉某个原子命题的集合的模型）也是困难的。
-\begin{proposition}[Model Checking]\label{chapter06:pro:MC}
-	给定一个有限的 Kripke structure  $\Hm$、一个 $\mu$-句子 $\varphi$和原子命题的集合 $V\subseteq \Ha$。有：
+\begin{proposition}[模型检测]\label{chapter06:pro:MC}
+	给定一个有限的 Kripke 结构  $\Hm$、一个 $\mu$-句子 $\varphi$和原子命题的集合 $V\subseteq \Ha$。有：
 	\begin{itemize}
 		\item[(i)] 判定 $\Hm \models^? \Muforget(\varphi, V)$ 在$\textsc{Exptime}$中；
 		\item[(ii)] 若 $\varphi$ 是一个吸取 $\mu$-公式，则判定 $\Hm \models^? \Muforget(\varphi, V)$在 \textsc{NP}$\cap$co-\textsc{NP}中。
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	对于一个$\mu$-公式$\varphi$，如果该公式为一个吸取$\mu$-公式可在多项式时间内构造一个 $\mu$-自动机（也叫模态自动机~\cite{bradfield2018mu}） $A_{\varphi}$，否则需要指数时间构造其对应的$\mu$-自动机$\textsc{Exptime}$\footnote{Personal communication: Giovanna D'Agostino, 2020.}.
+	对于一个$\mu$-公式$\varphi$，如果该公式为一个吸取$\mu$-公式可在多项式时间内构造一个 $\mu$-自动机（也叫模态自动机~\cite{bradfield2018mu}） $A_{\varphi}$，否则需要指数时间构造其对应的$\mu$-自动机$\textsc{Exptime}$\footnote{个人通信: Giovanna D'Agostino, 2020.}.
 	这里证明(ii)，(i)可以类似地证明。
 	
 	令$A_{\varphi}$为一个$\mu$-自动机 且满足对任意的 Kripke ${\cal N}$， %there is
@@ -522,6 +522,5 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题�
 	\end{itemize}
 \end{corollary}
 \section{本章小结}\label{sec:chapter06-conclusion}
-sljfaejijoqthfnhal;fkaf
 
-本章针对差分隐私数据收集应用中存在的策略型攻击问题，利用信息论、博弈均衡理论研究了隐私防护者与隐私攻击者的理性策略选择，提出了隐私保护的攻防博弈(PPAD)模型，以实现隐私与数据效用均衡。首先，基于信息论度量方法分析差分隐私保护系统中隐私保护者和攻击者的隐私目标，形式化表述为互信息隐私的极大极小问题。其次，针对上述提出的问题，考虑策略型的隐私攻击者和防护者，提出隐私保护的攻防博弈模型，并具体为二人的零和博弈模型。随后，给出博弈的凹凸性以及均衡分析。进一步，为了求解博弈模型鞍点，设计了策略优化选择算法。最后，通过实验阐述了所提出的方案可以用于比较等价的隐私机制，并阐述了隐私量化是最坏情况下的隐私泄露，也即是，隐私防护者的最大隐私泄露。
+本章介绍了$\mu$-演算下的遗忘。$\mu$-演算是一种比$\CTL$表达能力强的逻辑系统，本章说明了$\mu$-演算下的遗忘是封闭的且与均匀插值是一对对偶概念。此外，本章也研究了$\mu$-演算下的代数属性，表明$\mu$-演算下的遗忘也具有模块性、交换性和同质性。表达性定理给出了遗忘与四条基本准则之间当且仅当的关系。最后，遗忘在模型检测和推理问题上的复杂性结果表明遗忘操作是很困难的，即指数时间的。
