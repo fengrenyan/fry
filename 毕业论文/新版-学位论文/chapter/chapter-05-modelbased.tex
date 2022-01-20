@@ -614,7 +614,8 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 
 \section{基于模型的遗忘理论计算方法}
-The technical developments we have presented in previous sections naturally induce a procedure to compute forgetting in CTL. We think that it is useful to outline such a procedure explicitly in the form of an algorithm.  It is a model-based approach (presented in Algorithm~\ref{alg:compute:forgetting:by:VB}); that is,  it will compute the forgetting applied to a formula, simply  by considering all the possible models of that formula.  Its correctness is guaranteed by Lemma~\ref{lem:models:formula} and Theorem~\ref{CF}.
+前几节中讲述的过程显然给出了一种计算遗忘的方法，本届将这些过程组织起来构成一个算法。该算法与第\ref{cha4:sec:alg}节中基于语法的算法不同，它是一种基于模型的算法（算法~\ref{alg:compute:forgetting:by:VB}），也就是说本节的算法通过计算所有可能的模型来计算遗忘，且其正确性可由引理\ref{lem:models:formula}和定理\ref{CF}保证。
+
 
 \begin{algorithm}[tb]
 	\caption{\small A Model-based \CTL\ Forgetting Procedure}
@@ -634,19 +635,35 @@ The technical developments we have presented in previous sections naturally indu
 
 
 
-
-
-The example we give below echoes the initial example which was given in the introduction, and finalizes the running example with a simple intuition of forgetting. 
+下面的例子来源于研究背景和意义部分，这里给出如何计算从规范中遗忘掉一些原子命题。 
 \begin{example}\label{ex:6}
-	Recall the \MPK-structure ${\cal K}_1$  given in Figure~\ref{v1uv2}, and assume that we are given a property $\alpha = \EXIST\FUTURE(se \wedge sp)$. It is easy to see that ${\cal K}_1$ in Figure~\ref{v1uv2} satisfy $\alpha$. If $sp$ is intended to be removed, i.e., forgetting  $sp$ from $\alpha$,  then  $\CTLforget(\alpha,\{ sp\}) \equiv \EXIST\FUTURE se$. Hence, the company can use the new specification $\EXIST\FUTURE se$ to guide the new production process (which guarantees that the sedan car is eventually produced).
+	对于图\ref{BVM}中的 ${\cal K}_1$，假定一个已知的规范（性质）为$\alpha = \EXIST\FUTURE(se \wedge sp)$。显然 ${\cal K}_1$满足 $\alpha$。若想移除掉 $sp$，即从 $\alpha$中遗忘掉 $sp$ ，则 $\CTLforget(\alpha,\{ sp\}) \equiv \EXIST\FUTURE se$。此时，该汽车制造公司可以用新的规范$\EXIST\FUTURE se$（这保证驾车最终会被生产）引导未来汽车的生产。
 \end{example}
 
 
-As we will show below, computing the forgetting by going through all the models is not very efficient, as one might expect. However, settling it is important from a theoretical point of view i.e., to see how costly is the naive approach. 
+正如下面命题展示的那样，通过计算所有可能的模型是非常低效的，但是这为从理论的角度探索遗忘有重要作用。
+
 
 \begin{proposition}\label{pro:time:alg1}
-	Let $\varphi$ be a \CTL\ formula and $V\subseteq \Ha$ with $|{\cal S}|=m$, $|\Ha|=n$ and $|V|=x$. Then the space complexity is $O((n-x)m^{2(m+2)}2^{nm}  \log m)$ and the time complexity of Algorithm~\ref{alg:compute:forgetting:by:VB} is at least the same as the space.
+	令 $\varphi$ 为$\CTL$公式，$V\subseteq \Ha$为原子命题集合，状态空间的大小为 $|{\cal S}|=m$， $|\Ha|=n$ 和 $|V|=x$。则使用算法\ref{alg:compute:forgetting:by:VB}计算从$\varphi$中遗忘掉$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 \end{proposition}
+\begin{proof}
+假定每个状态或原子命题占据$\log m$的空间且$n\leq m$，则一个状态对$(s,s')$占据$2*\log m$位。对任意的$B \subseteq {\cal S}$ 且$s_0\in B$，构造如下初始Kripke结构$(\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$，则$R$中至多有$\frac{|B|^2}{2}$个状态对且$L$中至多$|B|*n$个$(s,A)$对（$A\subseteq \Ha$）。因此，$(\Hm,s_0)$至多占据$(|B|+|B|^2+|B|*n)*\log m$位。此外，对于状态集合$B$，初始状态有$|B|$种选择，有$|B|^{|B|}$种关系$R$，$(2^n)^{|B|}$种标签函数$L$。
+	
+	
+	
+	Let $k=n-x$, for any initial \MPK-structure ${\cal K}=(\Hm, s_0)$ with $i\geq 1$ nodes, in the worst, i.e., $ch(\Hm,V)=i$, we will spend $N(i)$ space to store the characterizing formula. Where
+	\begin{align*}
+		& N(i)=(k+(\dots + (k + 2ik)*(2i))\dots *(2i))\\
+		& = (2i)^0k + 2ik + (2i)^2k+ \dots + (2i)^{(i-1)}k\\
+		& = \frac{(2i)^i -1}{2i-1} k.
+	\end{align*}
+	In the worst case, i.e., there is $m^{m+2}*2^{nm}$ initial \MPK-structures with $m$ nodes, we will spent $m^{m+2}*2^{nm}*N(m)$ bytes to store the result of forgetting.
+	
+	% It is obvious that computing the $V$-characterization number of any initial \MPK-structure $\cal K$ does not more than $O(i^2P)$ with $P$ expressing a polynomial function.
+	Therefore, the space complexity is $O((n-x)m^{2(m+1)}2^{nm})$ and the time complexity is at least the same as the space.
+\end{proof}
+
 
 
 As expected, Algorithm~\ref{alg:compute:forgetting:by:VB} has a high cost; namely, \textsc{ExpSpace} complexity in the size of the state space and $\Ha$, which does not look encouraging. However, we believe that settling this result is important both from a theoretical and a practical point of view. Theoretically, it gives us a picture about the worst case, and urges us to come up with more efficient syntactical approaches which is a part of our future agenda. Moreover, we believe that model-based investigation and some of the structural observations we have made provide us with  informative valuable insights, which in turn could be useful in designing future algorithms which can exploit these observations, and potentially could lead to even efficient approximations with provably good bounds. Such future developments might prove important in developing practical algorithms as well.  
