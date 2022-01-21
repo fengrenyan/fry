@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  20 JAN 2022 20:24
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  21 JAN 2022 17:38
 entering extended mode
 **new基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -2163,11 +2163,11 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8] <./figures/chapter01_2.jpg, id=864, 430.54852pt x 414.28778pt>
+[8] <./figures/chapter01_2.jpg, id=870, 430.54852pt x 414.28778pt>
 File: ./figures/chapter01_2.jpg Graphic file (type jpg)
 
 <use ./figures/chapter01_2.jpg>
-Package pdftex.def Info: ./figures/chapter01_2.jpg used on input line 253.
+Package pdftex.def Info: ./figures/chapter01_2.jpg used on input line 255.
 (pdftex.def)             Requested size: 317.0764pt x 305.10788pt.
 
 
@@ -2513,6 +2513,12 @@ C70/rm/m/n/10.54/ff |
  []
 
 
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34]
 Overfull \hbox (1.49113pt too wide) in paragraph at lines 930--931
 []\C70/rm/m/n/12.05/75 1 \C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/54 } \C70/rm/
 m/n/12.05/98 �\OT1/ptm/m/n/12.05 5\C70/rm/m/n/12.05/54 �\OT1/ptm/m/n/12.05 3$[]
@@ -2526,12 +2532,6 @@ m/m/n/12.05/69 � \C70/rm/m/n/12.05/5f �|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.
  []
 
 
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[34]
 Overfull \hbox (7.04678pt too wide) in paragraph at lines 958--958
 []|$\OT1/ztmcm/m/n/10.54  \OML/ztmcm/m/it/10.54 ; V; q$|\C70/rm/m/n/10.54/ff |
 
@@ -2543,16 +2543,16 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[35])
-("E:\（博士）我的资料\New Git\fry\毕业论文\新版-学位论文\chap
-ter/chapter-03-forgCTLproperty.tex"
+[35]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[36]
+[36])
+("E:\（博士）我的资料\New Git\fry\毕业论文\新版-学位论文\chap
+ter/chapter-03-forgCTLproperty.tex"
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4532,13 +4532,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37481 strings out of 495354
- 621089 string characters out of 3183859
- 783683 words of memory out of 3000000
- 38129 multiletter control sequences out of 15000+200000
- 279063 words of font info for 800 fonts, out of 3000000 for 9000
+ 37499 strings out of 495354
+ 621505 string characters out of 3183859
+ 783626 words of memory out of 3000000
+ 38151 multiletter control sequences out of 15000+200000
+ 281731 words of font info for 809 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,2632b,2606s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,2632b,2604s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -4609,16 +4609,16 @@ ts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Win
 dows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf
 ><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/si
 mkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/
-Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/
-Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.
-ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts
-/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windo
-ws/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><
-C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simk
-ai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fo
+Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simhei.ttf><C:/
+Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.
+ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts
+/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windo
+ws/Fonts/simsun.ttc><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><
+C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/sims
+un.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fo
 nts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Wi
-ndows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.tt
-c><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/s
+ndows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.tt
+f><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/s
 imsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows/Fonts/simsun.ttc><C:/Windows
 /Fonts/simsun.ttc><C:/Windows/Fonts/simhei.ttf><C:/Windows/Fonts/simkai.ttf><C:
 /Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai.ttf><C:/Windows/Fonts/simkai
@@ -4692,7 +4692,7 @@ bol/usyr.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/f
 onts/type1/urw/times/utmbi8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.p
 fb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on new基于遗忘的反应式系统最弱充分条件研究.pdf
- (132 pages, 2808922 bytes).
+ (132 pages, 2812078 bytes).
 PDF statistics:
  2810 PDF objects out of 2984 (max. 8388607)
  499 named destinations out of 1000 (max. 500000)
