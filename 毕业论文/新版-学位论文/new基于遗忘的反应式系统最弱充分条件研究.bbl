@@ -1,4 +1,4 @@
-\begin{thebibliography}{95}
+\begin{thebibliography}{97}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -409,12 +409,23 @@ ALLEN~J~F, FIKES~R, SANDEWALL~E.
   22-25, 1991.
 \newblock [S.l.]: Morgan Kaufmann, 1991: 387-394.
 
+\bibitem[陆钟万(1989)]{luzhongwan1989}
+陆钟万.
+\newblock 面向计算机科学的数理逻辑\allowbreak[M].
+\newblock [出版地不详]: 北京大学出版社, 1989.
+
 \bibitem[Gabbay et~al.(2008{\natexlab{b}})Gabbay, Schmidt, and
   Szalas]{gabbay2008second}
 GABBAY~D~M, SCHMIDT~R, SZALAS~A.
 \newblock Second order quantifier elimination: Foundations, computational
   aspects and applications\allowbreak[M].
 \newblock [S.l.]: College Publications, 2008{\natexlab{b}}.
+
+\bibitem[Kripke(1963)]{kripke1963semantical}
+KRIPKE~S~A.
+\newblock Semantical analysis of modal logic i normal modal propositional
+  calculi\allowbreak[J].
+\newblock Mathematical Logic Quarterly, 1963, 9\penalty0 (5-6):\penalty0 67-96.
 
 \bibitem[Browne et~al.(1988)Browne, Clarke, and
   Gr{\"u}mberg]{browne1988characterizing}

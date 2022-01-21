@@ -19,7 +19,7 @@ Kripke结构作为一种表示转换系统（transition system）的数学模型
 %连接符号：$\neg$（否定），$\wedge$（合取），$\vee$（吸取），$\rto$（蕴涵），$\lrto$（等值于）；
 %标点符号：(（左括号），)（右括号）。
 
-${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}^p)$和${\cal F}({\cal L}^p)$。其中，$Atom({\cal L}^p)$是命题符号的集合，且$\varphi\in {\cal F}({\cal L}^p)$当且仅当它能由（有限次使用）以下的三条规则生成\cite{luzhongwan1989}：
+${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}^p)$和${\cal F}({\cal L}^p)$。其中，$Atom({\cal L}^p)$ 是命题符号的集合，且$\varphi\in {\cal F}({\cal L}^p)$当且仅当它能由（有限次使用）以下的三条规则生成\cite{luzhongwan1989}：
 \begin{itemize}
 	\item 如果$\varphi\in Atom({\cal L}^p)$，则$\varphi \in {\cal F}({\cal L}^p)$。
 	\item 如果$\varphi \in {\cal F}({\cal L}^p)$，则$(\neg \varphi)\in {\cal F}({\cal L}^p)$。
@@ -48,7 +48,7 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 \begin{definition}[真假赋值]\label{def:pro:interp}
 	真假赋值是以所有命题符号的集为定义域，以真假值的集$\{0,1\}$为值域的函数$v:{\cal A}\rto \{0,1\}$。
 \end{definition}
-为了方便，后文中也将$\top$代表$1$，$\bot$代表$0$（此时真假赋值为$v:\Ha \rto \{\bot, \top\}$），且满足对任意的真假赋值$v$都有$\top^v=1$和$\bot^v=0$。由该定义可知，一个真假赋值要同时给${\cal A}$中的所有命题符号指派一个真假值，所以真假赋值的个数为$2^{|{\cal A}|}$。真假赋值$v$给公式$\varphi$指派的值记作$\varphi^v$，可形式化定义为如下：
+为了方便，后文中也用$\top$代表$1$，$\bot$代表$0$（此时真假赋值为$v:\Ha \rto \{\bot, \top\}$），且满足对任意的真假赋值$v$都有$\top^v=\top$和$\bot^v=\bot$。由该定义可知，一个真假赋值要同时给${\cal A}$中的所有命题符号指派一个真假值，所以真假赋值的个数为$2^{|{\cal A}|}$。真假赋值$v$给公式$\varphi$指派的值记作$\varphi^v$，可形式化定义为如下：
 \begin{definition}[公式的真假值]\label{def:pro:vformula}
 	真假赋值$v$给公式指派的真假值递归定义如下：
 	\begin{itemize}
@@ -85,7 +85,7 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 		\right.$
 	\end{itemize}
 \end{definition}
-对于任意的命题公式$\varphi$和真假赋值$v$，当$\varphi^v=\top$时，称$v$是公式$\varphi$的一个模型，也可以记为$v \models \varphi$，读作$v$满足$\varphi$。一般地，当存在一个真假赋值$v$使得$v\models \varphi$，则称公式$\varphi$是\emph{可满足的}。如果$\varphi$是可满足的，且$\neg \varphi$是不可满足的，则称$\varphi$是\emph{有效的}。
+对于任意的命题公式$\varphi$和真假赋值$v$，当$\varphi^v=\top$时，称$v$是公式$\varphi$的一个\emph{模型}，也可以记为$v \models \varphi$，读作$v$\emph{满足}$\varphi$。一般地，当存在一个真假赋值$v$使得$v\models \varphi$，则称公式$\varphi$是\emph{可满足的}。如果$\varphi$是可满足的，且$\neg \varphi$是不可满足的，则称$\varphi$是\emph{有效的}。
 
 值得注意的是，命题逻辑的语义也可定义在“解释（interpretation）”上。一个\emph{解释}$I$是$\Ha$的子集。除了对原子命题$p\in \Ha$，$I$对公式的解释如真假赋值一样。在解释原子命题$p\in \Ha$上，$p^I$为真当且仅当$p\in I$。模型和可满足的定义与真假赋值的类似。
 
@@ -101,7 +101,7 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 令$\MPB = \neg \MPK \neg$，则$\MPB \varphi \in {\cal F}^{\Hm}$。其中，$\MPK$和$\MPB$叫做模态符号，分别表示“必然”和“可能”。
 
 \emph{可能世界语义}（或\emph{Kripke语义}）是标准的命题模态逻辑语义\cite{kripke1963semantical}。Kripke语义是定义在Kripke结构上的，一个Kripke结构是一个三元组$(S,R,L)$（下一节中将详细介绍）。
-其中，$S$是状态的非空集合，$R\subseteq R \times R$是可达性关系。特别地，当$R$是一个等价关系的时候（模态逻辑S5中），一个Kripke结构可以写成一个二元组$\tuple{W,w}$，其中$W$是状态的非空集合，$w$是$W$中的元素，每个状态是原子命题的集合。此时，称$\Hm=\tuple{W,w}$为一个$\MPK$-\emph{解释}（$\MPK$-interpretation）\cite{zhang2009knowledge}。
+其中，$S$是状态的非空集合，$R\subseteq R \times R$是可达性关系。特别地，当$R$是一个等价关系的时候（模态逻辑S5中），一个Kripke结构可以写成一个二元组$\tuple{W,w}$，其中$W$是状态的非空集合，$w$是$W$中的元素，每个状态是原子命题的集合。此时，称$\Hm=\tuple{W,w}$为一个$\MPK$-\emph{解释}（$\MPK$-interpretation）\cite{Yan:AIJ:2009}。
 
 %$\MPK-$解释和${\cal F}^{\Hm}$种公式的可满足关系被归纳定义如下：
 \begin{definition}\label{def:s5:interp}
