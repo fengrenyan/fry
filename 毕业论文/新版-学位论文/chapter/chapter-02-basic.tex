@@ -119,7 +119,7 @@ $\Hm=\tuple{W,w}$称为公式$\varphi$的$\MPK$-\emph{模型}（$\MPK$-model）�
 
 
 \subsection{Kripke结构的定义及相关术语}
-给一个可数无限索引的集合$\Ind$，一个初始$\Ind$-Kripke结构是一个五元组$\Hm=(S,R,L,[\_],s_0)$，其中：
+给定一个可数无限索引的集合$\Ind$，一个初始$\Ind$-Kripke结构是一个五元组$\Hm=(S,R,L,[\_],s_0)$，其中：
 \begin{itemize}
 	\item $S$是状态的非空集合，$s_0$是$\Hm$的初始状态（下面详细介绍）；
 	\item $R \subseteq S \times S$是状态转换函数，且对任意的$s\in S$，存在$s'\in S$使得$(s,s') \in R$；
@@ -133,31 +133,31 @@ Kripke结构$\Hm=(S,R,L)$上的{\em 路径}是$\Hm$上的状态构成的无限�
 $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^{\tuple{ind}}$（$ind \in \Ind$）是一条路劲$(s_0(=s),$ $s_{1},$ $s_{2},$ $\dots)$ 且对任意的$j \geq 0$有$(s_j, s_{j+1}) \in [ind]$。
 
 从初始$\Ind$-Kripke结构$\Hm$中去掉$[\_]$元素得到的结构称为初始Kripke结构；从初始$\Ind$-Kripke结构$\Hm$中去掉初始状态$s_0$得到的结构称为$\Ind$-Kripke结构；
-从初始$\Ind$-Kripke结构$\Hm$中同时去掉$[\_]$和$s_0$得到的结构称为Kripke结构。
+从初始$\Ind$-Kripke结构$\Hm$中同时去掉$[\_]$和$s_0$得到的结构称为Kripke结构，通常一个转换系统（transition system）能够被抽象为一个Kripke结构\cite{Baier:PMC:2008}。
 一个\emph{($\Ind$-)结构}是一个二元组${\cal K}=(\Hm, s)$，其中$\Hm$是一个初始($\Ind$-)Kripke结构，$s$是$\Hm$中的一个状态。
 如果$s$为$\Hm$上的初始状态，则称${\cal K}$为{\em 初始 ($\Ind$-)结构}。
 上面的关于(索引)路径的概念对于这些结构也可相似地定义。
  
-通常一个转换系统（transition system）能够被抽象为一个Kripke结构\cite{Baier:PMC:2008}。
 
 
 
 
-\emph{树}是一种只有一个根节点（没有其他节点指向且可达于其他节点的节点）无环图。
-给定一个初始结构$\Hm=(S,R,L,s_0)$和一个状态$s\in S$，定义在$\Hm$上以$s$为根节点的深度为为$n$（$n\ge 0$）的\emph{计算树}$\Tr_n^{\Hm}(s)$被递归定义如下\cite{browne1988characterizing}：
+
+\emph{树}是一种只有一个根节点（没有其他节点指向且可达于其他任意节点的节点）的无环图。
+给定一个初始Kripke结构$\Hm=(S,R,L,s_0)$和一个状态$s\in S$，定义在$\Hm$上以$s$为根节点的深度为为$n$（$n\ge 0$）的\emph{计算树}$\Tr_n^{\Hm}(s)$被递归定义如下\cite{browne1988characterizing}：
 \begin{itemize}
 	\item $\Tr_0^{\Hm}(s)$ 是只有一个节点$s$（其标签为$L(s)$）树。
 	\item $\Tr_{n+1}^{\Hm}(s)$是以$s$为根节点（标签为$L(s)$）的树，并且满足若$(s,s')\in R$，则节点$s$有一棵子树$\Tr_{n}^{\Hm}(s')$。
 \end{itemize}
 %深度为$n$的\emph{计算树}$\Tr_n^{\Hm}(s)$是定义在初始结构$\Hm=(S,R,L,s_0)$和状态$s\in S$上的一个分支结构
 
-一个初始结构$\Hm=(S,R,L,s_0)$和一个状态$s\in S$构成一个$\MPK$-\emph{结构}（或$\MPK$-解释），写作${\cal K}=(\Hm,s)$。
-在$\MPK$-结构${\cal K}=(\Hm,s)$中，若$s=s_0$，则称该$\MPK$-结构为\emph{初始$\MPK$-结构}，此时有${\cal K}=(\Hm,s_0)$。
+%一个初始Kripke结构$\Hm=(S,R,L,s_0)$和一个状态$s\in S$构成一个$\MPK$-\emph{结构}（或$\MPK$-解释），写作${\cal K}=(\Hm,s)$。
+%在$\MPK$-结构${\cal K}=(\Hm,s)$中，若$s=s_0$，则称该$\MPK$-结构为\emph{初始$\MPK$-结构}，此时有${\cal K}=(\Hm,s_0)$。
 
 
 
 \section{时序逻辑}
-时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化的系统的逻辑特性。由于软件和硬件的运行的本质是状态变化的过程，所以时态逻辑在软件程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时态逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用其他时态逻辑表示的[18]。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
+时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化的系统的逻辑特性。由于软件和硬件的运行的本质是状态变化的过程，所以时态逻辑在软件程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时态逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用其他时态逻辑表示的\textcolor{red}{[18]}。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
 \subsection{计算树逻辑（\CTL）}
 $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。这里给出带索引的$\CTL$公式定义，而$\CTL$公式是该种公式的子类。带索引的$\CTL$的语言${\cal L}$由下面的几类符号构成：
@@ -171,7 +171,7 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 	\item 时序操作符：$\NEXT$、$\FUTURE$、$\GLOBAL$、$\UNTILL$和$\UNLESS$，分别表示“下一个状态”、“将来某一个状态”、“将来所有状态”、“直到”和“除非”；
 	\item 标点符号：“(”和“)”。
 \end{itemize}
-带索引的$\CTL$公式（简称公式）的时序算子与$\CTL$公式的时序算子相同，是路径量词和时序操作符的组合（路径量词在前，时序操作符在后），如：$\ALL \NEXT$、$\EXIST \NEXT$、$\EXIST_{ind} \NEXT$、 $\ALL \FUTURE$等。
+带索引的$\CTL$公式（在不引起歧义是也叫做公式）的时序算子与$\CTL$公式的时序算子相同，是路径量词和时序操作符的组合（路径量词在前，时序操作符在后），如：$\ALL \NEXT$、$\EXIST \NEXT$、$\EXIST_{ind} \NEXT$、 $\ALL \FUTURE$等。
 此时，语言$\cal L$的\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
 	\begin{align*}
 	\phi  ::= & \ \start\mid \bot %\mid \top
@@ -208,7 +208,7 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 没有索引和$\start$的公式称为$\CTL$公式。
 此外，对于给定的公式$\varphi$，其否定范式（negation normal form, NNF）是将否定联结词“$\neg$”的出现通过上述定义变化到只出现在原子命题之前的形式。
 
-与经典命题逻辑一样，给联结符号规定优先级，有时候会带来意想不到的方便。带索引的$\CTL$中的联结符号的优先级如下序列所示，每个左边的联结符号优先于右边的联结符号：
+与经典命题逻辑一样，给联结符号规定优先级，有助于减少过多括号使用带来的符号冗余。带索引的$\CTL$中的联结符号的优先级如下序列所示，每个左边的联结符号优先于右边的联结符号：
 \begin{align*}
 	& \neg, \EXIST\NEXT, \EXIST\FUTURE, \EXIST\GLOBAL, \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL, \EXIST_{\tuple{ind}}\NEXT, \EXIST_{\tuple{ind}}\FUTURE, \EXIST_{\tuple{ind}}\GLOBAL
 	,\land, \lor,
@@ -219,7 +219,7 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 
 带索引的$\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
 \begin{definition}[带索引的$\CTL$的语义]\label{def:ctl:semantic}
-	给定带索引的$\CTL$公式$\varphi$，初始$\Ind$-结构$\Hm=(S,R,L,[\_],s_0)$和状态$s\in S$。$(\Hm,s)$与$\varphi$之间的可满足关系$(\Hm,s)\models \varphi$定义如下：
+	给定带索引的$\CTL$公式$\varphi$，初始$\Ind$-Kripke结构 $\Hm=(S,R,L,[\_],s_0)$ 和状态 $s\in S$。$(\Hm,s)$与$\varphi$之间的可满足关系$(\Hm,s)\models \varphi$定义如下：
 	\begin{itemize}
 		\item $({\cal M},s) \models \start$ 当且仅当 $s=s_0$；
 		\item $(\Hm,s) \not \models \bot$；%且$(\Hm, s) \models \top$；
@@ -249,7 +249,7 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 
 为了符号的统一，这里列出文中出现的一些记号的含义。给定公式$\varphi$，公式的所有模型构成的集合记为$\Mod(\varphi)$。此时就很容易定义公式的可满足性，即：如果$\Mod(\varphi)\not = \emptyset$，则称$\varphi$是\emph{可满足}的。给定两个公式$\varphi_1$和$\varphi_2$，若$\Mod(\varphi_1)\subseteq \Mod(\varphi_2)$，则称$\varphi_1$\emph{逻辑地蕴涵}$\varphi_2$，记为$\varphi_1\models \varphi_2$。特别地，当$\varphi_1\models \varphi_2$且$\varphi_2\models \varphi_1$时，即$\Mod(\varphi_1)= \Mod(\varphi_2)$，则称$\varphi_1$和$\varphi_2$为\emph{逻辑等值公式}（简称为\emph{等值公式}），记作$\varphi_1 \equiv \varphi_2$。
 值得注意的是，上述的记号也适用于讨论的对象为公式的集合的情形。
-此外，给定一个公式的集合$\Pi$和一个初始$\MPK$-结构$\cal K$，若对于$\Pi$中的任意一个公式$\varphi$都有${\cal K} \models \varphi$，则${\cal K} \models \Pi$。
+此外，给定一个公式的集合$\Pi$和一个初始$\Ind$-结构$\cal K$，若对于$\Pi$中的任意一个公式$\varphi$都有${\cal K} \models \varphi$，则${\cal K} \models \Pi$。
 
 对于给定的公式$\varphi$，将出现在$\varphi$中的原子命题的集合记为$\Var(\varphi)$。此外，给定公式$\varphi$和原子命题的集合$V$，如果存在一个公式$\psi$使得$\Var(\psi) \cap V = \emptyset$且$\varphi \equiv \psi$，那么说$\varphi$与$V$中的原子命题\emph{无关}，简称为\emph{$V$-无关}（ \emph{$V$-irrelevant}），写作$\IR(\varphi,V)$。
 一种特殊的形式是$\Var(\varphi) \subseteq V$，此时称$\varphi$为集合$V$上的公式。
@@ -1003,5 +1003,6 @@ SNC和WSC的定义最先由Lin提出~\cite{DBLP:journals/ai/Lin01}，这部分�
 
 
 \section{本章小结}
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-围绕本文的研究工作，本章首先介绍了隐私以及隐私泄露的定义，明确了本文中隐私保护的研究范畴，随后，介绍了差分隐私模型并给出标准形式的定义。其次，介绍了本文研究需要的Shannon信息论知识，包括基本通信模型、信息熵、条件熵、联合熵、互信息量等概念。在此基础上，对信息论中两个重要的不等式和率失真理论进行了简要的叙述。进一步，介绍了本文将使用的优化理论知识以及在对策博弈模型中的应用。最后，结合本章内容，给定了本文中所研究的差分隐私均衡优化的定义。针对差分隐私模型中隐私保护与数据可用性之间的矛盾问题，利用均衡优化思想研究差分隐私最优化机制是本文研究的核心。本章中所介绍内容为后续章节提供了基本模型与定义，是开展后续研究工作的理论出发点。
+围绕本文的研究工作，本章首先介绍了最基本的真假赋值的概念，给出了命题逻辑公式的解释，随后给出了时序逻辑依赖的Kripke结构的定义。
+其次，本章详细介绍了带索引的$\CTL$公式的语法和语义。$\CTL$公式是带索引的$\CTL$公式的子类，基于此又介绍了$\CTL$公式的标准形式——$\CTLsnf$子句，并详细介绍了如何将$\CTL$公式转换为$\CTLsnf$子句的集合。基于此，对$\CTL$中的归结过程和归结系统做了详细的介绍，为下文使用基于归结的方法计算$\CTL$中的遗忘做下铺垫。最后，本章详细介绍了本文密切相关的经典逻辑和模态逻辑下的遗忘的定义、基本准则及相关算法，并基于此给出这些逻辑系统下的SNC（WSC）的定义和使用遗忘计算SNC（WSC）的详细算法。本章中所介绍内容为后续章节提供了基本模型与定义，是开展后续研究工作的理论出发点。
+
