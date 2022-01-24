@@ -9,7 +9,7 @@
 
 \section{$V$-互模拟}
 
-这部分给出定义在给定原子命题集合$V$上的互模拟的概念，本文称之为$V$-互模拟。尽管在文章~\cite{Yan:AIJ:2009}中给出了相似的概念，但是如在基础知识部分所述，$S5$的语义是定义在一种特殊的Kripke结构（$\MPK$-解释）下的，因而不具有一般性。接下来探讨一种更加一般的$V$-互模拟。
+这部分给出定义在给定原子命题集合$V$上的互模拟的概念，本文称之为$V$-互模拟。尽管在文章~\cite{Yan:AIJ:2009}中给出了相似的概念，但是如在基础知识部分所述，$S5$的语义是定义在一种特殊的Kripke结构（$\MPK$-解释）下的，因而不具有一般性。这里探讨一种更加一般的$V$-互模拟。
 
 
 \begin{definition}[$V$-互模拟]
@@ -25,12 +25,12 @@
 
 
 若$\Hm_1$ 和 $\Hm_2$之间存在一个 $V$-互模拟关系$\Hb_V$使得$(s_1, s_2)\in \Hb_V$，则称两个 $\Ind$-结构 ${\cal K}_1 = (\Hm_1, s_1)$ 和 ${\cal K}_2 = (\Hm_2, s_2)$ 是 $V$-{\em 互模拟}，记为${\cal K}_1 \lrto_V {\cal K}_2$。
-令$i\in \{1,2\}$，$\pi_i=(s_{i,1},s_{i,2},\ldots)$ 为 $\Hm_i$ 上的路径，若对任意的$j \ge 1$都有$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}$，则称这两条路径是$V$-{\em 互模拟}的，记为$\pi_1 \lrto_V \pi_2$，其中 ${\cal K}_{i,j}=(\Hm_i,s_{i,j})$。
+令$i\in \{1,2\}$，$\pi_i=(s_{i,1},$ $s_{i,2},\ldots)$ 为 $\Hm_i$ 上的路径，若对任意的$j \ge 1$都有$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}$，则称这两条路径是$V$-{\em 互模拟}的，记为$\pi_1 \lrto_V \pi_2$，其中 ${\cal K}_{i,j}=(\Hm_i,$ $s_{i,j})$。
 
 
-直观地说，若两个状态在不考虑$V\subseteq\cal A$中的元素时，其行为是相同的，则称这两个状态是“互模拟”的。
+直观地说，若两个状态在不考虑$V\subseteq\cal A$中的元素时，其行为是相同的，则称这两个状态在$V$上是“互模拟”的。
 当 $V=\emptyset$，$V$-互模拟的三个条件即为$\CTL$中的互模拟要满足的条件。
-下文中当初始$\Ind$-结构能从上写文中清楚地知道时，简写 ${\cal K}_1 \lrto_V {\cal K}_2$ 为 $s_1 \lrto_V s_2$。
+下文中当初始$\Ind$-Kripke结构能从上下文中清楚地知道时，简写 ${\cal K}_1 \lrto_V {\cal K}_2$ 为 $s_1 \lrto_V s_2$。
 
 %为此，首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$（或$\Hm_i=(S_i,R_i,L_i,[\_]_i,s_0^i)$）是初始结构（$\Ind$-Kripke结构），${\cal K}_i=(\Hm_i, s_i)$是$\MPK$-结构（或$\Ind$-结构）。$\Hb_n^V$被递归定义如下：
 %\begin{itemize}
@@ -113,7 +113,7 @@
 \end{proof}
 
  
- 在命题~\ref{pro:div}中，性质(iii)-(v)是$V$-互模拟的标准属性，含义比较直观。性质(i)表示如果一个结构分别与另外的两个结构具有$V_1$和$V_2$-互模拟关系，则这两个结构是$V_1\cup V_2$-互模拟的（如图~\ref{Fig:chapter05:v1uv2}所示）。如后文所示，这一性质对遗忘理论性质的探索至关重要。性质(ii)表示若两个结构是$V_1$-互模拟的，则对于任意的$V_2$，若$V_1 \subseteq V_2$则这两个结构是$V_2$-互模拟的。
+ 在命题~\ref{prop:bisimilar:V}中，性质(iii)-(v)是$V$-互模拟的标准属性，含义比较直观。性质(i)表示如果一个结构分别与另外的两个结构具有$V_1$和$V_2$-互模拟关系，则这两个结构是$V_1\cup V_2$-互模拟的（如图~\ref{Fig:chapter05:v1uv2}所示）。如后文所示，这一性质对遗忘理论性质的探索至关重要。性质(ii)表示若两个结构是$V_1$-互模拟的，则对于任意的$V_2$，若$V_1 \subseteq V_2$则这两个结构是$V_2$-互模拟的。
  
  从互模拟的定义上来看，如果两个结构是$V$-互模拟的，那么对于与$V$中的原子命题无关的公式$\varphi$来说，这两个结构同时满足或不满足$\varphi$。这一性质可以形式化地描述如下：
  
@@ -146,7 +146,7 @@
 	
 	$(\Hm,s)\models \Phi$\\
 	$\LRto$ 存在一条路径$\pi=(s,s_1,\dots)$使得$(\Hm,s_1)\models \psi$\\
-	$\LRto$ 存在一条路径$\pi'=(s',s_1',\dots)$使得$\pi \lrto_V \pi'$ \hfill ($s \lrto_V s'$，Proposition~\ref{pro:div})\\
+	$\LRto$ 存在一条路径$\pi'=(s',s_1',\dots)$使得$\pi \lrto_V \pi'$ \hfill ($s \lrto_V s'$，命题~\ref{prop:bisimilar:V})\\
 	$\LRto$ $s_1 \lrto_V s_1'$ \hfill ($\pi \lrto_V \pi'$)\\
 	$\LRto$ $(\Hm',s_1') \models \psi$   \hfill   （归纳假设）\\
 	$\LRto$ $(\Hm',s')\models \Phi$。
@@ -155,7 +155,7 @@
 	
 		$(\Hm,s)\models \Phi$\\
 	$\LRto$ 存在一条路径$\pi=(s=s_0,s_1,\dots)$使得对于任意的$i\ge 0$都有$(\Hm,s_i)\models \psi$\\
-	$\LRto$ 存在一条路径$\pi'=(s'=s_0',s_1',\dots)$使得$\pi \lrto_V \pi'$ \hfill ($s \lrto_V s'$，Proposition~\ref{pro:div})\\
+	$\LRto$ 存在一条路径$\pi'=(s'=s_0',s_1',\dots)$使得$\pi \lrto_V \pi'$ \hfill ($s \lrto_V s'$，命题~\ref{prop:bisimilar:V})\\
 	$\LRto$ 对于任意的$i\ge 0$都有$s_i \lrto_V s_i'$ \hfill ($\pi \lrto_V \pi'$)\\
 	$\LRto$ 对于任意的$i\ge 0$都有$(\Hm,s_i') \models \psi$ \hfill （归纳假设）\\
 	$\LRto$ $(\Hm',s')\models \Phi$。
@@ -164,12 +164,12 @@
 	
 	$(\Hm,s) \models \Phi$\\
 	$\LRto$ 存在一条路径$\pi=(s=s_0,s_1,\dots)$和$i \ge 0$使得$(\Hm,s_i) \models \psi_2$，且对所有的$0\leq j <i$都有$(\Hm,s_j)\models \psi_1$\\
-	$\LRto$ 存在一条路径$\pi'=(s'=s_0',s_1',\dots)$使得$\pi \lrto_V \pi'$ \hfill ($s \lrto_V s'$，Proposition~\ref{pro:div})\\
+	$\LRto$ 存在一条路径$\pi'=(s'=s_0',s_1',\dots)$使得$\pi \lrto_V \pi'$ \hfill ($s \lrto_V s'$，命题~\ref{prop:bisimilar:V})\\
 	$\LRto$ $(\Hm',s_i') \models \psi_2$，且对于所有的$0\leq j <i$都有$(\Hm',s_j')\models \psi_1$  \hfill  （归纳假设）\\
 	$\LRto$ $(\Hm',s')\models \Phi$。
 \end{proof}
 
-值得注意的上，上述定理中个公式 $\phi$ 必须不包含索引。否则， ${\cal I}$-结构 中的索引函数可能会影响公式可满足性。
+值得注意的是，上述定理中的公式 $\Phi$ 必须不包含索引。否则， $\Ind$-结构 中的索引函数可能会影响公式的可满足性。
 例：令 $\phi=\EXIST_{\tuple{1}}\NEXT p$、
 ${\cal K}=(\Hm,s)$ 和 $\Hm=(S,R,L,[\_],s_0)$，其中 $S=\{s_0,s_1\}$, $L(s_0)=\emptyset$、 $L(s_1)=\{p\}$、
 $R=\{(s_0,s_1),(s_0,s_0),(s_1,s_1), (s_1,s_0)\}$ 和 $[1]=\{(s_0,s_1), (s_1,s_1)\}$。容易检查${\cal K}\models\phi$。
@@ -201,7 +201,7 @@ $R=\{(s_0,s_1),(s_0,s_0),(s_1,s_1), (s_1,s_0)\}$ 和 $[1]=\{(s_0,s_1), (s_1,s_1)
 此外，上面的定义和命题~\ref{prop:bisimilar:V} 蕴涵下面的推论。
 % 	The below corollary follows from the above definition and Proposition~\ref{prop:bisimilar:V}.
 \begin{corollary}~\label{cor:eqbi}
-	令 $V,V_1,V_2$ 为$\cal A$的子集，$\varphi$ 和 $\psi$ 为公式。
+	令 $V$、$V_1$、$V_2$ 为$\cal A$的子集，$\varphi$ 和 $\psi$ 为公式。
 	\begin{itemize}
 		\item[(i)] 若 $\varphi\equiv\psi$ 则 $\varphi\equiv_V\psi$。
 		\item[(ii)] 若$\varphi$ 和 $\psi$不包括索引，且 $\varphi\equiv_\emptyset\psi$ 则 $\varphi\equiv\psi$。
@@ -219,7 +219,7 @@ $R=\{(s_0,s_1),(s_0,s_0),(s_1,s_1), (s_1,s_0)\}$ 和 $[1]=\{(s_0,s_1), (s_1,s_1)
 	(iv) 可类似于 (iii)证明。
 \end{proof}
 
-请注意，在上述结论(ii)中  ``$\varphi$ 和 $\psi$ 中不包含索引是必要的。否则，令 $\varphi=\EXIST_{\tuple{1}}\NEXT p $ 和
+请注意，在上述结论(ii)中  “$\varphi$ 和 $\psi$ 中不包含索引”是必要的。否则，令 $\varphi=\EXIST_{\tuple{1}}\NEXT p $ 和
 $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$，但是 $\varphi\not\equiv\psi$。
 \begin{proposition}\label{prop:transform:V:EQ}
 	令 $\varphi$为一个$\CTL$公式。则$\varphi\equiv_UT_\varphi$，其中 $T_\varphi=\CTLsnf(\varphi)$ 和
@@ -317,10 +317,10 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 
 
 \section{遗忘理论及其语义属性}
-这部分将给出$\CTL$下的遗忘理论的定义及其相关属性。
+这部分将给出$\CTL$下的遗忘的定义及其相关属性。
 
-\begin{definition}[遗忘理论]\label{def:V:forgetting}
-	令$V$是$\Ha$的一个子集，$\Phi$是一个公式。如果一个公式$\psi$满足下面条件，则称$\psi$为从$\Phi$中遗忘掉$V$后得到结果：
+\begin{definition}[遗忘，forgetting]\label{def:V:forgetting}
+	令$V$是$\Ha$的一个子集，$\Phi$是一个公式。如果一个公式$\psi$满足下面条件，则称$\psi$为从$\Phi$中遗忘掉$V$后得到的结果：
 	%，记为$\CTLforget(\Phi, V)$：
 	\begin{itemize}
 		\item $\psi$与$V$中原子命题无关（即：$\Var(\psi) \cap V= \emptyset$）；
@@ -340,23 +340,23 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 在上述的遗忘理论的定义中说明了如果公式$\psi$的任意一个模型${\cal K}$都能找到$\varphi$的一个模型${\cal K}'$使得${\cal K} \lrto_V {\cal K}'$，则称$\psi$为从$\varphi$中遗忘掉$V$中原子命题后得到的结果。为刻画S5逻辑下该概念的直观含义，Zhang等人提出了如下遗忘理论特性——这些特性被称为\emph{遗忘理论公设}（forgetting postulates）~\cite{Yan:AIJ:2009}。
 给定$\CTL$公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$和原子命题集合$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，遗忘理论公设如下：
 \begin{itemize}
-	\item[] (\W) 弱（Weakening）属性：$\varphi \models \varphi'$；
-	\item[] (\PP) 正支持性（Positive Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
-	\item[] (\NgP) 负支持性（Negative Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \not \models \eta$则$\varphi' \not \models \eta$；
-	\item[] (\textbf{IR}) 无关性（Irrelevance）： $\IR(\varphi', V)$
+	\item[(\W)] 弱（Weakening）属性：$\varphi \models \varphi'$；
+	\item[(\PP)] 正支持性（Positive Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
+	\item[(\NgP)] 负支持性（Negative Persistence）：对任意与$V$无关的公式$\eta$，若$\varphi \not \models \eta$则$\varphi' \not \models \eta$；
+	\item[(\textbf{IR})] 无关性（Irrelevance）： $\IR(\varphi', V)$
 \end{itemize}
 直观地说，(\W)和(\textbf{IR})表明“遗忘”削弱了公式$\varphi$且得到的结果与$V$无关，(\PP)和(\NgP)表明对任意与$V$无关的公式$\eta$，$\varphi \models \eta$当且仅当$\varphi' \models \eta$。总而言之，遗忘得到的结果能推出所有与$V$无关且能被$\varphi$推出的结果，且不能推出所有与$V$无关且不能被$\varphi$推出的结果。
 从数据库和安全的层面讲，遗忘相当于从已有的关系表中构建出一个视图，达到了隐私保护的作用。
 下面的定理表明$\CTL$中的遗忘理论与上述公设也具有当且仅当的关系。
 
-\begin{theorem}[Representation Theorem]\label{thm:close}
+\begin{theorem}[表达性定理，Representation Theorem]\label{thm:close}
 	%Let $\varphi$, $\varphi'$ and $\phi$ be \CTL\
 	给定$\CTL$公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题的集合。
 	%Then t
 	下面的陈述是等价的：
 	\begin{itemize}
 		\item[(i)] $\varphi' \equiv \CTLforget(\varphi, V)$,
-		\item[(ii)] $\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ and } \IR(\phi, V)\}$,
+		\item[(ii)] $\varphi'\equiv \{\phi \mid\varphi \models \phi \text{和} \IR(\phi, V)\}$,
 		\item[(iii)] 若$\varphi$、$\varphi'$和$V$为(i)和(ii)中提到的符号，则公设(\W)、(\PP)、(\NgP)和(\textbf{IR})成立. 
 	\end{itemize}
 \end{theorem}
@@ -364,7 +364,7 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 	$(i) \LRto (ii)$. 为了证明这个结论，只需证明如下等式成立：
 	\[
 	\Mod(\CTLforget(\varphi, V)) = \Mod(\{\phi \mid \varphi \models \phi, \IR(\phi, V)\}).\]
-	$(\Rto)$ 对任意$\CTLforget(\varphi, V)$的模型${\cal K}'$ \\
+	$(\Rto)$ 对$\CTLforget(\varphi, V)$的任意模型${\cal K}'$ \\
 	$\Rto$  $\exists {\cal K}$使得${\cal K} \models \varphi$且${\cal K} \lrto_V {\cal K}'$ \hfill (定义~\ref{def:V:forgetting}) \\
 	$\Rto$ $\forall \phi$，若$\varphi \models \phi$且$\IR(\phi, V)$则${\cal K}' \models \phi$  \hfill (定理~\ref{thm:V-bisimulation:EQ})\\
 	$\Rto$ ${\cal K}' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$
@@ -383,7 +383,7 @@ $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$�
 
 尽管上面的表达性定理描述了遗忘及其基本准则之间“当且仅当”的关系，值得注意的是上面的定义~\ref{def:V:forgetting}并不表示遗忘的结果一定存在。
 事实上，存在一个$\CTL$公式和原子命题的集合，使得从该公式里遗忘掉集合里的元素的结果不可用$\CTL$公式表示。
-例：令$p$ 和 $x$为两个不同的命题，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集合$\Var(\varphi)=\{p,x\}$的公式。}为下面公式合取~\cite{Maksimova:JANCL:1991}：
+例：令$p$ 和 $x$为两个不同的原子命题，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集合$\Var(\varphi)=\{p,x\}$的公式。}为下面公式合取~\cite{Maksimova:JANCL:1991}：
 \begin{align*}
 	&\ALL\GLOBAL(\neg x \wedge \neg \ALL \GLOBAL p \rto \neg \ALL \NEXT \neg x),
 	\qquad \ALL\GLOBAL(\neg \ALL\NEXT \neg x \rto \ALL \NEXT x),\\
@@ -651,5 +651,5 @@ $\Rto$ $\varphi(p,x)\vdash x\lrto \psi(p)$，这是一个矛盾。
 \section{本章小结} 
 本章基于现有不同环境下的互模拟，给出了扩展的Kripke结构下的$V$-互模拟的定义。
 结构间的$V$-互模拟描述的是两个结构除了$V$中的元素之外，它们的状态转换行为是能够互相模拟的。这与遗忘理论所描述的“遗忘掉不想考虑的原子命题应该不影响剩余原子命题上的结论”一致。因此，我们使用$V$-互模拟刻画了原始公式与遗忘结果的模型之间的关系，从而得到了遗忘理论的定义。
-遗忘理论作为本主要探讨的对象，本章通过研究$V$-互模拟的一些基本性质，探索了遗忘理论应有的一般属性，这些属性包括：模块化性质、交换性、同质性和命题罗也满足的属性。除了这些基本性质，本章还说明了本文所给出的遗忘理论的定义是命题逻辑下遗忘理论定义的扩展。这些都为后文探索如何使用遗忘理论计算最强必要条件和最弱充分条件奠定了坚实的基础。
+遗忘理论作为本主要探讨的对象，本章通过研究$V$-互模拟的一些基本性质，探索了遗忘理论应有的一般属性，这些属性包括：模块化性质、交换性、同质性和命题逻辑也满足的属性。除了这些基本性质，本章还说明了本文所给出的遗忘理论的定义是命题逻辑下遗忘理论定义的扩展。这些都为后文探索如何使用遗忘理论计算最强必要条件和最弱充分条件奠定了坚实的基础。
 

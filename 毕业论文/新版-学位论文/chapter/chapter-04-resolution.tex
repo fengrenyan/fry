@@ -28,7 +28,7 @@
 %为了实现这一目标，
 需要解决如下两个主要问题：
 \begin{itemize}
-	\item[(1)] 如何表示$\CTL$公式和带索引的$\CTL$公式之间的关系？如在第三章中所展示的那样，将一个$\CTL$公式转换为$\CTLsnf$子句的集合会引入新的原子命题和索引。虽然已有的研究说明了$\CTL$公式可以转换为带索引的公式的集合并保证其可满足性，然而并没有表明这两种形式的公式之间的模型具有怎样的联系。
+	\item[(1)] 如何表示$\CTL$公式和带索引的$\CTL$公式之间的关系？如在第\ref{chapter02}章中所展示的那样，将一个$\CTL$公式转换为$\CTLsnf$子句的集合会引入新的原子命题和索引。虽然已有的研究说明了$\CTL$公式可以转换为带索引的公式的集合并保证其可满足性，然而并没有表明这两种形式的公式之间的模型具有怎样的联系。
 	本章从互模拟等价的角度探讨$\CTL$公式和带索引的公式之间的联系，为计算遗忘提供理论基础。
 	%本章给出一种扩展的互模拟定义，以描述两种公式的模型之间的关系。
 	\item[(2)] 如何“移除”无关的原子命题（包括需要遗忘的原子命题和转换过程中引入的新的原子命题），以及如何“消除”索引？为此，本章给出“移除”原子命题的一般操作，并提出一种一般化的Ackermann引理。为了“消除”索引，探索几个几个逻辑等价关系，详见第\ref{cha4:sec:resf}节。
@@ -90,7 +90,7 @@
 \section{归结过程}
 \label{cha4:sec:resf}
 这部分给出如何使用归结规则（表~\ref{tab:res}）来计算$\CTL$中的遗忘。
-这个过程的主要思想是将转换过程中获得的$\CTLsnf$子句在表~\ref{tab:res}中归结规则上做穷尽的归结，即直到不产生新的归结结果。值得注意的是该归结过程涉及的归结原子命题是需要遗忘的原子命题和转换过程中引入的新的原子命题，这是与判定可满足性下做所有原子命题的归结的不同。
+这个过程的主要思想是将转换过程中获得的$\CTLsnf$子句在表~\ref{tab:res}中归结规则上做穷尽的归结，即直到不产生新的归结结果。值得注意的是该归结过程涉及的归结原子命题是需要遗忘的和转换过程中引入的新的原子命题，这是与判定可满足性下做所有原子命题的归结的不同。
 
 令$T$为$\CTLsnf$子句的集合，$p$为原子命题。$T$在$p$上的\emph{展开}（记为$\Unfolding(T,p)$）是集合$T$和如下集合的并集：
 \[\{\alpha\mid \mbox{$\alpha$ 是 $T$ 公式关于文字 $l\in\{p,\neg p\}$ 的归结结果}\}.  \]
@@ -229,7 +229,7 @@
 
 \section{转换带索引的公式为$\CTL$公式}
 \label{cha4:sec:remIndex}
-在上一节中描述了归结过程，但是正如归结规则和转换规则所示，在这两个过程中会引入索引和新的原子命题。本章介绍如何移除掉这些新引入的元素。
+在上一节中描述了归结过程，但是正如归结规则和转换规则所示，在这两个过程中会引入索引和新的原子命题。本节介绍如何移除掉这些新引入的元素。
 
 下面的引理表明，可以移除掉$\CTLsnf$子句集合中的索引而保持互模拟等价。
 
@@ -271,7 +271,7 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、  $rfi(\{\beta_1,\alpha_2\})$来表示，�
 
 
 
-因为 $\EXIST\NEXT\varphi_1\land \EXIST\NEXT\varphi_2\not\models \EXIST\NEXT(\varphi_1\land\varphi_2)$，引理~\ref{lem:In2NI}(i)的目的是为了保证若 $\psi_1$ 和 $\psi_2$在当前状态满足，则$\varphi_1$ 和 $\varphi_2$被同一条路径满足，这可以推广到任意的 $\psi_i~(1\le i\le n)$的情形。 
+因为 $\EXIST\NEXT\varphi_1\land \EXIST\NEXT\varphi_2\not\models \EXIST\NEXT(\varphi_1\land\varphi_2)$，引理~\ref{lem:In2NI}(i)的目的是为了保证若 $\psi_1$ 和 $\psi_2$在当前状态满足，则$\varphi_1$ 和 $\varphi_2$被同一条路径满足，这可以推广到多个 $\psi_i~(1\le i\le n)$的情形。 
 (iii)表示可以将每一个$\EXIST$-某时子句和一个$\EXIST$-步子句结合得到新的满足互模拟等价的$\CTL$公式。
 (ii)表明拥有相同索引的$\EXIST$-步子句可以类似地结合成新的满足互模拟等价的$\CTL$公式。
 这一过程可由算法~\ref{alg:remove:index}实现。
@@ -313,7 +313,7 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、  $rfi(\{\beta_1,\alpha_2\})$来表示，�
 
 通过下面的定理，可以移除掉一些原子命题而保持互模拟等价。
 
-\begin{lemma}[Generalised Ackermann's Lemma] \label{thm:Aclm}
+\begin{lemma}[一般化的Ackermann引理，Generalised Ackermann's Lemma] \label{thm:Aclm}
 	令 $x$ 为一个原子命题、 
 	% 	$\Delta = \{\top \rto \neg x \vee C_1$, \dots, $\top \rto \neg x \vee C_n, x \rto B_1, \dots, x \rto B_m\}$
 	% 	be a set of $\CTLsnf$ clauses
@@ -405,7 +405,7 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 \end{example}
 
 
-\section{算及其复杂性分析}
+\section{算法及其复杂性分析}
 \label{cha4:sec:alg}
 现在可以给出计算$\CTL$下遗忘的算法——算法~\ref{alg:compute:forgetting:by:Resolution}。
 该算法的输入为一个$\CTL$公式$\varphi$和一个原子命题的集合，输出为一个与$\varphi$互模拟等价的$\CTL$公式。
