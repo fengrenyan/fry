@@ -1,6 +1,6 @@
 
 \chapter{遗忘理论的定义及其语义属性}\label{chapter03}
-{\em 本章首先通过扩展互模拟的概念，给出$\CTL$下遗忘理论的定义。其次，探索遗忘理论的一般通用属性，这些属性包括：模块化（Modularity）性质、交换性（Commutativity）、齐次性（Commutativity）等属性。}
+{\em 本章首先通过扩展互模拟的概念，给出$\CTL$下遗忘理论的定义。其次，探索遗忘理论的一般通用属性，这些属性包括：模块化（Modularity）性质、交换性（Commutativity）、同质性（Homogeneity）等属性。}
 
 \section{引言}
 从一个公式中“遗忘”掉一些原子命题得到的结果应该不违背定义在剩余原子命题集合上的公式，也就是说对于剩余原子命题集合上的公式，原始公式能够逻辑蕴涵它当且仅当遗忘得到的结果能过逻辑蕴涵它。从模型的角度来讲，遗忘得到的结果的模型与原始公式的模型在除去被遗忘的那些原子命题之后是能够想互模拟的。\emph{互模拟}描述的是两个在行为上能够相互替代的转换系统\cite{Baier:PMC:2008}。在本文中，转换系统被描述成为Kripke结构。因此为了描述遗忘理论，这部分给出在给定原子命题集合上的Kripke结构（或$\Ind$-结构）上的互模拟的定义及其性质。
@@ -221,10 +221,6 @@ $R=\{(s_0,s_1),(s_0,s_0),(s_1,s_1), (s_1,s_0)\}$ 和 $[1]=\{(s_0,s_1), (s_1,s_1)
 
 请注意，在上述结论(ii)中  ``$\varphi$ 和 $\psi$ 中不包含索引是必要的。否则，令 $\varphi=\EXIST_{\tuple{1}}\NEXT p $ 和
 $\psi=\EXIST_{\tuple{2}}\NEXT p $，可以证明$\varphi\equiv_\emptyset \psi$，但是 $\varphi\not\equiv\psi$。
-
-%%%Note that the bisimular relation $\lrto_V$ is transitive by (i) of Proposition~\ref{prop:bisimilar:V} an equivalent relation
-
-
 \begin{proposition}\label{prop:transform:V:EQ}
 	令 $\varphi$为一个$\CTL$公式。则$\varphi\equiv_UT_\varphi$，其中 $T_\varphi=\CTLsnf(\varphi)$ 和
 	$U=\Var(T_\varphi)-\Var(\varphi)$。
