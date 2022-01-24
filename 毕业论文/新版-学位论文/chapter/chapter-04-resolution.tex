@@ -422,12 +422,12 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	\KwOut{A conjunction of formulas}
 	\lIf{$\varphi\equiv\bot$} {{\bf \Return $\bot$}}
 	\lIf{$V=\Var(\varphi)$} {{\bf \Return  $\top$}}
-	$T_\varphi \lto \CTLsnf(\varphi)$ \tcp*{Transforming $\varphi$ into $\CTLsnf$ clauses}
-	$\Sigma\lto \Unfolding(T_\varphi,V\cup U)$ where $U=\Var(T_\varphi)-\Var(\varphi)$\tcp*{Unfolding}
-	$\Sigma\lto \emph{ERes}(\Sigma,V)$ \tcp*{Removing clauses  which mention some atom in $V$}
+	$T_\varphi \lto \CTLsnf(\varphi)$ \tcp*{将 $\varphi$ 转换为 $\CTLsnf$ 子句的集合}
+	$\Sigma\lto \Unfolding(T_\varphi,V\cup U)$ where $U=\Var(T_\varphi)-\Var(\varphi)$\tcp*{展开}
+	$\Sigma\lto \emph{ERes}(\Sigma,V)$ \tcp*{移除包含 $V$中元素的子句}
 	%    $\Sigma\lto \GAL(\Sigma,\Var(\Sigma)-\Var(\varphi))$ \tcp*{Reducing the remaining fresh atoms}
 	
-	$\Sigma\lto$ {RM-index}$(\Sigma)$ \tcp*{removing indexes from $\Sigma$}
+	$\Sigma\lto$ {RM-index}$(\Sigma)$ \tcp*{从$\Sigma$移除索引}
 	% \ForEach{$\Delta\subseteq\Sigma$ \st\ $\Delta$ consists of all the clauses having the same index}{
 	% 	$\Sigma\lto \Sigma -\Delta \cup  rei(\Delta) $\;
 	% 	%Replacing the $\EXIST$-sometime clauses in $\Sigma$ with the index $i$ by \CTL\ formulas according to (i) of Lemma~\ref{lem:In2NI}
@@ -445,7 +445,7 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	%         %Replacing the $\EXIST$-sometime clauses in $\Sigma$ with the index $i$ by \CTL\ formulas according to (i) of Lemma~\ref{lem:In2NI}
 	%         }
 	% %    }
-	$\Sigma\lto \GAL(\Sigma,\Var(\Sigma)-\Var(\varphi))$ \tcp*{Reducing the remaining fresh atoms}
+	$\Sigma\lto \GAL(\Sigma,\Var(\Sigma)-\Var(\varphi))$ \tcp*{移除留存的新的原子命题}
 	Replacing each initial clause ``$\ALL\GLOBAL(\start\rto\varphi)$'' in $\Sigma$ by $\ALL\GLOBAL\varphi$\;
 	\Return $\Sigma$\;
 \end{algorithm}

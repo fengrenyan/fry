@@ -24,11 +24,11 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \section{描述初始结构}\label{chapter06:sec:des}%\label{sec:chapter06_chaIntC}
 本节介绍与一个初始$\MPK$-结构相关的$\CTL$公式——特征公式是如何得到的。
 %对于一个给定的有限初始结构（状态个数和$\Ha$都是有限的），其不循环的计算树（状态不重复出现）的深度最多为其状态数的个数。
-对于一个给定的初始$\MPK$-结构，其特征公式其计算树的特征公式密切相关。
+对于一个给定的初始$\MPK$-结构，其特征公式与其计算树的特征公式密切相关。
 为此，本节首先介绍计算树之间的$V$-互模拟关系，然后给出计算树的特征公式的定义，最后给出初始$\MPK$-结构的特征公式。
 
 \subsection{计算树的$V$-互模拟}
-在第\ref{chapter03}章中的定义~\ref{def:VInd:bisimulation}给出了$\Ind$-结构（$(\Hm,s_0)$中的$\Hm$为初始$\Ind$-Kripke结构）之间的$V$-互模拟定义及其相关性质，结构（$(\Hm,s_0)$中的$\Hm$为初始Kripke结构）之间的$V$-互模拟有相同的定义，且不难证明$\Ind$-结构之间$V$-互模拟有的性质结构之间$V$-互模拟也有。这里不再赘述，这里只给出结构之间的$V$-互模拟在有限结构下与下面将要给出的约束$V$-互模拟等价——与深度$n$关联的$V$-互模拟。但是为了方便，本章仍然引入约束$V$-互模拟的概念。
+在第\ref{chapter03}章中的定义~\ref{def:VInd:bisimulation}给出了$\Ind$-结构（$(\Hm,s_0)$中的$\Hm$为初始$\Ind$-Kripke结构）之间的$V$-互模拟定义及其相关性质，结构（$(\Hm,s_0)$中的$\Hm$为初始Kripke结构）之间的$V$-互模拟有相同的定义，且不难证明$\Ind$-结构之间$V$-互模拟有的性质结构之间$V$-互模拟也有，这里不再赘述。本节给出结构之间的$V$-互模拟在有限结构下与下面将要给出的约束$V$-互模拟等价——与深度$n$关联的$V$-互模拟。但是为了方便，本章仍然引入约束$V$-互模拟的概念。
 
 首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$是初始Kripke结构，${\cal K}_i=(\Hm_i, s_i)$是结构。$\Hb_n^V$被递归定义如下：
 \begin{itemize}
@@ -43,16 +43,16 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 其中${\cal K}_i'=(\Hm_i,s_i')$。
 
 当所谈及的原子命题的集合$V$很显然的时候，上述$\Hb_n^V$中的$V$可以省略，记为$\Hb_n$。此外，当讨论的$\Hm_i$$(i=1,2)$是显然的时候，可以使用$(s_1,s_2) \in \Hb_n$代替$((\Hm_1,s_1),(\Hm_2,s_2)) \in \Hb_n$。
-此时，$V$-互模拟关系就可以定义如下：
+此时，约束$V$-互模拟关系就可以定义如下：
 \begin{definition}[约束$V$-互模拟]\label{def:V-bisimulation}
 	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是结构。
 	\begin{itemize}
 		\item ${\cal K}_1$和${\cal K}_2$是约束$V$-互模拟的，当且仅当对所有的$n \ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若${\cal K}_1$和${\cal K}_2$是约束$V$-互模拟的，则记为${\cal K}_1 \overset{B}{\lrto}_V {\cal K}_2$。
-		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}_{\ge 1}$是大于等于1的整数的集合。}都有${\cal K}_{1,j} \overset{B}{\lrto}_V {\cal K}_{2,j}$，则$\pi_1 \overset{B}{\lrto}_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
+		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}$为整数的集合，$\mathbb{N}_{\ge 1}$是大于等于1的整数的集合。}都有${\cal K}_{1,j} \overset{B}{\lrto}_V {\cal K}_{2,j}$，则$\pi_1 \overset{B}{\lrto}_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
 	\end{itemize}
 \end{definition}
 
-值得注意的是，满足约束$V$互模拟关系的结构之间有且仅有一个$V$互模拟关系，即使得$\Hb_{k+1} = \Hb_k$的关系。
+值得注意的是，满足约束$V$-互模拟关系的结构之间有且仅有一个约束$V$-互模拟关系，即$\Hb_{k+1} = \Hb_k$ （$k \in \mathbb{N}$）。
 %上述约束$V$-互模拟的定义是现有互模拟定义的一般化，这可以从下面几个方面来体现\footnote{在其他领域也有类似的定义，如：定义在数据库相关文献中的概念$k$-互模拟\cite{kaushik2002updates}。$k$-互模拟概念中涉及与本文$\Hb_n$类似的定义，只是其关系是从相反的方向（即：从孩子到父节点的方向）来说明的。此外，值得一提的是，本文的$V$-互模拟的概念是定义在$\MPK$-结构上的。}。
 %首先，当给定的$V$为空集且谈论指定的初始状态时，本文的$V$-互模拟与定义在Baier等文章里的互模拟等价（定义7.1\cite{Baier:PMC:2008}）的概念一致。
 %其次，在上述文章里的基于状态的互模拟（定义7.7\cite{Baier:PMC:2008}）是定义在给定结构的状态上的，因此与本文的$V$-互模拟（定义在结构的集合上）也不同。
@@ -167,9 +167,9 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 %\end{proof}
 
 
-本章只涉及有限的初始Kripke结构，因此，本章混用$\lrto_V$这个符号和$V$-互模拟这个概念。
+本章只涉及有限的初始Kripke结构，因此，本章用$\lrto_V$（$V$-互模拟）表示$\overset{B}{\lrto}_V $（约束$V$-互模拟）。
 
-给定原子命题集合$V\subseteq \Ha$和初始结构$\Hm_i$（$i = 1, 2$）。如果下面条件同时被满足，则称$\Hm_1$的计算树$\Tr_n(s_1)$和$\Hm_2$的计算树$\Tr_n(s_2)$是$V$-互模拟的（记为$({\cal M}_1,\Tr_n(s_1))\lrto_V({\cal M}_2,\Tr_n(s_2))$，简写为$\Tr_n(s_1)\lrto_V\Tr_n(s_2)$）：
+给定原子命题集合$V\subseteq \Ha$和初始Kripke结构$\Hm_i$（$i = 1, 2$）。如果下面条件同时被满足，则称$\Hm_1$的计算树$\Tr_n(s_1)$和$\Hm_2$的计算树$\Tr_n(s_2)$是$V$-互模拟的（记为$({\cal M}_1,\Tr_n(s_1))\lrto_V({\cal M}_2,\Tr_n(s_2))$，简写为$\Tr_n(s_1)\lrto_V\Tr_n(s_2)$）：
 \begin{itemize}
 	\item $L_1(s_1)- V=L_2(s_2)- V$,
 	%   \item For every subtree $\Tr_{n-1}(s_i')$ of $\Tr_n(s_i)$,
@@ -184,7 +184,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 在上述定义中，当$n=0$时，只需考虑第一个条件。
 
 \begin{proposition}\label{B_to_T}
-	给定原子命题集合$V\subseteq\cal A$和$\MPK$结构$({\cal M}_i,s_i)$（$i=1,2$）。
+	给定原子命题集合$V\subseteq\cal A$和结构$({\cal M}_i,s_i)$（$i=1,2$）。
 	则：
 	\[(s_1,s_2)\in{\cal B}_n\mbox{当且仅当对任意的$0\le j\le n$有}
 	\Tr_j(s_1)\lrto_V\Tr_j(s_2)\mbox{。}\]
@@ -202,7 +202,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	因此有$(s_1, s_2) \in \Hb_1$。同理可证$(s_1, s_2) \in \Hb_2$, \dots, $(s_1, s_2) \in \Hb_n$。
 \end{proof}
 
-命题~\ref{B_to_T}表明如果任意两个初始结构中的两个状态$s_1$和$s_2$能够在$\Ha-V$上相互模拟对方直到$n$步，当且仅当分别以$s_1$和$s_2$为根的计算树能在$\Ha-V$上相互模拟直到深度为$n$。
+命题~\ref{B_to_T}表明如果任意两个初始结构中的两个状态$s_1$和$s_2$能够在$\overline{V}$上相互模拟对方直到$n$步，当且仅当分别以$s_1$和$s_2$为根的计算树能在$\overline{V}$上相互模拟直到深度为$n$。
 由此可知，如果同一初始结构的两个状态$s$和$s'$不是$V$-互模拟的，则存在一个数$k\in \mathbb{N}$使得分别以$s$和$s'$为根的计算树$\Tr_k(s)$和$\Tr_k(s')$不是$V$-互模拟的。
 \begin{proposition}\label{pro:k}
 	给定原子命题集合$V\subseteq \Ha$、初始结构$\Hm$和两个状态$s,s'\in S$。
@@ -213,7 +213,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \end{proof}
 
 \subsection{计算树的特征公式}
-由上面小节的讨论可知，$V$-互模拟可以将计算树分别开来\footnote{Similar approaches has been taken in the literature e.g., in~\cite{DBLP:conf/birthday/1997ehrenfeucht},  a class (namely, $\equiv_{\overline{k}}$-class) of structures of monadic formulas has been characterized by Hintikka formulas~\cite{hintikka1953distributive}. Another example is Yankov-Fine construction in \cite{yankov1968three}.}。本节讨论如何使用$\CTL$公式描述一棵计算树，且表明具有（或没有）$V$-互模拟关系之间的计算树的特征公式又有怎么样的关系。为此，首先给出计算树的特征公式的定义。
+由上面小节的讨论可知，$V$-互模拟可以将计算树分别开来\footnote{Similar approaches has been taken in the literature e.g., in~\cite{DBLP:conf/birthday/1997ehrenfeucht},  a class (namely, $\equiv_{\overline{k}}$-class) of structures of monadic formulas has been characterized by Hintikka formulas~\cite{hintikka1953distributive}. Another example is Yankov-Fine construction in \cite{yankov1968three}.}。本节讨论如何使用$\CTL$公式描述一棵计算树，且表明具有（或没有）$V$-互模拟关系之间的计算树的特征公式又有怎样的关系。为此，首先给出计算树的特征公式的定义。
 \begin{definition}\label{def:V:char:formula}
 	给定原子命题集合$V\subseteq \Ha$、初始结构$\Hm =(S,R,L,s_0)$和状态$s\in S$。
 	定义在$V$上的计算树$\Tr_n(s)$的特征公式（记为${\cal F}_V(\Tr_n(s))$，$n\geq 0$）被递归定义如下：
@@ -232,7 +232,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 下面的结论表明，若两个计算树是$V$-互模拟的，则他们在$V$上的特征公式是逻辑等价的。
 \begin{lemma}\label{lem:Vb:TrFormula:Equ}
-	给定原子命题集合$V\subseteq \Ha$、初始结构$\Hm=(S,R,L,s_0)$和$\Hm'=(S',R',L',s_0')$、$s\in S$、$s'\in S'$且 $n\ge 0$。若$\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$，则${\cal F}_V(\Tr_n(s)) \equiv {\cal F}_V(\Tr_n(s'))$。
+	给定原子命题集合$V\subseteq \Ha$、初始Kripke结构$\Hm=(S,R,L,s_0)$和$\Hm'=(S',R',L',s_0')$、$s\in S$、$s'\in S'$且 $n\ge 0$。若$\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$，则${\cal F}_V(\Tr_n(s)) \equiv {\cal F}_V(\Tr_n(s'))$。
 \end{lemma}
 \begin{proof}
 	通过归纳计算树的深度$n$来证明。
@@ -381,7 +381,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	由此可知$s_1$和$s_2$是$V$-可区分的，且$\dis_{V}(\Hm, s_1, s_2, 1)$。
 	
 	 同样，我们可得到：$\dis_{ V}(\Hm, s_0, s_1, 0)$、$\dis_{V}(\Hm, s_1, s_3', 1)$、$\dis_{V}(\Hm, s_0, s_2, 0)$和$\dis_{ V}(\Hm,$ $s_0, s_3', 0)$。此外，$s_2 \lrto_{\overline V} s_3'$。因此可以计算$\Hm$关于$V$的特征数为：
-	 $$ch(\Hm, V)=\max\{k\mid s,s'\in S \text{ and } \dis_{V}({\cal M},s,s',k)\} = 1.$$
+	 $$ch(\Hm, V)=\max\{k\mid s,s'\in S \text{ 且 } \dis_{V}({\cal M},s,s',k)\} = 1.$$
 	 
 	  
 	所以，可以由以下步骤计算${\cal K}_2$关于$V$的特征公式：
