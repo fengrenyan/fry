@@ -580,7 +580,7 @@ $\mu$-演算是模态逻辑的扩展，本文讨论Kozen提出的命题$\mu$-演
 在下文中，若$s\in \left\| \varphi \right\|_v$，则称$s$“满足”$\varphi$，记为$(\Hm, s, v) \models \varphi$。
 此时，若$(\Hm, r, v) \models \varphi$，则称$(\Hm, r, v)$为$\varphi$的一个模型。
 当公式$\varphi$为$\mu$-句子时，可以将赋值函数$v$省略，记为$(\Hm, s) \models \varphi$。
-记$\Mod(\varphi)$为$\varphi$的模型的集合，即$\Mod(\varphi) = \{\Hm\mid (\Hm,r,v) \models \varphi\}$。其他记号与$\CTL$情形类似，这里不再赘述。
+记$\Mod(\varphi)$为$\varphi$的模型的集合，即$\Mod(\varphi) = \{(\Hm,r) \mid (\Hm,r,v) \models \varphi\}$（也可简写为$\Mod(\varphi) = \{\Hm\mid (\Hm,r,v) \models \varphi\}$）。其他记号与$\CTL$情形类似，这里不再赘述。
 
 由Tarski-Knaster定理可知，集合$U$子集上的单调函数$f$的最小和最大不动点可以由超穷归纳法得到，即最小不动点$\mu(f)= \bigcup\mu_{\alpha}(f)$，其中：
 \begin{itemize}

@@ -1,4 +1,4 @@
-\begin{thebibliography}{97}
+\begin{thebibliography}{98}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -694,6 +694,13 @@ D'AGOSTINO~G, HOLLENBERG~M.
 \newblock Uniform interpolation, automata and the modal
   $\mu$-calculus\allowbreak[J].
 \newblock Logic Group Preprint Series, 1996, 165.
+
+\bibitem[D'Agostino et~al.(2000)D'Agostino and Hollenberg]{d2000logical}
+D'AGOSTINO~G, HOLLENBERG~M.
+\newblock Logical questions concerning the {\(\mu\)}-calculus: Interpolation,
+  lyndon and los-tarski\allowbreak[J/OL].
+\newblock J. Symb. Log., 2000, 65\penalty0 (1):\penalty0 310-332.
+\newblock \url{https://doi.org/10.2307/2586539}.
 
 \bibitem[Wang(2015)]{wang2015forgetting}
 WANG~Y.
