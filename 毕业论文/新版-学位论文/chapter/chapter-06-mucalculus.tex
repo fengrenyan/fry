@@ -65,9 +65,16 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 	\end{itemize}
 \end{definition}
 
-与$\CTL$下的$V$-互模拟不同的是，这里要求$r_1 \Hb r_2$（即：$(r_1,r_2)\in \Hb$）。
+一方面，与$\CTL$下的$V$-互模拟不同的是，这里要求$r_1 \Hb r_2$（即：$(r_1,r_2)\in \Hb$）。
 如果$\Hm_1$ 和 $\Hm_2$ 之间存在一个$V$-互模拟关系${\cal B}$则称这两个Kripke结构$\Hm_1$ 和 $\Hm_2$ 及由这两个Kripke结构构成的结构$(\Hm_1,r_1)$和$(\Hm_2,r_2)$是$V$-互模拟的，分别记为$\Hm_1 \lrto_V \Hm_2$和$(\Hm_1,r_1) \lrto_V (\Hm_2,r_2)$。
-显然，Kripke结构之间的$V$-互模拟与结构之间的$V$-互模拟有当且仅当的关系，即“$\Hm_1 \lrto_V \Hm_2$当且仅当$(\Hm_1,r_1) \lrto_V (\Hm_2,r_2)$”， 因此在下文中只讨论Kripke结构之间$V$-互模拟的性质，而结构之间的互模拟的性质与之相同。此外，不难看出初始结构之间的$V$-互模拟是结构之间的$V$-互模拟的一个特例。%值得注意的是这里的结构之间的$V$-互模拟是$\CTL$
+显然，Kripke结构之间的$V$-互模拟与结构之间的$V$-互模拟有当且仅当的关系，即“$\Hm_1 \lrto_V \Hm_2$当且仅当$(\Hm_1,r_1) \lrto_V (\Hm_2,r_2)$”， 因此在下文中只讨论Kripke结构之间$V$-互模拟的性质，而结构之间的互模拟的性质与之相同。不难看出初始结构之间的$V$-互模拟是结构之间的$V$-互模拟的一个特例。
+
+
+另一方面，$V$-互模拟与${\cal L}$-互模拟\footnote{${\cal L}$-互模拟是一种将定义~\ref{def:VB}中的$V$替换为${\cal L}$的二元关系。}~\cite{d1996uniform}类似，不同的是$V$-互模拟只考虑原子命题且在${\cal L}$位原子命题集合时是${\cal L}$-互模拟补命题（这里默认除了原子命题之外的符号都是相同的，因此只考虑原子命题）。
+此外，已有结果表明${\cal L}$-句子（符号只出现在${\cal L}$中的$\mu$-句子）关于${\cal L}$-互模拟是不变的，即若$\Hm$ 和 $\Hm'$ 是${\cal L}$-互模拟的，则对于${\cal L}$-句子$\varphi$有$\Hm \models \varphi$当且仅当$\Hm' \models \varphi$~\cite{d1996uniform,bradfield2018mu}。
+因此，若$\IR(\varphi, V)$且$\Hm \lrto_V \Hm'$，则$\Hm \models \varphi$当且仅当$\Hm' \models \varphi$。
+本文称这一性质为$V$-不变性。
+%值得注意的是这里的结构之间的$V$-互模拟是$\CTL$
 %In this case, $\Hm_1$ and $\Hm_2$ are bisimilar on $V$.
 \begin{example}
 	如图~\ref{chapter06:fig:bisim}中的两个Kripke结构$\Hm=(S,R,L,r)$ 和 $\Hm'=(S',R',L',r')$，其中:
@@ -370,52 +377,56 @@ $\Muforget$ 的另一个属性是关于$\ALL\NEXT$ 和 $\EXIST \NEXT$模态词�
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	令$\Hm=(S,R, L, s)$、 $M_i = (S_i, R_i, L_i, s_i)$ （$i \in \textmd{N}$） 且 $\Hm'=(S', R', L', s')$，若下面条件满足，则称 $\Hm'=(S', R', L', s')$为$\Hm$的一个子结构：
+	令$\Hm=(S,R, L, s)$、 $\Hm_i = (S_i, R_i, L_i, s_i)$ （$i \in \textmd{N}$） 且 $\Hm'=(S', R', L', s')$。
+	
+	(i) $(\Rto)$ $\Hm\models\Muforget(\ALL\NEXT\phi,V)$\\
+	$\Rto$ 有$\Hm\lrto_V\Hm'$ 且 $\Hm'\models \ALL\NEXT\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
+	$\Rto$  $\Hm\lrto_V \Hm'$，且 对任意的$(s',s'')\in R'$有 $(\Hm', s'')\models \phi$  \\
+	$\Rto$ 对任意的$(s,s_1)\in R$，存在 $(s',s'_1)\in R'$ 使得$(s_1,s_1')\in \Hb_V$，且对任意的 $(s',s'')\in R'$ 有
+	$(\Hm',s'')\models \phi$\\
+	$\Rto$ 对任意的 $(s,s_1)\in R$，有 $(s_1,s_1')\in \Hb_V$ 和 $(\Hm',s'_1)\models\phi$\\
+	$\Rto$ 对任意的 $(s,s_1)\in R$， $(\Hm,s_1)\models\CTLforget(\phi,V)$\\
+	$\Rto$ $(\Hm,s)\models\ALL\NEXT\CTLforget(\phi,V)$，即$\Hm \models\ALL\NEXT\CTLforget(\phi,V)$。
+	
+	$(\Lto)$ $(\Hm,s)\models\ALL\NEXT\CTLforget(\phi,V)$\\
+	$\Rto$ 对任意的 $(s,s_1)\in R$， $(\Hm,s_1)\models\CTLforget(\phi,V)$ $(R\in \Hm)$\\
+	$\Rto$ 对任意的 $(s,s_1)\in R$， 有 $(\Hm,s_1)\lrto_V(\Hm',s')$ 和 $(\Hm',s')\models\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
+	$\Rto$ 对任意的 $i\ge 0$，有 $(s_i,s_i') \in \Hb_V'$且 $(\Hm'_i,s'_i)\models\phi$，，即$\Hm$和$\Hm_i'$之间存在$V$-互模拟关系$\Hb_V'$
+	其中 $\{s_0,s_1,\ldots\}=\{s'\mid (s,s')\in R\}$和 $\Hm'_i=(S'_i,R'_i,L'_i,[\_]'_i,s'_i)$ (当$i\neq j$时，假定$S'_i\cap S'_j=\emptyset$)\\
+	$\Rto$ $(\Hm^*,s)\lrto_V(\Hm,s)$ 和 $(\Hm^*,s)\models\ALL\NEXT\phi$，其中
+	$\Hm^*=(S^*,R^*,L^*,[\_], s)$ 和
 	\begin{itemize}
-		\item $S' \subseteq S$ 和 $S'=\{s' \mid s'$ is reachable from $s'\}\ \cup $ $\{s'' \mid s''$ can not be reached from both $s$ and $s'$$\}$,
-		\item $R' =\{(s_1, s_2)\mid s_1, s_2 \in S'$ and $(s_1, s_2) \in R\}$,
-		\item $L': S' \rto 2^\Ha$ and $\forall s_51 \in S'$ there is $L'(s_1) = L(s_1)$, and
-		\item $s'$ is $s$ or a state reachable from $s$.
+		\item $S^*=\{s\}\cup\bigcup_{i\ge 0}S'_i$，
+		\item $R^*=\{(s,s'_i)\mid i\ge 0\}\cup \bigcup_{i\ge 0} R'_i$，
+		\item $L^*=\bigcup_{i\ge 0}L'_i$ 和 $L^*(s)=L(s)$，其中 $L\in\Hm$。
 	\end{itemize}
+	$\Rto$ $(\Hm,s)\models \CTLforget(\ALL\NEXT\phi,V)$。
 	
-	We denote $\exists_{sub}$ as ``there exists a sub-structure" and $\forall_{sub}$ as "for each sub-structure".
+	(ii) $(\Rto)$ $(\Hm,s)\models\CTLforget(\EXIST\NEXT\phi,V)$\\
+	$\Rto$ 有 $(\Hm,s)\lrto_V(\Hm',s')$ 且 $(\Hm',s')\models \EXIST\NEXT\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
+	$\Rto$ 有$(\Hm,s)\lrto_V(\Hm',s')$，且对一些 $(s',s'')\in R'$有$(\Hm',s'')\models \phi$  ($R'\in\Hm'$)\\
+	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(s',s'_1)\in R'$ 和 $(s_1, s_1') \in \Hb_V$，且对一些$(s',s'')\in R'$有
+	$(\Hm',s'')\models \phi$ ($R\in \Hm$)\\
+	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(s_1, s_1') \in \Hb_V$ 和 $(\Hm',s'_1)\models\phi$\\
+	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(\Hm,s_1)\models\CTLforget(\phi,V)$\\
+	$\Rto$ $(\Hm,s)\models\EXIST\NEXT\CTLforget(\phi,V)$。
 	
-	(i) To prove $\Muforget(\ALL \NEXT \phi, V) \equiv \ALL \NEXT(\Muforget(\phi, V))$, we only need to prove $\Mod(\Muforget(\ALL \NEXT \phi, V))$ $= \Mod( \ALL\NEXT\Muforget(\phi, V))$:
-	
-	$(\Rto)$ $\forall \Hm' \in \Mod(\Muforget(\ALL \NEXT \phi, V))$, $\exists \Hm$ s.t. $\Hm \models \ALL \NEXT \phi$ and $\Hm \lrto_V \Hm'$  by Def.~\ref{def:V:forgetting}\\
-	$\Rto$ $\forall_{sub}$ $\Hm_1$ of $\Hm$,  there is $\Hm_1 \models \phi$, where $s_1$ is a directed successor of $s$ \\
-	$\Rto$ $\exists \Hm_2$ s.t. $\Hm_2 \models \Muforget(\phi,V)$ and $\Hm_2 \lrto_V \Hm_1$ by Def.~\ref{def:V:forgetting}
-	
-	It is easy to construct a Kripke structure $\Hm_3$ by $\Hm_2$ s.t. $\Hm_2$ is a sub-structure of $\Hm_3$, in which $s_2$ is a direct successor of $s_3$ and $\Hm_3 \lrto_V \Hm$.\\
-	$\Rto$ $\Hm_3 \models \ALL \NEXT (\Muforget(\phi,V))$ and $\Hm_3 \lrto_V \Hm'$ by Pro.~\ref{pro:EqUnion}\\
-	%, especially, let $\Hm_3, s_3 = \Hm', s'$, we have
-	$\Rto$ $\Hm' \models \ALL \NEXT (\Muforget(\phi,V))$  by Def.~\ref{def:V:forgetting}.
-	
-	$(\Lto)$ $\forall$ $\Hm_3 \in \Mod(\ALL \NEXT (\Muforget(\phi,V)))$, and $\forall_{sub} \Hm_2$ of $\Hm_3$, in which $s_2$ is a directed successor of $s_3$, there is $\Hm_2 \models \Muforget(\phi,V)$\\
-	$\Rto$ $\forall \Hm_2$, $\exists \Hm_1$ s.t. $\Hm_1 \models \phi$ and $\Hm_1 \lrto_V \Hm_2$ by Def.~\ref{def:V:forgetting}
-	
-	It is easy to construct a Kripke structure $\Hm$ by $\Hm_1$ s.t. $\Hm_1$ is a sub-structure of $\Hm$, in which $s_1$ is a direct successor of $s$, and $\Hm\lrto_V \Hm_3$\\
-	$\Rto$ $\Hm \models \ALL \NEXT \phi$, and then $\Hm_3 \models \Muforget(\ALL \NEXT \phi, V)$  by Def.~\ref{def:V:forgetting}.
-	
-	
-	(ii) In order to prove $\Muforget(\EXIST \NEXT \phi, V) \equiv \EXIST\NEXT\Muforget(\phi, V)$, we only need to prove $\Mod$ $(\Muforget(\EXIST \NEXT \phi$, $V)) = \Mod( \EXIST\NEXT\Muforget(\phi, V))$.
-	
-	$(\Rto)$ $\forall \Hm' \in \Mod(\Muforget(\EXIST \NEXT \phi, V))$, $\exists \Hm$ s.t. $\Hm \models \EXIST \NEXT \phi$ and $\Hm \lrto_V \Hm'$  by Def.~\ref{def:V:forgetting}\\
-	$\Rto$ $\exists_{sub}\Hm_1$ of $\Hm$ s.t. $\Hm_1 \models \phi$, where $s_1$ is a directed successor of $s$\\
-	$\Rto$ $\exists \Hm_2$ s.t. $\Hm_2 \models \Muforget(\phi,V)$ and $\Hm_2 \lrto_V \Hm_1$ by Def.~\ref{def:V:forgetting}
-	
-	It is easy to construct a Kripke structure $\Hm_3$ by $\Hm_2$ s.t. $\Hm_2$ is a sub-structure of $\Hm_3$, in which $s_2$ is a direct successor of $s_3$, and $\Hm_3 \lrto_V \Hm$\\
-	$\Rto$ $\Hm_3 \models \EXIST \NEXT (\Muforget(\phi,V))$ and $\Hm_3 \lrto_V \Hm'$ by Pro.~\ref{pro:EqUnion}\\
-	%, especially, let $(\Hm_3, s_3) = (\Hm', s')$, we have
-	$\Rto$ $\Hm' \models \EXIST \NEXT (\Muforget(\phi,V))$  by Def.~\ref{def:V:forgetting}.
-	
-	$(\Lto)$ $\forall$ $\Hm_3 \in \Mod(\EXIST \NEXT (\Muforget(\phi,V)))$, $\exists_{sub}\Hm_2$ of $\Hm_3$ s.t. $\Hm_2 \models \Muforget(\phi,V)$\\
-	$\Rto$ $\exists\Hm_1$ s.t. $\Hm_1 \models \phi$ and $\Hm_1 \lrto_V \Hm_2$ by Def.~\ref{def:V:forgetting}
-	
-	It is easy to construct a Kripke structure $\Hm$ by $\Hm_1$ s.t. $\Hm_1$ is a sub-structure of $\Hm$, in which $s_1$ is a direct successor of $s$, and $\Hm\lrto_V \Hm_3$\\
-	$\Rto$ $\Hm \models \EXIST \NEXT \phi$, and then $\Hm_3 \models \Muforget(\EXIST \NEXT \phi, V)$  by Def.~\ref{def:V:forgetting}.
+	$(\Lto)$ $(\Hm,s)\models\EXIST \NEXT\CTLforget(\phi,V)$\\
+	$\Rto$ 对一些 $(s,s')\in R$， $(\Hm,s')\models\CTLforget(\phi,V)$ ($R\in \Hm)$\\
+	$\Rto$ 对一些 $(s,s')\in R$，有$(\Hm,s')\lrto_V(\Hm',s'')$ 和 $(\Hm',s'')\models\phi$，其中 $\Hm'=(S',R',L',[\_]',s'')$ \\
+	%		$\Rto$ For every $i\ge 0$, there is $(\Hm,s'_i)\lrto_V(\Hm'_i,s''_i)$ and $(\Hm'_i,s''_i)\models\phi$
+	%		where $\{s'_0,s'_1,\ldots\}=\{s'\mid (s,s')\in R\}$ and $\Hm'_i=(S'_i,R'_i,L'_i,[\_]'_i,s''_i)$ (we assume $S'_i\cap S'_j=\emptyset$ when $i\neq j$)\\
+	$\Rto$ $(\Hm^*,s)\lrto_V(\Hm,s)$ 和 $(\Hm^*,s)\models\EXIST\NEXT\phi$，其中
+	$\Hm^*=(S^*,R^*,L^*,[\_], s)$，
+	\begin{itemize}
+		\item $S^*=S\cup S'$，
+		\item $R^*=\{(s,s'')\}\cup R \cup R'$，
+		\item $L^*= L \cup L'$ 和 $L^*(s)=L(s)$，其中 $L\in\Hm$。
+	\end{itemize}
+	$\Rto$ $(\Hm,s)\models \CTLforget(\EXIST\NEXT\phi,V)$。
 	
 \end{proof}
+
 
  $\ALL\NEXT$ （或 $\EXIST\NEXT$）在 $\Muforget$上的同质性表明，在从 $\ALL\NEXT \varphi$ （或 $\EXIST\NEXT \varphi$）遗忘掉$V$中的原子命题等价于将$\Muforget$提到$\ALL\NEXT$ 和 $\EXIST \NEXT$后面计算的结果。
 %It offers convenience for computing the forgetting.
