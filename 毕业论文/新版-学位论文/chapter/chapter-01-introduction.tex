@@ -25,7 +25,7 @@
 
 形式化验证有两种主要的验证方法：自动定理证明（Automated theorem proving）和模型检测（Model checking)。
 在自动定理证明中，系统模型和规范（specification）被同一形式化语言分别描述为$\varphi_{imp}$和$\varphi_{spec}$，剩下的任务就是证明性质，如:$\varphi_{imp}\rto \varphi_{spec}$或$\varphi_{imp}\lrto\varphi_{spec}$。
-常用的自动定理证明方式有基于规约（Resolution）\cite{DBLP:journals/jacm/Robinson65}和常用于模态逻辑的基于表推理（tableau）\cite{hughes1996new}的方法。
+常用的自动定理证明方式有基于归结（Resolution）\cite{DBLP:journals/jacm/Robinson65}和常用于模态逻辑的基于表推理（tableau）\cite{hughes1996new}的方法。
 然而，在自动定理证明中寻找不变式（invariant）是一个相当困难的问题。
 因此，为了避免像Hoare逻辑\cite{Hoare1969}、动态逻辑\cite{harel1979first}和分离逻辑\cite{DBLP:conf/lics/Reynolds02}在形式化验证中寻找不变式，Fangzhen Lin提出将一个程序（program）转换为一阶理论，
 然后再使用一阶理论中的自动定理证明方法来验证\cite{DBLP:journals/ai/Lin16}。
