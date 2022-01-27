@@ -33,10 +33,11 @@
 形式化验证的模型检测首先由Clarke提出，并用于解决并发系统验证问题\cite{DBLP:conf/spin/Clarke08}。Clarke和Emerson在文章\cite{clarke1981design}中指出，在有限状态的并发系统中使用时态逻辑的推演系统（deductive system）中的公理和推理规则进行构造性证明（proof construction）的方法来证明该系统是否满足给定的规范是不必要的。因为在有限状态并发系统中，该并发系统可以被看作是一个Kripke结构$\Hm$，与此同时，一个规范被表示成一个逻辑公式$\varphi$。此时，该验证问题就变成检验一个Kripke结构是否满足该公式，即模型检测（$\Hm\models \varphi$）: 判断$\Hm$是否是$\varphi$的一个模型。
 
 近年来，模型检测问题在知识表示与推理（KRR）领域的推进下取得了丰富的科研成果，例如：基于SAT的有界（bounded）模型检测\cite{DBLP:journals/ac/BiereCCSZ03}和基于OBDD的符号模型检测\cite{burch1992symbolic}已经使得模型检测问题在时间和空间效率上取得了很大的进步，在一定程度上缓解了其固有的状态空间爆炸问题。此外，大量优质的模型验证器（如：NuSMV\footnote{http://nusmv.fbk.eu/}、SPIN\footnote{http://spinroot.com/spin/whatispin.html}、Uppaal\footnote{http://www.uppaal.org/} 等）也相继发展起来，并且大部分的验证器都可以用来验证多种时态逻辑描述的公式。  
+
        
 时态逻辑作为描述系统规范的形式化语言，它研究状态随时间变化的系统的逻辑特性。由于软件和硬件的运行的本质是状态变化的过程，所以时态逻辑在软件程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, \CTL）是分支时态逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用其他时态逻辑表示的\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本文将要研究的描述规范的逻辑语言限制到$\CTL$和$\mu$-演算下。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
-
+在实际应用中，对于给定的$\Hm\models \varphi$问题，当$\Hm$满足$\varphi$时一般的验证器都会返回“yes”以表示满足，当$\Hm$不满足$\varphi$时验证器会给出一个使得$\varphi$不被$\Hm$满足的负例。此时，\emph{如何对$\Hm$进行修正使得其满足给定的规范是一个重要的问题}。
 
 从知识抽取（或“剪掉”）的角度来看。出于安全考虑，查看信息时需要将有的信息隐藏掉而只抽取关注的部分信息。
 此外，随着时间的推移，由于某些原因使得系统的部分信息过时，此时就需要将这样的过时的信息在不影响其他信息的情况下“剪掉”。
@@ -56,17 +57,17 @@
 		\includegraphics[width=4cm]{NnewCar.png}\\
 		\caption{汽车制造企业模型}\label{BVM}
 	\end{figure*}
+
+假定现在由于经济危机或者是环境需要，导致该企业不能再生产跑车。这意味这所有关于$sp$的规范和Kripke结构都不再需要考虑，因此应该“移除”掉。
 \end{example}
 
 日常生活中也有很多上述例子中的场景，如：商业交易过程、软件开发过程等~\cite{Baier:PMC:2008}。
-但是对于给定原子命题的集合，从这些大型系统中“移除”掉这些原子而保持与这些原子无关的性质是一个复杂的问题。
+但是对于给定原子命题的集合，\emph{从这些大型系统（或规范）中“移除”掉这些原子而保持与这些原子无关的性质是一个复杂的问题}。
 此外，在这种情形下，两个重要的概念：最强必要条件（SNC）和最弱充分条件（WSC）问题也随之产生，其中SNC是指最一般的结论，WSC指最特殊的诱因。
 
 基于上述存在的问题，本文在下面的研究意义部分给出对应的解决方案和其意义所在。
 
 \subsection{研究意义}
-在实际应用中，对于给定的$\Hm\models \varphi$问题，当$\Hm$满足$\varphi$时一般的验证器都会返回“yes”以表示满足，当$\Hm$不满足$\varphi$时验证器会给出一个使得$\varphi$不被$\Hm$满足的负例。此时，如何对$\Hm$进行修正使得其满足给定的规范是一个重要的问题。
-
 最强后件（SP）和最弱前件（WP）（分别对应于上文提到的SNC和WSC）是形式化验证中的两个重要的概念，其不仅被用于汇编语言程序推理~\cite{legato2002weakest}和制定验证条件\cite{DBLP:journals/ipl/Leino05}，还被应用于形式化验证过程中的负例生成\cite{dailler2018instrumenting}和系统精化（refinement）\cite{woodcock1990refinement}。
 当$\Hm\not \models \varphi$时，若知道某个性质$\psi$使得若$\Hm$按照此性质进行修改后得到的新模型$\Hm'$能满足$\varphi$，即$\psi$为使得$\Hm\models \varphi$成立的充分条件（$\Hm \models \psi\rto \varphi$）。
 然而，现有的方法不能直接应用于计算当$\Hm$为不终止系统（如：反应式系统（reactive system））时使得“$\Hm\models \varphi$”为真的最强必要条件（SNC）和最弱充分条件（WSC）
@@ -110,7 +111,7 @@
 现有的研究一阶逻辑和描述逻辑下的遗忘的方法有基于归结（resolution）和基于Ackermann引理的方法~\cite{DBLP:books/daglib/0023036}。
 其中基于归结的方法是一种基于子句的归结反驳方法，归结规则是其基础。通常在这种方法中首先要把公式转换为其子句形式，然后再使用归结规则，最后将得到的子句集合中包含有要遗忘的谓词（原子命题）“移除”掉后得到结果可能就为遗忘的结果（在后文中会详细介绍与本文相关的归结规则和转换规则）。
 基于Ackermman引理的方法主要是直接或间接（扩展）下面的Ackermann引理得到的。
-\begin{lemma}[Lemma 6.1 of~\cite{DBLP:books/daglib/0023036}]
+\begin{lemma}[引理 6.1~\cite{DBLP:books/daglib/0023036}]
 	给定关系变元$X$和一阶公式$\alpha(\overline{x}, \overline{z})$和$\beta(X)$，其中$\overline{x}$和$\overline{z}$为普通变元构成的多元组、$\overline{x}$中变元的个数与$X$的参数个数相同、且$\alpha$中不包括$X$。
 	\begin{itemize}
 		\item 若$\beta(X)$关于$X$是正的，即：$X$在$\beta(X)$中的每次出现前面都有偶数个“$\neg$”符号，则：
@@ -187,7 +188,7 @@ S5、K和KD模态逻辑系统具有均匀插值性质~\cite{DBLP:journals/aml/Ie
 但是，就如上面所述时序逻辑下的遗忘理论尚处于不成熟阶段，没有一个统一的理论框架。
 此外，如何用遗忘来计算给定系统模型和性质的WSC（SNC）也是一个重要问题。
 
-基于此，{\em 本文从遗忘理论的角度出发，拟研究反应式系统的SNC和WSC的计算方法，从而为计算不终止类系统下定义在某个符号集上的SNC和WSC提供了新的方法，架起形式化验证与KRR之间的桥梁。}
+基于此，{\em 本文从遗忘理论的角度出发，研究反应式系统下SNC和WSC的计算方法，从而为计算不终止类系统下定义在某个符号集上的SNC和WSC提供了新的方法，架起形式化验证与KRR之间的桥梁。}
 %特别地，本文将规范的描述语言限制到$\CTL$和$\mu$-演算下。
 为了实现这一目标，本文\textbf{主要研究内容及结果}如下：
 
@@ -252,7 +253,7 @@ $\CTL$是一种分支时序逻辑，已有文献表明$\CTL$不具有均匀插�
 
 \begin{figure}[htbp]
 	\centering
-	\includegraphics[width = 0.7\linewidth]{./figures/chapter01_2.jpg}
+	\includegraphics[width = 0.7\linewidth]{chapter01/zuzhi.png}
 	\caption{本文的章节内容组织结构图}
 	\label{fig:chapter1-research-structure}
 \end{figure}
