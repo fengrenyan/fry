@@ -1,6 +1,9 @@
 \chapter{Kripke结构、时序逻辑以及遗忘理论}\label{chapter02}
 
-{\em 本章主要介绍本文用到的符号、术语以及逻辑理论基础，包括：Kripke结构、时序逻辑（尤其是计算树逻辑（CTL）和$\mu$-演算）和遗忘理论等。首先，介绍解释时序逻辑语言所需的模型结构，即Kripke结构。其次，主要介绍时序逻辑中本文探讨的计算树逻辑和$\mu$-演算。为了更加明确本文的研究动机，本章将详细介绍模型检测的基本概念和一些主要的性质。此外，遗忘理论是本文的研究重点，其概念、性质及在各个研究领域的研究情况将会被当作本章的重点详细介绍。
+{\em 本章主要介绍本文用到的符号、术语以及逻辑理论基础，包括：Kripke结构、时序逻辑（尤其是计算树逻辑（CTL）和$\mu$-演算）和遗忘理论等。首先，介绍解释时序逻辑语言所需的模型结构，即Kripke结构。其次，主要介绍时序逻辑中本文探讨的计算树逻辑和$\mu$-演算。
+	%为了更加明确本文的研究动机，本章将详细介绍模型检测的基本概念和一些主要的性质。
+	为了后文使用基于归结的方法计算$\CTL$下的遗忘，本章详细介绍$\CTL$下的归结系统及探索这些规则潜在的基本性质。
+	此外，遗忘理论是本文的研究重点，其概念、性质及在各个研究领域的研究情况将会被当作本章的重点详细介绍。
 
 为了方便，本文将命题变量（也叫原子命题）的集合记作$\cal A$，$V\subseteq {\cal A}$ 是$\cal A$的子集。此为，规定$\overline{V}$是$V$在${\cal A}$上的补，也即是$\overline{V}={\cal A}-V$。}
 %{\em 围绕差分隐私应用中存在的隐私与数据可用性之间的权衡问题，本文以隐私信息度量为基础，试图从均衡优化的角度提供一种解决方案。为了更好的阐述后续的研究内容，本章首先介绍本文工作所需的基本模型与定义，包括隐私定义、差分隐私模型的形式化定义、Shannon信息论的基本通信模型及信息熵的概念。随后，介绍信息论、优化理论与对策博弈的基础知识，并以此为基础介绍了差分隐私均衡优化主要研究问题的描述及定义。本章阐述的内容主要为后续章节的具体研究奠定基础。}
@@ -157,7 +160,7 @@ $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^
 
 
 \section{时序逻辑}
-时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化的系统的逻辑特性。由于软件和硬件的运行的本质是状态变化的过程，所以时态逻辑在软件程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时态逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用其他时态逻辑表示的\textcolor{red}{[18]}。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
+时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化而变化的系统的逻辑特性。由于软件和硬件运行的本质是状态变化的过程，所以时序逻辑在软件程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时序逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用除了$\mu$-演算以外的其他时序逻辑表示的~\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算这两种时序逻辑。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
 \subsection{计算树逻辑（\CTL）}
 $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。这里给出带索引的$\CTL$公式定义，而$\CTL$公式是该种公式的子类。带索引的$\CTL$的语言${\cal L}$由下面的几类符号构成：
@@ -216,6 +219,7 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 \end{align*}
 
 给定一个不包含“$\rto$”的公式$\varphi$和原子命题$p$，若如果$p$ 在 $\varphi$中的出现之前有偶数个否定$\neg$，则称$p$ 在$\varphi$ 中的出现为\emph{正出现}，否则为\emph{负出现}。若$\varphi$中所有$p$的出现都为正出现（或负出现），则称$\varphi$关于$p$是正的（或负的）。
+此外，对于给定的公式集合，如果该集合中的所有公式关于$p$都是正的（或负的），则说该集合关于$p$是正的（或负的）。
 
 带索引的$\CTL$的语义定义在Kripke结构上，可以严格地描述如下。
 \begin{definition}[带索引的$\CTL$的语义]\label{def:ctl:semantic}
@@ -346,10 +350,10 @@ $\CTLsnf$子句是具有下面几种形式的公式：
 \]
 其中$k$和$n$都是大于0的常量，$\start$是命题常量符号，$l_i$（$1\leq i \leq n$）、$m_j$（$1\leq j \leq k$）和$l$都是文字，且$ind \in \Ind$。
 从上述标准形式中，可以看到每个$\CTLsnf$子句都是$\ALL\GLOBAL(P \rto G)$形式。因此在没有歧义的情况下，下文中将使用$P \rto G$指代这些子句。
-此外，除了额外说明，本文通常讲$\CTLsnf$子句和子句统称为子句。
+此外，除了额外说明，本文通常将$\CTLsnf$子句和子句统称为子句。
 
-对于给定的公式$\varphi$（其中的$\rto$符号都用$\vee$和$\neg$表示），如果$\varphi$中所有原子命题$p$的出现都有偶数个否定符号在其之前，则称$\varphi$关于$p$是正的，否则称$\varphi$关于$p$是负的。
-此外，对于给定的公式集合，如果该集合中的所有公式关于$p$都是正的，则说该集合关于$p$是正的，否则该集合关于$p$是负的。
+%对于给定的公式$\varphi$（其中的$\rto$符号都用$\vee$和$\neg$表示），如果$\varphi$中所有原子命题$p$的出现都有偶数个否定符号在其之前，则称$\varphi$关于$p$是正的，否则称$\varphi$关于$p$是负的。
+%此外，对于给定的公式集合，如果该集合中的所有公式关于$p$都是正的，则说该集合关于$p$是正的，否则该集合关于$p$是负的。
 
 一个$\CTL$公式$\varphi$可以通过表~\ref{tab:trans}中的规则将其转换为一个$\CTLsnf$子句的集合，记为$T_{\varphi}$。
 
@@ -489,6 +493,7 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句�
 下面通过一个简单的例子~\cite{zhang2014resolution}来展示上述转换步骤：
 \begin{example}\label{exmp:transbot}
 	令$\varphi=\neg \ALL \FUTURE p \wedge \ALL\FUTURE(p \wedge \top)$，下面给出将$\varphi$转换为$\CTLsnf$的详细步骤。
+	
 	(1) 将公式$\varphi$转换为其NNF形式：$\EXIST\GLOBAL \neg p \wedge \ALL\FUTURE(p \wedge \top)$；
 	
 	(2) 化简(1)中的公式为：$\EXIST\GLOBAL \neg p \wedge \ALL\FUTURE p$；
@@ -536,7 +541,7 @@ $\mu$-演算是模态逻辑的扩展，本文讨论Kozen提出的命题$\mu$-演
 	\item 不动点符号：$\mu$和$\nu$，分别表示“最小不动点”和“最大不动点”。
 \end{itemize}
 
-通常认为$\ALL\NEXT$和$\EXIST\NEXT$的优先级比布尔连接符高~\cite{bradfield2018mu}，为了保证文章的统一性，本文规定各类符号之间的如下优先级：
+通常认为$\ALL\NEXT$和$\EXIST\NEXT$的优先级比布尔连接符高~\cite{bradfield2018mu}，为了保证文章的统一性，本文规定各类符号之间的如下优先级（从左到右优先级逐渐变低）：
 \[
 \neg\qquad \EXIST\NEXT\qquad \ALL\NEXT\qquad \wedge\qquad \vee\qquad \mu\qquad \nu.
 \]
@@ -660,7 +665,7 @@ Cover(\varphi_1, \dots, \varphi_n) \LRto \lozenge \varphi_1 \wedge \dots \wedge 
 	j \wedge ch \wedge \lozenge (\neg j \wedge \neg ch) \equiv j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),
 	\]
 	\[
-	\mu X. (j \wedge ch) \wedge \lozenge X \equiv  \mu X. (j \wedge ch) \wedge Cover(X, \top)
+	\mu X. (j \wedge ch) \wedge \lozenge X \equiv  \mu X. (j \wedge ch) \wedge Cover(X, \top),
 	\] 和
 	\[
 	\nu X. (j \wedge ch) \wedge \lozenge \lozenge X \equiv \nu X. (j \wedge ch) \wedge Cover(Cover(X, \top), \top).
@@ -673,7 +678,7 @@ Cover(\varphi_1, \dots, \varphi_n) \LRto \lozenge \varphi_1 \wedge \dots \wedge 
 \emph{归结}是一种用于判定给定的命题公式（或一阶公式）是否可满足的规则，该技术可以追溯到1960年Davis等的工作~\cite{DBLP:journals/jacm/DavisP60}，之后被Robinson加以完善~\cite{DBLP:journals/jacm/Robinson65}。对于给定的公式，归结给出一个反驳定理证明过程。
 %除了公式的可满足性证明，归结还被用于计算命题逻辑里的遗忘。
 
-在看见了归结在在命题逻辑和一阶逻辑中取得成就之后，科研工作者们开始将精力致力于其他非经典逻辑中，并取得了相当显著的理论成果，如：模态逻辑（K系统，Q系统，T系统，S4和S5系统）中的归结~\cite{DBLP:journals/tcs/EnjalbertC89}和时态逻辑（尤其是线性时序逻辑（LTL）和\CTL）中的归结~\cite{DBLP:conf/cade/CavalliC84,DBLP:journals/jetai/BolotovF99}。
+在看见了归结在在命题逻辑和一阶逻辑中取得成就之后，科研工作者们开始将精力致力于其他非经典逻辑中，并取得了相当显著的理论成果，如：模态逻辑（K系统，Q系统，T系统，S4和S5系统）中的归结~\cite{DBLP:journals/tcs/EnjalbertC89}和时序逻辑（尤其是线性时序逻辑（LTL）和\CTL）中的归结~\cite{DBLP:conf/cade/CavalliC84,DBLP:journals/jetai/BolotovF99}。
 
 这里主要介绍与本文直接相关的$\CTL$下的归结。$\CTL$下的归结起源于BolotovF的研究\cite{DBLP:journals/jetai/BolotovF99}，之后被Zhang等人完善~\cite{zhang2014resolution}。不论是在BolotovF的工作还是在Zhang等人的工作中，其关键点都是将$\CTL$公式转换为一个$\CTLsnf$子句的集合。本文使用Zhang等人提出的规则~\cite{zhang2014resolution}，如表~\ref{tab:res}所示。
 
@@ -769,12 +774,12 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 \section{遗忘理论基础和SNC（WSC）}
 这部分主要介绍遗忘理在经典逻辑和模态逻辑S5下的定义，以及基于遗忘的SNC（WSC）的计算方法。
 \subsection{经典逻辑下的遗忘}\label{chapter:sub:proforgetting}
-遗忘一词起源于经典逻辑（包括命题逻辑和一阶逻辑）~\cite{lin1994forget}，给定一个命题公式$\varphi$和一个原子命题$p$，下面将介绍一下在$\varphi$中遗忘（forget）掉$p$。
-在\ref{chapter01:forgetting}中，从$\varphi$中遗忘掉$p$ 得到的结果为$\Forget(\varphi, \{p\}) \equiv \varphi[p/\top] \vee \varphi[p/\bot]$。
+遗忘一词起源于经典逻辑（包括命题逻辑和一阶逻辑）~\cite{lin1994forget}，给定一个命题公式$\varphi$和一个原子命题$p$，下面将介绍如何从$\varphi$中遗忘（forget）掉$p$。
+在第\ref{chapter01:forgetting}节中说过，从$\varphi$中遗忘掉$p$ 得到的结果为$\Forget(\varphi, \{p\}) \equiv \varphi[p/\top] \vee \varphi[p/\bot]$。
 
 
 \begin{example}\label{exmp:fish}
-	某学校有$a$和$b$两个食堂，学生要么去$a$食堂吃饭要么去$b$食堂吃饭，如果想吃烤鱼（fish，$f$）就去$a$食堂吃饭，如果想吃炒饭（rice，$r$）就去$b$食堂吃饭。这一知识可表示为命题公式$\varphi=(a \vee b) \wedge (f\rto a) \wedge (r \rto b)$。如果此时不考虑鱼，即：由于某种原因$a$食堂就不在卖烤鱼了，此时就应该“遗忘”烤鱼。这一计算过程表示如下：
+	某学校有$a$和$b$两个食堂，学生要么去$a$食堂吃饭要么去$b$食堂吃饭，如果想吃烤鱼（fish，$f$）就去$a$食堂吃饭，如果想吃炒饭（rice，$r$）就去$b$食堂吃饭。这一知识可表示为命题公式$\varphi=(a \vee b) \wedge (f\rto a) \wedge (r \rto b)$。如果此时不考虑鱼，即：由于某种原因$a$食堂就不再卖烤鱼了，此时就应该“遗忘”烤鱼。这一计算过程表示如下：
 	\begin{align*}
 		\Forget(\varphi, \{f\}) & \equiv \varphi[f/\top] \vee \varphi[f/\bot] \\
 		& \equiv [(a \vee b) \wedge (\top \rto a) \wedge (r \rto b)] \vee  [(a \vee b) \wedge (\bot \rto a) \wedge (r \rto b)]\\
@@ -784,10 +789,10 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 \end{example}
 
 直观上来看，这个结果应该比原始的公式$\varphi$还要弱，但是能够蕴含同样的任何不包含$f$的句子（sentence），也就是说遗忘只能影响与$f$相关的语义。
-这一性质可由互模拟这一词来表示。对于解释之间的互模拟来说，对于原子命题$p$，如果对任意的$q\in \Ha-\{p\}$有$q \in I_1$当且仅当$q \in I_2$，则称解释$I_1$与$I_2$是$p$互模拟的，记为：$I_1 \sim_{p} I_2$。
+这一性质可由互模拟这一词来表示。对于解释之间的互模拟来说，给定原子命题$p$，如果对任意的$q\in \Ha-\{p\}$有$q \in I_1$当且仅当$q \in I_2$，则称解释$I_1$与$I_2$是$p$互模拟的，记为：$I_1 \sim_{p} I_2$。
 
 
-在一阶逻辑中，一阶逻辑语言${\cal L}_f$的解释有两种：${\cal L}_f$和结构有联系或没有联系，互模拟的定义就要困难一些。这里考虑和结构有联系的情形，一个\emph{一阶结构}由论域（domain）、指定的个体、关系和函数构成。此时，${\cal L}_f$中的个体符合、$n$-元关系符号和$m$-元函数符号分别被解释为这个结构中指定的论域中的个体、论域上的$n$-元关系和$m$-元全函数（即处处有定义的函数）。对于给定的一阶结构$M$和$X\in \{\hbox{元组，关系符号，函数符号}\}$，$M[X]$表示结构$M$对$X$的解释，且$M[(a_1, a_2, \dots, a_i)]$ = $(M[a_1],$ $M[a_2], \dots, M[a_i])$。
+在一阶逻辑中，一阶逻辑语言${\cal L}_f$的解释有两种：${\cal L}_f$和结构有联系或没有联系，互模拟的定义就要困难一些。这里考虑和结构有联系的情形，一个\emph{一阶结构}由论域（domain）、指定的个体、关系和函数构成。此时，${\cal L}_f$中的个体符合、$n$-元关系符号和$m$-元函数符号分别被解释为这个结构中指定的论域中的个体、论域上的$n$-元关系和$m$-元全函数（即处处有定义的函数）。对于给定的一阶结构$M$和$X\in \{\hbox{个体符号，元组，关系符号，函数符号}\}$，$M[X]$表示结构$M$对$X$的解释，且$M[(a_1, a_2, \dots, a_i)]$ = $(M[a_1],$ $M[a_2], \dots, M[a_i])$。
 
 给定实例化（ground atom）原子$P(\vec{t})$（$\vec{t}$是一个$n$元组）、$M_1$和$M_2$为一阶结构（论域（domain）、指定的个体、关系和函数构成一个一阶结构），则$M_1 \sim_{P(\vec{t})} M_2$ 当且仅当除了$P(\vec{t})$的真值$M_1$和$M_2$相同，即：
 \begin{itemize}
@@ -819,7 +824,7 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 	\end{align*}
 \end{example}
 
-然而，遗忘掉一整个关系（谓词）而不是其实例得到的结果是一个二阶公式，且结构间在谓词上的互模拟与上述在实例上的有所不同：对于谓词$P$和结构$M_1$、$M_2$，$M_1 \sim_{P} M_2$ 当且仅当：
+然而，遗忘掉一整个关系（谓词）“$P$”而不是其实例得到的结果是一个二阶公式，且结构间在谓词上的互模拟与上述在实例上的有所不同：对于谓词$P$和结构$M_1$、$M_2$，$M_1 \sim_{P} M_2$ 当且仅当：
 \begin{itemize}
 	\item[(i)] $M_1$和$M_2$有相同的论域，且每个函数符号被解释成相同的函数；
 	\item[(ii)] 对于和$P$不同的任意关系符号$Q$，$M_1[Q]=M_2[Q]$。
@@ -857,7 +862,7 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 	\item[(iii)] 若$(w_1, w_2) \in \sigma$则$w_1\sim_V w_2$。
 \end{itemize}
 
-条件(i)和(ii)分别称为前向条件（forth condition）和后向条件（back condition）。需要注意的是，即使$M$和$M'$有$V$-互模拟关系，$M$和$M'$也可能有不同数量的世界个数。除此之外，从定义中不难看出，如果$\Hm \lrto_{V} \Hm'$，则有$Atom(W)-V=Atom(W' )-V$，其中$A(X)$（$X$是可能世界的集合）是由出现在$X$中的世界中的原子构成的集合。从定义中还可得出$\lrto_V$是一个等价关系。
+条件(i)和(ii)分别称为前向条件（forth condition）和后向条件（back condition）。需要注意的是，即使$M$和$M'$有$V$-互模拟关系，$M$和$M'$也可能有不同数量的世界个数。除此之外，从定义中不难看出，如果$\Hm \lrto_{V} \Hm'$，则有$Atom(W)-V=Atom(W' )-V$，其中$Atom(X)$（$X$是可能世界的集合）是由出现在$X$中的世界中的原子构成的集合。从定义中还可得出$\lrto_V$是一个等价关系。
 %\subsection{描述逻辑里的遗忘}
 
 S5关于$V$-互模拟是不变的（invariant）：如果两个$\MPK$-解释$M$和$M'$有$V$-互模拟关系，那么对于任何不包含$V$中任何原子的公式$\varphi$，$M$和$M'$同时满足或不满足公式$\varphi$。
@@ -898,7 +903,7 @@ $$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n,$$
 \begin{align}\label{form:s5clause}
 	\varphi_0 \wedge \MPK \varphi_1 \wedge \MPB \varphi_2 \wedge \dots \wedge \MPB \varphi_n
 \end{align}
-其中$\varphi_i$（$0\leq i \leq n$）为命题逻辑公式，$C_i$（$0\leq i \leq n-1$）为经典子句，$C_n$为CNF公式，且任意$\varphi_i$都可能缺失。
+其中$\varphi_i$（$0\leq i \leq n$）为命题逻辑公式，$C_i$（$0\leq i \leq n-1$）为经典子句，$C_n$为CNF公式，且任意$\varphi_i$和$C_i$都可能缺失。
 从子句\ref{form:s5clause}遗忘掉原子命题$p$可以转换成命题逻辑中的遗忘，即：
 \begin{align*}
 	&\KForget(\varphi_0 \wedge \MPK \varphi_1 \wedge \MPB \varphi_2 \wedge \dots \wedge \MPB \varphi_n)\\
@@ -940,7 +945,7 @@ Feng等人提出了基于上述归结系统RS5的计算遗忘的算法~\cite{fen
 \end{itemize}
 其中$Lit(X)$为出现在$X$中文字的集合。
 
-“清除”操作主要是用于移除那些包含要遗忘的原子命题的公式。具体地，令$\phi$为子句，$V\subseteq \Ha$为原子命题的集合，$\phi$在$V$上的清楚操作记为$Supp(V,\phi)$，且：
+“清除”操作主要是用于移除那些包含要遗忘的原子命题的公式。具体地，令$\phi$为子句，$V\subseteq \Ha$为原子命题的集合，$\phi$在$V$上的清除操作记为$Supp(V,\phi)$，且：
  \[Supp(V, \phi) =
 \left\{
 \begin{array}{ll}
@@ -950,7 +955,7 @@ Feng等人提出了基于上述归结系统RS5的计算遗忘的算法~\cite{fen
 \right.
 \]
 
-令$\phi=C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n$为模态子句，$\phi$在$V$上的清楚操作也记为$Supp(V,\phi)$，且：
+令$\phi=C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n$为模态子句，$\phi$在$V$上的清除操作也记为$Supp(V,\phi)$，且：
 $$Supp(V, C_0) \vee \left(\bigvee_{1\leq i\leq n-1} \MPK Supp(V, C_i)\right) \vee \MPB\left(\bigwedge_{\alpha\hbox{ is a conjunct of $C_n$}} Supp(V, \alpha)\right).$$
 
 模态S5下基于归结的算法如算法~\ref{alg:compute:s5:forgetting}所示。在该算法中，第7-9行用于移除具有形式$p\vee D$或$\neg p \vee D$（$p\in V$）的子句，以免产生无用的结果，因为这些结果在第11行也会被移除。
@@ -1014,7 +1019,7 @@ SNC和WSC的定义最先由Lin提出~\cite{DBLP:journals/ai/Lin01}，这部分�
 	\item 所有的单元子句都被替换为true；
 	\item 没有一个子句被集合中的另一个子句包蕴。
 \end{itemize}
-此外，对于公式集合$S$，$S[X/Y]$为将$S$每个公式中$X$的出现全都替换成$Y$，即$S[X/Y]=\{\varphi[X/Y]\mid \varphi\in S\}$。
+此外，对于公式集合$S$，$S[X/Y]$为将$S$中每个公式中$X$的出现全都替换成$Y$，即$S[X/Y]=\{\varphi[X/Y]\mid \varphi\in S\}$。
 
 \begin{algorithm}[htbp]
 	\small
@@ -1073,5 +1078,5 @@ SNC和WSC的定义最先由Lin提出~\cite{DBLP:journals/ai/Lin01}，这部分�
 
 \section{本章小结}
 围绕本文的研究工作，本章首先介绍了最基本的真假赋值的概念，给出了命题逻辑公式的解释，随后给出了时序逻辑依赖的Kripke结构的定义。
-其次，本章详细介绍了带索引的$\CTL$公式的语法和语义。$\CTL$公式是带索引的$\CTL$公式的子类，基于此又介绍了$\CTL$公式的标准形式——$\CTLsnf$子句，并详细介绍了如何将$\CTL$公式转换为$\CTLsnf$子句的集合。基于此，对$\CTL$中的归结过程和归结系统做了详细的介绍，为下文使用基于归结的方法计算$\CTL$中的遗忘做下铺垫。最后，本章详细介绍了本文密切相关的经典逻辑和模态逻辑下的遗忘的定义、基本准则及相关算法，并基于此给出这些逻辑系统下的SNC（WSC）的定义和使用遗忘计算SNC（WSC）的详细算法。本章中所介绍内容为后续章节提供了基本模型与定义，是开展后续研究工作的理论出发点。
+其次，本章详细介绍了带索引的$\CTL$公式的语法和语义。$\CTL$公式是带索引的$\CTL$公式的子类，基于此又介绍了$\CTL$公式的标准形式——$\CTLsnf$子句，并详细介绍了如何将$\CTL$公式转换为$\CTLsnf$子句的集合。基于此，对$\CTL$中的归结过程和归结系统做了详细的介绍，为下文使用基于归结的方法计算$\CTL$中的遗忘做下铺垫。最后，本章详细介绍了本文密切相关的经典逻辑和模态逻辑下的遗忘的定义、基本公设及相关算法，并基于此给出这些逻辑系统下的SNC（WSC）的定义和使用遗忘计算SNC（WSC）的详细算法。本章中所介绍内容为后续章节提供了基本模型与定义，是开展后续研究工作的理论出发点。
 
