@@ -1,7 +1,7 @@
 \chapter{基于模型的方法计算$\CTL$下的遗忘}\label{chapter05}
 
 {\em
-	遗忘理论与均匀插值是一对对偶概念，已有研究表明$\CTL$不具有均匀插值性质~\cite{Maksimova:JANCL:1991}，这就表明$\CTL$中的遗忘理论不是封闭的\footnote{对于给定的逻辑语言${\cal L}$和该语言上的操作${\cal O}$，若$\cal O$作用到$\cal L$中的元素后得到的结果仍然在$\cal L$中，则称$\cal O$在$\cal L$下是封闭的。}。
+	遗忘与均匀插值是一对对偶概念，已有研究表明$\CTL$不具有均匀插值性质~\cite{Maksimova:JANCL:1991}，这就表明$\CTL$中的遗忘理论不是封闭的\footnote{对于给定的逻辑语言${\cal L}$和该语言上的操作${\cal O}$，若$\cal O$作用到$\cal L$中的元素后得到的结果仍然在$\cal L$中，则称$\cal O$在$\cal L$下是封闭的。}。
 	此时，探索$\CTL$下遗忘理论封闭的情形对深入引用遗忘理论有重要意义。
 	为此，本章首先提出有限初始$\MPK$-结构的特征公式；其次，表明$\CTL$公式的遗忘结果在此情形下可以表示成其模型的特征公式的吸取；最后，提出一种基于模型的方法计算遗忘，且探索了如何使用遗忘计算最弱充分条件和知识更新。
 }
@@ -14,21 +14,21 @@
 
 计算树逻辑是由Clarke和Emerson提出的一种分支时间时序逻辑，它能很好的描述并发系统的一些性质，包括：互斥属性和安全属性等。
 Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满足的，那么它在一个小的有限模型下是可满足的~\cite{DBLP:journals/jcss/EmersonH85}。
-具体说来，对于给定的$\CTL$公式$\varphi$，如果公式的长度\footnote{给定公式$\varphi$，出现在该公式里的符号的个数为公式的长度，记为$|\varphi|$。}为$n$（记为：$|\varphi| = n$），则存在一个状态数为$n8^n$的初始$\MPK$-结构$(\Hm,s_0)$使得$(\Hm,s_0)\models \varphi$。
+具体说来，对于给定的$\CTL$公式$\varphi$，如果公式的长度\footnote{给定公式$\varphi$，出现在该公式里的符号的个数为公式的长度，记为$|\varphi|$。}为$n$（记为：$|\varphi| = n$），则存在一个状态数为$n8^n$的初始结构$(\Hm,s_0)$使得$(\Hm,s_0)\models \varphi$。
 
-此外，现实情况下能处理的系统都是有限的，且在某一固定环境下所涉及到的原子命题是有限的。因此，在这部分讨论一种约束的$\CTL$，即：（1）出现在$\CTL$公式中的原子命题的个数是有限的（即$\Ha$是有限的）；（2）初始结构的状态空间$S$是一个有限的固定状态空间${\cal S}=\{b_1,\ldots,b_m\}$的子集（即$S \subseteq {\cal S}$），且使得对于任意约束长度的$\CTL$公式$\varphi$，若$\varphi$是可满足的，则存在一个初始$\MPK$-结构$(\Hm,s_0)$使得$(\Hm,s_0)\models \varphi$且其状态空间是${\cal S}$的子集。由此可见，在这种情形下只有有限个初始结构应该被考虑。
+此外，现实情况下能处理的系统都是有限的，且在某一固定环境下所涉及到的原子命题是有限的。因此，在这部分讨论一种约束的$\CTL$，即：（1）出现在$\CTL$公式中的原子命题的个数是有限的（即$\Ha$是有限的）；（2）初始结构的状态空间$S$是一个有限的固定状态空间${\cal S}=\{b_1,\ldots,b_m\}$的子集（即$S \subseteq {\cal S}$），且使得对于任意约束长度的$\CTL$公式$\varphi$，若$\varphi$是可满足的，则存在一个初始结构$(\Hm,s_0)$使得$(\Hm,s_0)\models \varphi$且其状态空间是${\cal S}$的子集。由此可见，在这种情形下只有有限个初始结构应该被考虑。
 下文将表明在这一约束条件下$\CTL$中的遗忘是封闭的。
 
 本章其余部分组织如下：首先，第\ref{chapter06:sec:des}节定义一种约束$V$-互模拟的概念，然后给出初始结构的特征公式。其次，第\ref{chapter06:sec:close}节描述约束$\CTL$下的遗忘是封闭的，并给出计算方法。进一步，第\ref{chapter06:sec:algm}节给出基于模型的计算遗忘的算法，并分析算法的复杂性。最后，进行本章工作总结。
 
 \section{描述初始结构}\label{chapter06:sec:des}%\label{sec:chapter06_chaIntC}
-本节介绍与一个初始$\MPK$-结构相关的$\CTL$公式——特征公式是如何得到的。
+本节介绍与一个初始结构相关的$\CTL$公式——特征公式是如何得到的。
 %对于一个给定的有限初始结构（状态个数和$\Ha$都是有限的），其不循环的计算树（状态不重复出现）的深度最多为其状态数的个数。
-对于一个给定的初始$\MPK$-结构，其特征公式与其计算树的特征公式密切相关。
-为此，本节首先介绍计算树之间的$V$-互模拟关系，然后给出计算树的特征公式的定义，最后给出初始$\MPK$-结构的特征公式。
+对于一个给定的初始结构，其特征公式与其计算树的特征公式密切相关。
+为此，本节首先介绍计算树之间的$V$-互模拟关系，然后给出计算树的特征公式的定义，最后给出初始结构的特征公式。
 
 \subsection{计算树的$V$-互模拟}
-在第\ref{chapter03}章中的定义~\ref{def:VInd:bisimulation}给出了$\Ind$-结构（$(\Hm,s_0)$中的$\Hm$为初始$\Ind$-Kripke结构）之间的$V$-互模拟定义及其相关性质，结构（$(\Hm,s_0)$中的$\Hm$为初始Kripke结构）之间的$V$-互模拟有相同的定义，且不难证明$\Ind$-结构之间$V$-互模拟有的性质结构之间$V$-互模拟也有，这里不再赘述。本节给出结构之间的$V$-互模拟在有限结构下与下面将要给出的约束$V$-互模拟等价——与深度$n$关联的$V$-互模拟。但是为了方便，本章仍然引入约束$V$-互模拟的概念。
+在第\ref{chapter03}章中的定义~\ref{def:VInd:bisimulation}给出了$\Ind$-结构（$(\Hm,s_0)$中的$\Hm$为初始$\Ind$-Kripke结构）之间的$V$-互模拟定义及其相关性质，结构（$(\Hm,s_0)$中的$\Hm$为初始Kripke结构）之间的$V$-互模拟有相同的定义，且不难证明$\Ind$-结构之间$V$-互模拟有的性质结构之间$V$-互模拟也有。此外，第\ref{chapter03}章遗忘有的性质在本章的约束情形下也有，这里不再赘述。本节给出结构之间的$V$-互模拟在有限结构下与下面将要给出的约束$V$-互模拟等价——与深度$n$关联的$V$-互模拟。但是为了方便，本章仍然引入约束$V$-互模拟的概念。
 
 首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$是初始Kripke结构，${\cal K}_i=(\Hm_i, s_i)$是结构。$\Hb_n^V$被递归定义如下：
 \begin{itemize}
@@ -68,7 +68,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 \begin{proof}
 	令 $V \subseteq \Ha$、 ${\cal K}_i=({\cal M}_i,s_i)~(i\in\{1,2\})$ 和 $\Hm_i=(S_i, R_i,L_i, s_0^i)$ 为有限的初始-Kripke 结构。
-	因为$S_i~(i=1,2)$，所以$\Hb_n\subseteq S_1\times S_2~(n\ge 0)$ 都是有限的。
+	因为$S_i~(i=1,2)$是有限的，所以$\Hb_n\subseteq S_1\times S_2~(n\ge 0)$ 都是有限的。
 	由于对任意的$n\geq 0$都有 $\Hb_{n+1} \subseteq \Hb_n$。
 	因此，存在一个最小数$k$使得
 	$\Hb_{k+1} =\Hb_k$ （用 $\Hb$表示）。
@@ -87,12 +87,12 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	其次，令$w_1 \in S_1$ 和 $(r_1, w_1)\in R_1$。有 \\
 	$(r_1,r_2)\in \Hb$、 $w_1 \in S_1$ 和 $(r_1, w_1)\in R_1$\\
 	$\Rto$ 由$\Hb_{k+1}=\Hb$知$(r_1,r_2)\in \Hb_{k+1}$、 $w_1 \in S_1$ 和 $(r_1, w_1)\in R_1$\\
-	$\Rto$ 有定义可知$\exists w_2\in S_2$使得 $(r_2, w_2)\in R_2$ 和 $(w_1,w_2)\in \Hb_k$\\
+	$\Rto$ 由定义可知$\exists w_2\in S_2$使得 $(r_2, w_2)\in R_2$ 和 $(w_1,w_2)\in \Hb_k$\\
 	$\Rto$ 由$\Hb=\Hb_k$可知$\exists w_2\in S_2$ 使得 $(r_2, w_2)\in R_2$ 和 $(w_1,w_2)\in \Hb$\\
 	$\Rto$ (b)成立。
 	
 	可以类似地证明 (c)也成立。
-	因此， $\Hb$ 是一个$\Hm_1$ 和 $\Hm_2$之间的一个 $V$-互模拟关系。
+	因此， $\Hb$ 是$\Hm_1$ 和 $\Hm_2$之间的一个 $V$-互模拟关系。
 \end{proof}
 
 由引理~\ref{lem:HbBis}可知，$\Hb$既是一个约束$V$-互模拟关系也是一个$V$-互模拟关系，因此下面的推论是显然成立的。
@@ -213,7 +213,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \end{proof}
 
 \subsection{计算树的特征公式}
-由上面小节的讨论可知，$V$-互模拟可以将计算树分别开来\footnote{Similar approaches has been taken in the literature e.g., in~\cite{DBLP:conf/birthday/1997ehrenfeucht},  a class (namely, $\equiv_{\overline{k}}$-class) of structures of monadic formulas has been characterized by Hintikka formulas~\cite{hintikka1953distributive}. Another example is Yankov-Fine construction in \cite{yankov1968three}.}。本节讨论如何使用$\CTL$公式描述一棵计算树，且表明具有（或没有）$V$-互模拟关系之间的计算树的特征公式又有怎样的关系。为此，首先给出计算树的特征公式的定义。
+由上面小节的讨论可知，$V$-互模拟可以将计算树分别开来\footnote{相似的方法在\citeauthor{DBLP:conf/birthday/1997ehrenfeucht}的文章中已被使用~\cite{DBLP:conf/birthday/1997ehrenfeucht}，在这篇文章中一元公式的结构通过等价类$\equiv_{\overline{k}}$被描述为Hintikka公式~\cite{hintikka1953distributive}。另一个类似的工作是Yankov-Fine构造~\cite{yankov1968three}。}。本节讨论如何使用$\CTL$公式描述一棵计算树，且表明具有（或没有）$V$-互模拟关系之间的计算树的特征公式又有怎样的关系。为此，首先给出计算树的特征公式的定义。
 \begin{definition}\label{def:V:char:formula}
 	给定原子命题集合$V\subseteq \Ha$、初始结构$\Hm =(S,R,L,s_0)$和状态$s\in S$。
 	定义在$V$上的计算树$\Tr_n(s)$的特征公式（记为${\cal F}_V(\Tr_n(s))$，$n\geq 0$）被递归定义如下：
@@ -531,12 +531,19 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \end{equation*}
 
 
+
 下面分析遗忘在$\CTL$段$\CTL_{\ALL\FUTURE}$下各种任务的复杂性结果，其中$\CTL_{\ALL\FUTURE}$表示$\CTL$公式只包含时序算子$\ALL \FUTURE$的子类。
 这一类公式在并发系统中的互斥和等待等属性描述中有重要作用~\cite{Baier:PMC:2008}，尽管这类公式是相对简单的，但是下面将要说明判定一个模型是否为从此类公式中遗忘掉原子命题集合得到的结果的模型是$\textsc{NP}$-完全的。
 \begin{proposition}[模型检测]
 	\label{modelChecking}
 	给定一个结构 $(\Hm,s_0)$、原子命题集合$V\subseteq{\cal A}$ 和公式 $\varphi \in \CTL_{\ALL\FUTURE}$，判定 $(\Hm,s_0) \models^? \CTLforget(\varphi, V)$ 是 \textsc{NP}-完全的。
 \end{proposition}
+\begin{proof}
+	成员属性(Membership). 假定$(\Hm,s_0) \models \CTLforget(\varphi,V)$，则存在一个初始结构$(\Hm', s_0')$ 使得 (a) $(\Hm',s_0') \models \varphi$ 且 (b) $(\Hm,s_0) \lrto_V (\Hm',s_0')$。已有结果表明，(a) 能在$\Hm'$ 和 $\varphi$ 的大小的多项式时间内完成~\cite{DBLP:books/daglib/0007403}。条件(b) 也可用Baier等人的推论推论 7.45~\cite{Baier:PMC:2008}的方法证明能在多项式时间内完成。
+	又因为猜$(\Hm,s_0)$多项式大小的初始结构$(\Hm',s_0')$能在多项式时间内完成，因此，这一问题在$\textsc{NP}$ 中。
+	
+	困难属性(Hardness). 已经证明命题逻辑下遗忘的模型检测是$\textsc{NP}$-难的，由于命题逻辑下的遗忘是$\CTL$的一种~\cite{Zhang2008Properties}。因此，上述问题是$\textsc{NP}$-难的。
+\end{proof}
 
 关于遗忘的逻辑蕴涵问题也是值得考虑的，下面讨论$\CTL_{\ALL\FUTURE}$段下关于遗忘的逻辑蕴涵的复杂性。
 
@@ -550,9 +557,28 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	\end{itemize}
 \end{theorem}
 \begin{proof}
-	(i) and (iii) is moved to supplementary material due to space restrictions.
-	(ii) Membership: We consider the complement of the
-	problem. Guess an initial \MPK-structure $(\Hm, s_0)$ which has  polynomial size in the size of $\psi$ satisfying $\psi$ and check $(\Hm,s_0)$ $\not \models \CTLforget($ $\varphi$, $V)$. By Proposition~\ref{modelChecking}, it is in $\Sigma_2^{\textsc{P}}$. So the original problem is in $\Pi_2^{\textsc{P}}$. Hardness: Let $\psi \equiv \top$. Then the problem is reduced to decide the validity of  $\CTLforget(\varphi, V )$. Since propositional forgetting is a special case by Theorem~\ref{thm:PL:CTL}, the hardness  follows from the proof of Proposition 24 in~\cite{DBLP:journals/jair/LangLM03}.
+	(i) 困难属性. 已有结论表明，判定公式$\varphi$是否是可满足的是$\textsc{NP}$-完全的~\cite{meier2009complexity}。要整困难属性，通过令$\CTLforget(\varphi, V)\equiv \top$，只需证明$\psi$是有效的，即：原问题是co-NP-难的。
+	
+	成员属性. 定理~\ref{thm:exist} 表明$\CTLforget(\varphi, V) \models \psi$ 当且仅当 $\varphi \models \psi$ 且 $\IR(\psi, V)$。
+	在$\CTL_{\ALL \FUTURE}$ 中，判定 $\varphi \models \psi$ 是co-$\textsc{NP}$ 的~\cite{meier2009complexity}。
+	这里证明 $\IR(\psi, V)$ 是否成立是 co-$\textsc{NP}$ 的。不失一般性地，假定$\psi$ 是可满足的，则 $\psi$ 有一个大小为$|\psi$的多项式的模型。
+	这里讨论该问题的补问题：判定 $\psi$ 是$V$-有关的，即 $\neg \IR(\psi, V)$。显然，$\neg \IR(\psi, V)$ 当且仅当存在$\psi$的一个模型 $(\Hm,s_0)$ 和大小为$|\psi|$的多项式的初始结构 $(\Hm',s_0')$ 使得 $(\Hm,s_0) \lrto_V (\Hm',s_0')$ 且 $(\Hm',s_0') \not \models \psi$。因此，判定$\neg \IR(\psi, V)$是否成立有如下两个步骤：(1) 猜两个大小为$|\psi|$的多项式的初始结构$(\Hm,s_0)$ 和 $(\Hm',s_0')$ 使得 $(\Hm,s_0) \models \psi$ 且 $(\Hm',s_0') \not \models \psi$，和 (2)
+	检查 $(\Hm,s_0) \lrto_V (\Hm',s_0')$。
+	显然， (1) 和(2) 都是能在多项式时间内完成的。
+	
+	(ii) 成员属性. 考虑这一问题的补问题。猜一个大小为$\psi$ 的多项式的$\psi$ 的 模型 $(\Hm,s_0)$ 且检查 是否 $(\Hm, s_0) \not \models \CTLforget(\varphi, V)$。
+	由命题~\ref{modelChecking} 可知这一问题在 $\Sigma_2^{\textsc{P}}$中。因此，原问题在$\Pi_2^{\textsc{P}}$中。
+	
+	困难属性. 令$\psi \equiv \top$。 则这一问题被规约为判定$\CTLforget(\varphi, V)$的有效性问题。 
+	由于命题遗忘是$\CTL$遗忘的特殊情形，因此该问题的困难属性直接来源于\cite{DBLP:journals/jair/LangLM03}。
+
+(iii) 成员属性. 假定 $\CTLforget(\varphi, V) \not \models \CTLforget(\psi, V)$。则存在一个初始结构 $(\Hm,s) 
+\models \CTLforget(\varphi, V)$ 且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 使得 $(\Hm_1, s_1) \models \varphi$ 但是对其他$(\Hm, s) \lrto_V (\Hm_2,s_2)$ 使得 $(\Hm_2， s_2) \not \models \psi$。
+由命题~\ref{modelChecking} 的证明可知，$(\Hm,s)$和 $(\Hm_1,s_1)$ 能在$|\varphi|$、$|\psi|$和$|V|$的多项式时间内完成。 
+显然，猜使得$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 成立的大小为$|\varphi$多项式的 $(\Hm,s)$和 $(\Hm_1,s_1)$ 可以在多项式时间内完成，且 对任意的 $(\Hm, s) \lrto_V (\Hm_2,s_2)$，检查 $(\Hm_2,s_2) \not \models \psi$ 可以在 $|\psi|$ 和 $|\Hm_2|$ 的多项式时间内完成。
+因此，该问题是 $\Pi_2^{\textsc{P}}$的。
+
+困难属性. 由于 $\IR(\CTLforget(\psi, V), V) $，因此 $\CTLforget(\varphi, V) \models \CTLforget(\psi, V)$ 当且仅当 $\varphi \models \CTLforget(\psi, V)$。 所以由(ii)不难证明该问题。
 \end{proof}
 
 

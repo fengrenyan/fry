@@ -1,6 +1,6 @@
 \chapter{计算CTL下的遗忘：基于归结的方法}\label{chapter04}
 {\em 
-已有结果显示，任意的$\CTL$公式可以转换为$\CTLsnf$子句的集合。归结是一种以子句为计算对象的判断可满足性的方法，本章提出一种基于归结的计算遗忘理论的方法。
+已有结果显示，任意的$\CTL$公式可以转换为$\CTLsnf$子句的集合。归结是一种以子句为计算对象的判断可满足性的方法，本章提出一种基于归结的计算遗忘的方法。
 其主要思想是：首先将给定的$\CTL$公式转换为$\CTLsnf$子句的集合（这一部分在第\ref{chapter02}章已经给出了详细的介绍），其次在相应的原子命题上使用归结规则得到归结结果，最后“消除”之前引入的索引和$\start$，最终得到遗忘的结果。其主要流程图如图~\ref{Fig:chapter05:v1uv2}所示。
 正如本章所要说明的那样，$\CTL$不具有均匀插值这一属性，基于归结的方法在有的情况下是不能计算出遗忘结果的。然而，在有些$\CTL$子类下，本章提出的方法能够计算出其遗忘结果。}
 \begin{figure*}[!htb]
@@ -12,7 +12,7 @@
 \end{figure*}
 
 \section{引言}
-虽然在第\ref{chapter02}章详细介绍了命题逻辑和模态逻辑S5下的基于归结的计算遗忘的方法，但是值得注意的是$\CTL$公式没有像这两种逻辑一样有标准的自身语言子句形式，而$\CTL$的子句是有索引的。这就注定了$\CTL$下的基于归结的遗忘与上述两者的不同，而且也应该要复杂一些（虽有不同，但也可以借鉴）。
+虽然在第\ref{chapter02}章详细介绍了命题逻辑和模态逻辑S5下基于归结的计算遗忘的方法，但值得注意的是$\CTL$公式没有像这两种逻辑一样有标准的自身语言子句形式，而$\CTL$的子句是有索引的。这就注定了$\CTL$下基于归结的遗忘与上述两者的不同，而且也应该要复杂一些（虽有不同，但也可以借鉴）。
 本章展示如何使用第~\ref{chapter02:CTLres}节中表~\ref{tab:res}中的归结规则来计算$\CTL$下的遗忘理论。
 
 %在本章给定如下约定的记号。令$V\subseteq \Ha$是要遗忘的原子命题的集合，$I\subseteq \Ind$是索引的集合，$V'$表示计算过程所引入的原子命题的集合且满足$V'\cap V=\emptyset$。
@@ -93,7 +93,7 @@
 这个过程的主要思想是将转换过程中获得的$\CTLsnf$子句在表~\ref{tab:res}中归结规则上做穷尽的归结，即直到不产生新的归结结果。值得注意的是该归结过程涉及的归结原子命题是需要遗忘的和转换过程中引入的新的原子命题，这是与判定可满足性下做所有原子命题的归结的不同。
 
 令$T$为$\CTLsnf$子句的集合，$p$为原子命题。$T$在$p$上的\emph{展开}（记为$\Unfolding(T,p)$）是集合$T$和如下集合的并集：
-\[\{\alpha\mid \mbox{$\alpha$ 是 $T$ 公式关于文字 $l\in\{p,\neg p\}$ 的归结结果}\}.  \]
+\[\{\alpha\mid \mbox{$\alpha$ 是 $T$ 中的公式关于文字 $l\in\{p,\neg p\}$ 的归结结果}\}.  \]
 对于原子命题的集合$V$，定义$\Unfolding(T,\emptyset)=T$且$\Unfolding(T,\{p\}\cup V)=\Unfolding(\Unfolding(T,p), V)$。
 直观地说，$T$在$p$上的展开是对$p$做穷尽的归结，也就是直到对$p$使用规则{\bf SRES1-8}不再产生新的$\CTLsnf$子句为止（即使使用了重写规则和可能规则之后也不会产生新的子句）。
 
@@ -102,15 +102,15 @@
 下文中记$\emph{ERes}(\varphi,V) = \{\alpha\in \Unfolding(T_\varphi,V)\mid \Var(\alpha)\cap V=\emptyset\}$。
 \begin{proposition}\label{pro:resEQ}
 	令 $\varphi$ 为一个 $\CTL$公式，$V\subseteq\cal A$为原子命题的集合。则
-	$T_\varphi \equiv_U\emph{ERes}(\varphi,V)$，其中  $U=\Unfolding(T_\varphi,V)-(\Var(\varphi)-  V)$。
+	$T_\varphi \equiv_U\emph{ERes}(\varphi,V)$，其中  $U=\Var(\Unfolding(T_\varphi,V))-(\Var(\varphi)-  V)$。
 \end{proposition}
 	\begin{proof}
 	从两个方面来证明这一结论：\textbf{(F1)} $T_\varphi \equiv_U \Unfolding(T_\varphi,V)$， \textbf{(F2)} $\Unfolding(T_\varphi,V) \equiv_{U} \emph{ERes}(\varphi,V)$。
 	为了方便，定义如下 由$\CTLsnf$ 子句集合构成的序列： $T_0=T_{\varphi}, T_1, T_2, \dots, T_n = \Unfolding(T_\varphi,V)$，其中
-	$T_{i+1} = T_i \cup R_i$ ($0\leq i < n$)、 $R_i$ 是对$\Pi \subseteq T_i$使用一条匹配的规则$r$且该规则的消解的原子命题为$p\in V$，这一过程记为 $\Pi \rto_r R_i$。
+	$T_{i+1} = T_i \cup R_i$ ($0\leq i < n$)、 $R_i$ 是对$\Pi \subseteq T_i$使用一条匹配的规则$r$且该规则归结的原子命题为$p\in V$，这一过程记为 $\Pi \rto_r R_i$。
 	\\
 	
-	\textbf{(F1)} 为了证明$T_\varphi \equiv_U \Unfolding(T_\varphi,V)$，这里证明 $0\leq i < n$ 有$T_i \equiv_{U} T_{i+1}$。
+	\textbf{(F1)} 为了证明$T_\varphi \equiv_U \Unfolding(T_\varphi,V)$，这里证明 对任意的 $0\leq i < n$ 有$T_i \equiv_{U} T_{i+1}$。
 	
 	
 	
@@ -214,7 +214,7 @@
 		&(17)\ \start \rto f\vee m \vee q && (6, (9), \textbf{SRES5})
 	\end{align*}
 	
-	在从 $\Unfolding(T_\varphi, V\cup \{x,y,z\})$中移除掉包含 $V$ 中元素的子句后，得到 $\emph{ERes}(\varphi,V)$，其包含如下如下子句：
+	在从 $\Unfolding(T_\varphi, V\cup \{x,y,z\})$中移除掉包含 $V$ 中元素的子句后，得到 $\emph{ERes}(\varphi,V)$，其包含如下子句：
 	\begin{align*}%{llll}
 		&\start\rto z, \quad \start \rto f\vee m \vee q, \quad  \start \rto x \vee y, \quad \start \rto q \vee x, \quad	\start \rto f\vee m \vee y, \\
 		& \top \rto f \vee m \vee \neg x, \quad		\top \rto q \vee f \vee m\vee \neg z,
@@ -317,7 +317,7 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、  $rfi(\{\beta_1,\alpha_2\})$来表示，�
 	令 $x$ 为一个原子命题、 
 	% 	$\Delta = \{\top \rto \neg x \vee C_1$, \dots, $\top \rto \neg x \vee C_n, x \rto B_1, \dots, x \rto B_m\}$
 	% 	be a set of $\CTLsnf$ clauses
-	$\Delta = \{\ALL\GLOBAL(\top \rto \neg x \vee C_1)$, $\dots$, $\ALL\GLOBAL(\top \rto \neg x \vee C_n), \ALL\GLOBAL(x \rto B_1), \dots, \ALL\GLOBAL(x \rto B_m)\}$为关于只包含一个$x$的$\CTL$公式的集合（$n, m \geq 1$）、
+	$\Delta = \{\ALL\GLOBAL(\top \rto \neg x \vee C_1)$, $\dots$, $\ALL\GLOBAL(\top \rto \neg x \vee C_n), \ALL\GLOBAL(x \rto B_1), \dots, \ALL\GLOBAL(x \rto B_m)\}$为只包含一个$x$的$\CTL$公式的集合（$n, m \geq 1$）、
 	$\Gamma$为 $x$正出现在其中的有限个$\CTL$公式的集合。则有：
 	\begin{equation}\label{eq:Ackermann:lemma}
 		\Gamma\cup \Delta \equiv_{\{x\}}  
@@ -373,7 +373,7 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、  $rfi(\{\beta_1,\alpha_2\})$来表示，�
 % and $\GAL(\Gamma\cup\Delta,\{x\})=\Gamma\cup\Delta$ otherwise. For a set $V$ of atoms, we define
 % $$\GAL(\Gamma\cup\Delta,V\cup\{x\})=\GAL(\GAL(\Gamma\cup\Delta,\{x\}),V).$$
 %
-对于$\CTL$公式的集合$\Sigma$，用$\GAL(\Sigma,\{x\})$表示 $\GAL(\Gamma\cup\Delta,\{x\})$，其中 $\Delta\subseteq\Sigma$为与引理~\ref{thm:Aclm}中$\Delta$有相同性质的出现在 $\Sigma$ 中有唯一负出现$x$的公式的集合， $\Gamma\subseteq \Gamma$是$x$正出现在其中的公式的集合。 
+对于$\CTL$公式的集合$\Sigma$，用$\GAL(\Sigma,\{x\})$表示 $\GAL(\Gamma\cup\Delta,\{x\})$，其中 $\Delta\subseteq\Sigma$为与引理~\ref{thm:Aclm}中$\Delta$有相同性质的出现在 $\Sigma$ 中有唯一负出现$x$的公式的集合， $\Gamma\subseteq \Sigma$是$x$正出现在其中的公式的集合。 
 对于原子命题集合$V$，定义
 $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 
@@ -492,17 +492,17 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 
 
 \label{chp4:sect:complex}
-已有结果表明，转换过程和归结过程会终止\cite{zhang2014resolution}。此外，$Remove\_atoms$、$Remove\_index$、替换$V'$中的原子命题和$T_{\CTL}$过程都会终止，因此算法~\ref{alg:compute:forgetting:by:Resolution}会终止。其具体的时间和空间复杂性如下面的结论所示。
+已有结果表明，转换过程和归结过程会终止\cite{zhang2014resolution}。此外，移除原子命题、移除索引、替换$V'$中的原子命题和转换到$\CTL$过程都会终止，因此算法~\ref{alg:compute:forgetting:by:Resolution}会终止。其具体的时间和空间复杂性如下面的结论所示。
 
 
 \begin{proposition}\label{pro:complexity}
-	给定$\CTL$公式$\varphi$和原子命题集合$V \subseteq \Ha$，令$(T_{\varphi}, V', I)=Transform(\varphi)$.
-	算法~\ref{alg:compute:forgetting:by:Resolution}的时间和空间复杂性为$O((m+1)2^{4(n+n')})$，其中$n=|\Var(\varphi)|$、$n'=|V'|$且$m=|I|$。
+	给定$\CTL$公式$\varphi$和原子命题集合$V \subseteq \Ha$。
+	算法~\ref{alg:compute:forgetting:by:Resolution}的时间和空间复杂性为$O((m+1)2^{4(n+n')})$，其中$n=|\Var(\varphi)|$、$n'=|V'|$为新引入的原子命题的个数、$m$为引入的索引个数。
 \end{proposition}
 \begin{proof}
-	由于$Transform$过程在多项时间内完成，$Remove\_atoms$、$Remove\_index$、$T_{\CTL}$过程和替换$V'$中的原子命题最多都只需要扫描$Resolution(\varphi)$集合就能完成。因此，算法的复杂性主要依赖于归结过程。
+	由于转换过程在多项时间内完成，移除原子命题、移除索引、转换到$\CTL$过程和替换$V'$中的原子命题最多都只需要扫描归结过程得到的子句集合就能完成。因此，算法的复杂性主要依赖于归结过程。
 	
-	对于给定的公式$\varphi$、$V$、$V'$和$Ind$，归结过程产生的子句个数为$(m+1)2^{4(n+n')}+(m*(n+n')+n+n'+1)2^{2(n+n')+1})$。
+	对于给定的公式$\varphi$和$V$，归结过程产生的子句个数为$(m+1)2^{4(n+n')}+(m*(n+n')+n+n'+1)2^{2(n+n')+1})$。
 \end{proof}
 
 在上述结论中值得注意的是$m$的大小不会大于公式$\varphi$中出现的时序算子的个数，因此可以得出算法~\ref{alg:compute:forgetting:by:Resolution}的计算复杂性仅与出现在$\varphi$的原子命题个数和时序算子的个数相关。

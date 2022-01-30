@@ -251,13 +251,16 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 
 与Browne和Bolotov等人的工作类似，本文只将初始$\Ind$-结构作为模型的候选项\cite{browne1988characterizing,Bolotov:1999:JETAI}。换句话说，对于给定的$\Ind$-结构$(\Hm,s)$和带索引的$\CTL$公式$\varphi$，如果$(\Hm,s)\models \varphi$且$s = s_0$，则称$(\Hm,s)$为公式$\varphi$的一个\emph{模型}。更清楚地说，对于给定的初始$\Ind$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称$\cal K$是$\varphi$的一个模型。
 
+
 为了符号的统一，这里列出文中出现的一些记号的含义。给定公式$\varphi$，公式的所有模型构成的集合记为$\Mod(\varphi)$。此时就很容易定义公式的可满足性，即：如果$\Mod(\varphi)\not = \emptyset$，则称$\varphi$是\emph{可满足}的。给定两个公式$\varphi_1$和$\varphi_2$，若$\Mod(\varphi_1)\subseteq \Mod(\varphi_2)$，则称$\varphi_1$\emph{逻辑地蕴涵}$\varphi_2$，记为$\varphi_1\models \varphi_2$。特别地，当$\varphi_1\models \varphi_2$且$\varphi_2\models \varphi_1$时，即$\Mod(\varphi_1)= \Mod(\varphi_2)$，则称$\varphi_1$和$\varphi_2$为\emph{逻辑等值公式}（简称为\emph{等值公式}），记作$\varphi_1 \equiv \varphi_2$。
 值得注意的是，上述的记号也适用于讨论的对象为公式的集合的情形。
-此外，给定一个公式的集合$\Pi$和一个初始$\Ind$-结构$\cal K$，若对于$\Pi$中的任意一个公式$\varphi$都有${\cal K} \models \varphi$，则${\cal K} \models \Pi$。
+此外，给定一个公式的集合$\Pi$和一个初始$\Ind$-结构$\cal K$，若对于$\Pi$中的任意一个公式$\varphi$都有${\cal K} \models \varphi$，则${\cal K} \models \Pi$。若$\Pi$为公式的有限集合，则用$\bigvee \Pi$（$\bigwedge \Pi$）表示$\Pi$中公式的吸取（合取），本文也用$\Pi$表示$\bigwedge \Pi$。
 
 对于给定的公式$\varphi$，将出现在$\varphi$中的原子命题的集合记为$\Var(\varphi)$。此外，给定公式$\varphi$和原子命题的集合$V$，如果存在一个公式$\psi$使得$\Var(\psi) \cap V = \emptyset$且$\varphi \equiv \psi$，那么说$\varphi$与$V$中的原子命题\emph{无关}，简称为\emph{$V$-无关}（ \emph{$V$-irrelevant}），写作$\IR(\varphi,V)$。
 一种特殊的形式是$\Var(\varphi) \subseteq V$，此时称$\varphi$为集合$V$上的公式。
 可以类似定义公式的集合与原子命题集合的无关性，也即是：如果对于公式的集合$\Pi$中的任意一个公式$\varphi$，$\IR(\varphi,V)$都成立，则$\Pi$与$V$中的原子命题无关，记为$\IR(\Pi,V)$。
+
+$\CTL$公式与结构之间的可满足性与定义~\ref{def:ctl:semantic}类似，只是将$\Ind$-结构替换为结构。除此之外，相应的符号（记号）也与上述情况类似。
 
 根据上面的定义，以下结论是显然的。
 \begin{lemma} \label{lem:equivAG}

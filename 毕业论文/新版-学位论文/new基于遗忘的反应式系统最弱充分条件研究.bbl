@@ -1,4 +1,4 @@
-\begin{thebibliography}{98}
+\begin{thebibliography}{100}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -399,6 +399,13 @@ D'AGOSTINO~G, LENZI~G.
 \newblock On modal mu-calculus with explicit interpolants\allowbreak[J].
 \newblock Journal of Applied Logic, 2006, 4\penalty0 (3):\penalty0 256-278.
 
+\bibitem[Lin(2001{\natexlab{b}})]{DBLP:journals/ai/Lin01}
+LIN~F.
+\newblock On strongest necessary and weakest sufficient
+  conditions\allowbreak[J/OL].
+\newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
+\newblock \url{https://doi.org/10.1016/S0004-3702(01)00070-4}.
+
 \bibitem[Katsuno et~al.(1991)Katsuno and Mendelzon]{katsuno91mendelzon}
 KATSUNO~H, MENDELZON~A~O.
 \newblock On the difference between updating a knowledge base and revising
@@ -619,13 +626,6 @@ Data Science and Knowledge Engineering for Sensing Decision Support:
   Proceedings of the 13th International FLINS Conference (FLINS 2018).
 \newblock [S.l.]: World Scientific, 2018: 832-839.
 
-\bibitem[Lin(2001{\natexlab{b}})]{DBLP:journals/ai/Lin01}
-LIN~F.
-\newblock On strongest necessary and weakest sufficient
-  conditions\allowbreak[J/OL].
-\newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
-\newblock \url{https://doi.org/10.1016/S0004-3702(01)00070-4}.
-
 \bibitem[D'Agostino(2008)]{DAgostino:synthese:2008}
 D'AGOSTINO~G.
 \newblock Interpolation in non-classical logics\allowbreak[J].
@@ -673,6 +673,21 @@ YANKOV~V~A.
   propositional logic\allowbreak[J].
 \newblock Izvestiya Rossiiskoi Akademii Nauk. Seriya Matematicheskaya, 1968,
   32\penalty0 (4):\penalty0 880-883.
+
+\bibitem[Clarke et~al.(2001)Clarke, Grumberg, and
+  Peled]{DBLP:books/daglib/0007403}
+CLARKE~E~M, GRUMBERG~O, PELED~D~A.
+\newblock Model checking\allowbreak[M/OL].
+\newblock {MIT} Press, 2001.
+\newblock \url{http://books.google.de/books?id=Nmc4wEaLXFEC}.
+
+\bibitem[Meier et~al.(2009)Meier, Thomas, Vollmer, and
+  Mundhenk]{meier2009complexity}
+MEIER~A, THOMAS~M, VOLLMER~H, et~al.
+\newblock The complexity of satisfiability for fragments of {CTL} and
+  {CTL}*\allowbreak[J].
+\newblock International Journal of Foundations of Computer Science, 2009,
+  20\penalty0 (05):\penalty0 901-918.
 
 \bibitem[Lang et~al.(2003{\natexlab{a}})Lang, Liberatore, and
   Marquis]{DBLP:journals/jair/LangLM03}
