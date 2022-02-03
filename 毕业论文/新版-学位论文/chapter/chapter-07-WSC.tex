@@ -1,15 +1,15 @@
 \chapter{遗忘理论的应用}
 \label{chapter07}
-{\em 本章针对第\ref{chapter01}章提出的问题探讨使用遗忘的方法来解决计算WSC（SNC）和知识更新。首先给出SNC（WSC）的定义，然后证明任意公式的SNC（WSC）可以规约到命题下的SNC（WSC）。此外，SNC和WSC是一对对偶概念，因此探讨其中一个就足以表示另一个的性质。其次，从遗忘的角度给出了计算SNC（WSC）的方法。基于此，当给定的系统模型为有限状态时，可以事先将该模型用气特征公式表示出来，然后使用遗忘的方法来计算SNC（WSC）。
+{\em 本章针对第\ref{chapter01}章提出的问题探讨使用遗忘的方法来解决计算WSC（SNC）和知识更新。首先给出SNC（WSC）的定义，然后证明任意公式的SNC（WSC）可以规约到命题下的SNC（WSC）。此外，表明SNC和WSC是一对对偶概念，因此探讨其中一个就足以表示另一个的性质。其次，从遗忘的角度给出了计算SNC（WSC）的方法。基于此，当给定的系统模型为有限状态时，可以事先将该模型用其特征公式表示出来，然后使用遗忘的方法来计算SNC（WSC）。
 最后，提出使用遗忘定义知识更新的方法。
 	}
 \section{引言}
 遗忘可以用于从本体中抽取摘要、敏感信息的隐蔽、计算逻辑差等，这在相关工作部分有详细介绍。
 此外，WSC和SNC在智能规划和形式化验证里有重要作用。比如，在2003年，Lin使用WSC和SNC计算规划问题中的后继状态公理。
 在第\ref{chapter02}章中详细介绍了命题逻辑和模态逻辑S5下使用遗忘计算WSC（SNC）的方法和算法。
-本章研究$\CTL$和$\mu$-演算下如何使用遗忘计算不终止系统的SNC（WSC），及使用遗忘定义知识更新。即：
+本章研究$\CTL$和$\mu$-演算下如何使用遗忘计算反应式系统的SNC（WSC），及使用遗忘定义知识更新。即：
 \begin{itemize}
-	\item 对于给定的公式$\varphi$、原子命题$q$和原子命题集合$V\subseteq \Var(\varphi)$，若满足$q \in \Var(\varphi)-V$，则$q$在$\varphi$和$V$上的SNC等价于从公式$\varphi \wedge q$中遗忘掉除了$V$中元素的原子命题后得到结果；WSC做为SNC的一个对偶概念，有相似的结论。而不终止的系统在本章看作是一个有限的初始结构，根据第\ref{chapter05}章中的介绍，任意有限的初始结构都能用其特征公式来表示，因而可以使用遗忘的方法来计算其SNC（WSC）。
+	\item 对于给定的公式$\varphi$、原子命题$q$和原子命题集合$V\subseteq \Var(\varphi)$，若满足$q \in \Var(\varphi)-V$，则$q$在$\varphi$和$V$上的SNC等价于从公式$\varphi \wedge q$中遗忘掉除了$V$中元素的原子命题后得到结果；WSC做为SNC的一个对偶概念，有相似的结论。而不终止的系统（包括反应是系统你）在本章看作是一个有限的初始结构，根据第\ref{chapter05}章中的介绍，任意有限的初始结构都能用其特征公式来表示，因而可以使用遗忘的方法来计算其SNC（WSC）。
 	\item 基于遗忘的知识更新通过最小的改变现有知识的模型来使其适应新信息，从这个角度上可以看作是基于模型的更新，且使用这种方法的更新满足katsuno等人提出的八条基本准则\cite{katsuno91mendelzon}。
 \end{itemize}
 
@@ -31,7 +31,7 @@
 	\end{itemize}
 \end{definition}
 
-从上述定义可以看出，SNC（WSC）是$q$在$V$和$\phi$上的NC（SC）中最强（最弱）的一个，即：对任意的（或SC）$\psi'$，$\phi \models \hbox{SNC} \rto \psi'$（$\phi \models \psi' \rto \hbox{WSC}$）。此外，如果公式$\psi$和$\psi'$都是$q$在$V$和$\phi$上的SNC（WSC），则$\psi \equiv \psi'$。
+从上述定义可以看出，SNC（WSC）是$q$在$V$和$\phi$上的NC（SC）中最强（最弱）的一个，即：对任意的NC（或SC）$\psi'$，$\phi \models \hbox{SNC} \rto \psi'$（$\phi \models \psi' \rto \hbox{WSC}$）。此外，如果公式$\psi$和$\psi'$都是$q$在$V$和$\phi$上的SNC（WSC），则$\psi \equiv \psi'$。
 下面的命题表明SNC和WSC是一对对偶概念。
 
 \begin{proposition}[对偶性]\label{dual}
@@ -62,18 +62,18 @@
 	
 	
 	($\Rto$) 证明“若$\emph{SNC}(\varphi,\alpha,V,\Gamma)$，则$\emph{SNC}(\varphi,q,V,\Gamma')$”。
-	由$\emph{SNC}(\varphi,\alpha,V,\Gamma)$和$\alpha\equiv q$可知$\Gamma' \models q\rto \varphi$，即：$\varphi$是$q$在$V$和$\Gamma'$上的NC。
-	假设$\varphi'$是$q$在$V$和$\Gamma'$上的任意NC，由于$\alpha\equiv q$和$\emph{IR}(\alpha \rto \varphi', \{q\})$，因此，$\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$。由引理\ref{lem:KF:eq}可知$\Gamma \models \alpha \rto \varphi'$，即：$\emph{NC}(\varphi',\alpha,V,\Gamma)$。
+	由$\emph{SNC}(\varphi,\alpha,V,\Gamma)$和$\alpha\equiv q$可知$\Gamma'$ $\models q\rto \varphi$，即：$\varphi$是$q$在$V$和$\Gamma'$上的NC。
+	假设$\varphi'$是$q$在$V$和$\Gamma'$上的任意NC，由于$\alpha\equiv q$和$\emph{IR}($ $\alpha \rto \varphi', \{q\})$，因此，$\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$。由引理\ref{lem:KF:eq}可知$\Gamma \models \alpha \rto \varphi'$，即：$\emph{NC}(\varphi',\alpha,V,$ $\Gamma)$。
 	
 	
 	($\Lto$) 证明“若$\emph{SNC}(\varphi,q,V,\Gamma')$，则$\emph{SNC}(\varphi,\alpha,V,\Gamma)$”。
-	由$\emph{SNC}(\varphi,q,V,\Gamma')$、$\emph{IR}(\alpha \rto \varphi, \{q\})$ 和 $(\PP)$ 可知$\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$，又由引理\ref{lem:KF:eq}可知$\Gamma \models \alpha \rto \varphi$，即：$\emph{NC}(\varphi,\alpha,V,\Gamma)$。
-	设 $\varphi'$ 是 $\alpha$ 在 $V$ 和 $\Gamma$ 上的任意NC。由$\alpha\equiv q$ 和 $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$ 可 知 $\Gamma' \models q \rto \varphi'$，即：$\emph{NC}(\varphi',q,V,\Gamma')$。
-	又因为$\emph{SNC}(\varphi,q,V,\Gamma')$、$\emph{IR}(\varphi \rto \varphi', \{q\})$ 和 $(\PP)$，所以 $\CTLforget(\Gamma', \{q\})\models \varphi \rto \varphi'$。
+	由$\emph{SNC}(\varphi,q,V,\Gamma')$、$\emph{IR}(\alpha \rto \varphi,$ $\{q\})$ 和 $(\PP)$ 可知$\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$，又由引理\ref{lem:KF:eq}可知$\Gamma \models \alpha \rto \varphi$，即：$\emph{NC}(\varphi,\alpha,V,$ $\Gamma)$。
+	设 $\varphi'$ 是 $\alpha$ 在 $V$和 $\Gamma$ 上的任意NC。由$\alpha\equiv q$和 $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$可 知 $\Gamma' \models q \rto \varphi'$，即：$\emph{NC}(\varphi',q,V,\Gamma')$。
+	又因为$\emph{SNC}(\varphi,q,V,\Gamma')$、$\emph{IR}(\varphi \rto \varphi', \{q\})$和 $(\PP)$，所以 $\CTLforget(\Gamma', \{q\})\models \varphi$  $\rto \varphi'$。
 	由引理\ref{lem:KF:eq}可知$\Gamma \models \varphi \rto \varphi'$，因此$\emph{SNC}(\varphi,\alpha,V, \Gamma)$成立。
 \end{proof}
 
-为了对给定原子命题集合下的公式的最弱充分条件有个直观的认识，下面给出一个简单的例子。
+为了对给定原子命题集合下公式的最弱充分条件有个直观的认识，下面给出一个简单的例子。
 	%下面的例子给出了关于给定原子命题集合下的公式的最弱充分条件的具体体现。
 
 \begin{example}[例~\ref{exam:vB}的延续]\label{examp:WSC}
@@ -86,7 +86,7 @@
 \end{example}
 
 
-如何使用遗忘理论计算SNC（WSC）是本章讨论的关键问题。下面首先给出其理论基础，然后再做直观的解释。
+如何使用遗忘计算SNC（WSC）是本章讨论的关键问题。下面首先给出其理论基础，然后再做直观的解释。
 
 \begin{theorem}\label{thm:SNC:WSC:forget}
 	给定公式$\varphi$、原子命题的集合$V\subseteq\Var(\varphi)$和原子命题$q\in\Var(\varphi)- V$。
@@ -99,7 +99,7 @@
 	(i) 令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。
 	
 	
-	“NC”部分：由遗忘理论的定义可知$\varphi \wedge q \models {\cal F}$。因此，$\varphi\models q \rto {\cal F}$，即：${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC。
+	“NC”部分：由遗忘的定义可知$\varphi \wedge q \models {\cal F}$。因此，$\varphi\models q \rto {\cal F}$，即：${\cal F}$是 $q$在 $V$和$\varphi$上的NC。
 	
 	“SNC”部分：假设$\psi'$为$q$在$V$和$\varphi$上的任意NC，即：$\varphi\models q \rto \psi'$。由定理~\ref{thm:V-bisimulation:EQ} 和 $\emph{IR}(\psi', (\Var(\varphi) \cup \{q\})- V)$可知，若$\varphi \wedge q \models \psi'$，则${\cal F} \models \psi'$。
 	由假设可知$\varphi\models q \rto \psi'$，所以$\varphi \wedge {\cal F} \models \psi'$，因此$\varphi \models {\cal F} \rto \psi'$。
@@ -109,15 +109,15 @@
 	(ii) 令${\cal F}=\neg \CTLforget(\varphi \wedge \neg q, (\Var(\varphi) \cup \{q\})- V)$。
 	由命题~\ref{dual}可知，对任意的命题$q'$，$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，当且仅当
 	$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。
-	由(i)可知$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，所以$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。令$q=\neg q'$，可得${\cal F}$ 是 $q$ 在 $V$ 和 $\varphi$上的WSC。
+	由(i)可知$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$ 上的SNC，所以$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。令$q=\neg q'$，可得${\cal F}$是 $q$在 $V$和 $\varphi$上的WSC。
 \end{proof}
 
 令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。上面的定理可以直观地解释如下：由遗忘理论的定义可知$\varphi \wedge q \models \beta$，这说明
-${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi) \cup \{q\})- V$无关的公式$\psi$，若$\varphi \wedge q \models \psi$，则由表达性定理可知$\beta \models \psi$。
+${\cal F}$是 $q$在 $V$和$\varphi$上的NC；对任意的与$(\Var(\varphi) \cup \{q\})- V$无关的公式$\psi$，若$\varphi \wedge q \models \psi$，则由表达性定理可知$\beta \models \psi$。
 
-由第\ref{chapter05}章可知，任意有限的初始$\MPK$-结构都能由一个$\CTL$公式表示，所以由上面的定理自然地就能得到给定有限初始$\MPK$-结构下的SNC和WSC。
+由第\ref{chapter05}章可知，任意有限的初始结构都能由一个$\CTL$公式表示，所以由上面的定理自然地就能得到给定有限初始结构下的SNC和WSC。
 \begin{corollary}\label{thm:inK:SNC}
-	令${\cal K}= (\Hm, s)$为初始\MPK-结构，其中$\Hm=(S,R,L,s_0)$ 为有限原子命题集合$\Ha$上的初始-Kripke结构，$V \subseteq \Ha$且$q\in V' = \Ha - V$。则：
+	令${\cal K}= (\Hm, s)$为初始结构，其中$\Hm=(S,R,L,s_0)$ 为有限原子命题集合$\Ha$上的初始-Kripke结构，$V \subseteq \Ha$且$q\in V' = \Ha - V$。则：
 	\begin{itemize}
 		\item[(i)] $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$是$q'$在$V$和${\cal K}$上的SNC；
 		\item[(ii)] $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$是$q'$在$V$和${\cal K}$上的WSC。
@@ -139,7 +139,7 @@ ${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi)
 \end{itemize}
 其中，$\diamond$为知识更新操作，$\varphi \diamond \psi$表示用$\psi$更新$\varphi$得到的结果。
 
-本小节假设所有的初始$\MPK$-结构都是有限的，即：状态来源于有限的状态空间且$\Ha$为有限的原子命题的集合。下面定理显然成立：
+本小节假设所有的初始结构都是有限的，即：状态来源于有限的状态空间且$\Ha$为有限的原子命题的集合。下面定理显然成立：
 \begin{theorem}\label{thm:initModel}
 	给定公式$\phi$和原子命题的集合$V \subseteq \cal A$。存在一个公式$\psi$使得：
 	\[
@@ -158,12 +158,12 @@ ${\cal F}$ 是 $q$ 在 $V$ 和$\varphi$上的NC；对任意的与$(\Var(\varphi)
 定理~\ref{thm:initModel}表明模型结构被限制到有限初始结构下的$\mu$-演算下遗忘理论也是封闭的。
 此外，由第\ref{chapter05}章可知，任意$\Ha$上的有限初始结构${\cal K}$都能用一个$\CTL$公式——特征公式${\cal F}_{\Ha}({\cal K})$来表示，此公式也是$\mu$-句子。
 
-对于给给定的$\Ha$和$V_{min}\subseteq \Ha$，记$\varphi = {\cal O}({\cal F}_{\Ha}({\cal K}), V_{min})$（${\cal O} \in \{\CTLforget, \Muforget\}$），其中$V_{min} \subseteq \Ha$是使得$\varphi$可满足的极小子集。
+对于给定的$\Ha$和$V_{min}\subseteq \Ha$，记$\varphi = {\cal O}({\cal F}_{\Ha}({\cal K}), V_{min})$（${\cal O} \in \{\CTLforget, \Muforget\}$），其中$V_{min} \subseteq \Ha$是使得$\varphi$可满足的极小子集。
 此外，公式
 $$\bigcup_{V_{min}\subseteq \Ha} \Mod({\cal O}({\cal F}_{\Ha}({\cal K}), V_{min}))$$ 
 %$$\bigcup_{V_{min}\subseteq \Ha} \Mod(\CTLforget({\cal F}_{\Ha}({\cal K}), V_{min}))$$
 表示所有${\cal O}({\cal F}_{\Ha}({\cal K}), V_{min})$的模型集合的并集。
-此时，可如下定义$\mu$-演算下的知识更新操作$V_{min}$：
+此时，可如下定义$\mu$-演算下的知识更新操作：
 
 
 \begin{definition}\label{def:KU}
@@ -171,12 +171,12 @@ $$\bigcup_{V_{min}\subseteq \Ha} \Mod({\cal O}({\cal F}_{\Ha}({\cal K}), V_{min}
 	\[
 	\Mod(\Gamma \diamond_{\delta} \phi) = \bigcup_{{\cal K} \in \Mod(\Gamma)} \bigcup_{V_{min}\subseteq \Ha} \Mod({\cal O}({\cal F}_{\Ha}({\cal K}), V_{min}) \wedge \phi),
 	\]
-	其中，${\cal F}_{\Ha}({\cal K})$是${\cal K}$在$\Ha$上的特征公式，$V_{min} \subseteq \Ha$ 是使得${\cal O}({\cal F}_{\Ha}({\cal K})$可满足的极小子集。
+	其中，${\cal F}_{\Ha}({\cal K})$是${\cal K}$在$\Ha$上的特征公式，$V_{min} \subseteq \Ha$ 是使得${\cal O}({\cal F}_{\Ha}({\cal K}), V_{min})$可满足的极小子集。
 \end{definition}
 
 从直观上来说，$\Gamma \diamond_{\delta} \phi$表示通过极小化改变$\Gamma$的模型到$\phi$的模型来更新$\Gamma$。换句话说，定义~\ref{def:KU}通过极小化改变$\Gamma$的每个模型，使得该模型能够满足$\phi$来更新原有的知识$\Gamma$。从这个角度看，这样定义的知识更新是一种基于模型的知识更新方法。
 
-此外，$\mu$-演算下的知识更新也可以通过像命题逻辑里的那样来定义：令$I$，$J_1$和$J_2$为三个赋值，即：原子命题的集合；则$J_1$比$J_2$更接近$I$（记为：$J_1 \leq_{I,pam} J_2$）当且仅当$\Diff(I, J_1) \subseteq \Diff(I, J_2)$，其中$\Diff(X, Y) =\{p\in \Ha \mid X(p) \not = Y(p)\}$。那么命题逻辑里的知识更新——用$\psi$更新$\Gamma$，即为$\psi$的关于偏序关系$\leq_{I,pam}$的所有极小模型的集合（$I$是$\Gamma$的模型），即：
+此外，$\mu$-演算下的知识更新也可以通过像命题逻辑里的那样来定义：令$I$，$J_1$和$J_2$为三个解释，即：原子命题的集合；则$J_1$比$J_2$更接近$I$（记为：$J_1 \leq_{I,pam} J_2$）当且仅当$\Diff(I, J_1) \subseteq \Diff(I, J_2)$，其中$\Diff(X, Y) =\{p\in \Ha \mid X(p) \not = Y(p)\}$。那么命题逻辑里的知识更新——用$\psi$更新$\Gamma$，即为$\psi$的关于偏序关系$\leq_{I,pam}$的所有极小模型的集合（$I$是$\Gamma$的模型），即：
 $$\Mod(\Gamma \diamond_{pam} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi), \leq_{I,pam}).$$
 其中，$Min(\Mod(\psi), \leq_{I,pam})$是$\psi$的关于偏序关系$\leq_{I,pam}$的极小模型的集合。
 

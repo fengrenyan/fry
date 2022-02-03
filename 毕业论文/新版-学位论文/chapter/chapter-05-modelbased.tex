@@ -2,8 +2,8 @@
 
 {\em
 	遗忘与均匀插值是一对对偶概念，已有研究表明$\CTL$不具有均匀插值性质~\cite{Maksimova:JANCL:1991}，这就表明$\CTL$中的遗忘理论不是封闭的\footnote{对于给定的逻辑语言${\cal L}$和该语言上的操作${\cal O}$，若$\cal O$作用到$\cal L$中的元素后得到的结果仍然在$\cal L$中，则称$\cal O$在$\cal L$下是封闭的。}。
-	此时，探索$\CTL$下遗忘理论封闭的情形对深入引用遗忘理论有重要意义。
-	为此，本章首先提出有限初始$\MPK$-结构的特征公式；其次，表明$\CTL$公式的遗忘结果在此情形下可以表示成其模型的特征公式的吸取；最后，提出一种基于模型的方法计算遗忘，且探索了如何使用遗忘计算最弱充分条件和知识更新。
+	此时，探索$\CTL$下遗忘理论封闭的情形对深入应用遗忘理论有重要意义。
+	为此，本章首先提出有限初始结构的特征公式；其次，表明$\CTL$公式的遗忘结果在此情形下可以表示成其模型的特征公式的吸取；最后，提出一种基于模型的方法计算遗忘。%，且探索了如何使用遗忘计算最弱充分条件和知识更新。
 }
 
 \section{引言}\label{sec:chapter06_introduction}
@@ -28,7 +28,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 为此，本节首先介绍计算树之间的$V$-互模拟关系，然后给出计算树的特征公式的定义，最后给出初始结构的特征公式。
 
 \subsection{计算树的$V$-互模拟}
-在第\ref{chapter03}章中的定义~\ref{def:VInd:bisimulation}给出了$\Ind$-结构（$(\Hm,s_0)$中的$\Hm$为初始$\Ind$-Kripke结构）之间的$V$-互模拟定义及其相关性质，结构（$(\Hm,s_0)$中的$\Hm$为初始Kripke结构）之间的$V$-互模拟有相同的定义，且不难证明$\Ind$-结构之间$V$-互模拟有的性质结构之间$V$-互模拟也有。此外，第\ref{chapter03}章遗忘有的性质在本章的约束情形下也有，这里不再赘述。本节给出结构之间的$V$-互模拟在有限结构下与下面将要给出的约束$V$-互模拟等价——与深度$n$关联的$V$-互模拟。但是为了方便，本章仍然引入约束$V$-互模拟的概念。
+在第\ref{chapter03}章中的定义~\ref{def:VInd:bisimulation}给出了$\Ind$-结构（$(\Hm,s_0)$中的$\Hm$为初始$\Ind$-Kripke结构）之间的$V$-互模拟定义及其相关性质，结构（$(\Hm,s_0)$中的$\Hm$为初始Kripke结构）之间的$V$-互模拟有相同的定义。本节给出结构之间的$V$-互模拟在有限结构下与下面将要给出的约束$V$-互模拟等价——与深度$n$关联的$V$-互模拟。但是为了方便，本章仍然引入约束$V$-互模拟的概念。且不难证明$\Ind$-结构之间$V$-互模拟有的性质结构之间$V$-互模拟也有，从而第\ref{chapter03}章遗忘有的性质在本章的约束情形下基本也有~\cite{renyansfirstpaper}，这里不再赘述。
 
 首先给出能够描述一定深度$n\in \mathbb{N}$的计算树之间的$V$-互模拟关系，记为$\Hb_n^V$。令$V\subseteq \Ha$是原子命题的集合，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$是初始Kripke结构，${\cal K}_i=(\Hm_i, s_i)$是结构。$\Hb_n^V$被递归定义如下：
 \begin{itemize}
@@ -205,7 +205,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 命题~\ref{B_to_T}表明如果任意两个初始结构中的两个状态$s_1$和$s_2$能够在$\overline{V}$上相互模拟对方直到$n$步，当且仅当分别以$s_1$和$s_2$为根的计算树能在$\overline{V}$上相互模拟直到深度为$n$。
 由此可知，如果同一初始结构的两个状态$s$和$s'$不是$V$-互模拟的，则存在一个数$k\in \mathbb{N}$使得分别以$s$和$s'$为根的计算树$\Tr_k(s)$和$\Tr_k(s')$不是$V$-互模拟的。
 \begin{proposition}\label{pro:k}
-	给定原子命题集合$V\subseteq \Ha$、初始结构$\Hm$和两个状态$s,s'\in S$。
+	给定原子命题集合$V\subseteq \Ha$、初始Kripke结构$\Hm$和两个状态$s,s'\in S$。
 	若$s\not\lrto_V s'$，则存在一个最小整数$k$使得$\Tr_k(s)$和$\Tr_k(s')$不是$V$-互模拟的。
 \end{proposition}
 \begin{proof}
@@ -215,7 +215,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \subsection{计算树的特征公式}
 由上面小节的讨论可知，$V$-互模拟可以将计算树分别开来\footnote{相似的方法在\citeauthor{DBLP:conf/birthday/1997ehrenfeucht}的文章中已被使用~\cite{DBLP:conf/birthday/1997ehrenfeucht}，在这篇文章中一元公式的结构通过等价类$\equiv_{\overline{k}}$被描述为Hintikka公式~\cite{hintikka1953distributive}。另一个类似的工作是Yankov-Fine构造~\cite{yankov1968three}。}。本节讨论如何使用$\CTL$公式描述一棵计算树，且表明具有（或没有）$V$-互模拟关系之间的计算树的特征公式又有怎样的关系。为此，首先给出计算树的特征公式的定义。
 \begin{definition}\label{def:V:char:formula}
-	给定原子命题集合$V\subseteq \Ha$、初始结构$\Hm =(S,R,L,s_0)$和状态$s\in S$。
+	给定原子命题集合$V\subseteq \Ha$、初始Kripke结构$\Hm =(S,R,L,s_0)$和状态$s\in S$。
 	定义在$V$上的计算树$\Tr_n(s)$的特征公式（记为${\cal F}_V(\Tr_n(s))$，$n\geq 0$）被递归定义如下：
 	\begin{align*}
 		{\cal F}_V(\Tr_0(s)) &=  \bigwedge_{p \in V\cap L(s)}p
@@ -243,7 +243,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	这里要证明若$\Tr_{n+1}(s) \lrto_{\overline V} \Tr_{n+1}(s')$，则${\cal F}_V(\Tr_{n+1}(s)) \equiv {\cal F}_V(\Tr_{n+1}(s'))$。
 	
 	由归纳假设可知，对任意的$k=m$、$s_k\in S$ 和$s_k'\in S'$，若$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$，则${\cal F}_V(\Tr_{n-k}(s_k)) \equiv {\cal F}_V(\Tr_{n-k}(s_k'))$。
-	因此，要证原结论成立，只需要证明若$\Tr_{n-k+1}(s_{k-1}) \lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$，则${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。其中，$(s_{k-1},s_k)\in R$且$(s_{k-1}',s_k')\in R'$。
+	因此，要证原结论成立，只需要证明若$\Tr_{n-k+1}(s_{k-1})$ $\lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$，则${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。其中，$(s_{k-1},$ $s_k)\in R$且$(s_{k-1}',$ $s_k')\in R'$。
 	显然，由计算树的特征公式可知：
 	\begin{align*}
 		{\cal F}_V(\Tr_{n-k+1}(s_{k-1})) &  =
@@ -269,7 +269,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	因此，由归纳假设可知${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。
 \end{proof}
 
-此外，对于初始结构$\Hm$上的状态$s$和$s'$，若$(\Hm,s)$是定义在$V$上的根为$s'$深度为$n$的计算树的特征公式，则$s$和$s'$至少属于$\Hb_n$，即：$s$和$s'$能想互模拟至少到第$n$层深度。
+此外，对于初始Kripke结构$\Hm$上的状态$s$和$s'$，若$(\Hm,s)$是定义在$V$上的根为$s'$深度为$n$的计算树的特征公式，则$s$和$s'$至少属于$\Hb_n$，即：$s$和$s'$能想互模拟至少到第$n$层深度。
 
 \begin{lemma}\label{Bn:to:Tn}
 	令$V\subseteq \Ha$、$\Hm=(S, R, L,s_0)$、$\Hm'=(S', R', L',s_0')$、$s\in S$、$s'\in S'$且$n\ge 0$，则：
@@ -318,13 +318,13 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 %在引理~\ref{lem:Vb:TrFormula:Equ}中，若令$s'=s$
 
 \subsection{初始结构的特征公式}
-由$V$-互模拟的定义和命题~\ref{pro:k}可以自然地得到一个$V$-互模拟的补概念——$V$-可区分的。
-特别地，在命题~\ref{pro:k}中，若初始结构$\Hm$的两个状态$s$和$s'$不是$\overline{V}$-互模拟的（即：$s\not\lrto_{\overline{V}} s'$），则称$s$和$s'$是\emph{$V$-可区分的}。
+由$V$-互模拟的定义和命题~\ref{pro:k}可以自然地得到一个$V$-互模拟的补概念——$V$-可区分。
+特别地，在命题~\ref{pro:k}中，若初始Kripke结构$\Hm$的两个状态$s$和$s'$不是$\overline{V}$-互模拟的（即：$s\not\lrto_{\overline{V}} s'$），则称$s$和$s'$是\emph{$V$-可区分的}。
 且用$\dis_V({\cal M},s,s',k)$表示状态$s$和$s'$在命题~\ref{pro:k}中所说的最小数$k$下是$V$-可区分的。
-正如下文所说，$V$-可区分这一概念是定义初始$\MPK$-结构的特征公式重要概念。
+正如下文所说，$V$-可区分这一概念是定义初始结构特征公式的重要概念。
 
-此外，对于给定的初始结构$\Hm$和原子命题集合$V$，若在$\Hm$中存在两个状态$s$和$s'$是$V$-可区分的，则称$\Hm$是$V$-可区分的。
-而对于一个$V$-可区分的初始结构$\Hm$，存在一个一个最小的数$k$使得对于该结构上的任意两个状态$s$和$s'$，若$s$和$s'$是可区分的，则$(s,s')\not \in \Hb_k$。本文称这样的数为$\Hm$关于$V$的\emph{特征数}，记为$ch({\cal M},V)$，其定义如下：
+此外，对于给定的初始Kripke结构$\Hm$和原子命题集合$V$，若在$\Hm$中存在两个状态$s$和$s'$是$V$-可区分的，则称$\Hm$是$V$-可区分的。
+而对于一个$V$-可区分的初始Kripke结构$\Hm$，存在一个一个最小的数$k$使得对于该结构上的任意两个状态$s$和$s'$，若$s$和$s'$是可区分的，则$(s,s')\not \in \Hb_k$。本文称这样的数为$\Hm$关于$V$的\emph{特征数}，记为$ch({\cal M},V)$，其定义如下：
 \[ch({\cal M},V)=
 \left\{
 \begin{array}{ll}
@@ -334,7 +334,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \right.
 \]
 
-由$ch({\cal M},V)$定义可知，对于任意的$\Hm$和$V$，$ch({\cal M},V)$总是存在的，这体现在两个方面：（1）若$\Hm$是$V$-可区分的，存在两个状态$s$和$s'$是$V$-可区分的，由命题~\ref{pro:k}可知，存在一个数$k$使得$\dis_V({\cal M},s,s',k)$成立；（2）若对于任意$k\geq 0$和$\Hm$上的两个状态$s$和$s'$都有$(s,s')\in \Hb_k$且$\Hb_k =\Hb_{k+1}$，则$ch({\cal M},V)=0$。
+由$ch({\cal M},V)$定义可知，对于任意的$\Hm$和$V$，$ch({\cal M},V)$总是存在的，这体现在两个方面：（1）若$\Hm$是$V$-可区分的，则存在两个状态$s$和$s'$是$V$-可区分的，由命题~\ref{pro:k}可知，存在一个数$k$使得$\dis_V({\cal M},s,s',k)$成立；（2）若对于任意$k\geq 0$和$\Hm$上的两个状态$s$和$s'$都有$(s,s')\in \Hb_k$且$\Hb_k =\Hb_{k+1}$，则$ch({\cal M},V)=0$。
 
 非形式化地说，特征数$c=ch({\cal M},V)$将$\Hm$上的状态分为两大类：第一类中的任意两个状态$s$和$s'$是$V$-可区分的，且$(s,s')\not \in \Hb_c$；第二类中状态都是$V$-不可区分的。这也在计算树的特征公式上：
 
@@ -355,10 +355,10 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	假定$(\Hm, s')\models \phi$。若$s \nleftrightarrow_{\overline V} s'$，则$\Tr_k(s) \not \lrto_{\overline V} \Tr_k(s')$，因而由引理~\ref{Bn:to:Tn}可知$(\Hm, s')\not \models \phi$，这与假定矛盾。
 \end{proof}
 
-由此，可定义初始$\MPK$-结构的特征公式如下。
+由此，可定义初始结构的特征公式如下。
 
 \begin{definition}[特征公式]
-	给定原子命题集合$V\subseteq\cal A$he和初始\MPK-结构${\cal K}=({\cal M},s_0)$，其中$c=ch({\cal M},V)$。对任意$\Hm$上得状态$s' \in S$，记$T(s') = {\cal F}_V(\Tr_c(s'))$。
+	给定原子命题集合$V\subseteq\cal A$和初始结构${\cal K}=({\cal M},s_0)$，其中$c=ch({\cal M},V)$。对任意$\Hm$上得状态$s' \in S$，记$T(s') = {\cal F}_V(\Tr_c(s'))$。
 	则$\cal K$关于$V$的{\em 特征公式} ${\cal F}_V({\cal K})$为：
 	\[T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
 	T(s) \rto
@@ -371,11 +371,11 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	
 \end{definition}
 
-有时为了凸显出初始结构及其初始状态，也把特征公式写为${\cal F}_V(\Hm, s_0)$。显然，$\IR({\cal F}_V(\Hm, s_0), \overline V)$。此外，在特征公式的定义中，使用了深度为$c$（即：特征数）的计算树的特征公式意在表明对任意$\Hm$上的两个状态$s$和$s'$，$s$和$s'$是$V$-可区分的当且仅当${\cal F}_V(\Tr_c(s))\not \equiv {\cal F}_V(\Tr_c(s'))$。特别地，$T(s_0)$确保了初始\MPK-结构的初始状态被$\CTL$公式描述；其余部分表明了结构$\Hm$上状态之间的转换关系。
+有时为了凸显出初始Kripke结构及其初始状态，也把特征公式写为${\cal F}_V(\Hm, s_0)$。显然，$\IR({\cal F}_V(\Hm, s_0), \overline V)$。此外，在特征公式的定义中，使用了深度为$c$（即：特征数）的计算树的特征公式意在表明对任意$\Hm$上的两个状态$s$和$s'$，$s$和$s'$是$V$-可区分的当且仅当${\cal F}_V(\Tr_c(s))\not \equiv {\cal F}_V(\Tr_c(s'))$。特别地，$T(s_0)$确保了初始结构的初始状态被$\CTL$公式描述；其余部分表明了结构$\Hm$上状态之间的转换关系。
 下面的例子给出了计算特征公式的一般步骤：
 
 \begin{example}[例~\ref{exam:vB}的延续]\label{ex:4}
-	考虑图~\ref{fig:K2Tree}中左边的初始$\MPK$-结构${\cal K}_2= (\Hm, s_0)$（其最初出现在图~\ref{Fig:chapter04:v1uv2}中）。左边的为$\Hm$上的四棵计算树：从左到右表示以$s_0$为根、深度分别为0、1、2和3的计算树（为简化图，计算树的标签没有给出，但是每个树节点的标签可从${\cal K}_2$找到。）。令$V=\{d\}$，则 $\overline{V}=\{s, se\}$。
+	考虑图~\ref{fig:K2Tree}中左边的初始结构${\cal K}_2= (\Hm, s_0)$（其最初出现在图~\ref{Fig:chapter04:v1uv2}中）。左边的为$\Hm$上的四棵计算树：从左到右表示以$s_0$为根、深度分别为0、1、2和3的计算树（为简化图，计算树的标签没有给出，但是每个树节点的标签可从${\cal K}_2$找到）。令$V=\{d\}$，则 $\overline{V}=\{s, se\}$。
 	
 	因为$L(s_1) - \overline{V} = L(s_2) - \overline{V}$，所以有$\Tr_0(s_1) \lrto_{\overline{V}} \Tr_0(s_2)$。由于存在$(s_1, s_2)\in R$使得对任意的$(s_2, s') \in R$都有$L(s_2)- \overline V \neq L(s') - \overline V$，所以$\Tr_1(s_1) \not \lrto_{\overline{V}} \Tr_1(s_2)$。
 	由此可知$s_1$和$s_2$是$V$-可区分的，且$\dis_{V}(\Hm, s_1, s_2, 1)$。
@@ -404,7 +404,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	\begin{figure*}
 		\centering
 		\includegraphics[width=10cm]{chapter05/NK2Tree1.png}
-		\caption{左图为初始$\MPK$-结构$\mathcal{K}_2$ (源于图~\ref{Fig:chapter04:v1uv2})； 右图：从左到右表示以$s_0$为根、深度分别为0、1、2和3的计算树（为简化图，计算树的标签没有给出，但是每个树节点的标签可从${\cal K}_2$找到。）}\label{fig:K2Tree}
+		\caption{初始结构$\mathcal{K}_2$ (源于图~\ref{Fig:chapter04:v1uv2})及其计算树}\label{fig:K2Tree}
 	\end{figure*}
 
 %\begin{figure*}[!htb]
@@ -418,7 +418,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \end{example}
 
 
-下面的定理表示上述定义的特征公式确实描述了一个初始\MPK-结构，此时对系统结构的操作就可转换为对其特征公式的操作，如下文将要讲的给定系统下的最弱充分条件计算。更直观地说，特征公式保持了给定初始$\MPK$-结构在原子命题集合$V$上的所有特性，即：具有$\overline{V}$-互模拟的两个初始$\MPK$-结构关于$V$的特征公式逻辑等价。
+下面的定理表示上述定义的特征公式确实描述了一个初始结构，此时对系统结构的操作就可转换为对其特征公式的操作，如下文将要讲的给定系统下的最弱充分条件计算。更直观地说，特征公式保持了给定初始结构在原子命题集合$V$上的所有特性，即：具有$\overline{V}$-互模拟的两个初始结构关于$V$的特征公式逻辑等价。
 
 \begin{theorem}\label{CF}
 	令$V\subseteq \Ha$、$\Hm=(S,R,L,s_0)$且$\Hm'=(S',R', L',s_0')$，则：
@@ -507,9 +507,9 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \end{proof}
 
 \section{遗忘理论的封闭性及复杂性结果}\label{chapter06:sec:close}
-当给定的$\CTL$公式的长度（字符的个数）为$n$，由小模型理论可知定义在状态个数为$k=n8^n$的状态空间${\cal S}=\{s_1,s_2,\dots, s_k\}$上的初始结构就能保证公式的可满足性~\cite{DBLP:journals/jcss/EmersonH85}。
-对于其他拥有同样大小的状态空间上的任意初始$\MPK$-结构，都能在${\cal S}$状态空间上找到一个初始$\MPK$-结构与之互模拟，且由定理~\ref{CF}可知他们有相同的特征公式。
-因此，只有有限个初始$\MPK$-结构作为该公式的候选模型。因此下面结论成立。
+当给定的$\CTL$公式的长度（符号的个数）为$n$，由小模型理论可知定义在状态个数为$k=n8^n$的状态空间${\cal S}=\{s_1,s_2,\dots, s_k\}$上的初始Kripke结构就能保证公式的可满足性~\cite{DBLP:journals/jcss/EmersonH85}。
+对于其他拥有同样大小的状态空间上的任意初始结构，都能在${\cal S}$状态空间上找到一个初始结构与之互模拟，且由定理~\ref{CF}可知他们有相同的特征公式。
+因此，只有有限个初始结构作为该公式的候选模型。从而下面结论成立。
 %这一事实可以用下面引理表示。
 
 \begin{lemma}\label{lem:models:formula}
@@ -527,7 +527,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 这一结论表明：任意的$\CTL$公式都与其模型的特征公式的吸取逻辑等价。这对遗忘理论的封闭性提供了重要的理论支撑，也即是从公式里遗忘掉原子命题集合$V$中的元素只需找到与给定公式的模型$V$-互模拟的那些模型就能确定遗忘的结果。形式化地，对于给定的公式$\varphi$和原子命题集合$V$，从$\varphi$中遗忘掉$V$中的元素得到的结果为：
 \begin{equation*}
-	\bigvee_{{\cal K}\in  \{{\cal K}'\mid \exists {\cal K}''\in\Mod(\phi)\ \text{ and }\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
+	\bigvee_{{\cal K}\in  \{{\cal K}'\mid \exists {\cal K}''\in\Mod(\phi),\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
 \end{equation*}
 
 
@@ -539,7 +539,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	给定一个结构 $(\Hm,s_0)$、原子命题集合$V\subseteq{\cal A}$ 和公式 $\varphi \in \CTL_{\ALL\FUTURE}$，判定 $(\Hm,s_0) \models^? \CTLforget(\varphi, V)$ 是 \textsc{NP}-完全的。
 \end{proposition}
 \begin{proof}
-	成员属性(Membership). 假定$(\Hm,s_0) \models \CTLforget(\varphi,V)$，则存在一个初始结构$(\Hm', s_0')$ 使得 (a) $(\Hm',s_0') \models \varphi$ 且 (b) $(\Hm,s_0) \lrto_V (\Hm',s_0')$。已有结果表明，(a) 能在$\Hm'$ 和 $\varphi$ 的大小的多项式时间内完成~\cite{DBLP:books/daglib/0007403}。条件(b) 也可用Baier等人的推论推论 7.45~\cite{Baier:PMC:2008}的方法证明能在多项式时间内完成。
+	成员属性(Membership). 假定$(\Hm,s_0) \models \CTLforget(\varphi,V)$，则存在一个初始结构$(\Hm', s_0')$ 使得\ (a) $(\Hm',s_0') \models \varphi$ 且\ (b) $(\Hm,s_0) \lrto_V (\Hm',s_0')$。已有结果表明，(a) 能在$\Hm'$ 和 $\varphi$ 的大小的多项式时间内完成~\cite{DBLP:books/daglib/0007403}。条件(b) 也可用Baier等人的推论推论 7.45~\cite{Baier:PMC:2008}的方法证明能在多项式时间内完成。
 	又因为猜$(\Hm,s_0)$多项式大小的初始结构$(\Hm',s_0')$能在多项式时间内完成，因此，这一问题在$\textsc{NP}$ 中。
 	
 	困难属性(Hardness). 已经证明命题逻辑下遗忘的模型检测是$\textsc{NP}$-难的，由于命题逻辑下的遗忘是$\CTL$的一种~\cite{Zhang2008Properties}。因此，上述问题是$\textsc{NP}$-难的。
@@ -557,25 +557,25 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	\end{itemize}
 \end{theorem}
 \begin{proof}
-	(i) 困难属性. 已有结论表明，判定公式$\varphi$是否是可满足的是$\textsc{NP}$-完全的~\cite{meier2009complexity}。要整困难属性，通过令$\CTLforget(\varphi, V)\equiv \top$，只需证明$\psi$是有效的，即：原问题是co-NP-难的。
+	(i) 困难属性. 已有结论表明，判定公式$\varphi$是否是可满足的是$\textsc{NP}$-完全的~\cite{meier2009complexity}。要困证难属性，通过令$\CTLforget(\varphi, V)\equiv \top$，只需证明$\psi$是有效的，即：原问题是co-NP-难的。
 	
 	成员属性. 定理~\ref{thm:exist} 表明$\CTLforget(\varphi, V) \models \psi$ 当且仅当 $\varphi \models \psi$ 且 $\IR(\psi, V)$。
 	在$\CTL_{\ALL \FUTURE}$ 中，判定 $\varphi \models \psi$ 是co-$\textsc{NP}$ 的~\cite{meier2009complexity}。
-	这里证明 $\IR(\psi, V)$ 是否成立是 co-$\textsc{NP}$ 的。不失一般性地，假定$\psi$ 是可满足的，则 $\psi$ 有一个大小为$|\psi$的多项式的模型。
+	这里证明 $\IR(\psi, V)$ 是否成立是 co-$\textsc{NP}$ 的。不失一般性地，假定$\psi$ 是可满足的，则 $\psi$ 有一个大小为$|\psi|$的多项式的模型。
 	这里讨论该问题的补问题：判定 $\psi$ 是$V$-有关的，即 $\neg \IR(\psi, V)$。显然，$\neg \IR(\psi, V)$ 当且仅当存在$\psi$的一个模型 $(\Hm,s_0)$ 和大小为$|\psi|$的多项式的初始结构 $(\Hm',s_0')$ 使得 $(\Hm,s_0) \lrto_V (\Hm',s_0')$ 且 $(\Hm',s_0') \not \models \psi$。因此，判定$\neg \IR(\psi, V)$是否成立有如下两个步骤：(1) 猜两个大小为$|\psi|$的多项式的初始结构$(\Hm,s_0)$ 和 $(\Hm',s_0')$ 使得 $(\Hm,s_0) \models \psi$ 且 $(\Hm',s_0') \not \models \psi$，和 (2)
 	检查 $(\Hm,s_0) \lrto_V (\Hm',s_0')$。
 	显然， (1) 和(2) 都是能在多项式时间内完成的。
 	
-	(ii) 成员属性. 考虑这一问题的补问题。猜一个大小为$\psi$ 的多项式的$\psi$ 的 模型 $(\Hm,s_0)$ 且检查 是否 $(\Hm, s_0) \not \models \CTLforget(\varphi, V)$。
+	(ii) 成员属性. 考虑这一问题的补问题。猜一个大小为$|\psi|$ 的多项式的$\psi$ 的 模型 $(\Hm,s_0)$ 且检查 是否 $(\Hm, s_0) \not \models \CTLforget(\varphi, V)$。
 	由命题~\ref{modelChecking} 可知这一问题在 $\Sigma_2^{\textsc{P}}$中。因此，原问题在$\Pi_2^{\textsc{P}}$中。
 	
 	困难属性. 令$\psi \equiv \top$。 则这一问题被规约为判定$\CTLforget(\varphi, V)$的有效性问题。 
 	由于命题遗忘是$\CTL$遗忘的特殊情形，因此该问题的困难属性直接来源于\cite{DBLP:journals/jair/LangLM03}。
 
 (iii) 成员属性. 假定 $\CTLforget(\varphi, V) \not \models \CTLforget(\psi, V)$。则存在一个初始结构 $(\Hm,s) 
-\models \CTLforget(\varphi, V)$ 且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 使得 $(\Hm_1, s_1) \models \varphi$ 但是对其他$(\Hm, s) \lrto_V (\Hm_2,s_2)$ 使得 $(\Hm_2， s_2) \not \models \psi$。
+\models \CTLforget(\varphi, V)$ 且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 使得 $(\Hm_1, s_1) \models \varphi$ 但是对其他$(\Hm, s) \lrto_V (\Hm_2,s_2)$ 使得 $(\Hm_2, s_2) \not \models \psi$。
 由命题~\ref{modelChecking} 的证明可知，$(\Hm,s)$和 $(\Hm_1,s_1)$ 能在$|\varphi|$、$|\psi|$和$|V|$的多项式时间内完成。 
-显然，猜使得$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 成立的大小为$|\varphi$多项式的 $(\Hm,s)$和 $(\Hm_1,s_1)$ 可以在多项式时间内完成，且 对任意的 $(\Hm, s) \lrto_V (\Hm_2,s_2)$，检查 $(\Hm_2,s_2) \not \models \psi$ 可以在 $|\psi|$ 和 $|\Hm_2|$ 的多项式时间内完成。
+显然，猜使得$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 成立的大小为$|\varphi|$多项式的 $(\Hm,s)$和 $(\Hm_1,s_1)$ 可以在多项式时间内完成，且 对任意的 $(\Hm, s) \lrto_V (\Hm_2,s_2)$，检查 $(\Hm_2,s_2) \not \models \psi$ 可以在 $|\psi|$ 和 $|\Hm_2|$ 的多项式时间内完成。
 因此，该问题是 $\Pi_2^{\textsc{P}}$的。
 
 困难属性. 由于 $\IR(\CTLforget(\psi, V), V) $，因此 $\CTLforget(\varphi, V) \models \CTLforget(\psi, V)$ 当且仅当 $\varphi \models \CTLforget(\psi, V)$。 所以由(ii)不难证明该问题。
@@ -639,7 +639,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 
 \section{基于模型的遗忘理论计算方法}\label{chapter06:sec:algm}
-前几节中讲述的过程显然给出了一种计算遗忘的方法，本届将这些过程组织起来构成一个算法。该算法与第\ref{cha4:sec:alg}节中基于语法的算法不同，它是一种基于模型的算法（算法~\ref{alg:compute:forgetting:by:VB}），也就是说本节的算法通过计算所有可能的模型来计算遗忘，且其正确性可由引理\ref{lem:models:formula}和定理\ref{CF}保证。
+前几节中讲述的过程显然给出了一种计算遗忘的方法，本节将这些过程组织起来构成一个算法。该算法与第\ref{cha4:sec:alg}节中基于语法的算法不同，它是一种基于模型的算法（算法~\ref{alg:compute:forgetting:by:VB}），也就是说本节的算法通过计算所有可能的模型来计算遗忘，且其正确性可由引理\ref{lem:models:formula}和定理\ref{CF}保证。
 
 
 \begin{algorithm}[tb]
@@ -670,12 +670,12 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 
 \begin{proposition}\label{pro:time:alg1}
-	令 $\varphi$ 为$\CTL$公式，$V\subseteq \Ha$为原子命题集合，状态空间的大小为 $|{\cal S}|=m$， $|\Ha|=n$ 和 $|V|=x$。则使用算法\ref{alg:compute:forgetting:by:VB}计算从$\varphi$中遗忘掉$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+	令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集合，状态空间的大小为 $|{\cal S}|=m$， $|\Ha|=n$ 和 $|V|=x$。则使用算法\ref{alg:compute:forgetting:by:VB}计算从$\varphi$中遗忘掉$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 \end{proposition}
 \begin{proof}
-假定每个状态或原子命题占据$\log m$的空间且$n\leq m$，则一个状态对$(s,s')$占据$2*\log m$位（bit）。对任意的$B \subseteq {\cal S}$ 且$s_0\in B$，构造如下初始结构$(\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$，则$R$中至多有$\frac{|B|^2}{2}$个状态对且$L$中至多$|B|*n$个$(s,A)$对（$A\subseteq \Ha$）。因此，$(\Hm,s_0)$至多占据$(|B|+|B|^2+|B|*n)*\log m$位。此外，对于状态集合$B$，初始状态有$|B|$种选择，有$|B|^{|B|}$种关系$R$，$(2^n)^{|B|}$种标签函数$L$。
+假定每个状态或原子命题占据$\log m$的空间且$n\leq m$，则一个状态对$(s,s')$占据$2*\log m$位（bit）。对任意的$B \subseteq {\cal S}$和$s_0\in B$，构造如下初始结构$(\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$，则$R$中至多有$\frac{|B|^2}{2}$个状态对且$L$中至多$|B|*n$个$(s,A)$对（$A\subseteq \Ha$）。因此，$(\Hm,s_0)$至多占据$(|B|+|B|^2+|B|*n)*\log m$位。此外，对于状态集合$B$，初始状态有$|B|$种选择，有$|B|^{|B|}$种关系$R$，$(2^n)^{|B|}$种标签函数$L$。
 
-在最坏的情形下（即$|B|=m$），可由构成$m * (m^m * 2^{nm} * m)$个初始结构。因此，最多有$m^{m+2} * 2^{nm}$个初始结构，且最多花费$(m^{m+2} * 2^{nm} * (m + m^2 + nm))* \log m$位。
+在最坏的情形下（即$|B|=m$），可构成$m * (m^m * 2^{nm} * m)$个初始结构。因此，最多有$m^{m+2} * 2^{nm}$个初始结构，且最多花费$(m^{m+2} * 2^{nm} * (m + m^2 + nm))* \log m$位。
 
 令 $k = n-x$，对任意有$i\geq 1$个状态的初始结构${\cal K} = (\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$。
 在最坏的情形下（即$ch(\Hm,V) = i$时），可以花费$N(i) = P_i(s_0) + i * (P_i(s) + i *P_i(s'))$位来存储${\cal K}$在$\overline{V}$上的特征公式。
@@ -698,7 +698,7 @@ ${\cal F}_{\overline{V}}(\Tr_i(y))$ （$0\leq n \leq i$）被递归地定义如�
 	& = (i^2 + i+1)\frac{i^i -1}{i-1} k.
 \end{align*}
 	
-在最坏的情形下（即具有$m$个状态的初始结构）有$m^{m+2} * 2^{nm}$初始结构，需要$(m^{m+2} * 2^{nm} * N(m)) * \log m$位来存储遗忘的结果。
+在最坏的情形下（即具有$m$个状态的初始结构）有$m^{m+2} * 2^{nm}$个初始结构，需要$(m^{m+2} * 2^{nm} * N(m)) * \log m$位来存储遗忘的结果。
 
 因此，空间复杂性为$O((n-x)m^{2(m+2)}2^{nm}* \log m)$。
 \end{proof}

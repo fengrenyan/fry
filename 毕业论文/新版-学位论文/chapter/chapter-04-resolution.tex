@@ -13,7 +13,7 @@
 
 \section{引言}
 虽然在第\ref{chapter02}章详细介绍了命题逻辑和模态逻辑S5下基于归结的计算遗忘的方法，但值得注意的是$\CTL$公式没有像这两种逻辑一样有标准的自身语言子句形式，而$\CTL$的子句是有索引的。这就注定了$\CTL$下基于归结的遗忘与上述两者的不同，而且也应该要复杂一些（虽有不同，但也可以借鉴）。
-本章展示如何使用第~\ref{chapter02:CTLres}节中表~\ref{tab:res}中的归结规则来计算$\CTL$下的遗忘理论。
+本章展示如何使用第~\ref{chapter02:CTLres}节中表~\ref{tab:res}中的归结规则来计算$\CTL$下的遗忘。
 
 %在本章给定如下约定的记号。令$V\subseteq \Ha$是要遗忘的原子命题的集合，$I\subseteq \Ind$是索引的集合，$V'$表示计算过程所引入的原子命题的集合且满足$V'\cap V=\emptyset$。
 %此外，$\varphi$是$\CTL$公式，且$T_{\varphi}$是在$\varphi$上使用表~\ref{tab:trans}中的转换规则得到的$\CTLsnf$子句的集合。
@@ -29,9 +29,9 @@
 需要解决如下两个主要问题：
 \begin{itemize}
 	\item[(1)] 如何表示$\CTL$公式和带索引的$\CTL$公式之间的关系？如在第\ref{chapter02}章中所展示的那样，将一个$\CTL$公式转换为$\CTLsnf$子句的集合会引入新的原子命题和索引。虽然已有的研究说明了$\CTL$公式可以转换为带索引的公式的集合并保证其可满足性，然而并没有表明这两种形式的公式之间的模型具有怎样的联系。
-	本章从互模拟等价的角度探讨$\CTL$公式和带索引的公式之间的联系，为计算遗忘提供理论基础。
+	本章从互模拟等价的角度探讨$\CTL$公式和归结等过程得到的（带索引）公式之间的联系，为计算遗忘提供理论基础。
 	%本章给出一种扩展的互模拟定义，以描述两种公式的模型之间的关系。
-	\item[(2)] 如何“移除”无关的原子命题（包括需要遗忘的原子命题和转换过程中引入的新的原子命题），以及如何“消除”索引？为此，本章给出“移除”原子命题的一般操作，并提出一种一般化的Ackermann引理。为了“消除”索引，探索几个几个逻辑等价关系，详见第\ref{cha4:sec:resf}节。
+	\item[(2)] 如何“移除”无关的原子命题（包括需要遗忘的原子命题和转换过程中引入的新的原子命题），以及如何“消除”索引？为此，本章给出“移除”原子命题的一般操作，并提出一种一般化的Ackermann引理。为了“消除”索引，探索几个逻辑等价关系，详见第\ref{cha4:sec:resf}节。
 	%对应算法~\ref{alg:compute:forgetting:by:Resolution}中的$\emph{Removing\_index}(\emph{RemA})$过程。
 \end{itemize}
 
@@ -120,10 +120,10 @@
 	一方面，显然 $\Pi \models R_i$，所以 $T_i \models T_{i+1}$。另一方面 $T_i\subseteq T_{i+1}$，所以 $T_{i+1} \models T_i$。
 	
 	(2) 这里证明若$\Pi \rto_r R_i$且 $r=$\textbf{(ERES1)}，
-	则 $T_i \equiv_{\{l, w_{\neg l}^{\ALL}\}} T_{i+1}$，其中 $l = p$或 $l = \neg p$，$w_{\neg l}^{\ALL}\in V'$是与子句$Q \rto \ALL \FUTURE \neg l$相关的新的原子命题，$l$是文字（即：$p$或者$\neg p$）。
+	则 $T_i \equiv_{\{l, w_{\neg l}^{\ALL}\}} T_{i+1}$，其中 $l = p$或 $l = \neg p$，$w_{\neg l}^{\ALL}$是与子句$Q \rto \ALL \FUTURE \neg l$相关的新的原子命题，$l$是文字（即：$p$或者$\neg p$）。
 	
 	在文章~\cite{bolotov2000clausal}中已经证明$\Pi \models R_i$，因此有$T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL}$，其中$\Lambda_{\neg l}^{\ALL}$是通过使用表~\ref{tab:trans}中的转换规则作用到$R_i$上得到的$\CTLsnf$子句的集合（请查看文章~\cite{zhang2009refined}获取更加详细的描述）。显然，对所有的$(\Hm_1,s_1) \in \Mod(T_i= X \cup \Pi)$都存在一个$(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$使得$(\Hm_1, s_1) \lrto_{\tuple{\{p, w_{\neg l}^{\ALL}\}, {\O}}} (\Hm_2, s_2)$，且对任意的$(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$也存在一个$(\Hm_1,s_1) \in \Mod(T_i= X \cup \Pi)$使得$(\Hm_1, s_1) \lrto_{\{p, w_{\neg l}^{\ALL}\}} (\Hm_2, s_2)$。
-	又$\{p, w_{\neg l}^{\ALL}\} \subseteq (V\cup V')$且$\emptyset \subseteq \emptyset$，由命题~\ref{prop:transform:V:EQ}可知$T_i \equiv_{V\cup V'} T_{i+1}$。
+	又$\{p, w_{\neg l}^{\ALL}\} \subseteq U$，由命题~\ref{prop:transform:V:EQ}可知$T_i \equiv_{U} T_{i+1}$。
 	
 	当规则为$\textbf{(ERES2)}$时可以类似地证明。
 	
@@ -133,20 +133,20 @@
 	
 	
 	\textbf{(F2)} 不失一般性地，假设 $V=\{p\}$， $C_i$ ($i=1,2$)为经典子句，  $l = p$ 或 $l = \neg p$。
-	显然 $\Unfolding(T_\varphi,V) \models \emph{ERes}(\varphi,V)$，这里证明对任意的 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$ with $\Hm=(S, R, L, [\_], s)$，存在一个初始$\Ind$-结构 ${\cal K}'=(\Hm', s')$ 使得 ${\cal K} \lrto_{U} {\cal K}'$ 和 ${\cal K}' \models \Unfolding(T_\varphi,V)$。
+	显然 $\Unfolding(T_\varphi,V) \models \emph{ERes}(\varphi,V)$，这里证明对任意的 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$ （其中$\Hm=(S, R, L, [\_], s)$），存在一个初始$\Ind$-结构 ${\cal K}'=(\Hm', s')$ 使得 ${\cal K} \lrto_{U} {\cal K}'$ 且 ${\cal K}' \models \Unfolding(T_\varphi,V)$。
 	
 	
 	因为$p$ 只出现在 $\CTLsnf$子句的右手边，这里从下面几点证明上述结论成立。
 	
 	(1) 假定 $\Unfolding(T_\varphi,V)$有全局子句，则对于任意的 $C=\top\rto C_1 \vee l \in \Unfolding(T_\varphi,V)$：
 	
-	(a) 如果不存在 $C'\in \Unfolding(T_\varphi,V)$ 使得 $C$ 和 $C'$ 在 $p$上是规约的，则 $\Unfolding(T_\varphi,V)$中不存在除了 $Pt$-某时 子句之外的子句 $C'$ 包含文字 $\neg l$，其中 $Pt\in \{\ALL, \EXIST\}$。
+	(a) 如果不存在 $C'\in \Unfolding(T_\varphi,V)$ 使得 $C$ 和 $C'$ 在 $p$上是可归结的，则 $\Unfolding(T_\varphi,V)$中不存在除了 $Pt$-某时 子句之外的子句 $C'$ 包含文字 $\neg l$，其中 $Pt\in \{\ALL, \EXIST\}$。
 	
 	若对任意其他的子句$C'$， $p\not \in \Var(C')$，则对任意的 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$可如下构造 $(\Hm',s')$：令 $\Hm'= (S, R, L',[\_], s)$ （即 $s'=s$），其中$L'$ 与 $L$ 一样，除了对任意的 $s_1\in S$，若 $(\Hm, s_1) \not \models C_1 \vee l$则“若 $l=p$令 $L'(s_1) = L(s_1) \cup \{p\}$，否则令 $L'(s_1) = L(s_1) - \{p\}$”。
 	显然 $(\Hm, s) \lrto_{\{p\}} (\Hm', s')$ 和 $(\Hm', s') \models C' \wedge C$。
 	
-	若 $C'= Q\rto Pt \FUTURE \neg l$，不失一般性地，令 $l=p$。对任意的 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，如下构造 $(\Hm',s')$：令$\Hm'=(S, R, L',[\_], s)$，其中 $L'$与 $L$ 相同，除了
-	 $L'(s) = L(s) \cup \{p\}$，且对任意具有$(s, s')\in R$关系的状态 $s'\in S'$，令 $L'(s) = L(s) - \{p, q\}$，其中 $q \in (\Var(\Unfolding(T_\varphi,V))-\Var(\varphi))$ 是负出现在 $C_1$ 中的原子命题，且对任意其他的非初始状态 $s'' \in S$，$L'(s'') = (L(s'') - \{Q\}) \cup \{p\}$ （$Q$在 $Pt$-某时子句中是一个原子）。显然 $(\Hm, s) \lrto_{\{p,q\}} (\Hm', s')$ 和 $(\Hm', s') \models C' \wedge C$。
+	若 $C'= Q\rto Pt \FUTURE \neg l$，不失一般性地，令 $l=p$。对任意的 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,$ $V))$，如下构造 $(\Hm',s')$：令$\Hm'=(S, R, L',[\_], s)$，其中 $L'$与 $L$ 相同，除了
+	 $L'(s) = L(s) \cup \{p\}$，且对任意具有$(s, s')\in R$关系的状态 $s'\in S'$，令 $L'(s) = L(s) - \{p, q\}$，其中 $q \in (\Var(\Unfolding(T_\varphi,$ $V))-\Var(\varphi))$ 是负出现在 $C_1$ 中的原子命题，且对任意其他的非初始状态 $s'' \in S$，$L'(s'') = (L(s'') - \{Q\}) \cup \{p\}$ （$Q$在 $Pt$-某时子句中是一个原子）。显然 $(\Hm, s) \lrto_{\{p,q\}} (\Hm', s')$ 和 $(\Hm', s') \models C' \wedge C$。
 	%	 that for each non-initial state $s\in S'$, we have $L'(s) = (L(s) - \{Q\}) \cup \{p\}$ ($Q$ is an atom for $Pt$-sometime clause)
 	%
 	%if $Q$ is an atom (if $Q$ is a term, then we can delete the atoms which occurring in $Q$ positively and add the atoms which occurring in $Q$ negatively) 
@@ -155,17 +155,17 @@
 	%	and if $(\Hm,s)  \models \neg Q \wedge C_1$, then let $L'(s) = L(s)$, else ``if $(\Hm,s) \models \neg Q \wedge \neg C_1$, then let $L'(s) = L(s) \cup \{p\}$, else if $(\Hm,s) \models Q \wedge \neg C_1$, then `if $q$ occurs in $C_1$ positively, then let $L'(s) = L(s) - \{p\} - \{q\}$, else let $L'(s) = (L(s) - \{p\}) \cup \{q\}$' ", where $q \in (\Var(C_1) \cap U)$.
 	%		It is obvious that $(\Hm, s) \lrto_{\{p,q\}} (\Hm', s')$ and $(\Hm', s') \models C' \wedge C$.
 	
-	(b) 若存在子句$C'\in \Unfolding(T_\varphi,V)$ 使得 $C$ 和 $C'$ 在 $p$上是可规约的：
+	(b) 若存在子句$C'\in \Unfolding(T_\varphi,V)$ 使得 $C$ 和 $C'$ 在 $p$上是可归结的：
 	\begin{itemize}
 		\item[(i)] 若 $C'= Q\rto Pt \NEXT (C_2 \vee \neg l)$ （令 $Pt=\ALL$，$Pt = \EXIST$可类似地证明），则有$Q\rto \ALL \NEXT(C_1 \vee C_2) \in \Unfolding(T_\varphi,V)$。因此，对任意的 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，可如下构造${\cal K}'=(\Hm',s')$： 令 $\Hm'= (S, R, L',[\_]$ $,s)$ （即 $s'=s$），其中 $L'$ 与 $L$一样，除了对任意的 $s_1\in S$，若 $(\Hm, s_1) \not \models Q$，则对任意的 $(s_1, s_2) \in R$ 若 $(\Hm, s_2) \not \models C_1$ 则“若 $l=p$，则令 $L'(s_2) = L(s_2) \cup \{p\}$，否则令 $L'(s_2) = L(s_2) - \{p\}$”，否则，若$(\Hm, s_2) \models  C_1 \wedge \neg C_2$，则“若$l=p$，则令 $L'(s_2) = L(s_2) - \{p\}$，否则令$L'(s_2) = L(s_2) \cup \{p\}$”；否则，若 $(\Hm, s_2) \models \neg C_1 \wedge C_2$，则“若 $l=p$，则令$L'(s_2) = L(s_2) \cup \{p\}$，否则 $L'(s_2) = L(s_2) - \{p\}$”。容易检查 ${\cal K} \lrto_{\{p\}} {\cal K}'$ 且 ${\cal K}' \models C' \wedge C$。
-		\item[(ii)] 若 $C' =  Q\rto Pt \FUTURE \neg l$。不失一般性地，假设 $l=p$。$C$和$C'$在$p$上是可规约的，则一定存在子句的集合$\{P_1^1 \rto * C_1^1$, \dots, $P_{m_1}^1 \rto * C_{m_1}^1$, $P_1^n \rto * C_1^n$, \dots, $P_{m_n}^1 \rto * C_{m_n}^1 \}$ 使得 $*$ 要么要么为空字符串，要么为$\{\ALL \NEXT, \EXIST_{\tuple{ind}} \NEXT\}$中的一个（$\neg C_1 \rto l$为子句集合中的一个）使得 $\bigvee_{i=1}^n \bigwedge_{j=1}^{m_i} P_j^i \rto \EXIST \NEXT \EXIST \GLOBAL l$。
+		\item[(ii)] 若 $C' =  Q\rto Pt \FUTURE \neg l$。不失一般性地，假设 $l=p$。$C$和$C'$在$p$上是可归结的，则一定存在子句的集合$\{P_1^1 \rto * C_1^1$, \dots, $P_{m_1}^1 \rto * C_{m_1}^1$, $P_1^n \rto * C_1^n$, \dots, $P_{m_n}^1 \rto * C_{m_n}^1 \}$ 使得 $*$ 要么要么为空字符串，要么为$\{\ALL \NEXT, \EXIST_{\tuple{ind}} \NEXT\}$中的一个（$\neg C_1 \rto l$为子句集合中的一个）使得 $\bigvee_{i=1}^n \bigwedge_{j=1}^{m_i} P_j^i \rto \EXIST \NEXT \EXIST \GLOBAL l$。
 		%, hence $\bigvee_{i=1}^n \bigwedge_{j=1}^{m_i} P_j^i \rto l \wedge \EXIST \NEXT \EXIST \GLOBAL l$.
 		%This is a contradiction since $C' =  Q\rto Pt \FUTURE \neg l$.
-		因此，通过使用规则ERES1 （ ERES2规则类似）可以得到一个子句 $C''=\top \rto \neg Q \vee \neg p \vee C_1$，因此在使用规则 SRES8在$C$ 和 $C''$上后得到子句$\top \rto \neg Q \vee C_1$。在这种情况下，对任意的 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，可以如下构造 ${\cal K}'=(\Hm',s')$：令 $\Hm'= (S, R, L', [\_],s)$ （即 $s'=s$），其中 $L'$ 与$L$一样，除了对任意的 $s_1\in S$，若 $(\Hm, s_1) \models Q$，则令 $L'(s_1) = L(s_1) - \{p\}$，否则令 $L'(s_1) = L(s_1) \cup \{p\}$。若以检查 ${\cal K} \lrto_{\{p\}} {\cal K}'$ 和 ${\cal K}' \models C' \wedge C$。
+		因此，通过使用规则ERES1 （ ERES2规则类似）可以得到一个子句 $C''=\top \rto \neg Q \vee \neg p \vee C_1$，因此在使用规则 SRES8在$C$ 和 $C''$上后得到子句$\top \rto \neg Q \vee C_1$。在这种情况下，对任意的 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，可以如下构造 ${\cal K}'=(\Hm',s')$：令 $\Hm'= (S, R, L', [\_],s)$ （即 $s'=s$），其中 $L'$ 与$L$一样，除了对任意的 $s_1\in S$，若 $(\Hm, s_1) \models Q$，则令 $L'(s_1) = L(s_1) - \{p\}$，否则令 $L'(s_1) = L(s_1) \cup \{p\}$。可以检查 ${\cal K} \lrto_{\{p\}} {\cal K}'$ 和 ${\cal K}' \models C' \wedge C$。
 		\item[(ii)] 可以类似地证明其他类型的子句，且得到${\cal K} \lrto_{U} {\cal K}'$ 和 ${\cal K}' \models \Unfolding(T_\varphi,V)$。
 	\end{itemize}
 	
-	(2) 考虑$Pt$-步 子句的情形。令 $C\in \Unfolding(T_\varphi,V)$ 为 $Q \rto \ALL \NEXT(C_1 \vee  l)$。不失一般性地，假设存在某些子句$C'\in \Unfolding(T_\varphi,V)$使得$C$ 和 $C'$ 在$p$上是规约的（$l=p$）。
+	(2) 考虑$Pt$-步 子句的情形。令 $C\in \Unfolding(T_\varphi,V)$ 为 $Q \rto \ALL \NEXT(C_1 \vee  l)$。不失一般性地，假设存在某些子句$C'\in \Unfolding(T_\varphi,V)$使得$C$ 和 $C'$ 在$p$上是可归结的（$l=p$）。
 	
 	若 $C'= Q_1\rto Pt \NEXT (C_2 \vee \neg l)$ （令$Pt=\EXIST_{ind}$，$Pt = \ALL$的情形可以类似地证明），因此有$Q \wedge Q_1 \rto \EXIST_{ind} \NEXT(C_1 \vee C_2) \in \Unfolding(T_\varphi,V)$。所以对任意的 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，如下构造 ${\cal K}'=(\Hm',s')$：令$\Hm'= (S, R, L', [\_], s)$ （即 $s'=s$），其中 $L'$与 $L$一样，除了对任意的 $s_1\in S$
 	\begin{itemize}
@@ -174,7 +174,7 @@
 	\end{itemize}
 	容易检查 ${\cal K} \lrto_{\{p\}} {\cal K}'$ 和 ${\cal K}' \models C' \wedge C$，其中${\cal K}' = (\Hm',s')$。
 	
-	若 $C' =  Q_1\rto Pt \FUTURE \neg l$ （令$Pt=\ALL$，$Pt = \EXIST$的情形可类似地证明）。若 $C$ 和 $C'$在$p$上是可规约的，则必须存在 一个包含子句$\neg C_1 \rto l$的$\CTLsnf$ 子句的集合 $\{P_1^1 \rto * C_1^1$, \dots, $P_{m_1}^1 \rto * C_{m_1}^1$, $P_1^n \rto * C_1^n$, \dots, $P_{m_n}^1 \rto * C_{m_n}^1 \}$ 使得 $*$ 为空字符串或集合 $\{\ALL \NEXT, \EXIST_{\tuple{ind}} \NEXT\}$中的一个，且 $\bigvee_{i=1}^n \bigwedge_{j=1}^{m_i} P_j^i \rto \EXIST \NEXT \EXIST \GLOBAL l$。
+	若 $C' =  Q_1\rto Pt \FUTURE \neg l$ （令$Pt=\ALL$，$Pt = \EXIST$的情形可类似地证明）。若 $C$ 和 $C'$在$p$上是可归结的，则必须存在 一个包含子句$\neg C_1 \rto l$的$\CTLsnf$ 子句的集合 $\{P_1^1 \rto * C_1^1$, \dots, $P_{m_1}^1 \rto * C_{m_1}^1$, $P_1^n \rto * C_1^n$, \dots, $P_{m_n}^1 \rto * C_{m_n}^1 \}$ 使得 $*$ 为空字符串或集合 $\{\ALL \NEXT, \EXIST_{\tuple{ind}} \NEXT\}$中的一个，且 $\bigvee_{i=1}^n \bigwedge_{j=1}^{m_i} P_j^i \rto \EXIST \NEXT \EXIST \GLOBAL l$。
 	%	Therefore, we get clause $C''=\top \rto \neg Q \vee \neg p \vee C_1$ by using \textbf{ERES1} (similar for \textbf{ERES2}) and then $\top \rto \neg Q \vee C_1$ by using \textbf{SRES8} on $C$ and $C''$. 
 在这种情况下，对惹妞的${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，如下构造$(\Hm',s')$：令$\Hm'= (S, R, L', [\_],s)$ （即 $s'=s$），其中  $L'$和 $L$ 一样，除了对任意的状态 $s'\in S'$，若 $L'(s') \models Q$ 和 $(s',s'') \in R$，则令 $L'(s'') = L(s'') \cup \{p\}$， 若 $(\Hm,s)\models Q_1$，则令 $L'(s) = L(s) - \{p\}$。
 	显然 $(\Hm, s) \lrto_{\{p\}} (\Hm', s')$ 和 $(\Hm',s') \models C' \wedge C$成立。	
@@ -234,13 +234,13 @@
 下面的引理表明，可以移除掉$\CTLsnf$子句集合中的索引而保持互模拟等价。
 
 \begin{lemma}~\label{lem:In2NI}
-	令 $j\in {\cal I}$, $\psi_i,\varphi_i~(1\le i\le n)$ 为 $\CTL$公式。有：
+	令 $j\in {\cal I}$， $\psi_i,\varphi_i~(1\le i\le n)$ 为 $\CTL$公式。有：
 	\begin{itemize}
 		\item[(i)] $\{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}\equiv 
-		\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST_{\tuple{j}} \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\}$,
+		\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST_{\tuple{j}} \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\}$，
 		
 		\item[(ii)] $\{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}\equiv_\emptyset
-		\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\}$, 和
+		\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\}$，
 		
 		\item[(iii)] $\{(\psi_1 \rto \EXIST_{\tuple{j}}\FUTURE \varphi_1), (\psi_2 \rto \EXIST_{\tuple{j}}\NEXT \varphi_2)\}$
 		%is $\emptyset$-bisimular equivalent to %
@@ -256,9 +256,9 @@
 	(i) ($\Rto$) 对等式左边公式的任意模型 $(\Hm,s_0)$，若 $(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$（ $j_i \in \{1, \dots, n\}$，$1\leq m \leq n$），则存在$s_0$的下一个状态$s_1$ 使得 $(s_0, s_1) \in [j]$和 $(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$。由$[j]$的定义可知$(s_0, s_1) \in R$，因此$(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \rto \EXIST_{\tuple{j}} \NEXT (\bigwedge_{i=1}^m \varphi_{j_i})$。 %The other side can be similarly proved as (i).
 	
 	($\Lto$)  显然等式左边的集合为右边的子集，因此：
-	$\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST_{\tuple{j}} \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\} \models \{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}.$
+	$\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST_{\tuple{j}} \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\} \models \{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}$。
 	
-	(ii) ($\Rto$) 对等式左边公式的任意模型$(\Hm,s_0)$，若$(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$（$j_i \in \{1, \dots, n\}$， $1\leq m \leq n$），则存在$s_0$的下一个状态 $s_1$使得 $(s_0, s_1) \in [j]$和$(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$。由 $[j]$的定义可知$(s_0, s_1) \in R$，因此$(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \rto \EXIST \NEXT (\bigwedge_{i=1}^m \varphi_{j_i})$。 % The other side can be similarly proved as (i).
+	(ii) ($\Rto$) 对等式左边公式的任意模型$(\Hm,s_0)$，若$(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$（$j_i \in \{1, \dots, n\}$， $1\leq m \leq n$），则存在$s_0$的下一个状态 $s_1$使得 $(s_0, s_1) \in [j]$且$(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$。由 $[j]$的定义可知$(s_0, s_1) \in R$，因此$(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \rto \EXIST \NEXT (\bigwedge_{i=1}^m \varphi_{j_i})$。 % The other side can be similarly proved as (i).
 	
 	($\Lto$) 对等式右边公式的任意模型 $(\Hm,s_0)$，若$(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$（$j_i \in \{1, \dots, n\}$， $1\leq m \leq n$），则存在$s_0$的下一个状态 $s_1$使得 $(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$。容易构造一个初始$\Ind$-结构 $(\Hm',s_0)$ （ $\Hm'=(S,R,L,[\_]',s_0)$） 使得$(\Hm', s_0)$与 $(\Hm, s_0)$相同，除了 $(s_0, s_1) \in [j]'$，即 $(\Hm, s_0) \lrto_{\emptyset} (\Hm', s_0)$ 且 $(\Hm',s_0) \models \{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}$。 
 	
@@ -266,16 +266,16 @@
 \end{proof}
 
 
-本文将引理~\ref{lem:In2NI}中(i)、(ii)、(iii)等号 $\equiv$的右边分别用$rei(\{\alpha_i\mid 1\le i\le n\})$、
-$rxi(\{\alpha_i\mid 1\le i\le n\})$、  $rfi(\{\beta_1,\alpha_2\})$来表示，其中$\alpha_i=\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i~(1\le i\le n)$ 和 $\beta_1=\psi_1 \rto \EXIST_{\tuple{j}}\FUTURE \varphi_1$。
+本文将引理~\ref{lem:In2NI}中(i)、(ii)、(iii)等号 $\equiv_*$ （$* \in \{$空字符串，空集$\}$）的右边分别用$rei(\{\alpha_i\mid 1\le i\le n\})$、
+$rxi(\{\alpha_i\mid 1\le i\le n\})$、  $rfi(\{\beta_1,\alpha_2\})$来表示，其中$\alpha_i=\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i$ $(1\le i\le n)$ 和 $\beta_1=\psi_1 \rto \EXIST_{\tuple{j}}\FUTURE \varphi_1$。
 
 
 
 因为 $\EXIST\NEXT\varphi_1\land \EXIST\NEXT\varphi_2\not\models \EXIST\NEXT(\varphi_1\land\varphi_2)$，引理~\ref{lem:In2NI}(i)的目的是为了保证若 $\psi_1$ 和 $\psi_2$在当前状态满足，则$\varphi_1$ 和 $\varphi_2$被同一条路径满足，这可以推广到多个 $\psi_i~(1\le i\le n)$的情形。 
 (iii)表示可以将每一个$\EXIST$-某时子句和一个$\EXIST$-步子句结合得到新的满足互模拟等价的$\CTL$公式。
-(ii)表明拥有相同索引的$\EXIST$-步子句可以类似地结合成新的满足互模拟等价的$\CTL$公式。
+(ii)表明拥有相同索引的$\EXIST$-步子句可以结合成新的满足互模拟等价的$\CTL$公式。
 这一过程可由算法~\ref{alg:remove:index}实现。
-下面的推论是上述引理的一个简单的应用，它表明 当移除索引之后$\Sigma$ 和 RM-index$(\Sigma)$是互模拟等价的。
+下面的推论是上述引理的一个简单应用，它表明 当移除索引之后$\Sigma$ 和 RM-index$(\Sigma)$是互模拟等价的。
 
 \begin{corollary}
 	令 $\varphi$ 为一个$\CTL$公式、 $V\subseteq\cal A$为原子命题的集合、
@@ -311,7 +311,7 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、  $rfi(\{\beta_1,\alpha_2\})$来表示，�
 % 	 \]
 % 	Please note that all the \EXIST-step clauses are similar \EXIST-step clauses.
 
-通过下面的定理，可以移除掉一些原子命题而保持互模拟等价。
+通过下面的定理，可以移除掉一些新引入的原子命题而保持互模拟等价。
 
 \begin{lemma}[一般化的Ackermann引理，Generalised Ackermann's Lemma] \label{thm:Aclm}
 	令 $x$ 为一个原子命题、 
@@ -328,12 +328,12 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、  $rfi(\{\beta_1,\alpha_2\})$来表示，�
 	令 $\varphi = \bigwedge\left(\{C_i\mid 1\le i\le n\}\cup\{B_i\mid 1\le i\le m\}\right)$。
 	不失一般性地，令$\Gamma$ 为一个$\CTL$公式， $\Hm=(S,R,L,[\_],s_0)$， $\psi_i(x)~(i=\{1,2\})$为$x$正出现在其中的$\CTL$公式。
 	
-	$(\Rto)$ 对公式$\Gamma \wedge \bigwedge \Delta$的任意模型 $(\Hm, s_0)$，这里证明通过归纳公式$\Gamma$的结构证明 $(\Hm, s_0)\models\Gamma\left[x/\varphi \right]$。
+	$(\Rto)$ 对公式$\Gamma \wedge \bigwedge \Delta$的任意模型 $(\Hm, s_0)$，这里证明通过归纳公式$\Gamma$的结构证明 $(\Hm, s_0)$ $\models\Gamma\left[x/\varphi \right]$。
 	
 	基始. 令 $\Gamma = x$，因为$(\Hm, s_0)\models x$，则显然 $(\Hm, s_0)\models \varphi$成立。
 	
 	归纳步. (1) 令 $\Gamma= \psi_1(x) \wedge \psi_2(x)$。
-	有归纳假设可得$(\Hm, s_0)\models \Gamma\left[x/\varphi \right]$. 
+	由归纳假设可得$(\Hm, s_0)\models \Gamma\left[x/\varphi \right]$。
 	
 	(2) 令 $\Gamma = \EXIST\NEXT \psi_1(x)$。 \\
 	$(\Hm,s_0)\models \Gamma \wedge \bigwedge \Delta$\\
@@ -365,7 +365,7 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、  $rfi(\{\beta_1,\alpha_2\})$来表示，�
 	
 	$(\Lto)$ 对 $\Gamma\left[x/\varphi \right]$的任意模型 $(\Hm, s_0)$（$\Hm = (S, R, L,[\_], s_0)$），构造一个初始 $\Ind$-Kripke 结构 $\Hm'=(S, R, L',[\_], s_0)$，其中$L'$与 $L$ 一样，除了对任意 $s'\in S'$，若 $(\Hm', s') \models \varphi$，则令 $L'(s') = L(s) \cup \{x\}$，否则令 $L'(s') = L(s)-\{x\}$ （即 $(\Hm', s_0) \models x \lrto \varphi$）。
 	
-	容易证明$(\Hm,s_0) \lrto_{\{x\}} (\Hm', s_0')$ 和 $(\Hm',s_0') \models \Gamma \cup \Delta$。
+	容易证明$(\Hm,s_0) \lrto_{\{x\}} (\Hm', s_0')$ 且 $(\Hm',s_0') \models \Gamma \cup \Delta$。
 \end{proof}
 
 
@@ -455,14 +455,14 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 \begin{theorem}\label{thm:soundness:forget:algorithm}
 	令$\varphi$为一个$\CTL$公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$  和 $U=\Var(\Sigma)-\Var(\varphi)$。则
 	\begin{itemize}
-		\item[(i)] $\Sigma\equiv_{V\cup U}\varphi$，和
+		\item[(i)] $\Sigma\equiv_{V\cup U}\varphi$，
 		\item[(ii)] 若$U=\emptyset$，则 $\Sigma\equiv\CTLforget(\varphi,V)$。
 	\end{itemize}
 \end{theorem}
  	\begin{proof}
  		(i) 这一结论直接来源于命题~\ref{prop:transform:V:EQ}和~\ref{pro:resEQ}，引理~\ref{lem:In2NI}和~\ref{thm:Aclm}。
 
- 		(ii) 若 $U=\emptyset$，则由(i)可知$\Sigma\equiv_{V}\varphi$。又由于$\Sigma$ and $\CTLforget(\varphi,V)$都是$V$-无关的且都不包含索引，因此由$\CTLforget(\varphi,V) \equiv_V \varphi$可知 $\Sigma\equiv\CTLforget(\varphi,V)$。
+ 		(ii) 若 $U=\emptyset$，则由(i)可知$\Sigma\equiv_{V}\varphi$。又由于$\Sigma$ 和 $\CTLforget(\varphi,V)$都是$V$-无关的且都不包含索引，因此由$\CTLforget(\varphi,V) \equiv_V \varphi$可知 $\Sigma\equiv\CTLforget(\varphi,V)$。
  	\end{proof}
 
 
@@ -484,7 +484,7 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	对任意上述所说形式的$\CTL$公式$\varphi$，假定$\varphi = \varphi_1 \wedge \ALL \NEXT \EXIST \FUTURE \varphi_2$，其中$p\not \in \Var(\varphi_1)$且$\varphi_2$是一个包含子句$C_1 = \neg p \vee \psi_1$和$C_2 = p \vee \psi_2$的CNF(conjunctive normal form)公式。$\varphi$可以被转换为包含集合$\Pi = \{\top \rto \neg x \vee p \vee  \psi_1,  \top \rto \neg x \vee \neg p \vee \psi_2\}$的子句的集合$\Sigma$，其中$x$为新引入的原子命题，$\psi_i$（$i=1,2$）为经典子句。除此之外，$\Sigma$中不包含其他含有$p$的公式。
 	
 	由归结过程可产生子句$\top \rto \neg \vee \psi_1 \vee \psi_2$，由定理~\ref{thm:Aclm}可知，$x$可以被$\psi_1 \vee \psi_2$替换。
-	又因为公式$\varphi$中不包含$Pt {\cal T}$时序算子，因而不会产生引入嵌套原子命题（同时出现在$\rto$两边的原子命题），此时对新引入的其余的原子命题都可使用定理~\ref{thm:Aclm}。
+	又因为公式$\varphi$中不包含$Pt {\cal T}$时序算子，因而不会引入嵌套原子命题（同时出现在$\rto$两边的原子命题），此时对新引入的其余的原子命题都可使用定理~\ref{thm:Aclm}。
 	因此，由定理~\ref{thm:soundness:forget:algorithm}可知\CTL-forget$(\varphi,V)\equiv \CTLforget(\varphi, V)$。
 \end{proof}
 
@@ -500,12 +500,12 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	算法~\ref{alg:compute:forgetting:by:Resolution}的时间和空间复杂性为$O((m+1)2^{4(n+n')})$，其中$n=|\Var(\varphi)|$、$n'=|V'|$为新引入的原子命题的个数、$m$为引入的索引个数。
 \end{proposition}
 \begin{proof}
-	由于转换过程在多项时间内完成，移除原子命题、移除索引、转换到$\CTL$过程和替换$V'$中的原子命题最多都只需要扫描归结过程得到的子句集合就能完成。因此，算法的复杂性主要依赖于归结过程。
+	由于转换过程在多项式时间内完成，移除原子命题、移除索引、转换到$\CTL$过程和替换$V'$中的原子命题最多都只需要扫描归结过程得到的子句集合就能完成。因此，算法的复杂性主要依赖于归结过程。
 	
 	对于给定的公式$\varphi$和$V$，归结过程产生的子句个数为$(m+1)2^{4(n+n')}+(m*(n+n')+n+n'+1)2^{2(n+n')+1})$。
 \end{proof}
 
-在上述结论中值得注意的是$m$的大小不会大于公式$\varphi$中出现的时序算子的个数，因此可以得出算法~\ref{alg:compute:forgetting:by:Resolution}的计算复杂性仅与出现在$\varphi$的原子命题个数和时序算子的个数相关。
+在上述结论中值得注意的是$m$的大小不会大于公式$\varphi$中出现的时序算子的个数，因此可以得出算法~\ref{alg:compute:forgetting:by:Resolution}的计算复杂性仅与出现在$\varphi$中的原子命题和时序算子的个数相关。
 
 %\section{实验与分析}
 %本节给出所提出的基于归结的遗忘计算的实验结果，并分析实验结果。本章提出的算法~\ref{alg:compute:forgetting:by:Resolution}用Prolog语言实现，并在Linux服务器上进行了实验，该服务器是具有8个Intel核和32GB内存的i7CPU，其锁频和主频分别为4770 K，3.50 GHz。每次计算的时间限制到1200秒以内。

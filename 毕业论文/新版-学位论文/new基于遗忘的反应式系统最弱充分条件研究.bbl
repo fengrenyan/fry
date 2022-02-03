@@ -1,4 +1,4 @@
-\begin{thebibliography}{100}
+\begin{thebibliography}{101}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -651,6 +651,15 @@ EMERSON~E~A, HALPERN~J~Y.
 \newblock Journal of computer and system sciences, 1985, 30\penalty0
   (1):\penalty0 1-24.
 \newblock \url{https://doi.org/10.1016/0022-0000(85)90001-7}.
+
+\bibitem[Feng et~al.(2020)Feng, Acar, Schlobach, Wang, and
+  Liu]{renyansfirstpaper}
+FENG~R, ACAR~E, SCHLOBACH~S, et~al.
+\newblock On sufficient and necessary conditions in bounded {CTL}: A forgetting
+  approach\allowbreak[C]//\allowbreak
+Proceedings of the International Conference on Principles of Knowledge
+  Representation and Reasoning: volume~17.
+\newblock [S.l.: s.n.], 2020: 361-370.
 
 \bibitem[Mycielski et~al.(1997)Mycielski, Rozenberg, and
   Salomaa]{DBLP:conf/birthday/1997ehrenfeucht}
