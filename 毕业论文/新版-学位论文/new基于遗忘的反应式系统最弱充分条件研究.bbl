@@ -8,29 +8,28 @@
 
 \bibitem[Lam(2007)]{lam2007}
 LAM~W~K.
-\newblock 硬件设计验证基于模拟与形式的方法\allowbreak[M].
-\newblock [出版地不详]: 北京: 机械工业出版社, 2007.
+\newblock 硬件设计验证--基于模拟与形式的方法\allowbreak[M].
+\newblock 北京: 机械工业出版社, 2007.
 
 \bibitem[吕毅(2000)]{lv2000}
 吕毅.
 \newblock 时序逻辑电路的形式验证方法研究\allowbreak[D].
-\newblock [出版地不详]: 中国科学院研究生院
-  (计算技术研究所), 2000.
+\newblock 北京: 中国科学院研究生院(计算技术研究所), 2000.
 
 \bibitem[JANICK~B夏宇闻(2007)]{jani2007Verilog}
 JANICK~B夏宇闻.
 \newblock System Verilog验证方法学\allowbreak[M].
-\newblock [出版地不详]: 北京航空航天大学出版社, 2007.
+\newblock 北京: 北京航空航天大学出版社学, 2007.
 
 \bibitem[袁志斌(2008)]{yuan2008}
 袁志斌.
 \newblock 软件开发的形式化工程方法\allowbreak[M].
-\newblock [出版地不详]: 清华大学出版社, 2008.
+\newblock 北京: 清华大学出版社, 2008.
 
 \bibitem[古天龙(2005)]{gu2005}
 古天龙.
 \newblock 软件开发的形式化方法\allowbreak[M].
-\newblock [出版地不详]: 高等教育出版社, 2005.
+\newblock 北京: 高等教育出版社, 2005.
 
 \bibitem[Fox(2003)]{DBLP:conf/tphol/Fox03}
 FOX~A~C~J.
@@ -71,10 +70,12 @@ HOARE~C~A~R.
 \newblock Commun. {ACM}, 1969, 12\penalty0 (10):\penalty0 576-580.
 \newblock \url{https://doi.org/10.1145/363235.363259}.
 
-\bibitem[Harel et~al.(1979)]{harel1979first}
-HAREL~D, et~al.
-\newblock First-order dynamic logic\allowbreak[J].
-\newblock 1979.
+\bibitem[Harel(1979)]{harel1979first}
+HAREL~D.
+\newblock Lecture notes in computer science: volume~68\quad first-order dynamic
+  logic\allowbreak[M/OL].
+\newblock Springer, 1979.
+\newblock \url{https://doi.org/10.1007/3-540-09237-4}.
 
 \bibitem[Reynolds(2002)]{DBLP:conf/lics/Reynolds02}
 REYNOLDS~J~C.
@@ -89,7 +90,7 @@ REYNOLDS~J~C.
 LIN~F.
 \newblock A formalization of programs in first-order logic with a discrete
   linear order\allowbreak[J/OL].
-\newblock Artif. Intell., 2016, 235:\penalty0 1-25.
+\newblock Artificial Intelligence, 2016, 235:\penalty0 1-25.
 \newblock \url{https://doi.org/10.1016/j.artint.2016.01.014}.
 
 \bibitem[Clarke(2008)]{DBLP:conf/spin/Clarke08}
@@ -199,7 +200,7 @@ ACKERMANN~W.
 KONEV~B, LUTZ~C, WALTHER~D, et~al.
 \newblock Model-theoretic inseparability and modularity of description logic
   ontologies\allowbreak[J/OL].
-\newblock Artif. Intell., 2013, 203:\penalty0 66-103.
+\newblock Artificial Intelligence, 2013, 203:\penalty0 66-103.
 \newblock \url{https://doi.org/10.1016/j.artint.2013.07.004}.
 
 \bibitem[Wang et~al.(2010)Wang, Wang, Topor, and Pan]{Wang:AMAI:2010}
@@ -312,7 +313,8 @@ WONG~K~S.
   Zhang]{DBLP:journals/jair/WangZZZ14}
 WANG~Y, ZHANG~Y, ZHOU~Y, et~al.
 \newblock Knowledge forgetting in answer set programming\allowbreak[J/OL].
-\newblock J. Artif. Intell. Res., 2014, 50:\penalty0 31-70.
+\newblock Journal of Artificial Intelligence Research, 2014, 50:\penalty0
+  31-70.
 \newblock \url{https://doi.org/10.1613/jair.4297}.
 
 \bibitem[Wang et~al.(2013)Wang, Wang, and Zhang]{wang2013forgetting}
@@ -355,7 +357,8 @@ GON{\c{C}}ALVES~R, KNORR~M, LEITE~J.
 LIN~F.
 \newblock Compiling causal theories to successor state axioms and strips-like
   systems\allowbreak[J/OL].
-\newblock J. Artif. Intell. Res., 2003, 19:\penalty0 279-314.
+\newblock Journal of Artificial Intelligence Research, 2003, 19:\penalty0
+  279-314.
 \newblock \url{https://doi.org/10.1613/jair.1135}.
 
 \bibitem[Dijkstra(1975)]{DBLP:journals/cacm/Dijkstra75}
@@ -419,7 +422,7 @@ ALLEN~J~F, FIKES~R, SANDEWALL~E.
 \bibitem[陆钟万(1989)]{luzhongwan1989}
 陆钟万.
 \newblock 面向计算机科学的数理逻辑\allowbreak[M].
-\newblock [出版地不详]: 北京大学出版社, 1989.
+\newblock 北京: 北京大学出版社, 1989.
 
 \bibitem[Gabbay et~al.(2008{\natexlab{b}})Gabbay, Schmidt, and
   Szalas]{gabbay2008second}
@@ -615,7 +618,7 @@ IJCAI 2011, Proceedings of the 22nd International Joint Conference on
   Ditmarsch]{DBLP:journals/ai/FangLD19}
 FANG~L, LIU~Y, VAN DITMARSCH~H.
 \newblock Forgetting in multi-agent modal logics\allowbreak[J/OL].
-\newblock Artif. Intell., 2019, 266:\penalty0 51-80.
+\newblock Artificial Intelligence, 2019, 266:\penalty0 51-80.
 \newblock \url{https://doi.org/10.1016/j.artint.2018.08.003}.
 
 \bibitem[Feng et~al.(2018)Feng, Wang, Chen, and Zhou]{feng2018strongest}
@@ -750,7 +753,8 @@ EMERSON~E~A, JUTLA~C~S.
 LANG~J, LIBERATORE~P, MARQUIS~P.
 \newblock Propositional independence: Formula-variable independence and
   forgetting\allowbreak[J/OL].
-\newblock J. Artif. Intell. Res., 2003, 18:\penalty0 391-443.
+\newblock Journal of Artificial Intelligence Research, 2003, 18:\penalty0
+  391-443.
 \newblock \url{https://doi.org/10.1613/jair.1113}.
 
 \end{thebibliography}
