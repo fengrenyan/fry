@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  4 FEB 2022 17:53
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  4 FEB 2022 19:14
 entering extended mode
 **new基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -3959,7 +3959,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [113]
-Underfull \hbox (badness 1158) in paragraph at lines 269--274
+Underfull \hbox (badness 1158) in paragraph at lines 272--277
 []\OT1/ptm/m/n/12.05 ZHANG Y, ZHOU Y.  Prop-er-ties of knowl-edge for-get-ting[
 C]//PAGNUCCO M,
  []
@@ -4040,7 +4040,7 @@ n/12.05 [J]. \C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.05/7b � \C70/rm/m/n/12.05/67
 pdfTeX warning: pdflatex.exe (file E:/（博士）我的资料/New Git/fry/毕�
 ��论文/新版-学位论文/figures/shengming.pdf): PDF inclusion: found PDF v
 ersion <1.7>, but at most version <1.5> allowed
-<figures/shengming.pdf, id=2064, 597.50829pt x 845.0471pt>
+<figures/shengming.pdf, id=2070, 597.50829pt x 845.0471pt>
 File: figures/shengming.pdf Graphic file (type pdf)
 
 <use figures/shengming.pdf>
@@ -4068,11 +4068,11 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  37519 strings out of 495354
  622036 string characters out of 3183859
- 783476 words of memory out of 3000000
+ 783151 words of memory out of 3000000
  38091 multiletter control sequences out of 15000+200000
  278400 words of font info for 813 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,2632b,2541s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,2632b,2535s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -4236,9 +4236,9 @@ sbm10.pfb><C:/CTEX/MiKTeX/fonts/type1/hoekwater/rsfs/rsfs10.pfb><C:/CTEX/MiKTeX
 EX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/time
 s/utmri8a.pfb>
 Output written on new基于遗忘的反应式系统最弱充分条件研究.pdf
- (137 pages, 2608595 bytes).
+ (137 pages, 2610493 bytes).
 PDF statistics:
- 2940 PDF objects out of 2984 (max. 8388607)
+ 2946 PDF objects out of 2984 (max. 8388607)
  513 named destinations out of 1000 (max. 500000)
  988 words of extra memory for PDF output out of 10000 (max. 10000000)
 

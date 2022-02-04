@@ -56,7 +56,7 @@ HUNG~D~V, KRISHNAN~P.
 ROBINSON~J~A.
 \newblock A machine-oriented logic based on the resolution
   principle\allowbreak[J/OL].
-\newblock J. {ACM}, 1965, 12\penalty0 (1):\penalty0 23-41.
+\newblock Journal of the ACM (JACM), 1965, 12\penalty0 (1):\penalty0 23-41.
 \newblock \url{http://doi.acm.org/10.1145/321250.321253}.
 
 \bibitem[Hughes et~al.(1996)Hughes, Cresswell, and Cresswell]{hughes1996new}
@@ -131,9 +131,9 @@ SCHNEIDER~K.
 \newblock \url{https://doi.org/10.1007/978-3-662-10778-2}.
 
 \bibitem[Baier et~al.(2008)Baier and Katoen]{Baier:PMC:2008}
-BAIER~C, KATOEN~J~P.
+BAIER~C, KATOEN~J.
 \newblock Principles of model checking\allowbreak[M].
-\newblock [S.l.]: The MIT Press, 2008.
+\newblock [S.l.]: {MIT} Press, 2008.
 
 \bibitem[Legato(2002)]{legato2002weakest}
 LEGATO~W~J.
@@ -144,7 +144,8 @@ LEGATO~W~J.
 \bibitem[Leino(2005)]{DBLP:journals/ipl/Leino05}
 LEINO~K~R~M.
 \newblock Efficient weakest preconditions\allowbreak[J/OL].
-\newblock Inf. Process. Lett., 2005, 93\penalty0 (6):\penalty0 281-288.
+\newblock Information Processing Letters, 2005, 93\penalty0 (6):\penalty0
+  281-288.
 \newblock \url{https://doi.org/10.1016/j.ipl.2004.10.015}.
 
 \bibitem[Dailler et~al.(2018)Dailler, Hauzar, March{\'{e}}, and
@@ -176,8 +177,10 @@ Working Notes of AAAI Fall Symposium on Relevance.
 VISSER~A.
 \newblock Uniform interpolation and layered
   bisimulation\allowbreak[M]//\allowbreak
-G{\"o}del'96 (Brno, 1996).
-\newblock [S.l.: s.n.], 1996: 139-164.
+G{\"o}del'96: Logical foundations of mathematics, computer science and
+  physics---Kurt G{\"o}del's legacy, Brno, Czech Republic, August 1996,
+  proceedings.
+\newblock [S.l.]: Association for Symbolic Logic, 1996: 139-164.
 
 \bibitem[Konev et~al.(2009)Konev, Walther, and Wolter]{konev2009forgetting}
 KONEV~B, WALTHER~D, WOLTER~F.
@@ -276,20 +279,23 @@ PAGNUCCO~M, THIELSCHER~M.
 IEMHOFF~R.
 \newblock Uniform interpolation and sequent calculi in modal
   logic\allowbreak[J/OL].
-\newblock Arch. Math. Log., 2019, 58\penalty0 (1-2):\penalty0 155-181.
+\newblock Archive for Mathematical Logic, 2019, 58\penalty0 (1-2):\penalty0
+  155-181.
 \newblock \url{https://doi.org/10.1007/s00153-018-0629-0}.
 
 \bibitem[Fine(1979)]{DBLP:journals/jsyml/Fine79}
 FINE~K.
 \newblock Failures of the interpolation lemma in quantified modal
   logic\allowbreak[J/OL].
-\newblock J. Symb. Log., 1979, 44\penalty0 (2):\penalty0 201-206.
+\newblock The Journal of Symbolic Logic, 1979, 44\penalty0 (2):\penalty0
+  201-206.
 \newblock \url{https://doi.org/10.2307/2273727}.
 
 \bibitem[Schumm(1986)]{DBLP:journals/ndjfl/Schumm86}
 SCHUMM~G~F.
 \newblock Some failures of interpolation in modal logic\allowbreak[J/OL].
-\newblock Notre Dame J. Formal Log., 1986, 27\penalty0 (1):\penalty0 108-110.
+\newblock Notre Dame journal of formal logic, 1986, 27\penalty0 (1):\penalty0
+  108-110.
 \newblock \url{https://doi.org/10.1305/ndjfl/1093636529}.
 
 \bibitem[Zhang et~al.(2006)Zhang and Foo]{DBLP:Zhang:AIJ2006}
@@ -426,10 +432,12 @@ ALLEN~J~F, FIKES~R, SANDEWALL~E.
 
 \bibitem[Gabbay et~al.(2008{\natexlab{b}})Gabbay, Schmidt, and
   Szalas]{gabbay2008second}
-GABBAY~D~M, SCHMIDT~R, SZALAS~A.
-\newblock Second order quantifier elimination: Foundations, computational
-  aspects and applications\allowbreak[M].
-\newblock [S.l.]: College Publications, 2008{\natexlab{b}}.
+GABBAY~D~M, SCHMIDT~R~A, SZALAS~A.
+\newblock Studies in logic : Mathematical logic and foundations: volume~12\quad
+  second-order quantifier elimination - foundations, computational aspects and
+  applications\allowbreak[M/OL].
+\newblock College Publications, 2008{\natexlab{b}}.
+\newblock \url{http://collegepublications.co.uk/logic/mlf/?00009}.
 
 \bibitem[Kripke(1963)]{kripke1963semantical}
 KRIPKE~S~A.
@@ -466,7 +474,8 @@ BOLOTOV~A.
   Dixon]{zhang2008first}
 ZHANG~L, HUSTADT~U, DIXON~C.
 \newblock First-order resolution for {CTL}\allowbreak[R].
-\newblock [S.l.]: Citeseer, 2008{\natexlab{b}}.
+\newblock [S.l.]: Technical Report ULCS-08-010, Department of Computer Science,
+  University of Liverpool, 2008{\natexlab{b}}.
 
 \bibitem[Zhang et~al.(2014)Zhang, Hustadt, and Dixon]{zhang2014resolution}
 ZHANG~L, HUSTADT~U, DIXON~C.
@@ -486,7 +495,7 @@ ZHANG~L, HUSTADT~U, DIXON~C.
 \bibitem[Kozen(1983)]{DBLP:journals/cacm/Kozen83}
 KOZEN~D.
 \newblock Results on the propositional mu-calculus\allowbreak[J/OL].
-\newblock Theor. Comput. Sci., 1983, 27:\penalty0 333-354.
+\newblock Theoretical Computer Science, 1983, 27:\penalty0 333-354.
 \newblock \url{https://doi.org/10.1016/0304-3975(82)90125-6}.
 
 \bibitem[Bradfield et~al.(2018)Bradfield and Walukiewicz]{bradfield2018mu}
@@ -512,13 +521,13 @@ WIEDERMANN~J, H{\'{A}}JEK~P.
 \bibitem[D'Agostino et~al.(2006{\natexlab{b}})D'Agostino and Lenzi]{d2006modal}
 D'AGOSTINO~G, LENZI~G.
 \newblock On modal mu-calculus with explicit interpolants\allowbreak[J/OL].
-\newblock J. Appl. Log., 2006, 4\penalty0 (3):\penalty0 256-278.
+\newblock Journal of Applied Logic, 2006, 4\penalty0 (3):\penalty0 256-278.
 \newblock \url{https://doi.org/10.1016/j.jal.2005.06.008}.
 
 \bibitem[Davis et~al.(1960)Davis and Putnam]{DBLP:journals/jacm/DavisP60}
 DAVIS~M, PUTNAM~H.
 \newblock A computing procedure for quantification theory\allowbreak[J/OL].
-\newblock J. {ACM}, 1960, 7\penalty0 (3):\penalty0 201-215.
+\newblock Journal of the ACM (JACM), 1960, 7\penalty0 (3):\penalty0 201-215.
 \newblock \url{http://doi.acm.org/10.1145/321033.321034}.
 
 \bibitem[Enjalbert et~al.(1989)Enjalbert and del
@@ -575,7 +584,7 @@ FONTAINE~P, RINGEISSEN~C, SCHMIDT~R~A.
 ZHAO~Y.
 \newblock Automated semantic forgetting for expressive description
   logics\allowbreak[D/OL].
-\newblock 2018.
+\newblock The University of Manchester (United Kingdom), 2018.
 \newblock \url{http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.740373}.
 
 \bibitem[Koopmann(2015)]{DBLP:phd/ethos/Koopmann15}
@@ -713,7 +722,7 @@ LANG~J, LIBERATORE~P, MARQUIS~P.
 \bibitem[Wolper(1983)]{DBLP:journals/iandc/Wolper83}
 WOLPER~P.
 \newblock Temporal logic can be more expressive\allowbreak[J/OL].
-\newblock Inf. Control., 1983, 56\penalty0 (1/2):\penalty0 72-99.
+\newblock Information and control, 1983, 56\penalty0 (1/2):\penalty0 72-99.
 \newblock \url{https://doi.org/10.1016/S0019-9958(83)80051-5}.
 
 \bibitem[D'Agostino et~al.(1996)D'Agostino and Hollenberg]{d1996uniform}
@@ -726,7 +735,8 @@ D'AGOSTINO~G, HOLLENBERG~M.
 D'AGOSTINO~G, HOLLENBERG~M.
 \newblock Logical questions concerning the {\(\mu\)}-calculus: Interpolation,
   lyndon and los-tarski\allowbreak[J/OL].
-\newblock J. Symb. Log., 2000, 65\penalty0 (1):\penalty0 310-332.
+\newblock The Journal of Symbolic Logic, 2000, 65\penalty0 (1):\penalty0
+  310-332.
 \newblock \url{https://doi.org/10.2307/2586539}.
 
 \bibitem[Wang(2015)]{wang2015forgetting}
