@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  5 FEB 2022 15:06
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.9.24)  5 FEB 2022 19:52
 entering extended mode
 **new基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -4017,14 +4017,6 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ) [121
 
 ]
-Overfull \hbox (11.37718pt too wide) in paragraph at lines 438--439
-\C70/rm/m/n/12.05/53  \C70/rm/m/n/12.05/6a ! \C70/rm/m/n/12.05/57 �\OT1/ptm/m/
-n/12.05 [J]. \C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.05/7b � \C70/rm/m/n/12.05/67
- : \C70/rm/m/n/12.05/5b f \C70/rm/m/n/12.05/62 �\OT1/ptm/m/n/12.05 ,2020,43(8):
-1463-1478. DOI:10.11897/SP.J.1016.2020.01463,
- []
-
-
 
 pdfTeX warning: pdflatex.exe (file E:/（博士）我的资料/New Git/fry/毕�
 ��论文/新版-学位论文/figures/shengming.pdf): PDF inclusion: found PDF v
@@ -4033,19 +4025,19 @@ ersion <1.7>, but at most version <1.5> allowed
 File: figures/shengming.pdf Graphic file (type pdf)
 
 <use figures/shengming.pdf>
-Package pdftex.def Info: figures/shengming.pdf used on input line 471.
+Package pdftex.def Info: figures/shengming.pdf used on input line 473.
 (pdftex.def)             Requested size: 452.96826pt x 640.63068pt.
  [122
 
 ] [123 <E:/（博士）我的资料/New Git/fry/毕业论文/新版-学位论�
 �/figures/shengming.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 478.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 478.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 480.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 480.
 
 ("E:\（博士）我的资料\New Git\fry\毕业论文\新版-学位论文\new�
 ��于遗忘的反应式系统最弱充分条件研究.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 478.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 478.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 480.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 480.
 Package rerunfilecheck Info: File `new基于遗忘的反应式系统最弱充�
 �条件研究.out' has not changed.
 (rerunfilecheck)             Checksum: 792AD3032B65F40137C1CFF0100A235F;4999.
@@ -4055,10 +4047,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37516 strings out of 495354
- 621987 string characters out of 3183859
- 783143 words of memory out of 3000000
- 38090 multiletter control sequences out of 15000+200000
+ 37503 strings out of 495354
+ 621773 string characters out of 3183859
+ 785143 words of memory out of 3000000
+ 38079 multiletter control sequences out of 15000+200000
  278400 words of font info for 813 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,20n,55p,2632b,2535s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -4225,7 +4217,7 @@ sbm10.pfb><C:/CTEX/MiKTeX/fonts/type1/hoekwater/rsfs/rsfs10.pfb><C:/CTEX/MiKTeX
 EX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/time
 s/utmri8a.pfb>
 Output written on new基于遗忘的反应式系统最弱充分条件研究.pdf
- (135 pages, 2608075 bytes).
+ (135 pages, 2606160 bytes).
 PDF statistics:
  2939 PDF objects out of 2984 (max. 8388607)
  511 named destinations out of 1000 (max. 500000)
