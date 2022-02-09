@@ -42,12 +42,12 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \end{itemize}
 其中${\cal K}_i'=(\Hm_i,s_i')$。
 
-当所谈及的原子命题的集合$V$很显然的时候，上述$\Hb_n^V$中的$V$可以省略，记为$\Hb_n$。此外，当讨论的$\Hm_i$$(i=1,2)$是显然的时候，可以使用$(s_1,s_2) \in \Hb_n$代替$((\Hm_1,s_1),(\Hm_2,s_2))$ $\in \Hb_n$。
+当所谈及的原子命题的集合$V$很显然的时候，上述$\Hb_n^V$中的$V$可以省略，记为$\Hb_n$。此外，当讨论的$\Hm_i$ $(i=1,2)$是显然的时候，可以使用$(s_1,s_2) \in \Hb_n$代替$((\Hm_1,s_1),(\Hm_2,s_2))$ $\in \Hb_n$。
 此时，约束$V$-互模拟关系就可以定义如下：
 \begin{definition}[约束$V$-互模拟]\label{def:V-bisimulation}
 	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是结构。
 	\begin{itemize}
-		\item ${\cal K}_1$和${\cal K}_2$是约束$V$-互模拟的，当且仅当对所有的$n \ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若 ${\cal K}_1$ 和 ${\cal K}_2$是约束$V$-互模拟的，则记为${\cal K}_1 \overset{B}{\lrto}_V {\cal K}_2$。
+		\item ${\cal K}_1$和${\cal K}_2$是约束$V$-互模拟的，当且仅当对所有的$n \ge 0$都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若 ${\cal K}_1$和 ${\cal K}_2$是约束$V$-互模拟的，则记为${\cal K}_1 \overset{B}{\lrto}_V {\cal K}_2$。
 		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意的$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}$为整数的集合，$\mathbb{N}_{\ge 1}$是大于等于1的整数的集合。}都有${\cal K}_{1,j} \overset{B}{\lrto}_V {\cal K}_{2,j}$，则$\pi_1 \overset{B}{\lrto}_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
 	\end{itemize}
 \end{definition}
@@ -67,7 +67,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 \end{lemma}
 
 \begin{proof}
-	令 $V \subseteq \Ha$、 ${\cal K}_i=({\cal M}_i,s_i)~(i\in\{1,2\})$ 和 $\Hm_i=(S_i, R_i,L_i, s_0^i)$ 为有限的初始-Kripke结构。
+	令 $V \subseteq \Ha$、 ${\cal K}_i=({\cal M}_i,s_i)~(i\in\{1,2\})$和 $\Hm_i=(S_i, R_i,L_i, s_0^i)$为有限的初始-Kripke结构。
 	因为$S_i~(i=1,2)$是有限的，所以$\Hb_n\subseteq S_1\times S_2~(n\ge 0)$都是有限的。
 	由于对任意的$n\geq 0$都有 $\Hb_{n+1} \subseteq \Hb_n$。
 	因此，存在一个最小数$k$使得
@@ -303,7 +303,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	
 	
 	
-	(ii) \textbf{基始（$n=0$）：}若$(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$ ，则$L(s) - \overline V = L'(s') - \overline V$。因此$\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$。
+	(ii) \textbf{基始（$n=0$）：}若$(\Hm, s)  \models {\cal F}_V(\Tr_0(s'))$，则$L(s) - \overline V = L'(s') - \overline V$。因此$\Tr_0(s) \lrto_{\overline V} \Tr_0(s')$。
 	
 	\textbf{归纳步（$n>0$）：} 假定若$({\cal M},s)\models{\cal F}_V(\Tr_{n-1}(s'))$，则$\Tr_{n-1}(s) \lrto_{\overline V} \Tr_{n-1}(s')$。下面证明若$({\cal M},s)\models{\cal F}_V(\Tr_n(s'))$，则
 	$\Tr_n(s) \lrto_{\overline V} \Tr_n(s')$。
@@ -403,7 +403,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	\begin{figure*}
 		\centering
 		\includegraphics[width=10cm]{chapter05/NK2Tree1.png}
-		\caption{初始结构$\mathcal{K}_2$ (源于图\ref{Fig:chapter04:v1uv2})及其计算树}\label{fig:K2Tree}
+		\caption{初始结构$\mathcal{K}_2$（源于图\ref{Fig:chapter04:v1uv2}）及其计算树}\label{fig:K2Tree}
 	\end{figure*}
 
 %\begin{figure*}[!htb]
@@ -521,7 +521,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	令$(\Hm', s_0')$为$\varphi$的模型。由定理\ref{CF}可知$(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm', s_0')$，则：
 	$$(\Hm', s_0') \models \bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0).$$
 	
-	另一方面，假定$(\Hm', s_0')$为$\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$的模型。则存在$(\Hm, s_0)\in \Mod(\varphi)$ 使得 $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm,$ $s_0)$。由定理\ref{CF}可知$(\Hm, s_0) \lrto_{\emptyset} (\Hm', s_0')$，从而由定理\ref{thm:V-bisimulation:EQ}可知$(\Hm, s_0)$ 是 $\varphi$的一个模型。
+	另一方面，假定$(\Hm', s_0')$为$\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$的模型。则存在$(\Hm, s_0)\in \Mod(\varphi)$使得 $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm,$ $s_0)$。由定理\ref{CF}可知$(\Hm, s_0) \lrto_{\emptyset} (\Hm', s_0')$，从而由定理\ref{thm:V-bisimulation:EQ}可知$(\Hm, s_0)$是 $\varphi$的一个模型。
 \end{proof}
 
 这一结论表明：任意的$\CTL$公式都与其模型的特征公式的吸取逻辑等价。这对遗忘理论的封闭性提供了重要的理论支撑，也即是从公式里遗忘掉原子命题集合$V$中的元素只需找到与给定公式的模型$V$-互模拟的那些模型就能确定遗忘的结果。形式化地，对于给定的公式$\varphi$和原子命题集合$V$，从$\varphi$中遗忘掉$V$中的元素得到的结果为：
@@ -535,11 +535,11 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 这一类公式在并发系统中的互斥和等待等属性描述中有重要作用~\cite{Baier:PMC:2008}，尽管这类公式是相对简单的，但是下面将要说明判定一个模型是否为从此类公式中遗忘掉原子命题集合得到的结果的模型是$\textsc{NP}$-完全的。
 \begin{proposition}[模型检测]
 	\label{modelChecking}
-	给定一个结构 $(\Hm,s_0)$、原子命题集合$V\subseteq{\cal A}$ 和公式 $\varphi \in \CTL_{\ALL\FUTURE}$，判定 $(\Hm,s_0) \models^? \CTLforget(\varphi, V)$是 \textsc{NP}-完全的。
+	给定一个结构 $(\Hm,s_0)$、原子命题集合$V\subseteq{\cal A}$和公式 $\varphi \in \CTL_{\ALL\FUTURE}$，判定 $(\Hm,s_0) \models^? \CTLforget(\varphi, V)$是 \textsc{NP}-完全的。
 \end{proposition}
 \begin{proof}
-	成员属性(Membership). 假定$(\Hm,s_0) \models \CTLforget(\varphi,V)$，则存在一个初始结构$(\Hm', s_0')$ 使得\ (a) $(\Hm',s_0') \models \varphi$ 且\ (b) $(\Hm,s_0) \lrto_V (\Hm',s_0')$。已有结果表明，(a)能在$\Hm'$和 $\varphi$的大小的多项式时间内完成~\cite{DBLP:books/daglib/0007403}。条件(b)也可用Baier等人的推论 7.45~\cite{Baier:PMC:2008}的方法证明能在多项式时间内完成。
-	又因为猜$(\Hm,s_0)$多项式大小的初始结构$(\Hm',s_0')$能在多项式时间内完成，因此，这一问题在$\textsc{NP}$ 中。
+	成员属性(Membership). 假定$(\Hm,s_0) \models \CTLforget(\varphi,V)$，则存在一个初始结构$(\Hm', s_0')$使得\ (a) $(\Hm',s_0') \models \varphi$且\ (b) $(\Hm,s_0) \lrto_V (\Hm',s_0')$。已有结果表明，(a)能在$\Hm'$和 $\varphi$的大小的多项式时间内完成~\cite{DBLP:books/daglib/0007403}。条件(b)也可用Baier等人的推论 7.45~\cite{Baier:PMC:2008}的方法证明能在多项式时间内完成。
+	又因为猜$(\Hm,s_0)$多项式大小的初始结构$(\Hm',s_0')$能在多项式时间内完成，因此，这一问题在$\textsc{NP}$中。
 	
 	困难属性(Hardness). 已经证明命题逻辑下遗忘的模型检测是$\textsc{NP}$-难的，由于命题逻辑下的遗忘是$\CTL$的一种~\cite{Zhang2008Properties}。因此，上述问题是$\textsc{NP}$-难的。
 \end{proof}
@@ -548,46 +548,46 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 \begin{theorem}[Entailment]
 	\label{thm:comF}
-	令 $\varphi$ 和 $\psi$ 为$\CTL_{\ALL \FUTURE}$中的两个公式， $V$ 为原子命题的集合。则：
+	令 $\varphi$和 $\psi$为$\CTL_{\ALL \FUTURE}$中的两个公式， $V$为原子命题的集合。则：
 	\begin{itemize}
-		\item[(i)] 判定  $\CTLforget(\varphi, V ) \models^? \psi$ 是 co-$\textsc{NP}$-完全的，
-		\item[(ii)] 判定  $\psi \models^? \CTLforget(\varphi, V)$ 是 $\Pi_2^{\textsc{P}}$-完全的，
-		\item[(iii)] 判定 $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)$ 是 $\Pi_2^{\textsc{P}}$-完全的。
+		\item[(i)] 判定  $\CTLforget(\varphi, V ) \models^? \psi$是 co-$\textsc{NP}$-完全的，
+		\item[(ii)] 判定  $\psi \models^? \CTLforget(\varphi, V)$是 $\Pi_2^{\textsc{P}}$-完全的，
+		\item[(iii)] 判定 $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)$是 $\Pi_2^{\textsc{P}}$-完全的。
 	\end{itemize}
 \end{theorem}
 \begin{proof}
 	(i) 困难属性. 已有结论表明，判定公式$\varphi$是否是可满足的是$\textsc{NP}$-完全的~\cite{meier2009complexity}。要困证难属性，通过令$\CTLforget(\varphi, V)\equiv \top$，只需证明$\psi$是有效的，即：原问题是co-NP-难的。
 	
 	成员属性. 定理\ref{thm:exist}表明$\CTLforget(\varphi, V) \models \psi$当且仅当 $\varphi \models \psi$且 $\IR(\psi, V)$。
-	在$\CTL_{\ALL \FUTURE}$中，判定 $\varphi \models \psi$ 是co-$\textsc{NP}$ 的~\cite{meier2009complexity}。
+	在$\CTL_{\ALL \FUTURE}$中，判定 $\varphi \models \psi$是co-$\textsc{NP}$的~\cite{meier2009complexity}。
 	这里证明 $\IR(\psi, V)$是否成立是 co-$\textsc{NP}$的。不失一般性地，假定$\psi$是可满足的，则 $\psi$有一个大小为$|\psi|$的多项式的模型。
 	这里讨论该问题的补问题：判定 $\psi$是$V$-有关的，即 $\neg \IR(\psi, V)$。显然，$\neg \IR(\psi, V)$当且仅当存在$\psi$的一个模型 $(\Hm,s_0)$和大小为$|\psi|$的多项式的初始结构 $(\Hm',s_0')$使得 $(\Hm,s_0) \lrto_V (\Hm',s_0')$且 $(\Hm',s_0') \not \models \psi$。因此，判定$\neg \IR(\psi, V)$是否成立有如下两个步骤：(1)猜两个大小为$|\psi|$的多项式的初始结构$(\Hm,s_0)$和 $(\Hm',s_0')$使得 $(\Hm,s_0) \models \psi$且 $(\Hm',s_0') \not \models \psi$，和(2)检查 $(\Hm,s_0) \lrto_V (\Hm',s_0')$。
 	显然， (1)和(2)都是能在多项式时间内完成的。
 	
-	(ii) 成员属性. 考虑这一问题的补问题。猜一个大小为$|\psi|$ 的多项式的$\psi$ 的 模型 $(\Hm,s_0)$ 且检查 是否 $(\Hm, s_0) \not \models \CTLforget(\varphi, V)$。
+	(ii) 成员属性. 考虑这一问题的补问题。猜一个大小为$|\psi|$的多项式的$\psi$的 模型 $(\Hm,s_0)$且检查 是否 $(\Hm, s_0) \not \models \CTLforget(\varphi, V)$。
 	由命题\ref{modelChecking} 可知这一问题在 $\Sigma_2^{\textsc{P}}$中。因此，原问题在$\Pi_2^{\textsc{P}}$中。
 	
 	困难属性. 令$\psi \equiv \top$。 则这一问题被规约为判定$\CTLforget(\varphi, V)$的有效性问题。 
 	由于命题遗忘是$\CTL$遗忘的特殊情形，因此该问题的困难属性直接来源于\cite{DBLP:journals/jair/LangLM03}。
 
 (iii) 成员属性. 假定 $\CTLforget(\varphi, V) \not \models \CTLforget(\psi, V)$。则存在一个初始结构 $(\Hm,s) 
-\models \CTLforget(\varphi, V)$ 且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 使得 $(\Hm_1, s_1) \models \varphi$ 但是对其他$(\Hm, s) \lrto_V (\Hm_2,s_2)$ 使得 $(\Hm_2, s_2) \not \models \psi$。
+\models \CTLforget(\varphi, V)$且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$使得 $(\Hm_1, s_1) \models \varphi$ 但是对其他$(\Hm, s) \lrto_V (\Hm_2,s_2)$ 使得 $(\Hm_2, s_2) \not \models \psi$。
 由命题\ref{modelChecking}的证明可知，$(\Hm,s)$和 $(\Hm_1,s_1)$ 能在$|\varphi|$、$|\psi|$和$|V|$的多项式时间内完成。 
 显然，猜使得$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 成立的大小为$|\varphi|$多项式的 $(\Hm,s)$和 $(\Hm_1,s_1)$ 可以在多项式时间内完成，且 对任意的 $(\Hm, s) \lrto_V (\Hm_2,s_2)$，检查 $(\Hm_2,s_2) \not \models \psi$可以在 $|\psi|$和 $|\Hm_2|$的多项式时间内完成。
 因此，该问题是 $\Pi_2^{\textsc{P}}$的。
 
-困难属性. 由于 $\IR(\CTLforget(\psi, V), V)$，因此 $\CTLforget(\varphi, V) \models \CTLforget(\psi, V)$当且仅当 $\varphi \models \CTLforget(\psi, V)$。 所以由(ii)不难证明该问题。
+困难属性. 由于 $\IR(\CTLforget(\psi, V), V)$，因此 $\CTLforget(\varphi, V) \models \CTLforget(\psi, V)$当且仅当 $\varphi \models \CTLforget(\psi,$ $V)$。 所以由(ii)不难证明该问题。
 \end{proof}
 
 
 
 定理\ref{thm:comF}蕴涵下列结论。
 \begin{corollary}
-	令 $\varphi$ 和 $\psi$ 为 $\CTL_{\ALL \FUTURE}$中的两个公式，$V$原子公式的集合。则
+	令 $\varphi$和 $\psi$为 $\CTL_{\ALL \FUTURE}$中的两个公式，$V$原子公式的集合。则
 	\begin{itemize}
-		\item[(i)] 判定 $\psi \equiv^?\CTLforget(\varphi, V)$ 是 $\Pi_2^{\textsc{P}}$-完全的，
-		\item[(ii)] 判定 $\CTLforget(\varphi, V) \equiv^? \varphi$ 是 co-$\textsc{NP}$-完全的，
-		\item[(iii)] 判定 $\CTLforget(\varphi, V) \equiv^? \CTLforget(\psi, V)$ 是$\Pi_2^{\textsc{P}}$-完全的。
+		\item[(i)] 判定 $\psi \equiv^?\CTLforget(\varphi, V)$是 $\Pi_2^{\textsc{P}}$-完全的，
+		\item[(ii)] 判定 $\CTLforget(\varphi, V) \equiv^? \varphi$是 co-$\textsc{NP}$-完全的，
+		\item[(iii)] 判定 $\CTLforget(\varphi, V) \equiv^? \CTLforget(\psi, V)$是$\Pi_2^{\textsc{P}}$-完全的。
 	\end{itemize}
 \end{corollary}
 
@@ -660,7 +660,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 下面的例子来源于研究背景和意义部分，这里给出如何计算从规范中遗忘掉一些原子命题。 
 \begin{example}\label{ex:6}
-	对于图\ref{BVM}中的 ${\cal K}_1$，假定一个已知的规范（性质）为$\alpha = \EXIST\FUTURE(se \wedge sp)$。显然 ${\cal K}_1$满足 $\alpha$。若想移除掉 $sp$，即从 $\alpha$中遗忘掉 $sp$ ，则 $\CTLforget(\alpha,\{ sp\}) \equiv \EXIST\FUTURE se$。此时，该汽车制造公司可以用新的规范$\EXIST\FUTURE se$（这保证驾车最终会被生产）引导未来汽车的生产。
+	对于图\ref{BVM}中的 ${\cal K}_1$，假定一个已知的规范（性质）为$\alpha = \EXIST\FUTURE(se \wedge sp)$。显然 ${\cal K}_1$满足 $\alpha$。若想移除掉 $sp$，即从 $\alpha$中遗忘掉 $sp$，则 $\CTLforget(\alpha,\{ sp\}) \equiv \EXIST\FUTURE se$。此时，该汽车制造公司可以用新的规范$\EXIST\FUTURE se$（这保证驾车最终会被生产）引导未来汽车的生产。
 \end{example}
 
 
@@ -679,7 +679,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 在最坏的情形下（即$ch(\Hm,V) = i$时），可以花费$N(i) = P_i(s_0) + i * (P_i(s) + i *P_i(s'))$位来存储${\cal K}$在$\overline{V}$上的特征公式。
 其中$s',s\in B$，$P_i(y)$是存储${\cal F}_{\overline{V}}(\Tr_i(y))$（$y\in B$）所用的空间（这里假定$\EXIST\NEXT$和$\ALL\NEXT$使用了相同的存储单位）。
 
-${\cal F}_{\overline{V}}(\Tr_i(y))$ （$0\leq n \leq i$）被递归地定义如下：
+${\cal F}_{\overline{V}}(\Tr_i(y))$（$0\leq n \leq i$）被递归地定义如下：
 \begin{align*}
 	&(1) n=0,  \qquad P_0(y) = k\\
 	&(2) n=1, \qquad  P_1(y) = k + i*k = k + i*P_0(y)\\

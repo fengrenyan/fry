@@ -1,5 +1,5 @@
 \chapter{实验结果}\label{chapter08}
-{\em 本节给出所提出的基于归结的遗忘计算的实验结果，并分析实验结果。第\ref{chapter04}章提出的算法~\ref{alg:compute:forgetting:by:Resolution}用Prolog语言实现，并在Linux服务器上进行了实验，该服务器是具有8个Intel核和32GB内存的i7CPU，其锁频和主频分别为4770 K和3.50 GHz。每次计算的时间限制到1200秒以内。
+{\em 本节给出所提出的基于归结的遗忘计算的实验结果，并分析实验结果。第\ref{chapter04}章提出的算法\ref{alg:compute:forgetting:by:Resolution}用Prolog语言实现，并在Linux服务器上进行了实验，该服务器是具有8个Intel核和32GB内存的i7CPU，其锁频和主频分别为4770 K和3.50 GHz。每次计算的时间限制到1200秒以内。
 	实验分为两个部分：(1) 在随机数据集和标准数据集上的遗忘；(2) 在随机数据集上命题逻辑公式和$\CTL$公式的SNC计算。
 	所有的实验数据和实验结果都可以从网上获取\footnote{ \url{https://github.com/fengrenyan/forgetting-in-CTL/tree/main/Appendix}}。
 	
@@ -13,7 +13,7 @@
 这部分的实验数据分为两组：一组来源于标准数据集，一组是随机生成的数据。
 标准数据集来源于$\CTL$-RP~\footnote{\url{https://sourceforge.net/projects/ctlrp/}}。但是由于数据集里的大部分公式是不可满足的，这种情形下遗忘的结果总是为$\bot$。因此，这里对数据集进行了简单的处理：从标准数据集里抽取了“sample01”文件中的s001.ctl、s002.ctl、s003.ctl和s004.ctl文件，并从这些公式里取前面的两个子公式的合取构成新的公式，分别称为s001、s002、s003和s004。此外，从s001.ctl中取前三个子公式的合取构成新的公式s001-3。
 
-计算{\CTL-forget}$(\varphi, V)$所使用的CPU时间（单位：秒(s)，不指出时也默认为秒）如表~\ref{chapter04:tab:sample}所示，其中$\varphi\in \{s001,s002,s003,s004,s001$-$3\}$，$|V|\in \{1,2,3,4\}$。
+计算{\CTL-forget}$(\varphi, V)$所使用的CPU时间（单位：秒(s)，不指出时也默认为秒）如表\ref{chapter04:tab:sample}所示，其中$\varphi\in \{s001,s002,s003,s004,s001$-$3\}$，$|V|\in \{1,2,3,4\}$。
 从中可以看出公式长度越长、被遗忘的原子命题个数越多，则计算所需要的时间越长。
 
 \begin{table}%[width=.9\linewidth,cols=4,pos=h]
@@ -39,9 +39,9 @@ $$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$$
 其中$\varphi_i$（$i=1,2,3$）是随机产生的定义在原子命题集合$\Ha$上的3-CNF公式，且$|\varphi_1| = |\varphi_2| =|\varphi_3|$、$|\Ha|=4$。
 这里做了六组计算$\CTLforget(\varphi,V)$的实验，即$|\varphi_i| \in \{12,16\}$和$|V|\in \{1,2,3\}$的组合，每一组有二十个公式。
 
-$|\varphi_i|=12$时的实验结果如图~\ref{chapter04:fig:for12}所示，图~\ref{chapter04:fig:for12}(a) 展示了计算遗忘所需要的时间，图~\ref{chapter04:fig:for12}(b)展示了在计算过程“移除原子命题”后$\CTLsnf$子句的个数。其中$x$轴表示第几个公式，$y$轴分别表示时间和数量。
-从图~\ref{chapter04:fig:for12}里面可以看出，需要遗忘的原子命题个数越多，所用时间越长且在“移除原子命题”后剩余的$\CTLsnf$子句的个数越少。
-当$|\varphi_i|=16$时的实验结果如图~\ref{chapter04:fig:for16}所示，其与$|\varphi_i|=12$时有相似的结果。
+$|\varphi_i|=12$时的实验结果如图\ref{chapter04:fig:for12}所示，图\ref{chapter04:fig:for12}(a) 展示了计算遗忘所需要的时间，图\ref{chapter04:fig:for12}(b)展示了在计算过程“移除原子命题”后$\CTLsnf$子句的个数。其中$x$轴表示第几个公式，$y$轴分别表示时间和数量。
+从图\ref{chapter04:fig:for12}里面可以看出，需要遗忘的原子命题个数越多，所用时间越长且在“移除原子命题”后剩余的$\CTLsnf$子句的个数越少。
+当$|\varphi_i|=16$时的实验结果如图\ref{chapter04:fig:for16}所示，其与$|\varphi_i|=12$时有相似的结果。
 
 \begin{figure*}[!htb]
 	\centering
@@ -73,7 +73,7 @@ $|\varphi_i|=12$时的实验结果如图~\ref{chapter04:fig:for12}所示，图~\
 
 首先测试随机3-CNF命题公式。令$|V|$的取值范围为$\{5,10,\dots, 40,45\}$，3-CNF公式的子句个数$nc$范围为$\{10,15,\dots, 45,50\}$。
 在每种情形当中，计算20个随机实例$(\varphi,q,V)$：$\varphi$为$\Ha$上的公式，且$V\subseteq \Var(\varphi)$。
-计算SNC的平均CPU时间如图~\ref{chapter04:fig:ProTime}所示。
+计算SNC的平均CPU时间如图\ref{chapter04:fig:ProTime}所示。
 
 \begin{figure*}[!htb]
 	\centering
@@ -90,10 +90,10 @@ $|\varphi_i|=12$时的实验结果如图~\ref{chapter04:fig:for12}所示，图~\
 \end{figure*}
 
 
-从图~\ref{chapter04:fig:ProTime}(a)可看出，随着$|\varphi|$增大或$|V|$的减小时间消耗越大。
+从图\ref{chapter04:fig:ProTime}(a)可看出，随着$|\varphi|$增大或$|V|$的减小时间消耗越大。
 直观地说，越大的$|\varphi|$或者越小的$|V|$意味着$\CTLforget(\varphi, \overline{V})$更难计算。
 这与上一小节中的结论相符合。
-图~\ref{chapter04:fig:ProTime}(b)展示了当$|V|= 25$、$nc\in \{10,15,\dots, 45, 50\}$时20个随机实例的箱线图。
+图\ref{chapter04:fig:ProTime}(b)展示了当$|V|= 25$、$nc\in \{10,15,\dots, 45, 50\}$时20个随机实例的箱线图。
 这同样证明了$nc$越大SNC越难计算。
 
 
@@ -103,8 +103,8 @@ $$\varphi_1 \wedge \ALL \NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$$
 在这种情形下，每个实例$(\varphi, q, V)$是随机产生的，其中$\varphi=\varphi_1 \wedge \ALL \NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$、$V\subseteq \Var(\varphi)$、$|\varphi|\in \{5,6,\dots, 13,14\}$、且$|V|\in \{15,16,\dots, 23,24\}$。
 值得注意的是在实例$(\varphi, q, V)$中，$q$可能没有在$V$和$\varphi\wedge q$上的SNC。
 
-图~\ref{chapter04:fig:CtlTime}(a)展示了每种情形计算40个实例的SNC的平均CPU时间。与命题公式的情形相似，越大的$|\varphi|$或者越小的$|V|$意味着$\CTLforget(\varphi, \overline{V})$更难计算。
-此外，图~\ref{chapter04:fig:CtlTime}(b)展示了每种情形下40个实例中SNC存在的占比，即：$|\varphi|$越小或者$|V|$越小则SNC存在的占比越大。特别地，当$|\varphi_i|=5$且$|V|=16$时，SNC存在的占比为80\%。
+图\ref{chapter04:fig:CtlTime}(a)展示了每种情形计算40个实例的SNC的平均CPU时间。与命题公式的情形相似，越大的$|\varphi|$或者越小的$|V|$意味着$\CTLforget(\varphi, \overline{V})$更难计算。
+此外，图\ref{chapter04:fig:CtlTime}(b)展示了每种情形下40个实例中SNC存在的占比，即：$|\varphi|$越小或者$|V|$越小则SNC存在的占比越大。特别地，当$|\varphi_i|=5$且$|V|=16$时，SNC存在的占比为80\%。
 
 
 
@@ -120,7 +120,7 @@ $$\varphi_1 \wedge \ALL \NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$$
 	\label{chapter04:fig:CtlTime}
 \end{figure*}
 
-综上所述，算法~\ref{alg:compute:forgetting:by:Resolution}大多数情况下能计算出SNC（WSC），且当需要遗忘的原子个数很少或公式长度较小的时候计算效率很高。
+综上所述，算法\ref{alg:compute:forgetting:by:Resolution}大多数情况下能计算出SNC（WSC），且当需要遗忘的原子个数很少或公式长度较小的时候计算效率很高。
 
 \section{本章小结}\label{sec:chapter06-conclusion}
 

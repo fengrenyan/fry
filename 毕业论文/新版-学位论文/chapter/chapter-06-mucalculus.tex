@@ -56,34 +56,34 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 \section{遗忘的定义}\label{sec:chapter06-system-model}
 与$\CTL$情形下的遗忘相似，这里先给出$V$互模拟的定义。不失一般性地，令$\Hm_i = (S_i, R_i, L_i, r_i)$，$i$为自然数集$\mathbb{N}$中的元素。
 \begin{definition}[$V$-互模拟]\label{def:VB}
-	给定原子命题集合$V \subseteq \Ha$和两个Kripke结构$\Hm_1$ 和 $\Hm_2$。若下面几个条件满足，则称$\Hb\subseteq S_1 \times S_2$是$\Hm_1$ 和 $\Hm_2$的$V$-互模拟关系：
+	给定原子命题集合$V \subseteq \Ha$和两个Kripke结构$\Hm_1$和 $\Hm_2$。若下面几个条件满足，则称$\Hb\subseteq S_1 \times S_2$是$\Hm_1$和 $\Hm_2$的$V$-互模拟关系：
 	\begin{itemize}
 		\item $r_1 \Hb r_2$，
-		\item 对任意的$s\in S_1$ 和 $t\in S_2$，若$s \Hb t$ 则对任意的$p \in \Ha- V$有 $p \in L_1(s)$ 当且仅当 $p \in L_2(t)$，
-		\item $(s, s')\in R_1$ 和 $s \Hb t$蕴涵存在一个 $t'$ 使得 $s' \Hb t'$ 和 $(t, t')\in R_2$，且
-		\item 若 $s \Hb t$ 且 $(t, t')\in R_2$，则存在一个$s'$ 使得 $(s, s')\in R_1$ 和 $t' \Hb s'$。
+		\item 对任意的$s\in S_1$和 $t\in S_2$，若$s \Hb t$则对任意的$p \in \Ha- V$有 $p \in L_1(s)$当且仅当 $p \in L_2(t)$，
+		\item $(s, s')\in R_1$和 $s \Hb t$蕴涵存在一个 $t'$使得 $s' \Hb t'$和 $(t, t')\in R_2$，且
+		\item 若 $s \Hb t$且 $(t, t')\in R_2$，则存在一个$s'$使得 $(s, s')\in R_1$和 $t' \Hb s'$。
 	\end{itemize}
 \end{definition}
 
 一方面，与$\CTL$下的$V$-互模拟不同的是，这里要求$r_1 \Hb r_2$（即：$(r_1,r_2)\in \Hb$）。
-如果$\Hm_1$ 和 $\Hm_2$ 之间存在一个$V$-互模拟关系${\cal B}$则称这两个Kripke结构$\Hm_1$ 和 $\Hm_2$ 及由这两个Kripke结构构成的结构$(\Hm_1,r_1)$和$(\Hm_2,r_2)$是$V$-互模拟的，分别记为$\Hm_1 \lrto_V \Hm_2$和$(\Hm_1,r_1) \lrto_V (\Hm_2,r_2)$。
+如果$\Hm_1$和 $\Hm_2$之间存在一个$V$-互模拟关系${\cal B}$则称这两个Kripke结构$\Hm_1$和 $\Hm_2$及由这两个Kripke结构构成的结构$(\Hm_1,r_1)$和$(\Hm_2,r_2)$是$V$-互模拟的，分别记为$\Hm_1 \lrto_V \Hm_2$和$(\Hm_1,r_1) \lrto_V (\Hm_2,r_2)$。
 显然，Kripke结构之间的$V$-互模拟与结构之间的$V$-互模拟有当且仅当的关系，即“$\Hm_1 \lrto_V \Hm_2$当且仅当$(\Hm_1,r_1) \lrto_V (\Hm_2,r_2)$”， 因此在下文中只讨论Kripke结构之间$V$-互模拟的性质，而结构之间的互模拟的性质与之相同。不难看出初始结构之间的$V$-互模拟是结构之间的$V$-互模拟的一个特例。
 
 
-另一方面，$V$-互模拟与${\cal L}$-互模拟\footnote{${\cal L}$-互模拟是一种将定义~\ref{def:VB}中的$V$替换为${\cal L}$的二元关系。}~\cite{d1996uniform}类似，不同的是$V$-互模拟只考虑原子命题，且当${\cal L}$为原子命题集合时是${\cal L}$-互模拟补命题（这里默认除了原子命题之外的符号都是相同的，因此只考虑原子命题）。
-此外，已有结果表明${\cal L}$-句子（符号只出现在${\cal L}$中的$\mu$-句子）关于${\cal L}$-互模拟是不变的，即若$\Hm$ 和 $\Hm'$ 是${\cal L}$-互模拟的，则对于${\cal L}$-句子$\varphi$有$\Hm \models \varphi$当且仅当$\Hm' \models \varphi$~\cite{d1996uniform,bradfield2018mu}。
+另一方面，$V$-互模拟与${\cal L}$-互模拟\footnote{${\cal L}$-互模拟是一种将定义\ref{def:VB}中的$V$替换为${\cal L}$的二元关系。}~\cite{d1996uniform}类似，不同的是$V$-互模拟只考虑原子命题，且当${\cal L}$为原子命题集合时是${\cal L}$-互模拟补命题（这里默认除了原子命题之外的符号都是相同的，因此只考虑原子命题）。
+此外，已有结果表明${\cal L}$-句子（符号只出现在${\cal L}$中的$\mu$-句子）关于${\cal L}$-互模拟是不变的，即若$\Hm$和 $\Hm'$是${\cal L}$-互模拟的，则对于${\cal L}$-句子$\varphi$有$\Hm \models \varphi$当且仅当$\Hm' \models \varphi$~\cite{d1996uniform,bradfield2018mu}。
 因此，若$\IR(\varphi, V)$且$\Hm \lrto_V \Hm'$，则$\Hm \models \varphi$当且仅当$\Hm' \models \varphi$。
 本文称这一性质为$V$-不变性。
 %值得注意的是这里的结构之间的$V$-互模拟是$\CTL$
 %In this case, $\Hm_1$ and $\Hm_2$ are bisimilar on $V$.
 \begin{example}
-	如图~\ref{chapter06:fig:bisim}中的两个Kripke结构$\Hm=(S,R,L,r)$ 和 $\Hm'=(S',R',L',r')$，其中:
+	如图\ref{chapter06:fig:bisim}中的两个Kripke结构$\Hm=(S,R,L,r)$和 $\Hm'=(S',R',L',r')$，其中:
 	\begin{itemize}
 		\item $S=\{s_0,s_1,s_2\}$，$S'=\{t_0,t_1\}$，$r=s_0$，$r'=t_0$；
 		\item $R=\{(s_0,s_1),(s_1,s_0),(s_0,s_2),(s_2,s_0)\}$，$R'=\{t_0,t_1\}$；
 		\item $L(s_0)=\{ch,j\}$，$L(s_1)=L(s_2)=\emptyset$，$L'(t_0)=\{j\}$，$L'(t_1)=\emptyset$。
 	\end{itemize}
-	由于$\Hm$ 和 $\Hm'$之间存在一个二元$\{ch\}$-互模拟$\Hb=\{(s_0, t_0), (s_1, t_1), (s_2, t_1)\}$，所以 $\Hm \lrto_{\{ch\}} \Hm'$。%，所以$\Hm\lrto \Hm'$。
+	由于$\Hm$和 $\Hm'$之间存在一个二元$\{ch\}$-互模拟$\Hb=\{(s_0, t_0), (s_1, t_1), (s_2, t_1)\}$，所以 $\Hm \lrto_{\{ch\}} \Hm'$。%，所以$\Hm\lrto \Hm'$。
 	
 	
 	
@@ -106,10 +106,10 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 可以容易证明$\lrto_V$有如下性质。
 
 \begin{proposition} \label{pro:EqUnion}
-	令$V, V_1 \subseteq \Ha$为原子命题的集合，$\Hm_1$、 $\Hm_2$ 、 $\Hm_3$为Kripke 结构，则：
+	令$V, V_1 \subseteq \Ha$为原子命题的集合，$\Hm_1$、 $\Hm_2$、 $\Hm_3$为Kripke 结构，则：
 	\begin{itemize} 
-		\item[(i)] $\lrto_V$ 是 Kripke 结构之间的等价关系;
-		\item[(ii)] 若 $\Hm_1 \lrto_V \Hm_2$ 且 $\Hm_2 \lrto_{V_1} \Hm_3$，则 $\Hm_1 \lrto_{V \cup V_1} \Hm_3$。
+		\item[(i)] $\lrto_V$是 Kripke 结构之间的等价关系;
+		\item[(ii)] 若 $\Hm_1 \lrto_V \Hm_2$且 $\Hm_2 \lrto_{V_1} \Hm_3$，则 $\Hm_1 \lrto_{V \cup V_1} \Hm_3$。
 	\end{itemize}
 	
 \end{proposition}
@@ -118,19 +118,19 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 	
 	(1) $\lrto_V$是自反的。容易检查对任意的Kripke结构$\Hm$都有$\Hm\lrto_V \Hm$。
 	
-	(2) $\lrto_V$ 是对称的。 这里证明对任意的$\Hm_1$ 和 $\Hm_2$，若 $\Hm_1 \lrto_V \Hm_2$ 则 $\Hm_2 \lrto_V \Hm_1$。
-	$\Hm_1$和 $\Hm_2$之间存在$V$-互模拟关系$\Hb$，构造如下二元关系$\Hb_1=\{(s,t) \mid (t, s)\in \Hb\}$，现在从下面几点证明$\Hb_1$是$\Hm_2$ 和 $\Hm_1$ 之间的一个$V$-关系：
+	(2) $\lrto_V$是对称的。 这里证明对任意的$\Hm_1$和 $\Hm_2$，若 $\Hm_1 \lrto_V \Hm_2$则 $\Hm_2 \lrto_V \Hm_1$。
+	$\Hm_1$和 $\Hm_2$之间存在$V$-互模拟关系$\Hb$，构造如下二元关系$\Hb_1=\{(s,t) \mid (t, s)\in \Hb\}$，现在从下面几点证明$\Hb_1$是$\Hm_2$和 $\Hm_1$之间的一个$V$-关系：
 	\begin{itemize}
 		\item 由于$r_1 \Hb r_2$，所以 $r_2 \Hb_1 r_1$，
-		\item 对任意的$s\in S_1$ 和 $t\in S_2$，若 $t \Hb_1 s$，则 $s\Hb t$，因此对于任意的$p \in \Ha - V$，$p \in L_1(s)$ 当且仅当 $p \in L_2(t)$，且
+		\item 对任意的$s\in S_1$和 $t\in S_2$，若 $t \Hb_1 s$，则 $s\Hb t$，因此对于任意的$p \in \Ha - V$，$p \in L_1(s)$当且仅当 $p \in L_2(t)$，且
 		\item 因为$\Hb$是$\Hm_1$和 $\Hm_2$之间的$V$-互模拟关系，所以$V$-互模拟的第三和第四个点很容易能够证明。
 	\end{itemize}
 	
-	(3) $\lrto_V$是传递的。这里证明对任意的 $\Hm_1$、$\Hm_2$、和 $\Hm_3$，若 $\Hm_1 \lrto_V \Hm_2$ 和 $\Hm_2 \lrto_V \Hm_3$则 $\Hm_1 \lrto_V \Hm_3$。 假定$\Hm_1$和 $\Hm_2$之间存在$V$-互模拟关系$\Hb_1$，$\Hm_2$和 $\Hm_3$之间存在$V$-互模拟关系$\Hb_2$，构造二元关系: $\Hb=\{(s, z) \mid (s,t) \in \Hb_1,\ (t, z)\in \Hb_2\}$。
-	此时，可以像(2)一样证明 $\Hb$ 是$\Hm_1$ 和 $\Hm_3$之间的一个 $V$-互模拟关系。因此，$\Hm_1 \lrto_V \Hm_3$。
+	(3) $\lrto_V$是传递的。这里证明对任意的 $\Hm_1$、$\Hm_2$、和 $\Hm_3$，若 $\Hm_1 \lrto_V \Hm_2$和 $\Hm_2 \lrto_V \Hm_3$则 $\Hm_1 \lrto_V \Hm_3$。 假定$\Hm_1$和 $\Hm_2$之间存在$V$-互模拟关系$\Hb_1$，$\Hm_2$和 $\Hm_3$之间存在$V$-互模拟关系$\Hb_2$，构造二元关系: $\Hb=\{(s, z) \mid (s,t) \in \Hb_1,\ (t, z)\in \Hb_2\}$。
+	此时，可以像(2)一样证明 $\Hb$是$\Hm_1$和 $\Hm_3$之间的一个 $V$-互模拟关系。因此，$\Hm_1 \lrto_V \Hm_3$。
 	
-	(ii) 为了证明$\Hm_1 \lrto_{V\cup V_1} \Hm_3$，只需找到一个  $\Hm_1$ 和 $\Hm_3$之间的二元$(V\cup V_1)$-互模拟关系$\Hb$。
-	假定$\Hm_1$和 $\Hm_2$之间存在$V$-互模拟关系为$\Hb_1$，$\Hm_2$和 $\Hm_3$之间存在$V_1$-互模拟关系$\Hb_2$。令$\Hb = \{(s_1, s_3)\mid (s_1, s_2) \in \Hb_1, \ (s_2, s_3) \in \Hb_2\}$，容易证明$\Hb$是$\Hm_1$ 和 $\Hm_3$之间的二元$(V\cup V_1)$-互模拟关系。
+	(ii) 为了证明$\Hm_1 \lrto_{V\cup V_1} \Hm_3$，只需找到一个  $\Hm_1$和 $\Hm_3$之间的二元$(V\cup V_1)$-互模拟关系$\Hb$。
+	假定$\Hm_1$和 $\Hm_2$之间存在$V$-互模拟关系为$\Hb_1$，$\Hm_2$和 $\Hm_3$之间存在$V_1$-互模拟关系$\Hb_2$。令$\Hb = \{(s_1, s_3)\mid (s_1, s_2) \in \Hb_1, \ (s_2, s_3) \in \Hb_2\}$，容易证明$\Hb$是$\Hm_1$和 $\Hm_3$之间的二元$(V\cup V_1)$-互模拟关系。
 \end{proof}
 
 
@@ -139,26 +139,26 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 
 此时，$\mu$-演算下的遗忘如下定义：
 \begin{definition}[$\mu$-演算下的遗忘]\label{chapter06:def:V:forgetting}
-	令$V\subseteq\cal A$ 和 $\phi$ 为$\mu$-句子。若下面等式成立，则称
+	令$V\subseteq\cal A$和 $\phi$为$\mu$-句子。若下面等式成立，则称
 	$V$上的 $\mu$-句子 $\psi$是从$\phi$中遗忘掉$V$后得到的结果，记为 $\Muforget(\phi, V)$：
 	\begin{equation*}
 		\Mod(\psi)=\{\Hm  \mid \exists \Hm' \in\Mod(\phi)\ \&\ \Hm' \lrto_V \Hm\}.
 	\end{equation*}
 \end{definition}
 
-定义~\ref{chapter06:def:V:forgetting}表明如果 $\psi$ 和 $\psi'$ 都是从$\phi$中遗忘掉 $V$ 中的原子命题得到的结果，则
+定义\ref{chapter06:def:V:forgetting}表明如果 $\psi$和 $\psi'$都是从$\phi$中遗忘掉 $V$中的原子命题得到的结果，则
 $\Mod(\psi)$ $=\Mod(\psi')$，也就是说遗忘的结果之间是语义等价的（即有相同的模型）。
 %, i.e., $\psi$ and $\psi'$ have the same models. 
 
 
-D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有均匀插值性质~\cite{d1996uniform,d2000logical,d2006modal}。换句话说，这意味着对任意的 $\mu$-句子 $\varphi$ 和有限的原子命题的集合$V\subseteq \Var(\varphi)$，都存在一个$V$-无关且与$\varphi$最接近的 $\mu$-句子 $\widetilde{\exists}V \varphi$。
+D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有均匀插值性质~\cite{d1996uniform,d2000logical,d2006modal}。换句话说，这意味着对任意的 $\mu$-句子 $\varphi$和有限的原子命题的集合$V\subseteq \Var(\varphi)$，都存在一个$V$-无关且与$\varphi$最接近的 $\mu$-句子 $\widetilde{\exists}V \varphi$。
 值得注意的是，上述定义的遗忘 $\Muforget(\phi, V)$与 $\widetilde{\exists}V \varphi$\cite{d2006modal} 语义等价.
 
 \section{遗忘的一般属性}
 这部分展示$\mu$-演算下遗忘的语义属性。特别地，这里将证明上述$\mu$-演算下的遗忘的定义与遗忘的那几条规则具有“当且仅当的关系”，且从任意$\mu$-句子中遗忘掉任意原子命题的集合的结果总是一个$\mu$-句子。此外，也研究了遗忘算子的代数属性，包括模块性（modularity）、交换性（commutativity）和同质性（homogeneity）。
 
 \begin{theorem} \label{thm:exist}
-	给定原子命题 $q \in \cal A$ 和$\mu$-句子 $\phi$，则存在一个$\mu$-句子 $\psi$ 使得 $\IR(\psi, \{q\})$ 且 $\psi \equiv \Muforget(\phi, \{q\})$。
+	给定原子命题 $q \in \cal A$和$\mu$-句子 $\phi$，则存在一个$\mu$-句子 $\psi$使得 $\IR(\psi, \{q\})$且 $\psi \equiv \Muforget(\phi, \{q\})$。
 \end{theorem}
 \begin{proof}
 	已有结果表明，对任意的$\mu$-句子$\phi$和原子命题$p$，存在一个$\{p\}$-无关的$\mu$-句子$\phi'$（即$\IR(\phi', \{p\})$）使得（定理 3.1 \cite{d1996uniform}）：
@@ -173,20 +173,20 @@ D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有�
 \begin{itemize}
 	\item[(\W)]  削弱（Weakening）： $\varphi \models \varphi'$;
 	\item[(\PP)]  正支持 （Positive Persistence）：
-	对任意的$\mu$-句子 $\eta$，若$\IR(\eta, V)$ 和 $\varphi \models \eta$ 则 $\varphi' \models \eta$；
-	\item[(\NgP)]  负支持（Negative Persistence）：对任意的 $\mu$-句子$\eta$，若$\IR(\eta, V)$ 和 $\varphi \not \models \eta$ 则 $\varphi' \not \models \eta$；
+	对任意的$\mu$-句子 $\eta$，若$\IR(\eta, V)$和 $\varphi \models \eta$则 $\varphi' \models \eta$；
+	\item[(\NgP)]  负支持（Negative Persistence）：对任意的 $\mu$-句子$\eta$，若$\IR(\eta, V)$和 $\varphi \not \models \eta$则 $\varphi' \not \models \eta$；
 	\item[(\textbf{IR})]  无关性（Irrelevance）： $\IR(\varphi', V)$。
 \end{itemize}
 其中 $V\subseteq\cal A$、
-$\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得到的结果。
+$\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到的结果。
 
 \begin{theorem}[表达性定理]\label{chapter06:thm:Rep}
-	给定$\mu$-句子 $\varphi$、 $\varphi'$ 和 $\phi$， $V \subseteq \Ha$为原子命题的集合。
+	给定$\mu$-句子 $\varphi$、 $\varphi'$和 $\phi$， $V \subseteq \Ha$为原子命题的集合。
 	下面的几个陈述是等价的：
 	\begin{itemize}
 		\item[(i)] $\varphi' \equiv \Muforget(\varphi, V)$,
 		\item[(ii)] $\varphi'\equiv \{\phi \mid\varphi \models \phi \text{ 且 } \IR(\phi, V)\}$,
-		\item[(iii)] 若$\varphi$、 $\varphi'$ 及 $V$和(i)、(ii)中的符号表示相同公式和原子命题的集合，则 (\W)、 (\PP)、 (\NgP) 和 (\textbf{IR}) 成立。
+		\item[(iii)] 若$\varphi$、 $\varphi'$及 $V$和(i)、(ii)中的符号表示相同公式和原子命题的集合，则 (\W)、 (\PP)、 (\NgP) 和 (\textbf{IR}) 成立。
 	\end{itemize}
 \end{theorem}
 \begin{proof}
@@ -194,18 +194,18 @@ $\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得�
 	\[
 	\Mod(\Muforget(\varphi, V)) = \Mod(\{\phi \mid \varphi \models \phi, \IR(\phi, V)\}).\]
 	$(\Rto)$ 对$\Muforget(\varphi, V)$的任意模型 $\Hm'$ \\
-	$\Rto$  $\exists\Hm$ 使得 $\Hm \models \varphi$ 和 $\Hm \lrto_V \Hm'$ \hfill (定义~\ref{chapter06:def:V:forgetting}) \\
-	$\Rto$ 对于任意与$V$-无关且$\varphi \models \phi$的$\phi$ 都有 $\Hm' \models \phi$ \\
+	$\Rto$  $\exists\Hm$使得 $\Hm \models \varphi$和 $\Hm \lrto_V \Hm'$ \hfill (定义\ref{chapter06:def:V:forgetting}) \\
+	$\Rto$ 对于任意与$V$-无关且$\varphi \models \phi$的$\phi$都有 $\Hm' \models \phi$ \\
 	$\Rto$ $\Hm' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$
 	
-	$(\Lto)$ 由于$\IR(\Muforget(\varphi, V),V)$和$\varphi \models \Muforget(\varphi, V)$，由定义~\ref{chapter06:def:V:forgetting}可知 $\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \Muforget(\varphi, V)$。
+	$(\Lto)$ 由于$\IR(\Muforget(\varphi, V),V)$和$\varphi \models \Muforget(\varphi, V)$，由定义\ref{chapter06:def:V:forgetting}可知 $\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \Muforget(\varphi, V)$。
 	
 	$(ii) \Rto (iii)$. 为了方便，令$A = \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$。
 	首先，对任意的$A$中的公式$\phi'$都有$\IR(\phi',V)$，所以有$\IR(A,V)$。
 	因此，$\IR(\varphi', V)$。 其次，对任意的 $\phi'\in A$，都有$\varphi \models \phi'$，所以$\varphi \models \varphi'$。
 	%The (\NgP) and (\PP) are obvious from $A$.
-	第三， $\forall \phi$ 且$\IR(\phi, V)$，若$\varphi \models \phi$ 则 $\phi \in A$，因而$\varphi' \models \phi$。
-最后， $\forall \phi$ 且 $\IR(\phi, V)$，若 $\varphi \not \models \phi$ 则 $\phi \not \in A$。因此，由定义~\ref{chapter06:def:V:forgetting}和$V$-无关性可知$\varphi' \not \models \phi$。
+	第三， $\forall \phi$且$\IR(\phi, V)$，若$\varphi \models \phi$则 $\phi \in A$，因而$\varphi' \models \phi$。
+最后， $\forall \phi$且 $\IR(\phi, V)$，若 $\varphi \not \models \phi$则 $\phi \not \in A$。因此，由定义\ref{chapter06:def:V:forgetting}和$V$-无关性可知$\varphi' \not \models \phi$。
 	
 	$(iii) \Rto (ii)$. (1) $\varphi' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$  \hfill ((\PP))\\
 	(2) $\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \varphi'$ \hfill ((\W)， (\textbf{IR}))\\
@@ -213,17 +213,17 @@ $\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得�
 \end{proof}
 
 
-定理~\ref{chapter06:thm:Rep} 表明$\mu$-演算下的遗忘跟其基本公设形成了一个“当且仅当”的关系：基本公设能描述遗忘的结果，遗忘的结果具有基本公设里的性质。这与S5和$\CTL$下的情形相同。
+定理\ref{chapter06:thm:Rep} 表明$\mu$-演算下的遗忘跟其基本公设形成了一个“当且仅当”的关系：基本公设能描述遗忘的结果，遗忘的结果具有基本公设里的性质。这与S5和$\CTL$下的情形相同。
 
-除了上述的表达性定理，后文将说明公设(\textbf{IR})对计算SNC 和 WSC是重要的。对于$\mu$-句子$\psi = \varphi \wedge (q \lrto \alpha)$，$\varphi \wedge \alpha$ 是 $\{q\}$-无关的，则从$\psi$中遗忘掉 $q$得到的结果是$\varphi$。正如将在第\ref{chapter07}章中展示，这一性质有助于将任意公式的SNC（WSC）转换为命题下的SNC（WSC）。这一性质可形式化如下：
+除了上述的表达性定理，后文将说明公设(\textbf{IR})对计算SNC 和 WSC是重要的。对于$\mu$-句子$\psi = \varphi \wedge (q \lrto \alpha)$，$\varphi \wedge \alpha$是 $\{q\}$-无关的，则从$\psi$中遗忘掉 $q$得到的结果是$\varphi$。正如将在第\ref{chapter07}章中展示，这一性质有助于将任意公式的SNC（WSC）转换为命题下的SNC（WSC）。这一性质可形式化如下：
 
 \begin{lemma}
 	\label{lem:KF:eq}
-	令 $\varphi$ 和 $\alpha$为两个 $\mu$-句子，$q$为原子命题且 $q \not \in  \Var(\varphi) \cup \Var(\alpha)$。则
+	令 $\varphi$和 $\alpha$为两个 $\mu$-句子，$q$为原子命题且 $q \not \in  \Var(\varphi) \cup \Var(\alpha)$。则
 	$\Muforget(\varphi \wedge (q\lrto\alpha), q)\equiv \varphi$。
 \end{lemma}
  \begin{proof}
-	令 $\varphi' =\varphi \wedge (q\lrto\alpha)$。对$\Muforget(\varphi', q)$的任意一个模型${\cal M}$，存在一个Kripke结构 ${\cal M}'$使得 ${\cal M}\lrto_{\{q\}}{\cal M}'$ 和 ${\cal M}' \models \varphi'$。显然有 ${\cal M}' \models \varphi$，又因为$\IR(\varphi,\{q\})$ 和 ${\cal M} \lrto_{\{q\}} {\cal M}'$，所以 ${\cal M} \models \varphi$。
+	令 $\varphi' =\varphi \wedge (q\lrto\alpha)$。对$\Muforget(\varphi', q)$的任意一个模型${\cal M}$，存在一个Kripke结构 ${\cal M}'$使得 ${\cal M}\lrto_{\{q\}}{\cal M}'$和 ${\cal M}' \models \varphi'$。显然有 ${\cal M}' \models \varphi$，又因为$\IR(\varphi,\{q\})$和 ${\cal M} \lrto_{\{q\}} {\cal M}'$，所以 ${\cal M} \models \varphi$。
 	%	by the invariant of $\mu$-sentence for $\overline{V}$-bisimulation~\cite{d1996uniform}.
 	
 	令 $\Hm \in \Mod(\varphi)$， 其中 ${\cal M}=(S, R, L, s)$。如下构造 $\Hm' = (S, R, L', s)$：
@@ -233,13 +233,13 @@ $\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得�
 		& L'(s) = L(s) \cup\{q\}\ if\ (\Hm, s) \models \alpha,\ and\ L'(s) = L(s) \hbox{否则}.
 	\end{align*}
 	显然 ${\cal M}' \models \varphi$、 ${\cal M}' \models q\lrto \alpha$且
-	${\cal M}' \lrto_{\{q\}} {\cal M}$。因此， ${\cal M}' \models \varphi \wedge (q\lrto\alpha)$，又因为${\cal M}' \lrto_{\{q\}} {\cal M}$ 和 $\IR(\Muforget (\varphi \wedge (q\lrto\alpha), q), \{q\})$，所以 ${\cal M} \models \Muforget (\varphi \wedge (q\lrto\alpha), q)$。
+	${\cal M}' \lrto_{\{q\}} {\cal M}$。因此， ${\cal M}' \models \varphi \wedge (q\lrto\alpha)$，又因为${\cal M}' \lrto_{\{q\}} {\cal M}$和 $\IR(\Muforget (\varphi \wedge (q\lrto\alpha), q), \{q\})$，所以 ${\cal M} \models \Muforget (\varphi \wedge (q\lrto\alpha), q)$。
 \end{proof}
 
 
 正如在第\ref{chapter01}章中所说的，遗忘在经典命题逻辑中首先被提出，并应用于各种领域。这里给出经典命题逻辑与$\mu$-演算下的遗忘之间的联系。
 
-首先，回顾一下从命题公式$\varphi$中遗忘原子命题$p$得到的结果为$\Forget(\varphi, \{p\})\equiv \varphi[p/\bot] \vee \varphi[p/\top]$，且 $\Forget(\varphi, V\cup \{p\})$ 被递归地定义为： $\Forget(\Forget(\varphi, \{p\}),V)$，其中 $\Forget(\varphi, \emptyset) = \varphi$。
+首先，回顾一下从命题公式$\varphi$中遗忘原子命题$p$得到的结果为$\Forget(\varphi, \{p\})\equiv \varphi[p/\bot] \vee \varphi[p/\top]$，且 $\Forget(\varphi, V\cup \{p\})$被递归地定义为： $\Forget(\Forget(\varphi, \{p\}),V)$，其中 $\Forget(\varphi, \emptyset) = \varphi$。
 此外，对于给定的Kripke结构$\Hm = (S, R, L, r)$和命题公式$\psi$，$\Hm \models  \psi$当且仅当$L(r) \models \psi$。经典命题逻辑与$\mu$-演算下的遗忘之间的联系如下：
 \begin{theorem}\label{thm:PL:CTL}
 	令$\varphi$为命题公式，$V\subseteq \Ha$为原子命题的集合，则
@@ -248,37 +248,37 @@ $\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得�
 	\]
 \end{theorem}
 \begin{proof}
-	令 $\Hm = (S, R, L, r)$ 和 $\Hm' = (S', R', L', r')$为Kripke结构。
+	令 $\Hm = (S, R, L, r)$和 $\Hm' = (S', R', L', r')$为Kripke结构。
 	%容易看出一个 Kripke 结构 $\Hm$$\psi$, i.e., $\Hm \models \psi$, if $L(r)$ satisfies $\psi$.
 	
 	$(\Rto)$ 对任意的 $\Hm \in \Mod(\Muforget(\varphi, V))$ \\
-	$\Rto$ 由定义~\ref{def:V:forgetting}可知存在$\Hm' \in \Mod(\varphi)$ 使得 $\Hm \lrto_V \Hm'$， %(by a $V$-bisimulation ${\cal B}$) by Def.
+	$\Rto$ 由定义\ref{def:V:forgetting}可知存在$\Hm' \in \Mod(\varphi)$使得 $\Hm \lrto_V \Hm'$， %(by a $V$-bisimulation ${\cal B}$) by Def.
 	 且$\Hm$和$\Hm'$之间的$V$-互模拟关系为 ${\cal B}$\\
 	$\Rto$ $r {\cal B} r'$ \\
 	$\Rto$ $\Hm \models \Forget(\varphi, V)$ \hfill ($\IR(\Forget(\varphi, V),V)$, $V$-无关性)
 	
 	$(\Lto)$ 对任意的 $\Hm \in \Mod(\Forget(\varphi, V))$ \\
-	$\Rto$ $\exists \Hm' \in\Mod(\varphi)$ 使得$\forall p \in \Ha-V$， $p \in L(r)$ 当且仅当 $p \in L'(r')$ \hfill ($\Forget$的定义)\\
+	$\Rto$ $\exists \Hm' \in\Mod(\varphi)$使得$\forall p \in \Ha-V$， $p \in L(r)$当且仅当 $p \in L'(r')$ \hfill ($\Forget$的定义)\\
 	%$r {\cal B} r'$\\
 	
 	如下构造 Kripke 结构 $\Hm_1 = (S_1, R_1, L_1, r_1)$：
 	\begin{itemize}
 		\item[*] $S_1 = (S - \{r\}) \cup \{r_1\}$,
-		\item[*] $R_1$ 与$R$相同，除了$r$被$r_1$替换，且
-		\item[*] $L_1$ 与 $L$相同，除了$L_1(r_1) = L'(r')$。
+		\item[*] $R_1$与$R$相同，除了$r$被$r_1$替换，且
+		\item[*] $L_1$与 $L$相同，除了$L_1(r_1) = L'(r')$。
 	\end{itemize}
 	% $S_1 = (S - \{r\}) \cup \{r_1\}$, $R_1$ is the same as $R$ except that $r$ is replaced by $r_1$, and $L_1$ is the same as $L$ except $L_1(r_1) = L'(r')$. \\
-	$\Rto$ $\Hm_1 \models \varphi$ 且 $\Hm_1 \lrto_V \Hm$\\
+	$\Rto$ $\Hm_1 \models \varphi$且 $\Hm_1 \lrto_V \Hm$\\
 	$\Rto$ $\Hm \models \Muforget(\varphi, V)$ \hfill ($\IR(\Muforget(\varphi, V), V)$, $V$-无关性）
 \end{proof}
 
-定理~\ref{thm:PL:CTL}表明$\mu$-演算下的遗忘是命题逻辑下遗忘的扩展，这提示我们是否命题情形下遗忘拥有的性质$\mu$-演算下的遗忘也具有。
+定理\ref{thm:PL:CTL}表明$\mu$-演算下的遗忘是命题逻辑下遗忘的扩展，这提示我们是否命题情形下遗忘拥有的性质$\mu$-演算下的遗忘也具有。
 下面的性质在命题逻辑、S5~\cite{Yan:AIJ:2009} 和$\CTL$中都成立，这里证明其在$\mu$-演算中也成立。
 \begin{proposition}
 	\label{chapter06:pro:ctl:forget:1}
-	给定$\mu$-句子$\varphi$、$\varphi_i$和 $\psi_i$ ($i=1,2$)，$V\subseteq \Ha$为原子命题的集合。则：
+	给定$\mu$-句子$\varphi$、$\varphi_i$和 $\psi_i$（$i=1,2$），$V\subseteq \Ha$为原子命题的集合。则：
 	\begin{itemize}
-		\item[(i)] $\Muforget(\varphi, V)$ 是可满足的当且仅当$\varphi$是可满足的；
+		\item[(i)] $\Muforget(\varphi, V)$是可满足的当且仅当$\varphi$是可满足的；
 		\item[(ii)] 若 $\varphi_1 \equiv \varphi_2$，则 $\Muforget(\varphi_1, V) \equiv \Muforget(\varphi_2, V)$；
 		\item[(iii)] 若 $\varphi_1 \models \varphi_2$，则 $\Muforget(\varphi_1, V) \models \Muforget(\varphi_2, V)$；
 		\item[(iv)] $\Muforget(\psi_1 \vee \psi_2, V) \equiv \Muforget(\psi_1, V) \vee \Muforget(\psi_2, V)$，
@@ -294,22 +294,22 @@ $\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得�
 	
 	(iv) ($\Rto$) $\forall \Hm\in \Mod(\Muforget(\psi_1 \vee \psi_2, V))$\\
 	$\Rto$ $\exists \Hm'$ $\in$  $\Mod(\psi_1\vee \psi_2)$使得 $\Hm \lrto_V \Hm'$和 $\Hm' \models \psi_1$（或$\Hm' \models \psi_2$） \\
-	$\Rto$ $\exists \Hm_1 \in \Mod(\Muforget(\psi_1, V))$ 使得 $\Hm' \lrto_V \Hm_1$，或者$\exists\Hm_2 \in \Mod(\Muforget(\psi_2, V))$ 使得 $\Hm' \lrto_V \Hm_2$ \\
+	$\Rto$ $\exists \Hm_1 \in \Mod(\Muforget(\psi_1, V))$使得 $\Hm' \lrto_V \Hm_1$，或者$\exists\Hm_2 \in \Mod(\Muforget(\psi_2, V))$使得 $\Hm' \lrto_V \Hm_2$ \\
 	%$\Rto$ $(\Hm,s) \lrto_V (\Hm_1,s_1)$ or $(\Hm,s) \lrto_V (\Hm_2,s_2)$\\
 	$\Rto$ $\Hm \models \Muforget(\psi_1, V) \vee \Muforget(\psi_2, V)$。
 	
 	($\Lto$) $\forall \Hm \in \Mod(\Muforget(\psi_1, V) \vee \Muforget(\psi_2, V))$\\
-	$\Rto$ $\Hm \models \Muforget(\psi_1,V)$ 或 $\Hm \models \Muforget(\psi_2,V)$\\
-	$\Rto$ $\exists \Hm_1$ 使得 $\Hm \lrto_V \Hm_1$，且$\Hm_1 \models \psi_1$ 或者 $\Hm_1 \models \psi_2$ \hfill （定义~\ref{chapter06:def:V:forgetting}）\\
+	$\Rto$ $\Hm \models \Muforget(\psi_1,V)$或 $\Hm \models \Muforget(\psi_2,V)$\\
+	$\Rto$ $\exists \Hm_1$使得 $\Hm \lrto_V \Hm_1$，且$\Hm_1 \models \psi_1$或者 $\Hm_1 \models \psi_2$ \hfill （定义\ref{chapter06:def:V:forgetting}）\\
 	$\Rto$ $\Hm_1 \models \psi_1 \vee \psi_2$\\
 	$\Rto$ $\exists \Hm_2$使得 $\Hm_1 \lrto_V \Hm_2$和 $\Hm_2 \models \Muforget(\psi_1 \vee \psi_2, V)$\\
-	$\Rto$ $\Hm \lrto_V \Hm_2$ （命题~\ref{pro:EqUnion}）\\
-	$\Rto$ $\Hm \models \Muforget(\psi_1 \vee \psi_2, V)$ （定义~\ref{chapter06:def:V:forgetting}）。
+	$\Rto$ $\Hm \lrto_V \Hm_2$ （命题\ref{pro:EqUnion}）\\
+	$\Rto$ $\Hm \models \Muforget(\psi_1 \vee \psi_2, V)$ （定义\ref{chapter06:def:V:forgetting}）。
 	
 	 (v)可以像 (iv)一样证明。
 \end{proof}
 
-命题~\ref{chapter06:pro:ctl:forget:1}(i) 表明从一个$\mu$-句子中遗忘掉一些原子命题不影响该句子的可满足性；从(ii)可以看出，如果两个句子是等价的，则他们遗忘相同原子命题得到的结果是等价的； (iv)指出吸取公式 $\varphi_1 \vee \varphi_2$ 的遗忘可以由分开计算遗忘后在吸取而得到；而正如 (v) 中指出的那样，合取公式 $\psi_1 \wedge \psi_2$ 的遗忘不能分别计算再合取，这甚至对于命题公式都是不成立。
+命题\ref{chapter06:pro:ctl:forget:1}(i) 表明从一个$\mu$-句子中遗忘掉一些原子命题不影响该句子的可满足性；从(ii)可以看出，如果两个句子是等价的，则他们遗忘相同原子命题得到的结果是等价的； (iv)指出吸取公式 $\varphi_1 \vee \varphi_2$的遗忘可以由分开计算遗忘后在吸取而得到；而正如 (v) 中指出的那样，合取公式 $\psi_1 \wedge \psi_2$的遗忘不能分别计算再合取，这甚至对于命题公式都是不成立。
 例：令$\varphi=p \wedge (q \vee \neg p)$，从$\varphi$中遗忘掉$p$的结果为$q$，但是$\Forget(p, \{p\}) \wedge \Forget(q\vee \neg p, \{p\}) \equiv \top$。显然二者不等价。
 
 %\subsubsection{Other Semantic Properties}
@@ -319,41 +319,41 @@ $\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得�
 下面是关于$\mu$-演算下遗忘算子的其他性质。
 
 
-\begin{proposition}[模块性]\label{chapter06:disTF}  给定$\mu$-句子 $\varphi$、原子命题的集合$V$ 和原子命题 $p$且 $p \notin V$，则：
+\begin{proposition}[模块性]\label{chapter06:disTF}  给定$\mu$-句子 $\varphi$、原子命题的集合$V$和原子命题 $p$且 $p \notin V$，则：
 	\[
 	\Muforget(\varphi, \{p\} \cup V) \equiv \Muforget(\Muforget(\varphi, \{p\}), V).
 	\]
 \end{proposition}
 \begin{proof}
-	令${\cal M}_1=(S_1, R_1, L_1, s_1)$为 $\Muforget(\varphi, \{p\} \cup V)$的模型。由遗忘的定义可知，存在$\varphi$的一个模型 $\Hm$ (${\cal M} = (S, R,L, s)$) 使得 $\Hm_1$ $\lrto_{\{p\} \cup V}$ $\Hm$。如下构造Kripke结构 ${\cal M}_2 = (S_2, R_2, L_2, s_2)$：
+	令${\cal M}_1=(S_1, R_1, L_1, s_1)$为 $\Muforget(\varphi, \{p\} \cup V)$的模型。由遗忘的定义可知，存在$\varphi$的一个模型 $\Hm$（${\cal M} = (S, R,L, s)$） 使得 $\Hm_1$ $\lrto_{\{p\} \cup V}$ $\Hm$。如下构造Kripke结构 ${\cal M}_2 = (S_2, R_2, L_2, s_2)$：
 	\begin{itemize}
 		\item[(1)] 对于$s_2$，令$s_2$为满足下列条件的状态：
 		\begin{itemize}
 			\item $p \in L_2(s_2)$当且仅当$p \in L_1(s_1)$，
-			\item 对任意的$q \in V$，$q \in L_2(s_2)$ 当且仅当 $q\in L(s)$，
-			\item 对于其他的原子命题 $q'$， $q' \in L_2(s_2)$ 当且仅当 $q' \in L_1(s_1)$ 当且仅当 $q'\in L(s)$。
+			\item 对任意的$q \in V$，$q \in L_2(s_2)$当且仅当 $q\in L(s)$，
+			\item 对于其他的原子命题 $q'$， $q' \in L_2(s_2)$当且仅当 $q' \in L_1(s_1)$当且仅当 $q'\in L(s)$。
 		\end{itemize}
 		\item[(2)] 其他情形：假定$\Hm_1$和$\Hm$有$\{p\} \cup V$-互模拟关系${\cal B}$。
 		\begin{itemize}
-			\item[(i)] 对任意的 $w \in S$ 和 $w_1 \in S_1$ 且 $(w,w_1)\in {\cal B}$，令$w_2 \in S_2$和
+			\item[(i)] 对任意的 $w \in S$和 $w_1 \in S_1$且 $(w,w_1)\in {\cal B}$，令$w_2 \in S_2$和
 			\begin{itemize}
-				\item $p \in L_2(w_2)$ 当且仅当 $p \in L_1(w_1)$，
-				\item 对任意的$q \in V$，$q \in L_2(w_2)$ 当且仅当 $q\in L(w)$，
-				\item 对其他原子命题$q'$，$q' \in L_2(w_2)$ 当且仅当 $q' \in L_1(w_1)$ 当且仅当 $q'\in L(w)$。
+				\item $p \in L_2(w_2)$当且仅当 $p \in L_1(w_1)$，
+				\item 对任意的$q \in V$，$q \in L_2(w_2)$当且仅当 $q\in L(w)$，
+				\item 对其他原子命题$q'$，$q' \in L_2(w_2)$当且仅当 $q' \in L_1(w_1)$当且仅当 $q'\in L(w)$。
 			\end{itemize}
-			\item[(ii)] 若$(w_1', w_1)\in R_1$，且$w_2$ 是由 $w_1$构造，$w_2'\in S_2$ 由 $w_1'$构造，则$(w_2', w_2)\in R_2$。
-			%And if $w' \Hr^i w$, $w_2$ is constructed based on $w$ and $w_2'\in \Hw_2$ is constructed based on $w'$, then $w_2' \Hr_2^i w_2$
+			\item[(ii)] 若$(w_1', w_1)\in R_1$，且$w_2$是由 $w_1$构造，$w_2'\in S_2$由 $w_1'$构造，则$(w_2', w_2)\in R_2$。
+			%And if $w' \Hr^i w$, $w_2$is constructed based on $w$ and $w_2'\in \Hw_2$ is constructed based on $w'$, then $w_2' \Hr_2^i w_2$
 			%\item if $\exists w_1'\in \Hw_1$ such that $w_1' \Hr_1 w_1$, then let $w_2' \in \Hw_2$, $w_2' \Hr_2 w_2$, and if $w_1' \neq s_1$ then do (i) for $w_2'$, else let$w_2' = s_2$.
 		\end{itemize}
 		\item 删除 $S_2$和 $R_2$中重复的元素。
 	\end{itemize}
-	可以容易检查 $\Hm \lrto_{\{p\}} \Hm_2$ 和 $\Hm_2 \lrto_V \Hm_1$。因此，$(\Hm_2, s_2) \models \Muforget(\varphi, p)$，所以 $(\Hm_1, s_1) \models \Muforget(\Muforget(\varphi, p), V)$。
+	可以容易检查 $\Hm \lrto_{\{p\}} \Hm_2$和 $\Hm_2 \lrto_V \Hm_1$。因此，$(\Hm_2, s_2) \models \Muforget(\varphi, p)$，所以 $(\Hm_1, s_1) \models \Muforget(\Muforget(\varphi, p), V)$。
 	
-	另一方面，假设 $\Hm_1$ 是$\Muforget(\Muforget(\varphi, p), V)$的一个模型 \\
-	$\Rto$ $\exists \Hm_2$ 使得 $\Hm_2 \models  \Muforget(\varphi, p)$ 和 $\Hm_2 \lrto_V \Hm_1$ \hfill(定义~\ref{chapter06:def:V:forgetting})\\
-	$\Rto$ $\exists \Hm$ 使得 $\Hm \models \varphi$ 和 $\Hm \lrto_{\{p\}} \Hm_2$ \hfill(定义~\ref{chapter06:def:V:forgetting})
+	另一方面，假设 $\Hm_1$是$\Muforget(\Muforget(\varphi, p), V)$的一个模型 \\
+	$\Rto$ $\exists \Hm_2$使得 $\Hm_2 \models  \Muforget(\varphi, p)$和 $\Hm_2 \lrto_V \Hm_1$ \hfill(定义\ref{chapter06:def:V:forgetting})\\
+	$\Rto$ $\exists \Hm$使得 $\Hm \models \varphi$和 $\Hm \lrto_{\{p\}} \Hm_2$ \hfill(定义\ref{chapter06:def:V:forgetting})
 	
-	因此，由命题~\ref{pro:EqUnion}可知$\Hm \lrto_{\{p\} \cup V} \Hm_1$，因此 $\Hm_1 \models \Muforget(\varphi, \{p\} \cup V)$。
+	因此，由命题\ref{pro:EqUnion}可知$\Hm \lrto_{\{p\} \cup V} \Hm_1$，因此 $\Hm_1 \models \Muforget(\varphi, \{p\} \cup V)$。
 \end{proof}
 
 
@@ -366,84 +366,84 @@ $\varphi$ 为$\mu$-句子 、 $\varphi'$ 是 从$\varphi$中遗忘掉$V$后得�
 	\]
 \end{corollary}
 
-$\Muforget$的另一个属性是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子的：形如$\ALL\NEXT \varphi$ 或 $\EXIST \NEXT \varphi$的$\mu$-句子的遗忘可以提到$\ALL\NEXT$和 $\EXIST \NEXT$后面计算。而对于$\mu X. \varphi$和$\nu X. \varphi$就没有这样的性质，因为$\varphi$显然不是一个$\mu$-句子。
+$\Muforget$的另一个属性是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子的：形如$\ALL\NEXT \varphi$或 $\EXIST \NEXT \varphi$的$\mu$-句子的遗忘可以提到$\ALL\NEXT$和 $\EXIST \NEXT$后面计算。而对于$\mu X. \varphi$和$\nu X. \varphi$就没有这样的性质，因为$\varphi$显然不是一个$\mu$-句子。
 
 
 \begin{proposition}[同质性]\label{chapter06:pro:mu:forget:2}
-	给定原子命题集合$V\subseteq\cal A$ 和$\mu$-句子 $\phi$，则: % and $Q\in \{\EXIST, \ALL\}$.
+	给定原子命题集合$V\subseteq\cal A$和$\mu$-句子 $\phi$，则: % and $Q\in \{\EXIST, \ALL\}$.
 	\begin{itemize}
 		\item[(i)] $\Muforget(\ALL\NEXT\phi,V)\equiv \ALL\NEXT \Muforget(\phi,V)$.
 		\item[(ii)] $\Muforget(\EXIST\NEXT\phi,V)\equiv\EXIST\NEXT \Muforget(\phi,V)$.
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	令$\Hm=(S,R, L, s)$、 $\Hm_i = (S_i, R_i, L_i, s_i)$ （$i \in \textmd{N}$） 且 $\Hm'=(S', R', L', s')$。
+	令$\Hm=(S,R, L, s)$、 $\Hm_i = (S_i, R_i, L_i, s_i)$（$i \in \textmd{N}$） 且 $\Hm'=(S', R', L', s')$。
 	
 	(i) $(\Rto)$ $\Hm\models\Muforget(\ALL\NEXT\phi,V)$\\
-	$\Rto$ 有$\Hm\lrto_V\Hm'$ 且 $\Hm'\models \ALL\NEXT\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
+	$\Rto$ 有$\Hm\lrto_V\Hm'$且 $\Hm'\models \ALL\NEXT\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
 	$\Rto$  $\Hm\lrto_V \Hm'$，且 对任意的$(s',s'')\in R'$有 $(\Hm', s'')\models \phi$  \\
-	$\Rto$ 对任意的$(s,s_1)\in R$，存在 $(s',s'_1)\in R'$ 使得$(s_1,s_1')\in \Hb_V$，且对任意的 $(s',s'')\in R'$ 有
+	$\Rto$ 对任意的$(s,s_1)\in R$，存在 $(s',s'_1)\in R'$使得$(s_1,s_1')\in \Hb_V$，且对任意的 $(s',s'')\in R'$有
 	$(\Hm',s'')\models \phi$\\
-	$\Rto$ 对任意的 $(s,s_1)\in R$，有 $(s_1,s_1')\in \Hb_V$ 和 $(\Hm',s'_1)\models\phi$\\
+	$\Rto$ 对任意的 $(s,s_1)\in R$，有 $(s_1,s_1')\in \Hb_V$和 $(\Hm',s'_1)\models\phi$\\
 	$\Rto$ 对任意的 $(s,s_1)\in R$， $(\Hm,s_1)\models\CTLforget(\phi,V)$\\
 	$\Rto$ $(\Hm,s)\models\ALL\NEXT\CTLforget(\phi,V)$，即$\Hm \models\ALL\NEXT\CTLforget(\phi,V)$。
 	
 	$(\Lto)$ $(\Hm,s)\models\ALL\NEXT\CTLforget(\phi,V)$\\
 	$\Rto$ 对任意的 $(s,s_1)\in R$， $(\Hm,s_1)\models\CTLforget(\phi,V)$ $(R\in \Hm)$\\
-	$\Rto$ 对任意的 $(s,s_1)\in R$， 有 $(\Hm,s_1)\lrto_V(\Hm',s')$ 和 $(\Hm',s')\models\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
+	$\Rto$ 对任意的 $(s,s_1)\in R$， 有 $(\Hm,s_1)\lrto_V(\Hm',s')$和 $(\Hm',s')\models\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
 	$\Rto$ 对任意的 $i\ge 0$，有 $(s_i,s_i') \in \Hb_V'$且 $(\Hm'_i,s'_i)\models\phi$，即$\Hm$和$\Hm_i'$之间存在$V$-互模拟关系$\Hb_V'$
-	其中 $\{s_0,s_1,\ldots\}=\{s'\mid (s,s')\in R\}$和 $\Hm'_i=(S'_i,R'_i,L'_i,[\_]'_i,s'_i)$ (当$i\neq j$时，假定$S'_i\cap S'_j=\emptyset$)\\
-	$\Rto$ $(\Hm^*,s)\lrto_V(\Hm,s)$ 和 $(\Hm^*,s)\models\ALL\NEXT\phi$，其中
-	$\Hm^*=(S^*,R^*,L^*,[\_], s)$ 和
+	其中 $\{s_0,s_1,\ldots\}=\{s'\mid (s,s')\in R\}$和 $\Hm'_i=(S'_i,R'_i,L'_i,[\_]'_i,s'_i)$（当$i\neq j$时，假定$S'_i\cap S'_j=\emptyset$）\\
+	$\Rto$ $(\Hm^*,s)\lrto_V(\Hm,s)$和 $(\Hm^*,s)\models\ALL\NEXT\phi$，其中
+	$\Hm^*=(S^*,R^*,L^*,[\_], s)$和
 	\begin{itemize}
 		\item $S^*=\{s\}\cup\bigcup_{i\ge 0}S'_i$，
 		\item $R^*=\{(s,s'_i)\mid i\ge 0\}\cup \bigcup_{i\ge 0} R'_i$，
-		\item $L^*=\bigcup_{i\ge 0}L'_i$ 和 $L^*(s)=L(s)$，其中 $L\in\Hm$。
+		\item $L^*=\bigcup_{i\ge 0}L'_i$和 $L^*(s)=L(s)$，其中 $L\in\Hm$。
 	\end{itemize}
 	$\Rto$ $(\Hm,s)\models \CTLforget(\ALL\NEXT\phi,V)$。
 	
 	(ii) $(\Rto)$ $(\Hm,s)\models\CTLforget(\EXIST\NEXT\phi,V)$\\
-	$\Rto$ 有 $(\Hm,s)\lrto_V(\Hm',s')$ 且 $(\Hm',s')\models \EXIST\NEXT\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
-	$\Rto$ 有$(\Hm,s)\lrto_V(\Hm',s')$，且对一些 $(s',s'')\in R'$有$(\Hm',s'')\models \phi$  ($R'\in\Hm'$)\\
-	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(s',s'_1)\in R'$ 和 $(s_1, s_1') \in \Hb_V$，且对一些$(s',s'')\in R'$有
-	$(\Hm',s'')\models \phi$ ($R\in \Hm$)\\
-	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(s_1, s_1') \in \Hb_V$ 和 $(\Hm',s'_1)\models\phi$\\
+	$\Rto$ 有 $(\Hm,s)\lrto_V(\Hm',s')$且 $(\Hm',s')\models \EXIST\NEXT\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
+	$\Rto$ 有$(\Hm,s)\lrto_V(\Hm',s')$，且对一些 $(s',s'')\in R'$有$(\Hm',s'')\models \phi$（$R'\in\Hm'$）\\
+	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(s',s'_1)\in R'$和 $(s_1, s_1') \in \Hb_V$，且对一些$(s',s'')\in R'$有
+	$(\Hm',s'')\models \phi$（$R\in \Hm$）\\
+	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(s_1, s_1') \in \Hb_V$和 $(\Hm',s'_1)\models\phi$\\
 	$\Rto$ 对一些 $(s,s_1)\in R$，有 $(\Hm,s_1)\models\CTLforget(\phi,V)$\\
 	$\Rto$ $(\Hm,s)\models\EXIST\NEXT\CTLforget(\phi,V)$。
 	
 	$(\Lto)$ $(\Hm,s)\models\EXIST \NEXT\CTLforget(\phi,V)$\\
-	$\Rto$ 对一些 $(s,s')\in R$， $(\Hm,s')\models\CTLforget(\phi,V)$ ($R\in \Hm)$\\
-	$\Rto$ 对一些 $(s,s')\in R$，有$(\Hm,s')\lrto_V(\Hm',s'')$ 和 $(\Hm',s'')\models\phi$，其中 $\Hm'=(S',R',L',[\_]',s'')$ \\
+	$\Rto$ 对一些 $(s,s')\in R$， $(\Hm,s')\models\CTLforget(\phi,V)$（$R\in \Hm$）\\
+	$\Rto$ 对一些 $(s,s')\in R$，有$(\Hm,s')\lrto_V(\Hm',s'')$和 $(\Hm',s'')\models\phi$，其中 $\Hm'=(S',R',L',[\_]',s'')$ \\
 	%		$\Rto$ For every $i\ge 0$, there is $(\Hm,s'_i)\lrto_V(\Hm'_i,s''_i)$ and $(\Hm'_i,s''_i)\models\phi$
 	%		where $\{s'_0,s'_1,\ldots\}=\{s'\mid (s,s')\in R\}$ and $\Hm'_i=(S'_i,R'_i,L'_i,[\_]'_i,s''_i)$ (we assume $S'_i\cap S'_j=\emptyset$ when $i\neq j$)\\
-	$\Rto$ $(\Hm^*,s)\lrto_V(\Hm,s)$ 和 $(\Hm^*,s)\models\EXIST\NEXT\phi$，其中
+	$\Rto$ $(\Hm^*,s)\lrto_V(\Hm,s)$和 $(\Hm^*,s)\models\EXIST\NEXT\phi$，其中
 	$\Hm^*=(S^*,R^*,L^*,[\_], s)$，
 	\begin{itemize}
 		\item $S^*=S\cup S'$，
 		\item $R^*=\{(s,s'')\}\cup R \cup R'$，
-		\item $L^*= L \cup L'$ 和 $L^*(s)=L(s)$，其中 $L\in\Hm$。
+		\item $L^*= L \cup L'$和 $L^*(s)=L(s)$，其中 $L\in\Hm$。
 	\end{itemize}
 	$\Rto$ $(\Hm,s)\models \CTLforget(\EXIST\NEXT\phi,V)$。
 	
 \end{proof}
 
 
- $\ALL\NEXT$ （或 $\EXIST\NEXT$）在 $\Muforget$上的同质性表明，在从 $\ALL\NEXT \varphi$ （或 $\EXIST\NEXT \varphi$）遗忘掉$V$中的原子命题等价于将$\Muforget$提到$\ALL\NEXT$ 和 $\EXIST \NEXT$后面计算的结果。
+ $\ALL\NEXT$（或 $\EXIST\NEXT$）在 $\Muforget$上的同质性表明，在从 $\ALL\NEXT \varphi$（或 $\EXIST\NEXT \varphi$）遗忘掉$V$中的原子命题等价于将$\Muforget$提到$\ALL\NEXT$和 $\EXIST \NEXT$后面计算的结果。
 %It offers convenience for computing the forgetting.
-特别地，当命题~\ref{chapter06:pro:mu:forget:2}中的公式$\phi$为命题公式时，从
-$Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题逻辑的遗忘计算方法来计算。
+特别地，当命题\ref{chapter06:pro:mu:forget:2}中的公式$\phi$为命题公式时，从
+$Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$中遗忘原子命题可以使用命题逻辑的遗忘计算方法来计算。
 
 \section{计算复杂性}
-吸取$\mu$-公式$\varphi$的均匀插值为 $\widetilde{\exists}p \varphi$ （$p\in \Ha$），且与 $\varphi[p/\top,\neg p/\top]$等价~\cite{d2006modal}。
+吸取$\mu$-公式$\varphi$的均匀插值为 $\widetilde{\exists}p \varphi$（$p\in \Ha$），且与 $\varphi[p/\top,\neg p/\top]$等价~\cite{d2006modal}。
 正如之前说过的 $\Muforget(\varphi, V)$与均匀插值 $\widetilde{\exists}V \varphi$等价\cite{d2006modal}。因此，下面的命题容易证明。
 \begin{proposition}\label{pro:disLiT}
-	给定$\mu$-句子$\varphi$ 和原子命题 $p\in \Ha$。若$\varphi$ 是一个吸取 $\mu$-句子， $\Muforget(\varphi, \{p\})$能在线性时间内计算。
+	给定$\mu$-句子$\varphi$和原子命题 $p\in \Ha$。若$\varphi$是一个吸取 $\mu$-句子， $\Muforget(\varphi, \{p\})$能在线性时间内计算。
 \end{proposition}
 
 这种情况下，可以首先将一个$\mu$-句子转化为吸取$\mu$-公式，再去计算遗忘。
 下面的例子给出如何计算从吸取$\mu$-公式中遗忘 “$ch$”。
 \begin{example}
-	令$\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top)$、 $ \varphi_2= \mu X. (j \wedge ch) \wedge Cover(X, \top)$、 $\varphi_3=  \nu X. (j \wedge ch) \wedge Cover(Cover(X,$ $\top), \top)$。令$V=\{ch\}$，我们能容易地计算从这些公式里遗忘掉$V$。
+	令$\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top)$、 $\varphi_2= \mu X. (j \wedge ch) \wedge Cover(X, \top)$、 $\varphi_3=  \nu X. (j \wedge ch) \wedge Cover(Cover(X,$ $\top), \top)$。令$V=\{ch\}$，我们能容易地计算从这些公式里遗忘掉$V$。
 	
 	(1) $\Muforget(\varphi_1, V) \equiv j \wedge Cover(\neg j, \top) \equiv j \wedge \EXIST \NEXT(\neg j)$；
 	
@@ -457,8 +457,8 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题�
 \begin{proposition}[模型检测]\label{chapter06:pro:MC}
 	给定一个有限的 Kripke 结构  $\Hm$、一个 $\mu$-句子 $\varphi$和原子命题的集合 $V\subseteq \Ha$。有：
 	\begin{itemize}
-		\item[(i)] 判定 $\Hm \models^? \Muforget(\varphi, V)$ 在$\textsc{Exptime}$中；
-		\item[(ii)] 若 $\varphi$ 是一个吸取 $\mu$-公式，则判定 $\Hm \models^? \Muforget(\varphi, V)$在 \textsc{NP}$\cap$co-\textsc{NP}中。
+		\item[(i)] 判定 $\Hm \models^? \Muforget(\varphi, V)$在$\textsc{Exptime}$中；
+		\item[(ii)] 若 $\varphi$是一个吸取 $\mu$-公式，则判定 $\Hm \models^? \Muforget(\varphi, V)$在 \textsc{NP}$\cap$co-\textsc{NP}中。
 	\end{itemize}
 \end{proposition}
 \begin{proof}
@@ -466,16 +466,16 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题�
 	这里证明(ii)，(i)可以类似地证明。
 	
 	令$A_{\varphi}$为一个$\mu$-自动机 且满足对任意的 Kripke ${\cal N}$， %there is
-	$A_{\varphi}$ 接受 ${\cal N}$ 当且仅当 ${\cal N} \models \varphi$，其中 $A_{\varphi} = (Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$、 $\Sigma_p = \Var(\varphi)$。不是一般性地，假定$V \subseteq \Var(\varphi)$ 和 $V=\{p\}$。因此，构造一个 $\mu$-自动机 ${\cal B}= (Q, \Sigma_p - V, \Sigma_r, q_0, \delta', \Omega)$ 使得对任意的$q\in Q$ 和 $L\subseteq \Sigma_p - V$，
+	$A_{\varphi}$接受 ${\cal N}$当且仅当 ${\cal N} \models \varphi$，其中 $A_{\varphi} = (Q, \Sigma_p, \Sigma_r, q_0, \delta, \Omega)$、 $\Sigma_p = \Var(\varphi)$。不是一般性地，假定$V \subseteq \Var(\varphi)$和 $V=\{p\}$。因此，构造一个 $\mu$-自动机 ${\cal B}= (Q, \Sigma_p - V, \Sigma_r, q_0, \delta', \Omega)$使得对任意的$q\in Q$和 $L\subseteq \Sigma_p - V$，
 	\[
 	\delta'(q, L) = \delta(q, L) \cup \delta(q, L \cup \{p\}).
 	\]
 	
-	已有结论表明，对任意的Kripke结构${\cal N}$， ${\cal B}$ 接受 ${\cal N}$当且仅当存在$\varphi$的一个模型${\cal N}'$使得${\cal N} \lrto_{\{p\}} {\cal N}'$~\cite{d1996uniform}，即${\cal B}$对应于和$\Muforget(\varphi, V)$等价的$\mu$-句子。
+	已有结论表明，对任意的Kripke结构${\cal N}$， ${\cal B}$接受 ${\cal N}$当且仅当存在$\varphi$的一个模型${\cal N}'$使得${\cal N} \lrto_{\{p\}} {\cal N}'$~\cite{d1996uniform}，即${\cal B}$对应于和$\Muforget(\varphi, V)$等价的$\mu$-句子。
 	
 	
-	在这种情况下，判定 $\Hm \models^? \Muforget(\varphi, V)$问题被归约到判定是否 ${\cal B}$ 接受 $\Hm$的问题。
-	而${\cal B}$ 从根$r$接受一个Kripke结构$\Hm=(S, R,L, r)$当且仅当Eve在参数游戏（parity game）${\cal G}(\Hm, \Ha)$上有一个从$(r,q^0)$开始的赢的策略，这一问题在\textsc{NP}$\cap$co-\textsc{NP}~\cite{bradfield2018mu}中。
+	在这种情况下，判定 $\Hm \models^? \Muforget(\varphi, V)$问题被归约到判定是否 ${\cal B}$接受 $\Hm$的问题。
+	而${\cal B}$从根$r$接受一个Kripke结构$\Hm=(S, R,L, r)$当且仅当Eve在参数游戏（parity game）${\cal G}(\Hm, \Ha)$上有一个从$(r,q^0)$开始的赢的策略，这一问题在\textsc{NP}$\cap$co-\textsc{NP}~\cite{bradfield2018mu}中。
 	%In this case, the problem $\Hm \models^? \Muforget(\varphi, V)$ is reduced to decide whether $B$ accepts $\Hm$, which is in \textsc{NP}$\cap$co-\textsc{NP}~\cite{bradfield2018mu}.
 \end{proof}
 
@@ -488,11 +488,11 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题�
 	\item[(iii)] $[$Var-entailment$]$ $\varphi$在$\Var(\varphi) \cap \Var(\psi)$上的约束比$\psi$在$\Var(\varphi) \cap \Var(\psi)$上的约束强，即 $\Muforget(\varphi, V) \models \Muforget(\psi, V)$,
 \end{itemize}
 % where $\varphi$, $\psi$ are $\mu$-sentences, and $V$ is a set of atoms. 
-值得注意的是，在(i) 和 (ii)中， $\Var(\varphi) - V = \Var(\psi)$，在(iii)中， $V \subseteq (\Var(\varphi) \cap \Var(\psi))$。
+值得注意的是，在(i)和(ii)中， $\Var(\varphi) - V = \Var(\psi)$，在(iii)中， $V \subseteq (\Var(\varphi) \cap \Var(\psi))$。
 
 \begin{theorem}[Entailment]
 	\label{thm:Ent}
-	给定$\mu$-句子$\varphi$ 和 $\psi$，$V$为原子命题的集合，则下面的判定问题为 $\textsc{Exptime}$-完全的。
+	给定$\mu$-句子$\varphi$和 $\psi$，$V$为原子命题的集合，则下面的判定问题为 $\textsc{Exptime}$-完全的。
 	\begin{itemize}
 		\item[(i)] 判定  $\Muforget(\varphi, V ) \models^? \psi$，
 		\item[(ii)] 判定  $\psi \models^? \Muforget(\varphi, V)$，
@@ -505,7 +505,7 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题�
 	% There are two method to prove (i).
 	% \textbf{Method 1:}
 	
-	成员属性: 令 $A_{\varphi}$ 和 $A_{\psi}$ 分别为$\varphi$ 和 $\psi$ 的$\mu$-自动机，由命题~\ref{chapter06:pro:MC}的证明可从 $A_{\varphi}$构造 $\Muforget(\varphi, V )$ 的$\mu$-自动机 ${\cal B}$。由命题 7.3.2~\cite{comon1997tree}可知，可以在线性时间内构造$A_\psi$的补自动机$C$，因此可以在线性时间内构造$C$和 ${\cal B}$的交自动机$A_{C \cap {\cal B}}$。此时，判定问题 $\Muforget(\varphi, V ) \models^? \psi$被规约称判定 $A_{C \cap {\cal B}}$接受的语言是否为空，这一问题时$\textsc{Exptime}$-完全的 (定理 7.5.1~\cite{comon1997tree})。
+	成员属性: 令 $A_{\varphi}$和 $A_{\psi}$分别为$\varphi$和 $\psi$的$\mu$-自动机，由命题\ref{chapter06:pro:MC}的证明可从 $A_{\varphi}$构造 $\Muforget(\varphi, V )$的$\mu$-自动机 ${\cal B}$。由命题 7.3.2~\cite{comon1997tree}可知，可以在线性时间内构造$A_\psi$的补自动机$C$，因此可以在线性时间内构造$C$和 ${\cal B}$的交自动机$A_{C \cap {\cal B}}$。此时，判定问题 $\Muforget(\varphi, V ) \models^? \psi$被规约称判定 $A_{C \cap {\cal B}}$接受的语言是否为空，这一问题时$\textsc{Exptime}$-完全的 (定理 7.5.1~\cite{comon1997tree})。
 	
 	因此，判定是否$\Muforget(\varphi, V ) \models^? \psi$是$\textsc{Exptime}$的。 
 	
@@ -521,13 +521,13 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$ 中遗忘原子命题可以使用命题�
 	\item[(ii)] $[$Var-match$]$  $\varphi$在$\psi$的原子命题上的约束与 $\psi$等价，即$\Muforget(\varphi, V) \equiv \psi$，
 	\item[(iii)] $[$Var-equivalence$]$  $\varphi$和$\psi$在原子命题$V$上的约束是否等价，即$\Muforget(\varphi, V) \equiv \Muforget(\psi, V)$。
 \end{itemize}
-对于 $\varphi$ 和 $\psi$，其原子命题上的约束是一样的。
+对于 $\varphi$和 $\psi$，其原子命题上的约束是一样的。
 % both equivalent problems and reasoning problems have the same constraints.
 % In these problems, $\varphi$ and $\psi$ have the same constraints as those in reasoning problems.
-%The following results are implications of Theorem~\ref{thm:Ent}.
+%The following results are implications of Theorem\ref{thm:Ent}.
 
 \begin{corollary}\label{chapter06:cor:equiv}
-	给定$\mu$-句子$\varphi$ 和 $\psi$，$V$为原子命题的集合。则下面的判定问题为$\textsc{Exptime}$-完全的。
+	给定$\mu$-句子$\varphi$和 $\psi$，$V$为原子命题的集合。则下面的判定问题为$\textsc{Exptime}$-完全的。
 	\begin{itemize}
 		\item[(i)] 判定 $\psi \equiv^?\Muforget(\varphi, V)$，
 		\item[(ii)] 判定 $\Muforget(\varphi, V) \equiv^? \varphi$，
