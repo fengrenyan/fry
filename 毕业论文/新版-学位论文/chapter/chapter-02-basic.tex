@@ -1019,7 +1019,7 @@ SNC和WSC的定义最先由Lin提出~\cite{DBLP:journals/ai/Lin01}，这部分�
 定理~\ref{chaper02:thm:SNCforgetting}表明可以用遗忘计算SNC和WSC。
 基于遗忘的计算SNC（WSC）的详细算法为算法~\ref{alg:compute:pro:forgetting}，其中一个子句集合的极小集（minimal set of clauses）为满足下面性质的集合：
 \begin{itemize}
-	\item 所有的单元子句都被替换为true；
+	\item 所有的单元子句都被替换为$\top$；
 	\item 没有一个子句被集合中的另一个子句包蕴。
 \end{itemize}
 此外，对于公式集合$S$，$S[X/Y]$为将$S$中每个公式中$X$的出现全都替换成$Y$，即$S[X/Y]=\{\varphi[X/Y]\mid \varphi\in S\}$。
@@ -1058,7 +1058,7 @@ SNC和WSC的定义最先由Lin提出~\cite{DBLP:journals/ai/Lin01}，这部分�
 
 在一阶逻辑中，SNC和WSC的定义和命题逻辑下相似，且也可用遗忘来计算。但是一阶逻辑中的遗忘计算比较麻烦，且遗忘的结果不一定能用一阶语言表示出来。
 \begin{theorem}[引理4.1\cite{DBLP:conf/ijcai/DohertyLS01}]
-对任意一阶公式$\alpha$关系符号的集合$P$ 和句子$Th$:
+对任意一阶公式$\alpha$、关系符号的集合$P$ 和句子$Th$:
 	\begin{itemize}
 		\item $\alpha$在$P$和$Th$上的SNC为 $\exists\overline{\Phi}.[Th \wedge \alpha]$，
 		\item $\alpha$在$P$和$Th$上的WSC为 $\forall\overline{\Phi}.[Th \rto \alpha]$,
@@ -1081,5 +1081,5 @@ SNC和WSC的定义最先由Lin提出~\cite{DBLP:journals/ai/Lin01}，这部分�
 
 \section{本章小结}
 围绕本文的研究工作，本章首先介绍了最基本的真假赋值的概念，给出了命题逻辑公式的解释，随后给出了时序逻辑依赖的Kripke结构的定义。
-其次，本章详细介绍了带索引的$\CTL$公式的语法和语义。$\CTL$公式是带索引的$\CTL$公式的子类，基于此又介绍了$\CTL$公式的标准形式——$\CTLsnf$子句，并详细介绍了如何将$\CTL$公式转换为$\CTLsnf$子句的集合。基于此，对$\CTL$中的归结过程和归结系统做了详细的介绍，为下文使用基于归结的方法计算$\CTL$中的遗忘做下铺垫。最后，本章详细介绍了本文密切相关的经典逻辑和模态逻辑下的遗忘的定义、基本公设及相关算法，并基于此给出这些逻辑系统下的SNC（WSC）的定义和使用遗忘计算SNC（WSC）的详细算法。本章中所介绍内容为后续章节提供了基本模型与定义，是开展后续研究工作的理论出发点。
+其次，本章详细介绍了带索引的$\CTL$和$\mu$-演算公式的语法和语义。$\CTL$公式是带索引的$\CTL$公式的子类，基于此又介绍了$\CTL$公式的标准形式——$\CTLsnf$子句，并详细介绍了如何将$\CTL$公式转换为$\CTLsnf$子句的集合。基于此，对$\CTL$中的归结过程和归结系统做了详细的介绍，为下文使用基于归结的方法计算$\CTL$中的遗忘做下铺垫。最后，本章详细介绍了本文密切相关的经典逻辑和模态逻辑下的遗忘的定义、基本公设及相关算法，并基于此给出这些逻辑系统下SNC（WSC）的定义和使用遗忘计算SNC（WSC）的详细算法。本章中所介绍的内容为后续章节提供了基本模型与定义，是开展后续研究工作的理论出发点。
 
