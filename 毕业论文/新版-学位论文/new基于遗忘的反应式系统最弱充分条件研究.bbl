@@ -1,10 +1,20 @@
-\begin{thebibliography}{101}
+\begin{thebibliography}{94}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
   \urlstyle{same}\fi
 \providecommand{\href}[2]{\url{#2}}
 \providecommand{\doi}[1]{\href{https://doi.org/#1}{#1}}
+
+\bibitem[Katsuno et~al.(1991)Katsuno and Mendelzon]{katsuno91mendelzon}
+KATSUNO~H, MENDELZON~A~O.
+\newblock On the difference between updating a knowledge base and revising
+  it\allowbreak[C]//\allowbreak
+ALLEN~J~F, FIKES~R, SANDEWALL~E.
+\newblock Proceedings of the 2nd International Conference on Principles of
+  Knowledge Representation and Reasoning (KR'91). Cambridge, MA, USA, April
+  22-25, 1991.
+\newblock [S.l.]: Morgan Kaufmann, 1991: 387-394.
 
 \bibitem[Lam(2007)]{lam2007}
 LAM~W~K.
@@ -253,13 +263,13 @@ The Thirty-Fourth {AAAI} Conference on Artificial Intelligence, {AAAI} 2020,
 \newblock {AAAI} Press, 2020: 3073-3079.
 \newblock \url{https://aaai.org/ojs/index.php/AAAI/article/view/5702}.
 
-\bibitem[Gabbay et~al.(2008{\natexlab{a}})Gabbay, Schmidt, and
+\bibitem[Gabbay et~al.(2008)Gabbay, Schmidt, and
   Szalas]{DBLP:books/daglib/0023036}
 GABBAY~D~M, SCHMIDT~R~A, SZALAS~A.
 \newblock Studies in logic : Mathematical logic and foundations: volume~12\quad
   second-order quantifier elimination - foundations, computational aspects and
   applications\allowbreak[M/OL].
-\newblock College Publications, 2008{\natexlab{a}}.
+\newblock College Publications, 2008.
 \newblock \url{http://collegepublications.co.uk/logic/mlf/?00009}.
 
 \bibitem[Zhang et~al.(2009{\natexlab{a}})Zhang and Zhou]{Yan:AIJ:2009}
@@ -359,7 +369,7 @@ GON{\c{C}}ALVES~R, KNORR~M, LEITE~J.
 \newblock Forgetting in answer set programming--a survey\allowbreak[J].
 \newblock arXiv preprint arXiv:2107.07016, 2021.
 
-\bibitem[Lin(2003{\natexlab{a}})]{DBLP:journals/jair/Lin03}
+\bibitem[Lin(2003)]{DBLP:journals/jair/Lin03}
 LIN~F.
 \newblock Compiling causal theories to successor state axioms and strips-like
   systems\allowbreak[J/OL].
@@ -374,18 +384,12 @@ DIJKSTRA~E~W.
 \newblock Commun. {ACM}, 1975, 18\penalty0 (8):\penalty0 453-457.
 \newblock \url{https://doi.org/10.1145/360933.360975}.
 
-\bibitem[Lin(2003{\natexlab{b}})]{lin2003compiling}
-LIN~F.
-\newblock Compiling causal theories to successor state axioms and strips-like
-  systems\allowbreak[J].
-\newblock Journal of Artificial Intelligence Research, 2003, 19:\penalty0
-  279-314.
-
-\bibitem[Lin(2001{\natexlab{a}})]{DBLP:Lin:AIJ:2001}
+\bibitem[Lin(2001)]{DBLP:journals/ai/Lin01}
 LIN~F.
 \newblock On strongest necessary and weakest sufficient
-  conditions\allowbreak[J].
+  conditions\allowbreak[J/OL].
 \newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
+\newblock \url{https://doi.org/10.1016/S0004-3702(01)00070-4}.
 
 \bibitem[Doherty et~al.(2001)Doherty, Lukaszewicz, and
   Szalas]{DBLP:conf/ijcai/DohertyLS01}
@@ -402,42 +406,16 @@ MAKSIMOVA~L.
   property\allowbreak[J].
 \newblock Journal of Applied Non-Classical Logics, 1991, 1:\penalty0 73-76.
 
-\bibitem[D'Agostino et~al.(2006{\natexlab{a}})D'Agostino and
-  Lenzi]{DBLP:DAgostino:JAL:2006}
+\bibitem[D'Agostino et~al.(2006)D'Agostino and Lenzi]{d2006modal}
 D'AGOSTINO~G, LENZI~G.
-\newblock On modal mu-calculus with explicit interpolants\allowbreak[J].
+\newblock On modal $\mu$-calculus with explicit interpolants\allowbreak[J/OL].
 \newblock Journal of Applied Logic, 2006, 4\penalty0 (3):\penalty0 256-278.
-
-\bibitem[Lin(2001{\natexlab{b}})]{DBLP:journals/ai/Lin01}
-LIN~F.
-\newblock On strongest necessary and weakest sufficient
-  conditions\allowbreak[J/OL].
-\newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
-\newblock \url{https://doi.org/10.1016/S0004-3702(01)00070-4}.
-
-\bibitem[Katsuno et~al.(1991)Katsuno and Mendelzon]{katsuno91mendelzon}
-KATSUNO~H, MENDELZON~A~O.
-\newblock On the difference between updating a knowledge base and revising
-  it\allowbreak[C]//\allowbreak
-ALLEN~J~F, FIKES~R, SANDEWALL~E.
-\newblock Proceedings of the 2nd International Conference on Principles of
-  Knowledge Representation and Reasoning (KR'91). Cambridge, MA, USA, April
-  22-25, 1991.
-\newblock [S.l.]: Morgan Kaufmann, 1991: 387-394.
+\newblock \url{https://doi.org/10.1016/j.jal.2005.06.008}.
 
 \bibitem[陆钟万(1989)]{luzhongwan1989}
 陆钟万.
 \newblock 面向计算机科学的数理逻辑\allowbreak[M].
 \newblock 北京: 北京大学出版社, 1989.
-
-\bibitem[Gabbay et~al.(2008{\natexlab{b}})Gabbay, Schmidt, and
-  Szalas]{gabbay2008second}
-GABBAY~D~M, SCHMIDT~R~A, SZALAS~A.
-\newblock Studies in logic : Mathematical logic and foundations: volume~12\quad
-  second-order quantifier elimination - foundations, computational aspects and
-  applications\allowbreak[M/OL].
-\newblock College Publications, 2008{\natexlab{b}}.
-\newblock \url{http://collegepublications.co.uk/logic/mlf/?00009}.
 
 \bibitem[Kripke(1963)]{kripke1963semantical}
 KRIPKE~S~A.
@@ -462,13 +440,14 @@ CLARKE~E~M, EMERSON~E~A, SISTLA~A~P.
   244-263.
 \newblock \url{https://doi.org/10.1145/5397.5399}.
 
-\bibitem[Bolotov(1999)]{Bolotov:1999:JETAI}
-BOLOTOV~A.
+\bibitem[Bolotov et~al.(1999)Bolotov and
+  Fisher]{DBLP:journals/jetai/BolotovF99}
+BOLOTOV~A, FISHER~M.
 \newblock A clausal resolution method for {CTL} branching-time temporal
   logic\allowbreak[J/OL].
-\newblock Journal of Experimental $\&$ Theoretical Artificial Intelligence,
-  1999, 11\penalty0 (1):\penalty0 77-93.
-\newblock DOI: \doi{10.1080/095281399146625}.
+\newblock Journal of Experimental \& Theoretical Artificial Intelligence, 1999,
+  11\penalty0 (1):\penalty0 77-93.
+\newblock \url{https://doi.org/10.1080/095281399146625}.
 
 \bibitem[Zhang et~al.(2008{\natexlab{b}})Zhang, Hustadt, and
   Dixon]{zhang2008first}
@@ -494,7 +473,7 @@ ZHANG~L, HUSTADT~U, DIXON~C.
 
 \bibitem[Kozen(1983)]{DBLP:journals/cacm/Kozen83}
 KOZEN~D.
-\newblock Results on the propositional mu-calculus\allowbreak[J/OL].
+\newblock Results on the propositional $\mu$-calculus\allowbreak[J/OL].
 \newblock Theoretical Computer Science, 1983, 27:\penalty0 333-354.
 \newblock \url{https://doi.org/10.1016/0304-3975(82)90125-6}.
 
@@ -517,12 +496,6 @@ WIEDERMANN~J, H{\'{A}}JEK~P.
   Prague, Czech Republic, August 28 - September 1, 1995, Proceedings.
 \newblock 1995: 552-562.
 \newblock \url{https://doi.org/10.1007/3-540-60246-1\_160}.
-
-\bibitem[D'Agostino et~al.(2006{\natexlab{b}})D'Agostino and Lenzi]{d2006modal}
-D'AGOSTINO~G, LENZI~G.
-\newblock On modal mu-calculus with explicit interpolants\allowbreak[J/OL].
-\newblock Journal of Applied Logic, 2006, 4\penalty0 (3):\penalty0 256-278.
-\newblock \url{https://doi.org/10.1016/j.jal.2005.06.008}.
 
 \bibitem[Davis et~al.(1960)Davis and Putnam]{DBLP:journals/jacm/DavisP60}
 DAVIS~M, PUTNAM~H.
@@ -547,15 +520,6 @@ SHOSTAK~R~E.
   Proceedings.
 \newblock Springer, 1984: 113-127.
 \newblock \url{https://doi.org/10.1007/978-0-387-34768-4\_7}.
-
-\bibitem[Bolotov et~al.(1999)Bolotov and
-  Fisher]{DBLP:journals/jetai/BolotovF99}
-BOLOTOV~A, FISHER~M.
-\newblock A clausal resolution method for {CTL} branching-time temporal
-  logic\allowbreak[J/OL].
-\newblock Journal of Experimental \& Theoretical Artificial Intelligence, 1999,
-  11\penalty0 (1):\penalty0 77-93.
-\newblock \url{https://doi.org/10.1080/095281399146625}.
 
 \bibitem[Delgrande(2014)]{DBLP:conf/kr/Delgrande14}
 DELGRANDE~J~P.
@@ -710,7 +674,7 @@ MEIER~A, THOMAS~M, VOLLMER~H, et~al.
 \newblock International Journal of Foundations of Computer Science, 2009,
   20\penalty0 (05):\penalty0 901-918.
 
-\bibitem[Lang et~al.(2003{\natexlab{a}})Lang, Liberatore, and
+\bibitem[Lang et~al.(2003)Lang, Liberatore, and
   Marquis]{DBLP:journals/jair/LangLM03}
 LANG~J, LIBERATORE~P, MARQUIS~P.
 \newblock Propositional independence: Formula-variable independence and
@@ -749,22 +713,5 @@ WANG~Y.
 COMON~H.
 \newblock Tree automata techniques and applications\allowbreak[J].
 \newblock http://www. grappa. univ-lille3. fr/tata, 1997.
-
-\bibitem[Emerson et~al.(1999)Emerson and
-  Jutla]{DBLP:journals/siamcomp/EmersonJ99}
-EMERSON~E~A, JUTLA~C~S.
-\newblock The complexity of tree automata and logics of
-  programs\allowbreak[J/OL].
-\newblock {SIAM} J. Comput., 1999, 29\penalty0 (1):\penalty0 132-158.
-\newblock \url{https://doi.org/10.1137/S0097539793304741}.
-
-\bibitem[Lang et~al.(2003{\natexlab{b}})Lang, Liberatore, and
-  Marquis]{lang2003propositional}
-LANG~J, LIBERATORE~P, MARQUIS~P.
-\newblock Propositional independence: Formula-variable independence and
-  forgetting\allowbreak[J/OL].
-\newblock Journal of Artificial Intelligence Research, 2003, 18:\penalty0
-  391-443.
-\newblock \url{https://doi.org/10.1613/jair.1113}.
 
 \end{thebibliography}

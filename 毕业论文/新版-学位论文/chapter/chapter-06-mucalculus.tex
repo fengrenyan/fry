@@ -383,7 +383,7 @@ $\Muforget$的另一个属性是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子�
 	$\Rto$ 有$\Hm\lrto_V\Hm'$且 $\Hm'\models \ALL\NEXT\phi$，即$\Hm$和$\Hm'$之间存在$V$-互模拟关系$\Hb_V$\\
 	$\Rto$  $\Hm\lrto_V \Hm'$，且 对任意的$(s',s'')\in R'$有 $(\Hm', s'')\models \phi$  \\
 	$\Rto$ 对任意的$(s,s_1)\in R$，存在 $(s',s'_1)\in R'$使得$(s_1,s_1')\in \Hb_V$，且对任意的 $(s',s'')\in R'$有
-	$(\Hm',s'')\models \phi$\\
+	$(\Hm',s'')$ $\models \phi$\\
 	$\Rto$ 对任意的 $(s,s_1)\in R$，有 $(s_1,s_1')\in \Hb_V$和 $(\Hm',s'_1)\models\phi$\\
 	$\Rto$ 对任意的 $(s,s_1)\in R$， $(\Hm,s_1)\models\CTLforget(\phi,V)$\\
 	$\Rto$ $(\Hm,s)\models\ALL\NEXT\CTLforget(\phi,V)$，即$\Hm \models\ALL\NEXT\CTLforget(\phi,V)$。
@@ -515,7 +515,7 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$中遗忘原子命题可以使用命题�
 	因此，困难属性直接来源于~\cite{bradfield2018mu,comon1997tree}。
 \end{proof}
 
-与上面的几个推论问题类似，下面考虑这几个等价问题：Lang等人提出的“var-independence”和“var-equivalence”问题~\cite{lang2003propositional}，及“Var-match”问题:
+与上面的几个推论问题类似，下面考虑这几个等价问题：Lang等人提出的“var-independence”和“var-equivalence”问题~\cite{DBLP:journals/jair/LangLM03}，及“Var-match”问题:
 \begin{itemize}
 	\item[(i)] $[$Var-independence$]$ 公式$\varphi$是否独立于原子命题的集合$V$，即$\Muforget(\varphi,V) \equiv \varphi$，
 	\item[(ii)] $[$Var-match$]$  $\varphi$在$\psi$的原子命题上的约束与 $\psi$等价，即$\Muforget(\varphi, V) \equiv \psi$，

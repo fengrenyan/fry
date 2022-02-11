@@ -521,7 +521,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	令$(\Hm', s_0')$为$\varphi$的模型。由定理\ref{CF}可知$(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm', s_0')$，则：
 	$$(\Hm', s_0') \models \bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0).$$
 	
-	另一方面，假定$(\Hm', s_0')$为$\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$的模型。则存在$(\Hm, s_0)\in \Mod(\varphi)$使得 $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm,$ $s_0)$。由定理\ref{CF}可知$(\Hm, s_0) \lrto_{\emptyset} (\Hm', s_0')$，从而由定理\ref{thm:V-bisimulation:EQ}可知$(\Hm, s_0)$是 $\varphi$的一个模型。
+	另一方面，假定$(\Hm', s_0')$为$\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$的模型。则存在$(\Hm, s_0)\in \Mod(\varphi)$ 使得 $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm,$ $s_0)$。由定理\ref{CF}可知$(\Hm, s_0) \lrto_{\emptyset} (\Hm', s_0')$，从而由定理\ref{thm:V-bisimulation:EQ}可知$(\Hm, s_0)$是 $\varphi$的一个模型。
 \end{proof}
 
 这一结论表明：任意的$\CTL$公式都与其模型的特征公式的吸取逻辑等价。这对遗忘理论的封闭性提供了重要的理论支撑，也即是从公式里遗忘掉原子命题集合$V$中的元素只需找到与给定公式的模型$V$-互模拟的那些模型就能确定遗忘的结果。形式化地，对于给定的公式$\varphi$和原子命题集合$V$，从$\varphi$中遗忘掉$V$中的元素得到的结果为：
@@ -571,7 +571,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	由于命题遗忘是$\CTL$遗忘的特殊情形，因此该问题的困难属性直接来源于\cite{DBLP:journals/jair/LangLM03}。
 
 (iii) 成员属性. 假定 $\CTLforget(\varphi, V) \not \models \CTLforget(\psi, V)$。则存在一个初始结构 $(\Hm,s) 
-\models \CTLforget(\varphi, V)$且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$使得 $(\Hm_1, s_1) \models \varphi$ 但是对其他$(\Hm, s) \lrto_V (\Hm_2,s_2)$ 使得 $(\Hm_2, s_2) \not \models \psi$。
+\models \CTLforget(\varphi, V)$ 且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$使得 $(\Hm_1, s_1) \models \varphi$ 但是对其他$(\Hm, s) \lrto_V (\Hm_2,s_2)$ 使得 $(\Hm_2, s_2) \not \models \psi$。
 由命题\ref{modelChecking}的证明可知，$(\Hm,s)$和 $(\Hm_1,s_1)$ 能在$|\varphi|$、$|\psi|$和$|V|$的多项式时间内完成。 
 显然，猜使得$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 成立的大小为$|\varphi|$多项式的 $(\Hm,s)$和 $(\Hm_1,s_1)$ 可以在多项式时间内完成，且 对任意的 $(\Hm, s) \lrto_V (\Hm_2,s_2)$，检查 $(\Hm_2,s_2) \not \models \psi$可以在 $|\psi|$和 $|\Hm_2|$的多项式时间内完成。
 因此，该问题是 $\Pi_2^{\textsc{P}}$的。

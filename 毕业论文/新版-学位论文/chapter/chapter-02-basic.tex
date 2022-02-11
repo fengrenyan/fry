@@ -93,7 +93,7 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 值得注意的是，命题逻辑的语义也可定义在“解释（interpretation）”上。一个\emph{解释}$I$是$\Ha$的子集。除了对原子命题$p\in \Ha$，$I$对公式的解释如真假赋值一样。在解释原子命题$p\in \Ha$上，$p^I$为真当且仅当$p\in I$。模型和可满足的定义与真假赋值的类似。
 
 模态逻辑是经典逻辑的扩充，它是经典逻辑中引进“必然”和“可能”这两种模态词得到的。如上所述，命题的真假值只有两种，命题是真的（1）或是假的（0）。而在模态逻辑中，把命题
-区分为必然真的命题和并非必然真的命题，把假命题区分为必然假的和并非必然假的命题。对于任何命题$\varphi$，可以有两种模态命题：“$\varphi$是必然的”和“$\varphi$是可能的”。值得注意的是，时序逻辑也是模态逻辑的一种\cite{gabbay2008second}。尽管如此，本文在说模态逻辑的时候通常指不带有时序操作符的情况，说时序逻辑时指带有时序操作符的情况。
+区分为必然真的命题和并非必然真的命题，把假命题区分为必然假的和并非必然假的命题。对于任何命题$\varphi$，可以有两种模态命题：“$\varphi$是必然的”和“$\varphi$是可能的”。值得注意的是，时序逻辑也是模态逻辑的一种\cite{DBLP:books/daglib/0023036}。尽管如此，本文在说模态逻辑的时候通常指不带有时序操作符的情况，说时序逻辑时指带有时序操作符的情况。
 
 本文所说的模态逻辑为命题单模态逻辑（propositional mono-modal logic）。模态公式的集合${\cal F}^{\Hm}$是包含“$\top$”和“$\bot$”的满足如下条件的最小集：
 \begin{itemize}
@@ -249,7 +249,7 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 %	\]
 %\end{proposition}
 
-与Browne和Bolotov等人的工作类似，本文只将初始$\Ind$-结构作为模型的候选项\cite{browne1988characterizing,Bolotov:1999:JETAI}。换句话说，对于给定的$\Ind$-结构$(\Hm,s)$和带索引的$\CTL$公式$\varphi$，如果$(\Hm,s)\models \varphi$且$s = s_0$，则称$(\Hm,s)$为公式$\varphi$的一个\emph{模型}。更清楚地说，对于给定的初始$\Ind$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称$\cal K$是$\varphi$的一个模型。
+与Browne和Bolotov等人的工作类似，本文只将初始$\Ind$-结构作为模型的候选项\cite{browne1988characterizing,DBLP:journals/jetai/BolotovF99}。换句话说，对于给定的$\Ind$-结构$(\Hm,s)$和带索引的$\CTL$公式$\varphi$，如果$(\Hm,s)\models \varphi$且$s = s_0$，则称$(\Hm,s)$为公式$\varphi$的一个\emph{模型}。更清楚地说，对于给定的初始$\Ind$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称$\cal K$是$\varphi$的一个模型。
 
 
 为了符号的统一，这里列出文中出现的一些记号的含义。给定公式$\varphi$，公式的所有模型构成的集合记为$\Mod(\varphi)$。此时就很容易定义公式的可满足性，即：如果$\Mod(\varphi)\not = \emptyset$，则称$\varphi$是\emph{可满足}的。给定两个公式$\varphi_1$和$\varphi_2$，若$\Mod(\varphi_1)\subseteq \Mod(\varphi_2)$，则称$\varphi_1$\emph{逻辑地蕴涵}$\varphi_2$，记为$\varphi_1\models \varphi_2$。特别地，当$\varphi_1\models \varphi_2$且$\varphi_2\models \varphi_1$时，即$\Mod(\varphi_1)= \Mod(\varphi_2)$，则称$\varphi_1$和$\varphi_2$为\emph{逻辑等值公式}（简称为\emph{等值公式}），记作$\varphi_1 \equiv \varphi_2$。
@@ -926,7 +926,7 @@ $$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n,$$
 归结方法取决于子句的形式，子句的形式决定了归结规则的复杂性。经典命题逻辑中的子句形式比较单一，就只有一种——文字的吸取，因此归结规则就比较简单，即：
 $$\frac{C_1 \vee p \qquad C_2 \vee \neg p}{C_1 \vee C_2},$$
 其中$C_1$和$C_2$是子句，$p$是原子命题。在这种情况下，基于归结的方法就如定义~\ref{def:resforgetting}那样简单。
-在一阶逻辑中，将公式转换为子句形式的过程比较复杂，而归结规则也相对复杂一些。但是在一阶情形下归结，归结系统R~\cite{gabbay2008second}是可靠的且归结反驳是完备的。
+在一阶逻辑中，将公式转换为子句形式的过程比较复杂，而归结规则也相对复杂一些。但是在一阶情形下归结，归结系统R~\cite{DBLP:books/daglib/0023036}是可靠的且归结反驳是完备的。
 
 
 在上一节中已经说明任意的S5公式能够转化成模态子句$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n$的合取，因此S5下的归结系统RS5~\cite{DBLP:journals/tcs/EnjalbertC89}如下：
