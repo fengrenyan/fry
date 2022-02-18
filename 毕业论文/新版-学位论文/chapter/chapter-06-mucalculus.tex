@@ -32,7 +32,7 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 	给定一个$\mu$-句子$\varphi$和集合$V\subseteq \Var(\varphi)$，$\varphi$关于$V$的均匀插值是满足下列条件的$\mu$-句子$\theta$：
 	\begin{itemize}
 		\item $\varphi \models \theta$；
-		\item 对任意的公式$\psi$，若$\Var(\varphi) \cap \Var(\psi)\subseteq V$，则$\varphi \models \psi$；
+		\item 对任意的公式$\psi$，若$\Var(\varphi) \cap \Var(\psi)\subseteq V$且$\varphi \models \psi$，则$\theta \models \psi$；
 		\item $\Var(\theta) \subseteq V$。 
 	\end{itemize}
 \end{definition}
