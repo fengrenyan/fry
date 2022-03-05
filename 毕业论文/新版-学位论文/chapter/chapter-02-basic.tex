@@ -9,25 +9,22 @@
 %{\em 围绕差分隐私应用中存在的隐私与数据可用性之间的权衡问题，本文以隐私信息度量为基础，试图从均衡优化的角度提供一种解决方案。为了更好的阐述后续的研究内容，本章首先介绍本文工作所需的基本模型与定义，包括隐私定义、差分隐私模型的形式化定义、Shannon信息论的基本通信模型及信息熵的概念。随后，介绍信息论、优化理论与对策博弈的基础知识，并以此为基础介绍了差分隐私均衡优化主要研究问题的描述及定义。本章阐述的内容主要为后续章节的具体研究奠定基础。}
 
 \section{反应式系统}
-随着应用程序在各个领域的应用，对其需求已经发生了重大变化，继而引起模式变化。
-以前，一个大型的应用程序通常需要数十台服务器，如此高的代价换来的效果和维护成本不成正比：秒级的响应时间和数小时的维护时间。
-当前，移动和云端技术的成熟使应用程序不拘泥于以前的方式，被部署到了移动设备和具有多核心处理器的云端集群上。
-用户对应用程序的响应时间要求从秒级变到毫秒级，且具有100\%的成功率， 而数据量也从之前的GB级扩展到现在的PB级。
-原有的软件架构已经无法满足今天的需求。
+{\em 反应式系统}是一种不终止的、与环境有着持续不断交互的系统。其种类繁多，如微处理器（microprocessor）、计算机操作系统（computer operating systems），航空交通管制系统（air traffic control systems）、车载电子设备（on-board avionics）以及其他嵌入式系统。
 
-要满足现有的要求，应用程序需要剧本以下特质：即时响应性（Responsive）、回弹性（Resilient）、弹性（Elastic）以及消息驱动（Message Driven）~\footnote{https://www.reactivemanifesto.org/zh-CN}。
-反应式系统是一种与环境有着持续不断交互的系统，它满足上述的几种要求，且从传统的静态模式逐步向动态、开放、自适应、服务化的软件系统演化~\cite{jian2012}。
+保证这些系统的正确性至关重要，而系统设计正变成验证系统的同义词。
 
-反应式系统的应用非常广泛：上至航空电子等安全攸关的领域，下至生活息息相关的汽车电子。
-安全攸关反应式系统的核心要求是：必须在指定时间期限内完成对外部事件的检测和目标事件的响应,否则会产生灾难性的后果~\cite{wangjuan2019}。
-为了确保反应式系统的正确性和实时性，不同的方法被提出，包括：目标驱动的运行时需求建模框架~\cite{jian2012}、基于图模型的实时规则调度方法（graph-based real-time rule scheduling,简称GBRRS）~\cite{wangjuan2019}和SPARDL~\cite{wangzhen2012}。
-%这些应用的核心为嵌入式周期控制系统（一种反应式系统），该系统的行为不仅与自身的定义和状态有关，还与控制软件所处的环境有关。
-%\begin{itemize}
-%	\item 即时响应性：只要有可能， 系统就会及时地做出响应。
-%\end{itemize}
+``{\em The design of modern information processing systems like digital circuits or 
+	protocols is becoming more and more difficult. A large part of the design 
+	costs and time (about 70\%) is currently spent on methods that try to guarantee the absence of design errors. For this reason, designing systems is now 
+	more and more a synonym for verifying systems.}"  
 
-本文从系统修改的角度探索
+\hfill   --Klaus Schneider
 
+模型检测是理论计算机科学中最为成功的技术之一，也是反应式系统验证的一种重要手段，而时序逻辑是其规范描述语言~\cite{DBLP:books/sp/trends86/Pnueli86}。
+在模型检查中，反应式系统通常用Kripe结构表示~\cite{DBLP:journals/fcsc/ZhuWXX10,DBLP:series/txtcs/Schneider04}。
+本文主要探讨其规范描述语言和Kripke结构，因而如何将反应式系统转换为Kripke结构的方法可以参见文章~\cite{schneider2000verified,DBLP:conf/acsd/Schneider01,DBLP:conf/tphol/Schneider02}.
+
+下文将详细描述用于描述反应式系统的Kripke结构和描反应式系统规范的时序逻辑语言，本文主要指CTL和$\mu$-演算。
 
 \section{Kripke结构}
 Kripke结构作为一种表示转换系统（transition system）的数学模型，在理论计算机科学领域有着广泛的应用，尤其是作为解释时序逻辑公式的模型结构，本节将对Kripke结构做详细描述。
@@ -162,6 +159,8 @@ $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^
 如果$s$为$\Hm$上的初始状态，则称${\cal K}$为{\em 初始 ($\Ind$-)结构}。
 上面的关于(索引)路径的概念对于这些结构也可相似地定义。
  
+ 
+
 
 
 
@@ -582,6 +581,8 @@ $\mu$-演算是模态逻辑的扩展，本文讨论Kozen提出的命题$\mu$-演
 一个没有自由变元出现的公式称为\emph{$\mu$-句子}（sentence）。\emph{在本文中所谈到的公式指的是取名恰当的、受保护的$\mu$-句子}。
 
 与$\CTL$公式类似，$\mu$-演算公式的语义定义在Kripke结构上。但是，与$\CTL$不同的是，这里不要求$\Hm=(S,R,L,r)$中的$r$为初始状态，且这里的$r$称为\emph{根}（root），$R$为$S$上的任意二元关系，但仍然称$\Hm=(S,R,L,r)$为初始Kripke结构。
+
+ \textbf{注意：}虽然这里的Kripke结构不要求其二元关系是完全的，但是这里的情况更加一般化，其结论也能推广到完全的二元关系的情形。
 \begin{definition}
 	给定$\mu$-演算公式$\varphi$、初始Kripke结构$\Hm$和一个赋值函数$v: {\cal V} \rto 2^S$。公式在$\Hm$和$v$上的解释是$S$的一个子集$\left\| \varphi\right\|_v^{\Hm}$（当$\Hm$在上下文中是显然的，则可以省去上标）：
 	\begin{align*}
@@ -938,7 +939,7 @@ $$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n,$$
 
 
 
-当然，模态一阶逻辑S5中的遗忘也得到了研究~\cite{Yongmei:IJCAI:2011}，由于本文只考虑命题情形下时序逻辑的遗忘，就不再赘述。此外，Fang等人也讨论了关于多模态（multi-modal）$K_n$、 $D_n$、 $T_n$、$K45_n$、 $KD45_n$情形下遗忘的存在性~\cite{DBLP:journals/ai/FangLD19}——这些逻辑里的遗忘总是存在的，其中$n$为智能体的个数。
+
 
 \subsection{遗忘的计算方法}
 在第~\ref{chapter:sub:proforgetting}和\ref{chapter:sub:s5forgetting}小节中详细介绍了经典逻辑和模态逻辑S5下遗忘的定义和一些直接的计算方法。

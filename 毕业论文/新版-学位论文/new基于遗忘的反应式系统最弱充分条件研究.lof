@@ -3,30 +3,30 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces 汽车制造企业模型\relax }}{3}{figure.caption.7}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces 本文的章节内容组织结构图\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces 本文的章节内容组织结构图\relax }}{11}{figure.caption.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces $\textsc {k}$-结构之间的$V$-互模拟关系\relax }}{41}{figure.caption.12}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces $\textsc {k}$-结构之间的$V$-互模拟关系\relax }}{42}{figure.caption.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces 基于归结的遗忘的主要流程图\relax }}{56}{figure.caption.13}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 基于归结的遗忘的主要流程图\relax }}{57}{figure.caption.13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces 初始结构$\mathcal {K}_2$（源于图\ref {Fig:chapter04:v1uv2}）及其计算树\relax }}{75}{figure.caption.14}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 初始结构$\mathcal {K}_2$（源于图\ref {Fig:chapter04:v1uv2}）及其计算树\relax }}{76}{figure.caption.14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces 两个 $\{ch\}$-互模拟的Kripke结构\relax }}{86}{figure.caption.15}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces 两个 $\{ch\}$-互模拟的Kripke结构\relax }}{87}{figure.caption.15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces $\varphi _i=12$时的计算结果\relax }}{106}{figure.caption.17}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{106}{figure.caption.17}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{106}{figure.caption.17}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces $\varphi _i=16$时的计算结果\relax }}{106}{figure.caption.18}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{106}{figure.caption.18}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{106}{figure.caption.18}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces 计算3-CNF公式的SNC所需的CPU时间情况\relax }}{107}{figure.caption.19}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{107}{figure.caption.19}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$|V|=25$时所使用CPU时间箱线图 }}}{107}{figure.caption.19}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces $\textrm {CTL}$下计算SNC的性能情况.\relax }}{108}{figure.caption.20}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{108}{figure.caption.20}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SNC存在的占比(\%)}}}{108}{figure.caption.20}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces $\varphi _i=12$时的计算结果\relax }}{107}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{107}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{107}{figure.caption.17}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces $\varphi _i=16$时的计算结果\relax }}{107}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{107}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{107}{figure.caption.18}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces 计算3-CNF公式的SNC所需的CPU时间情况\relax }}{108}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{108}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$|V|=25$时所使用CPU时间箱线图 }}}{108}{figure.caption.19}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces $\textrm {CTL}$下计算SNC的性能情况.\relax }}{109}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{109}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {SNC存在的占比(\%)}}}{109}{figure.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
