@@ -106,9 +106,10 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 		\right.$
 	\end{itemize}
 \end{definition}
-对于任意的命题公式$\varphi$和真假赋值$v$，当$\varphi^v=\top$时，称$v$是公式$\varphi$的一个\emph{模型}，也可以记为$v \models \varphi$，读作$v$\emph{满足}$\varphi$。一般地，当存在一个真假赋值$v$使得$v\models \varphi$，则称公式$\varphi$是\emph{可满足的}。如果$\varphi$是可满足的，且$\neg \varphi$是不可满足的，则称$\varphi$是\emph{有效的}。
+对于任意的命题公式$\varphi$和真假赋值$v$，当$\varphi^v=\top$时，称$v$是公式$\varphi$的一个\emph{模型}，也可以记为$v \models \varphi$，读作$v$\emph{满足}$\varphi$。一般地，当存在一个真假赋值$v$使得$v\models \varphi$，则称公式$\varphi$是\emph{可满足的}。如果$\varphi$是可满足的，且$\neg \varphi$是不可满足的，则称$\varphi$是\emph{有效的}。可满足问题（SAT）是一个NP-完全问题，当公式可满足时关注如何验证和求解极小模型\cite{DBLP:conf/ijcai/Ben-Eliyahu-Zohary16,DBLP:conf/lpnmr/Ben-Eliyahu-Zohary17,zhangli2021}，而当公式不可满足时，极大可满足和极小不可满足就成为研究的重点\cite{DBLP:conf/ijcai/LeiC18,DBLP:conf/aaai/LeiC20}。
 
-值得注意的是，命题逻辑的语义也可定义在“解释（interpretation）”上。一个\emph{解释}$I$是$\Ha$的子集。除了对原子命题$p\in \Ha$，$I$对公式的解释如真假赋值一样。在解释原子命题$p\in \Ha$上，$p^I$为真当且仅当$p\in I$。模型和可满足的定义与真假赋值的类似。
+值得注意的是，一个真假赋值也可以看作是原子命题的集合$I$，其表示出现在$I$中的原子命题为真，反之为假。
+%值得注意的是，命题逻辑的语义也可定义在“解释（interpretation）”上。一个\emph{解释}$I$是$\Ha$的子集。除了对原子命题$p\in \Ha$，$I$对公式的解释如真假赋值一样。在解释原子命题$p\in \Ha$上，$p^I$为真当且仅当$p\in I$。模型和可满足的定义与真假赋值的类似。
 
 模态逻辑是经典逻辑的扩充，它是经典逻辑中引进“必然”和“可能”这两种模态词得到的。如上所述，命题的真假值只有两种，命题是真的（1）或是假的（0）。而在模态逻辑中，把命题
 区分为必然真的命题和并非必然真的命题，把假命题区分为必然假的和并非必然假的命题。对于任何命题$\varphi$，可以有两种模态命题：“$\varphi$是必然的”和“$\varphi$是可能的”。值得注意的是，时序逻辑也是模态逻辑的一种\cite{DBLP:books/daglib/0023036}。尽管如此，本文在说模态逻辑的时候通常指不带有时序操作符的情况，说时序逻辑时指带有时序操作符的情况。

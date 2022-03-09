@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  5 MAR 2022 21:59
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  6 MAR 2022 10:50
 entering extended mode
 **new基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -2206,8 +2206,52 @@ Package natbib Warning: Citation `zhujia2020' on page 7 undefined on input line
  174.
 
 
+Package natbib Warning: Citation `DBLP:journals/tkde/LiberatoreS98' on page 7 u
+ndefined on input line 178.
+
+
+Package natbib Warning: Citation `DBLP:journals/logcom/KoniecznyP02' on page 7 
+undefined on input line 178.
+
+
+Package natbib Warning: Citation `DBLP:journals/jair/Maynard-ZhangL03' on page 
+7 undefined on input line 178.
+
+
+Package natbib Warning: Citation `konieczny2004da2' on page 7 undefined on inpu
+t line 178.
+
+
+Package natbib Warning: Citation `DBLP:journals/ai/EveraereKM10' on page 7 unde
+fined on input line 178.
+
+
 Package natbib Warning: Citation `xudai2011' on page 7 undefined on input line 
 178.
+
+
+Package natbib Warning: Citation `DBLP:journals/jphil/Sandu93' on page 7 undefi
+ned on input line 179.
+
+
+Package natbib Warning: Citation `DBLP:journals/igpl/Sandu97' on page 7 undefin
+ed on input line 179.
+
+
+Package natbib Warning: Citation `DBLP:journals/igpl/Vaananen02' on page 7 unde
+fined on input line 179.
+
+
+Package natbib Warning: Citation `DBLP:journals/synthese/Sevenster06' on page 7
+ undefined on input line 179.
+
+
+Package natbib Warning: Citation `bibid' on page 7 undefined on input line 179.
+
+
+
+Package natbib Warning: Citation `xudai2011' on page 7 undefined on input line 
+179.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2229,12 +2273,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9] <figures/chapter01/zuzhi.png, id=892, 955.8912pt x 492.8814pt>
-File: figures/chapter01/zuzhi.png Graphic file (type png)
+[9]
+Underfull \vbox (badness 1917) has occurred while \output is active []
 
-<use figures/chapter01/zuzhi.png>
-Package pdftex.def Info: figures/chapter01/zuzhi.png used on input line 281.
-(pdftex.def)             Requested size: 317.0764pt x 163.49368pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2242,7 +2283,13 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10]
+[10] <figures/chapter01/zuzhi.png, id=897, 955.8912pt x 492.8814pt>
+File: figures/chapter01/zuzhi.png Graphic file (type png)
+
+<use figures/chapter01/zuzhi.png>
+Package pdftex.def Info: figures/chapter01/zuzhi.png used on input line 283.
+(pdftex.def)             Requested size: 317.0764pt x 163.49368pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -2323,6 +2370,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [14]
 
+Package natbib Warning: Citation `DBLP:conf/ijcai/LeiC18' on page 15 undefined 
+on input line 109.
+
+
+Package natbib Warning: Citation `DBLP:conf/aaai/LeiC20' on page 15 undefined o
+n input line 109.
+
+
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
@@ -2336,7 +2391,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [16]
-Overfull \hbox (17.31078pt too wide) in paragraph at lines 156--161
+Overfull \hbox (17.31078pt too wide) in paragraph at lines 157--162
 \OT1/ptm/m/n/12.05 Kripke\C70/rm/m/n/12.05/7e � \C70/rm/m/n/12.05/67 �$\OMS/ztm
 cm/m/n/12.05 M$\C70/rm/m/n/12.05/4e - \C70/rm/m/n/12.05/54  \C70/rm/m/n/12.05/
 65 � \C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05/63 �$\OT1/ztmcm/m/n/12.05 [[]]$\C
@@ -2364,7 +2419,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [18]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12.05> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 248.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 249.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2373,7 +2428,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [19]
-Overfull \hbox (15.76814pt too wide) in paragraph at lines 260--262
+Overfull \hbox (15.76814pt too wide) in paragraph at lines 261--263
 []$\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 M\OML/ztmcm/m/it/12.05 ; s\OT1/zt
 mcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 j[]\OT1/ztmcm/m/n/12.05 = [][](\OML/ztmcm/
 m/it/12.05  [][] []\OT1/ztmcm/m/n/12.05 )$ \C70/rm/m/it/12.05/5f S \C70/rm/m/it
@@ -2401,7 +2456,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [21]
-Overfull \hbox (24.01031pt too wide) in paragraph at lines 352--353
+Overfull \hbox (24.01031pt too wide) in paragraph at lines 353--354
 []\C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05/4e � \C70/rm/m/n/12.05/7c { \C70/rm/
 m/n/12.05/4f < \C70/rm/m/n/12.05/57 0 \C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.05/
 66  \C70/rm/m/n/12.05/5b �$\OML/ztmcm/m/it/12.05 '[]$\C70/rm/m/n/12.05/76 � \C
@@ -2419,16 +2474,16 @@ m/n/12.05 ) \OMS/ztmcm/m/n/12.05 j[]\OT1/ztmcm/m/n/12.05 =$
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 358.
+(hyperref)                removing `math shift' on input line 359.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 358.
+(hyperref)                removing `math shift' on input line 359.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 387.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 388.
 
-Overfull \hbox (1.61412pt too wide) in paragraph at lines 387--407
+Overfull \hbox (1.61412pt too wide) in paragraph at lines 388--408
  [][] 
  []
 
@@ -2461,15 +2516,15 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 [24]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 554.
+(hyperref)                removing `math shift' on input line 555.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 554.
+(hyperref)                removing `\mu' on input line 555.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 554.
+(hyperref)                removing `math shift' on input line 555.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2485,7 +2540,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [26]
-Overfull \hbox (17.33551pt too wide) in paragraph at lines 635--636
+Overfull \hbox (17.33551pt too wide) in paragraph at lines 636--637
 []$\OML/ztmcm/m/it/12.05 []\OT1/ztmcm/m/n/12.05 ([]) = [] \OMS/ztmcm/m/n/12.05
  \ [] \ [] \ []$ $\OT1/ztmcm/m/n/12.05 = \OMS/ztmcm/m/n/12.05 f\OML/ztmcm/m/it/
 12.05 s \OMS/ztmcm/m/n/12.05 j \OML/ztmcm/m/it/12.05 s \OMS/ztmcm/m/n/12.05 2 \
@@ -2503,7 +2558,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [27]
-Overfull \hbox (17.33551pt too wide) in paragraph at lines 641--642
+Overfull \hbox (17.33551pt too wide) in paragraph at lines 642--643
 []$\OML/ztmcm/m/it/12.05 []\OT1/ztmcm/m/n/12.05 ([]) = [] \OMS/ztmcm/m/n/12.05
  \ [] \ [] \ []$ $\OT1/ztmcm/m/n/12.05 = \OMS/ztmcm/m/n/12.05 f\OML/ztmcm/m/it/
 12.05 s \OMS/ztmcm/m/n/12.05 j \OML/ztmcm/m/it/12.05 s \OMS/ztmcm/m/n/12.05 2 \
@@ -2516,15 +2571,15 @@ cm/m/n/12.05 9\OML/ztmcm/m/it/12.05 t:\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 650.
+(hyperref)                removing `math shift' on input line 651.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 650.
+(hyperref)                removing `\mu' on input line 651.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 650.
+(hyperref)                removing `math shift' on input line 651.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2535,11 +2590,11 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 [28]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 701.
+(hyperref)                removing `math shift' on input line 702.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 701.
+(hyperref)                removing `math shift' on input line 702.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2569,7 +2624,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [32]
-Overfull \hbox (19.57564pt too wide) in paragraph at lines 822--824
+Overfull \hbox (19.57564pt too wide) in paragraph at lines 823--825
 []\C70/rm/m/n/12.05/7e � \C70/rm/m/n/12.05/5b � � \C70/rm/m/n/12.05/4f � \C70/r
 m/m/n/12.05/53  |\C70/rm/m/n/12.05/ff |\OT1/ptm/m/n/12.05 ground atom|\C70/rm
 /m/n/12.05/ff 	| \C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05/5b P$\OML/ztmcm/m/it/
@@ -2583,7 +2638,7 @@ S/ztmcm/m/n/12.05 []$
  []
 
 
-Overfull \hbox (9.82394pt too wide) in paragraph at lines 849--849
+Overfull \hbox (9.82394pt too wide) in paragraph at lines 850--850
 [] 
  []
 
@@ -2615,7 +2670,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [36]
-Overfull \hbox (2.98793pt too wide) in paragraph at lines 983--984
+Overfull \hbox (2.98793pt too wide) in paragraph at lines 984--985
 []\C70/rm/m/n/12.05/4e �$\OML/ztmcm/m/it/12.05  \OT1/ztmcm/m/n/12.05 = \OML/zt
 mcm/m/it/12.05 C[] \OMS/ztmcm/m/n/12.05 _ []\OML/ztmcm/m/it/12.05 C[] \OMS/ztmc
 m/m/n/12.05 _ [] _ []\OML/ztmcm/m/it/12.05 C[] \OMS/ztmcm/m/n/12.05 _ []\OML/zt
@@ -2637,14 +2692,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [37]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 992.
+put line 993.
 
-Underfull \hbox (badness 10000) in paragraph at lines 997--997
+Underfull \hbox (badness 10000) in paragraph at lines 998--998
 []|$\OT1/ztmcm/m/n/10.54  \OML/ztmcm/m/it/10.54 ; V$|\C70/rm/m/n/10.54/ff |
  []
 
 
-Overfull \hbox (41.34224pt too wide) in paragraph at lines 1001--1001
+Overfull \hbox (41.34224pt too wide) in paragraph at lines 1002--1002
 []|$[]\OT1/ztmcm/m/n/10.54 ( \OML/ztmcm/m/it/10.54 ; V\OT1/ztmcm/m/n/10.54 )$|\
 C70/rm/m/n/10.54/ff |
  []
@@ -2656,7 +2711,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [38]
-Overfull \hbox (7.04678pt too wide) in paragraph at lines 1057--1057
+Overfull \hbox (7.04678pt too wide) in paragraph at lines 1058--1058
 []|$\OT1/ztmcm/m/n/10.54  \OML/ztmcm/m/it/10.54 ; V; q$|\C70/rm/m/n/10.54/ff |
 
  []
@@ -4167,13 +4222,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37529 strings out of 495354
- 628157 string characters out of 3183188
- 782967 words of memory out of 3000000
- 38106 multiletter control sequences out of 15000+200000
+ 37556 strings out of 495354
+ 628696 string characters out of 3183188
+ 783069 words of memory out of 3000000
+ 38126 multiletter control sequences out of 15000+200000
  279800 words of font info for 815 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,2632b,2550s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,2632b,2548s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -4342,7 +4397,7 @@ n/Ctex/MiKTeX/fonts/type1/hoekwater/rsfs/rsfs10.pfb><D:/Application/Ctex/MiKTeX
 e1/urw/times/utmr8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmri
 8a.pfb>
 Output written on new基于遗忘的反应式系统最弱充分条件研究.pdf
- (135 pages, 2611877 bytes).
+ (135 pages, 2614144 bytes).
 PDF statistics:
  2929 PDF objects out of 2984 (max. 8388607)
  507 named destinations out of 1000 (max. 500000)
