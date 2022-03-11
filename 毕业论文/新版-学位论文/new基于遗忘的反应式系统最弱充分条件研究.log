@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  6 MAR 2022 10:50
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  11 MAR 2022 16:19
 entering extended mode
 **new基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -2091,13 +2091,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.32 
-      [1
+l.32 形
+        式化验证有两种主要的验证方法：自动定理证明（Au...
+[1
 
 
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2109,20 +2110,19 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.50 		\item
-             $V=\{d,s, se, sp\}$为该工厂所需要考虑的原子命题�...
-[2]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 50.
+l.47 
+      [2]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 56.
  (D:\Application\Ctex\MiKTeX\tex\latex\psnfss\omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12.05> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
 
-<NnewCar.png, id=757, 181.67876pt x 169.63374pt>
+<NnewCar.png, id=754, 181.67876pt x 169.63374pt>
 File: NnewCar.png Graphic file (type png)
  <use NnewCar.png>
-Package pdftex.def Info: NnewCar.png used on input line 57.
+Package pdftex.def Info: NnewCar.png used on input line 63.
 (pdftex.def)             Requested size: 113.81102pt x 106.26671pt.
 
 
@@ -2134,18 +2134,6 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 [3 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/NnewCa
 r.png>]
 
-Package natbib Warning: Citation `jian2012' on page 4 undefined on input line 9
-7.
-
-
-Package natbib Warning: Citation `DBLP:conf/nato/HarelP84' on page 4 undefined 
-on input line 98.
-
-
-Package natbib Warning: Citation `DBLP:books/sp/trends86/Pnueli86' on page 4 un
-defined on input line 98.
-
-
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
@@ -2153,28 +2141,40 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [4]
 
+Package natbib Warning: Citation `jian2012' on page 5 undefined on input line 1
+03.
+
+
+Package natbib Warning: Citation `DBLP:conf/nato/HarelP84' on page 5 undefined 
+on input line 104.
+
+
+Package natbib Warning: Citation `DBLP:books/sp/trends86/Pnueli86' on page 5 un
+defined on input line 104.
+
+
 Package natbib Warning: Citation `wangjuan2019' on page 5 undefined on input li
-ne 101.
+ne 107.
 
 
 Package natbib Warning: Citation `clarke1996model' on page 5 undefined on input
- line 102.
+ line 108.
 
 
 Package natbib Warning: Citation `jian2012' on page 5 undefined on input line 1
-02.
+08.
 
 
 Package natbib Warning: Citation `wangjuan2019' on page 5 undefined on input li
-ne 102.
+ne 108.
 
 
 Package natbib Warning: Citation `wangzhen2012' on page 5 undefined on input li
-ne 102.
+ne 108.
 
 
 Package natbib Warning: Citation `lishu2004' on page 5 undefined on input line 
-102.
+108.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2184,11 +2184,11 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [5]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <12.05> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 139.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 145.
 
 
 Package natbib Warning: Citation `wenximing2019' on page 6 undefined on input l
-ine 155.
+ine 161.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2199,59 +2199,59 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 [6]
 
 Package natbib Warning: Citation `wangwen2021' on page 7 undefined on input lin
-e 174.
+e 180.
 
 
 Package natbib Warning: Citation `zhujia2020' on page 7 undefined on input line
- 174.
+ 180.
 
 
 Package natbib Warning: Citation `DBLP:journals/tkde/LiberatoreS98' on page 7 u
-ndefined on input line 178.
+ndefined on input line 184.
 
 
 Package natbib Warning: Citation `DBLP:journals/logcom/KoniecznyP02' on page 7 
-undefined on input line 178.
+undefined on input line 184.
 
 
 Package natbib Warning: Citation `DBLP:journals/jair/Maynard-ZhangL03' on page 
-7 undefined on input line 178.
+7 undefined on input line 184.
 
 
 Package natbib Warning: Citation `konieczny2004da2' on page 7 undefined on inpu
-t line 178.
+t line 184.
 
 
 Package natbib Warning: Citation `DBLP:journals/ai/EveraereKM10' on page 7 unde
-fined on input line 178.
+fined on input line 184.
 
 
 Package natbib Warning: Citation `xudai2011' on page 7 undefined on input line 
-178.
+184.
 
 
 Package natbib Warning: Citation `DBLP:journals/jphil/Sandu93' on page 7 undefi
-ned on input line 179.
+ned on input line 185.
 
 
 Package natbib Warning: Citation `DBLP:journals/igpl/Sandu97' on page 7 undefin
-ed on input line 179.
+ed on input line 185.
 
 
 Package natbib Warning: Citation `DBLP:journals/igpl/Vaananen02' on page 7 unde
-fined on input line 179.
+fined on input line 185.
 
 
 Package natbib Warning: Citation `DBLP:journals/synthese/Sevenster06' on page 7
- undefined on input line 179.
+ undefined on input line 185.
 
 
-Package natbib Warning: Citation `bibid' on page 7 undefined on input line 179.
+Package natbib Warning: Citation `bibid' on page 7 undefined on input line 185.
 
 
 
 Package natbib Warning: Citation `xudai2011' on page 7 undefined on input line 
-179.
+185.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2274,9 +2274,6 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [9]
-Underfull \vbox (badness 1917) has occurred while \output is active []
-
-
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -2287,7 +2284,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 File: figures/chapter01/zuzhi.png Graphic file (type png)
 
 <use figures/chapter01/zuzhi.png>
-Package pdftex.def Info: figures/chapter01/zuzhi.png used on input line 283.
+Package pdftex.def Info: figures/chapter01/zuzhi.png used on input line 289.
 (pdftex.def)             Requested size: 317.0764pt x 163.49368pt.
 
 
@@ -2369,6 +2366,18 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [14]
+
+Package natbib Warning: Citation `DBLP:conf/ijcai/Ben-Eliyahu-Zohary16' on page
+ 15 undefined on input line 109.
+
+
+Package natbib Warning: Citation `DBLP:conf/lpnmr/Ben-Eliyahu-Zohary17' on page
+ 15 undefined on input line 109.
+
+
+Package natbib Warning: Citation `zhangli2021' on page 15 undefined on input li
+ne 109.
+
 
 Package natbib Warning: Citation `DBLP:conf/ijcai/LeiC18' on page 15 undefined 
 on input line 109.
@@ -4222,13 +4231,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37556 strings out of 495354
- 628696 string characters out of 3183188
- 783069 words of memory out of 3000000
- 38126 multiletter control sequences out of 15000+200000
+ 37565 strings out of 495354
+ 628893 string characters out of 3183188
+ 783164 words of memory out of 3000000
+ 38130 multiletter control sequences out of 15000+200000
  279800 words of font info for 815 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,2632b,2548s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,2632b,2549s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -4397,7 +4406,7 @@ n/Ctex/MiKTeX/fonts/type1/hoekwater/rsfs/rsfs10.pfb><D:/Application/Ctex/MiKTeX
 e1/urw/times/utmr8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmri
 8a.pfb>
 Output written on new基于遗忘的反应式系统最弱充分条件研究.pdf
- (135 pages, 2614144 bytes).
+ (135 pages, 2615570 bytes).
 PDF statistics:
  2929 PDF objects out of 2984 (max. 8388607)
  507 named destinations out of 1000 (max. 500000)
