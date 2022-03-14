@@ -1,9 +1,11 @@
-\chapter{$\mu$-演算中的遗忘理论}
+\chapter{$\mu$-演算的遗忘理论}
 \label{chapter06}
 
 {\em 本章探索$\mu$-演算中的遗忘理论。$\mu$-演算是描述转换系统性质的重要逻辑语言，其具有表达能力强的优点：$\mu$-演算是一种表达能力与S2S\footnote{无限完全二叉树下的一元二阶理论（monadic second order theory of the infinite complete binary tree），简称为S2S。}相同的逻辑语言，且LTL、CLT和CTL$^*$能表达的属性都能用$\mu$-演算来表示。
 	
-	已有研究表明$\mu$-演算具有均匀插值性质，这蕴涵了$\mu$-演算下的遗忘理论研究本质上与$\CTL$下的不同。本章首先给出$\mu$-演算下遗忘的定义。其次，表明$\mu$-演算下的遗忘是封闭的，这是其与$\CTL$下的遗忘理论的最大的不同。最后，模型检测问题作为形式化验证的重要方法，本章给出$\mu$-演算下遗忘理论的模型检测和推理问题的复杂性结果。
+	已有研究表明$\mu$-演算具有均匀插值性质，这蕴涵了$\mu$-演算下的遗忘理论研究本质上与$\CTL$下的不同。
+	其次，
+	本章首先给出$\mu$-演算下遗忘的定义。其次，表明$\mu$-演算下的遗忘是封闭的，这是其与$\CTL$下的遗忘理论的最大的不同。最后，模型检测问题作为形式化验证的重要方法，本章给出$\mu$-演算下遗忘理论的模型检测和推理问题的复杂性结果。
 	}
 
 \section{引言}
@@ -13,15 +15,18 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 这种情形在日常生活中是很常见的，如：偏序关系$(N, \leq)$（自然数集上的小于等于关系）构成的Kripke结构，其基数节点为基数、偶数节点为偶数。
 事实上，$\CTL$不能表达具有有规则的性质~\cite{DBLP:journals/iandc/Wolper83}，其主要原因是
 \begin{quote}
-	\emph{Given a proposition $p$, any proposinal temporal formula (PTL) $f(p)$ containing 
-	n ``next" ($\NEXT$) operators has the same truth value on all sequences of the form 
-	$p^i(\neg p) p^w$, $i > n$.}
+	\emph{对于给定的原子命题$p$，任意包含$n$个“$\NEXT$”时序词的命题时序公式（ proposinal temporal formula，PTL）对于序列“$p^i(\neg p) p^w$”有相同的真值，其中$i > n$。%Given a proposition $p$, any proposinal temporal formula (PTL) $f(p)$ containing 
+	%n ``next" ($\NEXT$) operators has the same truth value on all sequences of the form 
+	%$p^i(\neg p) p^w$, $i > n$.
+}
 \end{quote}
 
 因而得出如下结论：
 \begin{quote}
-	\emph{For any given $m\geq 2$, the property ``$p$ is true in every 
-	state $s_i$, where $i = km$ (integer $k\geq 0$)" is not expressible in PTL.}
+	\emph{对任意的$m\geq 2$，性质“$p$在所有状态$s_i$上为真（$i = k*m$，整数$k\geq 0$）”不能用PTL中的公式来表示。
+		%For any given $m\geq 2$, the property ``$p$ is true in every 
+	%state $s_i$, where $i = km$ (integer $k\geq 0$)" is not expressible in PTL.
+}
 \end{quote}
 
 
@@ -40,9 +45,9 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 
 从直观上来说，$\varphi$关于$\Var(\varphi) \cap \Var(\psi)$的均匀插值是从$\varphi$中“移除”掉不在$\Var(\varphi) \cap \Var(\psi)$中的元素而保留其在$\Var(\varphi) \cap \Var(\psi)$上的结论得到的结果。这与遗忘有着密切的关系。
 
-再者，在背景知识部分已经指出，任意的$\mu$-演算公式都能转换成吸取$\mu$-公式，在这种形式下的公式的均匀插值是容易计算的，即：
+再者，在背景知识部分已经指出，任意的$\mu$-演算公式都能转换成析取$\mu$-公式，在这种形式下的公式的均匀插值是容易计算的，即：
 \begin{theorem}[定理 3.6~\cite{d2006modal}]
-	吸取$\mu$-公式$\varphi$的均匀插值$\exists p \varphi$与$\mu$-公式$\varphi[p/\top, \neg p/ \bot]$等价，其中$\varphi[p/\top, \neg p/ \bot]$是同时将$p$及其否定$\neg p$分别用$\top$和$\bot$替换得到。
+	析取$\mu$-公式$\varphi$的均匀插值$\exists p \varphi$与$\mu$-公式$\varphi[p/\top, \neg p/ \bot]$等价，其中$\varphi[p/\top, \neg p/ \bot]$是同时将$p$及其否定$\neg p$分别用$\top$和$\bot$替换得到。
 \end{theorem}
 
 
@@ -53,7 +58,7 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 
 本章的组织结构如下。首先，给出$\mu$-演算下遗忘的定义；然后，探讨遗忘的一般性质，并给出其与均匀插值的关系；最后给出与遗忘相关问题的复杂性。
 
-\section{遗忘的定义}\label{sec:chapter06-system-model}
+\section{$\mu$-遗忘的定义}\label{sec:chapter06-system-model}
 与$\CTL$情形下的遗忘相似，这里先给出$V$互模拟的定义。不失一般性地，令$\Hm_i = (S_i, R_i, L_i, r_i)$，$i$为自然数集$\mathbb{N}$中的元素。
 \begin{definition}[$V$-互模拟]\label{def:VB}
 	给定原子命题集合$V \subseteq \Ha$和两个Kripke结构$\Hm_1$和 $\Hm_2$。若下面几个条件满足，则称$\Hb\subseteq S_1 \times S_2$是$\Hm_1$和 $\Hm_2$的$V$-互模拟关系：
@@ -81,7 +86,7 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 	\begin{itemize}
 		\item $S=\{s_0,s_1,s_2\}$，$S'=\{t_0,t_1\}$，$r=s_0$，$r'=t_0$；
 		\item $R=\{(s_0,s_1),(s_1,s_0),(s_0,s_2),(s_2,s_0)\}$，$R'=\{t_0,t_1\}$；
-		\item $L(s_0)=\{ch,j\}$，$L(s_1)=L(s_2)=\emptyset$，$L'(t_0)=\{j\}$，$L'(t_1)=\emptyset$。
+		\item $L(s_0)=\{ch,j\}$，$L(s_1)=\{ch\}$，$L(s_2)=\emptyset$，$L'(t_0)=\{j\}$，$L'(t_1)=\emptyset$。
 	\end{itemize}
 	由于$\Hm$和 $\Hm'$之间存在一个二元$\{ch\}$-互模拟$\Hb=\{(s_0, t_0), (s_1, t_1), (s_2, t_1)\}$，所以 $\Hm \lrto_{\{ch\}} \Hm'$。%，所以$\Hm\lrto \Hm'$。
 	
@@ -95,8 +100,8 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 	
 	\begin{figure}[h]%
 		\centering
-		\includegraphics[width=4.5cm,height=2.5cm]{chapter06/chvB.png}
-		\caption{两个 $\{ch\}$-互模拟的Kripke结构}\label{chapter06:fig:bisim}
+		\includegraphics[width=4.5cm,height=2.5cm]{chapter06/chvB1.png}
+		\caption{两个 $\{ch\}$-互模拟的Kripke结构示意图}\label{chapter06:fig:bisim}
 		
 		% $s_0$ is labeled by $\{ch, j\}$, $t_0$ is labeled by $\{j\}$, and $s_1$, $s_2$, and $t_1$ are labeled by $\emptyset$.}\label{fig:bisim}
 	\end{figure}
@@ -154,16 +159,16 @@ $\Mod(\psi)$ $=\Mod(\psi')$，也就是说遗忘的结果之间是语义等价�
 D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有均匀插值性质~\cite{d1996uniform,d2000logical,d2006modal}。换句话说，这意味着对任意的 $\mu$-句子 $\varphi$和有限的原子命题的集合$V\subseteq \Var(\varphi)$，都存在一个$V$-无关且与$\varphi$最接近的 $\mu$-句子 $\widetilde{\exists}V \varphi$。
 值得注意的是，上述定义的遗忘 $\Muforget(\phi, V)$与 $\widetilde{\exists}V \varphi$\cite{d2006modal} 语义等价.
 
-\section{遗忘的一般属性}
-这部分展示$\mu$-演算下遗忘的语义属性。特别地，这里将证明上述$\mu$-演算下的遗忘的定义与遗忘的那几条规则具有“当且仅当的关系”，且从任意$\mu$-句子中遗忘掉任意原子命题的集合的结果总是一个$\mu$-句子。此外，也研究了遗忘算子的代数属性，包括模块性（modularity）、交换性（commutativity）和同质性（homogeneity）。
+\section{$\mu$-演算遗忘的性质}
+这部分展示$\mu$-演算下遗忘的语义属性。特别地，这里将证明上述$\mu$-演算下的遗忘的定义与遗忘的那几条规则具有“当且仅当的关系”，且从任意$\mu$-句子中遗忘掉任意原子命题的集合的结果总是一个$\mu$-句子。此外，也研究了遗忘算子的代数属性，包括分解性（decomposition）、切片性（slice）和同质性（homogeneity）。
 
 \begin{theorem} \label{thm:exist}
 	给定原子命题 $q \in \cal A$和$\mu$-句子 $\phi$，则存在一个$\mu$-句子 $\psi$使得 $\IR(\psi, \{q\})$且 $\psi \equiv \Muforget(\phi, \{q\})$。
 \end{theorem}
 \begin{proof}
-	已有结果表明，对任意的$\mu$-句子$\phi$和原子命题$p$，存在一个$\{p\}$-无关的$\mu$-句子$\phi'$（即$\IR(\phi', \{p\})$）使得（定理 3.1 \cite{d1996uniform}）：
+	已有结果表明（定理 3.1 \cite{d1996uniform}），对任意的$\mu$-句子$\phi$和原子命题$p$，存在一个$\{p\}$-无关的$\mu$-句子$\phi'$（即$\IR(\phi', \{p\})$）使得：
 		\[
-	\Hm \models \phi' \mbox{ 当且仅当 } \exists \Hm' \in \phi \mbox{ 使得 } \Hm \lrto_{\{p\}} \Hm'.
+	\Hm \models \phi' \mbox{ 当且仅当 } \exists \Hm' \in \Mod(\phi) \mbox{ 使得 } \Hm \lrto_{\{p\}} \Hm'.
 	\]
 	
 	这与本文遗忘的定义一致，因此上述结论成立。
@@ -171,16 +176,16 @@ D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有�
 
 与模态S5和$\CTL$情形类似，下面给出$\mu$-演算下遗忘的基本公设：
 \begin{itemize}
-	\item[(\W)]  削弱（Weakening）： $\varphi \models \varphi'$;
-	\item[(\PP)]  正支持 （Positive Persistence）：
+	\item[(\W)]  削弱： $\varphi \models \varphi'$;
+	\item[(\PP)]  正支持：
 	对任意的$\mu$-句子 $\eta$，若$\IR(\eta, V)$和 $\varphi \models \eta$则 $\varphi' \models \eta$；
-	\item[(\NgP)]  负支持（Negative Persistence）：对任意的 $\mu$-句子$\eta$，若$\IR(\eta, V)$和 $\varphi \not \models \eta$则 $\varphi' \not \models \eta$；
-	\item[(\textbf{IR})]  无关性（Irrelevance）： $\IR(\varphi', V)$。
+	\item[(\NgP)]  负支持：对任意的 $\mu$-句子$\eta$，若$\IR(\eta, V)$和 $\varphi \not \models \eta$则 $\varphi' \not \models \eta$；
+	\item[(\textbf{IR})]  无关性： $\IR(\varphi', V)$。
 \end{itemize}
 其中 $V\subseteq\cal A$、
 $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到的结果。
 
-\begin{theorem}[表达性定理]\label{chapter06:thm:Rep}
+\begin{theorem}[表示性定理]\label{chapter06:thm:Rep}
 	给定$\mu$-句子 $\varphi$、 $\varphi'$和 $\phi$， $V \subseteq \Ha$为原子命题的集合。
 	下面的几个陈述是等价的：
 	\begin{itemize}
@@ -215,7 +220,7 @@ $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到�
 
 定理\ref{chapter06:thm:Rep} 表明$\mu$-演算下的遗忘跟其基本公设形成了一个“当且仅当”的关系：基本公设能描述遗忘的结果，遗忘的结果具有基本公设里的性质。这与S5和$\CTL$下的情形相同。
 
-除了上述的表达性定理，后文将说明公设(\textbf{IR})对计算SNC 和 WSC是重要的。对于$\mu$-句子$\psi = \varphi \wedge (q \lrto \alpha)$，$\varphi \wedge \alpha$是 $\{q\}$-无关的，则从$\psi$中遗忘掉 $q$得到的结果是$\varphi$。正如将在第\ref{chapter07}章中展示，这一性质有助于将任意公式的SNC（WSC）转换为命题下的SNC（WSC）。这一性质可形式化如下：
+除了上述的表示性定理，后文将说明公设(\textbf{IR})对计算SNC 和 WSC是重要的。对于$\mu$-句子$\psi = \varphi \wedge (q \lrto \alpha)$，$\varphi \wedge \alpha$是 $\{q\}$-无关的，则从$\psi$中遗忘掉 $q$得到的结果是$\varphi$。正如将在第\ref{chapter07}章中展示，这一性质有助于将任意公式的SNC（WSC）转换为命题下的SNC（WSC）。这一性质可形式化如下：
 
 \begin{lemma}
 	\label{lem:KF:eq}
@@ -309,7 +314,7 @@ $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到�
 	 (v)可以像 (iv)一样证明。
 \end{proof}
 
-命题\ref{chapter06:pro:ctl:forget:1}(i) 表明从一个$\mu$-句子中遗忘掉一些原子命题不影响该句子的可满足性；从(ii)可以看出，如果两个句子是等价的，则他们遗忘相同原子命题得到的结果是等价的； (iv)指出吸取公式 $\varphi_1 \vee \varphi_2$的遗忘可以由分开计算遗忘后在吸取而得到；而正如 (v) 中指出的那样，合取公式 $\psi_1 \wedge \psi_2$的遗忘不能分别计算再合取，这甚至对于命题公式都是不成立。
+命题\ref{chapter06:pro:ctl:forget:1}(i) 表明从一个$\mu$-句子中遗忘掉一些原子命题不影响该句子的可满足性；从(ii)可以看出，如果两个句子是等价的，则他们遗忘相同原子命题得到的结果是等价的； (iv)指出析取公式 $\varphi_1 \vee \varphi_2$的遗忘可以由分开计算遗忘后在析取而得到；而正如 (v) 中指出的那样，合取公式 $\psi_1 \wedge \psi_2$的遗忘不能分别计算再合取，这甚至对于命题公式都是不成立。
 例：令$\varphi=p \wedge (q \vee \neg p)$，从$\varphi$中遗忘掉$p$的结果为$q$，但是$\Forget(p, \{p\}) \wedge \Forget(q\vee \neg p, \{p\}) \equiv \top$。显然二者不等价。
 
 %\subsubsection{Other Semantic Properties}
@@ -319,7 +324,7 @@ $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到�
 下面是关于$\mu$-演算下遗忘算子的其他性质。
 
 
-\begin{proposition}[模块性]\label{chapter06:disTF}  给定$\mu$-句子 $\varphi$、原子命题的集合$V$和原子命题 $p$且 $p \notin V$，则：
+\begin{proposition}[分解性]\label{chapter06:disTF}  给定$\mu$-句子 $\varphi$、原子命题的集合$V$和原子命题 $p$且 $p \notin V$，则：
 	\[
 	\Muforget(\varphi, \{p\} \cup V) \equiv \Muforget(\Muforget(\varphi, \{p\}), V).
 	\]
@@ -359,7 +364,7 @@ $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到�
 
 下面这一性质为上述命题的推论。
 
-\begin{corollary}[交换性]\label{chapter06:disTFV}
+\begin{corollary}[切片性]\label{chapter06:disTFV}
 	给定$\mu$-句子$\varphi$和原子命题的集合 $V_i\subseteq{\cal A}~(i=1,2)$，有：
 	\[
 	\Muforget(\varphi, V_1 \cup V_2) \equiv \Muforget(\Muforget(\varphi, V_1), V_2).
@@ -434,14 +439,17 @@ $\Muforget$的另一个属性是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子�
 $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$中遗忘原子命题可以使用命题逻辑的遗忘计算方法来计算。
 
 \section{计算复杂性}
-吸取$\mu$-公式$\varphi$的均匀插值为 $\widetilde{\exists}p \varphi$（$p\in \Ha$），且与 $\varphi[p/\top,\neg p/\top]$等价~\cite{d2006modal}。
+析取$\mu$-公式$\varphi$的均匀插值为 $\widetilde{\exists}p \varphi$（$p\in \Ha$），且与 $\varphi[p/\top,\neg p/\top]$等价~\cite{d2006modal}，其中$\varphi[p/\top,\neg p/\top]$表示将$\varphi$中的$p$和$\neg p$同时用$\top$替换。
 正如之前说过的 $\Muforget(\varphi, V)$与均匀插值 $\widetilde{\exists}V \varphi$等价\cite{d2006modal}。因此，下面的命题容易证明。
-\begin{proposition}\label{pro:disLiT}
-	给定$\mu$-句子$\varphi$和原子命题 $p\in \Ha$。若$\varphi$是一个吸取 $\mu$-句子， $\Muforget(\varphi, \{p\})$能在线性时间内计算。
-\end{proposition}
+\begin{corollary}\label{pro:disLiT}
+	给定$\mu$-句子$\varphi$和原子命题 $p\in \Ha$。若$\varphi$是一个析取 $\mu$-句子， $\Muforget(\varphi, \{p\})$能在线性时间内计算。
+\end{corollary}
+\begin{proof}
+	content...
+\end{proof}
 
-这种情况下，可以首先将一个$\mu$-句子转化为吸取$\mu$-公式，再去计算遗忘。
-下面的例子给出如何计算从吸取$\mu$-公式中遗忘 “$ch$”。
+这种情况下，可以首先将一个$\mu$-句子转化为析取$\mu$-公式，再去计算遗忘。
+下面的例子给出如何计算从析取$\mu$-公式中遗忘 “$ch$”。
 \begin{example}
 	令$\varphi_1=  j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top)$、 $\varphi_2= \mu X. (j \wedge ch) \wedge Cover(X, \top)$、 $\varphi_3=  \nu X. (j \wedge ch) \wedge Cover(Cover(X,$ $\top), \top)$。令$V=\{ch\}$，我们能容易地计算从这些公式里遗忘掉$V$。
 	
@@ -458,11 +466,11 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$中遗忘原子命题可以使用命题�
 	给定一个有限的 Kripke 结构  $\Hm$、一个 $\mu$-句子 $\varphi$和原子命题的集合 $V\subseteq \Ha$。有：
 	\begin{itemize}
 		\item[(i)] 判定 $\Hm \models^? \Muforget(\varphi, V)$在$\textsc{Exptime}$中；
-		\item[(ii)] 若 $\varphi$是一个吸取 $\mu$-公式，则判定 $\Hm \models^? \Muforget(\varphi, V)$在 \textsc{NP}$\cap$co-\textsc{NP}中。
+		\item[(ii)] 若 $\varphi$是一个析取 $\mu$-公式，则判定 $\Hm \models^? \Muforget(\varphi, V)$在 \textsc{NP}$\cap$co-\textsc{NP}中。
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	对于一个$\mu$-公式$\varphi$，如果该公式为一个吸取$\mu$-公式可在多项式时间内构造一个 $\mu$-自动机（也叫模态自动机~\cite{bradfield2018mu}） $A_{\varphi}$，否则需要指数时间构造其对应的$\mu$-自动机\footnote{个人通信: Giovanna D'Agostino, 2020.}.
+	对于一个$\mu$-公式$\varphi$，如果该公式为一个析取$\mu$-公式可在多项式时间内构造一个 $\mu$-自动机（也叫模态自动机~\cite{bradfield2018mu}） $A_{\varphi}$，否则需要指数时间构造其对应的$\mu$-自动机\footnote{个人通信: Giovanna D'Agostino, 2020.}.
 	这里证明(ii)，(i)可以类似地证明。
 	
 	令$A_{\varphi}$为一个$\mu$-自动机 且满足对任意的 Kripke ${\cal N}$， %there is
@@ -536,4 +544,4 @@ $Q\NEXT \phi$ $(Q\in \{\EXIST, \ALL\})$中遗忘原子命题可以使用命题�
 \end{corollary}
 \section{本章小结}\label{sec:chapter06-conclusion}
 
-本章介绍了$\mu$-演算下的遗忘。$\mu$-演算是一种比$\CTL$表达能力强的逻辑系统，本章说明了$\mu$-演算下的遗忘是封闭的且与均匀插值是一对对偶概念。此外，本章也研究了$\mu$-演算下的代数属性，表明$\mu$-演算下的遗忘也具有模块性、交换性和同质性。表达性定理给出了遗忘与四条基本公设之间当且仅当的关系。最后，遗忘在模型检测和推理问题上的复杂性结果表明遗忘操作是很困难的，即指数时间的。
+本章介绍了$\mu$-演算下的遗忘。$\mu$-演算是一种比$\CTL$表达能力强的逻辑系统，本章说明了$\mu$-演算下的遗忘是封闭的且与均匀插值是一对对偶概念。此外，本章也研究了$\mu$-演算下的代数属性，表明$\mu$-演算下的遗忘也具有分解性、切片性和同质性。表示性定理给出了遗忘与四条基本公设之间当且仅当的关系。最后，遗忘在模型检测和推理问题上的复杂性结果表明遗忘操作是很困难的，即指数时间的。

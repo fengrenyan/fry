@@ -33,20 +33,20 @@ Kripke结构作为一种表示转换系统（transition system）的数学模型
 经典命题语言${\cal L}^p$由以下三类符号构成：
 \begin{itemize}
 	\item 命题符号：一般用小写拉丁字母$p$，$q$，$r$，$\dots$来表示，且这些命题符号来源于$\Ha$；
-	\item 联结符号：$\neg$（否定），$\wedge$（合取），$\vee$（吸取），$\rto$（蕴涵），$\lrto$（等值于）；
+	\item 联结符号：$\neg$（否定），$\wedge$（合取），$\vee$（析取），$\rto$（蕴涵），$\lrto$（等值于）；
 	\item 标点符号：(（左括号），)（右括号）。
 \end{itemize}
 %命题符号：一般用小写拉丁字母$p$，$q$，$r$，$\dots$来表示，且这些命题符号来源于$\Ha$；
-%连接符号：$\neg$（否定），$\wedge$（合取），$\vee$（吸取），$\rto$（蕴涵），$\lrto$（等值于）；
+%连接符号：$\neg$（否定），$\wedge$（合取），$\vee$（析取），$\rto$（蕴涵），$\lrto$（等值于）；
 %标点符号：(（左括号），)（右括号）。
 
-${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}^p)$和${\cal F}({\cal L}^p)$。其中，$Atom({\cal L}^p)$ 是命题符号的集合，且$\varphi\in {\cal F}({\cal L}^p)$当且仅当它能由（有限次使用）以下的三条规则生成\cite{luzhongwan1989}：
+${\cal L}^p$的原子公式集合为命题符号集合$Atom({\cal L}^p)$，公式的集合为${\cal F}({\cal L}^p)$。$\varphi\in {\cal F}({\cal L}^p)$当且仅当它能由（有限次使用）以下的三条规则生成\cite{luzhongwan1989}：
 \begin{itemize}
 	\item 如果$\varphi\in Atom({\cal L}^p)$，则$\varphi \in {\cal F}({\cal L}^p)$。
 	\item 如果$\varphi \in {\cal F}({\cal L}^p)$，则$(\neg \varphi)\in {\cal F}({\cal L}^p)$。
 	\item 如果$\varphi$、$\varphi'\in {\cal F}({\cal L}^p)$，则$(\varphi * \varphi')\in {\cal F}({\cal L}^p)$。其中，$*\in \{\wedge,\vee, \rto, \lrto\}$。
 \end{itemize}
-此外，也称“ture”和“false”为原子公式，分别记为“$\top$”和“$\bot$”。原子命题或其否定称为\emph{文字}，有限个文字的吸取称为\emph{子句}，有限个文字的合取称为\emph{项}。
+此外，也称“ture”和“false”为原子公式，分别记为“$\top$”和“$\bot$”。原子命题或其否定称为\emph{文字}，有限个文字的析取称为\emph{子句}，有限个文字的合取称为\emph{项}。
 
 \begin{example}\label{exp:pro:form}
 	下面几个字符串为${\cal L}^p$的公式：
@@ -54,7 +54,7 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 		\item $(q \vee p)$；
 		\item $(((\neg p)\lrto(q\vee r))\rto(r \wedge p))$。
 	\end{itemize}
-	而字符串$p\wedge \vee q$不属于集合$\varphi\in {\cal F}({\cal L}^p)$。
+	而字符串$p\wedge \vee q$不属于集合${\cal F}({\cal L}^p)$。
 \end{example}
 
 
@@ -62,14 +62,14 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 \[
 \neg \qquad \wedge \qquad \vee \qquad \rto \qquad \lrto
 \]
-此时，例~\ref{exp:pro:form}中的公式$(((\neg p)\lrto(q\vee r))\rto(r \wedge p))$就可写为$(\neg p \lrto q \vee r) \rto r \wedge p$。当然，为了看起来方便，有的括号可以不必省略。
+此时，例~\ref{exp:pro:form}中的公式$(((\neg p)\lrto(q\vee r))\rto(r \wedge p))$可写为$(\neg p \lrto q \vee r) \rto r \wedge p$。%当然，为了看起来方便，有的括号可以不必省略。
 
 在讨论了命题公式的语法结构之后，接下来将讨论其语义解释。
 
 \begin{definition}[真假赋值]\label{def:pro:interp}
 	真假赋值是以所有命题符号的集为定义域，以真假值的集$\{0,1\}$为值域的函数$v:{\cal A}\rto \{0,1\}$。
 \end{definition}
-为了方便，后文中也用$\top$代表$1$，$\bot$代表$0$（此时真假赋值为$v:\Ha \rto \{\bot, \top\}$），且满足对任意的真假赋值$v$都有$\top^v=\top$和$\bot^v=\bot$。由该定义可知，一个真假赋值要同时给${\cal A}$中的所有命题符号指派一个真假值，所以真假赋值的个数为$2^{|{\cal A}|}$。真假赋值$v$给公式$\varphi$指派的值记作$\varphi^v$，可形式化定义为如下：
+为了方便，后文中也用$\top$代表$1$，$\bot$代表$0$（此时真假赋值为$v:\Ha \rto \{\bot, \top\}$），且满足对任意的真假赋值$v$都有$\top^v=\top$和$\bot^v=\bot$。由该定义可知，一个真假赋值要同时给${\cal A}$中的所有命题符号指派一个真假值，所以真假赋值的个数为$2^{|{\cal A}|}$。真假赋值$v$给公式$\varphi$指派的值记作$\varphi^v$，定义如下：
 \begin{definition}[公式的真假值]\label{def:pro:vformula}
 	真假赋值$v$给公式指派的真假值递归定义如下：
 	\begin{itemize}
@@ -123,11 +123,11 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 令$\MPB = \neg \MPK \neg$，则$\MPB \varphi \in {\cal F}^{\Hm}$。其中，$\MPK$和$\MPB$叫做模态符号，分别表示“必然”和“可能”。
 
 \emph{可能世界语义}（或\emph{Kripke语义}）是标准的命题模态逻辑语义\cite{kripke1963semantical}。Kripke语义是定义在Kripke结构上的，一个Kripke结构是一个三元组$(S,R,L)$（下一节中将详细介绍）。
-其中，$S$是状态的非空集合，$R\subseteq R \times R$是可达性关系。特别地，当$R$是一个等价关系的时候（模态逻辑S5中），一个Kripke结构可以写成一个二元组$\tuple{W,w}$，其中$W$是状态的非空集合，$w$是$W$中的元素，每个状态是原子命题的集合。此时，称$\Hm=\tuple{W,w}$为一个$\MPK$-\emph{解释}（$\MPK$-interpretation）\cite{Yan:AIJ:2009}。
+其中，$S$是状态的非空集合，$R\subseteq S \times S$是可达性关系。特别地，当$R$是一个等价关系的时候（模态逻辑S5中），一个Kripke结构可以写成一个二元组$\tuple{W,w}$，其中$W$是状态的非空集合，$w$是$W$中的元素，每个状态是原子命题的集合。此时，称$\Hm=\tuple{W,w}$为一个$\MPK$-\emph{解释}（$\MPK$-interpretation）\cite{Yan:AIJ:2009}。
 
 %$\MPK-$解释和${\cal F}^{\Hm}$种公式的可满足关系被归纳定义如下：
 \begin{definition}\label{def:s5:interp}
-	给定一个$\MPK$-解释$\Hm=\tuple{W,w}$，其与${\cal F}^{\Hm}$中的公式的可满足关系被归纳地定义为：
+	给定一个$\MPK$-解释$\Hm=\tuple{W,w}$，其与S5中的公式的可满足关系被归纳地定义为：
 	\begin{itemize}
 		\item $\Hm \not \models \bot$，$\Hm \models \top$；
 		\item $\Hm \models p$当且仅当$p\in w$，其中$p\in \Ha$；
@@ -140,7 +140,7 @@ ${\cal L}^p$的原子公式的集合和公式的集合分别记作$Atom({\cal L}
 $\Hm=\tuple{W,w}$称为公式$\varphi$的$\MPK$-\emph{模型}（$\MPK$-model），当且仅当$\Hm \models \varphi$。此外，如果存在一个$\Hm=\tuple{W,w}$使得公式$\Hm\models \varphi$，则称公式$\varphi$是可满足的。如果$\Hm\models \varphi$对于所有的$\Hm=\tuple{W,w}$都成立，则称$\varphi$是有效的。
 
 
-\subsection{Kripke结构的定义及相关术语}
+\subsection{Kripke结构}
 给定一个可数无限索引的集合$\Ind$，一个初始$\Ind$-Kripke结构是一个五元组$\Hm=(S,R,L,[\_],s_0)$，其中：
 \begin{itemize}
 	\item $S$是状态的非空集合，$s_0$是$\Hm$的初始状态（下面详细介绍）；
@@ -154,8 +154,13 @@ Kripke结构$\Hm=(S,R,L)$上的{\em 路径}是$\Hm$上的状态构成的无限�
 如果对$\Hm$中任意的状态$s'$都有一条路径$\pi_s$使得$s'\in \pi_s$，那么称$s$为\emph{初始状态}。
 $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^{\tuple{ind}}$（$ind \in \Ind$）是一条路劲$(s_0(=s),$ $s_{1},$ $s_{2},$ $\dots)$ 且对任意的$j \geq 0$有$(s_j, s_{j+1}) \in [ind]$。
 
-从初始$\Ind$-Kripke结构$\Hm$中去掉$[\_]$元素得到的结构称为初始Kripke结构；从初始$\Ind$-Kripke结构$\Hm$中去掉初始状态$s_0$得到的结构称为$\Ind$-Kripke结构；
-从初始$\Ind$-Kripke结构$\Hm$中同时去掉$[\_]$和$s_0$得到的结构称为Kripke结构，通常一个转换系统（transition system）能够被抽象为一个Kripke结构\cite{Baier:PMC:2008}。
+此外，可由初始$\Ind$-Kripke结构得到其他几种特殊的Kripke结构：
+\begin{itemize}
+	\item 从初始$\Ind$-Kripke结构$\Hm$中去掉$[\_]$元素得到的结构称为初始Kripke结构$\Hm=(S,R,L,s_0)$；
+	\item 从初始$\Ind$-Kripke结构$\Hm$中去掉初始状态$s_0$得到的结构称为$\Ind$-Kripke结构$\Hm=(S,R,L,[\_])$；
+	\item 从初始$\Ind$-Kripke结构$\Hm$中同时去掉$[\_]$和$s_0$得到的结构称为Kripke结构$\Hm=(S,R,L)$。
+\end{itemize}
+通常一个转换系统（transition system）（包括反应式系统）能够被抽象为一个Kripke结构\cite{Baier:PMC:2008}。
 一个\emph{($\Ind$-)结构}是一个二元组${\cal K}=(\Hm, s)$，其中$\Hm$是一个初始($\Ind$-)Kripke结构，$s$是$\Hm$中的一个状态。
 如果$s$为$\Hm$上的初始状态，则称${\cal K}$为{\em 初始 ($\Ind$-)结构}。
 上面的关于(索引)路径的概念对于这些结构也可相似地定义。
@@ -168,7 +173,7 @@ $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^
 
 
 \emph{树}是一种只有一个根节点（没有其他节点指向且可达于其他任意节点的节点）的无环图。
-给定一个初始Kripke结构$\Hm=(S,R,L,s_0)$和一个状态$s\in S$，定义在$\Hm$上以$s$为根节点的深度为为$n$（$n\ge 0$）的\emph{计算树}$\Tr_n^{\Hm}(s)$被递归定义如下\cite{browne1988characterizing}：
+给定一个初始Kripke结构$\Hm=(S,R,L,s_0)$和一个状态$s\in S$，定义在$\Hm$上以$s$为根节点的深度为为$n$（$n\ge 0$）的\emph{计算树}$\Tr_n^{\Hm}(s)$递归定义如下\cite{browne1988characterizing}：
 \begin{itemize}
 	\item $\Tr_0^{\Hm}(s)$ 是只有一个节点$s$（其标签为$L(s)$）的树。
 	\item $\Tr_{n+1}^{\Hm}(s)$是以$s$为根节点（标签为$L(s)$）的树，并且满足若$(s,s')\in R$，则节点$s$有一棵子树$\Tr_{n}^{\Hm}(s')$。
@@ -181,7 +186,7 @@ $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^
 
 
 \section{时序逻辑}
-时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化而变化的系统的逻辑特性。由于软件和硬件运行的本质是状态变化的过程，所以时序逻辑在软件程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时序逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用除了$\mu$-演算以外的其他时序逻辑表示的~\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算这两种时序逻辑。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
+时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化而变化的系统的逻辑特性。由于软件和硬件系统运行的本质是状态变化的过程，所以时序逻辑在程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时序逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用除了$\mu$-演算以外的其他时序逻辑表示的~\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算这两种时序逻辑。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
 \subsection{计算树逻辑（\CTL）}
 $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。这里给出带索引的$\CTL$公式定义，而$\CTL$公式是该种公式的子类。带索引的$\CTL$的语言${\cal L}$由下面的几类符号构成：
@@ -190,7 +195,7 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 	\item 可数无限索引集合$\Ind$；
 	\item 命题常量$\start$；
 	\item 常量符号：$\top$和$\bot$，分别表示“真”和“假”；
-	\item 联结符号：$\vee$和$\neg$，分别表示“吸取”和“否定”；
+	\item 联结符号：$\vee$和$\neg$，分别表示“析取”和“否定”；
 	\item 路径量词：$\ALL$、$\EXIST$和$\EXIST_{ind}$，分别表示“所有”、“存在”和“存在索引为$ind\in \Ind$”的路径；
 	\item 时序操作符：$\NEXT$、$\FUTURE$、$\GLOBAL$、$\UNTILL$和$\UNLESS$，分别表示“下一个状态”、“将来某一个状态”、“将来所有状态”、“直到”和“除非”；
 	\item 标点符号：“(”和“)”。
@@ -273,9 +278,18 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 与Browne和Bolotov等人的工作类似，本文只将初始$\Ind$-结构作为模型的候选项\cite{browne1988characterizing,DBLP:journals/jetai/BolotovF99}。换句话说，对于给定的$\Ind$-结构$(\Hm,s)$和带索引的$\CTL$公式$\varphi$，如果$(\Hm,s)\models \varphi$且$s = s_0$，则称$(\Hm,s)$为公式$\varphi$的一个\emph{模型}。更清楚地说，对于给定的初始$\Ind$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称$\cal K$是$\varphi$的一个模型。
 
 
-为了符号的统一，这里列出文中出现的一些记号的含义。给定公式$\varphi$，公式的所有模型构成的集合记为$\Mod(\varphi)$。此时就很容易定义公式的可满足性，即：如果$\Mod(\varphi)\not = \emptyset$，则称$\varphi$是\emph{可满足}的。给定两个公式$\varphi_1$和$\varphi_2$，若$\Mod(\varphi_1)\subseteq \Mod(\varphi_2)$，则称$\varphi_1$\emph{逻辑地蕴涵}$\varphi_2$，记为$\varphi_1\models \varphi_2$。特别地，当$\varphi_1\models \varphi_2$且$\varphi_2\models \varphi_1$时，即$\Mod(\varphi_1)= \Mod(\varphi_2)$，则称$\varphi_1$和$\varphi_2$为\emph{逻辑等值公式}（简称为\emph{等值公式}），记作$\varphi_1 \equiv \varphi_2$。
+令$\varphi$、$\varphi_1$和$\varphi_2$为公式，为了符号的统一，这里列出文中出现的一些记号的含义。
+\begin{itemize}
+	\item $\Mod(\varphi)$：公式$\varphi$的所有模型构成的集合；
+	\item 可满足：如果$\Mod(\varphi)\not = \emptyset$，则称$\varphi$是\emph{可满足}的；
+	\item 逻辑蕴涵：若$\Mod(\varphi_1)\subseteq \Mod(\varphi_2)$，则称$\varphi_1$\emph{逻辑地蕴涵}$\varphi_2$，记为$\varphi_1\models \varphi_2$；
+	\item 逻辑等值：当$\varphi_1\models \varphi_2$且$\varphi_2\models \varphi_1$时，即$\Mod(\varphi_1)= \Mod(\varphi_2)$，则称$\varphi_1$和$\varphi_2$为\emph{逻辑等值公式}（简称为\emph{等值公式}），记作$\varphi_1 \equiv \varphi_2$。
+\end{itemize}
+
+%给定公式$\varphi$，公式的所有模型构成的集合记为$\Mod(\varphi)$。此时就很容易定义公式的可满足性，即：如果$\Mod(\varphi)\not = \emptyset$，则称$\varphi$是\emph{可满足}的。给定两个公式$\varphi_1$和$\varphi_2$，若$\Mod(\varphi_1)\subseteq \Mod(\varphi_2)$，则称$\varphi_1$\emph{逻辑地蕴涵}$\varphi_2$，记为$\varphi_1\models \varphi_2$。特别地，当$\varphi_1\models \varphi_2$且$\varphi_2\models \varphi_1$时，即$\Mod(\varphi_1)= \Mod(\varphi_2)$，则称$\varphi_1$和$\varphi_2$为\emph{逻辑等值公式}（简称为\emph{等值公式}），记作$\varphi_1 \equiv \varphi_2$。
+
 值得注意的是，上述的记号也适用于讨论的对象为公式的集合的情形。
-此外，给定一个公式的集合$\Pi$和一个初始$\Ind$-结构$\cal K$，若对于$\Pi$中的任意一个公式$\varphi$都有${\cal K} \models \varphi$，则${\cal K} \models \Pi$。若$\Pi$为公式的有限集合，则用$\bigvee \Pi$（$\bigwedge \Pi$）表示$\Pi$中公式的吸取（合取），本文也用$\Pi$表示$\bigwedge \Pi$。
+此外，给定一个公式的集合$\Pi$和一个初始$\Ind$-结构$\cal K$，若对于$\Pi$中的任意一个公式$\varphi$都有${\cal K} \models \varphi$，则${\cal K} \models \Pi$。若$\Pi$为公式的有限集合，则用$\bigvee \Pi$（$\bigwedge \Pi$）表示$\Pi$中公式的析取（合取），本文也用$\Pi$表示$\bigwedge \Pi$。
 
 对于给定的公式$\varphi$，将出现在$\varphi$中的原子命题的集合记为$\Var(\varphi)$。此外，给定公式$\varphi$和原子命题的集合$V$，如果存在一个公式$\psi$使得$\Var(\psi) \cap V = \emptyset$且$\varphi \equiv \psi$，那么说$\varphi$与$V$中的原子命题\emph{无关}，简称为\emph{$V$-无关}（ \emph{$V$-irrelevant}），写作$\IR(\varphi,V)$。
 一种特殊的形式是$\Var(\varphi) \subseteq V$，此时称$\varphi$为集合$V$上的公式。
@@ -285,7 +299,7 @@ $\CTL$公式与结构之间的可满足性与定义~\ref{def:ctl:semantic}类似
 
 根据上面的定义，以下结论是显然的。
 \begin{lemma} \label{lem:equivAG}
-	给定连个公式 $\varphi$ 和 $\psi$，则下列结论成立：
+	给定两个公式 $\varphi$ 和 $\psi$，则下列结论成立：
 	\begin{itemize}
 		\item[(i)] $\ALL\GLOBAL (\varphi\land\psi)\equiv (\ALL\GLOBAL \varphi) \land (\ALL\GLOBAL\psi)$；
 		\item[(ii)] $\ALL\GLOBAL \ALL\GLOBAL (\varphi)\equiv \ALL\GLOBAL (\varphi)$；
@@ -398,16 +412,17 @@ $\CTLsnf$子句是具有下面几种形式的公式：
 			&  \textbf{Trans(6)} \frac{q\rto Q\NEXT \varphi\ (\hbox{如果$\varphi$不是子句})}{q\rto Q\NEXT p, p\rto \varphi}; 
 			&& \textbf{Trans(7)} \frac{q\rto Q\FUTURE \varphi\ (\hbox{如果$\varphi$不是文字})}{q\rto Q\FUTURE p, p\rto \varphi}; \\
 			&  \textbf{Trans(8)} \frac{q\rto Q(\varphi_1 \UNTILL \varphi_2) \  (\hbox{如果$\varphi_2$不是文字})}{q\rto Q(\varphi_1 \UNTILL p),  p\rto \varphi_2}; 
-			&& \textbf{Trans(10)} \frac{q\rto Q\GLOBAL \varphi}{\ q \rto  p, p\rto \varphi,p\rto Q\NEXT p};  \\
-			& \textbf{Trans(11)} \frac{q\rto Q(\varphi \UNTILL l)}{q \rto l\vee p, p\rto \varphi, p\rto Q\NEXT(l\vee p),q\rto Q \FUTURE l};
-			&& \textbf{Trans(12)} \frac{q\rto Q(\varphi \UNLESS l)}{q \rto l\vee p, p\rto \varphi, p\rto Q\NEXT(l\vee p)}.
+			&& \textbf{Trans(9)} \frac{q\rto Q(\varphi_1 \UNLESS \varphi_2)\ (\hbox{如果 $\varphi_2$ 不是文字})}{q\rto Q(\varphi_1 \UNLESS p), p\rto \varphi_2};\\
+			& \textbf{Trans(10)} \frac{q\rto Q\GLOBAL \varphi}{\ q \rto  p, p\rto \varphi,p\rto Q\NEXT p};  
+			&& \textbf{Trans(11)} \frac{q\rto Q(\varphi \UNTILL l)}{q \rto l\vee p, p\rto \varphi, p\rto Q\NEXT(l\vee p),q\rto Q \FUTURE l};\\
+			& \textbf{Trans(12)} \frac{q\rto Q(\varphi \UNLESS l)}{q \rto l\vee p, p\rto \varphi, p\rto Q\NEXT(l\vee p)}.
 		\end{aligned}
 		$\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 在表~\ref{tab:trans}中，$T\in \{\NEXT, \GLOBAL, \FUTURE\}$，$ind$是规则中引入的新的索引且$Q\in \{\ALL, \EXIST_{\tuple{ind}}\}$；
-$q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句）, $p$是新的原子命题；$\varphi$，$\varphi_1$，和$\varphi_2$都是\CTL公式。
+$q$是一个原子命题, $l$是一个文字, $D$是文字的析取（即子句）, $p$是新的原子命题；$\varphi$，$\varphi_1$，和$\varphi_2$都是\CTL公式。
 
 规则\textbf{Trans(1)}和规则\textbf{Trans(2)}为每一个存在路径量词$\EXIST$引入一个新的索引$ind$；规则\textbf{Trans(3)}到规则\textbf{Trans(5)}通过引入新的替换规则将复杂的公式用新的原子命题替换；规则\textbf{Trans(6)}到规则\textbf{Trans(12)}用于移除掉那些不能出现在$\CTLsnf$中的时序操作符~\cite{DBLP:journals/aicom/ZhangHD10}。
 
@@ -457,7 +472,7 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句�
 
 \begin{table}[h!]%[width=.9\linewidth,cols=4,pos=h]
 %	\footnotesize
-	\centering\caption{化简规则。其中$Q\in \{\ALL, \EXIST\}$且$T\in \{\NEXT,\GLOBAL,\FUTURE\}$。}\label{tab:simp}
+	\centering\caption{$\CTL$化简规则。其中$Q\in \{\ALL, \EXIST\}$且$T\in \{\NEXT,\GLOBAL,\FUTURE\}$。}\label{tab:simp}
 	\begin{tabular}{c}
 		\toprule
 		$
@@ -485,7 +500,7 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的吸取（即子句�
 \end{table}
 
 下文也将$\CTLsnf(\varphi)$记为由$\varphi$通过转换规则获得的 $\CTLsnf$子句的集合。
-因此，下面的引理是显然的。
+%因此，下面的引理是显然的。
 
 
 \begin{lemma} \label{lem:ResTransPt}
@@ -678,15 +693,15 @@ Cover(\varphi_1, \dots, \varphi_n) \LRto \lozenge \varphi_1 \wedge \dots \wedge 
 \begin{definition}[析取$\mu$-公式~\cite{d2006modal}]
 	析取$\mu$-公式的集合${\cal F}_d$是包含$\top$、$\bot$和不矛盾的文字的合取且封闭于下面几条规则的最小集合:
 	\begin{itemize}
-		\item[(1)] 吸取式（disjunctions）：若$\alpha, \beta \in {\cal F}_d$，则$\alpha \vee \beta \in {\cal F}_d$；
+		\item[(1)] 析取式（disjunctions）：若$\alpha, \beta \in {\cal F}_d$，则$\alpha \vee \beta \in {\cal F}_d$；
 		\item[(2)] 特殊合取式（special conjunctions）：若$\varphi_1, \dots, \varphi_n\in {\cal F}_d$且$\delta$为不矛盾的文字的合取，则$\delta \wedge Cover(\varphi_1, \dots, \varphi_n) \in {\cal F}_d$；
 		\item[(3)] 固定点操作（fixpoint operators）：若$\varphi\in  {\cal F}_d$，且对任意的公式$\psi$，$\varphi$不含有形如$X \wedge \psi$的子公式，则$\mu X. \varphi$和$\nu X. \varphi$都在 ${\cal F}_d$中。
 	\end{itemize}	
 \end{definition}
 
 \begin{example}\label{exmp:disF}
-	容易检查 $\nu X. (j \wedge ch) \wedge \lozenge (\neg j \wedge \neg ch) \wedge \lozenge \lozenge X$ 和  $\nu X. (j \wedge ch) \wedge \square (\neg j \wedge \neg ch) \wedge \square \square X$ 都不是吸取$\mu$-公式。
-	而 $j \wedge ch \wedge \lozenge (\neg j \wedge \neg ch)$、 $\mu X. (j \wedge ch) \wedge \lozenge X$ 和 $\nu X. (j \wedge ch) \wedge \lozenge \lozenge X$ 都为吸取$\mu$公式，因为：
+	容易检查 $\nu X. (j \wedge ch) \wedge \lozenge (\neg j \wedge \neg ch) \wedge \lozenge \lozenge X$ 和  $\nu X. (j \wedge ch) \wedge \square (\neg j \wedge \neg ch) \wedge \square \square X$ 都不是析取$\mu$-公式。
+	而 $j \wedge ch \wedge \lozenge (\neg j \wedge \neg ch)$、 $\mu X. (j \wedge ch) \wedge \lozenge X$ 和 $\nu X. (j \wedge ch) \wedge \lozenge \lozenge X$ 都为析取$\mu$公式，因为：
 	\[
 	j \wedge ch \wedge \lozenge (\neg j \wedge \neg ch) \equiv j \wedge ch \wedge Cover(\neg j \wedge \neg ch, \top),
 	\]
@@ -734,7 +749,7 @@ Cover(\varphi_1, \dots, \varphi_n) \LRto \lozenge \varphi_1 \wedge \dots \wedge 
 		\bottomrule
 	\end{tabular}
 \end{table}
-在表~\ref{tab:res}中$P$和$Q$是文字的合取，$C$和$D$是文字的吸取，$l$是一个文字，称每条规则横线下面的公式为横线上面的公式关于文字$l$的归结结果。此外，$\Lambda=\bigvee_{i=1}^n \bigwedge_{i=1}^{m_i}P_j^i$、$P_j^i$是文字的吸取，其中$1\leq i\leq n$和$1\leq j\leq m$。
+在表~\ref{tab:res}中$P$和$Q$是文字的合取，$C$和$D$是文字的析取，$l$是一个文字，称每条规则横线下面的公式为横线上面的公式关于文字$l$的归结结果。此外，$\Lambda=\bigvee_{i=1}^n \bigwedge_{i=1}^{m_i}P_j^i$、$P_j^i$是文字的析取，其中$1\leq i\leq n$和$1\leq j\leq m$。
 
 规则$\textbf{SRES1-8}$被叫做\emph{步-归结规则}（step resolution rule）、$\textbf{RW1-2}$被叫做\emph{重写规则}（rewrite rule）、$\textbf{ERES1-2}$被叫做\emph{可能归结规则}（eventuality resolution rule）。
 值得注意的是，规则 $\textbf{ERES1}$ 的前提“$\Lambda \rto \EXIST \NEXT \EXIST\GLOBAL l$”表示如下子句的集合$\Lambda_{\EXIST\GLOBAL}$：
@@ -901,9 +916,9 @@ S5关于$V$-互模拟是不变的（invariant）：如果两个$\MPK$-解释$M$�
 
 Zhang等人还提出了能精确描述知识遗忘的四个基本条件（公设），给定两个公式$\varphi$和$\varphi'=\KForget(\varphi,V)$，$V\subseteq\Ha$是原子命题的集合。知识遗忘满足以下的性质：
 \begin{itemize}
-	\item[] (\W) 弱性质（Weaking）: $\varphi \models \varphi'$；
-	\item[] (\NgP) 正向支持（Positive Persistence）：如果$\IR(\phi,V)$并且$\varphi \models \phi$，则$\varphi' \models \phi$；
-	\item[] (\PP) 反向支持（Negative Persistence）：如果$\IR(\phi,V)$并且$\varphi \not \models \phi$，则$\varphi' \not \models \phi$；
+	\item[] (\W) 削弱（Weaking）: $\varphi \models \varphi'$；
+	\item[] (\NgP) 正支持（Positive Persistence）：如果$\IR(\phi,V)$并且$\varphi \models \phi$，则$\varphi' \models \phi$；
+	\item[] (\PP) 负支持（Negative Persistence）：如果$\IR(\phi,V)$并且$\varphi \not \models \phi$，则$\varphi' \not \models \phi$；
 	\item[] (\textbf{IR}) 无关性（Irrelevance）：$\IR(\varphi',V)$。
 \end{itemize}
 直观地说，(\W)和(\textbf{IR})表明“遗忘”削弱了公式$\varphi$且得到的结果与$V$无关，(\PP)和(\NgP)表明对任意与$V$无关的公式$\phi$，$\varphi \models \phi$当且仅当$\varphi' \models \phi$。总而言之，遗忘得到的结果能推出所有与$V$无关且能被$\varphi$推出的结果，且不能推出所有与$V$无关且不能被$\varphi$推出的结果。
@@ -925,7 +940,7 @@ Zhang等人还提出了能精确描述知识遗忘的四个基本条件（公设
 
 在本文中也将说明$\CTL$和$\mu$-演算的遗忘也有上述性质。值得注意的是任意的S5公式都能转换为与之等价的\emph{模态合取范式}（MCNF）~\cite{DBLP:conf/aaai/Bienvenu07}，其模态子句形式为：
 $$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n,$$
-或具有如下形式的公式的吸取——模态析取范式（MDNF）~\cite{Yongmei:IJCAI:2011,Zhang2008Properties}:
+或具有如下形式的公式的析取——模态析取范式（MDNF）~\cite{Yongmei:IJCAI:2011,Zhang2008Properties}:
 \begin{align}\label{form:s5clause}
 	\varphi_0 \wedge \MPK \varphi_1 \wedge \MPB \varphi_2 \wedge \dots \wedge \MPB \varphi_n
 \end{align}
@@ -946,7 +961,7 @@ $$C_0 \vee \MPK C_1 \vee \dots \vee \MPK C_{n-1} \vee \MPB C_n,$$
 在第~\ref{chapter:sub:proforgetting}和\ref{chapter:sub:s5forgetting}小节中详细介绍了经典逻辑和模态逻辑S5下遗忘的定义和一些直接的计算方法。
 总的来说，这些方法分为两类：“代替”的方法和归结的方法。其中“代替”法是将要遗忘的原子命题在公式里用“$\top$”或“$\bot$”代替，归结的方法主要使用归结规则来“消除”需要遗忘的原子命题。然而，在上文中并没有对归结方法进行详细的介绍，所以这部分给出命题情形下归结方法的详细描述。%此外，计算遗忘的方法还有基于Ackermann引理的方法，本节也将详细讨论。
 
-归结方法取决于子句的形式，子句的形式决定了归结规则的复杂性。经典命题逻辑中的子句形式比较单一，就只有一种——文字的吸取，因此归结规则就比较简单，即：
+归结方法取决于子句的形式，子句的形式决定了归结规则的复杂性。经典命题逻辑中的子句形式比较单一，就只有一种——文字的析取，因此归结规则就比较简单，即：
 $$\frac{C_1 \vee p \qquad C_2 \vee \neg p}{C_1 \vee C_2},$$
 其中$C_1$和$C_2$是子句，$p$是原子命题。在这种情况下，基于归结的方法就如定义~\ref{def:resforgetting}那样简单。
 在一阶逻辑中，将公式转换为子句形式的过程比较复杂，而归结规则也相对复杂一些。但是在一阶情形下归结，归结系统R~\cite{DBLP:books/daglib/0023036}是可靠的且归结反驳是完备的。
