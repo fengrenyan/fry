@@ -1,4 +1,4 @@
-\begin{thebibliography}{94}
+\begin{thebibliography}{123}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -177,6 +177,64 @@ BJ{\O}RNER~D, HOARE~C~A~R, LANGMAACK~H.
 \newblock 1990: 340-351.
 \newblock \url{https://doi.org/10.1007/3-540-52513-0\_18}.
 
+\bibitem[简云松(2012)]{jian2012}
+简云松.
+\newblock
+  一个目标驱动的运行时需求管理框架的研究与实现\allowbreak[D].
+\newblock 北京: 清华大学, 2012.
+
+\bibitem[Harel et~al.(1984)Harel and Pnueli]{DBLP:conf/nato/HarelP84}
+HAREL~D, PNUELI~A.
+\newblock On the development of reactive systems\allowbreak[C/OL]//\allowbreak
+APT~K~R.
+\newblock {NATO} {ASI} Series: volume~13\quad Logics and Models of Concurrent
+  Systems - Conference proceedings, Colle-sur-Loup (near Nice), France, 8-19
+  October 1984.
+\newblock Springer, 1984: 477-498.
+\newblock \url{https://doi.org/10.1007/978-3-642-82453-1\_17}.
+
+\bibitem[Pnueli(1986)]{DBLP:books/sp/trends86/Pnueli86}
+PNUELI~A.
+\newblock Applications of temporal logic to the specification and verification
+  of reactive systems: {A} survey of current
+  trends\allowbreak[M/OL]//\allowbreak
+DE~BAKKER~J~W, DE~ROEVER~W~P, ROZENBERG~G.
+\newblock Lecture Notes in Computer Science: volume 224\quad Current Trends in
+  Concurrency, Overviews and Tutorials.
+\newblock Springer, 1986: 510-584.
+\newblock \url{https://doi.org/10.1007/BFb0027047}.
+
+\bibitem[王娟娟\ 等(2019)王娟娟, 乔颖, 熊金泉, and
+  王宏安]{wangjuan2019}
+王娟娟, 乔颖, 熊金泉, 等.
+\newblock
+  多核环境下基于图模型的实时规则调度方法\allowbreak[J].
+\newblock Journal of Software, 2019, 30\penalty0 (2).
+
+\bibitem[Clarke et~al.(2001)Clarke, Grumberg, and
+  Peled]{DBLP:books/daglib/0007403}
+CLARKE~E~M, GRUMBERG~O, PELED~D~A.
+\newblock Model checking\allowbreak[M/OL].
+\newblock {MIT} Press, 2001.
+\newblock \url{http://books.google.de/books?id=Nmc4wEaLXFEC}.
+
+\bibitem[Clarke et~al.(1996)Clarke, Grumberg, and Long]{clarke1996model}
+CLARKE~E, GRUMBERG~O, LONG~D.
+\newblock Model checking\allowbreak[C]//\allowbreak
+NATO ASI DPD.
+\newblock [S.l.: s.n.], 1996: 305-349.
+
+\bibitem[王政(2012)]{wangzhen2012}
+王政.
+\newblock 嵌入式周期控制系统的建模与分析\allowbreak[D].
+\newblock [出版地不详]: 华东师范大学, 2012.
+
+\bibitem[李书浩\ 等(2004)李书浩, 王戟, 董威, and
+  齐治昌]{lishu2004}
+李书浩, 王戟, 董威, 等.
+\newblock 反应式系统面向性质测试的方法框架\allowbreak[J].
+\newblock 电子学报, 2004, 32\penalty0 (S1):\penalty0 226-230.
+
 \bibitem[Lin et~al.(1994)Lin and Reiter]{lin1994forget}
 LIN~F, REITER~R.
 \newblock Forget it\allowbreak[C]//\allowbreak
@@ -285,6 +343,28 @@ PAGNUCCO~M, THIELSCHER~M.
 \newblock Proceedings of NMR 2008.
 \newblock Sydney, Australia: [s.n.], 2008{\natexlab{a}}: 68-75.
 
+\bibitem[Liu et~al.(2011)Liu and Wen]{Yongmei:IJCAI:2011}
+LIU~Y, WEN~X.
+\newblock On the progression of knowledge in the situation
+  calculus\allowbreak[C]//\allowbreak
+IJCAI 2011, Proceedings of the 22nd International Joint Conference on
+  Artificial Intelligence.
+\newblock Barcelona, Catalonia, Spain: IJCAI/AAAI, 2011: 976-982.
+
+\bibitem[Fang et~al.(2019)Fang, Liu, and van
+  Ditmarsch]{DBLP:journals/ai/FangLD19}
+FANG~L, LIU~Y, VAN DITMARSCH~H.
+\newblock Forgetting in multi-agent modal logics\allowbreak[J/OL].
+\newblock Artificial Intelligence, 2019, 266:\penalty0 51-80.
+\newblock \url{https://doi.org/10.1016/j.artint.2018.08.003}.
+
+\bibitem[文习明\ 等(2019)文习明, 方良达, 余泉, 常亮, and
+  王驹]{wenximing2019}
+文习明, 方良达, 余泉, 等.
+\newblock 多智能体模态逻辑系统 KD45n
+  中的知识遗忘\allowbreak[J].
+\newblock 计算机科学, 2019, 46\penalty0 (7):\penalty0 195-205.
+
 \bibitem[Iemhoff(2019)]{DBLP:journals/aml/Iemhoff19}
 IEMHOFF~R.
 \newblock Uniform interpolation and sequent calculi in modal
@@ -377,6 +457,84 @@ LIN~F.
   279-314.
 \newblock \url{https://doi.org/10.1613/jair.1135}.
 
+\bibitem[王文宇(2021)]{wangwen2021}
+王文宇.
+\newblock 基于 DataSecOps 的个人信息遗忘\allowbreak[J].
+\newblock 信息安全研究, 2021, 7\penalty0 (9):\penalty0 856-860.
+
+\bibitem[朱嘉玮(2020)]{zhujia2020}
+朱嘉玮.
+\newblock 从 “被遗忘权” 看个人信息保护\allowbreak[J].
+\newblock 现代商贸工业, 2020, 8.
+
+\bibitem[Liberatore et~al.(1998)Liberatore and
+  Schaerf]{DBLP:journals/tkde/LiberatoreS98}
+LIBERATORE~P, SCHAERF~M.
+\newblock Arbitration (or how to merge knowledge bases)\allowbreak[J/OL].
+\newblock {IEEE} Trans. Knowl. Data Eng., 1998, 10\penalty0 (1):\penalty0
+  76-90.
+\newblock \url{https://doi.org/10.1109/69.667090}.
+
+\bibitem[Konieczny et~al.(2002)Konieczny and
+  P{\'{e}}rez]{DBLP:journals/logcom/KoniecznyP02}
+KONIECZNY~S, P{\'{E}}REZ~R~P.
+\newblock Merging information under constraints: {A} logical
+  framework\allowbreak[J/OL].
+\newblock J. Log. Comput., 2002, 12\penalty0 (5):\penalty0 773-808.
+\newblock \url{https://doi.org/10.1093/logcom/12.5.773}.
+
+\bibitem[Maynard{-}Zhang et~al.(2003)Maynard{-}Zhang and
+  Lehmann]{DBLP:journals/jair/Maynard-ZhangL03}
+MAYNARD{-}ZHANG~P, LEHMANN~D.
+\newblock Representing and aggregating conflicting beliefs\allowbreak[J/OL].
+\newblock J. Artif. Intell. Res., 2003, 19:\penalty0 155-203.
+\newblock \url{https://doi.org/10.1613/jair.1206}.
+
+\bibitem[Konieczny et~al.(2004)Konieczny, Lang, and Marquis]{konieczny2004da2}
+KONIECZNY~S, LANG~J, MARQUIS~P.
+\newblock Da2 merging operators\allowbreak[J].
+\newblock Artificial Intelligence, 2004, 157\penalty0 (1-2):\penalty0 49-79.
+
+\bibitem[Everaere et~al.(2010)Everaere, Konieczny, and
+  Marquis]{DBLP:journals/ai/EveraereKM10}
+EVERAERE~P, KONIECZNY~S, MARQUIS~P.
+\newblock Disjunctive merging: Quota and gmin merging
+  operators\allowbreak[J/OL].
+\newblock Artif. Intell., 2010, 174\penalty0 (12-13):\penalty0 824-849.
+\newblock \url{https://doi.org/10.1016/j.artint.2010.05.001}.
+
+\bibitem[徐岱(2011)]{xudai2011}
+徐岱.
+\newblock 遗忘及应用\allowbreak[D].
+\newblock [出版地不详]: 北京大学, 2011.
+
+\bibitem[Sandu(1993)]{DBLP:journals/jphil/Sandu93}
+SANDU~G.
+\newblock On the logic of informational independence and its
+  applications\allowbreak[J/OL].
+\newblock J. Philos. Log., 1993, 22\penalty0 (1):\penalty0 29-60.
+\newblock \url{https://doi.org/10.1007/BF01049180}.
+
+\bibitem[Sandu(1997)]{DBLP:journals/igpl/Sandu97}
+SANDU~G.
+\newblock The logic of informational independence and finite
+  models\allowbreak[J/OL].
+\newblock Log. J. {IGPL}, 1997, 5\penalty0 (1):\penalty0 79-95.
+\newblock \url{https://doi.org/10.1093/jigpal/5.1.79}.
+
+\bibitem[V{\"{a}}{\"{a}}n{\"{a}}nen(2002)]{DBLP:journals/igpl/Vaananen02}
+V{\"{A}}{\"{A}}N{\"{A}}NEN~J~A.
+\newblock On the semantics of informational independence\allowbreak[J/OL].
+\newblock Log. J. {IGPL}, 2002, 10\penalty0 (3):\penalty0 339-352.
+\newblock \url{https://doi.org/10.1093/jigpal/10.3.339}.
+
+\bibitem[Sevenster(2006)]{DBLP:journals/synthese/Sevenster06}
+SEVENSTER~M.
+\newblock On the computational consequences of independence in propositional
+  logic\allowbreak[J/OL].
+\newblock Synth., 2006, 149\penalty0 (2):\penalty0 257-283.
+\newblock \url{https://doi.org/10.1007/s11229-005-3878-5}.
+
 \bibitem[Dijkstra(1975)]{DBLP:journals/cacm/Dijkstra75}
 DIJKSTRA~E~W.
 \newblock Guarded commands, {N}ondeterminacy and {F}ormal {D}erivation of
@@ -412,10 +570,95 @@ D'AGOSTINO~G, LENZI~G.
 \newblock Journal of Applied Logic, 2006, 4\penalty0 (3):\penalty0 256-278.
 \newblock \url{https://doi.org/10.1016/j.jal.2005.06.008}.
 
+\bibitem[Zhu et~al.(2010)Zhu, Wang, Xu, and Xu]{DBLP:journals/fcsc/ZhuWXX10}
+ZHU~J, WANG~H, XU~Z, et~al.
+\newblock A new model for model checking: cycle-weighted kripke
+  structure\allowbreak[J/OL].
+\newblock Frontiers Comput. Sci. China, 2010, 4\penalty0 (1):\penalty0 78-88.
+\newblock \url{https://doi.org/10.1007/s11704-009-0066-7}.
+
+\bibitem[Schneider(2000)]{schneider2000verified}
+SCHNEIDER~K.
+\newblock A verified hardware synthesis of esterel
+  programs\allowbreak[C]//\allowbreak
+IFIP Working Conference on Distributed and Parallel Embedded Systems.
+\newblock [S.l.]: Springer, 2000: 205-214.
+
+\bibitem[Schneider(2001)]{DBLP:conf/acsd/Schneider01}
+SCHNEIDER~K.
+\newblock Embedding imperative synchronous languages in interactive theorem
+  provers\allowbreak[C/OL]//\allowbreak
+2nd International Conference on Application of Concurrency to System Design
+  {(ACSD} 2001), 25-30 June 2001, Newcastle upon Tyne, {UK}.
+\newblock {IEEE} Computer Society, 2001: 143.
+\newblock \url{https://doi.org/10.1109/CSD.2001.981772}.
+
+\bibitem[Schneider(2002)]{DBLP:conf/tphol/Schneider02}
+SCHNEIDER~K.
+\newblock Proving the equivalence of microstep and macrostep
+  semantics\allowbreak[C/OL]//\allowbreak
+CARRE{\~{N}}O~V, MU{\~{N}}OZ~C~A, TAHAR~S.
+\newblock Lecture Notes in Computer Science: volume 2410\quad Theorem Proving
+  in Higher Order Logics, 15th International Conference, TPHOLs 2002, Hampton,
+  VA, USA, August 20-23, 2002, Proceedings.
+\newblock Springer, 2002: 314-331.
+\newblock \url{https://doi.org/10.1007/3-540-45685-6\_21}.
+
 \bibitem[陆钟万(1989)]{luzhongwan1989}
 陆钟万.
 \newblock 面向计算机科学的数理逻辑\allowbreak[M].
 \newblock 北京: 北京大学出版社, 1989.
+
+\bibitem[Ben{-}Eliyahu{-}Zohary et~al.(2016)Ben{-}Eliyahu{-}Zohary, Angiulli,
+  Fassetti, and Palopoli]{DBLP:conf/ijcai/Ben-Eliyahu-Zohary16}
+BEN{-}ELIYAHU{-}ZOHARY~R, ANGIULLI~F, FASSETTI~F, et~al.
+\newblock Decomposing minimal models\allowbreak[C/OL]//\allowbreak
+BART{\'{A}}K~R, MCCLUSKEY~T~L, PONTELLI~E.
+\newblock {CEUR} Workshop Proceedings: volume 1648\quad Proceedings of the
+  Workshop on Knowledge-based Techniques for Problem Solving and Reasoning
+  co-located with 25th International Joint Conference on Artificial
+  Intelligence {(IJCAI} 2016), New York City, USA, July 10, 2016.
+\newblock CEUR-WS.org, 2016.
+\newblock \url{http://ceur-ws.org/Vol-1648/paper1.pdf}.
+
+\bibitem[Ben{-}Eliyahu{-}Zohary et~al.(2017)Ben{-}Eliyahu{-}Zohary, Angiulli,
+  Fassetti, and Palopoli]{DBLP:conf/lpnmr/Ben-Eliyahu-Zohary17}
+BEN{-}ELIYAHU{-}ZOHARY~R, ANGIULLI~F, FASSETTI~F, et~al.
+\newblock Modular construction of minimal models\allowbreak[C/OL]//\allowbreak
+BALDUCCINI~M, JANHUNEN~T.
+\newblock Lecture Notes in Computer Science: volume 10377\quad Logic
+  Programming and Nonmonotonic Reasoning - 14th International Conference,
+  {LPNMR} 2017, Espoo, Finland, July 3-6, 2017, Proceedings.
+\newblock Springer, 2017: 43-48.
+\newblock \url{https://doi.org/10.1007/978-3-319-61660-5\_5}.
+
+\bibitem[张丽\ 等(2021)张丽, 王以松, 谢仲涛, and
+  冯仁艳]{zhangli2021}
+张丽, 王以松, 谢仲涛, 等.
+\newblock 基于 MiniSAT 的命题极小模型计算方法\allowbreak[J].
+\newblock 计算机研究与发展, 2021, 58\penalty0 (11):\penalty0 2515.
+
+\bibitem[Lei et~al.(2018)Lei and Cai]{DBLP:conf/ijcai/LeiC18}
+LEI~Z, CAI~S.
+\newblock Solving (weighted) partial maxsat by dynamic local search for
+  {SAT}\allowbreak[C/OL]//\allowbreak
+LANG~J.
+\newblock Proceedings of the Twenty-Seventh International Joint Conference on
+  Artificial Intelligence, {IJCAI} 2018, July 13-19, 2018, Stockholm, Sweden.
+\newblock ijcai.org, 2018: 1346-1352.
+\newblock \url{https://doi.org/10.24963/ijcai.2018/187}.
+
+\bibitem[Lei et~al.(2020)Lei and Cai]{DBLP:conf/aaai/LeiC20}
+LEI~Z, CAI~S.
+\newblock Solving set cover and dominating set via maximum
+  satisfiability\allowbreak[C/OL]//\allowbreak
+The Thirty-Fourth {AAAI} Conference on Artificial Intelligence, {AAAI} 2020,
+  The Thirty-Second Innovative Applications of Artificial Intelligence
+  Conference, {IAAI} 2020, The Tenth {AAAI} Symposium on Educational Advances
+  in Artificial Intelligence, {EAAI} 2020, New York, NY, USA, February 7-12,
+  2020.
+\newblock {AAAI} Press, 2020: 1569-1576.
+\newblock \url{https://aaai.org/ojs/index.php/AAAI/article/view/5517}.
 
 \bibitem[Kripke(1963)]{kripke1963semantical}
 KRIPKE~S~A.
@@ -579,21 +822,6 @@ Proceedings of the Twenty-Second {AAAI} Conference on Artificial Intelligence,
 \newblock {AAAI} Press, 2007: 379-384.
 \newblock \url{http://www.aaai.org/Library/AAAI/2007/aaai07-059.php}.
 
-\bibitem[Liu et~al.(2011)Liu and Wen]{Yongmei:IJCAI:2011}
-LIU~Y, WEN~X.
-\newblock On the progression of knowledge in the situation
-  calculus\allowbreak[C]//\allowbreak
-IJCAI 2011, Proceedings of the 22nd International Joint Conference on
-  Artificial Intelligence.
-\newblock Barcelona, Catalonia, Spain: IJCAI/AAAI, 2011: 976-982.
-
-\bibitem[Fang et~al.(2019)Fang, Liu, and van
-  Ditmarsch]{DBLP:journals/ai/FangLD19}
-FANG~L, LIU~Y, VAN DITMARSCH~H.
-\newblock Forgetting in multi-agent modal logics\allowbreak[J/OL].
-\newblock Artificial Intelligence, 2019, 266:\penalty0 51-80.
-\newblock \url{https://doi.org/10.1016/j.artint.2018.08.003}.
-
 \bibitem[Feng et~al.(2018)Feng, Wang, Chen, and Zhou]{feng2018strongest}
 FENG~R, WANG~Y, CHEN~P, et~al.
 \newblock Strongest necessary and weakest sufficient conditions in
@@ -658,13 +886,6 @@ YANKOV~V~A.
   propositional logic\allowbreak[J].
 \newblock Izvestiya Rossiiskoi Akademii Nauk. Seriya Matematicheskaya, 1968,
   32\penalty0 (4):\penalty0 880-883.
-
-\bibitem[Clarke et~al.(2001)Clarke, Grumberg, and
-  Peled]{DBLP:books/daglib/0007403}
-CLARKE~E~M, GRUMBERG~O, PELED~D~A.
-\newblock Model checking\allowbreak[M/OL].
-\newblock {MIT} Press, 2001.
-\newblock \url{http://books.google.de/books?id=Nmc4wEaLXFEC}.
 
 \bibitem[Meier et~al.(2009)Meier, Thomas, Vollmer, and
   Mundhenk]{meier2009complexity}
