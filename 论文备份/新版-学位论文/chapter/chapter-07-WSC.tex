@@ -1,0 +1,242 @@
+\chapter{遗忘理论的应用}
+\label{chapter07}
+{\em 本章针对第\ref{chapter01}章提出的问题探讨使用遗忘的方法来解决计算WSC（SNC）和知识更新。首先给出SNC（WSC）的定义，然后证明任意公式的SNC（WSC）可以规约到命题下的SNC（WSC）。此外，表明SNC和WSC是一对对偶概念，因此探讨其中一个就足以表示另一个的性质。其次，从遗忘的角度给出了计算SNC（WSC）的方法。基于此，当给定的系统模型为有限状态时，可以事先将该模型用其特征公式表示出来，然后使用遗忘的方法来计算SNC（WSC）。
+最后，提出使用遗忘定义知识更新的方法。
+	}
+\section{引言}
+遗忘可以用于从本体中抽取摘要、敏感信息的隐蔽、计算逻辑差等，这在相关工作部分有详细介绍。
+此外，WSC和SNC在智能规划和形式化验证里有重要作用。比如，在2003年，Lin使用WSC和SNC计算规划问题中的后继状态公理。
+在第\ref{chapter02}章中详细介绍了命题逻辑和模态逻辑S5下使用遗忘计算WSC（SNC）的方法和算法。
+本章研究$\CTL$和$\mu$-演算下如何使用遗忘计算反应式系统的SNC（WSC），及使用遗忘定义知识更新。即：
+\begin{itemize}
+	\item 对于给定的公式$\varphi$、原子命题$q$和原子命题集合$V\subseteq \Var(\varphi)$，若满足$q \in \Var(\varphi)-V$，则$q$在$\varphi$和$V$上的SNC等价于从公式$\varphi \wedge q$中遗忘掉除了$V$中元素的原子命题后得到结果；WSC做为SNC的一个对偶概念，有相似的结论。而不终止的系统（包括反应是系统你）在本章看作是一个有限的初始结构，根据第\ref{chapter05}章中的介绍，任意有限的初始结构都能用其特征公式来表示，因而可以使用遗忘的方法来计算其SNC（WSC）。
+	\item 基于遗忘的知识更新通过最小的改变现有知识的模型来使其适应新信息，从这个角度上可以看作是基于模型的更新，且使用这种方法的更新满足katsuno等人提出的八条基本准则\cite{katsuno91mendelzon}。
+\end{itemize}
+
+
+本章其余部分组织如下：首先，第\ref{chapter07:sec:snc}节给出最强必要条件和最弱充分条件的定义，然后探索这两个概念之间及原子命题和任意公式之间这两个概念的联系，最后给出基于遗忘的计算方法。其次，第\ref{chapter07:sec:update}节提出基于遗忘的知识更新方法，并证明其与基于偏序关系的方法之间的等价性。最后，总结本章的研究工作。
+
+\section{最强必要条件和最弱充分条件}\label{chapter07:sec:snc}
+这部分介绍如何使用遗忘理论计算最强必要条件和最弱充分条件。
+直观地说，最强必要条件指最一般的结果（the most general consequence），最弱充分条件指最特殊的诱因（the most specific abduction）。
+下面给出其形式化定义，本章所说的公式指的是$\mu$-句子或$\CTL$公式。
+\begin{definition}[充分和必要条件]\label{def:NC:SC}
+	给定两个公式$\phi$和$\psi$，$V \subseteq \Var(\phi)$，$q\in\Var(\phi)- V$
+	和$\Var(\psi)\subseteq V$。
+	\begin{itemize}
+		\item 若$\phi \models q \rto \psi$，则称$\psi$是$q$在$V$和$\phi$上的{\em 必要条件（necessary condition，NC）}；
+		\item 若$\phi \models \psi\rto q$，则称$\psi$是$q$在$V$和$\phi$上的{\em 充分条件（sufficient condition，SC）}；
+		\item 若$\psi$是$q$在$V$和$\phi$上的必要条件，且对于任意的$q$在$V$和$\phi$上的必要条件$\psi'$都有$\phi\models\psi\rto\psi'$，则称$\psi$是$q$在$V$和$\phi$上的{\em 最强必要条件（strongest necessary condition，SNC）}；
+		\item 若$\psi$是$q$在$V$和$\phi$上的充分条件，且对于任意的$q$在$V$和$\phi$上的充分条件$\psi'$都有$\phi\models\psi'\rto\psi$，则称$\psi$是$q$在$V$和$\phi$上的{\em 最弱充分条件（weakest sufficient condition，WSC）}；
+	\end{itemize}
+\end{definition}
+
+从上述定义可以看出，SNC（WSC）是$q$在$V$和$\phi$上的NC（SC）中最强（最弱）的一个，即：对任意的NC（或SC）$\psi'$，$\phi \models \hbox{SNC} \rto \psi'$（$\phi \models \psi' \rto \hbox{WSC}$）。此外，如果公式$\psi$和$\psi'$都是$q$在$V$和$\phi$上的SNC（WSC），则$\psi \equiv \psi'$。
+下面的命题表明SNC和WSC是一对对偶概念。
+
+\begin{proposition}[对偶性]\label{dual}
+	令$V$、$q$、$\varphi$和$\psi$为定义\ref{def:NC:SC}出现的符号。
+	则$\psi$是$q$在$V$和$\phi$上的SNC（WSC）当且仅当$\neg \psi$是$\neg q$在$V$和$\phi$上的WSC（SNC）。
+\end{proposition}
+\begin{proof}
+	（i）假设$\psi$是$q$在$V$和$\phi$上的SNC。则$\varphi \models q \rto \psi$，因而$\varphi \models \neg \psi \rto \neg q$，即 $\neg \psi$是 $\neg q$在 $V$和 $\phi$上的SC. 设$\psi'$是 $\neg q$在 $V$和 $\phi$上的SC：$\varphi \models \psi' \rto \neg q$。则$\varphi \models q \rto \neg \psi'$，即$\neg \psi'$是 $q$在 $V$和 $\phi$上NC。
+	因此，由假设可知$\varphi \models \psi \rto \neg \psi'$，所以$\varphi \models \psi' \rto \neg \psi$。这证明了$\neg \psi$是 $\neg q$在 $V$和 $\phi$上的WSC。
+可以类似地证明另一部分。
+	
+	（ii）WSC的情形可以类似SNC的情形给出证明。
+\end{proof}
+
+在定义\ref{def:NC:SC}中将$q$替换为任意的公式$\alpha$，$V\subseteq \Var(\alpha) \cup \Var(\phi)$，则定义\ref{def:NC:SC}被推广到任意公式的最强必要条件和最弱充分条件的定义。
+下面的命题表示了原子命题的充分（必要）条件与公式的充分（必要）条件之间的关系：通过计算原子命题的充分（必要）条件来计算公式的充分（必要）条件。
+
+
+
+\begin{proposition}\label{formulaNS_to_p}
+	给定公式$\Gamma$和$\alpha$， $V \subseteq \Var(\alpha) \cup \Var(\Gamma)$，$q$是不出现在$\Gamma$和$\alpha$中的原子命题。
+	集合$V$上的公式$\varphi$是$\alpha$在$V$和$\Gamma$上的SNC（WSC） 当且仅当$\varphi$是$q$在$V$和$\Gamma'$上的SNC（WSC），其中$\Gamma' = \Gamma \cup \{q \lrto \alpha\}$。
+\end{proposition}
+\begin{proof}
+	这里给出SNC部分的证明，WSC部分的证明与其类似。
+	
+	对于任意的公式$\beta$，记$\emph{SNC}(\varphi,\beta,V,\Gamma)$为“$\varphi$是$\beta$在$V$和$\Gamma$上的SNC”，$\emph{NC}(\varphi,\beta,V,\Gamma)$为“$\varphi$是$\beta$在$V$和$\Gamma$上的NC”。
+	
+	
+	($\Rto$) 证明“若$\emph{SNC}(\varphi,\alpha,V,\Gamma)$，则$\emph{SNC}(\varphi,q,V,\Gamma')$”。
+	由$\emph{SNC}(\varphi,\alpha,V,\Gamma)$和$\alpha\equiv q$可知$\Gamma'$ $\models q\rto \varphi$，即：$\varphi$是$q$在$V$和$\Gamma'$上的NC。
+	假设$\varphi'$是$q$在$V$和$\Gamma'$上的任意NC，由于$\alpha\equiv q$和$\emph{IR}($ $\alpha \rto \varphi', \{q\})$，因此，$\CTLforget(\Gamma',q)\models \alpha \rto \varphi'$。由引理\ref{lem:KF:eq}可知$\Gamma \models \alpha \rto \varphi'$，即：$\emph{NC}(\varphi',\alpha,V,$ $\Gamma)$。
+	
+	
+	($\Lto$) 证明“若$\emph{SNC}(\varphi,q,V,\Gamma')$，则$\emph{SNC}(\varphi,\alpha,V,\Gamma)$”。
+	由$\emph{SNC}(\varphi,q,V,\Gamma')$、$\emph{IR}(\alpha \rto \varphi,$ $\{q\})$和 $(\PP)$ 可知$\CTLforget(\Gamma', \{q\})\models \alpha \rto \varphi$，又由引理\ref{lem:KF:eq}可知$\Gamma \models \alpha \rto \varphi$，即：$\emph{NC}(\varphi,\alpha,V,$ $\Gamma)$。
+	设 $\varphi'$是 $\alpha$在 $V$和 $\Gamma$上的任意NC。由$\alpha\equiv q$和 $\Gamma'=\Gamma \cup \{q\equiv \alpha\}$可 知 $\Gamma' \models q \rto \varphi'$，即：$\emph{NC}(\varphi',q,V,\Gamma')$。
+	又因为$\emph{SNC}(\varphi,q,V,\Gamma')$、$\emph{IR}(\varphi \rto \varphi', \{q\})$和 $(\PP)$，所以 $\CTLforget(\Gamma', \{q\})\models \varphi$  $\rto \varphi'$。
+	由引理\ref{lem:KF:eq}可知$\Gamma \models \varphi \rto \varphi'$，因此$\emph{SNC}(\varphi,\alpha,V, \Gamma)$成立。
+\end{proof}
+
+为了对给定原子命题集合下公式的最弱充分条件有个直观的认识，下面给出一个简单的例子。
+	%下面的例子给出了关于给定原子命题集合下的公式的最弱充分条件的具体体现。
+
+\begin{example}[例\ref{exam:vB}的延续]\label{examp:WSC}
+	本例来源于图\ref{exam:vB}中的初始结构${\cal K}_2$。令$\psi = \EXIST \NEXT(s \wedge (\EXIST \NEXT se \vee \EXIST \NEXT \neg d))$、$\varphi = \EXIST \NEXT(s \wedge \EXIST \NEXT \neg d)$、$\Ha =\{d, s, se\}$和$V = \{s, d\}$。下面证明$\varphi$是$\psi$在$V$和${\cal K}_2$上的WSC：
+	\begin{itemize}
+		\item[(i)] 由已知有$\varphi \models \psi$和$\Var(\varphi) \subseteq V$。此外，$(\Hm, s_0) \models \varphi \wedge \psi$，因此${\cal K}_2 \models \varphi \rto \psi$，即：$\varphi$是$\psi$在$V$和${\cal K}_2$上的SC;
+		\item[(ii)] 这里证明“对任意的$\psi$在$V$和${\cal K}_2$上的SC $\varphi'$都有${\cal K}_2 \models \varphi' \rto \varphi$”。易知若${\cal K}_2 \not \models \varphi'$，则${\cal K}_2\models \varphi' \rto \varphi$。
+		假设${\cal K}_2 \models \varphi'$。由$\varphi'$是$\psi$在$V$和${\cal K}_2$上的SC可知$\varphi' \models \EXIST \NEXT(s \wedge \phi)$，其中$\phi$是使得$\phi\models \EXIST \NEXT se \vee \EXIST \NEXT \neg d$成立的公式。又$\IR(\varphi', \overline V)$，所以$\phi \models \EXIST \NEXT \neg d$。因此，$\varphi' \models \varphi$且${\cal K}_2 \models \varphi' \rto \varphi$。
+	\end{itemize}
+\end{example}
+
+
+如何使用遗忘计算SNC（WSC）是本章讨论的关键问题。下面首先给出其理论基础，然后再做直观的解释。
+
+\begin{theorem}\label{thm:SNC:WSC:forget}
+	给定公式$\varphi$、原子命题的集合$V\subseteq\Var(\varphi)$和原子命题$q\in\Var(\varphi)- V$。
+	\begin{itemize}
+		\item[(i)] $\CTLforget (\varphi \land q$, $(\Var(\varphi) \cup \{q\}) - V)$是$q$在$V$和$\varphi$上的SNC；
+		\item[(ii)]  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\}) - V)$是$q$在$V$和$\varphi$上的WSC。
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	(i) 令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。
+	
+	
+	“NC”部分：由遗忘的定义可知$\varphi \wedge q \models {\cal F}$。因此，$\varphi\models q \rto {\cal F}$，即：${\cal F}$是 $q$在 $V$和$\varphi$上的NC。
+	
+	“SNC”部分：假设$\psi'$为$q$在$V$和$\varphi$上的任意NC，即：$\varphi\models q \rto \psi'$。由定理\ref{thm:V-bisimulation:EQ} 和 $\emph{IR}(\psi', (\Var(\varphi) \cup \{q\})- V)$可知，若$\varphi \wedge q \models \psi'$，则${\cal F} \models \psi'$。
+	由假设可知$\varphi\models q \rto \psi'$，所以$\varphi \wedge {\cal F} \models \psi'$，因此$\varphi \models {\cal F} \rto \psi'$。
+	
+	由上面两部分可知，${\cal F}$是$q$在$V$和$\varphi$上的SNC。
+	
+	(ii) 令${\cal F}=\neg \CTLforget(\varphi \wedge \neg q, (\Var(\varphi) \cup \{q\})- V)$。
+	由命题\ref{dual}可知，对任意的命题$q'$，$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，当且仅当
+	$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。
+	由(i)可知$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，所以$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。令$q=\neg q'$，可得${\cal F}$是 $q$在 $V$和 $\varphi$上的WSC。
+\end{proof}
+
+令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。上面的定理可以直观地解释如下：由遗忘理论的定义可知$\varphi \wedge q \models \beta$，这说明
+${\cal F}$是 $q$在 $V$和$\varphi$上的NC；对任意的与$(\Var(\varphi) \cup \{q\})- V$无关的公式$\psi$，若$\varphi \wedge q \models \psi$，则由表达性定理可知$\beta \models \psi$。
+
+由第\ref{chapter05}章可知，任意有限的初始结构都能由一个$\CTL$公式表示，所以由上面的定理自然地就能得到给定有限初始结构下的SNC和WSC。
+\begin{corollary}\label{thm:inK:SNC}
+	令${\cal K}= (\Hm, s)$为初始结构，其中$\Hm=(S,R,L,s_0)$为有限原子命题集合$\Ha$上的初始-Kripke结构，$V \subseteq \Ha$且$q\in V' = \Ha - V$。则：
+	\begin{itemize}
+		\item[(i)] $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$是$q'$在$V$和${\cal K}$上的SNC；
+		\item[(ii)] $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$是$q'$在$V$和${\cal K}$上的WSC。
+	\end{itemize}
+\end{corollary}
+
+\section{知识更新}\label{chapter07:sec:update}
+本小节介绍遗忘理论的另一个应用：知识更新（Knowledge update）。
+具体说来，本节将使用遗忘理论定义知识更新，使得用这种方式定义的知识更新满足下面由Katsuno和Mendelzon的基本条件：
+\begin{itemize}
+	\item (U1)  $\Gamma \diamond \phi \models \phi$；
+	\item (U2) 若$\Gamma \models \phi$，则$\Gamma \diamond \phi \equiv \Gamma$；
+	\item (U3) 若$\Gamma$和$\phi$都是可满足的，则$\Gamma \diamond \phi$是可满足的；
+	\item (U4) 若$\Gamma_1\equiv \Gamma_2$且$\phi_1 \equiv \phi_2$，则$\Gamma_1 \diamond \phi_1 \equiv \Gamma_2 \diamond \phi_2$；
+	\item (U5) $(\Gamma \diamond \phi) \wedge \psi \models \Gamma \diamond(\phi \wedge \psi)$；
+	\item (U6) 若$\Gamma \diamond \phi \models \psi$且$\Gamma \diamond \psi \models \phi$，则$\Gamma \diamond \phi \equiv \Gamma \diamond \psi$；
+	\item (U7) 若$\Gamma$有唯一一个模型，则$(\Gamma \diamond \phi) \wedge (\Gamma \diamond \psi) \models \Gamma \diamond (\phi \vee \psi)$；
+	\item (U8) $(\Gamma_1 \vee \Gamma_2) \diamond \phi                                                                                                                    / (\Gamma_1 \diamond \phi) \vee  (\Gamma_2 \diamond \phi)$。
+\end{itemize}
+其中，$\diamond$为知识更新操作，$\varphi \diamond \psi$表示用$\psi$更新$\varphi$得到的结果。
+
+本小节假设所有的初始结构都是有限的，即：状态来源于有限的状态空间且$\Ha$为有限的原子命题的集合。下面定理显然成立：
+\begin{theorem}\label{thm:initModel}
+	给定公式$\phi$和原子命题的集合$V \subseteq \cal A$。存在一个公式$\psi$使得：
+	\[
+	(\Hm,s_0) \models \psi \mbox{ 当且仅当存在 } (\Hm',s_0')\in\Mod(\phi) \mbox{ 使得 } (\Hm,s_0) \lrto_V (\Hm',s_0') % \mbox{ and } \Hm' \models \phi.
+	\]
+	其中$(\Hm,s_0)$和$(\Hm',s_0')$都是有限的初始结构。
+\end{theorem}
+\begin{proof}
+	令$\psi=\Muforget(\phi, V)$（或$\psi=\CTLforget(\phi, V)$）。由遗忘的定义可知，对任意的${\cal K} \models \psi$存在一个${\cal K}' \models \phi$使得${\cal K} \lrto_V {\cal K}'$，且对每一个${\cal K}' \in \Mod(\phi)$都有${\cal K}' \models \psi$。
+	此时，容易证明对任意的有限初始结构${\cal K}$，若${\cal K} \models \psi$，则存在一个${\cal K}'$使得${\cal K}' \models \phi$且${\cal K} \lrto_V {\cal K}'$。
+	
+	此外，对任意的${\cal K}' \in \Mod(\phi)$，由(\W)可知存在${\cal K}' \models \psi$。又${\cal K} \lrto_V {\cal K}'$，所以$\Hm \models \psi$。
+\end{proof}
+
+
+定理\ref{thm:initModel}表明模型结构被限制到有限初始结构下的$\mu$-演算下遗忘理论也是封闭的。
+此外，由第\ref{chapter05}章可知，任意$\Ha$上的有限初始结构${\cal K}$都能用一个$\CTL$公式——特征公式${\cal F}_{\Ha}({\cal K})$来表示，此公式也是$\mu$-句子。
+
+对于给定的$\Ha$和$V_{min}\subseteq \Ha$，记$\varphi = {\cal O}({\cal F}_{\Ha}({\cal K}), V_{min})$（${\cal O} \in \{\CTLforget, \Muforget\}$），其中$V_{min} \subseteq \Ha$是使得$\varphi$可满足的极小子集。
+此外，公式
+$$\bigcup_{V_{min}\subseteq \Ha} \Mod({\cal O}({\cal F}_{\Ha}({\cal K}), V_{min}))$$ 
+%$$\bigcup_{V_{min}\subseteq \Ha} \Mod(\CTLforget({\cal F}_{\Ha}({\cal K}), V_{min}))$$
+表示所有${\cal O}({\cal F}_{\Ha}({\cal K}), V_{min})$的模型集合的并集。
+此时，可如下定义$\mu$-演算下的知识更新操作：
+
+
+\begin{definition}\label{def:KU}
+	给定公式$\Gamma$和$\phi$。知识更新操作$\diamond_{\delta}$（$\delta \in \{\mu, \CTL\}$）定义如下：
+	\[
+	\Mod(\Gamma \diamond_{\delta} \phi) = \bigcup_{{\cal K} \in \Mod(\Gamma)} \bigcup_{V_{min}\subseteq \Ha} \Mod({\cal O}({\cal F}_{\Ha}({\cal K}), V_{min}) \wedge \phi),
+	\]
+	其中，${\cal F}_{\Ha}({\cal K})$是${\cal K}$在$\Ha$上的特征公式，$V_{min} \subseteq \Ha$是使得${\cal O}({\cal F}_{\Ha}({\cal K}), V_{min})$可满足的极小子集。
+\end{definition}
+
+从直观上来说，$\Gamma \diamond_{\delta} \phi$表示通过极小化改变$\Gamma$的模型到$\phi$的模型来更新$\Gamma$。换句话说，定义\ref{def:KU}通过极小化改变$\Gamma$的每个模型，使得该模型能够满足$\phi$来更新原有的知识$\Gamma$。从这个角度看，这样定义的知识更新是一种基于模型的知识更新方法。
+
+此外，$\mu$-演算下的知识更新也可以通过像命题逻辑里的那样来定义：令$I$，$J_1$和$J_2$为三个解释，即：原子命题的集合；则$J_1$比$J_2$更接近$I$（记为：$J_1 \leq_{I,pam} J_2$）当且仅当$\Diff(I, J_1) \subseteq \Diff(I, J_2)$，其中$\Diff(X, Y) =\{p\in \Ha \mid X(p) \not = Y(p)\}$。那么命题逻辑里的知识更新——用$\psi$更新$\Gamma$，即为$\psi$的关于偏序关系$\leq_{I,pam}$的所有极小模型的集合（$I$是$\Gamma$的模型），即：
+$$\Mod(\Gamma \diamond_{pam} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi), \leq_{I,pam}).$$
+其中，$Min(\Mod(\psi), \leq_{I,pam})$是$\psi$的关于偏序关系$\leq_{I,pam}$的极小模型的集合。
+
+类似地，这里定理有限初始结构之间关于另一个初始结构的偏序关系。
+\begin{definition}\label{def:closer}
+	给定三个有限初始结构${\cal K}$、${\cal K}_1$和${\cal K}_2$，${\cal K}_1$比${\cal K}_2$更接近${\cal K}$（记为${\cal K}_1 \leq_{{\cal K}} {\cal K}_2$）当且仅当对任意使得${\cal K}_2 \lrto_{V_2} {\cal K}$成立的$V_2 \subseteq \Atom$都存在一个$V_1 \subseteq V_2$使得${\cal K}_1 \lrto_{V_1} {\cal K}$。
+	 ${\cal K}_1 <_{{\cal K}} {\cal K}_2$当且仅当${\cal K}_1 \leq_{{\cal K}} {\cal K}_2$且${\cal K}_2 \not \leq_{{\cal K}} {\cal K}_1$。
+\end{definition}
+
+给定有限初始结构的集合$M$和有限初始结构${\cal K}$，用$Min(M,$ $\leq_{{\cal K}})$表示$M$中关于偏序关系$\leq_{{\cal K}}$的极小有限初始结构的集合。则$\leq_{{\cal K}}$与知识更新操作$\diamond_{\delta}$有如下关系。
+
+\begin{theorem}\label{thm:minU}
+	给定$\mu$-句子$\Gamma$和$\phi$，则：
+	\[\Mod(\Gamma \diamond_{\delta} \phi) = \bigcup_{{\cal K}\in \Mod(\Gamma)} Min(\Mod(\phi), \leq_{{\cal K}}).
+	\]
+\end{theorem}
+\begin{proof}
+	对每一个初始结构${\cal K}'\in \Mod(\Gamma \diamond_{\delta} \phi)$，这里证明存在一个${\cal K} \in \Mod(\Gamma)$使得${\cal K}' \in  Min(\Mod(\phi), \leq_{{\cal K}})$。由定义\ref{def:KU}可知，存在${\cal K}\in Mod(\Gamma)$使得${\cal K}'\in \Mod({\cal O}({\cal F}_{\Ha}({\cal K})$, $V_{min}) \wedge \phi)$。 此外，存在一个特殊的$V'\subseteq \Ha$（即：$V' = V_{min}$） 使得${\cal K}' \lrto_{V'} {\cal K}$和${\cal K}' \in \Mod(\phi)$。因为$V'$是使得${\cal K}' \lrto_{V'} {\cal K}$成立的极小子集，因此对任意使得${\cal K}'' \lrto_{V_{min}} {\cal K}$成立的$\phi$的模型${\cal K}''$，由遗忘理和特征公式论的定义可知${\cal K}' \leq_{{\cal K}} {\cal K}''$。 因此，${\cal K}' \in Min(\Mod(\phi), \leq_{{\cal K}})$。
+	
+	对每一个初始结构${\cal K}'\in \bigcup_{{\cal K}\in \Mod(\Gamma)} Min(\Mod(\phi), \leq_{{\cal K}})$，存在${\cal K} \in \Mod(\Gamma)$使得${\cal K}' \in  Min(\Mod(\phi), \leq_{{\cal K}})$。设$V_{min}$是使得${\cal K}' \lrto_{V_{min}} {\cal K}$成立的极小子集。根据$\leq_{{\cal K}}$的定义可知，不存在其他${\cal K}''\in \Mod(\phi)$使得${\cal K}'' \lrto_{V'} {\cal K}$且$V' \subset V_{min}$。因而${\cal K}' \in \Mod({\cal O}({\cal F}_{\Ha}({\cal K}), V_{min}) \wedge \phi)$，所以${\cal K}' \in \Mod(\Gamma \diamond_{\delta} \phi)$。
+\end{proof}
+
+从定理\ref{thm:minU}可以看出，通过遗忘理论定义的知识更新操作与通过有限初始结构间的偏序关系定义的知识更新一致，且通过遗忘理论定义的知识更新操作满足Katsuno和Mendelzon提出的八条基本条件。
+
+\begin{theorem}\label{thm:U1toU8}
+	知识更新操作$\diamond_{\delta}$满足Katsuno和Mendelzon提出的基本条件(U1)-(U8)。
+\end{theorem}
+\begin{proof}
+	(U1). 由定理\ref{thm:minU}可知$\Mod(\Gamma \diamond_{\delta} \phi) \subseteq \Mod(\phi)$，因此$\Gamma \diamond_{\delta} \phi \models \phi$。
+	
+	 
+	
+	(U2). 首先证明$\Gamma \diamond_{\delta} \phi \models \Gamma$。对$\Gamma \diamond_{\delta} \phi$的任意一个模型${\cal K}$，存在一个${\cal K}_1 \in \Mod(\Gamma)$和 $V_{min}$使得${\cal K} \lrto_{V_{min}} {\cal K}_1$。又$\Gamma \models \phi$，因此$V_{min} = \emptyset$，即${\cal K} \models  \Gamma$。类似地，对$\Gamma$的每一个模型${\cal K}$，存在一个${\cal K}_1\in \Mod(\Gamma \diamond_{\delta} \phi)$和一个$V_{min}$使得${\cal K} \lrto_{V_{min}} {\cal K}_1$。又$\Gamma \models \phi$，因此$V_{min} = \emptyset$。所以，$\Gamma \models \Gamma \diamond_{\delta} \phi$。
+	
+	 
+	
+	容易证明$\diamond_{\delta}$满足(U3)和(U4)。
+	
+	(U5). 对$(\Gamma \diamond_{\delta} \phi) \wedge \psi$的每一个模型${\cal K}$，存在一个${\cal K}_1 \in \Mod(\Gamma)$和一个$V_{min}$使得${\cal K} \lrto_{V_{min}} {\cal K}_1$。
+	此外，可知${\cal K} \models \phi \wedge \psi$，因此，${\cal K} \models \Gamma \diamond_{\delta} (\phi \wedge \psi)$。
+	 
+	(U6). 这里给出$\Gamma \diamond_{\delta} \phi \models \Gamma \diamond_{\delta} \psi$的证明，另一个方向可以类似地证明。
+	对$\Gamma \diamond_{\delta} \phi$的每一个模型${\cal K}$，${\cal K}$也是$\psi$的模型，且存在${\cal K}_1 \in \Mod(\Gamma)$和$V_{min}$使得${\cal K} \lrto_{V_{min}} {\cal K}_1$。
+	因此，${\cal K}$是$\Muforget({\cal F}_{\Ha}({\cal K}_1), V_{min}) \wedge \psi$的模型，也即是$\Muforget({\cal F}_{\Ha}({\cal K}_1), V_{min}) \wedge \psi$可满足的。
+	%此外，$V_{min}$是使得$\Muforget({\cal F}_{\Ha}({\cal K}_1), V_{min}) \wedge \psi$可满足的极小子集，否则
+	设$V\subset V_{min}$是使得$\Muforget({\cal F}_{\Ha}({\cal K}_1), V) \wedge \psi$可满足的原子命题的集合，由$\Gamma \diamond_{\delta} \psi \models \phi$可知$\Muforget({\cal F}_{\Ha}({\cal K}_1), V)$ $\wedge \phi$是可满足的，这与$V_{min}$是使得$\Muforget({\cal F}_{\Ha}({\cal K}_1), V_{min}) \wedge \phi$可满足的极小子集。因此，$V_{min}$是使得$\Muforget({\cal F}_{\Ha}({\cal K}_1), V_{min}) \wedge \psi$可满足的极小子集，所以，${\cal K}$是$\Gamma \diamond_{\delta} \psi$的模型。
+	
+	
+	(U7). 设$\Gamma$有唯一的模型${\cal K}$。对每一个${\cal K}_1 \in \Mod((\Gamma \diamond_{\delta} \phi) \wedge (\Gamma \diamond_{\delta} \psi))$，存在两个关于$\leq_{{\cal K}_1}$的极小子集$V_1$和$V_2$使得${\cal K} \lrto_{V_1} {\cal K}_1$和${\cal K} \lrto_{V_2} {\cal K}_1$成立，即：${\cal K}_1$是$\Muforget({\cal F}_{\Ha}({\cal K}), V_1) \wedge \phi$和$\Muforget({\cal F}_{\Ha}({\cal K}),$ $V_2) \wedge \psi$的模型。因此，${\cal K}_1 \lrto_{V_1 \cap V_2} {\cal K}$，即${\cal K}_1$是$\Muforget({\cal F}_{\Ha}({\cal K}), V_1 \cap V_2)$的模型。所以，$V_1 = V_2$，否则$V_1$（或$V_2$）不是关于$\leq_{{\cal K}_1}$的极小子集。此外，${\cal K}_1$也是$\Muforget({\cal F}_{\Ha}({\cal K}),$ $ V_1) \wedge (\phi \vee \psi)$的模型。
+	
+	设$V_3\subset V_1$是使得$\Muforget({\cal F}_{\Ha}({\cal K}), V_3) \wedge (\phi \vee \psi)$可满足的原子命题集合，则有$\Muforget({\cal F}_{\Ha}({\cal K}),$ $V_3) \wedge \phi$或$\Muforget({\cal F}_{\Ha}({\cal K}), V_3) \wedge \psi$是可满足的。不失一般性地，设$\Muforget({\cal F}_{\Ha}({\cal K}), V_3) \wedge \phi$是可满足的，则$V_1$不是关于$\leq_{{\cal K}_1}$的极小子集，与前面的描述矛盾。
+	因此，$V_1$是使得$\Muforget({\cal F}_{\Ha}({\cal K}),$ $V_1) \wedge (\phi \vee \psi)$可满足的极小子集。
+	所以，${\cal K}_1$是$\Gamma \diamond_{\delta} (\phi \vee \psi)$的模型。
+	
+	(U8) 对每一个${\cal K} \in \Mod((\Gamma_1 \vee \Gamma_2) \diamond_{\delta} \phi)$都存在一个${\cal K}_1 \in \Mod(\Gamma_1)$（或${\cal K}_1\in \Mod(\Gamma_2)$）和一个$V_{min}$使得${\cal K} \lrto_{V_{min}} {\cal K}_1$。因此，${\cal K} \models  (\Gamma_1 \diamond_{\delta} \phi) \vee (\Gamma_2 \diamond_{\delta} \phi)$成立。
+	
+	类似地，对每一个${\cal K} \in \Mod( (\Gamma_1 \diamond_{\delta} \phi) \vee (\Gamma_2 \diamond_{\delta} \phi))$都存在一个${\cal K}_1\in \Mod(\Gamma_1)$（或${\cal K}_1 \in \Mod(\Gamma_2)$）和一个$V_{min}$使得${\cal K} \lrto_{V_{min}} {\cal K}_1$。因此，${\cal K} \models (\Gamma_1 \vee \Gamma_2) \diamond_{\delta} \phi$成立。
+\end{proof}
+
+\section{本章小结}\label{sec:chapter07-conclusion}
+
+本章讨论了遗忘在计算最强必要条件（最弱充分条件）和定义知识更新。特别地，本章首先给出了SNC（WSC）的定义，表明SNC和WSC是一对对偶概念，因而只要知道其一就能知道另一个。其次，结论表明任意公式的SNC（WSC）可以转换成原子命题的SNC（WSC）来计算，并给出使用遗忘的计算SNC（WSC）的定理。
+最后，分别给出使用遗忘和偏序关系的方法定义知识更新，并证明了这两种定义等价且满足Katsuno等人提出的八条准则。
