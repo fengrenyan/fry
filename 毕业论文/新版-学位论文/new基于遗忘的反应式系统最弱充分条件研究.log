@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  14 MAR 2022 22:38
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  15 MAR 2022 15:38
 entering extended mode
 **new基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -1999,7 +1999,7 @@ Package CJKpunct Info: punctuation spaces for family 'zhsong' do not exist. Use
 
 ]
 Package CJKpunct Info: punctuation spaces for family 'zhhei' do not exist. Use 
-family 'def' instead. on input line 37.
+family 'def' instead. on input line 36.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2120,7 +2120,7 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12.05> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 58.
 
-<NnewCar.png, id=754, 181.67876pt x 169.63374pt>
+<NnewCar.png, id=756, 181.67876pt x 169.63374pt>
 File: NnewCar.png Graphic file (type png)
  <use NnewCar.png>
 Package pdftex.def Info: NnewCar.png used on input line 65.
@@ -2201,7 +2201,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10] <figures/chapter01/zuzhi.png, id=929, 955.8912pt x 492.8814pt>
+[10] <figures/chapter01/zuzhi.png, id=931, 955.8912pt x 492.8814pt>
 File: figures/chapter01/zuzhi.png Graphic file (type png)
 
 <use figures/chapter01/zuzhi.png>
@@ -2361,7 +2361,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 402.
 
-Overfull \hbox (42.49345pt too wide) in paragraph at lines 402--423
+Overfull \hbox (1.61412pt too wide) in paragraph at lines 402--423
  [][] 
  []
 
@@ -2412,29 +2412,6 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [28]
-Overfull \hbox (17.33551pt too wide) in paragraph at lines 651--652
-[]$\OML/ztmcm/m/it/12.05 []\OT1/ztmcm/m/n/12.05 ([]) = [] \OMS/ztmcm/m/n/12.05
- \ [] \ [] \ []$ $\OT1/ztmcm/m/n/12.05 = \OMS/ztmcm/m/n/12.05 f\OML/ztmcm/m/it/
-12.05 s \OMS/ztmcm/m/n/12.05 j \OML/ztmcm/m/it/12.05 s \OMS/ztmcm/m/n/12.05 2 \
-OML/ztmcm/m/it/12.05 L\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 j\OT1/ztmcm/m
-/n/12.05 ) \OMS/ztmcm/m/n/12.05 \ \OML/ztmcm/m/it/12.05 L\OT1/ztmcm/m/n/12.05 (
-\OML/ztmcm/m/it/12.05 ch\OT1/ztmcm/m/n/12.05 )$ \C70/rm/m/n/12.05/54 �$\OMS/ztm
-cm/m/n/12.05 8\OML/ztmcm/m/it/12.05 t:\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.
-05 s; t\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 2$
- []
-
-
-Overfull \hbox (17.33551pt too wide) in paragraph at lines 657--658
-[]$\OML/ztmcm/m/it/12.05 []\OT1/ztmcm/m/n/12.05 ([]) = [] \OMS/ztmcm/m/n/12.05
- \ [] \ [] \ []$ $\OT1/ztmcm/m/n/12.05 = \OMS/ztmcm/m/n/12.05 f\OML/ztmcm/m/it/
-12.05 s \OMS/ztmcm/m/n/12.05 j \OML/ztmcm/m/it/12.05 s \OMS/ztmcm/m/n/12.05 2 \
-OML/ztmcm/m/it/12.05 L\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 j\OT1/ztmcm/m
-/n/12.05 ) \OMS/ztmcm/m/n/12.05 \ \OML/ztmcm/m/it/12.05 L\OT1/ztmcm/m/n/12.05 (
-\OML/ztmcm/m/it/12.05 ch\OT1/ztmcm/m/n/12.05 )$ \C70/rm/m/n/12.05/54 �$\OMS/ztm
-cm/m/n/12.05 9\OML/ztmcm/m/it/12.05 t:\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.
-05 s; t\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 2$
- []
-
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 666.
@@ -2469,6 +2446,16 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [30]
+Overfull \hbox (1.79628pt too wide) in paragraph at lines 754--756
+[]\C70/rm/m/n/12.05/89 � \C70/rm/m/n/12.05/52 $[]$\C70/rm/m/n/12.05/79 � \C70/
+rm/m/n/12.05/4e : \C70/rm/m/it/12.05/6b e\OT1/ptm/m/it/12.05 -\C70/rm/m/it/12.0
+5/5f R \C70/rm/m/it/12.05/7e � \C70/rm/m/it/12.05/89 � \C70/rm/m/it/12.05/52  
+|\C70/rm/m/n/12.05/ff |\OT1/ptm/m/n/12.05 step res-o-lu-tion rule|\C70/rm/m/n/
+12.05/ff 	||\C70/rm/m/n/12.05/30 | $[]$\C70/rm/m/n/12.05/79 � \C70/rm/m/n/12.0
+5/4e : \C70/rm/m/it/12.05/91 � \C70/rm/m/it/12.05/51 � \C70/rm/m/it/12.05/89 � 
+\C70/rm/m/it/12.05/52  |\C70/rm/m/n/12.05/ff |\OT1/ptm/m/n/12.05 rewrite
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -2536,6 +2523,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [37]
+Underfull \vbox (badness 1348) has occurred while \output is active []
+
+
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -2543,7 +2533,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [38]
-Overfull \hbox (2.98793pt too wide) in paragraph at lines 999--1000
+Overfull \hbox (2.98793pt too wide) in paragraph at lines 1001--1002
 []\C70/rm/m/n/12.05/4e �$\OML/ztmcm/m/it/12.05  \OT1/ztmcm/m/n/12.05 = \OML/zt
 mcm/m/it/12.05 C[] \OMS/ztmcm/m/n/12.05 _ []\OML/ztmcm/m/it/12.05 C[] \OMS/ztmc
 m/m/n/12.05 _ [] _ []\OML/ztmcm/m/it/12.05 C[] \OMS/ztmcm/m/n/12.05 _ []\OML/zt
@@ -2558,21 +2548,17 @@ b � \C70/rm/m/n/12.05/4e :$\OML/ztmcm/m/it/12.05 Supp\OT1/ztmcm/m/n/12.05 (\OML
  []
 
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 1008.
+put line 1010.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1013--1013
+Underfull \hbox (badness 10000) in paragraph at lines 1015--1015
 []|$\OT1/ztmcm/m/n/10.54  \OML/ztmcm/m/it/10.54 ; V$|\C70/rm/m/n/10.54/ff |
  []
 
 
-Overfull \hbox (41.34224pt too wide) in paragraph at lines 1017--1017
+Overfull \hbox (41.34224pt too wide) in paragraph at lines 1019--1019
 []|$[]\OT1/ztmcm/m/n/10.54 ( \OML/ztmcm/m/it/10.54 ; V\OT1/ztmcm/m/n/10.54 )$|\
 C70/rm/m/n/10.54/ff |
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2581,7 +2567,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [39]
-Overfull \hbox (7.04678pt too wide) in paragraph at lines 1073--1073
+Overfull \hbox (7.04678pt too wide) in paragraph at lines 1075--1075
 []|$\OT1/ztmcm/m/n/10.54  \OML/ztmcm/m/it/10.54 ; V; q$|\C70/rm/m/n/10.54/ff |
 
  []
@@ -2592,14 +2578,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[40]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[41])
+[40])
 (D:\（博士）我的资料\Git\fry\毕业论文\新版-学位论文\chapter/c
 hapter-03-forgCTLproperty.tex
 
@@ -2608,7 +2587,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[42]
+[41]
 第三章
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -2618,9 +2597,24 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 12.
 
-[43
 
-] <figures/chapter03/NVBnewCar.png, id=1297, 432.61626pt x 326.21875pt>
+Overfull \hbox (5.09421pt too wide) in paragraph at lines 29--31
+$\OT1/ztmcm/m/n/12.05 = (\OMS/ztmcm/m/n/12.05 M[]\OML/ztmcm/m/it/12.05 ; s[]\OT
+1/ztmcm/m/n/12.05 )$ \C70/rm/m/n/12.05/54 �$\OMS/ztmcm/m/n/12.05 K[] \OT1/ztmcm
+/m/n/12.05 = (\OMS/ztmcm/m/n/12.05 M[]\OML/ztmcm/m/it/12.05 ; s[]\OT1/ztmcm/m/n
+/12.05 )$ \C70/rm/m/n/12.05/66 /$\OML/ztmcm/m/it/12.05 V$\OT1/ptm/m/n/12.05 -\C
+70/rm/m/it/12.05/4e � \C70/rm/m/it/12.05/6a ! \C70/rm/m/it/12.05/62 � \C70/rm/m
+/n/12.05/76 � |\C70/rm/m/n/12.05/ff |\C70/rm/m/n/12.05/4e _ \C70/rm/m/n/12.05/
+79 �$\OMS/ztmcm/m/n/12.05 K[]$\C70/rm/m/n/12.05/54 �$\OMS/ztmcm/m/n/12.05 K[]$\
+C70/rm/m/n/12.05/51 s \C70/rm/m/n/12.05/4e �$\OML/ztmcm/m/it/12.05 V$\C70/rm/m/
+n/12.05/66 / \C70/rm/m/n/12.05/4e � \C70/rm/m/n/12.05/6a ! \C70/rm/m/n/12.05/62
+ � \C70/rm/m/n/12.05/76 �|\C70/rm/m/n/12.05/ff 	||| \C70/rm/m/n/12.05/8b � \C7
+0/rm/m/n/12.05/4e :$\OMS/ztmcm/m/n/12.05 K[] $[]$
+ []
+
+[42
+
+] <figures/chapter03/NVBnewCar.png, id=1282, 432.61626pt x 326.21875pt>
 File: figures/chapter03/NVBnewCar.png Graphic file (type png)
 
 <use figures/chapter03/NVBnewCar.png>
@@ -2634,8 +2628,15 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[44 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figur
+[43 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figur
 es/chapter03/NVBnewCar.png>]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -2650,14 +2651,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [46]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[47]
-Overfull \hbox (0.11601pt too wide) in paragraph at lines 226--228
+Overfull \hbox (0.11601pt too wide) in paragraph at lines 228--230
 [][]\C70/zhhei/bx/n/12.05/54 } \C70/rm/bx/n/12.05/98 � \OT1/ptm/b/n/12.05 3.2. 
 []\C70/rm/m/it/12.05/4e �$\OML/ztmcm/m/it/12.05 '$\C70/rm/m/it/12.05/4e :   *$[
 ]$\C70/rm/m/it/12.05/51 l \C70/rm/m/it/12.05/5f |\C70/rm/m/it/12.05/30 | \C70
@@ -2671,7 +2665,7 @@ tmcm/m/n/12.05   []\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 '\OT1/ztmcm/m/n/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--228
+Underfull \hbox (badness 10000) in paragraph at lines 228--230
 
  []
 
@@ -2681,8 +2675,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[48]
-Overfull \hbox (9.04387pt too wide) in paragraph at lines 248--250
+[47]
+Overfull \hbox (9.04387pt too wide) in paragraph at lines 250--252
 []\C70/rm/m/n/12.05/75 1 \C70/rm/m/n/12.05/6b d \C70/rm/m/n/12.05/67 � \C70/rm/
 m/n/12.05/90   \C70/rm/m/n/12.05/4e   * \C70/rm/m/n/12.05/52  \C70/rm/m/n/12.0
 5/59 �$[]$\OT1/ptm/m/n/12.05 -Kripke\C70/rm/m/n/12.05/7e � \C70/rm/m/n/12.05/67
@@ -2695,7 +2689,7 @@ ztmcm/m/n/12.05 M[]$\C70/rm/m/n/12.05/4e $\OMS/ztmcm/m/n/12.05 M[]$\C70/rm/m/n
  []
 
 
-Overfull \hbox (16.25755pt too wide) in paragraph at lines 250--251
+Overfull \hbox (16.25755pt too wide) in paragraph at lines 252--253
 []$\OML/ztmcm/m/it/12.05 R[] \OT1/ztmcm/m/n/12.05 = \OMS/ztmcm/m/n/12.05 f\OT1/
 ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 s[]; s[]\OT1/ztmcm/m/n/12.05 )\OML/ztmcm
 /m/it/12.05 ; \OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 s[]; s[]\OT1/ztmcm/m/
@@ -2710,7 +2704,7 @@ M[]\OML/ztmcm/m/it/12.05 ; s[]\OT1/ztmcm/m/n/12.05 )$
  []
 
 
-Overfull \hbox (3.69354pt too wide) in paragraph at lines 251--252
+Overfull \hbox (3.69354pt too wide) in paragraph at lines 253--254
 []$\OML/ztmcm/m/it/12.05 R[] \OT1/ztmcm/m/n/12.05 = \OMS/ztmcm/m/n/12.05 f\OT1/
 ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 s[]; s[]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmc
 m/m/n/12.05 j \OML/ztmcm/m/it/12.05 s[] \OMS/ztmcm/m/n/12.05 2 \OML/ztmcm/m/it/
@@ -2731,11 +2725,26 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 284--287
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 286--289
 
  []
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 322.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 322.
+
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[49]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -2743,14 +2752,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [50]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[51]
-Overfull \hbox (4.27405pt too wide) in paragraph at lines 395--398
+Overfull \hbox (4.27405pt too wide) in paragraph at lines 398--401
 [][]\OT1/ptm/m/n/12.05 Maksimova[][]$[]$\C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.0
 5/66 $\OML/ztmcm/m/it/12.05 '\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 p; x\
 OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 ^ \OML/ztmcm/m/it/12.05 '\OT1/ztmcm/
@@ -2771,15 +2773,15 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[52]
+[51]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[53]
-Overfull \hbox (11.00574pt too wide) in paragraph at lines 480--484
+[52]
+Overfull \hbox (11.00574pt too wide) in paragraph at lines 483--487
 []\C70/rm/m/n/12.05/4e   \C70/rm/m/n/12.05/65 � \C70/rm/m/n/12.05/97 b|\C70/rm/
 m/n/12.05/ff | \C70/rm/m/n/12.05/4e �$\OMS/ztmcm/m/n/12.05 M[] \OT1/ztmcm/m/n/
 12.05 = (\OML/ztmcm/m/it/12.05 S[]; R[]; L[]; \OT1/ztmcm/m/n/12.05 [[]]\OML/ztm
@@ -2798,15 +2800,15 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[54]
+[53]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[55]
-Overfull \hbox (13.97289pt too wide) in paragraph at lines 552--560
+[54]
+Overfull \hbox (13.97289pt too wide) in paragraph at lines 555--563
 $\OMS/ztmcm/m/n/12.05 )$ \C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/4e   �$\OT1/z
 tmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 s; s[]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m
 /n/12.05 2 \OML/ztmcm/m/it/12.05 R$|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/6
@@ -2828,14 +2830,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[56]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[57])
+[55])
 (D:\（博士）我的资料\Git\fry\毕业论文\新版-学位论文\chapter/c
 hapter-04-resolution.tex
 
@@ -2844,25 +2839,51 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[58]
-第四章
-<figures/chapter04/frame.png, id=1411, 707.64375pt x 460.72125pt>
-File: figures/chapter04/frame.png Graphic file (type png)
-
-<use figures/chapter04/frame.png>
-Package pdftex.def Info: figures/chapter04/frame.png used on input line 9.
-(pdftex.def)             Requested size: 426.79134pt x 277.869pt.
- [59
-
- <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figures/
-chapter04/frame.png>]
+[56]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[60]
+[57]
+第四章
+<figures/chapter04/frame.png, id=1399, 707.64375pt x 460.72125pt>
+File: figures/chapter04/frame.png Graphic file (type png)
+
+<use figures/chapter04/frame.png>
+Package pdftex.def Info: figures/chapter04/frame.png used on input line 9.
+(pdftex.def)             Requested size: 426.79134pt x 277.869pt.
+ [58
+
+ <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figures/
+chapter04/frame.png>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <14.05> not available
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 90.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 90.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 90.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 90.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 90.
+
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[59]
 Overfull \hbox (2.32625pt too wide) in paragraph at lines 108--112
 []\C70/rm/m/n/12.05/4e � $ * \C70/rm/m/n/12.05/65 � \C70/rm/m/n/12.05/97 b \C70
 /rm/m/n/12.05/67 e \C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.05/66  \C70/rm/m/n/12
@@ -2889,6 +2910,13 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+[60]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 [61]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -2898,12 +2926,21 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [62]
 
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 230.
 
-[63]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `subscript' on input line 230.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 230.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 230.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 230.
@@ -2935,7 +2972,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[64]
+[63]
 Overfull \hbox (9.16476pt too wide) in paragraph at lines 269--271
 []\C70/rm/m/n/12.05/67 , \C70/rm/m/n/12.05/65 � \C70/rm/m/n/12.05/5c  \C70/rm/
 m/n/12.05/5f  \C70/rm/m/n/12.05/74 [][]\OT1/ptm/m/n/12.05 4.1[][]\C70/rm/m/n/
@@ -2974,14 +3011,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[65]
+[64]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[66]
+[65]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 457.
 
  (D:\Application\Ctex\MiKTeX\tex\latex\psnfss\ot1pcr.fd
@@ -2992,20 +3029,23 @@ LaTeX Font Info:    Try loading font information for C70+tt on input line 457.
 (D:\Application\Ctex\MiKTeX\tex\latex\ctex\fd\c70tt.fd
 File: c70tt.fd 2007/05/06 v0.8a ctexutf8 font definition file
 )
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12.05> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 481.
+
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[67]
+[66]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[68])
+[67])
 (D:\（博士）我的资料\Git\fry\毕业论文\新版-学位论文\chapter/c
 hapter-05-modelbased.tex
 
@@ -3014,7 +3054,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[69]
+[68]
 第五章
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -3024,7 +3064,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 1.
 
-[70
+[69
 
 ]
 
@@ -3054,7 +3094,7 @@ m/m/n/12.05 ))$
 
 Overfull \hbox (23.38582pt too wide) in paragraph at lines 50--51
 []$\OMS/ztmcm/m/n/12.05 K[]$\C70/rm/m/it/12.05/54 �$\OMS/ztmcm/m/n/12.05 K[]$\C
-70/rm/m/it/12.05/66 / \C70/rm/m/it/12.05/7e � \C70/rm/m/it/12.05/67 _$\OML/ztmc
+70/rm/m/it/12.05/66 / \C70/rm/m/it/12.05/67 	 \C70/rm/m/it/12.05/75 L$\OML/ztmc
 m/m/it/12.05 V$\OT1/ptm/m/it/12.05 -\C70/rm/m/it/12.05/4e � \C70/rm/m/it/12.05/
 6a ! \C70/rm/m/it/12.05/62 � \C70/rm/m/it/12.05/76 �|\C70/rm/m/it/12.05/ff | \
 C70/rm/m/it/12.05/5f S \C70/rm/m/it/12.05/4e  � \C70/rm/m/it/12.05/5f S \C70/r
@@ -3086,7 +3126,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[71]
+[70]
 Overfull \hbox (0.71768pt too wide) in paragraph at lines 178--180
 []\C70/rm/m/n/12.05/5b �$[][]\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 s[]\OT
 1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.05/76 � \C70/rm/m/n/12.05/4e � \C70/rm/m/n/1
@@ -3122,7 +3162,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[72]
+[71]
 Overfull \hbox (5.8145pt too wide) in paragraph at lines 199--203
 []$\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 (\OT1/ztmcm/m/n/12.05 )$\C70/rm/m
 /n/12.05/8f � \C70/rm/m/n/12.05/91 � \C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.05/6
@@ -3145,7 +3185,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[73]
+[72]
 Overfull \hbox (9.38318pt too wide) in paragraph at lines 235--236
 [][]\C70/zhhei/bx/n/12.05/5f  \C70/zhhei/bx/n/12.05/74  \OT1/ptm/b/n/12.05 5.
 2. []\C70/rm/m/it/12.05/7e � \C70/rm/m/it/12.05/5b � \C70/rm/m/it/12.05/53 � \C
@@ -3182,14 +3222,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[74]
+[73]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[75]
+[74]
 Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
@@ -3205,7 +3245,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[76]
+[75]
 Overfull \hbox (6.01852pt too wide) in paragraph at lines 377--378
 [][]\C70/rm/bx/n/12.05/4f � \OT1/ptm/b/n/12.05 5.1 \OT1/ptm/m/n/12.05 (\C70/rm/
 m/n/12.05/4f �[][]\OT1/ptm/m/n/12.05 3.1[][]\C70/rm/m/n/12.05/76 � \C70/rm/m/n/
@@ -3221,25 +3261,13 @@ m/n/12.05/4f �[][]\OT1/ptm/m/n/12.05 3.1[][]\C70/rm/m/n/12.05/76 � \C70/rm/m/n/
 /4e -|\C70/rm/m/n/12.05/ff 	||\C70/rm/m/n/12.05/30 |
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 382.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 382.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 382.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 382.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 382.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 382.
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[77]
+[76]
 Overfull \hbox (2.24745pt too wide) in paragraph at lines 382--383
 []\C70/rm/m/n/12.05/54  \C70/rm/m/n/12.05/68 7|\C70/rm/m/n/12.05/ff | \C70/rm
 /m/n/12.05/62  \C70/rm/m/n/12.05/4e � \C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05
@@ -3252,13 +3280,25 @@ s[]; \OT1/ztmcm/m/n/12.05 0)$\C70/rm/m/n/12.05/54 �$[][]\OT1/ztmcm/m/n/12.05 (\
 OMS/ztmcm/m/n/12.05 M\OML/ztmcm/m/it/12.05 ;$
  []
 
-<figures/chapter05/NK2Tree1.png, id=1628, 497.86pt x 235.88126pt>
+<figures/chapter05/NK2Tree1.png, id=1618, 497.86pt x 235.88126pt>
 File: figures/chapter05/NK2Tree1.png Graphic file (type png)
 
 <use figures/chapter05/NK2Tree1.png>
 Package pdftex.def Info: figures/chapter05/NK2Tree1.png used on input line 405.
 
 (pdftex.def)             Requested size: 284.52756pt x 134.81003pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 423.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 423.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 423.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 423.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 423.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 423.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3266,7 +3306,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[78 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figur
+[77 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figur
 es/chapter05/NK2Tree1.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 451--457
 
@@ -3295,7 +3335,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[79]
+[78]
 Underfull \hbox (badness 10000) in paragraph at lines 477--483
 
  []
@@ -3316,7 +3356,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[80]
+[79]
 Overfull \hbox (5.38249pt too wide) in paragraph at lines 524--525
 []\C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05/4e   \C70/rm/m/n/12.05/65 � \C70/rm/
 m/n/12.05/97 b|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/50 G \C70/rm/m/n/12.05
@@ -3331,16 +3371,18 @@ ML/ztmcm/m/it/12.05 '\OT1/ztmcm/m/n/12.05 )$
  []
 
 
-Overfull \hbox (4.46324pt too wide) in paragraph at lines 541--543
-[]\C70/rm/m/n/12.05/62  \C70/rm/m/n/12.05/54 X \C70/rm/m/n/12.05/5c ^ \C70/rm/
-m/n/12.05/60 '\OT1/ptm/m/n/12.05 (Membership). \C70/rm/m/n/12.05/50 G \C70/rm/m
-/n/12.05/5b �$\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 M\OML/ztmcm/m/it/12.05
- ; s[]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 j[]\OT1/ztmcm/m/n/12.05 = [](
-\OML/ztmcm/m/it/12.05 '; V\OT1/ztmcm/m/n/12.05 )$|\C70/rm/m/n/12.05/ff | \C70/
-rm/m/n/12.05/52  \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.05/57 ( \C70/rm/m/n/12.
-05/4e   * \C70/rm/m/n/12.05/52  \C70/rm/m/n/12.05/59 � \C70/rm/m/n/12.05/7e � 
-\C70/rm/m/n/12.05/67 �$\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 M[]\OML/ztmcm
-/m/it/12.05 ; s[]\OT1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.05/4f 
+Overfull \hbox (11.57985pt too wide) in paragraph at lines 541--543
+[]\C70/rm/m/n/12.05/57 ($[]$\C70/rm/m/n/12.05/4e -\OT1/ptm/m/n/12.05 . \C70/rm/
+m/n/12.05/50 G \C70/rm/m/n/12.05/5b �$\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.0
+5 M\OML/ztmcm/m/it/12.05 ; s[]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 j[]\O
+T1/ztmcm/m/n/12.05 = [](\OML/ztmcm/m/it/12.05 '; V\OT1/ztmcm/m/n/12.05 )$|\C70/
+rm/m/n/12.05/ff | \C70/rm/m/n/12.05/52  \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12
+.05/57 ( \C70/rm/m/n/12.05/4e   * \C70/rm/m/n/12.05/52  \C70/rm/m/n/12.05/59 �
+ \C70/rm/m/n/12.05/7e � \C70/rm/m/n/12.05/67 �$\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm
+/m/n/12.05 M[]\OML/ztmcm/m/it/12.05 ; s[]\OT1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.
+05/4f  \C70/rm/m/n/12.05/5f � \OT1/ptm/m/n/12.05 (a) $\OT1/ztmcm/m/n/12.05 (\O
+MS/ztmcm/m/n/12.05 M[]\OML/ztmcm/m/it/12.05 ; s[]\OT1/ztmcm/m/n/12.05 ) \OMS/zt
+mcm/m/n/12.05 j[]\OT1/ztmcm/m/n/12.05 =$
  []
 
 
@@ -3349,8 +3391,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[81]
-Overfull \hbox (8.63208pt too wide) in paragraph at lines 573--578
+[80]
+Overfull \hbox (8.63208pt too wide) in paragraph at lines 574--579
 []\OT1/ptm/m/n/12.05 (iii) \C70/rm/m/n/12.05/62  \C70/rm/m/n/12.05/54 X \C70/r
 m/m/n/12.05/5c ^ \C70/rm/m/n/12.05/60 '\OT1/ptm/m/n/12.05 . \C70/rm/m/n/12.05/5
 0 G \C70/rm/m/n/12.05/5b �$[]\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 '; V\O
@@ -3369,8 +3411,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[82]
-Overfull \hbox (0.46085pt too wide) in paragraph at lines 579--580
+[81]
+Overfull \hbox (0.46085pt too wide) in paragraph at lines 580--581
 []\C70/rm/m/n/12.05/56 � \C70/rm/m/n/12.05/96 � \C70/rm/m/n/12.05/5c ^ \C70/rm/
 m/n/12.05/60 '\OT1/ptm/m/n/12.05 . \C70/rm/m/n/12.05/75 1 \C70/rm/m/n/12.05/4e 
 �$[]\OT1/ztmcm/m/n/12.05 ([](\OML/ztmcm/m/it/12.05  ; V\OT1/ztmcm/m/n/12.05 )\O
@@ -3388,14 +3430,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[83]
+[82]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[84])
+[83])
 (D:\（博士）我的资料\Git\fry\毕业论文\新版-学位论文\chapter/c
 hapter-06-mucalculus.tex
 
@@ -3404,7 +3446,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[85]
+[84]
 第六章
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
@@ -3432,20 +3474,20 @@ rm/m/it/12.05/5e � \C70/rm/m/it/12.05/8b � \C70/rm/m/it/12.05/76 � \C70/rm/m/it
 OT1/ptm/m/it/12.05 proposinal
  []
 
-[86
+[85
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 61.
+(hyperref)                removing `math shift' on input line 62.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 61.
+(hyperref)                removing `\mu' on input line 62.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 61.
+(hyperref)                removing `math shift' on input line 62.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3453,11 +3495,11 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[87] <figures/chapter06/chvB1.png, id=1737, 408.77719pt x 219.82124pt>
+[86] <figures/chapter06/chvB1.png, id=1727, 408.77719pt x 219.82124pt>
 File: figures/chapter06/chvB1.png Graphic file (type png)
 
 <use figures/chapter06/chvB1.png>
-Package pdftex.def Info: figures/chapter06/chvB1.png used on input line 103.
+Package pdftex.def Info: figures/chapter06/chvB1.png used on input line 104.
 (pdftex.def)             Requested size: 128.0357pt x 71.1291pt.
 
 
@@ -3469,8 +3511,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[88]
-Overfull \hbox (27.16277pt too wide) in paragraph at lines 126--129
+[87]
+Overfull \hbox (27.16277pt too wide) in paragraph at lines 127--130
 []\OT1/ptm/m/n/12.05 (2) $\OMS/ztmcm/m/n/12.05 $[]$\C70/rm/m/n/12.05/66 / \C70/
 rm/m/n/12.05/5b � \C70/rm/m/n/12.05/79 � \C70/rm/m/n/12.05/76 �|\C70/rm/m/n/12.
 05/30 | \C70/rm/m/n/12.05/8f � \C70/rm/m/n/12.05/91 � \C70/rm/m/n/12.05/8b � \
@@ -3488,9 +3530,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[89 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figur
+[88 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figur
 es/chapter06/chvB1.png>]
-Overfull \hbox (7.33047pt too wide) in paragraph at lines 159--161
+Overfull \hbox (7.33047pt too wide) in paragraph at lines 160--162
 \C70/rm/m/n/12.05/4e *$\OML/ztmcm/m/it/12.05 V$\OT1/ptm/m/n/12.05 -\C70/rm/m/n/
 12.05/65 � \C70/rm/m/n/12.05/51 s \C70/rm/m/n/12.05/4e  $\OML/ztmcm/m/it/12.0
 5 '$\C70/rm/m/n/12.05/67   \C70/rm/m/n/12.05/63 � \C70/rm/m/n/12.05/8f � \C70/r
@@ -3507,16 +3549,23 @@ f | \C70/rm/m/n/12.05/4e
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 162.
+(hyperref)                removing `math shift' on input line 163.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 162.
+(hyperref)                removing `\mu' on input line 163.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 162.
+(hyperref)                removing `math shift' on input line 163.
 
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[89]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -3524,6 +3573,10 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [90]
+Underfull \hbox (badness 10000) in paragraph at lines 266--269
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -3531,10 +3584,6 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [91]
-Underfull \hbox (badness 10000) in paragraph at lines 265--268
-
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -3542,6 +3591,22 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [92]
+Underfull \hbox (badness 10000) in paragraph at lines 334--336
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 369.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 369.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 369.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 369.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 369.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 369.
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -3549,18 +3614,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [93]
-Underfull \hbox (badness 10000) in paragraph at lines 333--335
-
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[94]
-Overfull \hbox (7.50066pt too wide) in paragraph at lines 387--395
+Overfull \hbox (7.50066pt too wide) in paragraph at lines 388--396
 $\OMS/ztmcm/m/n/12.05 )$ \C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/4e � \C70/rm/
 m/n/12.05/61  \C70/rm/m/n/12.05/76 �$\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.
 05 s; s[]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 2 \OML/ztmcm/m/it/12.05 R$
@@ -3582,8 +3636,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[95]
-Overfull \hbox (47.71947pt too wide) in paragraph at lines 442--444
+[94]
+Overfull \hbox (47.71947pt too wide) in paragraph at lines 443--445
 []\C70/rm/m/n/12.05/67 � \C70/rm/m/n/12.05/53 �$\OML/ztmcm/m/it/12.05 $\OT1/pt
 m/m/n/12.05 -\C70/rm/m/n/12.05/51 l \C70/rm/m/n/12.05/5f $\OML/ztmcm/m/it/12.0
 5 '$\C70/rm/m/n/12.05/76 � \C70/rm/m/n/12.05/57 G \C70/rm/m/n/12.05/53   \C70/r
@@ -3605,27 +3659,30 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[96]
+[95]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[97]
-Overfull \hbox (31.62779pt too wide) in paragraph at lines 516--517
-[]\C70/rm/m/n/12.05/62  \C70/rm/m/n/12.05/54 X \C70/rm/m/n/12.05/5c ^ \C70/rm/
-m/n/12.05/60 '\OT1/ptm/m/n/12.05 : \C70/rm/m/n/12.05/4e �$\OML/ztmcm/m/it/12.05
- A[]$\C70/rm/m/n/12.05/54 �$\OML/ztmcm/m/it/12.05 A[]$\C70/rm/m/n/12.05/52  + 
-\C70/rm/m/n/12.05/4e :$\OML/ztmcm/m/it/12.05 '$\C70/rm/m/n/12.05/54 �$\OML/ztmc
-m/m/it/12.05  $\C70/rm/m/n/12.05/76 �$\OML/ztmcm/m/it/12.05 $\OT1/ptm/m/n/12.0
-5 -\C70/rm/m/n/12.05/81 � \C70/rm/m/n/12.05/52 � \C70/rm/m/n/12.05/67 :|\C70/rm
-/m/n/12.05/ff | \C70/rm/m/n/12.05/75 1 \C70/rm/m/n/12.05/54 } \C70/rm/m/n/12.0
-5/98 �[][]\OT1/ptm/m/n/12.05 6.5[][]\C70/rm/m/n/12.05/76 � \C70/rm/m/n/12.05/8b
- � \C70/rm/m/n/12.05/66  \C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05/4e �$\OML/zt
-mcm/m/it/12.05 A[]$\C70/rm/m/n/12.05/67 � \C70/rm/m/n/12.05/90  $[]\OT1/ztmcm/m
-/n/12.05 (\OML/ztmcm/m/it/12.05 '; V\OT1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.05/76
- �$\OML/ztmcm/m/it/12.05 $\OT1/ptm/m/n/12.05 -
+[96]
+Overfull \hbox (2.91943pt too wide) in paragraph at lines 517--518
+$\OML/ztmcm/m/it/12.05  $\C70/rm/m/n/12.05/88 � \C70/rm/m/n/12.05/89 � \C70/rm/
+m/n/12.05/7e � \C70/rm/m/n/12.05/79 � \C70/rm/m/n/12.05/52 $ \C70/rm/m/n/12.05/
+5b �$\OML/ztmcm/m/it/12.05 A[]$\C70/rm/m/n/12.05/63 � \C70/rm/m/n/12.05/53 � \C
+70/rm/m/n/12.05/76 � \C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.05/8a   \C70/rm/m/n/
+12.05/66 / \C70/rm/m/n/12.05/54 & \C70/rm/m/n/12.05/4e : \C70/rm/m/n/12.05/7a z
+|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/8f � \C70/rm/m/n/12.05/4e   \C70/rm/
+m/n/12.05/95 � \C70/rm/m/n/12.05/98 � \C70/rm/m/n/12.05/65 �$[]$\OT1/ptm/m/n/12
+.05 -\C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/51 h \C70/rm/m/n/12.05/76 �\OT1/p
+tm/m/n/12.05 (\C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/74 \OT1/ptm/m/n/12.05 7
+.5.1$[]$)|\C70/rm/m/n/12.05/30 |
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--518
+
  []
 
 )
@@ -3637,19 +3694,19 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[98]
+[97]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[99]
+[98]
 第七章
-[100
+[99
 
 ]
-Overfull \hbox (0.74734pt too wide) in paragraph at lines 24--27
+Overfull \hbox (0.74734pt too wide) in paragraph at lines 26--29
 [][]\C70/rm/bx/n/12.05/5b � \C70/zhhei/bx/n/12.05/4e I \OT1/ptm/b/n/12.05 7.1 \
 OT1/ptm/m/n/12.05 (\C70/rm/m/n/12.05/51 E \C70/rm/m/n/12.05/52  \C70/rm/m/n/12
 .05/54 � \C70/rm/m/n/12.05/5f � \C70/rm/m/n/12.05/89 � \C70/rm/m/n/12.05/67 a \
@@ -3666,7 +3723,7 @@ mcm/m/n/12.05   \OML/ztmcm/m/it/12.05 V$ \C70/rm/m/it/12.05/54 �$[]\OT1/ztmcm/m
  []
 
 
-Overfull \hbox (8.95598pt too wide) in paragraph at lines 29--30
+Overfull \hbox (8.95598pt too wide) in paragraph at lines 31--32
 $\OML/ztmcm/m/it/12.05   \OMS/ztmcm/m/n/12.05 ! \OML/ztmcm/m/it/12.05  []$|\C70
 /rm/m/it/12.05/ff | \C70/rm/m/it/12.05/52  \C70/rm/m/it/12.05/79 �$\OML/ztmcm
 /m/it/12.05  $\C70/rm/m/it/12.05/66 /$\OML/ztmcm/m/it/12.05 q$\C70/rm/m/it/12.0
@@ -3679,12 +3736,12 @@ ff | \OT1/ptm/m/n/12.05 SNC|\C70/rm/m/n/12.05/ff 	||\C70/rm/m/it/12.05/ff |
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
 
-Overfull \hbox (4.5216pt too wide) in paragraph at lines 30--31
+Overfull \hbox (4.5216pt too wide) in paragraph at lines 32--33
 $\OML/ztmcm/m/it/12.05  [] \OMS/ztmcm/m/n/12.05 ! \OML/ztmcm/m/it/12.05  $|\C70
 /rm/m/it/12.05/ff | \C70/rm/m/it/12.05/52  \C70/rm/m/it/12.05/79 �$\OML/ztmcm
 /m/it/12.05  $\C70/rm/m/it/12.05/66 /$\OML/ztmcm/m/it/12.05 q$\C70/rm/m/it/12.0
@@ -3698,12 +3755,12 @@ rm/m/it/12.05/ff |
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
 
-Overfull \hbox (44.96587pt too wide) in paragraph at lines 42--45
+Overfull \hbox (44.96587pt too wide) in paragraph at lines 44--47
 [] |\C70/rm/m/n/12.05/ff |\OT1/ptm/m/n/12.05 i|\C70/rm/m/n/12.05/ff 	| \C70/rm
 /m/n/12.05/50 G \C70/rm/m/n/12.05/8b �$\OML/ztmcm/m/it/12.05  $\C70/rm/m/n/12.0
 5/66 /$\OML/ztmcm/m/it/12.05 q$\C70/rm/m/n/12.05/57 ($\OML/ztmcm/m/it/12.05 V$\
@@ -3722,7 +3779,7 @@ mcm/m/it/12.05 $\C70/rm/m/n/12.05/4e
  []
 
 
-Overfull \hbox (7.98088pt too wide) in paragraph at lines 42--45
+Overfull \hbox (7.98088pt too wide) in paragraph at lines 44--47
 \C70/rm/m/n/12.05/76 �\OT1/ptm/m/n/12.05 SC. \C70/rm/m/n/12.05/8b �$\OML/ztmcm/
 m/it/12.05  []$\C70/rm/m/n/12.05/66 /$\OMS/ztmcm/m/n/12.05 :\OML/ztmcm/m/it/12.
 05 q$\C70/rm/m/n/12.05/57 ($\OML/ztmcm/m/it/12.05 V$\C70/rm/m/n/12.05/54 �$\OML
@@ -3745,8 +3802,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[101]
-Overfull \hbox (0.40572pt too wide) in paragraph at lines 61--62
+[100]
+Overfull \hbox (0.40572pt too wide) in paragraph at lines 63--64
 []\C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/4e � � \C70/rm/m/n/12.05/61  \C70/r
 m/m/n/12.05/76 � \C70/rm/m/n/12.05/51 l \C70/rm/m/n/12.05/5f $\OML/ztmcm/m/it/
 12.05 $|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/8b �$[]\OT1/ztmcm/m/n/12.05 
@@ -3760,7 +3817,7 @@ cm/m/n/12.05  )$\C70/rm/m/n/12.05/4e :
  []
 
 
-Overfull \hbox (12.58556pt too wide) in paragraph at lines 102--103
+Overfull \hbox (12.58556pt too wide) in paragraph at lines 104--105
 [] |\C70/rm/m/n/12.05/20 |\OT1/ptm/m/n/12.05 NC|\C70/rm/m/n/12.05/20 | \C70/r
 m/m/n/12.05/90 � \C70/rm/m/n/12.05/52 |\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.
 05/75 1 \C70/rm/m/n/12.05/90 W \C70/rm/m/n/12.05/5f � \C70/rm/m/n/12.05/76 � \C
@@ -3782,8 +3839,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[102]
-Overfull \hbox (4.63821pt too wide) in paragraph at lines 109--113
+[101]
+Overfull \hbox (4.63821pt too wide) in paragraph at lines 111--115
 $\OMS/ztmcm/m/n/12.05 f\OML/ztmcm/m/it/12.05 q[]\OMS/ztmcm/m/n/12.05 g\OT1/ztmc
 m/m/n/12.05 ) \OMS/ztmcm/m/n/12.05   \OML/ztmcm/m/it/12.05 V\OT1/ztmcm/m/n/12.0
 5 )$\C70/rm/m/n/12.05/66 /$\OMS/ztmcm/m/n/12.05 :\OML/ztmcm/m/it/12.05 q[]$\C70
@@ -3807,7 +3864,40 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
+[102]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
 [103]
+Overfull \hbox (22.36221pt too wide) in paragraph at lines 210--211
+\C70/rm/m/n/12.05/5f �$\OMS/ztmcm/m/n/12.05 K[] 2 \OML/ztmcm/m/it/12.05 Min\OT1
+/ztmcm/m/n/12.05 ([](\OML/ztmcm/m/it/12.05 '\OT1/ztmcm/m/n/12.05 )\OML/ztmcm/m/
+it/12.05 ; \OMS/ztmcm/m/n/12.05 []\OT1/ztmcm/m/n/12.05 )$|\C70/rm/m/n/12.05/30
+ | \C70/rm/m/n/12.05/75 1 \C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/4e I[][]\OT
+1/ptm/m/n/12.05 7.2[][]\C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05/77 �|\C70/rm/m/
+n/12.05/ff | \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.05/57 ($\OMS/ztmcm/m/n/12.0
+5 K 2 \OML/ztmcm/m/it/12.05 Mod\OT1/ztmcm/m/n/12.05 ( )$\C70/rm/m/n/12.05/4f  
+\C70/rm/m/n/12.05/5f �$\OMS/ztmcm/m/n/12.05 K[] 2 []\OT1/ztmcm/m/n/12.05 ([](\O
+MS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 K\OT1/ztmcm/m/
+n/12.05 )$\OT1/ptm/m/n/12.05 ,
+ []
+
+
+Overfull \hbox (14.15111pt too wide) in paragraph at lines 212--213
+\C70/rm/m/n/12.05/4e  \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.05/57 ( \C70/rm/m/
+n/12.05/51 v \C70/rm/m/n/12.05/4e �$\OMS/ztmcm/m/n/12.05 K[] 2 []\OT1/ztmcm/m/n
+/12.05 (\OML/ztmcm/m/it/12.05 '\OT1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.05/4f  \C
+70/rm/m/n/12.05/5f �$\OMS/ztmcm/m/n/12.05 K[] $[] K$\C70/rm/m/n/12.05/4e $\OML
+/ztmcm/m/it/12.05 V[] \OMS/ztmcm/m/n/12.05  \OML/ztmcm/m/it/12.05 V[]$|\C70/rm
+/m/n/12.05/30 | \C70/rm/m/n/12.05/56 � \C70/rm/m/n/12.05/80 $\OMS/ztmcm/m/n/1
+2.05 K[] 2 []\OT1/ztmcm/m/n/12.05 ([](\OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/12
+.05 (\OMS/ztmcm/m/n/12.05 K\OT1/ztmcm/m/n/12.05 )\OML/ztmcm/m/it/12.05 ; V[]\OT
+1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 ^$
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -3815,58 +3905,9 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [104]
-Overfull \hbox (3.73772pt too wide) in paragraph at lines 197--198
-$\OML/ztmcm/m/it/12.05 Min\OT1/ztmcm/m/n/12.05 ([](\OML/ztmcm/m/it/12.05 \OT1/
-ztmcm/m/n/12.05 )\OML/ztmcm/m/it/12.05 ; \OMS/ztmcm/m/n/12.05 []\OT1/ztmcm/m/n
-/12.05 )$|\C70/rm/m/n/12.05/30 | \C70/rm/m/n/12.05/75 1 \C70/rm/m/n/12.05/5b �
- \C70/rm/m/n/12.05/4e I[][]\OT1/ptm/m/n/12.05 7.2[][]\C70/rm/m/n/12.05/53 � \C7
-0/rm/m/n/12.05/77 �|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/5b X \C70/rm/m/n/
-12.05/57 ($\OMS/ztmcm/m/n/12.05 K 2 \OML/ztmcm/m/it/12.05 Mod\OT1/ztmcm/m/n/12.
-05 ( )$\C70/rm/m/n/12.05/4f  \C70/rm/m/n/12.05/5f �$\OMS/ztmcm/m/n/12.05 K[] 2
- []\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 O\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm
-/m/n/12.05 F[]\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 K\OT1/ztmcm/m/n/12.05 
-)$\OT1/ptm/m/n/12.05 , $\OML/ztmcm/m/it/12.05 V[]\OT1/ztmcm/m/n/12.05 ) \OMS/zt
-mcm/m/n/12.05 ^$
- []
-
-
-Overfull \hbox (2.28336pt too wide) in paragraph at lines 199--200
-\C70/rm/m/n/12.05/4e  \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.05/57 ( \C70/rm/m/
-n/12.05/51 v \C70/rm/m/n/12.05/4e �$\OMS/ztmcm/m/n/12.05 K[] 2 []\OT1/ztmcm/m/n
-/12.05 (\OML/ztmcm/m/it/12.05 \OT1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.05/4f  \C
-70/rm/m/n/12.05/5f �$\OMS/ztmcm/m/n/12.05 K[] $[] K$\C70/rm/m/n/12.05/4e $\OML
-/ztmcm/m/it/12.05 V[] \OMS/ztmcm/m/n/12.05  \OML/ztmcm/m/it/12.05 V[]$|\C70/rm
-/m/n/12.05/30 | \C70/rm/m/n/12.05/56 � \C70/rm/m/n/12.05/80 $\OMS/ztmcm/m/n/1
-2.05 K[] 2 []\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 O\OT1/ztmcm/m/n/12.05 (
-\OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 K\OT1/ztmcm/
-m/n/12.05 )\OML/ztmcm/m/it/12.05 ; V[]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.
-05 ^$
- []
-
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[105]
-Overfull \hbox (17.34543pt too wide) in paragraph at lines 212--213
-[]\OT1/ptm/m/n/12.05 (U2). \C70/rm/m/n/12.05/99 � \C70/rm/m/n/12.05/51 H \C70/r
-m/m/n/12.05/8b � \C70/rm/m/n/12.05/66 $\OT1/ztmcm/m/n/12.05   \OMS/ztmcm/m/n/1
-2.05 [] \OML/ztmcm/m/it/12.05  \OMS/ztmcm/m/n/12.05 j[]\OT1/ztmcm/m/n/12.05 =
-  $|\C70/rm/m/n/12.05/30 | \C70/rm/m/n/12.05/5b �$\OT1/ztmcm/m/n/12.05   \OMS/
-ztmcm/m/n/12.05 [] \OML/ztmcm/m/it/12.05 $\C70/rm/m/n/12.05/76 � \C70/rm/m/n/
-12.05/4e � \C70/rm/m/n/12.05/61  \C70/rm/m/n/12.05/4e   * \C70/rm/m/n/12.05/6a
- ! \C70/rm/m/n/12.05/57 �$\OMS/ztmcm/m/n/12.05 K$|\C70/rm/m/n/12.05/ff | \C70/
-rm/m/n/12.05/5b X \C70/rm/m/n/12.05/57 ( \C70/rm/m/n/12.05/4e   *$\OMS/ztmcm/m/
-n/12.05 K[] 2 []\OT1/ztmcm/m/n/12.05 ( )$\C70/rm/m/n/12.05/54 �$\OML/ztmcm/m/it
-/12.05 V[]$\C70/rm/m/n/12.05/4f 
- []
-
-
-Overfull \hbox (3.62053pt too wide) in paragraph at lines 218--220
+Overfull \hbox (14.43503pt too wide) in paragraph at lines 231--233
 []\OT1/ptm/m/n/12.05 (U5). \C70/rm/m/n/12.05/5b �$\OT1/ztmcm/m/n/12.05 (  \OMS/
-ztmcm/m/n/12.05 [] \OML/ztmcm/m/it/12.05 \OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/
+ztmcm/m/n/12.05 [] \OML/ztmcm/m/it/12.05 '\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/
 n/12.05 ^ \OML/ztmcm/m/it/12.05  $\C70/rm/m/n/12.05/76 � \C70/rm/m/n/12.05/6b �
  \C70/rm/m/n/12.05/4e   * \C70/rm/m/n/12.05/6a ! \C70/rm/m/n/12.05/57 �$\OMS/zt
 mcm/m/n/12.05 K$|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.
@@ -3876,7 +3917,38 @@ mcm/m/n/12.05 K$|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.
  []
 
 
-Overfull \hbox (9.00569pt too wide) in paragraph at lines 228--229
+Overfull \hbox (23.7886pt too wide) in paragraph at lines 234--239
+$\OML/ztmcm/m/it/12.05 V[]$\C70/rm/m/n/12.05/66 / \C70/rm/m/n/12.05/4f  \C70/r
+m/m/n/12.05/5f �$[]\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n
+/12.05 (\OMS/ztmcm/m/n/12.05 K[]\OT1/ztmcm/m/n/12.05 )\OML/ztmcm/m/it/12.05 ; V
+\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 ^ \OML/ztmcm/m/it/12.05  $\C70/rm/m
+/n/12.05/53 � \C70/rm/m/n/12.05/6e � \C70/rm/m/n/12.05/8d � \C70/rm/m/n/12.05/7
+6 � \C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05/5b P \C70/rm/m/n/12.05/54 } \C70/r
+m/m/n/12.05/98 � \C70/rm/m/n/12.05/76 � \C70/rm/m/n/12.05/96 � \C70/rm/m/n/12.0
+5/54 |\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/75 1$\OT1/ztmcm/m/n/12.05   \O
+MS/ztmcm/m/n/12.05 [] \OML/ztmcm/m/it/12.05   \OMS/ztmcm/m/n/12.05 j[]\OT1/ztm
+cm/m/n/12.05 = \OML/ztmcm/m/it/12.05 '$\C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05
+/77 �$[]\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/12.05 (\OM
+S/ztmcm/m/n/12.05 K[]\OT1/ztmcm/m/n/12.05 )\OML/ztmcm/m/it/12.05 ; V\OT1/ztmcm/
+m/n/12.05 )$
+ []
+
+
+Overfull \hbox (6.42155pt too wide) in paragraph at lines 241--242
+\C70/rm/m/n/12.05/51 s \C70/rm/m/n/12.05/4e �$\OMS/ztmcm/m/n/12.05 []$\C70/rm/
+m/n/12.05/76 � \C70/rm/m/n/12.05/67 � \C70/rm/m/n/12.05/5c  \C70/rm/m/n/12.05/
+5b P \C70/rm/m/n/12.05/96 �$\OML/ztmcm/m/it/12.05 V[]$\C70/rm/m/n/12.05/54 �$\O
+ML/ztmcm/m/it/12.05 V[]$\C70/rm/m/n/12.05/4f  \C70/rm/m/n/12.05/5f �$\OMS/ztmc
+m/m/n/12.05 K $[] K[]$\C70/rm/m/n/12.05/54 �$\OMS/ztmcm/m/n/12.05 K $[] K[]$\C7
+0/rm/m/n/12.05/62  \C70/rm/m/n/12.05/7a �|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/
+12.05/53 s|\C70/rm/m/n/12.05/ff | $\OMS/ztmcm/m/n/12.05 K[]$\C70/rm/m/n/12.05/
+66 /$[]\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/12.05 (\OMS
+/ztmcm/m/n/12.05 K\OT1/ztmcm/m/n/12.05 )\OML/ztmcm/m/it/12.05 ; V[]\OT1/ztmcm/m
+/n/12.05 ) \OMS/ztmcm/m/n/12.05 ^$
+ []
+
+
+Overfull \hbox (9.00569pt too wide) in paragraph at lines 241--242
 \C70/rm/m/n/12.05/57 �|\C70/rm/m/n/12.05/30 | \C70/rm/m/n/12.05/62 @ \C70/rm/m
 /n/12.05/4e �|\C70/rm/m/n/12.05/ff | $\OML/ztmcm/m/it/12.05 V[] \OT1/ztmcm/m/n
 /12.05 = \OML/ztmcm/m/it/12.05 V[]$|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/5
@@ -3892,13 +3964,13 @@ OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m
  []
 
 
-Overfull \hbox (2.31679pt too wide) in paragraph at lines 230--233
+Overfull \hbox (2.9553pt too wide) in paragraph at lines 243--246
 []\C70/rm/m/n/12.05/8b �$\OML/ztmcm/m/it/12.05 V[] \OMS/ztmcm/m/n/12.05  \OML/
 ztmcm/m/it/12.05 V[]$\C70/rm/m/n/12.05/66 / \C70/rm/m/n/12.05/4f  \C70/rm/m/n/
 12.05/5f �$[]\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/12.05
  (\OMS/ztmcm/m/n/12.05 K\OT1/ztmcm/m/n/12.05 )\OML/ztmcm/m/it/12.05 ; V[]\OT1/z
 tmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 ^ \OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/1
-2.05  \OMS/ztmcm/m/n/12.05 _ \OML/ztmcm/m/it/12.05  \OT1/ztmcm/m/n/12.05 )$\C7
+2.05 ' \OMS/ztmcm/m/n/12.05 _ \OML/ztmcm/m/it/12.05  \OT1/ztmcm/m/n/12.05 )$\C7
 0/rm/m/n/12.05/53 � \C70/rm/m/n/12.05/6e � \C70/rm/m/n/12.05/8d � \C70/rm/m/n/1
 2.05/76 � \C70/rm/m/n/12.05/53 � \C70/rm/m/n/12.05/5b P \C70/rm/m/n/12.05/54 } 
 \C70/rm/m/n/12.05/98 � \C70/rm/m/n/12.05/96 � \C70/rm/m/n/12.05/54 |\C70/rm/m/
@@ -3907,7 +3979,24 @@ n/12.05/ff | \C70/rm/m/n/12.05/52  \C70/rm/m/n/12.05/67 	$[]\OT1/ztmcm/m/n/12
 tmcm/m/n/12.05 )\OML/ztmcm/m/it/12.05 ;$
  []
 
-)
+
+Overfull \hbox (7.62262pt too wide) in paragraph at lines 247--248
+[]\OT1/ptm/m/n/12.05 (U8) \C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/6b � \C70/rm
+/m/n/12.05/4e   *$\OMS/ztmcm/m/n/12.05 K 2 []\OT1/ztmcm/m/n/12.05 (( [] \OMS/zt
+mcm/m/n/12.05 _ \OT1/ztmcm/m/n/12.05  []) \OMS/ztmcm/m/n/12.05 [] \OML/ztmcm/m
+/it/12.05 '\OT1/ztmcm/m/n/12.05 )$\C70/rm/m/n/12.05/90 � \C70/rm/m/n/12.05/5b X
+ \C70/rm/m/n/12.05/57 ( \C70/rm/m/n/12.05/4e   *$\OMS/ztmcm/m/n/12.05 K[] 2 []\
+OT1/ztmcm/m/n/12.05 ( [])$ |\C70/rm/m/n/12.05/ff |\C70/rm/m/n/12.05/62 $\OMS/
+ztmcm/m/n/12.05 K[] 2 []\OT1/ztmcm/m/n/12.05 ( [])$|\C70/rm/m/n/12.05/ff 	|
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[105])
 (D:\（博士）我的资料\Git\fry\毕业论文\新版-学位论文\chapter/c
 hapter-08-experiments.tex
 
@@ -3917,46 +4006,39 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [106]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[107]
 第八章
-[108
+[107
 
-] <figures/chapter04/time_4_12.png, id=1934, 360.59718pt x 216.05719pt>
+] <figures/chapter04/time_4_12.png, id=1927, 360.59718pt x 216.05719pt>
 File: figures/chapter04/time_4_12.png Graphic file (type png)
 
 <use figures/chapter04/time_4_12.png>
-Package pdftex.def Info: figures/chapter04/time_4_12.png used on input line 50.
+Package pdftex.def Info: figures/chapter04/time_4_12.png used on input line 51.
 
 (pdftex.def)             Requested size: 199.16928pt x 119.33292pt.
 
-<figures/chapter04/number-4-12.png, id=1935, 365.11406pt x 194.22563pt>
+<figures/chapter04/number-4-12.png, id=1928, 365.11406pt x 194.22563pt>
 File: figures/chapter04/number-4-12.png Graphic file (type png)
 
 <use figures/chapter04/number-4-12.png>
 Package pdftex.def Info: figures/chapter04/number-4-12.png used on input line 5
-3.
+4.
 (pdftex.def)             Requested size: 199.16928pt x 105.95013pt.
 
-<figures/chapter04/time_4_16.png, id=1936, 362.10281pt x 217.5628pt>
+<figures/chapter04/time_4_16.png, id=1929, 362.10281pt x 217.5628pt>
 File: figures/chapter04/time_4_16.png Graphic file (type png)
 
 <use figures/chapter04/time_4_16.png>
-Package pdftex.def Info: figures/chapter04/time_4_16.png used on input line 62.
+Package pdftex.def Info: figures/chapter04/time_4_16.png used on input line 63.
 
 (pdftex.def)             Requested size: 199.16928pt x 119.66986pt.
 
-<figures/chapter04/number-4-16.png, id=1937, 323.70938pt x 222.07968pt>
+<figures/chapter04/number-4-16.png, id=1930, 323.70938pt x 222.07968pt>
 File: figures/chapter04/number-4-16.png Graphic file (type png)
 
 <use figures/chapter04/number-4-16.png>
 Package pdftex.def Info: figures/chapter04/number-4-16.png used on input line 6
-5.
+6.
 (pdftex.def)             Requested size: 199.16928pt x 136.64087pt.
 
 
@@ -3965,34 +4047,43 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[109 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figu
+[108 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figu
 res/chapter04/time_4_12.png> <D:/（博士）我的资料/Git/fry/毕业论文/
 新版-学位论文/figures/chapter04/number-4-12.png> <D:/（博士）我的�
 �料/Git/fry/毕业论文/新版-学位论文/figures/chapter04/time_4_16.png> 
 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figures/c
 hapter04/number-4-16.png>]
-<figures/chapter04/PRototalAveTime.png, id=1952, 462.528pt x 346.896pt>
+<figures/chapter04/PRototalAveTime.png, id=1944, 462.528pt x 346.896pt>
 File: figures/chapter04/PRototalAveTime.png Graphic file (type png)
 
 <use figures/chapter04/PRototalAveTime.png>
 Package pdftex.def Info: figures/chapter04/PRototalAveTime.png used on input li
-ne 82.
+ne 83.
 (pdftex.def)             Requested size: 213.39566pt x 160.05048pt.
 
-<figures/chapter04/ProBox(10-50)_25.png, id=1953, 479.54156pt x 265.74281pt>
+<figures/chapter04/ProBox(10-50)_25.png, id=1945, 479.54156pt x 265.74281pt>
 File: figures/chapter04/ProBox(10-50)_25.png Graphic file (type png)
 
 <use figures/chapter04/ProBox(10-50)_25.png>
 Package pdftex.def Info: figures/chapter04/ProBox(10-50)_25.png used on input l
-ine 86.
+ine 87.
 (pdftex.def)             Requested size: 199.16928pt x 110.3704pt.
 
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[109 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figu
+res/chapter04/PRototalAveTime.png> <D:/（博士）我的资料/Git/fry/毕业�
+��文/新版-学位论文/figures/chapter04/ProBox(10-50)_25.png (PNG copy)>]
 <figures/chapter04/totalAveTime.png, id=1958, 462.528pt x 346.896pt>
 File: figures/chapter04/totalAveTime.png Graphic file (type png)
 
 <use figures/chapter04/totalAveTime.png>
 Package pdftex.def Info: figures/chapter04/totalAveTime.png used on input line 
-115.
+116.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
 
 <figures/chapter04/numPercent.png, id=1959, 462.528pt x 346.896pt>
@@ -4000,7 +4091,7 @@ File: figures/chapter04/numPercent.png Graphic file (type png)
 
 <use figures/chapter04/numPercent.png>
 Package pdftex.def Info: figures/chapter04/numPercent.png used on input line 11
-8.
+9.
 (pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
 )
 (D:\（博士）我的资料\Git\fry\毕业论文\新版-学位论文\chapter/c
@@ -4012,19 +4103,10 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [110 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figu
-res/chapter04/PRototalAveTime.png> <D:/（博士）我的资料/Git/fry/毕业�
-��文/新版-学位论文/figures/chapter04/ProBox(10-50)_25.png (PNG copy)>]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[111 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/figu
 res/chapter04/totalAveTime.png> <D:/（博士）我的资料/Git/fry/毕业论�
 ��/新版-学位论文/figures/chapter04/numPercent.png>]
 第九章
-[112
+[111
 
 ])
 
@@ -4033,12 +4115,19 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[113]
+[112]
 (D:\（博士）我的资料\Git\fry\毕业论文\新版-学位论文\new基于
-遗忘的反应式系统最弱充分条件研究.bbl [114
+遗忘的反应式系统最弱充分条件研究.bbl [113
 
 
 ]
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[114]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4053,6 +4142,11 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [116]
+Underfull \hbox (badness 1158) in paragraph at lines 340--345
+[]\OT1/ptm/m/n/12.05 ZHANG Y, ZHOU Y.  Prop-er-ties of knowl-edge for-get-ting[
+C]//PAGNUCCO M,
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4060,11 +4154,6 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [117]
-Underfull \hbox (badness 1158) in paragraph at lines 340--345
-[]\OT1/ptm/m/n/12.05 ZHANG Y, ZHOU Y.  Prop-er-ties of knowl-edge for-get-ting[
-C]//PAGNUCCO M,
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4106,14 +4195,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[123]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[124])
+[123])
 (D:\（博士）我的资料\Git\fry\毕业论文\新版-学位论文\chapter/t
 hanks.tex
 
@@ -4122,7 +4204,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[125]
+[124]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
@@ -4133,22 +4215,22 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 1.
 
-) [126
+) [125
 
 ]
 
 pdfTeX warning: pdflatex.exe (file D:/（博士）我的资料/Git/fry/毕业�
 �文/新版-学位论文/figures/shengming.pdf): PDF inclusion: found PDF versi
 on <1.7>, but at most version <1.5> allowed
-<figures/shengming.pdf, id=2156, 597.50829pt x 845.0471pt>
+<figures/shengming.pdf, id=2150, 597.50829pt x 845.0471pt>
 File: figures/shengming.pdf Graphic file (type pdf)
 
 <use figures/shengming.pdf>
 Package pdftex.def Info: figures/shengming.pdf used on input line 473.
 (pdftex.def)             Requested size: 452.96826pt x 640.63068pt.
- [127
+ [126
 
-] [128 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/fi
+] [127 <D:/（博士）我的资料/Git/fry/毕业论文/新版-学位论文/fi
 gures/shengming.pdf>]
 
 Package natbib Warning: There were undefined citations.
@@ -4162,20 +4244,20 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 480.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 480.
 Package rerunfilecheck Info: File `new基于遗忘的反应式系统最弱充�
 �条件研究.out' has not changed.
-(rerunfilecheck)             Checksum: EA15DD9C9360755F387C5D025133F747;5084.
+(rerunfilecheck)             Checksum: D1F1AC6932B52AD257F1FC30CC359D19;5021.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37680 strings out of 495354
- 631828 string characters out of 3183188
- 787821 words of memory out of 3000000
- 38213 multiletter control sequences out of 15000+200000
- 277732 words of font info for 808 fonts, out of 3000000 for 9000
+ 37739 strings out of 495354
+ 632725 string characters out of 3183188
+ 788794 words of memory out of 3000000
+ 38215 multiletter control sequences out of 15000+200000
+ 283093 words of font info for 818 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,2632b,2639s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,2632b,2638s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -4246,30 +4328,30 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
 <C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/sim
-kai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/F
-onts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C
+kai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf>{D:/Applicati
+on/Ctex/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/WINDOWS/Fonts/simfang.ttf><C
 :/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/sim
 fang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOW
 S/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf
 ><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/
-simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf>{D:/App
-lication/Ctex/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/WINDOWS/Fonts/simhei.t
-tf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/
-simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOW
-S/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C
-:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simhe
-i.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fon
-ts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WIN
-DOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simkai.ttf
-><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/si
-msun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/
+simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WIN
+DOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simfang.ttf><C:/WINDOWS/Fonts/simhei.t
+tf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/
+simsun.ttc><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOW
+S/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C
+:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhe
+i.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fon
+ts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simkai.ttf><C:/WIN
+DOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf
+><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/si
+mhei.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/
 Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/
 WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.
-ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts
-/simsun.ttc><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDO
-WS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><
-C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/sims
-un.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fo
+ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts
+/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDO
+WS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><
+C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simh
+ei.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fo
 nts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WI
 NDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.tt
 f><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/s
@@ -4286,34 +4368,34 @@ INDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.t
 tf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/
 simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOW
 S/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C
-:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsu
+:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsu
 n.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fon
 ts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WIN
 DOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc
 ><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/si
-msun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/
+mhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/
 Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/
-WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.
+WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.
 ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts
-/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDO
-WS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><
-C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/sims
-un.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fo
-nts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WI
-NDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.tt
+/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDO
+WS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><
+C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/sims
+un.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fo
+nts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WI
+NDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.tt
 c><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/s
 imsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS
 /Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:
 /WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun
 .ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Font
-s/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WIND
+s/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WIND
 OWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc>
 <C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/sim
 sun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/F
 onts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/W
 INDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.t
 tc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/
-simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOW
+simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOW
 S/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C
 :/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhe
 i.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fon
@@ -4326,27 +4408,26 @@ WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.
 ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts
 /simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDO
 WS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><
-C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/sims
+C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/sims
 un.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fo
 nts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WI
 NDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.tt
-c><C:/WINDOWS/Fonts/simsun.ttc><D:/Application/Ctex/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmex10.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.p
-fb><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Ap
-plication/Ctex/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/Applic
-ation/Ctex/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/Applicatio
-n/Ctex/MiKTeX/fonts/type1/hoekwater/rsfs/rsfs10.pfb><D:/Application/Ctex/MiKTeX
-/fonts/type1/urw/courier/ucrr8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw
-/symbol/usyr.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><D
-:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><D:/Application/Ctex
-/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><D:/Application/Ctex/MiKTeX/fonts/typ
-e1/urw/times/utmr8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmri
-8a.pfb>
+c><D:/Application/Ctex/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/App
+lication/Ctex/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Application/
+Ctex/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Application/Ctex/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Application/Ctex/MiKTeX/fonts/t
+ype1/public/amsfonts/symbols/msbm10.pfb><D:/Application/Ctex/MiKTeX/fonts/type1
+/hoekwater/rsfs/rsfs10.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/courier/
+ucrb8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><D:/A
+pplication/Ctex/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><D:/Application/Ctex/MiK
+TeX/fonts/type1/urw/symbol/usyr.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw
+/times/utmb8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb
+><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/Application/C
+tex/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on new基于遗忘的反应式系统最弱充分条件研究.pdf
- (140 pages, 2648155 bytes).
+ (139 pages, 2642520 bytes).
 PDF statistics:
- 3036 PDF objects out of 3580 (max. 8388607)
- 541 named destinations out of 1000 (max. 500000)
+ 3027 PDF objects out of 3580 (max. 8388607)
+ 542 named destinations out of 1000 (max. 500000)
  1004 words of extra memory for PDF output out of 10000 (max. 10000000)
 
