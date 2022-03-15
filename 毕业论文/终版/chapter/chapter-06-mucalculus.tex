@@ -121,13 +121,12 @@ $\mu$-句子互模拟是不变的，$\mu$-公式则不是~\cite{janin1996express
 对$\Hm$中的状态集$S_1\subseteq S$，用$\Hb(S_1)$表示通过$\Hb$从$S_1$映射得来的状态集，即： $\Hb(S_1) =\{s' \mid (s, s')\in \Hb,\ s \in S_1\}$。
 
 \begin{example}[例~\ref{exmp:c06:bisim}的延续]
-	令 $\Hm$和 $\Hm'$为图~\ref{chapter06:fig:bisim}中的Kripke结构，$v: {\cal V} \rto 2^S$和$v': {\cal V} \rto 2^{S'}$为将${\cal V}$中的变量分别赋值到$\Hm$和$\Hm'$的状态集上的赋值函数。可以检查下面的结论成立：
+	令 $\Hm$和 $\Hm'$为图~\ref{chapter06:fig:bisim}中的Kripke结构，$v: {\cal V} \rto 2^S$和$v': {\cal V} \rto 2^{S'}$为将${\cal V}$中的变元分别赋值到$\Hm$和$\Hm'$的状态集上的赋值函数。可以检查下面的结论成立：
 		\begin{itemize}
 			\item 若对任意的$X\in\cal V$，$v(X)= \{s_0, s_1, s_2\}$ 且$v'(X)=\{t_0, t_1\}$，则$({\cal M},v)\lrto_{\{ch\}} ({\cal M}',v')$；
 			
 			\item 若对任意的$X\in{\cal V}-\{X_1\}$，$v(X_1)= \{s_0\}$、$v'(X_1)=\{t_1\}$、$v(X)= \{s_0, s_1, s_2\}$且$v'(X)=\{t_0, t_1\}$，则$({\cal M},v)\not\lrto_{\{ch\}} ({\cal M}',v')$；这是因为$(s_0,t_0)\in {\cal B}$且 $s_0\in v(X_1)$，但是$t_0\notin v'(X_1)$。
 		\end{itemize}
-	}
 \end{example}
 
 显然，对任意的集$V\subseteq \Ha$，每个Var-$V$-互模拟与一个$V$-互模拟对应，即：$({\cal M},v)\lrto_V({\cal M}',v')$ 蕴涵${\cal M}\lrto_V{\cal M}'$。
@@ -161,7 +160,7 @@ $\mu$-句子互模拟是不变的，$\mu$-公式则不是~\cite{janin1996express
 	
 	
 	(3) $\lrto_V$是传递的。这里证明若$(\Hm_1,v_1) \lrto_V (\Hm_2,v_2)$ 和$(\Hm_2,v_2) \lrto_V (\Hm_3,v_3)$，则 $(\Hm_1,$ $v_1)$ $\lrto_V$ $(\Hm_3,v_3)$。假定 $(\Hm_1,v_1)$和$(\Hm_2,v_2)$之间的Var-$V$-互模拟关系为$\Hb_1$，$(\Hm_2,v_2)$和$(\Hm_3,$ $v_3)$之间的Var-$V$-互模拟关系为$\Hb_2$，构造如下二元关系：
-	%$\Hb=\{(s, z) \mid (s,t) \in \Hb_1\ \mbox{和}\ (t, z)\in \Hb_2 \hbox{其中} s\in S_1,  t\in S_2, \hbox{其} z \in S_3\}$。
+	$\Hb=\{(s, z) \mid (s,t) \in \Hb_1\ \mbox{和}\ (t, z)\in \Hb_2 \hbox{其中} s\in S_1,  t\in S_2, \hbox{其} z \in S_3\}$。
 	可以类似(2)证明$\Hb$为$\Hm_1$ 和$\Hm_3$的一个$V$-互模拟关系，即：$\Hm_1 \lrto_V \Hm_3$。
 	
 	
@@ -187,10 +186,71 @@ $\mu$-句子互模拟是不变的，$\mu$-公式则不是~\cite{janin1996express
 	(iii) 由(ii)可知，$(\Hm_1,v_1) \lrto_V (\Hm_2,v_2)$ 蕴涵$(\Hm_1,v_1) \lrto_{V \cup V_1} (\Hm_2,v_2)$，由(i)的传递性可知$(\Hm_1,v_1) \lrto_{V\cup V_1} (\Hm_3,v_3)$。
 \end{proof}
 
+不难看出，命题~\ref{pro:EqUnion}对于Kripke结构之间的$\lrto_V$关系也是成立的。
+直观地说，(i)表示$\lrto_V$是赋值之间的自反、对称和传递关系。
+(ii)指明若两个赋值是Var-$V$-互模拟的，则对于$V$的任意一个超级$V_1$，这两个赋值都是Var-$V_1$-互模拟的。
+(iii)表示如果一个Kripke结构和其他两个Kripke结构互相$V$和$V_1$互模拟，则这两个Kripke结构$V\cup V_1$-互模拟。这跟$\CTL$情形下的互模拟类似，正如下文将要说到的那样，这一性质有助于证明$\mu$-演算下遗忘的分解属性。
 
-直观地说，(i)表示$\lrto_V$是Kripke结构的集合上的自反、对称和传递关系。
-(ii)表示如果一个Kripke结构和其他两个Kripke结构互相$V$和$V_1$互模拟，则这两个Kripke结构$V\cup V_1$-互模拟。这跟$\CTL$情形下的互模拟类似，正如下文将要说到的那样，这一性质有助于证明$\mu$-演算下遗忘的模块属性。
+对于含有自由变元$Y\in {\cal V}$的$\mu$-公式$\varphi(Y)$，记$\varphi_{{\cal S}(Y)}$为将$\varphi(Y)$中所有$Y$的出现用一个新的原子命题$p_y$替换得到的公式。
+此时，给定赋值$(\Hm,v)$，$\Hm=(S,r,R,L)$在自由变元$Y$上关于$\varphi(Y)$和$v$的{\em 扩展}为$\Hm_{{\cal S}(Y)} = (S, r, R, L_y)$，其中对任意的$s\in S$：
+\[L_y(s) =
+\left\{
+\begin{array}{ll}
+	L(s)\cap \Var(\varphi(Y)), \ \ \qquad \qquad \quad \hbox{若$s\not \in v(Y)$；} \\
+	(L(s) \cap \Var(\varphi(Y)))\cup \{p_y\}, \ \ \ \quad \ \ \hbox{否则。}
+\end{array}
+\right.
+\]
+从直观上来说，公式$\varphi(Y)$中的自由变元在给定赋值$(\Hm,v)$下可以看作一个原子命题，该原子命题在状态集$v(Y)$为真，在其他状态上为假。
 
+类似地，对于公式$\varphi(\tau)$（$\tau$为$\varphi(\tau)$中自由变元的集合），记$\varphi_{{\cal S}(\tau)}$为将$\varphi(\tau)$中出现在$\tau$中的每个自由变元迭代地用新的原子命题替换得到的公式，即：
+\begin{align*}
+	& \varphi_{\emptyset} = \varphi(\emptyset) =\varphi\\
+	& \varphi_{{\cal S}(\{Y\})} = \varphi_{{\cal S}(Y)}, \\
+	& \varphi_{{\cal S}(\{Y_1, Y_2, \dots, Y_n\})}= (\varphi_{{\cal S}(Y_1)})_{{\cal S}(\{Y_2, \dots, Y_n\})}.
+\end{align*}
+$\Hm=(S,r,R,L)$在自由变元集合$\tau$上关于$\varphi(\tau)$和赋值$v$的扩展为$\Hm_{{\cal S}(\tau)}= (S, r, R, L_{\tau})$使得
+\begin{align*}
+	& \Hm_{\emptyset} = \Hm,\\
+	& \Hm_{{\cal S}(\{Y\})} = \Hm_{{\cal S}(Y)},\\
+	& \Hm_{{\cal S}(\tau)}=\Hm_{{\cal S}(Y_1){\cal S}(\{Y_2,\dots, Y_n\})},
+\end{align*}
+且对任意$s\in S$，
+\begin{align*}
+	& L_{\emptyset}(s) = L(s),\\
+	& L_{\{Y\}}(s) = L_y(s),\\
+	& L_{\tau}(s) = L_{y_1\{Y_2, \dots, Y_n\}}(s) \\
+	&\qquad \ =
+	\left\{
+	\begin{array}{ll}
+		L_{\{Y_2, \dots, Y_n\}}(s)\cap \Var(\varphi_{{\cal S}\{Y_2, \dots, Y_n\}}), \ \ \qquad \qquad \quad \hbox{若$s\not \in v(Y_1)$;} \\
+		(L_{\{Y_2, \dots, Y_n\}}(s) \cap \Var(\varphi_{{\cal S}\{Y_2, \dots, Y_n\}})) \cup \{p_{y_1}\}, \ \ \quad  \ \ \hbox{否则。}
+	\end{array}
+	\right.
+\end{align*}
+
+\begin{example}[例~\ref{exmp:c06:bisim}的延续]
+	\label{exp:freshp}
+	令$\varphi(\{Y,Z\}) = \mu X. ch \wedge j \wedge Z\wedge \EXIST\NEXT Y \wedge \EXIST\NEXT \EXIST\NEXT X$，$\Hm = (S,s_0, R, L)$ 为例~\ref{exmp:c06:bisim}，则
+	$$\varphi_{{\cal S}(Y)}(Z) = \mu X. ch \wedge j \wedge Z \wedge \EXIST\NEXT p_y \wedge \EXIST\NEXT \EXIST\NEXT X\hbox{，}$$
+	$$\varphi_{{\cal S}(\{Y,Z\})} = \mu X. ch \wedge j \wedge p_z \wedge \EXIST\NEXT p_y \wedge \EXIST\NEXT \EXIST\NEXT X\hbox{。}$$
+	
+	令$v$为将${\cal V}$中变元映射到$\Hm$状态集上的赋值函数，且$v(Y) = \{s_1,s_2\}$、$v(Z) = \{s_0\}$，则：
+	%Let $v$ be the valuation of variables in ${\cal V}$ to the states of $\Hm$ with $v(Y) = \{s_1,s_2\}$ and $v(Z) = \{s_0\}$, then:
+	\begin{itemize}
+		\item $\Hm$在$Y$上关于$\varphi(\{Y,Z\})$ 和$v$的扩展为：$\Hm_{{\cal S}(Y)} = (S,s_0, R, L_y)$，其中 $L_y(s_0) = \{j,ch\}$、 $L_y(s_1)=\{ch, p_y\}$且 $L_y(s_2)=\{p_y\}$；
+		\item $\Hm$ 在$\{Y,Z\}$上关于$\varphi(\{Y,Z\})$和$v$的扩展为：$\Hm_{{\cal S}(\{Y,Z\})} = (S,s_0, R, L_{yz})$，其中$L_{yz}(s_0) = \{j,ch,p_z\}$、 $L_{yz}(s_1)=\{ch, p_y\}$且$L_{yz}(s_2)=\{p_y\}$。
+	\end{itemize}
+\end{example}
+
+下面的性质对证明Var-$V$-互模拟对于$\mu$-公式是不变的是至关重要的。
+\begin{proposition}
+	\label{pro:statequ}
+	令$\varphi(Y)$为含有自由变元$Y$的$\mu$-公式（$Y\in {\cal V}$），$(\Hm,v)$为赋值，则$$\left \|\varphi(Y) \right\|_v^{\Hm} = \left \|\varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\hbox{。}$$
+\end{proposition}
+\begin{proof}
+	
+\end{proof}
 此时，$\mu$-演算下的遗忘如下定义：
 \begin{definition}[$\mu$-演算下的遗忘]\label{chapter06:def:V:forgetting}
 	令$V\subseteq\cal A$和 $\phi$为$\mu$-句子。若下面等式成立，则称
