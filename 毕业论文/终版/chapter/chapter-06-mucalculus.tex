@@ -77,12 +77,13 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 
 
 另一方面，$V$-互模拟与${\cal L}$-互模拟\footnote{${\cal L}$-互模拟是一种将定义\ref{def:VB}中的$V$替换为${\cal L}$的二元关系。}~\cite{d1996uniform}类似，不同的是$V$-互模拟只考虑原子命题，且当${\cal L}$为原子命题集合时是${\cal L}$-互模拟补命题（这里默认除了原子命题之外的符号都是相同的，因此只考虑原子命题）。
-此外，已有结果表明${\cal L}$-句子（符号只出现在${\cal L}$中的$\mu$-句子）关于${\cal L}$-互模拟是不变的，即若$\Hm$和 $\Hm'$是${\cal L}$-互模拟的，则对于${\cal L}$-句子$\varphi$有$\Hm \models \varphi$当且仅当$\Hm' \models \varphi$~\cite{d1996uniform,bradfield2018mu}。
+此外，已有结果表明${\cal L}$-句子（符号只出现在${\cal L}$中的$\mu$-句子）关于${\cal L}$-互模拟是{\em 不变的}，即若$\Hm$和 $\Hm'$是${\cal L}$-互模拟的，则对于${\cal L}$-句子$\varphi$有$\Hm \models \varphi$当且仅当$\Hm' \models \varphi$~\cite{d1996uniform,bradfield2018mu}。
 因此，若$\IR(\varphi, V)$且$\Hm \lrto_V \Hm'$，则$\Hm \models \varphi$当且仅当$\Hm' \models \varphi$。
 本文称这一性质为$V$-不变性。
 %值得注意的是这里的结构之间的$V$-互模拟是$\CTL$
 %In this case, $\Hm_1$ and $\Hm_2$ are bisimilar on $V$.
 \begin{example}
+	\label{exmp:c06:bisim}
 	如图\ref{chapter06:fig:bisim}中的两个Kripke结构$\Hm=(S,R,L,r)$和 $\Hm'=(S',R',L',r')$，其中:
 	\begin{itemize}
 		\item $S=\{s_0,s_1,s_2\}$，$S'=\{t_0,t_1\}$，$r=s_0$，$r'=t_0$；
@@ -109,34 +110,80 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 	
 \end{example}
 
+$\mu$-句子互模拟是不变的，$\mu$-公式则不是~\cite{janin1996expressive}。这里定义一种对$\mu$-公式是不变的互模拟。
+\begin{definition}[Var-$V$-互模拟]
+	\label{def:varVb}
+	给定原子命题集合$V$、赋值$(\Hm, v)$和$(\Hm',v')$。$(\Hm, v)$和$(\Hm',v')$之间的一个Var-$V$-互模拟关系$\Hb$是$\Hm$和$\Hm'$之间一个$V$-互模拟关系，且满足：
+	若 $(s,s') \in {\cal B}$，则对任意$X\in {\cal V}$， $s\in v(X)$ 当且仅当 $s'\in v'(X)$。
+\end{definition}
+
+若$(\Hm, v)$和$(\Hm',v')$之间存在一个Var-$V$-互模拟关系$\Hb$，则称$(\Hm, v)$和$(\Hm',v')$是Var-$V$-互模拟的，记为$(\Hm, v)\lrto_V(\Hm',v')$。
+对$\Hm$中的状态集$S_1\subseteq S$，用$\Hb(S_1)$表示通过$\Hb$从$S_1$映射得来的状态集，即： $\Hb(S_1) =\{s' \mid (s, s')\in \Hb,\ s \in S_1\}$。
+
+\begin{example}[例~\ref{exmp:c06:bisim}的延续]
+	令 $\Hm$和 $\Hm'$为图~\ref{chapter06:fig:bisim}中的Kripke结构，$v: {\cal V} \rto 2^S$和$v': {\cal V} \rto 2^{S'}$为将${\cal V}$中的变量分别赋值到$\Hm$和$\Hm'$的状态集上的赋值函数。可以检查下面的结论成立：
+		\begin{itemize}
+			\item 若对任意的$X\in\cal V$，$v(X)= \{s_0, s_1, s_2\}$ 且$v'(X)=\{t_0, t_1\}$，则$({\cal M},v)\lrto_{\{ch\}} ({\cal M}',v')$；
+			
+			\item 若对任意的$X\in{\cal V}-\{X_1\}$，$v(X_1)= \{s_0\}$、$v'(X_1)=\{t_1\}$、$v(X)= \{s_0, s_1, s_2\}$且$v'(X)=\{t_0, t_1\}$，则$({\cal M},v)\not\lrto_{\{ch\}} ({\cal M}',v')$；这是因为$(s_0,t_0)\in {\cal B}$且 $s_0\in v(X_1)$，但是$t_0\notin v'(X_1)$。
+		\end{itemize}
+	}
+\end{example}
+
+显然，对任意的集$V\subseteq \Ha$，每个Var-$V$-互模拟与一个$V$-互模拟对应，即：$({\cal M},v)\lrto_V({\cal M}',v')$ 蕴涵${\cal M}\lrto_V{\cal M}'$。
+另一方面，Kripke结构$\Hm$和$\Hm'$之间的每个$V$-互模拟可被扩展为$(\Hm, v)$和$(\Hm',v')$一个Var-$V$-互模拟，其中对任意的$X\in {\cal V}$，$v(X) = S$且$v'(X) = S'$，$S$和$S'$分别为$\Hm$和$\Hm'$中的状态集合。
+
 可以容易证明$\lrto_V$有如下性质。
 
 \begin{proposition} \label{pro:EqUnion}
-	令$V, V_1 \subseteq \Ha$为原子命题的集合，$\Hm_1$、 $\Hm_2$、 $\Hm_3$为Kripke 结构，则：
+	令$V, V_1 \subseteq \Ha$为原子命题的集合，$(\Hm_1,v_1)$、 $(\Hm_2,v_2)$和$(\Hm_3,v_3)$为赋值，则：
 	\begin{itemize} 
-		\item[(i)] $\lrto_V$是 Kripke 结构之间的等价关系;
-		\item[(ii)] 若 $\Hm_1 \lrto_V \Hm_2$且 $\Hm_2 \lrto_{V_1} \Hm_3$，则 $\Hm_1 \lrto_{V \cup V_1} \Hm_3$。
+		\item[(i)] $\lrto_V$是 赋值之间的等价关系；
+		\item[(ii)] 若$(\Hm_1, v_1) \lrto_V (\Hm_2,v_2)$ 和$V \subseteq V_1$，则$(\Hm_1, v_1) \lrto_{V_1} (\Hm_2,v_2)$；
+		\item[(iii)] 若 $(\Hm_1, v_1)  \lrto_V (\Hm_2,v_2)$且 $(\Hm_2,v_2) \lrto_{V_1} (\Hm_3,v_3)$，则 $(\Hm_1, v_1) \lrto_{V \cup V_1} (\Hm_3,v_3)$。
 	\end{itemize}
 	
 \end{proposition}
 \begin{proof}
 	(i) 这里从自反性、对称性和传递性来证明该关系是一个等价关系。
 	
-	(1) $\lrto_V$是自反的。容易检查对任意的Kripke结构$\Hm$都有$\Hm\lrto_V \Hm$。
+	(1) $\lrto_V$是自反的。容易检查对任意的赋值$(\Hm,v)$都有$(\Hm,v)\lrto_V (\Hm,v)$。
 	
-	(2) $\lrto_V$是对称的。 这里证明对任意的$\Hm_1$和 $\Hm_2$，若 $\Hm_1 \lrto_V \Hm_2$则 $\Hm_2 \lrto_V \Hm_1$。
-	$\Hm_1$和 $\Hm_2$之间存在$V$-互模拟关系$\Hb$，构造如下二元关系$\Hb_1=\{(s,t) \mid (t, s)\in \Hb\}$，现在从下面几点证明$\Hb_1$是$\Hm_2$和 $\Hm_1$之间的一个$V$-关系：
+	(2) $\lrto_V$是对称的。 这里证明对任意的$(\Hm_1, v_1)$ 和$(\Hm_2,v_2)$，若$(\Hm_1, v_1) \lrto_V (\Hm_2,v_2)$，则$(\Hm_2, v_2) \lrto_V (\Hm_1, v_1)$。
+	假设 $(\Hm_1, v_1)$和$(\Hm_2,v_2)$之间的Var-$V$-互模拟关系$\Hb$，构造如下二元关系：$\Hb_1=\{(s,t) \mid (t, s)\in \Hb\}$。现在从下面几点证明 $\Hb_1$ 是$\Hm_2$和 $\Hm_1$之间的一个$V$-互模拟关系：
 	\begin{itemize}
-		\item 由于$r_1 \Hb r_2$，所以 $r_2 \Hb_1 r_1$，
+		\item 由于$r_1 \Hb r_2$，所以$r_2 \Hb_1 r_1$，
 		\item 对任意的$s\in S_1$和 $t\in S_2$，若 $t \Hb_1 s$，则 $s\Hb t$，因此对于任意的$p \in \Ha - V$，$p \in L_1(s)$当且仅当 $p \in L_2(t)$，且
 		\item 因为$\Hb$是$\Hm_1$和 $\Hm_2$之间的$V$-互模拟关系，所以$V$-互模拟的第三和第四个点很容易能够证明。
 	\end{itemize}
 	
-	(3) $\lrto_V$是传递的。这里证明对任意的 $\Hm_1$、$\Hm_2$、和 $\Hm_3$，若 $\Hm_1 \lrto_V \Hm_2$和 $\Hm_2 \lrto_V \Hm_3$则 $\Hm_1 \lrto_V \Hm_3$。 假定$\Hm_1$和 $\Hm_2$之间存在$V$-互模拟关系$\Hb_1$，$\Hm_2$和 $\Hm_3$之间存在$V$-互模拟关系$\Hb_2$，构造二元关系: $\Hb=\{(s, z) \mid (s,t) \in \Hb_1,\ (t, z)\in \Hb_2\}$。
-	此时，可以像(2)一样证明 $\Hb$是$\Hm_1$和 $\Hm_3$之间的一个 $V$-互模拟关系。因此，$\Hm_1 \lrto_V \Hm_3$。
+	此外，若$(s,t) \in \Hb$，则对任意的$X\in {\cal V}$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$。因此，若$(t,s) \in \Hb_1$， 则对任意的$X\in {\cal V}$，$t \in v_2(X)$ 当且仅当$s\in v_1(X)$。所以，$(\Hm_2, v_2) \lrto_V (\Hm_1, v_1)$。
 	
-	(ii) 为了证明$\Hm_1 \lrto_{V\cup V_1} \Hm_3$，只需找到一个  $\Hm_1$和 $\Hm_3$之间的二元$(V\cup V_1)$-互模拟关系$\Hb$。
-	假定$\Hm_1$和 $\Hm_2$之间存在$V$-互模拟关系为$\Hb_1$，$\Hm_2$和 $\Hm_3$之间存在$V_1$-互模拟关系$\Hb_2$。令$\Hb = \{(s_1, s_3)\mid (s_1, s_2) \in \Hb_1, \ (s_2, s_3) \in \Hb_2\}$，容易证明$\Hb$是$\Hm_1$和 $\Hm_3$之间的二元$(V\cup V_1)$-互模拟关系。
+	
+	(3) $\lrto_V$是传递的。这里证明若$(\Hm_1,v_1) \lrto_V (\Hm_2,v_2)$ 和$(\Hm_2,v_2) \lrto_V (\Hm_3,v_3)$，则 $(\Hm_1,$ $v_1)$ $\lrto_V$ $(\Hm_3,v_3)$。假定 $(\Hm_1,v_1)$和$(\Hm_2,v_2)$之间的Var-$V$-互模拟关系为$\Hb_1$，$(\Hm_2,v_2)$和$(\Hm_3,$ $v_3)$之间的Var-$V$-互模拟关系为$\Hb_2$，构造如下二元关系：$\Hb=\{(s, z) \mid (s,t) \in \Hb_1\ \mbox{and}\ (t, z)\in \Hb_2 \hbox{ 其中 } s\in S_1,  t\in S_2, \hbox{ 其 } z \in S_3\}$。
+	可以类似(2)证明$\Hb$为$\Hm_1$ 和$\Hm_3$的一个$V$-互模拟关系，即：$\Hm_1 \lrto_V \Hm_3$。
+	
+	
+此外，若$(s,z) \in \Hb$，则存在$t \in S_2$使得$(s, t) \in \Hb_1$ 和$(t,z)\in \Hb_2$，所以，对任意的$X\in {\cal V}$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$ 当且仅当$z\in \Hb$。因此，$(\Hm_1, v_1) \lrto_V (\Hm_3, v_3)$。
+	
+	
+	(ii) 假设$\Hb_{V}$是$(\Hm_1,v_1)$ 和$(\Hm_2,v_2)$之间的一个Var-$V$-互模拟关系。这里证明$\Hb_{V}$是$(\Hm_1,$ $v_1)$ 和$(\Hm_2,v_2)$之间的一个Var-$V_1$-互模拟关系。
+	显然：
+	\begin{itemize}
+		\item $(r_1, r_2) \in \Hb_{V}$，
+		\item 对任意的$w_1\in S_1$和$w_2\in S_2$，若$(w_1, w_2) \in \Hb_{V}$，因为$V \subseteq V_1$且对任意的$p \in \Ha - V$，$p\in L_1(w_1)$ 当且仅当$p\in L_2(w_2)$，所以，对任意的$p \in \Ha - V_1$，
+		$p\in L_1(w_1)$ 当且仅当$p\in L_2(w_2)$，
+		%$L_1(w_1) - V_1 = L_2(w_2) -V_1$ since $L_1(w_1) - V = L_2(w_2) -V$ and $V \subseteq V_1$,
+		\item %$\forall r_1 \in S_1$, 
+		若 $(w_1,r_1) \in R_1$ 和$(w_1, w_2)\in \Hb_V$，因为$\Hb_{V}$ 是$\Hm_1$ 和$\Hm_2$之间的一个$V$-互模拟关系，所以，$\exists r_2\in S_2$使得$(w_2,r_2)\in R_2$ 和$(r_1,r_2) \in \Hb_{V}$，
+		\item %$\forall r_2 \in S_2$, 
+		若$(w_2,r_2) \in R_2$ 和$(w_1, w_2)\in \Hb_V$，因为$\Hb_{V}$ 是$\Hm_1$ 和$\Hm_2$之间的一个$V$-互模拟关系，所以，$\exists r_1\in S_1$ 使得$(w_1,r_1)\in R_1$ 和$(r_1,r_2) \in \Hb_{V}$。
+\end{itemize}
+因此，$\Hb_V$$\Hm_1$ 和$\Hm_2$之间的一个$V_1$-互模拟关系。
+
+此外，若$(s,t) \in \Hb_V$，则对任意的$X\in {\cal V}$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$。因此，$(\Hm_1,v_1) \lrto_{V_1} (\Hm_2,v_2)$。
+	
+	(iii) 由(ii)可知，$(\Hm_1,v_1) \lrto_V (\Hm_2,v_2)$ 蕴涵$(\Hm_1,v_1) \lrto_{V \cup V_1} (\Hm_2,v_2)$，由(i)的传递性可知$(\Hm_1,v_1) \lrto_{V\cup V_1} (\Hm_3,v_3)$。
 \end{proof}
 
 

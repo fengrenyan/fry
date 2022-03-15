@@ -568,8 +568,8 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的析取（即子句�
 
 
 \subsection{$\mu$-演算}
-$\mu$-演算是一种表达能力与S2S\footnote{无限完全二叉树下的一元二阶理论（monadic second order theory of the infinite complete binary tree），简称为S2S。}相同的逻辑语言，线性时序逻辑（linear temporal  logic，LTL）、CLT和CTL$^*$能表达的性质都能用$\mu$-演算来表示。
-$\mu$-演算是模态逻辑的扩展，本文讨论Kozen提出的命题$\mu$-演算~\cite{DBLP:journals/cacm/Kozen83}。构成$\mu$-演算语言的符号有：
+$\mu$-演算是一种表达能力与S2S\footnote{无限完全二叉树下的一元二阶理论（monadic second order theory of the infinite complete binary tree），简称为S2S。}相同的逻辑语言，线性时序逻辑（linear temporal  logic，LTL）、CTL和$\CTL^*$能表达的性质都能用$\mu$-演算来表示。
+$\mu$-演算是模态逻辑的扩展，构成$\mu$-演算语言的符号有：
 \begin{itemize}
 	\item 原子命题符号的集合：$\cal A$；
 	\item 变元符号的可数集：$\cal V$；
@@ -588,8 +588,10 @@ $\mu$-演算是模态逻辑的扩展，本文讨论Kozen提出的命题$\mu$-演
 \[
 \varphi := \top \mid \bot \mid p\mid \neg p\mid  X\mid \varphi \vee \varphi \mid \varphi \wedge \varphi \mid \EXIST\NEXT \varphi\mid \ALL\NEXT \varphi \mid \mu X. \varphi\mid \nu X. \varphi
 \]
-其中$p\in \Ha$且$X\in {\cal V}$。称出现在$\mu X. \varphi$和$\nu X. \varphi$中的变元$X$是\emph{受约束的}（bound），不受约束的变元称为\emph{自由变元}。
+其中$p\in \Ha$且$X\in {\cal V}$。$\ALL\NEXT$和$\EXIST\NEXT$为模态操作。称出现在$\mu X. \varphi$和$\nu X. \varphi$中的变元$X$是\emph{受约束的}（bound），不受约束的变元称为\emph{自由变元}。
 原子命题和变元符号及其各自的否定称为\emph{文字}，出现在公式$\varphi$中的原子命题的集合记为$\Var(\varphi)$。
+
+\textbf{注意：}$\mu$-演算公式的定义通常考虑动作的集合$Act$和一组与集合$Act$中的动作$a$相关的模态词“$\tuple{a}$”\cite{DBLP:journals/cacm/Kozen83,d1996uniform,d2000logical}。为了方便，本文考虑公式里只有一个动作的情形，但是本文的结论可以扩展到一般的情形。此时，模态词中的动作$a$可以省略，且公式$\EXIST\NEXT\varphi$（或$\ALL\NEXT \varphi$）与公式 $\tuple{a}\varphi$（或$[a]\varphi$）\cite{d2000logical}相同。
 
 由上述定义可以看出，“$\neg$”符号只能出现在原子命题符号的前面。但在$\mu$-演算公式的一般定义中，“$\neg$”符号可以出现在变元符号的前面，但是要求变元符号前的“$\neg$”符号的个数为偶数。尽管如此，这两种方式定义的公式具有相同的表达能力。
 
@@ -600,7 +602,7 @@ $\mu$-演算是模态逻辑的扩展，本文讨论Kozen提出的命题$\mu$-演
 
  \textbf{注意：}虽然这里的Kripke结构不要求其二元关系是完全的，但是这里的情况更加一般化，其结论也能推广到完全的二元关系的情形。
 \begin{definition}
-	给定$\mu$-演算公式$\varphi$、初始Kripke结构$\Hm$和一个赋值函数$v: {\cal V} \rto 2^S$。公式在$\Hm$和$v$上的解释是$S$的一个子集$\left\| \varphi\right\|_v^{\Hm}$（当$\Hm$在上下文中是显然的，则可以省去上标）：
+	给定$\mu$-演算公式$\varphi$、初始Kripke结构$\Hm$和一个从${\cal V}$中的变量到$\Hm$中状态的赋值函数$v: {\cal V} \rto 2^S$。公式在$\Hm$和$v$上的解释是$S$的一个子集$\left\| \varphi\right\|_v^{\Hm}$（当$\Hm$在上下文中是显然的，则可以省去上标）：
 	\begin{align*}
 		& \left \| p\right \|_v = \{s\mid p \in L(s)\} \ ,\ \left\|\top\right\|_v = S \ ,\ \left\|\bot\right\|_v = \emptyset, \\
 		& \left\|\neg p\right\|_v = S- \left\| p\right\|_v,\\
@@ -623,6 +625,8 @@ $\mu$-演算是模态逻辑的扩展，本文讨论Kozen提出的命题$\mu$-演
 \]
 \end{definition}
 
+直观地，$\| \varphi \|_v^{\Hm}$为在$\Hm$和$v$上$\varphi$为真的状态集合。
+称由$\Hm$和其赋值$v$构成的对$(\Hm,v)$为{\em 赋值}。
 在下文中，若$s\in \left\| \varphi \right\|_v$，则称$s$“满足”$\varphi$，记为$(\Hm, s, v) \models \varphi$。
 此时，若$(\Hm, r, v) \models \varphi$，则称$(\Hm, r, v)$为$\varphi$的一个模型。
 当公式$\varphi$为$\mu$-句子时，可以将赋值函数$v$省略，记为$(\Hm, s) \models \varphi$。
@@ -637,7 +641,7 @@ $\mu$-演算是模态逻辑的扩展，本文讨论Kozen提出的命题$\mu$-演
 最大不动点 $\nu(f) = \bigcap\nu_{\alpha}(f)$，其中
 \begin{itemize}
 	\item $\nu_0(f) = U$，
-	\item $\nu_{\alpha+1} =  f(\nu_{\alpha}(f))$，，$\alpha$为后继序数，
+	\item $\nu_{\alpha+1} =  f(\nu_{\alpha}(f))$，$\alpha$为后继序数，
 	\item $\nu_{\lambda} = \bigcap_{\alpha < \lambda} \nu_{\alpha}(f)$，$\lambda$为极限序数。
 \end{itemize}
 
