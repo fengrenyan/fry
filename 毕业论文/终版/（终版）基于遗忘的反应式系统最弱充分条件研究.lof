@@ -15,18 +15,18 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces 两个 $\{ch\}$-互模拟的Kripke结构示意图\relax }}{88}{figure.caption.15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {8.1}{\ignorespaces 计算{\textrm {CTL}-forget}$(\varphi , V)$使用的时间和在“移除原子命题”步骤后${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数，其中$\varphi _i=12$。\relax }}{110}{figure.caption.17}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{110}{figure.caption.17}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{110}{figure.caption.17}
-\contentsline {figure}{\numberline {8.2}{\ignorespaces 计算{\textrm {CTL}-forget}$(\varphi , V)$使用的时间和在“移除原子命题”步骤后${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数，其中$\varphi _i=16$。\relax }}{110}{figure.caption.18}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{110}{figure.caption.18}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{110}{figure.caption.18}
-\contentsline {figure}{\numberline {8.3}{\ignorespaces 计算3-CNF公式SNC的CPU时间\relax }}{111}{figure.caption.19}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{111}{figure.caption.19}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$|V|=25$时所使用CPU时间箱线图 }}}{111}{figure.caption.19}
-\contentsline {figure}{\numberline {8.4}{\ignorespaces 计算$\textrm {CTL}$SNC的平均时间和存在SNC的公式占比.\relax }}{112}{figure.caption.20}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{112}{figure.caption.20}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {存在SNC的公式占比(\%)}}}{112}{figure.caption.20}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces 计算{\textrm {CTL}-forget}$(\varphi , V)$使用的时间和在“移除原子命题”步骤后${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数，其中$\varphi _i=12$。\relax }}{113}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{113}{figure.caption.17}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{113}{figure.caption.17}
+\contentsline {figure}{\numberline {8.2}{\ignorespaces 计算{\textrm {CTL}-forget}$(\varphi , V)$使用的时间和在“移除原子命题”步骤后${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数，其中$\varphi _i=16$。\relax }}{113}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{113}{figure.caption.18}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{113}{figure.caption.18}
+\contentsline {figure}{\numberline {8.3}{\ignorespaces 计算3-CNF公式SNC的CPU时间\relax }}{114}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{114}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$|V|=25$时所使用CPU时间箱线图 }}}{114}{figure.caption.19}
+\contentsline {figure}{\numberline {8.4}{\ignorespaces 计算$\textrm {CTL}$SNC的平均时间和存在SNC的公式占比.\relax }}{115}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{115}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {存在SNC的公式占比(\%)}}}{115}{figure.caption.20}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -249,35 +249,150 @@ $\Hm=(S,r,R,L)$在自由变元集合$\tau$上关于$\varphi(\tau)$和赋值$v$�
 	令$\varphi(Y)$为含有自由变元$Y$的$\mu$-公式（$Y\in {\cal V}$），$(\Hm,v)$为赋值，则$$\left \|\varphi(Y) \right\|_v^{\Hm} = \left \|\varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\hbox{。}$$
 \end{proposition}
 \begin{proof}
+	对公式的结构做归纳来证明这一结论。
 	
+	\textbf{基始.} (1) $\varphi(Y) = X$，其中$X \not = Y$。
+	
+	$\left \|X \right\|_v^{\Hm} = v(X)$，
+	
+	$\left \|X_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} = \left \|X \right\|_v^{\Hm_{{\cal S}(Y)}}= v(X)$。
+	
+	
+	(2) $\varphi(Y) = Y$.
+	%$Y_{{\cal S}(Y)} = p_y$, then 
+	\begin{align*}
+		\left \|Y \right\|_v^{\Hm} & = v(Y)\\
+		\left \|Y_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \left \|p_y \right\|_v^{\Hm_{{\cal S}(Y)}} \\
+		& = \{s \mid p_y \in L_y(s)\} \\
+		& = \{s \mid s \in v(Y)\}\\
+		& = v(Y)
+	\end{align*}
+	
+	(3) $\varphi(Y) = p$，其中$p\in \Ha$。
+	\begin{align*}
+		\left \|p \right\|_v^{\Hm} &  = \{s \mid p \in L(s)\},\\
+		\left \|p_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}  & = \left \|p \right\|_v^{\Hm_{{\cal S}(Y)}} \\
+		& = \{s \mid p \in L_y(s)\}\\
+		& = \{s \mid p \in L(s)\}.
+	\end{align*}
+	
+	\textbf{归纳步.}
+	
+	(1) $\varphi(Y) = \neg p$.
+	\begin{align*}
+		\left \|\neg p \right\|_v^{\Hm} & = S- \left \|p \right\|_v^{\Hm}\\
+		\left \|\neg p_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \left \|\neg p \right\|_v^{\Hm_{{\cal S}(Y)}} \\
+		&  = S - \left \|p \right\|_v^{\Hm_{{\cal S}(Y)}}\\
+		& = S - \left \|p \right\|_v^{\Hm} \qquad \qquad \qquad \qquad \qquad \hbox{  (归纳假设)}
+	\end{align*}
+	
+	%Therefore, we have $\left \|\neg p \right\|_v^{\Hm} = \left \|\neg p_{{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$  by induction hypothesis.
+	
+	(2) $\varphi(Y) = \varphi_1(Y) \vee \varphi_2(Y)$.
+	\begin{align*}
+		\left \| \varphi \right\|_v^{\Hm}& = \left \|\varphi_1(Y) \right\|_v^{\Hm} \cup \left \| \varphi_2(Y) \right\|_v^{\Hm}\\
+		\left \| \varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}& = \left \|\varphi_{1{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} \cup \left \| \varphi_{2{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\\
+		& = \left \|\varphi_1(Y) \right\|_v^{\Hm} \cup \left \| \varphi_2(Y) \right\|_v^{\Hm} \qquad  \qquad \qquad \qquad \hbox{  (归纳假设)}
+	\end{align*}
+	
+	%We have $\left \|\varphi_1 \right\|_v^{\Hm}= \left \|\varphi_{1{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$ and $\left \| \varphi_2 \right\|_v^{\Hm} =  \left \| \varphi_{2{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$ by induction hypothesis. Therefore, $\left \| \varphi \right\|_v^{\Hm}= \left \| \varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$.
+	
+	$\varphi(Y) = \varphi_1(Y) \wedge \varphi_2(Y)$的情形可以类似地证明。
+	
+	(3) $\varphi(Y) = \ALL \NEXT \varphi_1(Y)$.
+	\begin{align*}
+		\left \|\varphi \right(Y)\|_v^{\Hm} & = \{s \mid \forall s'. (s, s') \in R \Rto s' \in \left \|\varphi_1(Y) \right\|_v^{\Hm}\}\\
+		\left \|\varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \{s \mid \forall s'. (s, s') \in R \Rto s' \in \left \|\varphi_{1{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\}\\
+		& = \{s \mid \forall s'. (s, s') \in R \Rto s' \in \left \|\varphi_1(Y) \right\|_v^{\Hm}\} \qquad \qquad \hbox{  (归纳假设)}
+	\end{align*}
+	
+	(4) $\varphi(Y)  = \mu X. \varphi_1(Y)$.
+	
+	$\left \|\varphi(Y) \right\|_v^{\Hm}= \bigcap \{S_1 \subseteq S \mid \left \|\varphi_1(Y) \right\|_{v[X:=S_1]}^{\Hm} \subseteq S_1\}$.
+	
+	\begin{align*}
+		\left \|\varphi(Y)_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \left \|\mu X. \varphi_{1}(Y)_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\\
+		& = \bigcap \{S_1 \subseteq S \mid \left \|\varphi_{1{\cal S}(Y)} \right\|_{v[X:=S_1]}^{\Hm_{{\cal S}(Y)}} \subseteq S_1\}\\
+		& = \bigcap \{S_1 \subseteq S \mid \left \|\varphi_1(Y) \right\|_{v[X:=S_1]}^{\Hm} \subseteq S_1\} \qquad\qquad \hbox{  (归纳假设)}
+	\end{align*}
 \end{proof}
+
+命题~\ref{pro:statequ}表明$(\Hm, v) \models \varphi(Y)$ 当且仅当$(\Hm_{{\cal S}(Y)}, v) \models \varphi_{{\cal S}(Y)}$。 % Moreover,
+\begin{example}
+	[例~\ref{exp:freshp}的延续] 
+	令$\varphi = \EXIST\NEXT Y \wedge \nu X. (ch \wedge j \wedge \EXIST\NEXT \EXIST \NEXT X)$，则 
+	\begin{align*}
+		&\varphi_{{\cal S}(Y)} = \EXIST\NEXT p_y \wedge \nu X. (ch \wedge j \wedge \EXIST\NEXT \EXIST \NEXT X),\\
+		&\left\|\varphi\right\|_v^{\Hm} = \{s_0\},\\
+		&\left\|\varphi_{{\cal S}(Y)}\right\|_v^{\Hm_{{\cal S}(Y)}} = \{s_0\}.
+	\end{align*}
+\end{example}
+
+\begin{lemma}
+	\label{lem:vbextension}
+	令$\tau \subseteq {\cal V}$为变元集合，$\varphi(\tau)$为含有$\tau$中自由变元的公式，$V\subseteq \Ha$为原子命题集合。若$(\Hm, v) \lrto_V (\Hm',v')$，则 $\Hm_{{\cal S}(\tau)} \lrto_V \Hm'_{{\cal S}(\tau)}$。
+\end{lemma}
+\begin{proof}
+	令$\Hb$为$(\Hm, v)$ 和$(\Hm',v')$之间的Var-$V$-互模拟关系，这里证明$\Hb$是$\Hm_{{\cal S}(\tau)}$ 和$\Hm'_{{\cal S}(\tau)}$之间的$V$-互模拟关系。
+	\begin{itemize}
+		\item $(r,r')\in \Hb$,
+		\item 对任意的$s\in S$ 和$t\in S'$，若$(s,t)\in \Hb$，因为$\Hm \lrto_V \Hm'$且对任意的$Y\in \tau$，$s\in v(Y)$ 当且仅当$t \in v'(Y)$，这意味着$p_y\in L_{\tau}(s)$ 当且仅当$p_y \in  L_{\tau}'(t)$；所以，对任意的 $p\in \Ha-V$，$p\in L_{\tau}(s)$ 当且仅当$p\in L_{\tau}'(t)$， %Moreover, for each $p \in $
+		\item 因为$\Hm \lrto_V \Hm'$，所以$V$-互模拟的第三和四点容易证明。
+	\end{itemize}
+\end{proof}
+
+基于此，可以证明Var-$V$-互模拟关于$\mu$-公式是不变的。
+\begin{proposition}[Var-$V$-invariant]
+	\label{pro:variB}
+	令$\varphi(\tau)$为$\mu$-公式，出现在其中所有的自由变元构成集合$\tau \subseteq {\cal V}$，$V$为原子命题的集合。若$(\Hm, v) \lrto_V (\Hm',v')$ 且$\IR(\varphi(\tau), V)$，则$(\Hm,v) \models \varphi(\tau)$ 当且仅当$(\Hm',v') \models \varphi(\tau)$。
+\end{proposition}
+\begin{proof}
+	不失一般性地，令$\Var(\varphi(\tau))\cap V = \emptyset$、$\tau=\{Y_1, \dots, Y_n\}$、$p_{\tau} = \{p_{y_1}, \dots, p_{y_n}\} \cap (V \cup \Var(\varphi)) = \emptyset$且$\varphi_{{\cal S}(\tau)}$ 为将$\varphi(\tau)$中的每个自由变元$Y_i\in \tau$用新的原子命题$p_{y_i} \in p_{\tau}$替换得到的公式，其中$i = 1, \dots, n$。不难看出 $\varphi_{{\cal S}(\tau)}$为一个$V$-无关的$\mu$-句子。
+	\begin{align*}
+		\left\| \varphi(\{Y_1, \dots, Y_n\})\right\|_v^{\Hm} & = \left\| \varphi_{{\cal S}(Y_1)({\cal S}(\{Y_2, \dots, Y_n\}))}\right\|_v^{\Hm_{{\cal S}(Y_1){\cal S}(\{Y_2,\dots, Y_n\})}}\\
+		& = \left\| \varphi_{{\cal S}(Y_1){\cal S}(Y_2)({\cal S}(\{Y_3, \dots, Y_n\}))}\right\|_v^{\Hm_{{\cal S}(Y_1){\cal S}(Y_2){\cal S}(\{Y_3,\dots, Y_n\})}}\\
+		& \dots\\
+		& = \left\| \varphi_{{\cal S}(Y_1) \dots {\cal S}(Y_n)}\right\|_v^{\Hm_{{\cal S}(Y_1)\dots {\cal S}(Y_n)}}\\
+		& = \left\| \varphi_{{\cal S}(\tau)}\right\|_v^{\Hm_{{\cal S}(\tau)}}\hbox{。}
+	\end{align*}
+	因此，$(\Hm, v) \models \varphi(\tau)$ 当且仅当$(\Hm_{{\cal S}(\tau)}, v) \models \varphi_{{\cal S}(\tau)}$。
+	
+	由引理\ref{lem:vbextension}可知$\Hm_{{\cal S}(\tau)} \lrto_V \Hm'_{{\cal S}(\tau)}$。因此，对任意$V$-无关的$\mu$-句子$\psi$，$\Hm_{{\cal S}(\tau)}\models \psi$ 当且仅当$\Hm'_{{\cal S}(\tau)}\models \psi$。
+	
+	所以，$(\Hm,v) \models \varphi(\tau)$ 当且仅当$(\Hm',v') \models \varphi(\tau)$。
+\end{proof}
+
+命题~\ref{pro:variB}表明，若两个赋值是Var-$V$-互模拟的，则这两个赋值同时满足（或不满足）同一个与$V$无关的公式。
+例如，$(\Hm_i,v_i)$ $i=1,2$为两个赋值，$\varphi =X$，$V=\{p\}$；若$(\Hm_1, v_1) \lrto_V (\Hm_2,v_2)$，则可以证明$(\Hm_1,v_1) \models \varphi$ 当且仅当$(\Hm_2,v_2) \models \varphi$。
+
 此时，$\mu$-演算下的遗忘如下定义：
 \begin{definition}[$\mu$-演算下的遗忘]\label{chapter06:def:V:forgetting}
-	令$V\subseteq\cal A$和 $\phi$为$\mu$-句子。若下面等式成立，则称
-	$V$上的 $\mu$-句子 $\psi$是从$\phi$中遗忘掉$V$后得到的结果，记为 $\Muforget(\phi, V)$：
+	令$V\subseteq\cal A$和 $\varphi$为$\mu$-公式。若$\Var(\psi) \cap V=\emptyset$且下面等式成立，则称
+	 $\psi$是从$\varphi$中遗忘掉$V$后得到的结果：
 	\begin{equation*}
-		\Mod(\psi)=\{\Hm  \mid \exists \Hm' \in\Mod(\phi)\ \&\ \Hm' \lrto_V \Hm\}.
+		\Mod(\psi)=\{(\Hm,v) \mid \exists (\Hm',v') \in\Mod(\varphi)\ \hbox{且} (\Hm',v') \lrto_V (\Hm,v)\}\hbox{。}
 	\end{equation*}
 \end{definition}
 
-定义\ref{chapter06:def:V:forgetting}表明如果 $\psi$和 $\psi'$都是从$\phi$中遗忘掉 $V$中的原子命题得到的结果，则
-$\Mod(\psi)$ $=\Mod(\psi')$，也就是说遗忘的结果之间是语义等价的（即有相同的模型）。
+显然，当讨论的公式为$\mu$-句子的时候，定义~\ref{chapter06:def:V:forgetting}中的模型变成$\Hm$和$\Hm'$，即去掉赋值函数$v$和$v'$。
+
+定义~\ref{chapter06:def:V:forgetting}表明如果 $\psi$和 $\psi'$都是从$\varphi$中遗忘掉 $V$中的原子命题得到的结果，则
+$\Mod(\psi)$ $=\Mod(\psi')$，也就是说遗忘的结果之间是语义等价的（即有相同的模型）。此时，将遗忘的结果记为 $\Muforget(\varphi, V)$，除非另有说明，否则$\Muforget(\varphi, V)$表示从$\varphi$中遗忘$V$的结果是$\mu$-公式。
 %, i.e., $\psi$ and $\psi'$ have the same models. 
 
 
-D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有均匀插值性质~\cite{d1996uniform,d2000logical,d2006modal}。换句话说，这意味着对任意的 $\mu$-句子 $\varphi$和有限的原子命题的集合$V\subseteq \Var(\varphi)$，都存在一个$V$-无关且与$\varphi$最接近的 $\mu$-句子 $\widetilde{\exists}V \varphi$。
-值得注意的是，上述定义的遗忘 $\Muforget(\phi, V)$与 $\widetilde{\exists}V \varphi$\cite{d2006modal} 语义等价.
+
 
 \section{$\mu$-演算遗忘的性质}
 这部分展示$\mu$-演算下遗忘的语义属性。特别地，这里将证明上述$\mu$-演算下的遗忘的定义与遗忘的那几条规则具有“当且仅当的关系”，且从任意$\mu$-句子中遗忘掉任意原子命题的集合的结果总是一个$\mu$-句子。此外，也研究了遗忘算子的代数属性，包括分解性（decomposition）、切片性（slice）和同质性（homogeneity）。
 
 \begin{theorem} \label{thm:exist}
-	给定原子命题 $q \in \cal A$和$\mu$-句子 $\phi$，则存在一个$\mu$-句子 $\psi$使得 $\IR(\psi, \{q\})$且 $\psi \equiv \Muforget(\phi, \{q\})$。
+	给定原子命题 $q \in \cal A$和$\mu$-句子 $\varphi$，则存在一个$\mu$-句子 $\psi$使得 $\Var(\psi)\cap \{q\} = \emptyset$且 $\psi \equiv \Muforget(\varphi, \{q\})$。
 \end{theorem}
 \begin{proof}
-	已有结果表明（定理 3.1 \cite{d1996uniform}），对任意的$\mu$-句子$\phi$和原子命题$p$，存在一个$\{p\}$-无关的$\mu$-句子$\phi'$（即$\IR(\phi', \{p\})$）使得：
+	已有结果表明，对任意的$\mu$-句子$\varphi$和原子命题$p$，存在一个$\{p\}$-无关的$\mu$-句子$\varphi'$（即$\IR(\varphi', \{p\})$）使得\cite{d1996uniform}：
 		\[
-	\Hm \models \phi' \mbox{ 当且仅当 } \exists \Hm' \in \Mod(\phi) \mbox{ 使得 } \Hm \lrto_{\{p\}} \Hm'.
+	\Hm \models \varphi' \mbox{ 当且仅当 } \exists \Hm' \in \Mod(\varphi) \mbox{ 使得 } \Hm \lrto_{\{p\}} \Hm'.
 	\]
 	
 	这与本文遗忘的定义一致，因此上述结论成立。
@@ -292,10 +407,10 @@ D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有�
 	\item[(\textbf{IR})]  无关性： $\IR(\varphi', V)$。
 \end{itemize}
 其中 $V\subseteq\cal A$、
-$\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到的结果。
+$\varphi$为$\mu$-公式、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到的结果。
 
 \begin{theorem}[表示性定理]\label{chapter06:thm:Rep}
-	给定$\mu$-句子 $\varphi$、 $\varphi'$和 $\phi$， $V \subseteq \Ha$为原子命题的集合。
+	给定$\mu$-公式 $\varphi$、 $\varphi'$和 $\phi$， $V \subseteq \Ha$为原子命题的集合。
 	下面的几个陈述是等价的：
 	\begin{itemize}
 		\item[(i)] $\varphi' \equiv \Muforget(\varphi, V)$,
@@ -307,10 +422,10 @@ $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到�
 	$(i) \LRto (ii)$. 为了证明这一结论成立，只需证明：
 	\[
 	\Mod(\Muforget(\varphi, V)) = \Mod(\{\phi \mid \varphi \models \phi, \IR(\phi, V)\}).\]
-	$(\Rto)$ 对$\Muforget(\varphi, V)$的任意模型 $\Hm'$ \\
-	$\Rto$  $\exists\Hm$使得 $\Hm \models \varphi$和 $\Hm \lrto_V \Hm'$ \hfill (定义\ref{chapter06:def:V:forgetting}) \\
-	$\Rto$ 对于任意与$V$-无关且$\varphi \models \phi$的$\phi$都有 $\Hm' \models \phi$ \\
-	$\Rto$ $\Hm' \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$
+	$(\Rto)$ 对$\Muforget(\varphi, V)$的任意模型 $(\Hm',v')$ \\
+	$\Rto$  $\exists(\Hm,v)$使得 $(\Hm,v) \models \varphi$和 $(\Hm,v) \lrto_V (\Hm',v')$ \hfill (定义\ref{chapter06:def:V:forgetting}) \\
+	$\Rto$ 对于任意与$V$-无关且$\varphi \models \phi$的$\phi$都有 $(\Hm',v') \models \phi$ \\
+	$\Rto$ $(\Hm',v') \models \{\phi \mid \varphi \models \phi, \IR(\phi, V)\}$
 	
 	$(\Lto)$ 由于$\IR(\Muforget(\varphi, V),V)$和$\varphi \models \Muforget(\varphi, V)$，由定义\ref{chapter06:def:V:forgetting}可知 $\{\phi \mid \varphi \models \phi, \IR(\phi, V)\} \models \Muforget(\varphi, V)$。
 	
@@ -329,25 +444,54 @@ $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到�
 
 定理\ref{chapter06:thm:Rep} 表明基本公设对$\mu$-演算下的遗忘是充分且必要的：基本公设能描述遗忘的结果，遗忘的结果具有基本公设里的性质。这与S5和$\CTL$下的情形相同。
 
+D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有均匀插值性质~\cite{d1996uniform,d2000logical,d2006modal}。换句话说，这意味着对任意的 $\mu$-句子 $\varphi$和有限的原子命题的集合$V\subseteq \Var(\varphi)$，都存在一个$V$-无关且与$\varphi$最接近的 $\mu$-句子 $\widetilde{\exists}V \varphi$。
+%下文将证明，$\mu$-句子的均匀插值与遗忘等价。
+值得注意的是，对于$\mu$-句子$\varphi$，上述定义的遗忘 $\Muforget(\varphi, V)$与 $\widetilde{\exists}V \varphi$\cite{d2006modal} 语义等价。
+
+\begin{corollary}\label{cor:unifeqforget}
+		令$V \subseteq \Ha$ 且$\varphi$ 为$\mu$-句子，则$\widetilde{\exists}V \varphi \equiv \Muforget(\varphi, V)$。
+\end{corollary}
+\begin{proof}
+	显然$\varphi \models \Muforget(\varphi, V)$ 且$\Muforget(\varphi, V) \cap V = \emptyset$。
+	此外，对任意的$\phi$，若$\varphi \models \phi$且$\IR(\phi, V)$，由定理~\ref{chapter06:thm:Rep}可知$\Muforget(\varphi, V) \models \phi$。 
+	
+因此，由均匀插值的定义可知$\Muforget(\varphi, V)$是$\varphi$ 关于$\Var(\varphi)-V$的均匀插值。 
+\end{proof}
+
 除了上述的表示性定理，后文将说明公设(\textbf{IR})对计算SNC 和 WSC是重要的。对于$\mu$-句子$\psi = \varphi \wedge (q \lrto \alpha)$，$\varphi \wedge \alpha$是 $\{q\}$-无关的，则从$\psi$中遗忘掉 $q$得到的结果是$\varphi$。正如将在第\ref{chapter07}章中展示，这一性质有助于将任意公式的SNC（WSC）转换为命题下的SNC（WSC）。这一性质可形式化如下：
 
 \begin{lemma}
 	\label{lem:KF:eq}
-	令 $\varphi$和 $\alpha$为两个 $\mu$-句子，$q$为原子命题且 $q \not \in  \Var(\varphi) \cup \Var(\alpha)$。则
+	令 $\varphi$和 $\alpha$为两个 $\mu$-公式，$q$为原子命题且 $q \not \in  \Var(\varphi) \cup \Var(\alpha)$。则
 	$\Muforget(\varphi \wedge (q\lrto\alpha), q)\equiv \varphi$。
 \end{lemma}
  \begin{proof}
-	令 $\varphi' =\varphi \wedge (q\lrto\alpha)$。对$\Muforget(\varphi', q)$的任意一个模型${\cal M}$，存在一个Kripke结构 ${\cal M}'$使得 ${\cal M}\lrto_{\{q\}}{\cal M}'$和 ${\cal M}' \models \varphi'$。显然有 ${\cal M}' \models \varphi$，又因为$\IR(\varphi,\{q\})$和 ${\cal M} \lrto_{\{q\}} {\cal M}'$，所以 ${\cal M} \models \varphi$。
-	%	by the invariant of $\mu$-sentence for $\overline{V}$-bisimulation~\cite{d1996uniform}.
-	
-	令 $\Hm \in \Mod(\varphi)$， 其中 ${\cal M}=(S, R, L, s)$。如下构造 $\Hm' = (S, R, L', s)$：
-	\begin{align*}
-		& L':S \rto 2^{\Ha}\ and\ \forall s^*\in S, L'(s^*) = L(s^*) - \{q\}\ if\ (\Hm, s^*) \not \models \alpha,\\
-		& \hbox{否则} L'(s^*) = L(s^*)\cup\{q\}, \\
-		& L'(s) = L(s) \cup\{q\}\ if\ (\Hm, s) \models \alpha,\ and\ L'(s) = L(s) \hbox{否则}.
-	\end{align*}
-	显然 ${\cal M}' \models \varphi$、 ${\cal M}' \models q\lrto \alpha$且
-	${\cal M}' \lrto_{\{q\}} {\cal M}$。因此， ${\cal M}' \models \varphi \wedge (q\lrto\alpha)$，又因为${\cal M}' \lrto_{\{q\}} {\cal M}$和 $\IR(\Muforget (\varphi \wedge (q\lrto\alpha), q), \{q\})$，所以 ${\cal M} \models \Muforget (\varphi \wedge (q\lrto\alpha), q)$。
+ 		令$\varphi' =\varphi \wedge (q\lrto\alpha)$。对$\Muforget(\varphi', q)$的任意一个模型$({\cal M},v)$，存在一个赋值$({\cal M}',v')$ 使得 $({\cal M},v)\lrto_{\{q\}}({\cal M}',v')$ 且$({\cal M}',v') \models \varphi'$。显然，$({\cal M}',v') \models \varphi$，又因为$\IR(\varphi,\{q\})$ 且$({\cal M},v)\lrto_{\{q\}}({\cal M}',v')$，所以$({\cal M},v) \models \varphi$。
+ 	%	by the invariant of $\mu$-sentence for $\overline{V}$-bisimulation~\cite{d1996uniform}.
+ 	
+ 	令$(\Hm,v) \in \Mod(\varphi)$，其中${\cal M}=(S, s, R, L)$。如下构造$(\Hm',v')$，其中$\Hm' = (S, s, R, L')$且：
+ 	\begin{align*}
+ 		& L':S \rto 2^{\Ha}\hbox{且}\forall s^*\in S, \hbox{若}(\Hm, s^*) \not \models \alpha \hbox{，则}L'(s^*) = L(s^*) - \{q\}\hbox{，}\\
+ 		& \hbox{否则} L'(s^*) = L(s^*)\cup\{q\}\hbox{，} \\
+ 		& L'(s) = L(s) \cup\{q\}\hbox{若}(\Hm, s) \models \alpha\hbox{，}\hbox{否则}L'(s) = L(s)- \{q\}\hbox{。}
+ 	\end{align*}
+ 	显然，${\cal M}' \lrto_{\{q\}} \Hm$，所以$\Hm$和$\Hm'$之间存在一个$\{q\}$-互模拟关系$\Hb$。 
+ 	再者，对任意的$X\in {\cal V}$，令$v'(X) = \Hb(v(X))$。
+ 	
+ 	所以，$({\cal M}',v') \models \varphi$、$({\cal M}',v') \models q\lrto \alpha$且
+ 	$({\cal M},v)\lrto_{\{q\}}({\cal M}',v')$。因此，$({\cal M}',v') \models \varphi \wedge (q\lrto\alpha)$。又因为$({\cal M},v)\lrto_{\{q\}}({\cal M}',v')$ 且$\IR(\Muforget (\varphi \wedge (q\lrto\alpha), q), \{q\})$，从而$({\cal M},v) \models \Muforget (\varphi \wedge (q\lrto\alpha), \{q\})$。
+% 	
+%	令 $\varphi' =\varphi \wedge (q\lrto\alpha)$。对$\Muforget(\varphi', q)$的任意一个模型${\cal M}$，存在一个Kripke结构 ${\cal M}'$使得 ${\cal M}\lrto_{\{q\}}{\cal M}'$和 ${\cal M}' \models \varphi'$。显然有 ${\cal M}' \models \varphi$，又因为$\IR(\varphi,\{q\})$和 ${\cal M} \lrto_{\{q\}} {\cal M}'$，所以 ${\cal M} \models \varphi$。
+%	%	by the invariant of $\mu$-sentence for $\overline{V}$-bisimulation~\cite{d1996uniform}.
+%	
+%	令 $\Hm \in \Mod(\varphi)$， 其中 ${\cal M}=(S, R, L, s)$。如下构造 $\Hm' = (S, R, L', s)$：
+%	\begin{align*}
+%		& L':S \rto 2^{\Ha}\hbox{且}\forall s^*\in S, \hbox{若}(\Hm, s^*) \not \models \alpha \hbox{，则}L'(s^*) = L(s^*) - \{q\}\hbox{，}\\
+%		& \hbox{否则} L'(s^*) = L(s^*)\cup\{q\}\hbox{，} \\
+%		& L'(s) = L(s) \cup\{q\}\hbox{若}(\Hm, s) \models \alpha\hbox{，}\hbox{否则}L'(s) = L(s)- \{q\}\hbox{。}
+%	\end{align*}
+%	显然 ${\cal M}' \models \varphi$、 ${\cal M}' \models q\lrto \alpha$且
+%	${\cal M}' \lrto_{\{q\}} {\cal M}$。因此， ${\cal M}' \models \varphi \wedge (q\lrto\alpha)$，又因为${\cal M}' \lrto_{\{q\}} {\cal M}$和 $\IR(\Muforget (\varphi \wedge (q\lrto\alpha), q), \{q\})$，所以 ${\cal M} \models \Muforget (\varphi \wedge (q\lrto\alpha), q)$。
 \end{proof}
 
 
@@ -390,37 +534,43 @@ $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到�
 下面的性质在命题逻辑、S5~\cite{Yan:AIJ:2009} 和$\CTL$中都成立，这里证明其在$\mu$-演算中也成立。
 \begin{proposition}
 	\label{chapter06:pro:ctl:forget:1}
-	给定$\mu$-句子$\varphi$、$\varphi_i$和 $\psi_i$（$i=1,2$），$V\subseteq \Ha$为原子命题的集合。则：
+	给定$\mu$-公式$\varphi$、$\varphi_i$和 $\psi_i$（$i=1,2$），$V\subseteq \Ha$为原子命题的集合。则：
 	\begin{itemize}
 		\item[(i)] $\Muforget(\varphi, V)$是可满足的当且仅当$\varphi$是可满足的；
 		\item[(ii)] 若 $\varphi_1 \equiv \varphi_2$，则 $\Muforget(\varphi_1, V) \equiv \Muforget(\varphi_2, V)$；
 		\item[(iii)] 若 $\varphi_1 \models \varphi_2$，则 $\Muforget(\varphi_1, V) \models \Muforget(\varphi_2, V)$；
-		\item[(iv)] $\Muforget(\psi_1 \vee \psi_2, V) \equiv \Muforget(\psi_1, V) \vee \Muforget(\psi_2, V)$，
-		\item[(v)] $\Muforget(\psi_1 \wedge \psi_2, V) \models \Muforget(\psi_1, V) \wedge \Muforget(\psi_2, V)$。
+		\item[(iv)] $\Muforget(\psi_1 \vee \psi_2, V) \equiv \Muforget(\psi_1, V) \vee \Muforget(\psi_2, V)$；
+		\item[(v)] $\Muforget(\psi_1 \wedge \psi_2, V) \models \Muforget(\psi_1, V) \wedge \Muforget(\psi_2, V)$；
+		\item[(vi)] $\Muforget(\varphi_1 \wedge \varphi_2, V) \equiv \Muforget(\varphi_1, V) \wedge \varphi_2$ if $\IR(\varphi_2, V)$。
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	(i) ($\Rto$) 假设 $\Hm$是$\Muforget(\varphi, V)$的模型，由$\Muforget$的定义可知，存在$\varphi$的一个模型$\Hm'$使得 $\Hm \lrto_V \Hm'$。
+	(i) $(\Hm,v) \in \Mod(\Muforget(\varphi, V))$\\
+	$\LRto$ $\exists (\Hm',v') \in \Mod(\varphi)$ 使得$(\Hm, v) \lrto_V (\Hm',v')$。
 	
-	($\Lto$) 假定$\Hm$是$\varphi$的模型，则存在一个Kripke 结构 $\Hm'$使得$\Hm \lrto_V \Hm'$，因此由$\Muforget$的定义可知$\Hm' \models \Muforget(\varphi, V)$。
+	因为$\varphi \models \Muforget(\varphi, V)$，所以$(\Hm,v) \in \Mod(\varphi)$ 蕴涵$(\Hm,v) \models \Muforget(\varphi, V)$。\\
+	
 	
 	(ii) 和 (iii) 可以类似地证明。
 	
-	(iv) ($\Rto$) $\forall \Hm\in \Mod(\Muforget(\psi_1 \vee \psi_2, V))$\\
-	$\Rto$ $\exists \Hm'$ $\in$  $\Mod(\psi_1\vee \psi_2)$使得 $\Hm \lrto_V \Hm'$和 $\Hm' \models \psi_1$（或$\Hm' \models \psi_2$） \\
-	$\Rto$ $\exists \Hm_1 \in \Mod(\Muforget(\psi_1, V))$使得 $\Hm' \lrto_V \Hm_1$，或者$\exists\Hm_2 \in \Mod(\Muforget(\psi_2, V))$使得 $\Hm' \lrto_V \Hm_2$ \\
+	(iv)  $(\Hm,v)\in \Mod(\Muforget(\varphi_1 \vee \varphi_2, V))$\\
+	$\LRto$ 存在$(\Hm',v')$ $\in$  $\Mod(\varphi_1\vee \varphi_2)$使得$(\Hm,v) \lrto_V (\Hm',v')$ 和$(\Hm',v') \models \varphi_1$ 或$(\Hm',v') \models \varphi_2$ \\
+	%$\LRto$ $\exists (\Hm_1,v_1) \in \Mod(\Muforget(\varphi_1, V))$ s.t. $(\Hm',v') \lrto_V (\Hm_1,v_1)$, or $\exists(\Hm_2,v_2) \in \Mod(\Muforget(\varphi_2, V))$ s.t. $(\Hm',v') \lrto_V (\Hm_2,v_2)$ \\
+	$\LRto$ 存在$(\Hm,v) \lrto_V (\Hm',v')$ 使得$(\Hm',v') \models \varphi_1$ 或$(\Hm',v') \models \varphi_2$，则存在$(\Hm_1,v_1) \in \Mod(\Muforget(\varphi_1, V))$ 使得$(\Hm',v') \lrto_V (\Hm_1,v_1)$，或$\exists(\Hm_2,v_2) \in \Mod(\Muforget(\varphi_2, V))$ 使得$(\Hm',v') \lrto_V (\Hm_2,v_2)$\\
 	%$\Rto$ $(\Hm,s) \lrto_V (\Hm_1,s_1)$ or $(\Hm,s) \lrto_V (\Hm_2,s_2)$\\
-	$\Rto$ $\Hm \models \Muforget(\psi_1, V) \vee \Muforget(\psi_2, V)$。
+	$\LRto$ $(\Hm,v) \models \Muforget(\varphi_1, V)$或$(\Hm,v) \models  \Muforget(\varphi_2, V)$\\
+	%$\Rto$ $(\Hm,v) \models \Muforget(\psi_1, V) \vee \Muforget(\psi_2, V)$\\
+	$\LRto$ $(\Hm,v) \models \Muforget(\varphi_1, V) \vee \Muforget(\varphi_2, V)$。
+	\\
 	
-	($\Lto$) $\forall \Hm \in \Mod(\Muforget(\psi_1, V) \vee \Muforget(\psi_2, V))$\\
-	$\Rto$ $\Hm \models \Muforget(\psi_1,V)$或 $\Hm \models \Muforget(\psi_2,V)$\\
-	$\Rto$ $\exists \Hm_1$使得 $\Hm \lrto_V \Hm_1$，且$\Hm_1 \models \psi_1$或者 $\Hm_1 \models \psi_2$ \hfill （定义\ref{chapter06:def:V:forgetting}）\\
-	$\Rto$ $\Hm_1 \models \psi_1 \vee \psi_2$\\
-	$\Rto$ $\exists \Hm_2$使得 $\Hm_1 \lrto_V \Hm_2$和 $\Hm_2 \models \Muforget(\psi_1 \vee \psi_2, V)$\\
-	$\Rto$ $\Hm \lrto_V \Hm_2$ （命题\ref{pro:EqUnion}）\\
-	$\Rto$ $\Hm \models \Muforget(\psi_1 \vee \psi_2, V)$ （定义\ref{chapter06:def:V:forgetting}）。
 	
 	 (v)可以像 (iv)一样证明。
+	 
+	 (vi) $(\Hm,v) \models \Muforget(\varphi_1 \wedge \varphi_2,V)$\\
+	 $\LRto$ 存在$(\Hm, v) \lrto_V (\Hm',v')$ 使得$(\Hm',v') \models \varphi_1 \wedge \varphi_2$\\
+	 $\LRto$ 存在$(\Hm, v) \lrto_V (\Hm',v')$ 使得$(\Hm', v') \models \varphi_1$ 和$(\Hm', v') \models \varphi_2$\\
+	 $\LRto$  $(\Hm, v) \models \Muforget(\varphi_1,V)$ 且$(\Hm,v) \models \varphi_2$ \hfill ($\IR(\varphi_2, V)$)\\
+	 $\LRto$ $(\Hm,v) \models \Muforget(\varphi_1,V) \wedge \varphi_2$。
 \end{proof}
 
 命题\ref{chapter06:pro:ctl:forget:1}(i) 表明从一个$\mu$-句子中遗忘掉一些原子命题不影响该句子的可满足性；从(ii)可以看出，如果两个句子是等价的，则他们遗忘相同原子命题得到的结果是等价的； (iv)指出析取公式 $\varphi_1 \vee \varphi_2$的遗忘可以由分开计算遗忘后在析取而得到；而正如 (v) 中指出的那样，合取公式 $\psi_1 \wedge \psi_2$的遗忘不能分别计算再合取，这甚至对于命题公式都是不成立。
@@ -439,7 +589,7 @@ $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到�
 	\]
 \end{proposition}
 \begin{proof}
-	令${\cal M}_1=(S_1, R_1, L_1, s_1)$为 $\Muforget(\varphi, \{p\} \cup V)$的模型。由遗忘的定义可知，存在$\varphi$的一个模型 $\Hm$（${\cal M} = (S, R,L, s)$） 使得 $\Hm_1$ $\lrto_{\{p\} \cup V}$ $\Hm$。如下构造Kripke结构 ${\cal M}_2 = (S_2, R_2, L_2, s_2)$：
+	令$(\Hm_1,v_1)$（${\cal M}_1=(S_1, R_1, L_1, s_1)$）为 $\Muforget(\varphi, \{p\} \cup V)$的模型。由遗忘的定义可知，存在$\varphi$的一个模型 $(\Hm,v)$（${\cal M} = (S, R,L, s)$） 使得 $(\Hm_1,v_1)$ $\lrto_{\{p\} \cup V}$ $(\Hm,v)$。如下构造Kripke结构 ${\cal M}_2 = (S_2, R_2, L_2, s_2)$：
 	\begin{itemize}
 		\item[(1)] 对于$s_2$，令$s_2$为满足下列条件的状态：
 		\begin{itemize}
@@ -462,12 +612,14 @@ $\varphi$为$\mu$-句子 、 $\varphi'$是 从$\varphi$中遗忘掉$V$后得到�
 		\item 删除 $S_2$和 $R_2$中重复的元素。
 	\end{itemize}
 	可以容易检查 $\Hm \lrto_{\{p\}} \Hm_2$和 $\Hm_2 \lrto_V \Hm_1$。因此，$(\Hm_2, s_2) \models \Muforget(\varphi, p)$，所以 $(\Hm_1, s_1) \models \Muforget(\Muforget(\varphi, p), V)$。
+	此外，多所有的 $X \in {\cal V}$，令$v_2(X) = \Hb_1(v(X))$。
+	因此，$(\Hm,v) \lrto_{\{p\}} (\Hm_2,v_2)$ 且$(\Hm_2,v_2) \lrto_V (\Hm_1,v_1)$，从而$(\Hm_2, s_2) \models \Muforget(\varphi, p)$。所以，$(\Hm_1, v_1) \models \Muforget(\Muforget(\varphi, p), V)$。
 	
-	另一方面，假设 $\Hm_1$是$\Muforget(\Muforget(\varphi, p), V)$的一个模型 \\
-	$\Rto$ $\exists \Hm_2$使得 $\Hm_2 \models  \Muforget(\varphi, p)$和 $\Hm_2 \lrto_V \Hm_1$ \hfill(定义\ref{chapter06:def:V:forgetting})\\
-	$\Rto$ $\exists \Hm$使得 $\Hm \models \varphi$和 $\Hm \lrto_{\{p\}} \Hm_2$ \hfill(定义\ref{chapter06:def:V:forgetting})
+	另一方面，假设$(\Hm_1,v_1)$是$\Muforget(\Muforget(\varphi, p), V)$的一个模型\\
+	$\Rto$ 存在$(\Hm_2,v_2)$使得$(\Hm_2,v_2) \models  \Muforget(\varphi, p)$ 且$(\Hm_2,v_2) \lrto_V (\Hm_1,v_1)$ \hfill(定义\ref{chapter06:def:V:forgetting})\\
+	$\Rto$ 存在$(\Hm,v)$ 使得$(\Hm,v) \models \varphi$ 且$(\Hm,v) \lrto_{\{p\}} (\Hm_2,v_2)$ \hfill(定义\ref{chapter06:def:V:forgetting})。 
 	
-	因此，由命题\ref{pro:EqUnion}可知$\Hm \lrto_{\{p\} \cup V} \Hm_1$，因此 $\Hm_1 \models \Muforget(\varphi, \{p\} \cup V)$。
+	因此，由命题\ref{pro:EqUnion} (iii)可知$(\Hm,v) \lrto_{\{p\} \cup V} (\Hm_1,v_1)$，所以$(\Hm_1,v_1) \models \Muforget(\varphi, \{p\} \cup V)$。
 \end{proof}
 
 
