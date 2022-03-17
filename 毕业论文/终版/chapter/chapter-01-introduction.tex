@@ -38,14 +38,19 @@
 因此，为了避免像Hoare逻辑\cite{Hoare1969}、动态逻辑\cite{harel1979first}和分离逻辑\cite{DBLP:conf/lics/Reynolds02}在形式化验证中寻找不变式问题，Fangzhen Lin提出将一个程序（program）转换为一阶理论，
 然后再使用一阶理论中的自动定理证明方法来验证\cite{DBLP:journals/ai/Lin16}。
 
-形式化验证的模型检测首先由Clarke提出，并用于解决并发系统验证问题\cite{DBLP:conf/spin/Clarke08}。Clarke和Emerson指出，在有限状态的并发系统中使用时态逻辑的推演系统（deductive system）中的公理和推理规则进行构造性证明（proof construction）的方法来证明该系统是否满足给定的规范是不必要的\cite{clarke1981design}。因为在有限状态并发系统中，该并发系统可以被看作是一个Kripke结构$\Hm$，与此同时，一个规范被表示成一个逻辑公式$\varphi$。此时，该验证问题就变成检验一个Kripke结构是否满足该公式，即模型检测（$\Hm\models \varphi$）: 判断$\Hm$是否是$\varphi$的一个模型。
+形式化验证的模型检测首先由Clarke提出，并用于解决并发系统验证问题\cite{DBLP:conf/spin/Clarke08}。Clarke和Emerson指出，在有限状态的并发系统中使用时态逻辑的推演系统（deductive system）中的公理和推理规则进行构造性证明（proof construction）的方法来证明该系统是否满足给定的规范是不必要的\cite{clarke1981design}。因为在有限状态并发系统中，该并发系统可以被看作是一个Kripke结构$\Hm$，与此同时，一个规范被表示成一个逻辑公式$\varphi$。此时，该验证问题就变成检验一个Kripke结构是否满足该公式，即模型检测（$\Hm\models^? \varphi$）: 判断$\Hm$是否是$\varphi$的一个模型。
 
 近年来，模型检测问题在知识表示与推理（KRR）领域的推进下取得了丰富的科研成果，例如：基于SAT的有界（bounded）模型检测\cite{DBLP:journals/ac/BiereCCSZ03}和基于OBDD的符号模型检测\cite{burch1992symbolic}已经使得模型检测问题在时间和空间效率上取得了很大的进步，在一定程度上缓解了其固有的状态空间爆炸问题。此外，大量优质的模型验证器，如：NuSMV\footnote{http://nusmv.fbk.eu/}、SPIN\footnote{http://spinroot.com/spin/whatispin.html}、Uppaal\footnote{http://www.uppaal.org/} 等，也相继发展起来，并且大部分的验证器都可以用来验证多种时态逻辑描述的公式。  
 
        
 时态逻辑作为描述系统规范的形式化语言，它研究状态随时间变化系统的逻辑特性。由于软件和硬件系统运行的本质是状态变化的过程，所以时态逻辑在软件程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, \CTL）是分支时态逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用其他时态逻辑表示的\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本文主要研究$\CTL$和$\mu$-演算。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
-在实际应用中，对于给定的模型检测问题$\Hm\models \varphi$，当$\Hm$满足$\varphi$时一般的验证器都会返回“yes”以表示满足，当$\Hm$不满足$\varphi$时验证器会给出一个使得$\varphi$不被$\Hm$满足的负例。此时，\emph{使用什么样的信息对$\Hm$进行修正使得其满足给定的规范是一个重要的问题}。
+在模型检测中，反应式系统通常用Kripe结构表示~\cite{DBLP:journals/fcsc/ZhuWXX10,DBLP:series/txtcs/Schneider04}。
+当给定了反应式系统的Kripke结构模型$\Hm$和规范$\varphi$，
+%在实际应用中，
+对于模型检测问题$\Hm\models^? \varphi$，若$\Hm$满足$\varphi$，一般的验证器都会返回“yes”以表示满足；若$\Hm$不满足$\varphi$，验证器会给出一个使得$\varphi$不被$\Hm$满足的负例。此时，\emph{使用什么样的信息对$\Hm$进行修正使得其满足给定的规范是一个重要的问题}。
+这就是寻找{\em 最弱前件}（weakest precondition，WP）问题\cite{DBLP:journals/cacm/Dijkstra75}，在人工智能（artificial intelligence，AI）中也称为{\em 最弱充分条件}（weakest sufficient condition，SNC），与之对偶的另一个概念是最强必要条件（strongest necessary condition，SNC）\cite{DBLP:journals/ai/Lin01,DBLP:journals/jair/Lin03}。
+%{\em 然而现有方法不能计算使得像反应式系统这类不终止系统满足给定规范的WSC。因而}
 
 从知识抽取（或“消除”）的角度来看。出于安全考虑，查看信息时需要将有的信息隐藏而只抽取关注部分信息。
 此外，随着时间推移，由于某些原因使得系统的部分信息过时，就需要将这样的过时信息在不影响其他信息的情况下“消除”。
@@ -66,19 +71,19 @@
 		\caption{汽车制造企业模型}\label{BVM}
 	\end{figure*}
 
-假定现在由于经济危机或者是环境需要，导致该企业不能再生产跑车。这意味这所有关于$sp$的规范和Kripke结构都不再需要考虑，因此应该“移除”掉。
+假定现在由于经济危机或者是环境需要，导致该企业不能再生产跑车。这意味着所有关于$sp$的规范和Kripke结构都不再需要考虑，因此应该“移除”。
 \end{example}
 
 日常生活中也有很多上述例子中的场景，如：商业交易过程、软件开发过程等~\cite{Baier:PMC:2008}。
 但是对于给定原子命题的集合，\emph{从这些大型系统（或规范）中“移除”掉一些原子而保持与这些原子无关的性质是一个复杂的问题}。
-此外，在这种情形下，两个重要的概念：最强必要条件（SNC）和最弱充分条件（WSC）问题也随之产生，其中SNC是指最一般的结论，WSC指最特殊的诱因。
+%此外，在这种情形下，两个重要的概念：最强必要条件（SNC）和最弱充分条件（WSC）问题也随之产生，其中SNC是指最一般的结论，WSC指最特殊的诱因。
 
-基于上述存在的问题，本文在下面的研究意义部分给出对应的解决方案和其意义所在。
+基于上述存在的问题，本文在下面的研究意义部分给出部分解决方案及其意义所在。
 
 \subsection{研究意义}
-最强后件（SP）和最弱前件（WP）（分别对应于上文提到的SNC和WSC）是形式化验证中的两个重要的概念，其不仅被用于汇编语言程序推理~\cite{legato2002weakest}和制定验证条件\cite{DBLP:journals/ipl/Leino05}，还被应用于形式化验证过程中的负例生成\cite{dailler2018instrumenting}和系统精化（refinement）\cite{woodcock1990refinement}。
-当$\Hm\not \models \varphi$时，若知道某个性质$\psi$使得若$\Hm$按照此性质进行修改后得到的新模型$\Hm'$能满足$\varphi$，即$\psi$为使得$\Hm\models \varphi$成立的充分条件（$\Hm \models \psi\rto \varphi$）。
-然而，现有的方法不能直接应用于计算当$\Hm$为不终止系统（如：反应式系统（reactive system））时使得“$\Hm\models \varphi$”为真的最强必要条件（SNC）和最弱充分条件（WSC）
+最强后件（the strongest post-condition，SP）和最弱前件（WP）（分别对应于上文提到的SNC和WSC）是形式化验证中的两个重要的概念，其不仅被用于汇编语言程序推理~\cite{legato2002weakest}和制定验证条件\cite{DBLP:journals/ipl/Leino05}，还被应用于形式化验证过程中的负例生成\cite{dailler2018instrumenting}和系统精化（refinement）\cite{woodcock1990refinement}。
+当模型$\Hm$不满足规范$\varphi$（$\Hm\not \models \varphi$）时，找到某个性质$\psi$使得若$\Hm$按照此性质进行修改后得到的新模型$\Hm'$能满足$\varphi$是非常重要的，即$\psi$为使得$\Hm\models \varphi$成立的充分条件（$\Hm \models \psi\rto \varphi$）。
+然而，现有的方法不能直接应用于计算当$\Hm$为不终止系统（如：反应式系统（reactive system））时使得“$\Hm\models \varphi$”为真的最强必要条件和最弱充分条件
 （其详细原因将在下文指出）。此时，\emph{探索在$\Hm$下使得$\varphi$满足的定义在某个符号集合上的SNC和WSC将更进一步完善模型检测问题，
 同时也为基于WSC的负例生成和精化提供了理论依据和新的计算方法。}
 
@@ -102,7 +107,7 @@
 原有的软件架构已经无法满足今天的需求。
 
 要满足现有的要求，应用程序需要剧本以下特质：即时响应性（Responsive）、回弹性（Resilient）、弹性（Elastic）以及消息驱动（Message Driven）\footnote{https://www.reactivemanifesto.org/zh-CN}。
-反应式系统是一种与环境有着持续不断交互的系统，具有不终止的性质~\cite{DBLP:series/txtcs/Schneider04}，它满足上述的几种要求，且从传统的静态模式逐步向动态、开放、自适应、服务化的软件系统演化~\cite{jian2012}。
+反应式系统是一种与环境有着持续不断交互的系统，具有不终止的性质~\cite{DBLP:series/txtcs/Schneider04}，它满足上述几种要求，且从传统的静态模式逐步向动态、开放、自适应、服务化的软件系统演化~\cite{jian2012}。
 反应式系统由来已久~\cite{DBLP:conf/nato/HarelP84,DBLP:books/sp/trends86/Pnueli86}，且种类繁多，如微处理器（microprocessor）、计算机操作系统（computer operating systems），航空交通管制系统（air traffic control systems）、车载电子设备（on-board avionics）以及其他嵌入式系统。
 
 此外，反应式系统的应用非常广泛：上至航空电子等安全攸关的领域，下至生活息息相关的汽车电子。
@@ -174,7 +179,7 @@ S5、K和KD模态逻辑系统具有均匀插值性质~\cite{DBLP:journals/aml/Ie
 %此外，Feng等人也研究了S5下如
 
 在非单调推理（non-monotonic reasoning）环境中，科研工作者们也从遗忘需要满足的基本条件的视角研究了
-基于回答集语义的逻辑程序的遗忘，这些工作包括Zhang、Wang等人发表在AI、AAAI和JAIR上的文章~\cite{DBLP:Zhang:AIJ2006,DBLP:journals/ai/EiterW08,Wong:PhD:Thesis,DBLP:journals/jair/WangZZZ14,wang2013forgetting,DBLP:conf/aaai/WangWWZ15,DBLP:journals/jair/Delgrande17,gonccalves2020limits}，Eiter、Gonccalves等人的综述~\cite{eiter2019brief,gonccalves2021forgetting}。
+基于回答集语义的逻辑程序的遗忘，这些工作包括Zhang、Wang等人发表在AI、AAAI和JAIR上的文章~\cite{DBLP:Zhang:AIJ2006,DBLP:journals/ai/EiterW08,Wong:PhD:Thesis,DBLP:journals/jair/WangZZZ14,wang2013forgetting,DBLP:conf/aaai/WangWWZ15,DBLP:journals/jair/Delgrande17,gonccalves2020limits}\textcolor{red}{怎么有一个文献显示不出来呢，都能在bib中查到呀！}，Eiter、Gonccalves等人的综述~\cite{eiter2019brief,gonccalves2021forgetting}。
 
 
 %应用
@@ -200,7 +205,7 @@ S5、K和KD模态逻辑系统具有均匀插值性质~\cite{DBLP:journals/aml/Ie
 
 
 正如上文所说，WSC（SNC）对于软件工程中系统的形式化验证有着及其重要的作用。
-一般说来，最强必要条件（SNC）是最一般的推论（the most general consequence），即：命题成立时能推出的最强的后件（the strongest post-condition, SP），SNC能够蕴涵所有的必要条件；最弱充分条件（WSC）是最特殊的诱因（the most specific abduction），即：使得命题成立的最弱的前提条件（the weakest precondition，WP），WSC能被所有的充分条件蕴涵。
+一般说来，最强必要条件（SNC）是最一般的推论（the most general consequence），即：命题成立时能推出的最强的后件（SP），SNC能够蕴涵所有的必要条件；最弱充分条件（WSC）是最特殊的诱因（the most specific abduction），即：使得命题成立的最弱的前提条件（WP），WSC能被所有的充分条件蕴涵。
 
 特别地，给定一个程序（program）$S$和某一状态（state）的规范（specification）$Q$，则$S$关于$Q$的WSC是一个能够描述$S$初始状态的规范，其中$S$满足以下两个条件：
 
@@ -285,7 +290,7 @@ $\CTL$是一种分支时序逻辑，已有文献表明$\CTL$不具有均匀插�
 (3) {\em $CTL$和$\mu$-演算的遗忘在推理问题上的复杂性}
 
 计算复杂性理论致力于将可计算问题根据它们本身的复杂性分类。研究表明，在经典命题逻辑中：CNF（Conjunctive normal form）公式的遗忘的推理问题最难是$\Pi_2^P$-完全的，DNF（Disjunctive normal form）公式的遗忘的推理问题是co-NP-完全的；在命题模态逻辑S5中，遗忘的模型检测问题是NP-完全的，对应的推理问题是$\Pi_2^P$-完全的。基于此，本文从现有复杂性结果和自动机理论研究$\CTL$和$\mu$-演算的遗忘在模型检测和推理问题上的复杂性。
-研究表明$\mu$-演算下关于遗忘的模型检测是$\textsc{Exptime}$的，推理问题的复杂性都是$\textsc{Exptime}$-完全的。
+研究表明$\mu$-演算下关于遗忘的模型检测是$\textsc{Exptime}$的，蕴涵问题的复杂性都是$\textsc{Exptime}$-完全的。
 而$\CTL$下关于遗忘的模型检测：当只考虑特殊段$\CTL_{\ALL \FUTURE}$（公式中只包括时态算子$\ALL \FUTURE$）时，其模型检测的复杂性为\textsc{NP}-完全的，而有的推理问题的复杂性在co-$\textsc{NP}$-完全的和$\Pi_2^{\textsc{P}}$-完全的之间。
 
 
@@ -315,27 +320,34 @@ $\CTL$是一种分支时序逻辑，已有文献表明$\CTL$不具有均匀插�
 
 
 
-第\ref{chapter03}章 {\em 给出$\CTL$下遗忘的定义及其基本性质}。首先，给出原子命题集合上模型间互模拟的定义，并介绍这一定义的基本属性；其次，根据互模拟来定义$\CTL$下的遗忘，并研究遗忘的属性，包括表达性属性（representation theory）和复杂性结果等。此外，本章还指出$\CTL$下的遗忘是不封闭的，即存在有的公式的遗忘的结果不能用$\CTL$来表示。
+第\ref{chapter03}章 {\em 给出$\CTL$和$\mu$-演算遗忘的定义及其基本性质}。首先，给出原子命题集合及变元上模型间互模拟的定义，并介绍这一定义的基本属性；其次，根据互模拟来定义$\CTL$和$\mu$-演算下的遗忘，并研究遗忘的属性，包括表达性属性（representation theory）和复杂性结果等。本章指出$\CTL$下的遗忘是不封闭的，即存在有的公式的遗忘的结果不能用$\CTL$来表示。此外，证明了$\mu$-句子遗忘的结果总是存在的，且不含有不动点操作这类$\mu$-公式遗忘的结果总是在这个类里面。
 
-
-
-第\ref{chapter04}章 为{\em 基于归结的$\CTL$遗忘计算}。基于第\ref{chapter02}章的归结规则，本章探讨如何使用该归结系统计算$\CTL$下的遗忘。首先，将$\CTL$公式转换为归结规则需要的子句形式——$\CTLsnf$子句（后文详细介绍）；其次，使用归结规则计算所有可能的需要遗忘的原子命题上的归结结果；随后，移除那些包含要遗忘的原子命题的子句，并给出一种一般化的Ackermann引理消除一些新引入的原子命题；最后，将得到的结果转换成$\CTL$公式。此外，基于上述过程提出计算$\CTL$下的遗忘的算法，并分析该算法的时间和空间复杂性。
-
-第\ref{chapter05}章 为{\em 约束$\CTL$下的遗忘}。在第\ref{chapter03}章所说，$\CTL$下的遗忘不是封闭的，因此在本章探讨了约束$\CTL$遗忘是封闭的情形。为此，本章提出了一种约束的互模拟，并给出给定深度的计算树在给定原子命题集合下的特征公式，继而给出有限情况下Kripke结构在给定原子命题集合下的特征公式。最后说明约束情形下$\CTL$公式的遗忘结果总是$\CTL$公式可表达的。
-
-
-
-
-第\ref{chapter06}章 为{\em $\mu$-演算下的遗忘}。$\mu$-演算是一种表达能力比$\CTL$强的时序逻辑，其具有均匀插值性质。本章给出$\mu$-演算下遗忘的定义和基本属性，包括模块性、交换性及同质性。此外，探讨了$\mu$-演算下的遗忘是封闭的，且对任意析取$\mu$-公式的遗忘可以在多项式时间内计算出来。
-最后，给出$\mu$-演算下关于遗忘算子的模型检测和推理问题的复杂性结果。
-
-
-
-第\ref{chapter07}章 为\textit{遗忘理论的应用}。讲述如何将遗忘应用于计算SNC（WSC）和定义知识更新。
+第\ref{chapter04}章 为{\em 遗忘理论在反应式系统中的应用}。讲述如何将遗忘应用于计算反应式系统在给定条件下的SNC（WSC）和定义知识更新。
 此时，有限状态的反应式系统模型的WSC（SNC）可以通过遗忘来计算，且通过遗忘定义的知识更新满足Katsuno等人提出的知识更新应该满足的基本准则。
+
+
+第\ref{chapter05}章 为{\em $\CTL$遗忘的计算方法}。讲述了两种计算$\CTL$遗忘的方法及其算法：基于归结和基于模型的方法。此外，给出了基于Prolog的基于归结算法实现和实验结果分析。
+基于模型的计算$\CTL$的遗忘中：如在第\ref{chapter03}章所说，$\CTL$下的遗忘不是封闭的，因此第~\ref{chapter05:sec:model}节探讨了约束$\CTL$遗忘是封闭的情形；为此，提出了一种约束的互模拟，并给出给定深度的计算树在给定原子命题集合下的特征公式，继而给出有限情况下Kripke结构在给定原子命题集合下的特征公式；最后说明约束情形下$\CTL$公式的遗忘结果总是$\CTL$公式可表达的。
+基于归结的计算$\CTL$下的遗忘中：首先，将$\CTL$公式转换为归结规则需要的子句形式——$\CTLsnf$子句（后文详细介绍）；其次，使用归结规则计算所有可能的需要遗忘的原子命题上的归结结果；随后，移除那些包含要遗忘的原子命题的子句，并给出一种一般化的Ackermann引理消除一些新引入的原子命题；最后，将得到的结果转换成$\CTL$公式。此外，基于上述过程提出计算$\CTL$下的遗忘的算法，并分析该算法的时间和空间复杂性。
+
+
+%第\ref{chapter04}章 为{\em 基于归结的$\CTL$遗忘计算}。基于第\ref{chapter02}章的归结规则，本章探讨如何使用该归结系统计算$\CTL$下的遗忘。首先，将$\CTL$公式转换为归结规则需要的子句形式——$\CTLsnf$子句（后文详细介绍）；其次，使用归结规则计算所有可能的需要遗忘的原子命题上的归结结果；随后，移除那些包含要遗忘的原子命题的子句，并给出一种一般化的Ackermann引理消除一些新引入的原子命题；最后，将得到的结果转换成$\CTL$公式。此外，基于上述过程提出计算$\CTL$下的遗忘的算法，并分析该算法的时间和空间复杂性。
+
+%第\ref{chapter05}章 为{\em 约束$\CTL$下的遗忘}。在第\ref{chapter03}章所说，$\CTL$下的遗忘不是封闭的，因此在本章探讨了约束$\CTL$遗忘是封闭的情形。为此，本章提出了一种约束的互模拟，并给出给定深度的计算树在给定原子命题集合下的特征公式，继而给出有限情况下Kripke结构在给定原子命题集合下的特征公式。最后说明约束情形下$\CTL$公式的遗忘结果总是$\CTL$公式可表达的。
+
+
+
+
+%第\ref{chapter06}章 为{\em $\mu$-演算下的遗忘}。$\mu$-演算是一种表达能力比$\CTL$强的时序逻辑，其具有均匀插值性质。本章给出$\mu$-演算下遗忘的定义和基本属性，包括模块性、交换性及同质性。此外，探讨了$\mu$-演算下的遗忘是封闭的，且对任意析取$\mu$-公式的遗忘可以在多项式时间内计算出来。
+%最后，给出$\mu$-演算下关于遗忘算子的模型检测和推理问题的复杂性结果。
+
+
+
+%第\ref{chapter07}章 为\textit{遗忘理论的应用}。讲述如何将遗忘应用于计算SNC（WSC）和定义知识更新。
+%此时，有限状态的反应式系统模型的WSC（SNC）可以通过遗忘来计算，且通过遗忘定义的知识更新满足Katsuno等人提出的知识更新应该满足的基本准则。
 %在这种情形下将公式的模型限制到有限状态空间，组成公式的原子命题也是有限的。经过
 
-第\ref{chapter08}章 为\textit{实验结果}。给出基于归结的算法实现模型的实验结果及分析。
+%第\ref{chapter08}章 为\textit{实验结果}。给出基于归结的算法实现模型的实验结果及分析。
 
 
 第\ref{chapter09}章为\textit{总结与展望}。首先总结了本文的研究工作，进一步，展望了未来研究工作的方向和重点。
