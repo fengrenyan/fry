@@ -718,6 +718,30 @@ Cover(\varphi_1, \dots, \varphi_n) \LRto \EXIST\NEXT \varphi_1 \wedge \dots \wed
 	
 \end{example}
 
+均匀插值是一个重要的逻辑概念，其有以下含义：给定两个具有$\varphi\models\psi$关系的公式$\varphi$和$\psi$，如果存在公式$\theta$使得$\varphi\models \theta$、$\theta \models \psi$且$\Var(\theta) \subseteq \Var(\varphi) \cap \Var(\psi)$，则称公式$\theta$是$\varphi$和$\psi$的Craig插值。若$\theta$与$\psi$无关，而只与$\Var(\varphi) \cap \Var(\psi)$有关，则称$\theta$为$\varphi$关于$\Var(\varphi) \cap \Var(\psi)$的均匀插值。
+均匀插值的定义~\cite{d2006modal}如下（注意：这里的$\Var(\varphi)$表示出现在$\varphi$中的原子命题和变元的集合）：                                                                                                                                                                                                                                   
+%\textcolor{blue}{下面两个结论放到基础知识部分。}           
+\begin{definition}
+	给定一个$\mu$-句子$\varphi$和集合$V\subseteq \Var(\varphi)$，$\varphi$关于$V$的均匀插值是满足下列条件的$\mu$-句子$\theta$：
+	\begin{itemize}
+		\item $\varphi \models \theta$；
+		\item 对任意的公式$\psi$，若$\Var(\varphi) \cap \Var(\psi)\subseteq V$且$\varphi \models \psi$，则$\theta \models \psi$；
+		\item $\Var(\theta) \subseteq V$。 
+	\end{itemize}
+\end{definition}
+
+
+从直观上来说，$\varphi$关于$\Var(\varphi) \cap \Var(\psi)$的均匀插值是从$\varphi$中“移除”掉不在$\Var(\varphi) \cap \Var(\psi)$中的元素而保留其在$\Var(\varphi) \cap \Var(\psi)$上的结论得到的结果。这与遗忘有着密切的关系。
+
+已有结论表明析取$\mu$-公式的均匀插值是容易计算的~\cite{d2006modal}，即：
+\begin{theorem}%[定理 3.6]
+	析取$\mu$-公式$\varphi$的均匀插值$\exists p \varphi$与$\mu$-公式$\varphi[p/\top, \neg p/ \bot]$等价，其中$\varphi[p/\top, \neg p/ \bot]$是同时将$p$及其否定$\neg p$分别用$\top$和$\bot$替换得到。
+\end{theorem}
+
+
+
+%尽管上面的定义中使用的$\Var(\varphi)$表示出现在$\varphi$中的原子命题和变元的集合，但是均匀插值指的是与原子命题相关的部分，即：对任意的$\mu$-句子$\varphi$和原子命题$p$，存在一个$\mu$-句子$\widetilde{\exists} p. \varphi$使得$\widetilde{\exists} p. \varphi$是$\varphi$关于$\{p\}$的一个均匀插值。这表明在讨论均匀插值时，不考虑变元，即：不是$\varphi$关于某个变元的均匀插值。因此，在下文中$\Var(\varphi)$仍然用于表示出现在公式$\varphi$的原子命题的集合。%实际上，$\mu$-句子里的变元都是受约束的变元。
+
 \section{$\CTL$下的归结}\label{chapter02:CTLres}
 
 \emph{归结}是一种用于判定给定的命题公式（或一阶公式）是否可满足的规则，该技术可以追溯到1960年Davis等的工作~\cite{DBLP:journals/jacm/DavisP60}，之后被Robinson加以完善~\cite{DBLP:journals/jacm/Robinson65}。对于给定的公式，归结给出一个反驳定理证明过程。
@@ -725,7 +749,7 @@ Cover(\varphi_1, \dots, \varphi_n) \LRto \EXIST\NEXT \varphi_1 \wedge \dots \wed
 
 在看见了归结在在命题逻辑和一阶逻辑中取得成就之后，科研工作者们开始将精力致力于其他非经典逻辑中，并取得了相当显著的理论成果，如：模态逻辑（K系统，Q系统，T系统，S4和S5系统）中的归结~\cite{DBLP:journals/tcs/EnjalbertC89}和时序逻辑（尤其是线性时序逻辑（LTL）和\CTL）中的归结~\cite{DBLP:conf/cade/CavalliC84,DBLP:journals/jetai/BolotovF99}。
 
-这里主要介绍与本文直接相关的$\CTL$下的归结。$\CTL$下的归结起源于BolotovF的研究\cite{DBLP:journals/jetai/BolotovF99}，之后被Zhang等人完善~\cite{zhang2014resolution}。不论是在BolotovF的工作还是在Zhang等人的工作中，其关键点都是将$\CTL$公式转换为一个$\CTLsnf$子句的集合。本文使用Zhang等人提出的规则~\cite{zhang2014resolution}，如表~\ref{tab:res}所示。
+这里主要介绍与本文直接相关的$\CTL$下的归结。$\CTL$下的归结起源于BolotovF的研究\cite{DBLP:journals/jetai/BolotovF99}，之后被Zhang等人完善~\cite{zhang2014resolution}。不论是在BolotovF的工作还是在Zhang等人的工作中，其关键点都是将$\CTL$公式转换为一个$\CTLsnf$子句的集合。本文使用Zhang等人提出的归结系统$R_{\CTL}^{\succ,S}$~\cite{zhang2014resolution}，如表~\ref{tab:res}所示。
 
 \begin{table}[tb]%[width=.9\linewidth,cols=4,pos=h]
 	%\footnotesize

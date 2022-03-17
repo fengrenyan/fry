@@ -209,7 +209,7 @@ ${\cal F}$是 $q$在 $V$和$\varphi$上的NC；对任意的与$(\Var(\varphi) \c
 
 
 %定理\ref{thm:initModel}表明模型结构被限制到有限初始结构下的$\mu$-演算下遗忘理论也是封闭的。
-由第\ref{chapter05}章可知，任意$\Ha$上的有限初始结构$\Hm$（为了简化符号，本节用$\Hm$代替初始结构$(\Hm,s_0)$）都能用一个$\CTL$公式——特征公式${\cal F}_{\Ha}(\Hm)$来表示。%，此公式也是$\mu$-句子。
+由第\ref{chapter05}章可知，任意$\Ha$上的有限初始结构$\Hm$（为了简化符号，本节用初始Kripke结构$\Hm$代替初始结构$(\Hm,s_0)$）都能用一个$\CTL$公式——特征公式${\cal F}_{\Ha}(\Hm)$来表示。%，此公式也是$\mu$-句子。
 给定公式$\varphi$和$\psi$，$V_{min}\subseteq \Ha$为使得$\CTLforget(\varphi, V_{min}) \wedge \psi$可满足的极小子集。
 %，记$\varphi = \CTLforget({\cal F}_{\Ha}({\cal K}), V_{min})$，其中$V_{min} \subseteq \Ha$是使得$\varphi$可满足的极小子集。
 此外，记
@@ -245,7 +245,7 @@ $$\Mod(\Gamma \diamond_{pma} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi)
 
 在这种情形下，若$\Hm_1 \leq_{\Hm} \Hm_2$，则存在一个原子命题的极小集$V_{min}$使得$\Hm_1 \lrto_{V_{min}} \Hm$，且对任意的$V\subseteq \Ha$，若$\Hm_2 \lrto_V \Hm$则$V_{min}\subseteq V$ 和 $\Hm_1 \lrto_V \Hm$。
 \begin{example}
-	\textcolor{red}{令$\Hm= (S, r, R, L)$、$\Hm_1 = (S_1, r_1, R_1, L_1)$、$\Hm_2 = (S_2, r_2, R_2, L_2)$为三个初始结构（如图~\ref{fig:partialo}），其中$S = S_1 = S_2 = \{s_0, s_1\}$，$r=r_1=r_2= s_0$，$R=R_1=R_2=\{(s_0, s_1), (s_1, s_1)\}$，$L(s_0) = \{ch, j\}$，$L_1(s_0) = L_2(s_0) = \{ch\}$，$L(s_1) = L_1(s_1)=\emptyset$，$L_2(s_1) = \{j\}$。}
+	\textcolor{red}{令$\Hm= (S, R, L, r)$、$\Hm_1 = (S_1, R_1, L_1, r_1)$、$\Hm_2 = (S_2, R_2, L_2, r_2)$为三个初始结构（如图~\ref{fig:partialo}），其中$S = S_1 = S_2 = \{s_0, s_1\}$，$r=r_1=r_2= s_0$，$R=R_1=R_2=\{(s_0, s_1), (s_1, s_1)\}$，$L(s_0) = \{ch, j\}$，$L_1(s_0) = L_2(s_0) = \{ch\}$，$L(s_1) = L_1(s_1)=\emptyset$，$L_2(s_1) = \{j\}$。}
 	
 	可以检查$\Hm \lrto_{\{j\}} \Hm_1$，$\Hm \lrto_{\{j,ch\}} \Hm_2$，$\{j\}\subseteq \{j,ch\}$，且对任意原子命题集$V' \subset \{j\}$（或$V' \subset \{j,ch\}$），有$\Hm \not\lrto_{V'} \Hm_1$（或$\Hm \not \lrto_{V'} \Hm_2$）。
 	因此，$\Hm_1 \leq_{\Hm} \Hm_2$。

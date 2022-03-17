@@ -9,7 +9,7 @@
 
 基于互模拟的概念，给出了$\CTL$和$\mu$-演算遗忘的定义。与后面章节将要讲述的约束$\CTL$下的遗忘相对应，这部分探索没有约束的遗忘理论的一般属性。
 
-本章其余部分组织如下：首先，第\ref{chapter03:sec:ctlforget}节定义一种$V$-互模拟的概念及其性质，并定义互模拟等价。其次，第\ref{chapter03:sec:muforget}节定义$\CTL$下的遗忘，并探索遗忘的基本性质和公设。最后，进行本章工作总结。}
+本章其余部分组织如下：第\ref{chapter03:sec:ctlforget}节首先定义一种$V$-互模拟的概念及其性质，并定义互模拟等价；其次，定义$\CTL$下的遗忘，并探索遗忘的基本性质和公设。第\ref{chapter03:sec:muforget}节定义Var-$V$-互模拟，并证明其对$\mu$-公式具有不变性；然后给出$\mu$-公式遗忘的定义及相关性质。最后，进行本章工作总结。}
 
 \section{$\CTL$遗忘理论}
 \label{chapter03:sec:ctlforget}
@@ -607,33 +607,11 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 
 
 
-均匀插值是一个重要的逻辑概念，其有以下含义：给定两个具有$\varphi\models\psi$关系的公式$\varphi$和$\psi$，如果存在公式$\theta$使得$\varphi\models \theta$、$\theta \models \psi$且$\Var(\theta) \subseteq \Var(\varphi) \cap \Var(\psi)$，则称公式$\theta$是$\varphi$和$\psi$的Craig插值。若$\theta$与$\psi$无关，而只与$\Var(\varphi) \cap \Var(\psi)$有关，则称$\theta$为$\varphi$关于$\Var(\varphi) \cap \Var(\psi)$的均匀插值。
-均匀插值的定义~\cite{d2006modal}如下（注意：这里的$\Var(\varphi)$表示出现在$\varphi$中的原子命题和变元的集合）：                                                                                                                                                                                                                                   
-\textcolor{blue}{下面两个结论放到基础知识部分。}           
-\begin{definition}
-	给定一个$\mu$-句子$\varphi$和集合$V\subseteq \Var(\varphi)$，$\varphi$关于$V$的均匀插值是满足下列条件的$\mu$-句子$\theta$：
-	\begin{itemize}
-		\item $\varphi \models \theta$；
-		\item 对任意的公式$\psi$，若$\Var(\varphi) \cap \Var(\psi)\subseteq V$且$\varphi \models \psi$，则$\theta \models \psi$；
-		\item $\Var(\theta) \subseteq V$。 
-	\end{itemize}
-\end{definition}
 
 
-从直观上来说，$\varphi$关于$\Var(\varphi) \cap \Var(\psi)$的均匀插值是从$\varphi$中“移除”掉不在$\Var(\varphi) \cap \Var(\psi)$中的元素而保留其在$\Var(\varphi) \cap \Var(\psi)$上的结论得到的结果。这与遗忘有着密切的关系。
+本小节给出$\mu$-演算遗忘的定义，并说明本文所定义的$\mu$-演算下的遗忘与文章~\cite{d2006modal}中定义的均匀插值是一对对偶概念，此时本文给出的遗忘的性质无疑也是均匀插值所具有的性质，这为$\mu$-演算的均匀插值的探索提供了另一种思路。此外，借助于均匀插值的计算方法，本文也给出了计算遗忘的方法。这形成了遗忘和均匀插值之间相辅相成的作用。
 
-再者，在背景知识部分已经指出，任意的$\mu$-演算公式都能转换成析取$\mu$-公式，在这种形式下的公式的均匀插值是容易计算的，即：
-\begin{theorem}[定理 3.6~\cite{d2006modal}]
-	析取$\mu$-公式$\varphi$的均匀插值$\exists p \varphi$与$\mu$-公式$\varphi[p/\top, \neg p/ \bot]$等价，其中$\varphi[p/\top, \neg p/ \bot]$是同时将$p$及其否定$\neg p$分别用$\top$和$\bot$替换得到。
-\end{theorem}
-
-
-
-尽管上面的定义中使用的$\Var(\varphi)$表示出现在$\varphi$中的原子命题和变元的集合，但是均匀插值指的是与原子命题相关的部分，即：对任意的$\mu$-句子$\varphi$和原子命题$p$，存在一个$\mu$-句子$\widetilde{\exists} p. \varphi$使得$\widetilde{\exists} p. \varphi$是$\varphi$关于$\{p\}$的一个均匀插值。这表明在讨论均匀插值时，不考虑变元，即：不是$\varphi$关于某个变元的均匀插值。因此，在下文中$\Var(\varphi)$仍然用于表示出现在公式$\varphi$的原子命题的集合。%实际上，$\mu$-句子里的变元都是受约束的变元。
-
-本小节将要说明本文所定义的$\mu$-演算下的遗忘与文章~\cite{d2006modal}中定义的均匀插值是一对对偶概念，此时本文给出的遗忘的性质无疑也是均匀插值所具有的性质，这为$\mu$-演算的均匀插值的探索提供了另一种思路。此外，借助于均匀插值的计算方法，本文也给出了计算遗忘的方法。这形成了遗忘和均匀插值之间相辅相成的作用。
-
-本小节的组织结构如下。首先，给出$\mu$-演算下遗忘的定义；然后，探讨遗忘的一般性质，并给出其与均匀插值的关系；最后给出与遗忘相关问题的复杂性。
+本小节的组织结构如下。首先，给出Var-$V$-互模拟的定义及证明Var-$V$-互模拟对$\mu$-公式是不变的；基于此给出$\mu$-演算遗忘的定义；然后，探讨遗忘的一般性质，并给出其与均匀插值的关系；最后给出与遗忘相关问题的复杂性。
 
 \subsection{Var-互模拟}
 与$\CTL$情形下的遗忘相似，这里先给出$V$互模拟的定义。不失一般性地，令$\Hm_i = (S_i, R_i, L_i, r_i)$，$i$为自然数集$\mathbb{N}$中的元素。
@@ -807,15 +785,15 @@ $\Hm=(S,r,R,L)$在自由变元集合$\tau$上关于$\varphi(\tau)$和赋值$v$�
 
 \begin{example}[例~\ref{exmp:c06:bisim}的延续]
 	\label{exp:freshp}
-	令$\varphi(\{Y,Z\}) = \mu X. ch \wedge j \wedge Z\wedge \EXIST\NEXT Y \wedge \EXIST\NEXT \EXIST\NEXT X$，$\Hm = (S,s_0, R, L)$ 为例~\ref{exmp:c06:bisim}，则
+	令$\varphi(\{Y,Z\}) = \mu X. ch \wedge j \wedge Z\wedge \EXIST\NEXT Y \wedge \EXIST\NEXT \EXIST\NEXT X$，$\Hm = (S, R, L,s_0)$ 为例~\ref{exmp:c06:bisim}，则
 	$$\varphi_{{\cal S}(Y)}(Z) = \mu X. ch \wedge j \wedge Z \wedge \EXIST\NEXT p_y \wedge \EXIST\NEXT \EXIST\NEXT X\hbox{，}$$
 	$$\varphi_{{\cal S}(\{Y,Z\})} = \mu X. ch \wedge j \wedge p_z \wedge \EXIST\NEXT p_y \wedge \EXIST\NEXT \EXIST\NEXT X\hbox{。}$$
 	
 	令$v$为将${\cal V}$中变元映射到$\Hm$状态集上的赋值函数，且$v(Y) = \{s_1,s_2\}$、$v(Z) = \{s_0\}$，则：
 	%Let $v$ be the valuation of variables in ${\cal V}$ to the states of $\Hm$ with $v(Y) = \{s_1,s_2\}$ and $v(Z) = \{s_0\}$, then:
 	\begin{itemize}
-		\item $\Hm$在$Y$上关于$\varphi(\{Y,Z\})$ 和$v$的扩展为：$\Hm_{{\cal S}(Y)} = (S,s_0, R, L_y)$，其中 $L_y(s_0) = \{j,ch\}$、 $L_y(s_1)=\{ch, p_y\}$且 $L_y(s_2)=\{p_y\}$；
-		\item $\Hm$ 在$\{Y,Z\}$上关于$\varphi(\{Y,Z\})$和$v$的扩展为：$\Hm_{{\cal S}(\{Y,Z\})} = (S,s_0, R, L_{yz})$，其中$L_{yz}(s_0) = \{j,ch,p_z\}$、 $L_{yz}(s_1)=\{ch, p_y\}$且$L_{yz}(s_2)=\{p_y\}$。
+		\item $\Hm$在$Y$上关于$\varphi(\{Y,Z\})$ 和$v$的扩展为：$\Hm_{{\cal S}(Y)} = (S, R, L_y,s_0)$，其中 $L_y(s_0) = \{j,ch\}$、 $L_y(s_1)=\{ch, p_y\}$且 $L_y(s_2)=\{p_y\}$；
+		\item $\Hm$ 在$\{Y,Z\}$上关于$\varphi(\{Y,Z\})$和$v$的扩展为：$\Hm_{{\cal S}(\{Y,Z\})} = (S, R, L_{yz},s_0)$，其中$L_{yz}(s_0) = \{j,ch,p_z\}$、 $L_{yz}(s_1)=\{ch, p_y\}$且$L_{yz}(s_2)=\{p_y\}$。
 	\end{itemize}
 \end{example}
 
@@ -1030,7 +1008,7 @@ D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有�
 	因此，由均匀插值的定义可知$\Muforget(\varphi, V)$是$\varphi$ 关于$\Var(\varphi)-V$的均匀插值。 
 \end{proof}
 
-除了上述的表示性定理，后文将说明公设(\textbf{IR})对计算SNC 和 WSC是重要的。对于$\mu$-句子$\psi = \varphi \wedge (q \lrto \alpha)$，$\varphi \wedge \alpha$是 $\{q\}$-无关的，则从$\psi$中遗忘掉 $q$得到的结果是$\varphi$。正如将在第\ref{chapter07}章中展示，这一性质有助于将任意公式的SNC（WSC）转换为命题下的SNC（WSC）。这一性质可形式化如下：
+除了上述的表示性定理，后文将说明公设(\textbf{IR})对计算SNC 和 WSC是重要的。对于$\mu$-句子$\psi = \varphi \wedge (q \lrto \alpha)$，$\varphi \wedge \alpha$是 $\{q\}$-无关的，则从$\psi$中遗忘掉 $q$得到的结果是$\varphi$。正如将在第\ref{chapter04}章中展示，这一性质有助于将任意公式的SNC（WSC）转换为命题下的SNC（WSC）。这一性质可形式化如下：
 
 \begin{lemma}
 	\label{lem:KF:eq}
@@ -1190,7 +1168,7 @@ D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有�
 	
 	另一方面，假设$(\Hm_1,v_1)$是$\Muforget(\Muforget(\varphi, p), V)$的一个模型\\
 	$\Rto$ 存在$(\Hm_2,v_2)$使得$(\Hm_2,v_2) \models  \Muforget(\varphi, p)$ 且$(\Hm_2,v_2) \lrto_V (\Hm_1,v_1)$ \hfill(定义\ref{chapter06:def:V:forgetting})\\
-	$\Rto$ 存在$(\Hm,v)$ 使得$(\Hm,v) \models \varphi$ 且$(\Hm,v) \lrto_{\{p\}} (\Hm_2,v_2)$ \hfill(定义\ref{chapter06:def:V:forgetting})。 
+	$\Rto$ 存在$(\Hm,v)$ 使得$(\Hm,v) \models \varphi$ 且$(\Hm,v) \lrto_{\{p\}} (\Hm_2,v_2)$ \hfill(定义\ref{chapter06:def:V:forgetting}) 
 	
 	因此，由命题\ref{pro:EqUnion} (iii)可知$(\Hm,v) \lrto_{\{p\} \cup V} (\Hm_1,v_1)$，所以$(\Hm_1,v_1) \models \Muforget(\varphi, \{p\} \cup V)$。
 \end{proof}
@@ -1218,7 +1196,7 @@ $\Muforget$的另一个属性是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子�
 	\end{itemize}
 \end{proposition}
 \begin{proof}
-	令$(\Hm,v)$（$\Hm=(S, r,R, L)$）、$(\Hm_i, v_i)$（$\Hm_i = (S_i, r_i, R_i, L_i)$） 和$(\Hm',v')$（$\Hm'=(S', r', R', L')$）为赋值，其中$i\in \mathbb{N}$。
+	令$(\Hm,v)$（$\Hm=(S,R, L, r)$）、$(\Hm_i, v_i)$（$\Hm_i = (S_i, R_i, L_i, r_i)$） 和$(\Hm',v')$（$\Hm'=(S', R',$ $L', r')$）为赋值，其中$i\in \mathbb{N}$。
 	%	若 $r'$为$\Hm$中的一个状态，则称$(\Hm_{r'},v')$ 
 	%	%, in which the root of $\Hm_{r'} = (S', r', R', L')$ is $r'$, 
 	%	为$(\Hm,v)$以$r'$为根的子结构，其中$\Hm_{r'} = (S', r', R', L')$且 
@@ -1246,9 +1224,9 @@ $\Muforget$的另一个属性是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子�
 	$(\Lto)$ $(\Hm,v) \models \ALL \NEXT \Muforget(\varphi,V)$\\
 	$\Rto$ 对任意的$(r, r_1) \in R$，$(\Hm,r_1,v) \models \Muforget(\varphi,V)$\\
 	$\Rto$ 对任意的$(r, r_1) \in R$，存在$(\Hm,r_1,v) \lrto_V (\Hm', r', v')$ 且$(\Hm', r', v') \models \varphi$\\
-	$\Rto$ 对任意的$i \geq 0$，存在$(\Hm,r_i,v) \lrto_V (\Hm_i', r_i',v_i')$ 且$(\Hm_i', r_i', v_i') \models \varphi$，其中$\{r_0, r_1, \dots\} = \{s\mid (r, s) \in R\}$，$\Hm_i' = (S_i', r_i', R_i', L_i')$（假定当$i \not = j$时，$S_i' \cap S_j'= \emptyset$） %, $v'(X) = \Hb_i(v(X))$ for every $X \in {\cal V}$, 
+	$\Rto$ 对任意的$i \geq 0$，存在$(\Hm,r_i,v) \lrto_V (\Hm_i', r_i',v_i')$ 且$(\Hm_i', r_i', v_i') \models \varphi$，其中$\{r_0, r_1, \dots\} = \{s\mid (r, s) \in R\}$，$\Hm_i' = (S_i', R_i', L_i', r_i')$（假定当$i \not = j$时，$S_i' \cap S_j'= \emptyset$） %, $v'(X) = \Hb_i(v(X))$ for every $X \in {\cal V}$, 
 	，$\Hb_i$是$(\Hm,r_i,v)$ 和$(\Hm_i', r_i', v_i')$之间的Var-$V$-互模拟关系\\
-	$\Rto$ $(\Hm^*, v^*) \lrto_V (\Hm,v)$ 且$(\Hm^*, v^*) \models \ALL\NEXT \varphi$，其中$\Hm^* = (S^*, r, R^*,L^*)$且
+	$\Rto$ $(\Hm^*, v^*) \lrto_V (\Hm,v)$ 且$(\Hm^*, v^*) \models \ALL\NEXT \varphi$，其中$\Hm^* = (S^*, R^*,L^*, r)$且
 	\begin{itemize}
 		\item $S^* = \{r\} \cup \bigcup_{i\geq 0} S_i'$,
 		\item $R^* = \{(r, r_i') \mid i \geq 0\} \cup \bigcup_{i\geq 0} R_i'$,
@@ -1356,8 +1334,8 @@ $\ALL\NEXT \phi$ $(\EXIST\NEXT \phi)$ 或 $\mu X. \varphi$ 中遗忘原子命题
 	$\Rto$ $(\Hm,v) \models \Muforget(\varphi_0, V) \wedge \ALL\NEXT\Muforget(\varphi_1, V) \wedge \bigwedge_{2\leq i\leq n} \EXIST\NEXT \Muforget(\varphi_i \wedge \varphi_1, V)$ \\
 	$\Rto$ $(\Hm,r,v) \models \Muforget(\varphi_0, V)$，对任意的$(r, r')\in R$，$(\Hm, r', v) \models \Muforget(\varphi_1, V)$，且对任意的$2\leq i \leq n$，存在$(r, r'')\in R$ 使得$(\Hm,r'', v) \models \Muforget(\varphi_i \wedge \varphi_1, V)$\\
 	$\Rto$ 存在$(\Hm',v) \models \varphi_0$ 且$(\Hm',v) \lrto_V (\Hm,v)$，其中$\Hm'=(S,r,R,L')$； 
-	对任意的$(r, r_j)\in R$，存在$(\Hm_j',r_j',v_j')$ 使得$(\Hm_j',r_j',v_j') \lrto_V (\Hm,r_j, v)$ 且$(\Hm_j',r_j',v_j') \models \varphi_1$；且对任意的$(r, r_j)\in R$ 且$(\Hm,r_j, v) \models \Muforget(\varphi_i \wedge \varphi_1, V)$ ($2\leq i \leq n$)，存在$(\Hm_j', r_j', v_j') \lrto_V (\Hm,r_j,v)$ 使得$(\Hm_j', r_j', v_j')\models \varphi_i \wedge \varphi_1$  ($j\geq 0$，当 $x \not =y$时，假设$S_x \cap S_y = \emptyset$)， 其中$\{r_0, r_1, \dots\} = \{r'\mid (r,r')\in R\}$，$\Hm_j'=(S_j',r_j', R_j', L_j')$\\
-	$\Rto$ There is $(\Hm^*,v^*) \lrto_V (\Hm,v)$ s.t. $(\Hm^*, v^*) \models \varphi_0 \wedge \ALL\NEXT \varphi_1 \wedge \bigwedge_{2\leq i\leq n}  \EXIST\NEXT(\varphi_i \wedge \varphi_1)$, where $\Hm^*=(S^*,r, R^*, L^*)$
+	对任意的$(r, r_j)\in R$，存在$(\Hm_j',r_j',v_j')$ 使得$(\Hm_j',r_j',v_j') \lrto_V (\Hm,r_j, v)$ 且$(\Hm_j',r_j',v_j') \models \varphi_1$；且对任意的$(r, r_j)\in R$ 且$(\Hm,r_j, v) \models \Muforget(\varphi_i \wedge \varphi_1, V)$ ($2\leq i \leq n$)，存在$(\Hm_j', r_j', v_j') \lrto_V (\Hm,r_j,v)$ 使得$(\Hm_j', r_j', v_j')\models \varphi_i \wedge \varphi_1$  ($j\geq 0$，当 $x \not =y$时，假设$S_x \cap S_y = \emptyset$)， 其中$\{r_0, r_1, \dots\} = \{r'\mid (r,r')\in R\}$，$\Hm_j'=(S_j', R_j', L_j',r_j')$\\
+	$\Rto$ There is $(\Hm^*,v^*) \lrto_V (\Hm,v)$ s.t. $(\Hm^*, v^*) \models \varphi_0 \wedge \ALL\NEXT \varphi_1 \wedge \bigwedge_{2\leq i\leq n}  \EXIST\NEXT(\varphi_i \wedge \varphi_1)$, where $\Hm^*=(S^*, R^*, L^*,r)$
 	\begin{itemize}
 		\item $S^* = \{r\} \cup \bigcup_{j\geq 0} S_j'$,
 		\item $R^* = \{(r,r_j') \mid j \geq 0\}\cup \bigcup_{j\geq 0} R_j'$,
