@@ -1093,6 +1093,32 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 在上述结论中值得注意的是$m$的大小不会大于公式$\varphi$中出现的时序算子的个数，因此可以得出算法\ref{alg:compute:forgetting:by:Resolution}的计算复杂性仅与出现在$\varphi$中的原子命题和时序算子的个数相关。
 
 \subsection{基于Prolog的$\CTL$-forget算法实现}\label{cha5:subsec:prolog}
+基于Prolog的$\CTL$-forget算法实现系统以$\CTL$公式和原子命题集合为输入，$\CTL$公式为输出。其所识别的$\CTL$公式的符号与第~\ref{chapter02}章中$\CTL$的语言符号对应关系如下：
+\begin{itemize}
+	\item $x_i$和其余小写字母开头的字符串构成原子命题的集合，其中$i\geq 0$为自然数，且$x_i$和$z$被设定为只能是在如下描述的转换过程中引入的原子命题；%除此之外，约定$z$为保留字（即：在输入的公式中不能包含$z$为命题符号）；
+	\item “$false$”和“$true$”分别与常量符号“$\bot$”和“$\top$”对应；
+	\item “$start$”与命题常量“$\start$”对应；
+	\item “$\&$”、“$\backslash/$”和“$-$”分别与合取符号“$\wedge$”、“$\vee$”和“$\neg$”对应；%
+	\item “\textasciitilde”和“\textasciicircum”分别与路径量词“$\ALL$”和“$\EXIST$”对应；
+	\item “$@$”、“$*$”、“$?$”和“$\$$”分别与时序操作符“$\GLOBAL$”、“$\NEXT$”、“$\FUTURE$”和“$\UNTILL$”对应。
+\end{itemize}
+\begin{example}
+	字符串$($\textasciitilde $* ((-y1\backslash/ -y2\backslash/ -y4)\& (-y1\backslash/y2\backslash/y4)\& (y1\backslash/y2\backslash/ -y3)\& (y1\backslash/y3\backslash/ -y4)\& (-y1\backslash/y2\backslash/ -y3)))$为 $\CTL$ 公式。
+\end{example}
+
+此系统主要包括五个模块：转换模块（transCTL2SNF/6）、归结模块（两个过程：step\_resolution/3和temp\_resolution/8）、“移除”原子命题模块（removeAtom/3），“移除”索引（pro6/3）和“移除”新引入的原子命题（ackerM/3）。下面就这几个模块做详细的介绍。
+
+{\em 转换模块}用二元谓词transCTL2SNF/6来实现将$\CTL$公式转换为$\CTLsnf$子句的过程。在使用该谓词前，谓词ctl2NNF/2将输入的$\CTL$公式$\varphi$转换其NNF形式并使用表~\ref{tab:simp}中的等式化简公式等到公式$simp(nnf(\varphi))$，并产生如下公式列表（list）：
+$$[start-> z, z -> simp(nnf(\varphi))].$$
+transCTL2SNF/6谓词通过迭代表~\ref{tab:trans}中的每条规则将$\CTL$公式转换为$\CTLsnf$子句的集合，每一个子句用一个四元谓词snf\_clause(Parm1,Parm2,Parm3,Parm4)表示，其中：
+\begin{itemize}
+	\item Parm1表示子句类型，即第~\ref{chap2:subsec:snf}节中的六种字句类型，用“start”、“true”、“ef”、\\“af”、 “ex” 和 “ax” 分别表示初始子句、全局子句、$\ALL$-某时子句、$\EXIST$-某时子句、$\ALL$-步子句和$\EXIST$-步子句；
+	\item Parm2为原子命题构成的列表，表示$\CTLsnf$子句的头；
+	\item Parm3为原子命题构成的列表，表示$\CTLsnf$子句的尾；
+	\item Parm4表示索引号，且如果Parm4=$nil$，则该子句不是带索引的子句。
+\end{itemize}
+
+在transCTL2SNF(Parm1,Parm2,Parm3,Parm4,Parm5,Parm6)中：参数Parm1为公式形成的列表，即：$[start-> z, z -> simp(nnf(\varphi))]$；Parm2和Parm3初始化为0，分别表示索引号和新引入的原子命题下；Parm4和Parm5分别表示转换过程结束后返回的索引号和原子命题下标的最大值；Parm6为经过转换Parm1后得到的$\CTLsnf$子句集合。
 
 \subsection{实验}\label{cha5:subsec:expriment}
  本节给出所提出的基于归结的遗忘计算的实验结果，并分析实验结果。第\ref{chapter04}章提出的算法\ref{alg:compute:forgetting:by:Resolution}用Prolog语言实现，并在Linux服务器上进行了实验，该服务器是具有8个Intel核和32GB内存的i7CPU，其锁频和主频分别为4770 K和3.50 GHz。每次计算的时间限制到1200秒以内。
