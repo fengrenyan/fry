@@ -849,6 +849,12 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 
 \begin{example}\label{exmp:fish}
 	某学校有$a$和$b$两个食堂，学生要么去$a$食堂吃饭要么去$b$食堂吃饭，如果想吃烤鱼（fish，$f$）就去$a$食堂吃饭，如果想吃炒饭（rice，$r$）就去$b$食堂吃饭。这一知识可表示为命题公式$\varphi=(a \vee b) \wedge (f\rto a) \wedge (r \rto b)$。如果此时不考虑鱼，即：由于某种原因$a$食堂就不再卖烤鱼了，此时就应该“遗忘”烤鱼。这一计算过程表示如下：
+%	\begin{align*}
+%		\Forget(\varphi, \{f\}) & \equiv \varphi[f/true] \vee \varphi[f/false] \\
+%		& \equiv [(a \vee b) \wedge (true \rto a) \wedge (r \rto b)] \vee  [(a \vee b) \wedge (\bot \rto a) \wedge (r \rto b)]\\
+%		& \equiv [(a \vee b) \wedge a \wedge (r \rto b)] \vee  [(a \vee b) \wedge (r \rto b)]\\
+%		& \equiv (a \vee b) \wedge (r \rto b).
+%	\end{align*}
 	\begin{align*}
 		\Forget(\varphi, \{f\}) & \equiv \varphi[f/\top] \vee \varphi[f/\bot] \\
 		& \equiv [(a \vee b) \wedge (\top \rto a) \wedge (r \rto b)] \vee  [(a \vee b) \wedge (\bot \rto a) \wedge (r \rto b)]\\

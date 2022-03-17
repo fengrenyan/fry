@@ -1120,6 +1120,15 @@ transCTL2SNF/6谓词通过迭代表~\ref{tab:trans}中的每条规则将$\CTL$�
 
 在transCTL2SNF(Parm1,Parm2,Parm3,Parm4,Parm5,Parm6)中：参数Parm1为公式形成的列表，即：$[start-> z, z -> simp(nnf(\varphi))]$；Parm2和Parm3初始化为0，分别表示索引号和新引入的原子命题下；Parm4和Parm5分别表示转换过程结束后返回的索引号和原子命题下标的最大值；Parm6为经过转换Parm1后得到的$\CTLsnf$子句集合。
 
+
+{\em 归结模块}主要有两个过程step\_resolution/3和temp\_resolution/8。step\_resolution(List1, V, List2)从List1中选择能使用表~\ref{tab:res}中的归结规则对$V$中的元素做规约公式，并将得到结果存在列表List2中。这一过程循环执行，直到不再产生新的$\CTLsnf$子句为止。
+temp\_resolution/8过程主要用于寻找归结规则\textbf{ERES1}和\textbf{ERES2}的前提（一组$\CTLsnf$子句的集合，参照第~\ref{chapter02:CTLres}节）。
+
+{\em “移除”原子命题模块}主要用于将含有要遗忘的原子命题的$\CTLsnf$子句去掉，这一过程比较简单，这里就不详细介绍。
+
+{\em “移除”索引模块}过程使用引理~\ref{lem:In2NI}中的互模拟等价公式将$\CTLsnf$子句中的索引去掉，因为$\CTL$公式中不包含索引，所以这一过程是必须的。
+
+
 \subsection{实验}\label{cha5:subsec:expriment}
  本节给出所提出的基于归结的遗忘计算的实验结果，并分析实验结果。第\ref{chapter04}章提出的算法\ref{alg:compute:forgetting:by:Resolution}用Prolog语言实现，并在Linux服务器上进行了实验，该服务器是具有8个Intel核和32GB内存的i7CPU，其锁频和主频分别为4770 K和3.50 GHz。每次计算的时间限制到1200秒以内。
 	实验分为两个部分：(1) 在随机数据集和标准数据集上的遗忘；(2) 在随机数据集上命题逻辑公式和$\CTL$公式的SNC计算。
