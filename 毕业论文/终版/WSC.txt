@@ -1,0 +1,13 @@
+[[d,-se,-s],[-d,se,s], [d,se,-s],[d,se,s],[d,-se,s]]             psi (_1-4)
+
+[[d,-se,-s],[-d,se,s], [d,se,-s],[d,se,s]]                        psi (_1-3)
+
+[[d,-se,-s],[-d,se,s], [d,se,-s],[d,-se,s]]                    no psi_3
+
+[[d,-se,-s],[-d,se,s], [d,se,-s]]       no psi_3,4
+
+[[d,-se,-s],[-d,se,s], [d,se,s],[d,-se,s]]      no psi_2
+
+[[d,-se,-s],[-d,se,s], [d,se,s]]        no psi_2,4
+
+[[d,-se,-s],[-d,se,s],[d,-se,s]]     no psi_2,3

@@ -583,6 +583,19 @@ $\psi$ $=\EXIST_{\tuple{2}}\NEXT p$，可以证明$\varphi\equiv_\emptyset \psi$
 	(vi) 可类似 (v)来证明。
 \end{proof}
 
+
+\begin{corollary}
+	给定命题集合$V\subseteq \Ha$，命题公式$\varphi$和$\CTL$公式$\ALL\GLOBAL \psi$，则
+	$$\CTLforget(\varphi \wedge \ALL\GLOBAL \psi)\equiv \CTLforget(\varphi \wedge \psi, V) \wedge \ALL\GLOBAL\CTLforget(\psi, V)\hbox{。}$$
+\end{corollary}
+\begin{proof}
+	 $(\Hm,s_0) \models \CTLforget(\varphi \wedge \ALL\GLOBAL \psi)$\\
+	$\LRto$ 存在$(\Hm',s_0')  \lrto_V (\Hm,s_0)$使得$(\Hm',s_0') \models \varphi \wedge \ALL\GLOBAL \psi$\\
+	$\LRto$ 存在$(\Hm',s_0')  \lrto_V (\Hm,s_0)$使得$(\Hm',s_0') \models \varphi \wedge \psi$且$(\Hm',s_0') \models \ALL\GLOBAL \psi$\\
+	$\LRto$ 存在$(\Hm',s_0')  \lrto_V (\Hm,s_0)$使得$(\Hm',s_0') \models \CTLforget(\varphi \wedge \psi,V)$且$(\Hm',s_0') \models \CTLforget(\ALL\GLOBAL \psi,V)$\\
+	$\LRto$ 存在$(\Hm',s_0')  \lrto_V (\Hm,s_0)$使得$(\Hm',s_0') \models \CTLforget(\varphi \wedge \psi,V)$且$(\Hm',s_0') \models \ALL\GLOBAL\CTLforget( \psi,V)$\\
+	$\LRto$ $(\Hm,s_0) \models \CTLforget(\varphi \wedge \psi,V)\wedge \ALL\GLOBAL\CTLforget( \psi,V)$。
+\end{proof}
 \section{$\mu$-演算遗忘理论}
 \label{chapter03:sec:muforget}
 $\mu$-演算是一种表达能力较强的逻辑语言，它能表达$\CTL$不能表示的性质，例如：Kripke结构中有一条路径，在这条路径上基数位置上的状态满足公式$\neg q \wedge \neg p$，但是偶数位置上的状态满足$q \wedge p$。这一性质不能用$\CTL$公式来表示，但是可以用$\mu$-演算公式表示如下：
