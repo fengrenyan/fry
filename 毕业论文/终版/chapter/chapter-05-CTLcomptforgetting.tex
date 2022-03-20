@@ -54,7 +54,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 其中${\cal K}_i'=(\Hm_i,s_i')$。
 
 当所谈及的原子命题的集合$V$很显然的时候，上述$\Hb_n^V$中的$V$可以省略，记为$\Hb_n$。此外，当讨论的$\Hm_i$ $(i=1,2)$是显然的时候，可以使用$(s_1,s_2) \in \Hb_n$代替$((\Hm_1,s_1),(\Hm_2,s_2))$ $\in \Hb_n$。
-此时，有界$V$-互模拟关系就可以定义如下：
+有界$V$-互模拟关系就可以定义如下：
 \begin{definition}[有界$V$-互模拟]\label{def:V-bisimulation}
 	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是结构。
 	\begin{itemize}
@@ -515,7 +515,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	由命题\ref{modelChecking} 可知这一问题在 $\Sigma_2^{\textsc{P}}$中。因此，原问题在$\Pi_2^{\textsc{P}}$中。
 	
 	困难属性. 令$\psi \equiv \top$。 则这一问题被规约为判定$\CTLforget(\varphi, V)$的有效性问题。 
-	由于命题遗忘是$\CTL$遗忘的特殊情形，因此该问题的困难属性直接来源于\cite{DBLP:journals/jair/LangLM03}。
+	由于命题遗忘是$\CTL$遗忘的特殊情形，因此该问题的困难属性直接来源于文献\cite{DBLP:journals/jair/LangLM03}。
 	
 	(iii) 成员属性. 假定 $\CTLforget(\varphi, V) \not \models \CTLforget(\psi, V)$。则存在一个初始结构 $(\Hm,s) 
 	\models \CTLforget(\varphi, V)$ 且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$使得 $(\Hm_1, s_1) \models \varphi$ 但是对其他$(\Hm, s) \lrto_V (\Hm_2,s_2)$ 使得 $(\Hm_2, s_2) \not \models \psi$。
@@ -544,15 +544,16 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 
 
 \begin{algorithm}[tb]
-	\caption{\small A Model-based \CTL\ Forgetting Procedure}
+	\caption{\small 基于模型的$\CTL$遗忘过程}%A Model-based \CTL\ Forgetting Procedure}
 	\label{alg:compute:forgetting:by:VB}
 	\LinesNumbered
-	\KwIn{A \CTL formula $\varphi$ and a set $V$ of atoms}
+	\KwIn{$\CTL$公式$\varphi$和原子命题集合$V$}%A \CTL formula $\varphi$ and a set $V$ of atoms}
 	\KwOut{$\CTLforget(\varphi, V)$}% ????
 	$\psi \lto \bot$\;
-	\ForEach{initial \MPK-structure $\cal K$ (over $\cal A$ and $\cal S$)}{
+	\ForEach{$\cal A$ 和$\cal S$上的初始结构$\cal K$}{
+	%\ForEach{initial \MPK-structure $\cal K$ (over $\cal A$ and $\cal S$)}{
 		\lIf{${\cal K}\not\models\varphi$}{{\bf continue}} \\
-		\ForEach{initial \MPK-structure ${\cal K}'$ with ${\cal K}\lrto_{ V}{\cal K}'$}{
+		\ForEach{满足${\cal K}\lrto_{ V}{\cal K}'$的初始结构${\cal K}'$}{
 			$\psi \lto \psi \lor {\cal F}_{\overline V}({\cal K}')$\;
 		}
 	}
@@ -579,7 +580,7 @@ Emerson和Halpern证明$\CTL$具有小模型属性：如果一个公式是可满
 	在最坏的情形下（即$|B|=m$），可构成$m \times  (m^m \times  2^{nm} \times  m)$个初始结构。因此，最多有$m^{m+2} \times  2^{nm}$个初始结构，且最多花费$(m^{m+2} \times  2^{nm} \times  (m + m^2 + nm))\times  \log m$位。
 	
 	令 $k = n-x$，对任意有$i\geq 1$个状态的初始结构${\cal K} = (\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$。
-	在最坏的情形下（即$ch(\Hm,V) = i$时），可以花费$N(i) = P_i(s_0) + i \times  (P_i(s) + i \times P_i(s'))$位来存储${\cal K}$在$\overline{V}$上的特征公式。
+	在最坏的情形下（即$ch(\Hm,V) = i$时），需要$N(i) = P_i(s_0) + i \times  (P_i(s) + i \times P_i(s'))$位来存储${\cal K}$在$\overline{V}$上的特征公式。
 	其中$s',s\in B$，$P_i(y)$是存储${\cal F}_{\overline{V}}(\Tr_i(y))$（$y\in B$）所用的空间（这里假定$\EXIST\NEXT$和$\ALL\NEXT$使用了相同的存储单位）。
 	
 	${\cal F}_{\overline{V}}(\Tr_i(y))$（$0\leq n \leq i$）被递归地定义如下：
@@ -844,9 +845,10 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、$rfi(\{\beta_1,\alpha_2\})$来表示，其
 	\LinesNumbered
 	\KwIn{A finite set $\Sigma$ of $\CTLsnf$ clauses} %$\not\exists \{\alpha,\beta\}\subseteq\Sigma$ $\EXIST$-sometimes clauses have the same index}
 	\KwOut{A set of \CTL\ formulas}
-	\ForEach{maximal subset $\Delta$ of $\EXIST$-step clauses in $\Sigma$ with a same index $\tuple{i}$}{
+	\ForEach{$\Sigma$中拥有相同索引$\tuple{i}$的$\EXIST$-子句构成的极大子集$\Delta$}{
+	%\ForEach{maximal subset $\Delta$ of $\EXIST$-step clauses in $\Sigma$ with a same index $\tuple{i}$}{
 		%$\Sigma\lto \Sigma  \cup  rei(\Delta) $\; 
-		\If{There is an $\EXIST$-sometime clause $\alpha\in\Sigma$ with the index $\tuple{i}$}
+		\If{存在索引为$\tuple{i}$的$\EXIST$-某时子句$\alpha\in\Sigma$}
 		{
 			\lForEach{$\beta\in rei(\Delta)$}{
 				$\Sigma\lto \Sigma \cup rfi(\alpha,\beta)$
@@ -1005,8 +1007,8 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	\LinesNumbered
 	\KwIn{A \CTL\ formula $\varphi$ and a set $V$ of atoms}%, and a Boolean variable ri}
 	\KwOut{A conjunction of formulas}
-	\lIf{$\varphi\equiv\bot$} {{\bf \Return $\bot$}}
-	\lIf{$V=\Var(\varphi)$} {{\bf \Return  $\top$}}
+	\lIf{$\varphi\equiv\bot$} {{\bf \Return $\bot$}}    \tcp*{若公式不可满足，则遗忘结果为$\bot$}
+	\lIf{$V=\Var(\varphi)$} {{\bf \Return  $\top$}}   \tcp*{若遗忘所有原子命题，则结果为$\top$}
 	$T_\varphi \lto \CTLsnf(\varphi)$ \tcp*{将$\varphi$转换为 $\CTLsnf$子句}
 	$\Sigma\lto \Unfolding(T_\varphi,V\cup U)$ where $U=\Var(T_\varphi)-\Var(\varphi)$\tcp*{展开}
 	$\Sigma\lto \emph{ERes}(\Sigma,V)$ \tcp*{移除包含 $V$中元素的子句}
@@ -1093,12 +1095,12 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 在上述结论中值得注意的是$m$的大小不会大于公式$\varphi$中出现的时序算子的个数，因此可以得出算法\ref{alg:compute:forgetting:by:Resolution}的计算复杂性仅与出现在$\varphi$中的原子命题和时序算子的个数相关。
 
 \subsection{基于Prolog的$\CTL$-forget算法实现}\label{cha5:subsec:prolog}
-基于Prolog的$\CTL$-forget算法实现系统以$\CTL$公式和原子命题集合为输入，$\CTL$公式为输出。其所识别的$\CTL$公式的符号与第~\ref{chapter02}章中$\CTL$的语言符号对应关系如下：
+基于Prolog的$\CTL$-forget算法实现系统以$\CTL$公式和原子命题集合为输入，$\CTL$公式为输出。其所识别的$\CTL$公式的符号与第\ref{chapter02}章中$\CTL$的语言符号对应关系如下：
 \begin{itemize}
 	\item $x_i$和其余小写字母开头的字符串构成原子命题的集合，其中$i\geq 0$为自然数，且$x_i$和$z$被设定为只能是在如下描述的转换过程中引入的原子命题；%除此之外，约定$z$为保留字（即：在输入的公式中不能包含$z$为命题符号）；
 	\item “$false$”和“$true$”分别与常量符号“$\bot$”和“$\top$”对应；
 	\item “$start$”与命题常量“$\start$”对应；
-	\item “$\&$”、“$\backslash/$”和“$-$”分别与合取符号“$\wedge$”、“$\vee$”和“$\neg$”对应；%
+	\item “$\&$”、“$\backslash/$”、“$-$”和“$->$”分别与合取符号“$\wedge$”、“$\vee$”、“$\neg$”和“$\rto$”对应；%
 	\item “\textasciitilde”和“\textasciicircum”分别与路径量词“$\ALL$”和“$\EXIST$”对应；
 	\item “$@$”、“$*$”、“$?$”和“$\$$”分别与时序操作符“$\GLOBAL$”、“$\NEXT$”、“$\FUTURE$”和“$\UNTILL$”对应。
 \end{itemize}
@@ -1127,6 +1129,8 @@ temp\_resolution/8过程主要用于寻找归结规则\textbf{ERES1}和\textbf{E
 {\em “移除”原子命题模块}主要用于将含有要遗忘的原子命题的$\CTLsnf$子句去掉，这一过程比较简单，这里就不详细介绍。
 
 {\em “移除”索引模块}过程使用引理~\ref{lem:In2NI}中的互模拟等价公式将$\CTLsnf$子句中的索引去掉，因为$\CTL$公式中不包含索引，所以这一过程是必须的。
+
+{\em “移除”新引入的原子命题}使用一般化的Ackermann引理（引理~\ref{thm:Aclm}）将转换模块中引入的新原子命题去除。
 
 
 \subsection{实验}\label{cha5:subsec:expriment}

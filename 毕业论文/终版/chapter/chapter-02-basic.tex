@@ -186,7 +186,7 @@ $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^
 
 
 \section{时序逻辑}
-时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化而变化的系统的逻辑特性。由于软件和硬件系统运行的本质是状态变化的过程，所以时序逻辑在程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时序逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用除了$\mu$-演算以外的其他时序逻辑表示的~\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算这两种时序逻辑。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
+时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化而变化的系统的逻辑特性。由于软件和硬件系统运行的本质是状态变化的过程，所以时序逻辑在程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时序逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用除了$\mu$-演算以外的其他时序逻辑表示的~\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算这两种时序逻辑。因此，本文用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
 \subsection{计算树逻辑（\CTL）}
 $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。这里给出带索引的$\CTL$公式定义，而$\CTL$公式是该种公式的子类。带索引的$\CTL$的语言${\cal L}$由下面的几类符号构成：
@@ -275,7 +275,7 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 %	\]
 %\end{proposition}
 
-与Browne和Bolotov等人的工作类似，本文只将初始$\Ind$-结构作为模型的候选项\cite{browne1988characterizing,DBLP:journals/jetai/BolotovF99}。换句话说，对于给定的$\Ind$-结构$(\Hm,s)$和带索引的$\CTL$公式$\varphi$，如果$(\Hm,s)\models \varphi$且$s = s_0$，则称$(\Hm,s)$为公式$\varphi$的一个\emph{模型}。更清楚地说，对于给定的初始$\Ind$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称$\cal K$是$\varphi$的一个模型。
+与Browne和Bolotov等人的工作类似，本文只将初始$\Ind$-结构作为模型的候选项\cite{browne1988characterizing,DBLP:journals/jetai/BolotovF99}，即：对于给定的$\Ind$-结构$(\Hm,s)$和带索引的$\CTL$公式$\varphi$，如果$(\Hm,s)\models \varphi$且$s = s_0$，则称$(\Hm,s)$为公式$\varphi$的一个\emph{模型}。换句话说，对于给定的初始$\Ind$-结构${\cal K}=(\Hm,s_0)$，如果${\cal K} \models \varphi$，则称$\cal K$是$\varphi$的一个模型。
 
 
 令$\varphi$、$\varphi_1$和$\varphi_2$为公式，为了符号的统一，这里列出文中出现的一些记号的含义。
@@ -293,7 +293,7 @@ $\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeE
 
 对于给定的公式$\varphi$，将出现在$\varphi$中的原子命题的集合记为$\Var(\varphi)$。此外，给定公式$\varphi$和原子命题的集合$V$，如果存在一个公式$\psi$使得$\Var(\psi) \cap V = \emptyset$且$\varphi \equiv \psi$，那么说$\varphi$与$V$中的原子命题\emph{无关}，简称为\emph{$V$-无关}（ \emph{$V$-irrelevant}），写作$\IR(\varphi,V)$。
 一种特殊的形式是$\Var(\varphi) \subseteq V$，此时称$\varphi$为集合$V$上的公式。
-可以类似定义公式的集合与原子命题集合的无关性，也即是：如果对于公式的集合$\Pi$中的任意一个公式$\varphi$，$\IR(\varphi,V)$都成立，则$\Pi$与$V$中的原子命题无关，记为$\IR(\Pi,V)$。
+可以类似定义公式的集合与原子命题集合的无关性，即：如果对于公式的集合$\Pi$中的任意一个公式$\varphi$，$\IR(\varphi,V)$都成立，则$\Pi$与$V$中的原子命题无关，记为$\IR(\Pi,V)$。
 
 $\CTL$公式与结构之间的可满足性与定义~\ref{def:ctl:semantic}类似，只是将$\Ind$-结构替换为结构。除此之外，相应的符号（记号）也与上述情况类似。
 
@@ -340,7 +340,7 @@ $\CTL$公式与结构之间的可满足性与定义~\ref{def:ctl:semantic}类似
 	$\Rto$ $(\Hm,s') \models \ALL\GLOBAL (\start \rto\varphi)$。
 \end{proof}
 
-给定两个带索引的$\CTL$公式$\varphi$ 和 $\psi$，若$\varphi$是可满足的当且仅当$\psi$是可满足的，则称 $\varphi$ 和 $\psi$ 是 {\em 等价可满足的（equi-satisfiable）}。可以看出，相互等价（等值）的公式是等价可满足的，但是反过来却不成立。例：公式$\EXIST_{\tuple{1}}\NEXT p$和
+给定两个带索引的$\CTL$公式$\varphi$ 和 $\psi$，若$\varphi$是可满足的当且仅当$\psi$是可满足的，则称 $\varphi$ 和 $\psi$ 是 {\em 等价可满足的（equi-satisfiable）}。由此可见，相互等价（等值）的公式是等价可满足的，但是反过来却不成立。例：公式$\EXIST_{\tuple{1}}\NEXT p$和
  $\EXIST_{\tuple{2}}\NEXT p$是等价可满足的，但是他们不是等价的。
 基于此，下面的引理是显然的。
 \begin{lemma}\label{lem:indno}
@@ -516,7 +516,7 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的析取（即子句�
 \end{lemma}
 \begin{proof}
 	(i) 显然规则$\textbf{Trans(1)}$ 和 $\textbf{Trans(2)}$为每一个$\EXIST$路径量词引入一个新的索引。 
-	再者，一旦路径量词$\EXIST$被索引标记了，它就不会被其他索引标记。
+	此外，一旦路径量词$\EXIST$被索引标记了，它就不会被其他索引标记。
 	%According to the transformation rules in Table~\ref{tab:trans},  
 	
 	(ii) 由(i)可知，每个$\EXIST$被唯一的索引标记。此外在转换过程中不会产生新的$\EXIST$-某时子句。因此结论成立。
@@ -662,7 +662,7 @@ $\mu$-演算是模态逻辑的扩展，构成$\mu$-演算语言的符号有：
 		\item $\nu_2(\left\| \psi \right\|) = \left\| j \right\| \cap \left\| ch \right\| \cap \left\| \ALL\NEXT (\neg j \wedge \neg ch) \right\| \cap \left\| \ALL\NEXT \ALL\NEXT \nu_1(\left\| \psi \right\|) \right\|$，
 		\item ...
 	\end{itemize}
-当给定了初始Kripke结构，根据上述过程，不难计算出最大和最小不动点。
+当给定了初始Kripke结构，根据上述过程，便可以计算出最大和最小不动点。
 %	For the Kripke structure $\Hm$ in (a) of Example~\ref{examp:run}, we have $\left\| \varphi \right\| = \{s_0\}$.
 \end{example}
 
@@ -685,7 +685,7 @@ Janin等人首先提出了$\mu$-演算的析取范式~\cite{janin1995automata}�
 	\end{itemize}
 \end{itemize}
 
-尽管覆盖-语法在形式上与上一小节中$\mu$-公式的定义有所不同，但是已经证明这两种定义是等价的\cite{d2006modal}。这主要因为$Cover$公式与$\EXIST\NEXT$公式之间可以通过下面的等式转换：
+尽管覆盖-语法在形式上与上一小节中$\mu$-公式的定义有所不同，但已证明这两种定义是等价的\cite{d2006modal}，主要因为$Cover$公式与$\EXIST\NEXT$公式之间可以通过下面的等式转换：
 \[
 Cover(\varphi_1, \dots, \varphi_n) \LRto \EXIST\NEXT \varphi_1 \wedge \dots \wedge \EXIST\NEXT \varphi_n \wedge \ALL\NEXT(\varphi \vee \dots \vee \varphi_n),
 \]
@@ -788,7 +788,7 @@ Cover(\varphi_1, \dots, \varphi_n) \LRto \EXIST\NEXT \varphi_1 \wedge \dots \wed
 \end{align*}
 其中，对任意的$i~(1\le i\le n)$，
 \begin{itemize}
-	\item 存在一个索引$ind \in {\cal I}$ 使得 $*$ 要么为空符号，要么为 $\{\ALL\NEXT, \EXIST_{\tuple{ind}}\NEXT\}$中的一个，
+	\item 存在一个索引$ind \in {\cal I}$ 使得 $*$ 为空符号或者为 $\{\ALL\NEXT, \EXIST_{\tuple{ind}}\NEXT\}$中的一个，
 	\item $\left(\bigwedge_{j=1}^{m_i} C_j^i\right) \rto l$成立，且
 	\item $\left(\bigwedge_{j=1}^{m_i} C_j^i\right) \rto \left(\bigvee_{i=1}^n\bigwedge_{j=1}^{m_i} P_j^i\right)$成立。
 \end{itemize}
@@ -848,7 +848,7 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 
 
 \begin{example}\label{exmp:fish}
-	某学校有$a$和$b$两个食堂，学生要么去$a$食堂吃饭要么去$b$食堂吃饭，如果想吃烤鱼（fish，$f$）就去$a$食堂吃饭，如果想吃炒饭（rice，$r$）就去$b$食堂吃饭。这一知识可表示为命题公式$\varphi=(a \vee b) \wedge (f\rto a) \wedge (r \rto b)$。如果此时不考虑鱼，即：由于某种原因$a$食堂就不再卖烤鱼了，此时就应该“遗忘”烤鱼。这一计算过程表示如下：
+	某学校有$a$和$b$两个食堂，学生只能去$a$或去$b$食堂吃饭，如果想吃烤鱼（fish，$f$）就去$a$食堂吃饭，如果想吃炒饭（rice，$r$）就去$b$食堂吃饭。这一知识可表示为命题公式$\varphi=(a \vee b) \wedge (f\rto a) \wedge (r \rto b)$。如果此时不考虑鱼，即：由于某种原因$a$食堂就不再卖烤鱼了，此时就应该“遗忘”烤鱼。这一计算过程表示如下：
 %	\begin{align*}
 %		\Forget(\varphi, \{f\}) & \equiv \varphi[f/true] \vee \varphi[f/false] \\
 %		& \equiv [(a \vee b) \wedge (true \rto a) \wedge (r \rto b)] \vee  [(a \vee b) \wedge (\bot \rto a) \wedge (r \rto b)]\\
@@ -922,7 +922,7 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 从定义\ref{def:resforgetting}不难看出计算从$\varphi$中遗忘$p$的结果可以分为三个步骤：（1）计算$\varphi$的合取范式，并得到$CNF(\varphi)$；（2）计算$Res(CNF(\varphi), p)$；（3）去除$CNF(\varphi)$包含$p$的子句。
 遗忘的定义种类很多，本文的定义采用的是上述所说的互模拟方式，因此这里不再赘述其他定义，感兴趣的读者可以参考Eiter的文章~\cite{eiter2019brief}。
 
-在描述逻辑中，如果遗忘的结果是可以用当前讨论的描述逻辑来表示的，则该结果就是一个均匀插值。而判定均匀插值的存在性通常是很费时的，如：在${\cal ALC}$ 和${\cal EL}$中是双指数时间的。因此，不难看出描述逻辑中的遗忘通常也是很困难的，尽管如此也有很多方法克服这些问题，其中扩展描述语言（如：从${\cal ALC}$到${\cal ALC}_v$~\cite{DBLP:conf/frocos/KoopmannS13}）或引入新的辅助符号~\cite{DBLP:phd/ethos/Zhao18a}是常用的方法。一些计算遗忘的工具是：基于skolem化和SOQE的SCAN~\footnote{http://www.mettel-prover.org/scan/index.html}、基于归结的Lethe~\cite{DBLP:phd/ethos/Koopmann15}和基于Ackermann引理的FAME~\cite{DBLP:conf/cade/ZhaoS18}。
+在描述逻辑中，如果遗忘的结果是可以用当前讨论的描述逻辑来表示的，则该结果就是一个均匀插值。而判定均匀插值的存在性通常是很费时的，如：在${\cal ALC}$ 和${\cal EL}$中是双指数时间的。因此，描述逻辑中的遗忘通常也是很困难的。尽管如此，也有很多方法克服这些问题，其中扩展描述语言（如：从${\cal ALC}$到${\cal ALC}_v$~\cite{DBLP:conf/frocos/KoopmannS13}）或引入新的辅助符号~\cite{DBLP:phd/ethos/Zhao18a}是常用的方法。一些计算遗忘的工具是：基于skolem化和SOQE的SCAN~\footnote{http://www.mettel-prover.org/scan/index.html}、基于归结的Lethe~\cite{DBLP:phd/ethos/Koopmann15}和基于Ackermann引理的FAME~\cite{DBLP:conf/cade/ZhaoS18}。
 
 \subsection{模态逻辑S5的遗忘}\label{chapter:sub:s5forgetting}
 
@@ -937,7 +937,7 @@ $\CTLsnf$子句集合$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S
 	\item[(iii)] 若$(w_1, w_2) \in \sigma$，则$w_1\sim_V w_2$。
 \end{itemize}
 
-条件(i)和(ii)分别称为前向条件（forth condition）和后向条件（back condition）。需要注意的是，即使$M$和$M'$有$V$-互模拟关系，$M$和$M'$也可能有不同数量的世界个数。除此之外，从定义中不难看出，如果$\Hm \lrto_{V} \Hm'$，则有$Atom(W)-V=Atom(W' )-V$，其中$Atom(X)$（$X$是可能世界的集合）是由出现在$X$中的世界中的原子构成的集合。从定义中还可得出$\lrto_V$是一个等价关系。
+条件(i)和(ii)分别称为前向条件（forth condition）和后向条件（back condition）。值得注意的是，即使$M$和$M'$有$V$-互模拟关系，$M$和$M'$也可能有不同数量的世界个数。除此之外，从定义中不难看出，如果$\Hm \lrto_{V} \Hm'$，则有$Atom(W)-V=Atom(W' )-V$，其中$Atom(X)$（$X$是可能世界的集合）是由出现在$X$中的世界中的原子构成的集合。从定义中还可得出$\lrto_V$是一个等价关系。
 %\subsection{描述逻辑里的遗忘}
 
 S5关于$V$-互模拟是不变的（invariant）：如果两个$\MPK$-解释$M$和$M'$有$V$-互模拟关系，那么对于任何不包含$V$中任何原子的公式$\varphi$，$M$和$M'$同时满足或不满足公式$\varphi$。S5中的知识遗忘（knowledge forgetting）定义如下\cite{Zhang2008Properties}：
@@ -959,7 +959,7 @@ Zhang等人还提出了能精确描述知识遗忘的四个基本条件（公设
 从数据库和安全的层面讲，遗忘相当于从已有的关系表中构建出一个视图，达到了隐私保护的作用。
 
 
-这四个条件与知识遗忘的关系为\cite{Zhang2008Properties}：
+这四个性质与知识遗忘的关系如下所述\cite{Zhang2008Properties}：
 \begin{theorem}
 	%Let $\varphi$, $\varphi'$ and $\phi$ be \CTL\
 	给定公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题的集合。
@@ -1155,5 +1155,5 @@ SNC和WSC是一个对偶概念，且任意公式的SNC（WSC）都能转换成�
 
 \section{本章小结}
 围绕本文的研究工作，本章首先介绍了最基本的真假赋值的概念，给出了命题逻辑公式的解释，随后给出了时序逻辑依赖的Kripke结构的定义。
-其次，本章详细介绍了带索引的$\CTL$和$\mu$-演算公式的语法和语义。$\CTL$公式是带索引的$\CTL$公式的子类，基于此又介绍了$\CTL$公式的标准形式——$\CTLsnf$子句，并详细介绍了如何将$\CTL$公式转换为$\CTLsnf$子句的集合。基于此，对$\CTL$中的归结过程和归结系统做了详细的介绍，为下文使用基于归结的方法计算$\CTL$中的遗忘做下铺垫。最后，本章详细介绍了本文密切相关的经典逻辑和模态逻辑下的遗忘的定义、基本公设及相关算法，并基于此给出这些逻辑系统下SNC（WSC）的定义和使用遗忘计算SNC（WSC）的详细算法。本章中所介绍的内容为后续章节提供了基本模型与定义，是开展后续研究工作的理论出发点。
+其次，本章详细介绍了带索引的$\CTL$和$\mu$-演算公式的语法和语义。$\CTL$公式是带索引的$\CTL$公式的子类，基于此又介绍了$\CTL$公式的标准形式——$\CTLsnf$子句，并详细介绍了如何将$\CTL$公式转换为$\CTLsnf$子句的集合。随后对$\CTL$中的归结过程和归结系统做了详细介绍，为下文使用基于归结的方法计算$\CTL$中的遗忘做下铺垫。最后，本章详细介绍了本文密切相关的经典逻辑和模态逻辑下遗忘的定义、基本公设及相关算法，并给出这些逻辑系统下SNC（WSC）的定义和使用遗忘计算SNC（WSC）的详细算法。本章所介绍的内容为后续章节提供了基本模型与定义，是开展后续研究工作的理论出发点。
 
