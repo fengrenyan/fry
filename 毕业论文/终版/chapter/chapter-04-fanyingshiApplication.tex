@@ -405,7 +405,31 @@ $$\Mod(\Gamma \diamond_{pma} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi)
 
 
 \begin{example}
-	content...
+	令$\Ha=\{ch, j\}$、$\varphi = \nu X. j \wedge ch \wedge \EXIST \NEXT \EXIST \NEXT X$、 $\psi= \nu X. \neg j \wedge ch \wedge \EXIST \NEXT \EXIST \NEXT X$且Kripke结构的状态空间为 $\{s_0,s_1\}$，则用$\psi$更新$\varphi$计算如下：
+	\begin{align*}
+		\Mod(\varphi) = & \{((1), r=s_0, L(s_0)=\{ch,j\}, L(s_1)=\{ch,j\}), \\
+		& ((2),  r=s_1, L(s_1)=\{ch,j\}, L(s_0)=\{ch,j\}),\\
+		& ((3),  r=s_0, L(s_0)=\{ch,j\}, L(s_1)={\cal C}), \\
+		& ((4),  r=s_1, L(s_1)=\{ch,j\}, L(s_0)={\cal C}), \\
+		& ((5),  r=s_0, L(s_0)=\{ch,j\}, L(s_1)={\cal C}), \\
+		& ((6),  r=s_1, L(s_1)=\{ch,j\}, L(s_0)={\cal C}), \dots\}\\
+		\Mod(\psi) = & \{((1), r=s_0, L(s_0)=\{ch\}, L(s_1)=\{ch\}),\\
+		& ((2), r=s_1, L(s_1)=\{ch\}, L(s_0)=\{ch\}),\\
+		& ((3), r=s_0, L(s_0)=\{ch\}, L(s_1)={\cal C}),\\
+		& ((4), r=s_1, L(s_1)=\{ch\}, L(s_0)={\cal C}), \\
+		& ((5), r=s_0, L(s_0)=\{ch\}, L(s_1)={\cal C}),\\
+		& ((6), r=s_1, L(s_1)=\{ch\}, L(s_0)={\cal C}), \dots\}
+	\end{align*}
+	其中，四元组$((i), r= s_k, L(s_0)=V_1, L(s_1)=V_1)$表示Kripke结构$(S,r,R,L)$，其中$S=\{s_0, s_1\}$、$r=s_k$ ($r\in \{0,1\}$)、转换关系如图~\ref{fig:knoup}中的(i) ($i \in \{1,2,3,4,5,6\}$\footnote{这里只列出部分转换关系，其余转换关系可以容易地枚举出来。})、$s_0$ 和$s_1$分别被 $V_1 \subseteq \{ch,j\}$ 和 $V_2\subseteq \{ch,j\}$标记且${\cal C} \in \{\emptyset, \{j\}, \{ch\}, \{j,ch\}\}$。
+	
+	$\Mod(\varphi \diamond_{\mu} \psi) = \bigcup_{\Hm\in \Mod(\varphi)} Min(\Mod(\psi), \leq_{\Hm})$，根据定义~\ref{def:closer}容易检查$\Mod(\varphi \diamond_{\mu} \psi) = \Mod(\psi)$。直观地说，由于在$\psi$中$j$在偶数状态不再为真、$ch$保持为真且$\psi$和$\varphi$都不知道模型偶数状态的信息，因而用$\psi$更新$\varphi$得到的结果为 $\psi$自身。
+	\begin{figure}[h]%
+		\centering
+		\includegraphics[width=8cm]{knowledge_update.png}
+		\caption{状态空间为$\{s_0,s_1\}$的六个Kripke结构示意图}\label{fig:knoup}
+		
+		% $s_0$ is labeled by $\{ch, j\}$, $t_0$ is labeled by $\{j\}$, and $s_1$, $s_2$, and $t_1$ are labeled by $\emptyset$.}\label{fig:bisim}
+	\end{figure}
 \end{example}
 
 

@@ -189,7 +189,12 @@ $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^
 时序逻辑是一种描述系统规范的形式化语言，它研究状态随时间变化而变化的系统的逻辑特性。由于软件和硬件系统运行的本质是状态变化的过程，所以时序逻辑在程序验证和硬件验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, $\CTL$）是分支时序逻辑的一种，其模型检测是多项式时间可行的。然而，$\CTL$表达系统性质的表达能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径使得该路径上的第偶数个状态满足特定的性质”这一规范是不能用除了$\mu$-演算以外的其他时序逻辑表示的~\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本节主要介绍$\CTL$和$\mu$-演算这两种时序逻辑。因此，本文用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
 \subsection{计算树逻辑（\CTL）}
-$\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。这里给出带索引的$\CTL$公式定义，而$\CTL$公式是该种公式的子类。带索引的$\CTL$的语言${\cal L}$由下面的几类符号构成：
+计算树逻辑是由Clarke和Emerson等人于1986年提出的一种分支时间时序逻辑\cite{DBLP:journals/toplas/ClarkeES86}，它能很好的描述并发系统的一些性质，包括：互斥属性和安全属性等。
+此外，Emerson和 Halpern证明了$\CTL$具有小模型属性：如果一个公式是可满足的，那么它在一个小的有限模型下是可满足的~\cite{DBLP:journals/jcss/EmersonH85}。
+具体说来，对于给定的$\CTL$公式$\varphi$，如果公式的长度\footnote{给定公式$\varphi$，出现在该公式里的符号的个数为公式的长度，记为$|\varphi|$。}为$n$（记为：$|\varphi| = n$），则存在一个状态数为$n8^n$的初始结构$(\Hm,s_0)$使得$(\Hm,s_0)\models \varphi$。
+%$\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。
+
+这里给出带索引的$\CTL$公式定义，而$\CTL$公式是该种公式的子类。带索引的$\CTL$的语言${\cal L}$由下面的几类符号构成：
 \begin{itemize}
 	\item 原子命题的集合$\Ha$；
 	\item 可数无限索引集合$\Ind$；

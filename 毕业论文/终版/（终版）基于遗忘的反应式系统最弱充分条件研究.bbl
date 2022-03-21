@@ -140,6 +140,35 @@ SCHNEIDER~K.
 \newblock Springer, 2004.
 \newblock \url{https://doi.org/10.1007/978-3-662-10778-2}.
 
+\bibitem[Zhu et~al.(2010)Zhu, Wang, Xu, and Xu]{DBLP:journals/fcsc/ZhuWXX10}
+ZHU~J, WANG~H, XU~Z, et~al.
+\newblock A new model for model checking: cycle-weighted kripke
+  structure\allowbreak[J/OL].
+\newblock Frontiers Comput. Sci. China, 2010, 4\penalty0 (1):\penalty0 78-88.
+\newblock \url{https://doi.org/10.1007/s11704-009-0066-7}.
+
+\bibitem[Dijkstra(1975)]{DBLP:journals/cacm/Dijkstra75}
+DIJKSTRA~E~W.
+\newblock Guarded commands, {N}ondeterminacy and {F}ormal {D}erivation of
+  {P}rograms\allowbreak[J/OL].
+\newblock Commun. {ACM}, 1975, 18\penalty0 (8):\penalty0 453-457.
+\newblock \url{https://doi.org/10.1145/360933.360975}.
+
+\bibitem[Lin(2001)]{DBLP:journals/ai/Lin01}
+LIN~F.
+\newblock On strongest necessary and weakest sufficient
+  conditions\allowbreak[J/OL].
+\newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
+\newblock \url{https://doi.org/10.1016/S0004-3702(01)00070-4}.
+
+\bibitem[Lin(2003)]{DBLP:journals/jair/Lin03}
+LIN~F.
+\newblock Compiling causal theories to successor state axioms and strips-like
+  systems\allowbreak[J/OL].
+\newblock Journal of Artificial Intelligence Research, 2003, 19:\penalty0
+  279-314.
+\newblock \url{https://doi.org/10.1613/jair.1135}.
+
 \bibitem[Baier et~al.(2008)Baier and Katoen]{Baier:PMC:2008}
 BAIER~C, KATOEN~J.
 \newblock Principles of model checking\allowbreak[M].
@@ -227,7 +256,7 @@ NATO ASI DPD.
 \bibitem[王政(2012)]{wangzhen2012}
 王政.
 \newblock 嵌入式周期控制系统的建模与分析\allowbreak[D].
-\newblock [出版地不详]: 华东师范大学, 2012.
+\newblock 上海: 华东师范大学, 2012.
 
 \bibitem[李书浩\ 等(2004)李书浩, 王戟, 董威, and
   齐治昌]{lishu2004}
@@ -460,14 +489,6 @@ GON{\c{C}}ALVES~R, KNORR~M, LEITE~J.
 \newblock Forgetting in answer set programming--a survey\allowbreak[J].
 \newblock arXiv preprint arXiv:2107.07016, 2021.
 
-\bibitem[Lin(2003)]{DBLP:journals/jair/Lin03}
-LIN~F.
-\newblock Compiling causal theories to successor state axioms and strips-like
-  systems\allowbreak[J/OL].
-\newblock Journal of Artificial Intelligence Research, 2003, 19:\penalty0
-  279-314.
-\newblock \url{https://doi.org/10.1613/jair.1135}.
-
 \bibitem[王文宇(2021)]{wangwen2021}
 王文宇.
 \newblock 基于 DataSecOps 的个人信息遗忘\allowbreak[J].
@@ -517,7 +538,7 @@ EVERAERE~P, KONIECZNY~S, MARQUIS~P.
 \bibitem[徐岱(2011)]{xudai2011}
 徐岱.
 \newblock 遗忘及应用\allowbreak[D].
-\newblock [出版地不详]: 北京大学, 2011.
+\newblock 北京: 北京大学, 2011.
 
 \bibitem[Sandu(1993)]{DBLP:journals/jphil/Sandu93}
 SANDU~G.
@@ -546,20 +567,6 @@ SEVENSTER~M.
 \newblock Synth., 2006, 149\penalty0 (2):\penalty0 257-283.
 \newblock \url{https://doi.org/10.1007/s11229-005-3878-5}.
 
-\bibitem[Dijkstra(1975)]{DBLP:journals/cacm/Dijkstra75}
-DIJKSTRA~E~W.
-\newblock Guarded commands, {N}ondeterminacy and {F}ormal {D}erivation of
-  {P}rograms\allowbreak[J/OL].
-\newblock Commun. {ACM}, 1975, 18\penalty0 (8):\penalty0 453-457.
-\newblock \url{https://doi.org/10.1145/360933.360975}.
-
-\bibitem[Lin(2001)]{DBLP:journals/ai/Lin01}
-LIN~F.
-\newblock On strongest necessary and weakest sufficient
-  conditions\allowbreak[J/OL].
-\newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
-\newblock \url{https://doi.org/10.1016/S0004-3702(01)00070-4}.
-
 \bibitem[Doherty et~al.(2001)Doherty, Lukaszewicz, and
   Szalas]{DBLP:conf/ijcai/DohertyLS01}
 DOHERTY~P, LUKASZEWICZ~W, SZALAS~A.
@@ -580,13 +587,6 @@ D'AGOSTINO~G, LENZI~G.
 \newblock On modal $\mu$-calculus with explicit interpolants\allowbreak[J/OL].
 \newblock Journal of Applied Logic, 2006, 4\penalty0 (3):\penalty0 256-278.
 \newblock \url{https://doi.org/10.1016/j.jal.2005.06.008}.
-
-\bibitem[Zhu et~al.(2010)Zhu, Wang, Xu, and Xu]{DBLP:journals/fcsc/ZhuWXX10}
-ZHU~J, WANG~H, XU~Z, et~al.
-\newblock A new model for model checking: cycle-weighted kripke
-  structure\allowbreak[J/OL].
-\newblock Frontiers Comput. Sci. China, 2010, 4\penalty0 (1):\penalty0 78-88.
-\newblock \url{https://doi.org/10.1007/s11704-009-0066-7}.
 
 \bibitem[Schneider(2000)]{schneider2000verified}
 SCHNEIDER~K.
@@ -852,17 +852,38 @@ D'AGOSTINO~G.
 \newblock Interpolation in non-classical logics\allowbreak[J].
 \newblock Synthese, 2008, 164\penalty0 (3):\penalty0 421-435.
 
-\bibitem[Bolotov(2000)]{bolotov2000clausal}
-BOLOTOV~A.
-\newblock Clausal resolution for branching-time temporal logic.\allowbreak[D].
-\newblock [S.l.]: Manchester Metropolitan University, 2000.
+\bibitem[Wolper(1983)]{DBLP:journals/iandc/Wolper83}
+WOLPER~P.
+\newblock Temporal logic can be more expressive\allowbreak[J/OL].
+\newblock Information and control, 1983, 56\penalty0 (1/2):\penalty0 72-99.
+\newblock \url{https://doi.org/10.1016/S0019-9958(83)80051-5}.
 
-\bibitem[Zhang et~al.(2009{\natexlab{b}})Zhang, Hustadt, and
-  Dixon]{zhang2009refined}
-ZHANG~L, HUSTADT~U, DIXON~C.
-\newblock A refined resolution calculus for {CTL}\allowbreak[C]//\allowbreak
-International Conference on Automated Deduction.
-\newblock [S.l.]: Springer, 2009{\natexlab{b}}: 245-260.
+\bibitem[Janin et~al.(1996)Janin and Walukiewicz]{janin1996expressive}
+JANIN~D, WALUKIEWICZ~I.
+\newblock On the expressive completeness of the propositional mu-calculus with
+  respect to monadic second order logic\allowbreak[C]//\allowbreak
+International Conference on Concurrency Theory.
+\newblock [S.l.]: Springer, 1996: 263-277.
+
+\bibitem[Wang(2015)]{wang2015forgetting}
+WANG~Y.
+\newblock On forgetting in tractable propositional fragments\allowbreak[J/OL].
+\newblock CoRR, 2015, abs/1502.02799.
+\newblock \url{http://arxiv.org/abs/1502.02799}.
+
+\bibitem[Comon(1997)]{comon1997tree}
+COMON~H.
+\newblock Tree automata techniques and applications\allowbreak[J].
+\newblock http://www. grappa. univ-lille3. fr/tata, 1997.
+
+\bibitem[Lang et~al.(2003)Lang, Liberatore, and
+  Marquis]{DBLP:journals/jair/LangLM03}
+LANG~J, LIBERATORE~P, MARQUIS~P.
+\newblock Propositional independence: Formula-variable independence and
+  forgetting\allowbreak[J/OL].
+\newblock Journal of Artificial Intelligence Research, 2003, 18:\penalty0
+  391-443.
+\newblock \url{https://doi.org/10.1613/jair.1113}.
 
 \bibitem[Emerson et~al.(1985)Emerson and
   Halpern]{DBLP:journals/jcss/EmersonH85}
@@ -912,37 +933,16 @@ MEIER~A, THOMAS~M, VOLLMER~H, et~al.
 \newblock International Journal of Foundations of Computer Science, 2009,
   20\penalty0 (05):\penalty0 901-918.
 
-\bibitem[Lang et~al.(2003)Lang, Liberatore, and
-  Marquis]{DBLP:journals/jair/LangLM03}
-LANG~J, LIBERATORE~P, MARQUIS~P.
-\newblock Propositional independence: Formula-variable independence and
-  forgetting\allowbreak[J/OL].
-\newblock Journal of Artificial Intelligence Research, 2003, 18:\penalty0
-  391-443.
-\newblock \url{https://doi.org/10.1613/jair.1113}.
+\bibitem[Bolotov(2000)]{bolotov2000clausal}
+BOLOTOV~A.
+\newblock Clausal resolution for branching-time temporal logic.\allowbreak[D].
+\newblock [S.l.]: Manchester Metropolitan University, 2000.
 
-\bibitem[Wolper(1983)]{DBLP:journals/iandc/Wolper83}
-WOLPER~P.
-\newblock Temporal logic can be more expressive\allowbreak[J/OL].
-\newblock Information and control, 1983, 56\penalty0 (1/2):\penalty0 72-99.
-\newblock \url{https://doi.org/10.1016/S0019-9958(83)80051-5}.
-
-\bibitem[Janin et~al.(1996)Janin and Walukiewicz]{janin1996expressive}
-JANIN~D, WALUKIEWICZ~I.
-\newblock On the expressive completeness of the propositional mu-calculus with
-  respect to monadic second order logic\allowbreak[C]//\allowbreak
-International Conference on Concurrency Theory.
-\newblock [S.l.]: Springer, 1996: 263-277.
-
-\bibitem[Wang(2015)]{wang2015forgetting}
-WANG~Y.
-\newblock On forgetting in tractable propositional fragments\allowbreak[J/OL].
-\newblock CoRR, 2015, abs/1502.02799.
-\newblock \url{http://arxiv.org/abs/1502.02799}.
-
-\bibitem[Comon(1997)]{comon1997tree}
-COMON~H.
-\newblock Tree automata techniques and applications\allowbreak[J].
-\newblock http://www. grappa. univ-lille3. fr/tata, 1997.
+\bibitem[Zhang et~al.(2009{\natexlab{b}})Zhang, Hustadt, and
+  Dixon]{zhang2009refined}
+ZHANG~L, HUSTADT~U, DIXON~C.
+\newblock A refined resolution calculus for {CTL}\allowbreak[C]//\allowbreak
+International Conference on Automated Deduction.
+\newblock [S.l.]: Springer, 2009{\natexlab{b}}: 245-260.
 
 \end{thebibliography}

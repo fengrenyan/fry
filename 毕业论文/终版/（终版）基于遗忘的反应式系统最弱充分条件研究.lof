@@ -2,7 +2,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces 汽车制造企业模型\relax }}{3}{figure.caption.7}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces 汽车制造企业模型\relax }}{4}{figure.caption.7}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces 本文的章节内容组织结构图\relax }}{11}{figure.caption.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -10,21 +10,22 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces 两个 $\{ch\}$-互模拟的Kripke结构示意图\relax }}{58}{figure.caption.13}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces 初始结构间的$\leq _{{\cal M}}$关系。\relax }}{86}{figure.caption.14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 状态空间为$\{s_0,s_1\}$的六个Kripke结构示意图\relax }}{88}{figure.caption.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces 初始结构$\mathcal {K}_2$（源于图\ref {Fig:chapter04:v1uv2}）及其计算树示意图\relax }}{97}{figure.caption.15}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces 基于归结的遗忘的主要流程图\relax }}{106}{figure.caption.16}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces 计算{\textrm {CTL}-forget}$(\varphi , V)$使用的时间和在“移除原子命题”步骤后${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数，其中$\varphi _i=12$。\relax }}{118}{figure.caption.18}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{118}{figure.caption.18}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{118}{figure.caption.18}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces 计算{\textrm {CTL}-forget}$(\varphi , V)$使用的时间和在“移除原子命题”步骤后${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数，其中$\varphi _i=16$。\relax }}{118}{figure.caption.19}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{118}{figure.caption.19}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{118}{figure.caption.19}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces 计算3-CNF公式SNC的CPU时间\relax }}{119}{figure.caption.20}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{119}{figure.caption.20}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$|V|=25$时所使用CPU时间箱线图 }}}{119}{figure.caption.20}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces 计算$\textrm {CTL}$SNC的平均时间和存在SNC的公式占比.\relax }}{120}{figure.caption.21}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces 初始结构$\mathcal {K}_2$（源于图\ref {Fig:chapter04:v1uv2}）及其计算树示意图\relax }}{98}{figure.caption.16}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces 基于归结的遗忘的主要流程图\relax }}{107}{figure.caption.17}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces 计算{\textrm {CTL}-forget}$(\varphi , V)$使用的时间和在“移除原子命题”步骤后${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数，其中$\varphi _i=12$。\relax }}{119}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{119}{figure.caption.19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{119}{figure.caption.19}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces 计算{\textrm {CTL}-forget}$(\varphi , V)$使用的时间和在“移除原子命题”步骤后${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数，其中$\varphi _i=16$。\relax }}{119}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {计算遗忘需要的CUP时间}}}{119}{figure.caption.20}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {${\textsc {SNF}_{\textsc {ctl}}^g}$子句的个数}}}{119}{figure.caption.20}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces 计算3-CNF公式SNC的CPU时间\relax }}{120}{figure.caption.21}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{120}{figure.caption.21}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {存在SNC的公式占比(\%)}}}{120}{figure.caption.21}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$|V|=25$时所使用CPU时间箱线图 }}}{120}{figure.caption.21}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces 计算$\textrm {CTL}$SNC的平均时间和存在SNC的公式占比.\relax }}{121}{figure.caption.22}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {平均CPU时间(s)}}}{121}{figure.caption.22}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {存在SNC的公式占比(\%)}}}{121}{figure.caption.22}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
