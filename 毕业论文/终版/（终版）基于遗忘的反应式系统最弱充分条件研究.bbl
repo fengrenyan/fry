@@ -1,4 +1,4 @@
-\begin{thebibliography}{125}
+\begin{thebibliography}{126}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
@@ -464,6 +464,17 @@ ROSSI~F.
 \newblock
   \url{http://www.aaai.org/ocs/index.php/IJCAI/IJCAI13/paper/view/6807}.
 
+\bibitem[Wang et~al.(2015)Wang, Wang, Wang, and
+  Zhuang]{DBLP:conf/aaai/WangWWZ15}
+WANG~Y, WANG~K, WANG~Z, et~al.
+\newblock Knowledge forgetting in circumscription: {A} preliminary
+  report\allowbreak[C/OL]//\allowbreak
+BONET~B, KOENIG~S.
+\newblock Proceedings of the Twenty-Ninth {AAAI} Conference on Artificial
+  Intelligence, January 25-30, 2015, Austin, Texas, {USA}.
+\newblock {AAAI} Press, 2015: 1649-1655.
+\newblock \url{http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9866}.
+
 \bibitem[Delgrande(2017)]{DBLP:journals/jair/Delgrande17}
 DELGRANDE~J~P.
 \newblock A knowledge level account of forgetting\allowbreak[J/OL].
@@ -694,6 +705,15 @@ CLARKE~E~M, EMERSON~E~A, SISTLA~A~P.
   244-263.
 \newblock \url{https://doi.org/10.1145/5397.5399}.
 
+\bibitem[Emerson et~al.(1985)Emerson and
+  Halpern]{DBLP:journals/jcss/EmersonH85}
+EMERSON~E~A, HALPERN~J~Y.
+\newblock Decision procedures and expressiveness in the temporal logic of
+  branching time\allowbreak[J/OL].
+\newblock Journal of computer and system sciences, 1985, 30\penalty0
+  (1):\penalty0 1-24.
+\newblock \url{https://doi.org/10.1016/0022-0000(85)90001-7}.
+
 \bibitem[Bolotov et~al.(1999)Bolotov and
   Fisher]{DBLP:journals/jetai/BolotovF99}
 BOLOTOV~A, FISHER~M.
@@ -884,15 +904,6 @@ LANG~J, LIBERATORE~P, MARQUIS~P.
 \newblock Journal of Artificial Intelligence Research, 2003, 18:\penalty0
   391-443.
 \newblock \url{https://doi.org/10.1613/jair.1113}.
-
-\bibitem[Emerson et~al.(1985)Emerson and
-  Halpern]{DBLP:journals/jcss/EmersonH85}
-EMERSON~E~A, HALPERN~J~Y.
-\newblock Decision procedures and expressiveness in the temporal logic of
-  branching time\allowbreak[J/OL].
-\newblock Journal of computer and system sciences, 1985, 30\penalty0
-  (1):\penalty0 1-24.
-\newblock \url{https://doi.org/10.1016/0022-0000(85)90001-7}.
 
 \bibitem[Feng et~al.(2020)Feng, Acar, Schlobach, Wang, and
   Liu]{renyansfirstpaper}
