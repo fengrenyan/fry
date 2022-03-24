@@ -67,6 +67,15 @@
 \usepackage{geometry}
 \geometry{left=2.54cm,right=2.54cm,top=3.17cm,bottom=3.17cm}
 
+\usepackage{paralist} 
+\let\itemize\compactitem 
+\let\enditemize\endcompactitem 
+\let\enumerate\compactenum 
+\let\endenumerate\endcompactenum 
+\let\description\compactdesc 
+\let\enddescription\endcompactdesc
+\setlength{\pltopsep}{3pt}
+
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
 \newcommand{\mycite}[1]{\scalebox{1.3}[1.3]{\raisebox{-0.65ex}{\cite{#1}}}}
@@ -237,6 +246,8 @@
 \newcommand{\Renyan}[1]{\textcolor{red}{#1}}
 \newcommand{\Yisong}[1]{\textcolor{blue}{#1}}
 \newcommand{\Wanwei}[1]{\textcolor{magenta}{#1}}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 封面部分

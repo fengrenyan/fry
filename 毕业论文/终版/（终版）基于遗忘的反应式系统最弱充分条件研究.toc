@@ -8,9 +8,9 @@
 \contentsline {subsection}{\numberline {1.1.2}研究意义}{4}{subsection.1.1.2}
 \contentsline {section}{\numberline {1.2}相关研究工作回顾}{4}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}反应式系统}{5}{subsection.1.2.1}
-\contentsline {subsection}{\numberline {1.2.2}遗忘理论}{6}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.2}遗忘理论}{5}{subsection.1.2.2}
 \contentsline {subsection}{\numberline {1.2.3}SNC和WSC}{8}{subsection.1.2.3}
-\contentsline {section}{\numberline {1.3}研究目标及主要结果}{9}{section.1.3}
+\contentsline {section}{\numberline {1.3}研究目标及主要结果}{8}{section.1.3}
 \contentsline {section}{\numberline {1.4}论文组织结构}{11}{section.1.4}
 \contentsline {chapter}{\numberline {第二章\hspace {0.3em}}基础知识}{13}{chapter.2}
 \contentsline {section}{\numberline {2.1}反应式系统}{13}{section.2.1}
@@ -18,51 +18,51 @@
 \contentsline {subsection}{\numberline {2.2.1}真假赋值和K-解释}{14}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}Kripke结构}{16}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}时序逻辑}{17}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}计算树逻辑（\textrm {CTL}）}{18}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}$\textrm {CTL}$的标准形式}{22}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}$\mu $-演算}{25}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}$\mu $-公式的析取范式}{28}{subsection.2.3.4}
-\contentsline {section}{\numberline {2.4}$\textrm {CTL}$下的归结}{30}{section.2.4}
-\contentsline {section}{\numberline {2.5}遗忘理论和SNC（WSC）}{32}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}经典逻辑的遗忘}{32}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}模态逻辑S5的遗忘}{35}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}遗忘的计算方法}{37}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}基于遗忘的SNC（WSC）计算}{39}{subsection.2.5.4}
-\contentsline {section}{\numberline {2.6}本章小结}{40}{section.2.6}
-\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}$\textrm {CTL}$和$\mu $-演算遗忘理论}{42}{chapter.3}
-\contentsline {section}{\numberline {3.1}$\textrm {CTL}$遗忘理论}{42}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}互模拟}{42}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}遗忘算子及其性质}{49}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}$\mu $-演算遗忘理论}{56}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Var-互模拟}{57}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}遗忘算子及其性质}{65}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}计算复杂性}{75}{subsection.3.2.3}
-\contentsline {section}{\numberline {3.3}本章小结}{78}{section.3.3}
-\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}遗忘理论在反应式系统中的应用}{79}{chapter.4}
-\contentsline {section}{\numberline {4.1}最弱充分条件}{79}{section.4.1}
-\contentsline {section}{\numberline {4.2}知识更新}{83}{section.4.2}
-\contentsline {section}{\numberline {4.3}本章小结}{87}{section.4.3}
-\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}$\textrm {CTL}$遗忘计算方法}{88}{chapter.5}
-\contentsline {section}{\numberline {5.1}基于模型的有界$\textrm {CTL}$遗忘计算}{88}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}描述初始结构}{89}{subsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.1.1}计算树$V$-互模拟}{89}{subsubsection.5.1.1.1}
-\contentsline {subsubsection}{\numberline {5.1.1.2}计算树的特征公式}{91}{subsubsection.5.1.1.2}
-\contentsline {subsubsection}{\numberline {5.1.1.3}初始结构的特征公式}{94}{subsubsection.5.1.1.3}
-\contentsline {subsection}{\numberline {5.1.2}遗忘封闭性及复杂性}{101}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}基于模型的遗忘算法}{103}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}基于归结的遗忘计算方法}{105}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}基于归结的算法$\textrm {CTL}$-forget}{106}{subsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.1.1}$\textrm {CTL}$归结$\textsc {uf}$}{106}{subsubsection.5.2.1.1}
-\contentsline {subsubsection}{\numberline {5.2.1.2}转换${\textsc {SNF}_{\textsc {ctl}}^g}$子句为$\textrm {CTL}$公式}{110}{subsubsection.5.2.1.2}
-\contentsline {subsubsection}{\numberline {5.2.1.3}算法及其复杂性分析}{113}{subsubsection.5.2.1.3}
-\contentsline {subsection}{\numberline {5.2.2}基于Prolog的$\textrm {CTL}$-forget算法实现}{115}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}实验}{116}{subsection.5.2.3}
-\contentsline {subsubsection}{\numberline {5.2.3.1}遗忘实验分析}{116}{subsubsection.5.2.3.1}
-\contentsline {subsubsection}{\numberline {5.2.3.2}SNC计算结果分析}{117}{subsubsection.5.2.3.2}
-\contentsline {section}{\numberline {5.3}本章小结}{119}{section.5.3}
-\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}总结与展望}{121}{chapter.6}
-\contentsline {section}{\numberline {6.1}工作总结}{121}{section.6.1}
-\contentsline {section}{\numberline {6.2}研究展望}{122}{section.6.2}
-\contentsline {chapter}{参考文献}{123}{chapter*.23}
-\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{136}{chapter*.24}
-\contentsline {chapter}{攻读博士学位期间科研和论文情况}{137}{chapter*.25}
+\contentsline {subsection}{\numberline {2.3.1}计算树逻辑（\textrm {CTL}）}{17}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}$\textrm {CTL}$的标准形式}{21}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}$\mu $-演算}{24}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}$\mu $-公式的析取范式}{27}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}$\textrm {CTL}$下的归结}{29}{section.2.4}
+\contentsline {section}{\numberline {2.5}遗忘理论和SNC（WSC）}{31}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}经典逻辑的遗忘}{31}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}模态逻辑S5的遗忘}{33}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}遗忘的计算方法}{35}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}基于遗忘的SNC（WSC）计算}{37}{subsection.2.5.4}
+\contentsline {section}{\numberline {2.6}本章小结}{39}{section.2.6}
+\contentsline {chapter}{\numberline {第三章\hspace {0.3em}}$\textrm {CTL}$和$\mu $-演算遗忘理论}{40}{chapter.3}
+\contentsline {section}{\numberline {3.1}$\textrm {CTL}$遗忘理论}{40}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}互模拟}{40}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}遗忘算子及其性质}{47}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}$\mu $-演算遗忘理论}{53}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Var-互模拟}{54}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}遗忘算子及其性质}{62}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}计算复杂性}{72}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}本章小结}{74}{section.3.3}
+\contentsline {chapter}{\numberline {第四章\hspace {0.3em}}遗忘理论在反应式系统中的应用}{75}{chapter.4}
+\contentsline {section}{\numberline {4.1}最弱充分条件}{75}{section.4.1}
+\contentsline {section}{\numberline {4.2}知识更新}{79}{section.4.2}
+\contentsline {section}{\numberline {4.3}本章小结}{82}{section.4.3}
+\contentsline {chapter}{\numberline {第五章\hspace {0.3em}}$\textrm {CTL}$遗忘计算方法}{84}{chapter.5}
+\contentsline {section}{\numberline {5.1}基于模型的有界$\textrm {CTL}$遗忘计算}{84}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}描述初始结构}{85}{subsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.1.1}计算树$V$-互模拟}{85}{subsubsection.5.1.1.1}
+\contentsline {subsubsection}{\numberline {5.1.1.2}计算树的特征公式}{87}{subsubsection.5.1.1.2}
+\contentsline {subsubsection}{\numberline {5.1.1.3}初始结构的特征公式}{90}{subsubsection.5.1.1.3}
+\contentsline {subsection}{\numberline {5.1.2}遗忘封闭性及复杂性}{97}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}基于模型的遗忘算法}{99}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}基于归结的遗忘计算方法}{101}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}基于归结的算法$\textrm {CTL}$-forget}{102}{subsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.1.1}$\textrm {CTL}$归结$\textsc {uf}$}{102}{subsubsection.5.2.1.1}
+\contentsline {subsubsection}{\numberline {5.2.1.2}转换${\textsc {SNF}_{\textsc {ctl}}^g}$子句为$\textrm {CTL}$公式}{106}{subsubsection.5.2.1.2}
+\contentsline {subsubsection}{\numberline {5.2.1.3}算法及其复杂性分析}{109}{subsubsection.5.2.1.3}
+\contentsline {subsection}{\numberline {5.2.2}基于Prolog的$\textrm {CTL}$-forget算法实现}{110}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}实验}{112}{subsection.5.2.3}
+\contentsline {subsubsection}{\numberline {5.2.3.1}遗忘实验分析}{112}{subsubsection.5.2.3.1}
+\contentsline {subsubsection}{\numberline {5.2.3.2}SNC计算结果分析}{114}{subsubsection.5.2.3.2}
+\contentsline {section}{\numberline {5.3}本章小结}{115}{section.5.3}
+\contentsline {chapter}{\numberline {第六章\hspace {0.3em}}总结与展望}{117}{chapter.6}
+\contentsline {section}{\numberline {6.1}工作总结}{117}{section.6.1}
+\contentsline {section}{\numberline {6.2}研究展望}{118}{section.6.2}
+\contentsline {chapter}{参考文献}{119}{chapter*.23}
+\contentsline {chapter}{致\CTEX@spaceChar \CTEX@spaceChar 谢}{132}{chapter*.24}
+\contentsline {chapter}{攻读博士学位期间科研和论文情况}{133}{chapter*.25}
