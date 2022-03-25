@@ -589,26 +589,37 @@ $\mu$-演算是模态逻辑的扩展，构成$\mu$-演算语言的符号有：
 	\item 原子命题符号集：$\cal A$；
 	\item 变元符号的可数集：$\cal V$；
 	\item 常量符号：$\bot$和$\top$；
-	\item 布尔联结符号：$\vee$，$\wedge$，和$\neg$;
+	\item 布尔联结符号：$\vee$，$\wedge$，$\rto$和$\neg$;
 	\item 路径量词符号：$\ALL$和$\EXIST$;
 	\item 时序操作符号：\NEXT\ 用于用于表示“下一个状态”;
 	\item 不动点符号：$\mu$和$\nu$，分别表示“最小不动点”和“最大不动点”。
 \end{itemize}
 
-通常认为$\ALL\NEXT$和$\EXIST\NEXT$的优先级比布尔连接符高~\cite{bradfield2018mu}，为了保证文章的统一性，本文规定各类符号之间的优先级如下（从左到右优先级逐渐变低）：
+通常认为$\ALL\NEXT$和$\EXIST\NEXT$的优先级比布尔连接符高~\cite{bradfield2018mu}，本文规定各类符号之间的优先级如下（从左到右优先级逐渐变低）：
 \[
-\neg\qquad \EXIST\NEXT\qquad \ALL\NEXT\qquad \wedge\qquad \vee\qquad \mu\qquad \nu.
+\neg\qquad \EXIST\NEXT\qquad \ALL\NEXT\qquad \wedge\qquad \vee\qquad \mu \qquad \nu.
 \]
-此时可如下定义$\mu$-演算公式（简称为$\mu$-公式或公式）：
+此时，可如下定义$\mu$-演算公式（简称为$\mu$-公式或公式）：
 \[
-\varphi := \top \mid \bot \mid p\mid \neg p\mid  X\mid \varphi \vee \varphi \mid \varphi \wedge \varphi \mid \EXIST\NEXT \varphi\mid \ALL\NEXT \varphi \mid \mu X. \varphi\mid \nu X. \varphi
+	\varphi ::=   p\mid  X\mid \neg \varphi\mid \varphi \vee \varphi \mid \ALL\NEXT \varphi\mid  \nu X. \varphi
 \]
-其中$p\in \Ha$且$X\in {\cal V}$。$\ALL\NEXT$和$\EXIST\NEXT$为时序算子。称出现在$\mu X. \varphi$和$\nu X. \varphi$中的变元$X$是\emph{受约束的}（bound），不受约束的变元称为\emph{自由变元}。
+其中$p\in \Ha$且$X\in {\cal V}$。此外，公式$\nu X.\varphi$中的$X$总是正出现在$\varphi$中，即：$\varphi$中$X$的每一次出现之前都有偶数个否定符号$\neg$。
+$\ALL\NEXT$和$\EXIST\NEXT$为时序算子。称出现在$\mu X. \varphi$和$\nu X. \varphi$中的变元$X$是\emph{受约束的}（bound），不受约束的变元称为\emph{自由变元}。
 原子命题和变元符号及其各自的否定称为\emph{文字}，出现在公式$\varphi$中的原子命题和变元的集合记为$\Var(\varphi)$。
+
+其它公式定义如下：
+\begin{itemize}
+	\item $\bot=_{def} p\land\neg p$, $\top=_{def}\neg\bot$,
+	\item $\varphi\land\psi =_{def} \neg(\neg\varphi\lor \neg\psi)$,
+	\item $\varphi\rto\psi=_{def} \neg\varphi \lor \psi$,
+	\item $\EXIST\NEXT\varphi =_{def} \neg\ALL\NEXT\neg\varphi$,
+	\item $\mu X.\varphi(X)=_{def}  \neg \nu X.\neg\varphi(\neg X)$
+\end{itemize}
+其中$p\in {\cal A}$，$\varphi(X)$表示$X$出现在公式$\varphi$中，$\varphi(\neg X)$是将$\varphi$中$X$的所有出现同时用$\neg X$替换得到的公式。
 
 \textbf{注意：}$\mu$-演算公式的定义通常考虑动作集$Act$和一组与集合$Act$中的动作$a$相关的模态词“$\tuple{a}$”\cite{DBLP:journals/cacm/Kozen83,d1996uniform,d2000logical}。为了方便，本文考虑公式里只有一个动作的情形，但是本文的结论可以扩展到一般的情形。此时，模态词中的动作$a$可以省略，且公式$\EXIST\NEXT\varphi$（或$\ALL\NEXT \varphi$）与公式 $\tuple{a}\varphi$（或$[a]\varphi$）\cite{d2000logical}相同。
 
-由上述定义可以看出，“$\neg$”符号只能出现在原子命题符号的前面。但在$\mu$-演算公式的一般定义中，“$\neg$”符号可以出现在变元符号的前面，但是要求变元符号前的“$\neg$”符号的个数为偶数。尽管如此，这两种方式定义的公式具有相同的表达能力。
+%由上述定义可以看出，“$\neg$”符号只能出现在原子命题符号的前面。但在$\mu$-演算公式的一般定义中，“$\neg$”符号可以出现在变元符号的前面，但是要求变元符号前的“$\neg$”符号的个数为偶数。尽管如此，这两种方式定义的公式具有相同的表达能力。
 
 对于给定的公式$\varphi$，若出现在其中的自由变元与受约束变元不同，且每个变元最多被约束一次，则称公式$\varphi$是\emph{取名恰当的}（well-named）。此外，若公式$\delta X.\varphi(X)$（$\delta \in \{\mu, \nu\}$）中变元$X$的每次出现都是在$\EXIST\NEXT$或$\ALL\NEXT$的辖域\footnote{给定公式$*\varphi$（$*\in \{\neg, \EXIST\NEXT,\ALL\NEXT, \mu X, \nu X\}$），则称$\varphi$为$*$在公式$*\varphi$中的\textbf{辖域}。对于公式$\varphi * \psi$（$*\in \{\vee, \wedge\}$），则分别称$\varphi$和$\psi$为它们之间的$*$在$\varphi * \psi$中的左辖域和右辖域。}内，则称变元在公式$\delta X.\varphi(X)$中是\emph{受保护的}（guarded）。
 一个没有自由变元出现的公式称为\emph{$\mu$-句子}（sentence）。\emph{在本文中所谈到的公式指的是取名恰当的、受保护的$\mu$-句子}。
@@ -619,14 +630,14 @@ $\mu$-演算是模态逻辑的扩展，构成$\mu$-演算语言的符号有：
 \begin{definition}
 	给定$\mu$-演算公式$\varphi$、初始Kripke结构$\Hm$和一个从${\cal V}$中的变量到$\Hm$中状态的赋值函数$v: {\cal V} \rto 2^S$。公式在$\Hm$和$v$上的解释是$S$的一个子集$\left\| \varphi\right\|_v^{\Hm}$（如果在上下文中$\Hm$是明确的，则可以省去上标）：
 	\begin{align*}
-		& \left \| p\right \|_v = \{s\mid p \in L(s)\} \ ,\ \left\|\top\right\|_v = S \ ,\ \left\|\bot\right\|_v = \emptyset, \\
-		& \left\|\neg p\right\|_v = S- \left\| p\right\|_v,\\
+		& \left \| p\right \|_v = \{s\mid p \in L(s)\}, \\ % \left\|\top\right\|_v = S \ ,\ \left\|\bot\right\|_v = \emptyset, \\
+		%& \left\|\neg p\right\|_v = S- \left\| p\right\|_v,\\
 		& \left\| X\right\|_v = v(X),\\
 		& \left\|\varphi_1 \vee \varphi_2\right\|_v = \left\|\varphi_1\right\|_v \cup \left\|\varphi_2\right\|_v,\\
-		& \left\|\varphi_1 \wedge \varphi_2\right\|_v = \left\|\varphi_1\right\|_v \cap \left\|\varphi_2\right\|_v,\\
-		& \left\|\EXIST \NEXT \varphi\right\|_v = \{s\mid \exists s'. (s, s') \in R \wedge s' \in \left\|\varphi\right\|_v\},\\
+	%	& \left\|\varphi_1 \wedge \varphi_2\right\|_v = \left\|\varphi_1\right\|_v \cap \left\|\varphi_2\right\|_v,\\
+	%	& \left\|\EXIST \NEXT \varphi\right\|_v = \{s\mid \exists s'. (s, s') \in R \wedge s' \in \left\|\varphi\right\|_v\},\\
 		& \left\|\ALL \NEXT \varphi\right\|_v = \{s\mid \forall s'. (s, s') \in R \Rto s' \in \left\|\varphi\right\|_v\},\\
-		& \left\| \mu X. \varphi\right\|_v = \bigcap\{S' \subseteq S \mid \left\|\varphi\right\|_{v[X:= S']} \subseteq S'\},\\
+	%	& \left\| \mu X. \varphi\right\|_v = \bigcap\{S' \subseteq S \mid \left\|\varphi\right\|_{v[X:= S']} \subseteq S'\},\\
 		& \left\| \nu X. \varphi\right\|_v = \bigcup\{S' \subseteq S \mid S' \subseteq \left\|\varphi\right\|_{v[X:= S']}\}.
 	\end{align*}
 其中，$v[X:= S']$是一个赋值函数，它除了$v[X:= S'](X)=S'$之外，和$v$完全相同。也即是，对任意$Y\in {\cal V}$：
@@ -641,45 +652,108 @@ $\mu$-演算是模态逻辑的扩展，构成$\mu$-演算语言的符号有：
 \end{definition}
 
 直观地，$\| \varphi \|_v^{\Hm}$为在$\Hm$和$v$上$\varphi$为真的状态集合。
-称由$\Hm$和其赋值$v$构成的对$(\Hm,v)$为{\em 赋值}。
+称由$\Hm$，其赋值$v$和$\Hm$上的状态$s$构成的三元组$(\Hm,s,v)$为{\em 赋值}（当$s$为$\Hm$的根时，$(\Hm,s,v)$简写为$(\Hm,v)$，也称其为一个赋值）。
 在下文中，若$s\in \left\| \varphi \right\|_v$，则称$s$“满足”$\varphi$，记为$(\Hm, s, v) \models \varphi$。
-此时，若$(\Hm, r, v) \models \varphi$，则称$(\Hm, r, v)$为$\varphi$的一个模型。
-当公式$\varphi$为$\mu$-句子时，可以将赋值函数$v$省略，记为$(\Hm, s) \models \varphi$。
-记$\Mod(\varphi)$为$\varphi$的模型的集合，即$\Mod(\varphi) = \{(\Hm,r) \mid (\Hm,r,v) \models \varphi\}$（也可简写为$\Mod(\varphi) = \{\Hm\mid (\Hm,r,v) \models \varphi\}$）。其它记号与$\CTL$情形类似，这里不再赘述。
+用$(\Hm,v)\models \varphi$代替$(\Hm, r, v) \models \varphi$。
+当公式$\varphi$为$\mu$-句子时，可以将赋值函数$v$省略。
+%，记为$(\Hm, s) \models \varphi$。
 
-由Tarski-Knaster定理可知，集合$U$子集上的单调函数$f$的最小和最大不动点可以由超穷归纳法得到，即最小不动点$\mu(f)= \bigcup\mu_{\alpha}(f)$，其中：
-\begin{itemize}
-	\item $\mu_0(f) = \emptyset$，
-	\item $\mu_{\alpha+1} =  f(\mu_{\alpha}(f))$，$\alpha$为后继序数，
-	\item $\mu_{\lambda} = \bigcup_{\alpha < \lambda} \mu_{\alpha}(f)$， $\lambda$为极限序数。
-\end{itemize}
-最大不动点 $\nu(f) = \bigcap\nu_{\alpha}(f)$，其中
-\begin{itemize}
-	\item $\nu_0(f) = U$，
-	\item $\nu_{\alpha+1} =  f(\nu_{\alpha}(f))$，$\alpha$为后继序数，
-	\item $\nu_{\lambda} = \bigcap_{\alpha < \lambda} \nu_{\alpha}(f)$，$\lambda$为极限序数。
-\end{itemize}
 
-由公式的定义可知，变量前面不会出现$\neg$符号，所以在 $\mu X. \varphi(X)$中， $\varphi(X)$ 是关于$X$的单调函数。
-因此，$\left\| \mu X. \varphi(X)\right\|_v$是单调函数$\left\| \varphi \right\|_{v}: 2^S\rto 2^S$（也写作$Y \mapsto \left\| \varphi\right\|_{v[X:=Y]}$）的最小不动点。
-下面给出如何使用上述定义计算最小不动点和最大不动点。
-\begin{example}
-	(1) 令 $\varphi=\nu X. \psi$、 $\Hm=(S, R, L,r)$为初始Kripke结构，其中$\psi = (j \wedge ch) \wedge \ALL\NEXT (\neg j \wedge \neg ch) \wedge \ALL\NEXT \ALL\NEXT X$，则：
+\begin{lemma}\label{lem:ms}
+	令$\Hm=(S,r,R,L)$、$\Hm_s = (S,s, R, L)$、$v:{\cal V} \rto 2^S$、$s\in S$且$\varphi$为$\mu$-公式，则：
 	\begin{itemize}
-		\item $\nu_0(\left\| \psi \right\|) = S$，
-		\item $\nu_1(\left\| \psi \right\|) = \left\| j \right\| \cap \left\| ch \right\| \cap \left\| \ALL\NEXT (\neg j \wedge \neg ch) \right\| \cap \left\| \ALL\NEXT \ALL\NEXT \nu_0(\left\| \psi \right\|) \right\|$ $=\{s \mid s \in L(j) \cap L(ch)$ 和 $\forall t. (s, t) \in R, t \in S - (L(j) \cup L(ch))\}$，
-%		\item ...
+		\item[(i)] 对任意$s_1 \in S$，$s_1 \in \left\|\varphi\right\|_{v}^{\Hm}$当且仅当$s_1 \in \left\|\varphi\right\|_{v}^{\Hm_s}$；
+		% for any $S'\subseteq S$, this implies 
+		% $S' \subseteq \left\|\varphi\right\|_{v[X:=S']}^{\Hm}$ iff $S' \subseteq \left\|\varphi\right\|_{v[X:=S']}^{\Hm_s}$;
+		\item[(ii)] $(\Hm,s,v) \models \varphi$当且仅当$(\Hm_s,v)\models \varphi$。
 	\end{itemize}
-	(2) 令 $\varphi=\nu X. \psi$、 $\Hm=(S, R, L,r)$为初始Kripke结构，其中$\psi=(j \wedge ch) \wedge \EXIST\NEXT (\neg j \wedge \neg ch) \wedge \EXIST\NEXT \EXIST\NEXT X$，则：
-	\begin{itemize}
-		\item $\nu_0(\left\| \psi \right\|) = S$，
-		\item $\nu_1(\left\| \psi \right\|) = \left\| j \right\| \cap \left\| ch \right\| \cap \left\| \ALL\NEXT (\neg j \wedge \neg ch) \right\| \cap \left\| \ALL\NEXT \ALL\NEXT \nu_0(\left\| \psi \right\|) \right\|$ $=\{s \mid s \in L(j) \cap L(ch)$ 和 $\exists t. (s, t) \in R, t \in S - (L(j) \cup L(ch))\}$，
-		\item $\nu_2(\left\| \psi \right\|) = \left\| j \right\| \cap \left\| ch \right\| \cap \left\| \ALL\NEXT (\neg j \wedge \neg ch) \right\| \cap \left\| \ALL\NEXT \ALL\NEXT \nu_1(\left\| \psi \right\|) \right\|$，
-	%	\item ...
-	\end{itemize}
-当给定了初始Kripke结构，根据上述过程，便可以计算出最大和最小不动点。
-%	For the Kripke structure $\Hm$ in (a) of Example~\ref{examp:run}, we have $\left\| \varphi \right\| = \{s_0\}$.
-\end{example}
+\end{lemma}
+\begin{proof}
+	(i) \textbf{基始.} (a) $\varphi = p$，其中$p \in \Ha$。
+	
+	$s_1 \in \left\|\varphi\right\|_{v}^{\Hm}$\\
+	$\LRto$ $s_1 \in \{s' \mid p \in L(s')\}$\\
+	$\LRto$ $s_1 \in \left\|\varphi\right\|_{v}^{\Hm_s}$。
+	
+	(b) $\varphi = X$，其中$X\in {\cal V}$。
+	
+	$s_1 \in \left\|\varphi\right\|_{v}^{\Hm}$\\
+	$\LRto$ $s_1 \in v(X)$ \\
+	$\LRto$ $s_1 \in \left\|\varphi\right\|_{v}^{\Hm_s}$。\\
+	
+	
+	\textbf{归纳步.} (a) $\varphi = \neg \varphi_1$。
+	
+	$s_1\in \left\|\varphi\right\|_{v}^{\Hm}$\\
+	$\LRto$ $s_1 \not \in \left\|\varphi_1\right\|_{v}^{\Hm}$\\
+	$\LRto$ $s_1 \not \in \left\|\varphi_1\right\|_{v}^{\Hm_s}$ \hfill (归纳假设)\\
+	$\LRto$ $s_1 \in \left\|\varphi\right\|_{v}^{\Hm_s}$。
+	
+	(b) $\varphi = \varphi_1 \vee \varphi_2$。
+	
+	$s_1 \in \left\|\varphi\right\|_{v}^{\Hm}$\\
+	$\LRto$  $s_1 \in \left\|\varphi_1\right\|_{v}^{\Hm}$或$s_1 \in \left\|\varphi_2\right\|_{v}^{\Hm}$\\
+	$\LRto$  $s_1 \in \left\|\varphi_1\right\|_{v}^{\Hm_s}$或$s_1 \in \left\|\varphi_2\right\|_{v}^{\Hm_s}$ \hfill (归纳假设)\\
+	$\LRto$ $s_1 \in \left\|\varphi\right\|_{v}^{\Hm_s}$。
+	
+	(c) $\varphi = \ALL\NEXT \varphi_1$。
+	
+	$s_1 \in \left\|\varphi\right\|_{v}^{\Hm}$\\
+	$\LRto$  $s_1 \in \{s' \mid \forall s''.(s',s'') \in R \Rto s''\in \left\|\varphi_1\right\|_{v}^{\Hm}\}$\\
+	$\LRto$ $s_1 \in  \{s' \mid \forall s''.(s',s'') \in R \Rto s''\in \left\|\varphi_1\right\|_{v}^{\Hm_s}\}$ \hfill (归纳假设)\\
+	$\LRto$ $s_1 \in \left\|\varphi\right\|_{v}^{\Hm_s}$。
+	
+	(d) $\varphi = \nu X. \varphi_1$。
+	
+	$s_1 \in \left\|\varphi\right\|_{v}^{\Hm}$\\
+	$\LRto$ $s_1\in \bigcup \{S' \subseteq S \mid S' \subseteq \left\|\varphi_1\right\|_{v[X:=S']}^{\Hm}\}$ \\
+	$\LRto$ 存在$S' \subseteq S$，使得$s_1 \in S'$和$S' \subseteq \left\|\varphi_1\right\|_{v[X:=S']}^{\Hm}$\\
+	$\LRto$ 存在$S' \subseteq S$，使得$s_1 \in S'$和$S' \subseteq \left\|\varphi_1\right\|_{v[X:=S']}^{\Hm_s}$ \hfill (归纳假设)\\
+	$\LRto$ $s_1 \in \bigcup \{S' \subseteq S \mid S' \subseteq \left\|\varphi_1\right\|_{v[X:=S']}^{\Hm_s}\}$\\
+	$\LRto$ $s_1 \in  \left\|\varphi\right\|_{v}^{\Hm_s}$。
+	
+	(ii) $(\Hm,s,v) \models \varphi$ \\
+	$\LRto$ $s \in \left\|\varphi\right\|_{v}^{\Hm}$ \\
+	$\LRto$ $s \in \left\|\varphi\right\|_{v}^{\Hm_s}$ \hfill (i)\\
+	$\LRto$ $(\Hm_s, v) \models \varphi$。
+\end{proof}
+
+因此，只将$(\Hm,v)$作为公式的模型，记$\Mod(\varphi)$为$\varphi$的模型的集合，即$\Mod(\varphi) = \{(\Hm,v) \mid (\Hm,r,v) \models \varphi\}$（当$\varphi$为$\mu$-句子时，也可简写为$\Mod(\varphi) = \{\Hm\mid (\Hm,r,v) \models \varphi\}$）。
+其它记号与$\CTL$情形类似，这里不再赘述。
+
+%由Tarski-Knaster定理可知，集合$U$子集上的单调函数$f$的最小和最大不动点可以由超穷归纳法得到，即最小不动点$\mu(f)= \bigcup\mu_{\alpha}(f)$，其中：
+%\begin{itemize}
+%	\item $\mu_0(f) = \emptyset$，
+%	\item $\mu_{\alpha+1} =  f(\mu_{\alpha}(f))$，$\alpha$为后继序数，
+%	\item $\mu_{\lambda} = \bigcup_{\alpha < \lambda} \mu_{\alpha}(f)$， $\lambda$为极限序数。
+%\end{itemize}
+%最大不动点 $\nu(f) = \bigcap\nu_{\alpha}(f)$，其中
+%\begin{itemize}
+%	\item $\nu_0(f) = U$，
+%	\item $\nu_{\alpha+1} =  f(\nu_{\alpha}(f))$，$\alpha$为后继序数，
+%	\item $\nu_{\lambda} = \bigcap_{\alpha < \lambda} \nu_{\alpha}(f)$，$\lambda$为极限序数。
+%\end{itemize}
+%
+%由公式的定义可知，变量前面不会出现$\neg$符号，所以在 $\mu X. \varphi(X)$中， $\varphi(X)$ 是关于$X$的单调函数。
+%因此，$\left\| \mu X. \varphi(X)\right\|_v$是单调函数$\left\| \varphi \right\|_{v}: 2^S\rto 2^S$（也写作$Y \mapsto \left\| \varphi\right\|_{v[X:=Y]}$）的最小不动点。
+%下面给出如何使用上述定义计算最小不动点和最大不动点。
+%\begin{example}
+%	(1) 令 $\varphi=\nu X. \psi$、 $\Hm=(S, R, L,r)$为初始Kripke结构，其中$\psi = (j \wedge ch) \wedge \ALL\NEXT (\neg j \wedge \neg ch) \wedge \ALL\NEXT \ALL\NEXT X$，则：
+%	\begin{itemize}
+%		\item $\nu_0(\left\| \psi \right\|) = S$，
+%		\item $\nu_1(\left\| \psi \right\|) = \left\| j \right\| \cap \left\| ch \right\| \cap \left\| \ALL\NEXT (\neg j \wedge \neg ch) \right\| \cap \left\| \ALL\NEXT \ALL\NEXT \nu_0(\left\| \psi \right\|) \right\|$ $=\{s \mid s \in L(j) \cap L(ch)$ 和 $\forall t. (s, t) \in R, t \in S - (L(j) \cup L(ch))\}$，
+%%		\item ...
+%	\end{itemize}
+%	(2) 令 $\varphi=\nu X. \psi$、 $\Hm=(S, R, L,r)$为初始Kripke结构，其中$\psi=(j \wedge ch) \wedge \EXIST\NEXT (\neg j \wedge \neg ch) \wedge \EXIST\NEXT \EXIST\NEXT X$，则：
+%	\begin{itemize}
+%		\item $\nu_0(\left\| \psi \right\|) = S$，
+%		\item $\nu_1(\left\| \psi \right\|) = \left\| j \right\| \cap \left\| ch \right\| \cap \left\| \ALL\NEXT (\neg j \wedge \neg ch) \right\| \cap \left\| \ALL\NEXT \ALL\NEXT \nu_0(\left\| \psi \right\|) \right\|$ $=\{s \mid s \in L(j) \cap L(ch)$ 和 $\exists t. (s, t) \in R, t \in S - (L(j) \cup L(ch))\}$，
+%		\item $\nu_2(\left\| \psi \right\|) = \left\| j \right\| \cap \left\| ch \right\| \cap \left\| \ALL\NEXT (\neg j \wedge \neg ch) \right\| \cap \left\| \ALL\NEXT \ALL\NEXT \nu_1(\left\| \psi \right\|) \right\|$，
+%	%	\item ...
+%	\end{itemize}
+%当给定了初始Kripke结构，根据上述过程，便可以计算出最大和最小不动点。
+%%	For the Kripke structure $\Hm$ in (a) of Example~\ref{examp:run}, we have $\left\| \varphi \right\| = \{s_0\}$.
+%\end{example}
 
 
 \subsection{$\mu$-公式的析取范式}

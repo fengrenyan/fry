@@ -650,25 +650,16 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 本文称这一性质为$V$-不变性。
 %值得注意的是这里的结构之间的$V$-互模拟是$\CTL$
 %In this case, $\Hm_1$ and $\Hm_2$ are bisimilar on $V$.
-\begin{example}
-	\label{exmp:c06:bisim}
-	如图\ref{chapter06:fig:bisim}中的两个Kripke结构$\Hm=(S,R,L,r)$和 $\Hm'=(S',R',L',r')$，其中:
+\begin{example}\label{exmp:c06:bisim}
+	 令$\varphi= \nu X.( ch \wedge j \wedge  \EXIST \NEXT \EXIST \NEXT X)$，易证下面两个赋值$(\Hm,v)$和$(\Hm',v')$（图~\ref{chapter06:fig:bisim}中的两个Kripke结构）
+	 是$\varphi$的模型，其中
 	\begin{itemize}
-		\item $S=\{s_0,s_1,s_2\}$，$S'=\{t_0,t_1\}$，$r=s_0$，$r'=t_0$；
-		\item $R=\{(s_0,s_1),(s_1,s_0),(s_0,s_2),(s_2,s_0)\}$，$R'=\{t_0,t_1\}$；
-		\item $L(s_0)=\{ch,j\}$，$L(s_1)=\{ch\}$，$L(s_2)=\emptyset$，$L'(t_0)=\{j\}$，$L'(t_1)=\emptyset$。
-	\end{itemize}
-	由于$\Hm$和 $\Hm'$之间存在一个二元$\{ch\}$-互模拟$\Hb=\{(s_0, t_0), (s_1, t_1), (s_2, t_1)\}$，所以 $\Hm \lrto_{\{ch\}} \Hm'$。%，所以$\Hm\lrto \Hm'$。
+		\item $\Hm=(S,r,R,L)$，其中$S=\{s_0,s_1,s_2\}$，$r=s_0$，$L(s_0)=\{ch, j\}$，$L(s_1)=\{ch\}$，$L(s_2)=\emptyset$，$R=\{(s_0,s_1), (s_1,s_0), (s_0,s_2), (s_2,s_0)\}$，$v(X)=\{s_0\}$，
+		\item  $\Hm'=(S',r',R',L')$，其中$S'=\{t_0,t_1\}, r'=t_0$，$L'(t_0)=\{j\}$，$L'(t_1)=\emptyset$，$R'=\{(t_0,t_1), (t_1,$ $t_0)\}$且
+		$v'(X)=\{t_0\}$。
+	\end{itemize} 
 	
-	
-	
-	% 	\begin{center}\label{fig:bisim}
-	% 		\includegraphics[width=5cm,height=3cm]{chBisimilar.png}\\
-	% 		%\vspace{2mm}
-	% 		\parbox[c]{7cm}{\textbf{Fig.1~}  Two $\{ch\}$-bisimilar Kripke structures}%\vspace*{.2mm}
-	% 	\end{center}
-	
-	\begin{figure}[h]%
+		\begin{figure}[h]%
 		\centering
 		\includegraphics[width=4.5cm,height=2.5cm]{chapter06/chvB1.png}
 		\caption{两个 $\{ch\}$-互模拟的Kripke结构示意图}\label{chapter06:fig:bisim}
@@ -676,17 +667,63 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 		% $s_0$ is labeled by $\{ch, j\}$, $t_0$ is labeled by $\{j\}$, and $s_1$, $s_2$, and $t_1$ are labeled by $\emptyset$.}\label{fig:bisim}
 	\end{figure}
 	
+	由于$\Hm$和 $\Hm'$之间存在一个二元$\{ch\}$-互模拟$\Hb=\{(s_0, t_0), (s_1, t_1), (s_2, t_1)\}$，所以，$\Hm \lrto_{\{ch\}}$ $\Hm'$。
 \end{example}
+%\begin{example}
+%	\label{exmp:c06:bisim}
+%	如图\ref{chapter06:fig:bisim}中的两个Kripke结构$\Hm=(S,R,L,r)$和 $\Hm'=(S',R',L',r')$，其中:
+%	\begin{itemize}
+%		\item $S=\{s_0,s_1,s_2\}$，$S'=\{t_0,t_1\}$，$r=s_0$，$r'=t_0$；
+%		\item $R=\{(s_0,s_1),(s_1,s_0),(s_0,s_2),(s_2,s_0)\}$，$R'=\{t_0,t_1\}$；
+%		\item $L(s_0)=\{ch,j\}$，$L(s_1)=\{ch\}$，$L(s_2)=\emptyset$，$L'(t_0)=\{j\}$，$L'(t_1)=\emptyset$。
+%	\end{itemize}
+%	由于$\Hm$和 $\Hm'$之间存在一个二元$\{ch\}$-互模拟$\Hb=\{(s_0, t_0), (s_1, t_1), (s_2, t_1)\}$，所以 $\Hm \lrto_{\{ch\}} \Hm'$。%，所以$\Hm\lrto \Hm'$。
+%	
+%	
+%	
+%	% 	\begin{center}\label{fig:bisim}
+%	% 		\includegraphics[width=5cm,height=3cm]{chBisimilar.png}\\
+%	% 		%\vspace{2mm}
+%	% 		\parbox[c]{7cm}{\textbf{Fig.1~}  Two $\{ch\}$-bisimilar Kripke structures}%\vspace*{.2mm}
+%	% 	\end{center}
+%	
+%	\begin{figure}[h]%
+%		\centering
+%		\includegraphics[width=4.5cm,height=2.5cm]{chapter06/chvB1.png}
+%		\caption{两个 $\{ch\}$-互模拟的Kripke结构示意图}\label{chapter06:fig:bisim}
+%		
+%		% $s_0$ is labeled by $\{ch, j\}$, $t_0$ is labeled by $\{j\}$, and $s_1$, $s_2$, and $t_1$ are labeled by $\emptyset$.}\label{fig:bisim}
+%	\end{figure}
+%	
+%\end{example}
 
 $\mu$-句子互模拟是不变的，$\mu$-公式则不是~\cite{janin1996expressive}。这里定义一种对$\mu$-公式是不变的互模拟。
-\begin{definition}[Var-$V$-互模拟]
-	\label{def:varVb}
-	给定原子命题集合$V$、赋值$(\Hm, v)$和$(\Hm',v')$。$(\Hm, v)$和$(\Hm',v')$之间的一个Var-$V$-互模拟关系$\Hb$是$\Hm$和$\Hm'$之间一个$V$-互模拟关系，且满足：
-	若 $(s,s') \in {\cal B}$，则对任意$X\in {\cal V}$， $s\in v(X)$ 当且仅当 $s'\in v'(X)$。
-\end{definition}
 
-若$(\Hm, v)$和$(\Hm',v')$之间存在一个Var-$V$-互模拟关系$\Hb$，则称$(\Hm, v)$和$(\Hm',v')$是Var-$V$-互模拟的，记为$(\Hm, v)\lrto_V(\Hm',v')$。
-对$\Hm$中的状态集$S_1\subseteq S$，用$\Hb(S_1)$表示通过$\Hb$从$S_1$映射得来的状态集，即： $\Hb(S_1) =\{s' \mid (s, s')\in \Hb,\ s \in S_1\}$。
+\begin{definition}[变元-命题-互模拟]
+	给定$V \subseteq \Ha$、$\Hm_i = (S_i, r_i, R_i, L_i)$为Kripke结构、 $s_i\in S_i$且
+	$v_i: {\cal V} \rto 2^{S_i}$，其中$i\in\{1,2\}$。若关系$\Hb\subseteq S_1 \times S_2$满足：
+	\begin{itemize}
+		\item $(s_1,s_2)\in\Hb$，
+		\item $\Hb$是$\Hm_1$ 和$\Hm_2$之间的$V$-互模拟，且
+		\item 对对任意$(t_1,t_2)\in \Hb$和$X  \in {\cal V}-{\cal V}_1$，$t_2\in v_2(X)$当且仅当$t_1 \in v_1(X)$，
+	\end{itemize}	
+则称$\Hb$是$(\Hm_1,s_1, v_1)$ 和$(\Hm_2,s_2, v_2)$之间的一个{\em $\tuple{{\cal V}_1, V}$-互模拟}。
+\end{definition}
+%
+%\begin{definition}[Var-$V$-互模拟]
+%	\label{def:varVb}
+%	给定原子命题集合$V$、赋值$(\Hm, v)$和$(\Hm',v')$。$(\Hm, v)$和$(\Hm',v')$之间的一个Var-$V$-互模拟关系$\Hb$是$\Hm$和$\Hm'$之间一个$V$-互模拟关系，且满足：
+%	若 $(s,s') \in {\cal B}$，则对任意$X\in {\cal V}$， $s\in v(X)$ 当且仅当 $s'\in v'(X)$。
+%\end{definition}
+
+若$(\Hm,s, v)$和$(\Hm',s',v')$之间存在一个$\tuple{{\cal V}_1, V}$-互模拟关系$\Hb$，则称$(\Hm,s, v)$和$(\Hm',s',$ $v')$是$\tuple{{\cal V}_1, V}$-互模拟的，记为$(\Hm,s, v)\lrto_\tuple{{\cal V}_1, V} (\Hm',s',v')$。
+若$(\Hm,s, v)$和$(\Hm',s',v')$之间存在一个$\tuple{\emptyset, V_1}$-互模拟，则称$(\Hm,s, v)$和$(\Hm',s',v')$是{\em Var-$V_1$-互模拟的}，记为$(\Hm, s,v) \lrto_{V_1} (\Hm',s',v')$；称$\tuple{\emptyset, V_1}$-互模拟为Var-$V_1$-互模拟。此外，若$s=r$ 且$s'=r'$，则$(\Hm, s,v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm',s',v')$简写为$(\Hm, v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm',v')$。
+
+$\Hm\lrto_V\Hm'$但$(\Hm,v)\not\lrto_V(\Hm',v')$有时是成立的。例：例~\ref{exmp:c06:bisim}中的两个Kripke结构$\Hm$ 和 $\Hm'$ 是$\emptyset$-互模拟的。然而，由于$r_1\in v(X)$和$(r_1,r_2')\in\Hb$，但是$r_2'\not\in v'(X)$，所以$(\Hm,v)\not\lrto_\emptyset (\Hm',v')$。
+对$S_1\subseteq S$和二元关系$\Hb\subseteq S \times S'$，记$\Hb(S_1) =\{s' \mid (s, s')\in \Hb,\ s \in S_1\}$。
+
+显然，若$({\cal M},s,v)\lrto_V({\cal M}',s',v')$，则${\cal M}\lrto_V{\cal M}'$。
+再者，令$v(X)=S$且$v'(X)=S'$，Kripke结构${\cal M}$和${\cal M}'$之间的任意$V$-互模拟可以容易地扩展为$({\cal M},r,v)$和$({\cal M}',r',v')$之间的Var-$V$-互模拟，其中$S$（$S'$）为$\Hm$（$\Hm'$）的状态集。
 
 \begin{example}[例~\ref{exmp:c06:bisim}的延续]
 	令 $\Hm$和 $\Hm'$为图~\ref{chapter06:fig:bisim}中的Kripke结构，$v: {\cal V} \rto 2^S$和$v': {\cal V} \rto 2^{S'}$为将${\cal V}$中的变元分别赋值到$\Hm$和$\Hm'$的状态集上的赋值函数。可以检查下面的结论成立：
@@ -698,237 +735,449 @@ $\mu$-句子互模拟是不变的，$\mu$-公式则不是~\cite{janin1996express
 \end{example}
 
 显然，对任意集合$V\subseteq \Ha$，每个Var-$V$-互模拟与一个$V$-互模拟对应，即：$({\cal M},v)\lrto_V({\cal M}',v')$ 蕴涵${\cal M}\lrto_V{\cal M}'$。
-另一方面，Kripke结构$\Hm$和$\Hm'$之间的每个$V$-互模拟可被扩展为$(\Hm, v)$和$(\Hm',v')$一个Var-$V$-互模拟，其中对任意$X\in {\cal V}$，$v(X) = S$且$v'(X) = S'$，$S$和$S'$分别为$\Hm$和$\Hm'$中的状态集合。
+再者，对任意$X\in {\cal V}$，令$v(X)=S$且$v'(X)=S'$，Kripke结构${\cal M}$和${\cal M}'$之间的任意$V$-互模拟可以容易地扩展为$({\cal M},r,v)$和$({\cal M}',r',v')$之间的Var-$V$-互模拟，其中$S$和$S'$分别为$\Hm$和$\Hm'$中的状态集合。
 
 可以容易证明$\lrto_V$有如下性质。
 
 \begin{proposition} \label{pro:EqUnion}
-	令$V, V_1 \subseteq \Ha$为原子命题集，$(\Hm_1,v_1)$、 $(\Hm_2,v_2)$和$(\Hm_3,v_3)$为赋值，则：
-	\begin{itemize} 
-		\item[(i)] $\lrto_V$是 赋值之间的等价关系；
-		\item[(ii)] 若$(\Hm_1, v_1) \lrto_V (\Hm_2,v_2)$ 和$V \subseteq V_1$，则$(\Hm_1, v_1) \lrto_{V_1} (\Hm_2,v_2)$；
-		\item[(iii)] 若 $(\Hm_1, v_1)  \lrto_V (\Hm_2,v_2)$且 $(\Hm_2,v_2) \lrto_{V_1} (\Hm_3,v_3)$，则 $(\Hm_1, v_1) \lrto_{V \cup V_1} (\Hm_3,v_3)$。
-	\end{itemize}
-	
+	令${\cal V}_1, {\cal V}_2\subseteq {\cal V}$、$V, V_1 \subseteq \Ha$且$\Hm_i$为Kripke结构（$i=1,2,3$），若$v_i: {\cal V}\rto 2^{S_i}$，则：
+	\begin{enumerate} [(i)]
+		\item $\lrto_{\tuple{{\cal V}_1,V}}$为赋值间的等价关系。
+		\item 若$(\Hm_1, s_1,v_1) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_2,s_2,v_2)$、${\cal V}_1 \subseteq {\cal V}_2$且$V \subseteq V_1$，\\
+		则 $(\Hm_1, s_1, v_1) \lrto_{\tuple{{\cal V}_2,V_1}} (\Hm_2, s_2, v_2)$；
+		\item 若$(\Hm_1, s_1, v_1) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_2,s_2, v_2)$且$(\Hm_2,s_2, v_2) \lrto_{\tuple{{\cal V}_2,V_1}} (\Hm_3,s_3, v_3)$，\\
+		则 $(\Hm_1,s_1,v_1) \lrto_{\tuple{{\cal V}_1 \cup {\cal V}_2, V \cup V_1}} (\Hm_3,s_3,v_3)$。
+	\end{enumerate}
+%	令$V, V_1 \subseteq \Ha$为原子命题集，$(\Hm_1,v_1)$、 $(\Hm_2,v_2)$和$(\Hm_3,v_3)$为赋值，则：
+%	\begin{itemize} 
+%		\item[(i)] $\lrto_V$是 赋值之间的等价关系；
+%		\item[(ii)] 若$(\Hm_1, v_1) \lrto_V (\Hm_2,v_2)$ 和$V \subseteq V_1$，则$(\Hm_1, v_1) \lrto_{V_1} (\Hm_2,v_2)$；
+%		\item[(iii)] 若 $(\Hm_1, v_1)  \lrto_V (\Hm_2,v_2)$且 $(\Hm_2,v_2) \lrto_{V_1} (\Hm_3,v_3)$，则 $(\Hm_1, v_1) \lrto_{V \cup V_1} (\Hm_3,v_3)$。
+%	\end{itemize}
+%	
 \end{proposition}
 \begin{proof}
+%	Let $\Hm_i = (S_i, r_i, R_i, L_i)$ be Kripke structures, and $v_i: {\cal V} \rto 2^{S_i}$ be valuations of the variables in ${\cal V}$ to the states of $\Hm_i$ ($i=1,2,3$).
+	
 	(i) 这里从自反性、对称性和传递性来证明该关系是一个等价关系。
 	
-	(1) $\lrto_V$是自反的。显然，对任意的赋值$(\Hm,v)$都有$(\Hm,v)\lrto_V (\Hm,v)$。
+	(1) $\lrto_V$是自反的。显然，对任意的赋值$(\Hm,s,v)$都有$(\Hm,s,v)\lrto_{\tuple{{\cal V}_1,V}} (\Hm,s,v)$。
 	
-	(2) $\lrto_V$是对称的。 下证对任意$(\Hm_1, v_1)$ 和$(\Hm_2,v_2)$，若$(\Hm_1, v_1) \lrto_V (\Hm_2,v_2)$，则$(\Hm_2, v_2) \lrto_V (\Hm_1, v_1)$。
-	假设 $(\Hm_1, v_1)$和$(\Hm_2,v_2)$之间的Var-$V$-互模拟关系$\Hb$，构造如下二元关系：$\Hb_1=\{(s,t) \mid (t, s)\in \Hb\}$。现在从下面几点证明 $\Hb_1$ 是$\Hm_2$和 $\Hm_1$之间的一个$V$-互模拟关系：
+	(b) 对称性： % $\lrto_V$ is symmetric. 
+	下证对任意$(\Hm_1,s_1, v_1)$和$(\Hm_2,s_2,v_2)$，若$(\Hm_1,s_1, v_1) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_2,s_2,v_2)$，则$(\Hm_2,s_2, v_2) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_1,s_1, v_1)$。
+	假定$(\Hm_1, s_1,v_1)$ 和$(\Hm_2,s_2,v_2)$ 有${\tuple{{\cal V}_1,V}}$-互模拟关系$\Hb$，如下构造关系$\Hb_1$：$\Hb_1=\{(s,t) \mid (t, s)\in \Hb\hbox{ with } t\in S_1 \hbox{ and } s\in S_2\}$。下证$\Hb_1$是$\Hm_2$$\Hm_1$之间的$V$-互模拟关系。
 	\begin{itemize}
-		\item 由于$r_1 \Hb r_2$，所以$r_2 \Hb_1 r_1$，
-		\item 对任意$s\in S_1$和 $t\in S_2$，若 $t \Hb_1 s$，则 $s\Hb t$，因此对于任意$p \in \Ha - V$，$p \in L_1(s)$当且仅当 $p \in L_2(t)$，且
+		\item 因为 $(r_1,r_2) \in \Hb$，所以，$(r_2,r_1) \in \Hb_1$；
+		\item 对任意$s\in S_2$ 和$t\in S_1$，若$(s,t) \in \Hb_1$，则$(t,s) \in \Hb$。因此，对任意$p \in \Ha - V$，$p \in L_1(t)$当且仅当$p \in L_2(s)$；
 		\item 因为$\Hb$是$\Hm_1$和 $\Hm_2$之间的$V$-互模拟关系，所以$V$-互模拟的第三和第四个点很容易能够证明。
 	\end{itemize}
+	此外，若$(s,t) \in \Hb$，则对任意$X\in {\cal V} -{\cal V}_1$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$。因此，若$(t,s) \in \Hb_1$， 则对任意$X\in {\cal V} -{\cal V}_1$，$t \in v_2(X)$ 当且仅当$s\in v_1(X)$。所以， $(\Hm_2,s_2, v_2) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_1,s_1, v_1)$。
+
+	(c) 传递性：%$\lrto_V$ is transitive. 
+	下证若$(\Hm_1,s_1,v_1) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_2,s_2,v_2)$和$(\Hm_2,s_2,v_2) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_3,s_3,v_3)$， 则$(\Hm_1,s_1,v_1) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_3,s_3,v_3)$。$(\Hm_1,s_1,v_1)$ $(\Hm_2,s_2,v_2)$有${\tuple{{\cal V}_1,V}}$-互模拟关系$\Hb_1$，$(\Hm_2,s_2,v_2)$ $(\Hm_3,s_3,v_3)$有${\tuple{{\cal V}_1,V}}$-互模拟关系$\Hb_2$，如下构造$\Hb$：$\Hb=\{(s, z) \mid (s,t) \in \Hb_1\ \mbox{and}\ (t, z)\in \Hb_2 \hbox{ with } s\in S_1,  t\in S_2, \hbox{ and } z \in S_3\}$。
+	可以类似(b)证明$\Hb$是$\Hm_1$和$\Hm_3$之间的$V$-互模拟关系。因此，$\Hm_1 \lrto_{\tuple{{\cal V}_1,V}} \Hm_3$。
 	
-	此外，若$(s,t) \in \Hb$，则对任意$X\in {\cal V}$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$。因此，若$(t,s) \in \Hb_1$， 则对任意$X\in {\cal V}$，$t \in v_2(X)$ 当且仅当$s\in v_1(X)$。所以，$(\Hm_2, v_2) \lrto_V (\Hm_1, v_1)$。
+	此外，若$(s,t) \in \Hb$，则对任意$X\in {\cal V}-{\cal V}_1$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$。因此，若$(t,s) \in \Hb_1$， 则对任意$X\in {\cal V}-{\cal V}_1$，$t \in v_2(X)$ 当且仅当$s\in v_1(X)$。所以，$(\Hm_2, v_2) \lrto_V (\Hm_1, v_1)$。
 	
+
 	
-	(3) $\lrto_V$是传递的。下证若$(\Hm_1,v_1) \lrto_V (\Hm_2,v_2)$ 和$(\Hm_2,v_2) \lrto_V (\Hm_3,v_3)$，则 $(\Hm_1,$ $v_1)$ $\lrto_V$ $(\Hm_3,v_3)$。假定 $(\Hm_1,v_1)$和$(\Hm_2,v_2)$之间的Var-$V$-互模拟关系为$\Hb_1$，$(\Hm_2,v_2)$和$(\Hm_3,$ $v_3)$之间的Var-$V$-互模拟关系为$\Hb_2$，构造如下二元关系：
-	$\Hb=\{(s, z) \mid (s,t) \in \Hb_1\ \mbox{和}\ (t, z)\in \Hb_2 \hbox{其中} s\in S_1,  t\in S_2, \hbox{其} z \in S_3\}$。
-	可以类似(2)证明$\Hb$为$\Hm_1$ 和$\Hm_3$的一个$V$-互模拟关系，即：$\Hm_1 \lrto_V \Hm_3$。
-	
-	
-	此外，若$(s,z) \in \Hb$，则存在$t \in S_2$使得$(s, t) \in \Hb_1$ 和$(t,z)\in \Hb_2$，所以，对任意$X\in {\cal V}$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$ 当且仅当$z\in \Hb$。因此，$(\Hm_1, v_1) \lrto_V (\Hm_3, v_3)$。
-	
-	
-	(ii) 假设$\Hb_{V}$是$(\Hm_1,v_1)$ 和$(\Hm_2,v_2)$之间的一个Var-$V$-互模拟关系。下证$\Hb_{V}$是$(\Hm_1,$ $v_1)$ 和$(\Hm_2,v_2)$之间的一个Var-$V_1$-互模拟关系。
-	显然：
-	\begin{itemize}
-		\item $(r_1, r_2) \in \Hb_{V}$，
-		\item 对任意$w_1\in S_1$和$w_2\in S_2$，若$(w_1, w_2) \in \Hb_{V}$，因为$V \subseteq V_1$且对任意$p \in \Ha - V$，$p\in L_1(w_1)$ 当且仅当$p\in L_2(w_2)$，所以，对任意$p \in \Ha - V_1$，
-		$p\in L_1(w_1)$ 当且仅当$p\in L_2(w_2)$，
-		%$L_1(w_1) - V_1 = L_2(w_2) -V_1$ since $L_1(w_1) - V = L_2(w_2) -V$ and $V \subseteq V_1$,
-		\item %$\forall r_1 \in S_1$, 
-		若 $(w_1,r_1) \in R_1$ 和$(w_1, w_2)\in \Hb_V$，因为$\Hb_{V}$ 是$\Hm_1$ 和$\Hm_2$之间的一个$V$-互模拟关系，所以，$\exists r_2\in S_2$使得$(w_2,r_2)\in R_2$ 和$(r_1,r_2) \in \Hb_{V}$，
-		\item %$\forall r_2 \in S_2$, 
-		若$(w_2,r_2) \in R_2$ 和$(w_1, w_2)\in \Hb_V$，因为$\Hb_{V}$ 是$\Hm_1$ 和$\Hm_2$之间的一个$V$-互模拟关系，所以，$\exists r_1\in S_1$ 使得$(w_1,r_1)\in R_1$ 和$(r_1,r_2) \in \Hb_{V}$。
+ (ii) 假定$\Hb_{V}$是$(\Hm_1,s_1,v_1)$和$(\Hm_2,s_2,v_2)$之间的${\tuple{{\cal V}_1,V}}$-互模拟关系。下证$\Hb_{V}$也是$(\Hm_1,$ $s_1,v_1)$和 $(\Hm_2,s_2,v_2)$之间的${\tuple{{\cal V}_2,V_1}}$-互模拟关系。
+		显然：
+		\begin{itemize}
+			\item $(r_1, r_2) \in \Hb_{V}$；
+			\item 对任意$w_1\in S_1$和$w_2\in S_2$，若$(w_1, w_2) \in \Hb_{V}$，则对任意$p \in \Ha - V_1$，
+			$p\in L_1(w_1)$当且仅$p\in L_2(w_2)$（因为$V \subseteq V_1$且对任意$p \in \Ha - V$，$p\in L_1(w_1)$当且仅当$p\in L_2(w_2)$）；
+			%$L_1(w_1) - V_1 = L_2(w_2) -V_1$ since $L_1(w_1) - V = L_2(w_2) -V$ and $V \subseteq V_1$,
+			\item 因为$\Hb_{V}$ 是$\Hm_1$ and $\Hm_2$之间的$V$-互模拟，所以$V$-互模拟的第三和第四个点很容易能够证明。
+			%$\forall r_1 \in S_1$, 
+%			若$(w_1,r_1) \in R_1$且$(w_1, w_2)\in \Hb_V$，则$\exists r_2\in S_2$，使得$(w_2,r_2)\in R_2$和$(r_1,r_2) \in \Hb_{V}$（因为$\Hb_{V}$ 是$\Hm_1$ and $\Hm_2$之间的$V$-互模拟）；
+%			\item %$\forall r_2 \in S_2$, 
+%			if $(w_2,r_2) \in R_2$ and $(w_1, w_2)\in \Hb_V$, then $\exists r_1\in S_1$ s.t. $(w_1,r_1)\in R_1$ and $(r_1,r_2) \in \Hb_{V}$ since $\Hb_{V}$ is a $V$-bisimulation between $\Hm_1$ and $\Hm_2$。
 	\end{itemize}
-	因此，$\Hb_V$$\Hm_1$ 和$\Hm_2$之间的一个$V_1$-互模拟关系。
+	因此，$\Hb_{V}$ 是$\Hm_1$ and $\Hm_2$之间的$V_1$-互模拟。
 	
-	此外，若$(s,t) \in \Hb_V$，则对任意$X\in {\cal V}$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$。因此，$(\Hm_1,v_1) \lrto_{V_1} (\Hm_2,v_2)$。
+	此外，若$(s,t) \in \Hb_V$，则对任意$X\in {\cal V}-{\cal V}_2$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$。因此，$(\Hm_1, s_1, v_1) \lrto_{\tuple{{\cal V}_2,V_1}} (\Hm_2,s_2,v_2)$。
 	
-	(iii) 由(ii)可知，$(\Hm_1,v_1) \lrto_V (\Hm_2,v_2)$ 蕴涵$(\Hm_1,v_1) \lrto_{V \cup V_1} (\Hm_2,v_2)$，由(i)的传递性可知$(\Hm_1,v_1) \lrto_{V\cup V_1} (\Hm_3,v_3)$。
+	
+	(iii) 由(ii)可知，若$(\Hm_1,s_1,v_1) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_2,s_2,v_2)$，则$(\Hm_1,s_1,v_1) \lrto_{\tuple{{\cal V}_1 \cup {\cal V}_2,V \cup V_1}} (\Hm_2,s_2,$ $v_2)$。因此，由(i)可知$(\Hm_1,s_1,v_1) \lrto_{\tuple{{\cal V}_1 \cup {\cal V}_2,V \cup V_1}} (\Hm_3,s_3,v_3)$。	
+%	(i) 这里从自反性、对称性和传递性来证明该关系是一个等价关系。
+%	
+%	(1) $\lrto_V$是自反的。显然，对任意的赋值$(\Hm,v)$都有$(\Hm,v)\lrto_V (\Hm,v)$。
+%	
+%	(2) $\lrto_V$是对称的。 下证对任意$(\Hm_1, v_1)$ 和$(\Hm_2,v_2)$，若$(\Hm_1,v_1) \lrto_V (\Hm_2,v_2)$，则$(\Hm_2,$ $ v_2) \lrto_V (\Hm_1, v_1)$。
+%	假设 $(\Hm_1, v_1)$和$(\Hm_2,v_2)$之间的Var-$V$-互模拟关系$\Hb$，构造如下二元关系：$\Hb_1=\{(s,t) \mid (t, s)\in \Hb\}$。现在从下面几点证明 $\Hb_1$ 是$\Hm_2$和 $\Hm_1$之间的一个$V$-互模拟关系：
+%	\begin{itemize}
+%		\item 由于$r_1 \Hb r_2$，所以$r_2 \Hb_1 r_1$，
+%		\item 对任意$s\in S_1$和 $t\in S_2$，若 $t \Hb_1 s$，则 $s\Hb t$，因此对于任意$p \in \Ha - V$，$p \in L_1(s)$当且仅当 $p \in L_2(t)$，且
+%		\item 因为$\Hb$是$\Hm_1$和 $\Hm_2$之间的$V$-互模拟关系，所以$V$-互模拟的第三和第四个点很容易能够证明。
+%	\end{itemize}
+%	
+%	此外，若$(s,t) \in \Hb$，则对任意$X\in {\cal V}$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$。因此，若$(t,s) \in \Hb_1$， 则对任意$X\in {\cal V}$，$t \in v_2(X)$ 当且仅当$s\in v_1(X)$。所以，$(\Hm_2, v_2) \lrto_V (\Hm_1, v_1)$。
+%	
+%	
+%	(3) $\lrto_V$是传递的。下证若$(\Hm_1,v_1) \lrto_V (\Hm_2,v_2)$ 和$(\Hm_2,v_2) \lrto_V (\Hm_3,v_3)$，则 $(\Hm_1,$ $v_1)$ $\lrto_V$ $(\Hm_3,v_3)$。假定 $(\Hm_1,v_1)$和$(\Hm_2,v_2)$之间的Var-$V$-互模拟关系为$\Hb_1$，$(\Hm_2,v_2)$和$(\Hm_3,$ $v_3)$之间的Var-$V$-互模拟关系为$\Hb_2$，构造如下二元关系：
+%	$\Hb=\{(s, z) \mid (s,t) \in \Hb_1\ \mbox{和}\ (t, z)\in \Hb_2 \hbox{其中} s\in S_1,  t\in S_2, \hbox{其} z \in S_3\}$。
+%	可以类似(2)证明$\Hb$为$\Hm_1$ 和$\Hm_3$的一个$V$-互模拟关系，即：$\Hm_1 \lrto_V \Hm_3$。
+%	
+%	
+%	此外，若$(s,z) \in \Hb$，则存在$t \in S_2$使得$(s, t) \in \Hb_1$ 和$(t,z)\in \Hb_2$，所以，对任意$X\in {\cal V}$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$ 当且仅当$z\in \Hb$。因此，$(\Hm_1, v_1) \lrto_V (\Hm_3, v_3)$。
+%	
+%	
+%	(ii) 假设$\Hb_{V}$是$(\Hm_1,v_1)$ 和$(\Hm_2,v_2)$之间的一个Var-$V$-互模拟关系。下证$\Hb_{V}$是$(\Hm_1,$ $v_1)$ 和$(\Hm_2,v_2)$之间的一个Var-$V_1$-互模拟关系。
+%	显然：
+%	\begin{itemize}
+%		\item $(r_1, r_2) \in \Hb_{V}$，
+%		\item 对任意$w_1\in S_1$和$w_2\in S_2$，若$(w_1, w_2) \in \Hb_{V}$，因为$V \subseteq V_1$且对任意$p \in \Ha - V$，$p\in L_1(w_1)$ 当且仅当$p\in L_2(w_2)$，所以，对任意$p \in \Ha - V_1$，
+%		$p\in L_1(w_1)$ 当且仅当$p\in L_2(w_2)$，
+%		%$L_1(w_1) - V_1 = L_2(w_2) -V_1$ since $L_1(w_1) - V = L_2(w_2) -V$ and $V \subseteq V_1$,
+%		\item %$\forall r_1 \in S_1$, 
+%		若 $(w_1,r_1) \in R_1$ 和$(w_1, w_2)\in \Hb_V$，因为$\Hb_{V}$ 是$\Hm_1$ 和$\Hm_2$之间的一个$V$-互模拟关系，所以，$\exists r_2\in S_2$使得$(w_2,r_2)\in R_2$ 和$(r_1,r_2) \in \Hb_{V}$，
+%		\item %$\forall r_2 \in S_2$, 
+%		若$(w_2,r_2) \in R_2$ 和$(w_1, w_2)\in \Hb_V$，因为$\Hb_{V}$ 是$\Hm_1$ 和$\Hm_2$之间的一个$V$-互模拟关系，所以，$\exists r_1\in S_1$ 使得$(w_1,r_1)\in R_1$ 和$(r_1,r_2) \in \Hb_{V}$。
+%	\end{itemize}
+%	因此，$\Hb_V$$\Hm_1$ 和$\Hm_2$之间的一个$V_1$-互模拟关系。
+%	
+%	此外，若$(s,t) \in \Hb_V$，则对任意$X\in {\cal V}$，$s \in v_1(X)$ 当且仅当$t \in v_2(X)$。因此，$(\Hm_1,v_1) $ $\lrto_{V_1} (\Hm_2,v_2)$。
+%	
+%	(iii) 由(ii)可知，$(\Hm_1,v_1) \lrto_V (\Hm_2,v_2)$ 蕴涵$(\Hm_1,v_1) \lrto_{V \cup V_1} (\Hm_2,v_2)$，由(i)的传递性可知$(\Hm_1,v_1) \lrto_{V\cup V_1} (\Hm_3,v_3)$。
 \end{proof}
 
 不难看出，命题~\ref{pro:EqUnion}对于Kripke结构之间的$\lrto_V$关系也是成立的。
-直观地说，(i)表示$\lrto_V$是赋值之间的自反、对称和传递关系。
-(ii)指明若两个赋值是Var-$V$-互模拟的，则对于$V$的任意一个超级$V_1$，这两个赋值都是Var-$V_1$-互模拟的。
-(iii)表示如果一个Kripke结构和其它两个Kripke结构互相$V$和$V_1$互模拟，则这两个Kripke结构$V\cup V_1$-互模拟。这跟$\CTL$情形下的互模拟类似，正如下文将要说到的那样，这一性质有助于证明$\mu$-演算下遗忘的分解性质。
+直观地说，(i)表示$\lrto_{\tuple{{\cal V}_1,V}}$是赋值之间的自反、对称和传递关系。
+(ii)指明若两个赋值是${\tuple{{\cal V}_1,V}}$-互模拟的，则对于$V$（${\cal V}_1$）的任意一个超级$V_1$（${\cal V}_2$），这两个赋值都是${\tuple{{\cal V}_2,V_1}}$-互模拟的。
+(iii)表示如果一个Kripke结构和其它两个Kripke结构互相${\tuple{{\cal V}_1,V}}$和${\tuple{{\cal V}_2,V_1}}$互模拟，则这两个Kripke结构${\tuple{{\cal V}_1 \cup {\cal V}_2,V \cup V_1}}$-互模拟。%这跟$\CTL$情形下的互模拟类似，正如下文将要说到的那样，这一性质有助于证明$\mu$-演算下遗忘的分解性质。
 
-对于含有自由变元$Y\in {\cal V}$的$\mu$-公式$\varphi(Y)$，记$\varphi_{{\cal S}(Y)}$为将$\varphi(Y)$中所有$Y$的出现用一个新的原子命题$p_y$替换得到的公式。
-此时，给定赋值$(\Hm,v)$，$\Hm=(S,r,R,L)$在自由变元$Y$上关于$\varphi(Y)$和$v$的{\em 扩展}为$\Hm_{{\cal S}(Y)} = (S, r, R, L_y)$，其中对任意$s\in S$：
-\[L_y(s) =
-\left\{
-\begin{array}{ll}
-	L(s)\cap \Var(\varphi(Y)), \ \ \qquad \qquad \quad \hbox{若$s\not \in v(Y)$；} \\
-	(L(s) \cap \Var(\varphi(Y)))\cup \{p_y\}, \ \ \ \quad \ \ \hbox{否则。}
-\end{array}
-\right.
-\]
-从直观上来说，公式$\varphi(Y)$中的自由变元在给定赋值$(\Hm,v)$下可以看作一个原子命题，该原子命题在状态集$v(Y)$为真，在其它状态上为假。
+%对于含有自由变元$Y\in {\cal V}$的$\mu$-公式$\varphi(Y)$，记$\varphi_{{\cal S}(Y)}$为将$\varphi(Y)$中所有$Y$的出现用一个新的原子命题$p_y$替换得到的公式。
+%此时，给定赋值$(\Hm,v)$，$\Hm=(S,r,R,L)$在自由变元$Y$上关于$\varphi(Y)$和$v$的{\em 扩展}为$\Hm_{{\cal S}(Y)} = (S, r, R, L_y)$，其中对任意$s\in S$：
+%\[L_y(s) =
+%\left\{
+%\begin{array}{ll}
+%	L(s)\cap \Var(\varphi(Y)), \ \ \qquad \qquad \quad \hbox{若$s\not \in v(Y)$；} \\
+%	(L(s) \cap \Var(\varphi(Y)))\cup \{p_y\}, \ \ \ \quad \ \ \hbox{否则。}
+%\end{array}
+%\right.
+%\]
+%从直观上来说，公式$\varphi(Y)$中的自由变元在给定赋值$(\Hm,v)$下可以看作一个原子命题，该原子命题在状态集$v(Y)$为真，在其它状态上为假。
+%
+%类似地，对于公式$\varphi(\tau)$（$\tau$为$\varphi(\tau)$中自由变元的集合），记$\varphi_{{\cal S}(\tau)}$为将$\varphi(\tau)$中出现在$\tau$中的每个自由变元迭代地用新的原子命题替换得到的公式，即：
+%\begin{align*}
+%	& \varphi_{\emptyset} = \varphi(\emptyset) =\varphi\\
+%	& \varphi_{{\cal S}(\{Y\})} = \varphi_{{\cal S}(Y)}, \\
+%	& \varphi_{{\cal S}(\{Y_1, Y_2, \dots, Y_n\})}= (\varphi_{{\cal S}(Y_1)})_{{\cal S}(\{Y_2, \dots, Y_n\})}.
+%\end{align*}
+%$\Hm=(S,r,R,L)$在自由变元集合$\tau$上关于$\varphi(\tau)$和赋值$v$的扩展为$\Hm_{{\cal S}(\tau)}= (S, r, R, L_{\tau})$使得
+%\begin{align*}
+%	& \Hm_{\emptyset} = \Hm,\\
+%	& \Hm_{{\cal S}(\{Y\})} = \Hm_{{\cal S}(Y)},\\
+%	& \Hm_{{\cal S}(\tau)}=\Hm_{{\cal S}(Y_1){\cal S}(\{Y_2,\dots, Y_n\})},
+%\end{align*}
+%且对任意$s\in S$，
+%\begin{align*}
+%	& L_{\emptyset}(s) = L(s),\\
+%	& L_{\{Y\}}(s) = L_y(s),\\
+%	& L_{\tau}(s) = L_{y_1\{Y_2, \dots, Y_n\}}(s) \\
+%	&\qquad \ =
+%	\left\{
+%	\begin{array}{ll}
+%		L_{\{Y_2, \dots, Y_n\}}(s)\cap \Var(\varphi_{{\cal S}\{Y_2, \dots, Y_n\}}), \ \ \qquad \qquad \quad \hbox{若$s\not \in v(Y_1)$;} \\
+%		(L_{\{Y_2, \dots, Y_n\}}(s) \cap \Var(\varphi_{{\cal S}\{Y_2, \dots, Y_n\}})) \cup \{p_{y_1}\}, \ \ \quad  \ \ \hbox{否则。}
+%	\end{array}
+%	\right.
+%\end{align*}
+%
+%\begin{example}[例~\ref{exmp:c06:bisim}的延续]
+%	\label{exp:freshp}
+%	令$\varphi(\{Y,Z\}) = \mu X. ch \wedge j \wedge Z\wedge \EXIST\NEXT Y \wedge \EXIST\NEXT \EXIST\NEXT X$，$\Hm = (S, R, L,s_0)$ 为例~\ref{exmp:c06:bisim}，则
+%	$$\varphi_{{\cal S}(Y)}(Z) = \mu X. ch \wedge j \wedge Z \wedge \EXIST\NEXT p_y \wedge \EXIST\NEXT \EXIST\NEXT X\hbox{，}$$
+%	$$\varphi_{{\cal S}(\{Y,Z\})} = \mu X. ch \wedge j \wedge p_z \wedge \EXIST\NEXT p_y \wedge \EXIST\NEXT \EXIST\NEXT X\hbox{。}$$
+%	
+%	令$v$为将${\cal V}$中变元映射到$\Hm$状态集上的赋值函数，且$v(Y) = \{s_1,s_2\}$、$v(Z) = \{s_0\}$，则：
+%	%Let $v$ be the valuation of variables in ${\cal V}$ to the states of $\Hm$ with $v(Y) = \{s_1,s_2\}$ and $v(Z) = \{s_0\}$, then:
+%	\begin{itemize}
+%		\item $\Hm$在$Y$上关于$\varphi(\{Y,Z\})$ 和$v$的扩展为：$\Hm_{{\cal S}(Y)} = (S, R, L_y,s_0)$，其中 $L_y(s_0) = \{j,ch\}$、 $L_y(s_1)=\{ch, p_y\}$且 $L_y(s_2)=\{p_y\}$；
+%		\item $\Hm$ 在$\{Y,Z\}$上关于$\varphi(\{Y,Z\})$和$v$的扩展为：$\Hm_{{\cal S}(\{Y,Z\})} = (S, R, L_{yz},s_0)$，其中$L_{yz}(s_0) = \{j,ch,p_z\}$、 $L_{yz}(s_1)=\{ch, p_y\}$且$L_{yz}(s_2)=\{p_y\}$。
+%	\end{itemize}
+%\end{example}
+%
+%下面的性质对证明Var-$V$-互模拟对于$\mu$-公式是不变的是至关重要的。
+%\begin{proposition}
+%	\label{pro:statequ}
+%	令$\varphi(Y)$为含有自由变元$Y$的$\mu$-公式（$Y\in {\cal V}$），$(\Hm,v)$为赋值，则$$\left \|\varphi(Y) \right\|_v^{\Hm} = \left \|\varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\hbox{。}$$
+%\end{proposition}
+%\begin{proof}
+%	对公式的结构做归纳来证明这一结论。
+%	
+%	\textbf{基始.} (1) $\varphi(Y) = X$，其中$X \not = Y$。
+%	
+%	$\left \|X \right\|_v^{\Hm} = v(X)$，
+%	
+%	$\left \|X_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} = \left \|X \right\|_v^{\Hm_{{\cal S}(Y)}}= v(X)$。
+%	
+%	
+%	(2) $\varphi(Y) = Y$.
+%	%$Y_{{\cal S}(Y)} = p_y$, then 
+%	\begin{align*}
+%		\left \|Y \right\|_v^{\Hm} & = v(Y)\\
+%		\left \|Y_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \left \|p_y \right\|_v^{\Hm_{{\cal S}(Y)}} \\
+%		& = \{s \mid p_y \in L_y(s)\} \\
+%		& = \{s \mid s \in v(Y)\}\\
+%		& = v(Y)
+%	\end{align*}
+%	
+%	(3) $\varphi(Y) = p$，其中$p\in \Ha$。
+%	\begin{align*}
+%		\left \|p \right\|_v^{\Hm} &  = \{s \mid p \in L(s)\},\\
+%		\left \|p_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}  & = \left \|p \right\|_v^{\Hm_{{\cal S}(Y)}} \\
+%		& = \{s \mid p \in L_y(s)\}\\
+%		& = \{s \mid p \in L(s)\}.
+%	\end{align*}
+%	
+%	\textbf{归纳步.}
+%	
+%	(1) $\varphi(Y) = \neg p$.
+%	\begin{align*}
+%		\left \|\neg p \right\|_v^{\Hm} & = S- \left \|p \right\|_v^{\Hm}\\
+%		\left \|\neg p_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \left \|\neg p \right\|_v^{\Hm_{{\cal S}(Y)}} \\
+%		&  = S - \left \|p \right\|_v^{\Hm_{{\cal S}(Y)}}\\
+%		& = S - \left \|p \right\|_v^{\Hm} \qquad \qquad \qquad \qquad \qquad \hbox{  (归纳假设)}
+%	\end{align*}
+%	
+%	%Therefore, we have $\left \|\neg p \right\|_v^{\Hm} = \left \|\neg p_{{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$  by induction hypothesis.
+%	
+%	(2) $\varphi(Y) = \varphi_1(Y) \vee \varphi_2(Y)$.
+%	\begin{align*}
+%		\left \| \varphi \right\|_v^{\Hm}& = \left \|\varphi_1(Y) \right\|_v^{\Hm} \cup \left \| \varphi_2(Y) \right\|_v^{\Hm}\\
+%		\left \| \varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}& = \left \|\varphi_{1{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} \cup \left \| \varphi_{2{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\\
+%		& = \left \|\varphi_1(Y) \right\|_v^{\Hm} \cup \left \| \varphi_2(Y) \right\|_v^{\Hm} \qquad  \qquad \qquad \qquad \hbox{  (归纳假设)}
+%	\end{align*}
+%	
+%	%We have $\left \|\varphi_1 \right\|_v^{\Hm}= \left \|\varphi_{1{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$ and $\left \| \varphi_2 \right\|_v^{\Hm} =  \left \| \varphi_{2{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$ by induction hypothesis. Therefore, $\left \| \varphi \right\|_v^{\Hm}= \left \| \varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$.
+%	
+%	$\varphi(Y) = \varphi_1(Y) \wedge \varphi_2(Y)$的情形可以类似地证明。
+%	
+%	(3) $\varphi(Y) = \ALL \NEXT \varphi_1(Y)$.
+%	\begin{align*}
+%		\left \|\varphi \right(Y)\|_v^{\Hm} & = \{s \mid \forall s'. (s, s') \in R \Rto s' \in \left \|\varphi_1(Y) \right\|_v^{\Hm}\}\\
+%		\left \|\varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \{s \mid \forall s'. (s, s') \in R \Rto s' \in \left \|\varphi_{1{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\}\\
+%		& = \{s \mid \forall s'. (s, s') \in R \Rto s' \in \left \|\varphi_1(Y) \right\|_v^{\Hm}\} \qquad \qquad \hbox{  (归纳假设)}
+%	\end{align*}
+%	
+%	(4) $\varphi(Y)  = \mu X. \varphi_1(Y)$.
+%	
+%	$\left \|\varphi(Y) \right\|_v^{\Hm}= \bigcap \{S_1 \subseteq S \mid \left \|\varphi_1(Y) \right\|_{v[X:=S_1]}^{\Hm} \subseteq S_1\}$.
+%	
+%	\begin{align*}
+%		\left \|\varphi(Y)_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \left \|\mu X. \varphi_{1}(Y)_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\\
+%		& = \bigcap \{S_1 \subseteq S \mid \left \|\varphi_{1{\cal S}(Y)} \right\|_{v[X:=S_1]}^{\Hm_{{\cal S}(Y)}} \subseteq S_1\}\\
+%		& = \bigcap \{S_1 \subseteq S \mid \left \|\varphi_1(Y) \right\|_{v[X:=S_1]}^{\Hm} \subseteq S_1\} \qquad\qquad \hbox{  (归纳假设)}
+%	\end{align*}
+%\end{proof}
+%
+%命题~\ref{pro:statequ}表明$(\Hm, v) \models \varphi(Y)$ 当且仅当$(\Hm_{{\cal S}(Y)}, v) \models \varphi_{{\cal S}(Y)}$。 % Moreover,
+%\begin{example}
+%	[例~\ref{exp:freshp}的延续] 
+%	令$\varphi = \EXIST\NEXT Y \wedge \nu X. (ch \wedge j \wedge \EXIST\NEXT \EXIST \NEXT X)$，则 
+%	\begin{align*}
+%		&\varphi_{{\cal S}(Y)} = \EXIST\NEXT p_y \wedge \nu X. (ch \wedge j \wedge \EXIST\NEXT \EXIST \NEXT X),\\
+%		&\left\|\varphi\right\|_v^{\Hm} = \{s_0\},\\
+%		&\left\|\varphi_{{\cal S}(Y)}\right\|_v^{\Hm_{{\cal S}(Y)}} = \{s_0\}.
+%	\end{align*}
+%\end{example}
+%
+%\begin{lemma}
+%	\label{lem:vbextension}
+%	令$\tau \subseteq {\cal V}$为变元集合，$\varphi(\tau)$为含有$\tau$中自由变元的公式，$V\subseteq \Ha$为原子命题集合。若$(\Hm, v) \lrto_V (\Hm',v')$，则 $\Hm_{{\cal S}(\tau)} \lrto_V \Hm'_{{\cal S}(\tau)}$。
+%\end{lemma}
+%\begin{proof}
+%	令$\Hb$为$(\Hm, v)$ 和$(\Hm',v')$之间的Var-$V$-互模拟关系，下证$\Hb$是$\Hm_{{\cal S}(\tau)}$ 和$\Hm'_{{\cal S}(\tau)}$之间的$V$-互模拟关系。
+%	\begin{itemize}
+%		\item $(r,r')\in \Hb$,
+%		\item 对任意$s\in S$ 和$t\in S'$，若$(s,t)\in \Hb$，因为$\Hm \lrto_V \Hm'$且对任意$Y\in \tau$，$s\in v(Y)$ 当且仅当$t \in v'(Y)$，这意味着$p_y\in L_{\tau}(s)$ 当且仅当$p_y \in  L_{\tau}'(t)$；所以，对任意 $p\in \Ha-V$，$p\in L_{\tau}(s)$ 当且仅当$p\in L_{\tau}'(t)$， %Moreover, for each $p \in $
+%		\item 因为$\Hm \lrto_V \Hm'$，所以$V$-互模拟的第三和四点容易证明。
+%	\end{itemize}
+%\end{proof}
 
-类似地，对于公式$\varphi(\tau)$（$\tau$为$\varphi(\tau)$中自由变元的集合），记$\varphi_{{\cal S}(\tau)}$为将$\varphi(\tau)$中出现在$\tau$中的每个自由变元迭代地用新的原子命题替换得到的公式，即：
-\begin{align*}
-	& \varphi_{\emptyset} = \varphi(\emptyset) =\varphi\\
-	& \varphi_{{\cal S}(\{Y\})} = \varphi_{{\cal S}(Y)}, \\
-	& \varphi_{{\cal S}(\{Y_1, Y_2, \dots, Y_n\})}= (\varphi_{{\cal S}(Y_1)})_{{\cal S}(\{Y_2, \dots, Y_n\})}.
-\end{align*}
-$\Hm=(S,r,R,L)$在自由变元集合$\tau$上关于$\varphi(\tau)$和赋值$v$的扩展为$\Hm_{{\cal S}(\tau)}= (S, r, R, L_{\tau})$使得
-\begin{align*}
-	& \Hm_{\emptyset} = \Hm,\\
-	& \Hm_{{\cal S}(\{Y\})} = \Hm_{{\cal S}(Y)},\\
-	& \Hm_{{\cal S}(\tau)}=\Hm_{{\cal S}(Y_1){\cal S}(\{Y_2,\dots, Y_n\})},
-\end{align*}
-且对任意$s\in S$，
-\begin{align*}
-	& L_{\emptyset}(s) = L(s),\\
-	& L_{\{Y\}}(s) = L_y(s),\\
-	& L_{\tau}(s) = L_{y_1\{Y_2, \dots, Y_n\}}(s) \\
-	&\qquad \ =
-	\left\{
-	\begin{array}{ll}
-		L_{\{Y_2, \dots, Y_n\}}(s)\cap \Var(\varphi_{{\cal S}\{Y_2, \dots, Y_n\}}), \ \ \qquad \qquad \quad \hbox{若$s\not \in v(Y_1)$;} \\
-		(L_{\{Y_2, \dots, Y_n\}}(s) \cap \Var(\varphi_{{\cal S}\{Y_2, \dots, Y_n\}})) \cup \{p_{y_1}\}, \ \ \quad  \ \ \hbox{否则。}
-	\end{array}
-	\right.
-\end{align*}
-
-\begin{example}[例~\ref{exmp:c06:bisim}的延续]
-	\label{exp:freshp}
-	令$\varphi(\{Y,Z\}) = \mu X. ch \wedge j \wedge Z\wedge \EXIST\NEXT Y \wedge \EXIST\NEXT \EXIST\NEXT X$，$\Hm = (S, R, L,s_0)$ 为例~\ref{exmp:c06:bisim}，则
-	$$\varphi_{{\cal S}(Y)}(Z) = \mu X. ch \wedge j \wedge Z \wedge \EXIST\NEXT p_y \wedge \EXIST\NEXT \EXIST\NEXT X\hbox{，}$$
-	$$\varphi_{{\cal S}(\{Y,Z\})} = \mu X. ch \wedge j \wedge p_z \wedge \EXIST\NEXT p_y \wedge \EXIST\NEXT \EXIST\NEXT X\hbox{。}$$
-	
-	令$v$为将${\cal V}$中变元映射到$\Hm$状态集上的赋值函数，且$v(Y) = \{s_1,s_2\}$、$v(Z) = \{s_0\}$，则：
-	%Let $v$ be the valuation of variables in ${\cal V}$ to the states of $\Hm$ with $v(Y) = \{s_1,s_2\}$ and $v(Z) = \{s_0\}$, then:
-	\begin{itemize}
-		\item $\Hm$在$Y$上关于$\varphi(\{Y,Z\})$ 和$v$的扩展为：$\Hm_{{\cal S}(Y)} = (S, R, L_y,s_0)$，其中 $L_y(s_0) = \{j,ch\}$、 $L_y(s_1)=\{ch, p_y\}$且 $L_y(s_2)=\{p_y\}$；
-		\item $\Hm$ 在$\{Y,Z\}$上关于$\varphi(\{Y,Z\})$和$v$的扩展为：$\Hm_{{\cal S}(\{Y,Z\})} = (S, R, L_{yz},s_0)$，其中$L_{yz}(s_0) = \{j,ch,p_z\}$、 $L_{yz}(s_1)=\{ch, p_y\}$且$L_{yz}(s_2)=\{p_y\}$。
-	\end{itemize}
-\end{example}
-
-下面的性质对证明Var-$V$-互模拟对于$\mu$-公式是不变的是至关重要的。
-\begin{proposition}
-	\label{pro:statequ}
-	令$\varphi(Y)$为含有自由变元$Y$的$\mu$-公式（$Y\in {\cal V}$），$(\Hm,v)$为赋值，则$$\left \|\varphi(Y) \right\|_v^{\Hm} = \left \|\varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\hbox{。}$$
-\end{proposition}
-\begin{proof}
-	对公式的结构做归纳来证明这一结论。
-	
-	\textbf{基始.} (1) $\varphi(Y) = X$，其中$X \not = Y$。
-	
-	$\left \|X \right\|_v^{\Hm} = v(X)$，
-	
-	$\left \|X_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} = \left \|X \right\|_v^{\Hm_{{\cal S}(Y)}}= v(X)$。
-	
-	
-	(2) $\varphi(Y) = Y$.
-	%$Y_{{\cal S}(Y)} = p_y$, then 
-	\begin{align*}
-		\left \|Y \right\|_v^{\Hm} & = v(Y)\\
-		\left \|Y_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \left \|p_y \right\|_v^{\Hm_{{\cal S}(Y)}} \\
-		& = \{s \mid p_y \in L_y(s)\} \\
-		& = \{s \mid s \in v(Y)\}\\
-		& = v(Y)
-	\end{align*}
-	
-	(3) $\varphi(Y) = p$，其中$p\in \Ha$。
-	\begin{align*}
-		\left \|p \right\|_v^{\Hm} &  = \{s \mid p \in L(s)\},\\
-		\left \|p_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}  & = \left \|p \right\|_v^{\Hm_{{\cal S}(Y)}} \\
-		& = \{s \mid p \in L_y(s)\}\\
-		& = \{s \mid p \in L(s)\}.
-	\end{align*}
-	
-	\textbf{归纳步.}
-	
-	(1) $\varphi(Y) = \neg p$.
-	\begin{align*}
-		\left \|\neg p \right\|_v^{\Hm} & = S- \left \|p \right\|_v^{\Hm}\\
-		\left \|\neg p_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \left \|\neg p \right\|_v^{\Hm_{{\cal S}(Y)}} \\
-		&  = S - \left \|p \right\|_v^{\Hm_{{\cal S}(Y)}}\\
-		& = S - \left \|p \right\|_v^{\Hm} \qquad \qquad \qquad \qquad \qquad \hbox{  (归纳假设)}
-	\end{align*}
-	
-	%Therefore, we have $\left \|\neg p \right\|_v^{\Hm} = \left \|\neg p_{{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$  by induction hypothesis.
-	
-	(2) $\varphi(Y) = \varphi_1(Y) \vee \varphi_2(Y)$.
-	\begin{align*}
-		\left \| \varphi \right\|_v^{\Hm}& = \left \|\varphi_1(Y) \right\|_v^{\Hm} \cup \left \| \varphi_2(Y) \right\|_v^{\Hm}\\
-		\left \| \varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}& = \left \|\varphi_{1{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} \cup \left \| \varphi_{2{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\\
-		& = \left \|\varphi_1(Y) \right\|_v^{\Hm} \cup \left \| \varphi_2(Y) \right\|_v^{\Hm} \qquad  \qquad \qquad \qquad \hbox{  (归纳假设)}
-	\end{align*}
-	
-	%We have $\left \|\varphi_1 \right\|_v^{\Hm}= \left \|\varphi_{1{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$ and $\left \| \varphi_2 \right\|_v^{\Hm} =  \left \| \varphi_{2{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$ by induction hypothesis. Therefore, $\left \| \varphi \right\|_v^{\Hm}= \left \| \varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{\cal S}(Y)}$.
-	
-	$\varphi(Y) = \varphi_1(Y) \wedge \varphi_2(Y)$的情形可以类似地证明。
-	
-	(3) $\varphi(Y) = \ALL \NEXT \varphi_1(Y)$.
-	\begin{align*}
-		\left \|\varphi \right(Y)\|_v^{\Hm} & = \{s \mid \forall s'. (s, s') \in R \Rto s' \in \left \|\varphi_1(Y) \right\|_v^{\Hm}\}\\
-		\left \|\varphi_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \{s \mid \forall s'. (s, s') \in R \Rto s' \in \left \|\varphi_{1{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\}\\
-		& = \{s \mid \forall s'. (s, s') \in R \Rto s' \in \left \|\varphi_1(Y) \right\|_v^{\Hm}\} \qquad \qquad \hbox{  (归纳假设)}
-	\end{align*}
-	
-	(4) $\varphi(Y)  = \mu X. \varphi_1(Y)$.
-	
-	$\left \|\varphi(Y) \right\|_v^{\Hm}= \bigcap \{S_1 \subseteq S \mid \left \|\varphi_1(Y) \right\|_{v[X:=S_1]}^{\Hm} \subseteq S_1\}$.
-	
-	\begin{align*}
-		\left \|\varphi(Y)_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}} & = \left \|\mu X. \varphi_{1}(Y)_{{\cal S}(Y)} \right\|_v^{\Hm_{{\cal S}(Y)}}\\
-		& = \bigcap \{S_1 \subseteq S \mid \left \|\varphi_{1{\cal S}(Y)} \right\|_{v[X:=S_1]}^{\Hm_{{\cal S}(Y)}} \subseteq S_1\}\\
-		& = \bigcap \{S_1 \subseteq S \mid \left \|\varphi_1(Y) \right\|_{v[X:=S_1]}^{\Hm} \subseteq S_1\} \qquad\qquad \hbox{  (归纳假设)}
-	\end{align*}
-\end{proof}
-
-命题~\ref{pro:statequ}表明$(\Hm, v) \models \varphi(Y)$ 当且仅当$(\Hm_{{\cal S}(Y)}, v) \models \varphi_{{\cal S}(Y)}$。 % Moreover,
-\begin{example}
-	[例~\ref{exp:freshp}的延续] 
-	令$\varphi = \EXIST\NEXT Y \wedge \nu X. (ch \wedge j \wedge \EXIST\NEXT \EXIST \NEXT X)$，则 
-	\begin{align*}
-		&\varphi_{{\cal S}(Y)} = \EXIST\NEXT p_y \wedge \nu X. (ch \wedge j \wedge \EXIST\NEXT \EXIST \NEXT X),\\
-		&\left\|\varphi\right\|_v^{\Hm} = \{s_0\},\\
-		&\left\|\varphi_{{\cal S}(Y)}\right\|_v^{\Hm_{{\cal S}(Y)}} = \{s_0\}.
-	\end{align*}
-\end{example}
-
-\begin{lemma}
-	\label{lem:vbextension}
-	令$\tau \subseteq {\cal V}$为变元集合，$\varphi(\tau)$为含有$\tau$中自由变元的公式，$V\subseteq \Ha$为原子命题集合。若$(\Hm, v) \lrto_V (\Hm',v')$，则 $\Hm_{{\cal S}(\tau)} \lrto_V \Hm'_{{\cal S}(\tau)}$。
+\begin{lemma}\label{lem:boundEqu}
+	令$\Hm = (S,r,R,L)$、$\varphi$为$\mu$-公式且$S_1\subseteq S_2 \subseteq S$。若$X$正出现在 $\varphi$中，则 $\left\|\varphi\right\|_{v[X:=S_1]}^{\Hm} \subseteq \left\|\varphi\right\|_{v[X:=S_2]}^{\Hm}$.%, and if $X$ appears  negatively in $\varphi$, then $\varphi_{v[X:=S_2]}^{\Hm}\subseteq \varphi_{v[X:=S_1]}^{\Hm}$.
+	% 			\[
+	% 			\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm} = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	% 			\]
 \end{lemma}
 \begin{proof}
-	令$\Hb$为$(\Hm, v)$ 和$(\Hm',v')$之间的Var-$V$-互模拟关系，下证$\Hb$是$\Hm_{{\cal S}(\tau)}$ 和$\Hm'_{{\cal S}(\tau)}$之间的$V$-互模拟关系。
-	\begin{itemize}
-		\item $(r,r')\in \Hb$,
-		\item 对任意$s\in S$ 和$t\in S'$，若$(s,t)\in \Hb$，因为$\Hm \lrto_V \Hm'$且对任意$Y\in \tau$，$s\in v(Y)$ 当且仅当$t \in v'(Y)$，这意味着$p_y\in L_{\tau}(s)$ 当且仅当$p_y \in  L_{\tau}'(t)$；所以，对任意 $p\in \Ha-V$，$p\in L_{\tau}(s)$ 当且仅当$p\in L_{\tau}'(t)$， %Moreover, for each $p \in $
-		\item 因为$\Hm \lrto_V \Hm'$，所以$V$-互模拟的第三和四点容易证明。
-	\end{itemize}
+	通过归纳$\varphi$的结构来证明。
+	
+	\textbf{基始.} (a) $\varphi = p$，其中$p\in \Ha$。
+	
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \{p\mid p \in L(s)\}\\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
+	
+	(b) $\varphi = Y$，其中$Y \in {\cal V}-\{X\}$。
+	
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = v[X:= S_1](Y) \\
+		& = v[X:= S_2](Y)\\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
+	
+	(c) $\varphi = X$。
+	
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = v[X:=S_1](X)\\
+		& = S_1\\
+		& \subseteq S_2 \\
+		& = v[X = S_2](X)\\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
+	
+	
+	\textbf{归纳步.} (a) $\varphi = \varphi_1 * \varphi_2$，其中$* \in \{\vee, \wedge\}$且$X$正出现在$\varphi_i$中（$i=1,2$）。
+	
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \left\| \varphi_1\right\|_{v[X:= S_1]}^{\Hm} * \left\| \varphi_2\right\|_{v[X:= S_1]}^{\Hm}\\
+		& \subseteq \left\| \varphi_1\right\|_{v[X:= S_2]}^{\Hm} * \left\| \varphi_2\right\|_{v[X:= S_2]}^{\Hm} \quad \hbox{(归纳假设)}\\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
+	
+	(b) $\varphi = \ALL\NEXT \varphi_1$，且$X$正出现在$\varphi_1$中。
+	
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \{s \mid \forall s'.(s,s') \in R \Rto s' \in \left\| \varphi_1\right\|_{v[X:= S_1]}^{\Hm}\}\\
+		& \subseteq \{s \mid \forall s'.(s,s') \in R \Rto s' \in \left\| \varphi_1\right\|_{v[X:= S_2]}^{\Hm}\} \quad \hbox{(归纳假设)}\\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
+	
+	(c) $\varphi = \EXIST \NEXT \varphi_1$，且$X$正出现在$\varphi_1$中。
+	
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \{s \mid \exists s'.(s,s') \in R \wedge s' \in \left\| \varphi_1\right\|_{v[X:= S_1]}^{\Hm}\}\\
+		& \subseteq \{s \mid \exists s'.(s,s') \in R \wedge s' \in \left\| \varphi_1\right\|_{v[X:= S_2]}^{\Hm}\} \quad \hbox{(归纳假设)}\\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
+	
+	(d) $\varphi = \nu Y. \varphi_1$，且$X$正出现在$\varphi_1$中。
+	
+	(d.1) $Y =X$.
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \bigcup\{S' \subseteq S \mid S' \subseteq \left\| \varphi_1\right\|_{v[X:= S_1][X:= S']}^{\Hm}\}\\
+		& = \bigcup\{S' \subseteq S \mid S' \subseteq \left\| \varphi_1\right\|_{v[X:= S']}^{\Hm}\}\\
+		& = \bigcup\{S' \subseteq S \mid S' \subseteq \left\| \varphi_1\right\|_{v[X:= S_2][X:= S']}^{\Hm}\}\\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
+	
+	(d.2) $Y \not =X$.
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \bigcup\{S' \subseteq S \mid S' \subseteq \left\| \varphi_1\right\|_{v[X:= S_1][Y:= S']}^{\Hm}\}\\
+		& \subseteq \bigcup\{S' \subseteq S \mid S' \subseteq \left\| \varphi_1\right\|_{v[X:= S_2][Y:= S']}^{\Hm}\} \quad \hbox{(归纳假设)}\\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
+	
+	(e) $\varphi = \mu X. \varphi_1$，且$X$正出现在$\varphi_1$中。
+	
+	(e.1) $Y =X$.
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \bigcap\{S' \subseteq S \mid \left\| \varphi_1\right\|_{v[X:= S_1][X:= S']}^{\Hm}\subseteq S'\}\\
+		& = \bigcap\{S' \subseteq S \mid  \left\| \varphi_1\right\|_{v[X:= S']}^{\Hm} \subseteq S'\}\\
+		& = \bigcap\{S' \subseteq S \mid  \left\| \varphi_1\right\|_{v[X:= S_2][X:= S']}^{\Hm} \subseteq S'\} \\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
+	
+	(e.2) $Y \not =X$.
+	注意，对任意$\mu$-公式$\psi$，$\left\| \psi\right\|_{v[X:= S]}^{\Hm} \subseteq S$。
+	\begin{align*}
+		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \bigcap\{S' \subseteq S \mid \left\| \varphi_1\right\|_{v[X:= S_1][Y:= S']}^{\Hm}\subseteq S'\}\\
+		& \subseteq \bigcap\{S' \subseteq S \mid  \left\| \varphi_1\right\|_{v[X:= S_2][Y:= S']}^{\Hm} \subseteq S'\}  \quad \hbox{(归纳假设)}\\
+		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
+	\end{align*}
 \end{proof}
 
-基于此，可以证明Var-$V$-互模拟关于$\mu$-公式是不变的。
-\begin{proposition}[Var-$V$-invariant]
+\begin{proposition}[不变性]
 	\label{pro:variB}
-	令$\varphi(\tau)$为$\mu$-公式，出现在其中所有的自由变元构成集合$\tau \subseteq {\cal V}$，$V$为原子命题集。若$(\Hm, v) \lrto_V (\Hm',v')$ 且$\IR(\varphi(\tau), V)$，则$(\Hm,v) \models \varphi(\tau)$ 当且仅当$(\Hm',v') \models \varphi(\tau)$。
+	令$\varphi$为$\mu$-公式、${\cal V}_1\subseteq {\cal V}$且$V\subseteq \Ha$。 若$(\Hm, s, v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm', s', v')$且$\IR(\varphi, V \cup {\cal V}_1)$，则$(\Hm,s, v) \models \varphi$当且仅当$(\Hm',s', v') \models \varphi$。
 \end{proposition}
 \begin{proof}
-	不失一般性地，令$\Var(\varphi(\tau))\cap V = \emptyset$、$\tau=\{Y_1, \dots, Y_n\}$、$p_{\tau} = \{p_{y_1}, \dots, p_{y_n}\} \cap (V \cup \Var(\varphi)) = \emptyset$且$\varphi_{{\cal S}(\tau)}$ 为将$\varphi(\tau)$中的每个自由变元$Y_i\in \tau$用新的原子命题$p_{y_i} \in p_{\tau}$替换得到的公式，其中$i = 1, \dots, n$。不难看出 $\varphi_{{\cal S}(\tau)}$为一个$V$-无关的$\mu$-句子。
-	\begin{align*}
-		\left\| \varphi(\{Y_1, \dots, Y_n\})\right\|_v^{\Hm} & = \left\| \varphi_{{\cal S}(Y_1)({\cal S}(\{Y_2, \dots, Y_n\}))}\right\|_v^{\Hm_{{\cal S}(Y_1){\cal S}(\{Y_2,\dots, Y_n\})}}\\
-		& = \left\| \varphi_{{\cal S}(Y_1){\cal S}(Y_2)({\cal S}(\{Y_3, \dots, Y_n\}))}\right\|_v^{\Hm_{{\cal S}(Y_1){\cal S}(Y_2){\cal S}(\{Y_3,\dots, Y_n\})}}\\
-		& \dots\\
-		& = \left\| \varphi_{{\cal S}(Y_1) \dots {\cal S}(Y_n)}\right\|_v^{\Hm_{{\cal S}(Y_1)\dots {\cal S}(Y_n)}}\\
-		& = \left\| \varphi_{{\cal S}(\tau)}\right\|_v^{\Hm_{{\cal S}(\tau)}}\hbox{。}
-	\end{align*}
-	因此，$(\Hm, v) \models \varphi(\tau)$ 当且仅当$(\Hm_{{\cal S}(\tau)}, v) \models \varphi_{{\cal S}(\tau)}$。
+	令$\Hm=(S,r,R,L)$ 且$\Hm'=(S',r',R',L')$。
+假设$\Var(\varphi) \cap (V\cup {\cal V}_1) = \emptyset$且$(\Hm, s, v)$和$(\Hm', s', v')$之间的${\tuple{{\cal V}_1, V}}$-互模拟关系为$\Hb$。
 	
-	由引理\ref{lem:vbextension}可知$\Hm_{{\cal S}(\tau)} \lrto_V \Hm'_{{\cal S}(\tau)}$。因此，对任意$V$-无关的$\mu$-句子$\psi$，$\Hm_{{\cal S}(\tau)}\models \psi$ 当且仅当$\Hm'_{{\cal S}(\tau)}\models \psi$。
+	\textbf{基始.} (a) $\varphi = p$，其中$p\not \in V$。
 	
-	所以，$(\Hm,v) \models \varphi(\tau)$ 当且仅当$(\Hm',v') \models \varphi(\tau)$。
+	$(\Hm,s,v) \models \varphi$\\
+	$\LRto$ $p \in L(s)$ \\
+	$\LRto$ $p\in L(s')$ \hfill ($(\Hm, s, v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm', s', v')$, $p \not \in V$)\\
+	$\LRto$ $(\Hm',s',v') \models \varphi$。
+	
+	(b) $\varphi = X$，其中$X \not \in {\cal V}_1$。
+	
+	$(\Hm,s, v)\models \varphi$ \\
+	$\LRto$ $s \in v(X)$ \\
+	$\LRto$ $s' \in v'(X)$ \hfill ($(s,s')\in \Hb$, $X\not \in {\cal V}_1$)\\
+	$\LRto$ $(\Hm',s',v') \models \varphi$。
+	
+	\textbf{归纳步.} (a) $\varphi = \neg \varphi_1$。
+	
+	$(\Hm,s,v) \models \varphi$\\
+	$\LRto$ $(\Hm,s,v) \not \models \varphi_1$\\
+	$\LRto$ $(\Hm',s',v') \not \models \varphi_1$ \hfill (归纳假设)\\
+	$\LRto$ $(\Hm',s',v') \models \varphi$。
+	
+	(b) $\varphi = \varphi_1 \vee \varphi_2$。
+	
+	$(\Hm,s,v) \models \varphi$\\
+	$\LRto$ $(\Hm,s,v) \models \varphi_1$或$(\Hm,s,v)\models \varphi_2$ \\
+	$\LRto$ $(\Hm',s',v') \models \varphi_1$或$(\Hm',s',v') \models \varphi_2$ \hfill (归纳假设)\\
+	$\LRto$ $(\Hm',s',v')\models \varphi$。
+	
+	(c)  $\varphi = \ALL\NEXT \varphi_1$。
+	
+	$(\Hm,s,v) \models \varphi$\\
+	$\LRto$ 对任意$(s, s_1)\in R$，由$(\Hm,s_1,v) \models \varphi_1$\\
+	$\LRto$ 对任意$(s',s_1') \in R'$，存在$(s,s_1) \in R$，使得$(s_1,s_1') \in \Hb$\hfill ($(\Hm, s, v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm', s', v')$)\\
+	$\LRto$ 对任意$(s',s_1') \in R'$，有$(\Hm',s_1',v')\models \varphi_1$  \hfill (归纳假设)\\
+	$\LRto$ $(\Hm',s',v')\models \varphi$。
+	
+	
+	(d) $\varphi = \nu X. \varphi_1$。
+	
+	$(\Hm,s,v) \models \varphi$ \\
+	$\Rto$ $s\in \bigcup \{S_1 \subseteq S \mid S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}\}$\\
+	$\Rto$ 存在$S_1 \subseteq S$，使得$S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$ 和$s \in S_1$\\
+	$\Rto$ 对任意$w\in S_2 = S_1 \cup \{s_2\mid (t,s_i) \in \Hb,~s_2\in S \hbox{ and } s_1\in S_1 \hbox{ with } i=1,2\}$，存在$w'\in S_1$使得$(\Hm,w,v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm,w',v)$ \hfill (命题~\ref{pro:EqUnion})\\
+	$\Rto$ 对任意$w\in S_2 = S_1 \cup \{s_2\mid (t,s_i) \in \Hb,~s_2\in S \hbox{ and } s_1\in S_1 \hbox{ with } i=1,2\}$，存在$w'\in S_1$使得 $(\Hm,w,v[X:=S_2]) \lrto_{\tuple{{\cal V}_1, V}} (\Hm,w',v[X:=S_2])$\\
+	%	$\Rto$ For each $w\in S_1$, we have $w \in \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$ \hfill ($S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$)\\
+	%$\Rto$ For each $w\in S_2$, we have $w \in \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$ \hfill ($S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$, induction hypothesis)\\
+	$\Rto$ 对任意$w\in S_2$，有$w \in \left\|\varphi_1\right\|_{v[X:= S_2]}^{\Hm}$ \hfill ($S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$, 归纳假设, 引理~\ref{lem:boundEqu})\\
+	$\Rto$ 存在$S_2 \subseteq S$，使得$S_2 \subseteq \left\|\varphi_1\right\|_{v[X:= S_2]}^{\Hm}$\\
+	$\Rto$ 对任意$u'\in \Hb(S_2)$，存在$u\in S_2$使得$(\Hm',u',v'[X:= \Hb(S_2)]) \lrto_{\tuple{{\cal V}_1, V}} (\Hm,u,v[X:=S_2])$\\
+	$\Rto$ 对任意$u'\in \Hb(S_2)$，有$u'\in \left\|\varphi_1\right\|_{v'[X:= \Hb(S_2)]}^{\Hm'}$ \hfill (归纳假设)\\
+	%$\Rto$ For each $u'\in \Hb(S_2)$, $u'\in \left\|\varphi_1\right\|_{v'[X:= \Hb(S_2)]}^{\Hm'}$\\
+	$\Rto$ 存在$\Hb(S_2)\subseteq S'$，使得$\Hb(S_2) \subseteq \left\|\varphi_1\right\|_{v'[X:= \Hb(S_2)]}^{\Hm'}$ 且$s'\in \Hb(S_2)$ \hfill ($s\in S_2$)\\
+	$\Rto$ $s' \in \bigcup\{S_1'\subseteq S' \mid S_1' \subseteq \left\|\varphi_1\right\|_{v'[X:= S_1']}^{\Hm'}\}$\\
+	$\Rto$ $(\Hm',s', v') \models \varphi$。
+	
+	另一个方向可类似地证明。
 \end{proof}
+
+%基于此，可以证明Var-$V$-互模拟关于$\mu$-公式是不变的。
+%\begin{proposition}[Var-$V$-invariant]
+%	\label{pro:variB}
+%	令$\varphi(\tau)$为$\mu$-公式，出现在其中所有的自由变元构成集合$\tau \subseteq {\cal V}$，$V$为原子命题集。若$(\Hm, v) \lrto_V (\Hm',v')$ 且$\IR(\varphi(\tau), V)$，则$(\Hm,v) \models \varphi(\tau)$ 当且仅当$(\Hm',v') \models \varphi(\tau)$。
+%\end{proposition}
+%\begin{proof}
+%	不失一般性地，令$\Var(\varphi(\tau))\cap V = \emptyset$、$\tau=\{Y_1, \dots, Y_n\}$、$p_{\tau} = \{p_{y_1}, \dots, p_{y_n}\} \cap (V \cup \Var(\varphi)) = \emptyset$且$\varphi_{{\cal S}(\tau)}$ 为将$\varphi(\tau)$中的每个自由变元$Y_i\in \tau$用新的原子命题$p_{y_i} \in p_{\tau}$替换得到的公式，其中$i = 1, \dots, n$。不难看出 $\varphi_{{\cal S}(\tau)}$为一个$V$-无关的$\mu$-句子。
+%	\begin{align*}
+%		\left\| \varphi(\{Y_1, \dots, Y_n\})\right\|_v^{\Hm} & = \left\| \varphi_{{\cal S}(Y_1)({\cal S}(\{Y_2, \dots, Y_n\}))}\right\|_v^{\Hm_{{\cal S}(Y_1){\cal S}(\{Y_2,\dots, Y_n\})}}\\
+%		& = \left\| \varphi_{{\cal S}(Y_1){\cal S}(Y_2)({\cal S}(\{Y_3, \dots, Y_n\}))}\right\|_v^{\Hm_{{\cal S}(Y_1){\cal S}(Y_2){\cal S}(\{Y_3,\dots, Y_n\})}}\\
+%		& \dots\\
+%		& = \left\| \varphi_{{\cal S}(Y_1) \dots {\cal S}(Y_n)}\right\|_v^{\Hm_{{\cal S}(Y_1)\dots {\cal S}(Y_n)}}\\
+%		& = \left\| \varphi_{{\cal S}(\tau)}\right\|_v^{\Hm_{{\cal S}(\tau)}}\hbox{。}
+%	\end{align*}
+%	因此，$(\Hm, v) \models \varphi(\tau)$ 当且仅当$(\Hm_{{\cal S}(\tau)}, v) \models \varphi_{{\cal S}(\tau)}$。
+%	
+%	由引理\ref{lem:vbextension}可知$\Hm_{{\cal S}(\tau)} \lrto_V \Hm'_{{\cal S}(\tau)}$。因此，对任意$V$-无关的$\mu$-句子$\psi$，$\Hm_{{\cal S}(\tau)}\models \psi$ 当且仅当$\Hm'_{{\cal S}(\tau)}\models \psi$。
+%	
+%	所以，$(\Hm,v) \models \varphi(\tau)$ 当且仅当$(\Hm',v') \models \varphi(\tau)$。
+%\end{proof}
 
 命题~\ref{pro:variB}表明，若两个赋值是Var-$V$-互模拟的，则这两个赋值同时满足（或不满足）同一个与$V$无关的公式。
 例如，$(\Hm_i,v_i)$ $i=1,2$为两个赋值，$\varphi =X$，$V=\{p\}$；若$(\Hm_1, v_1) \lrto_V (\Hm_2,v_2)$，则可以证明$(\Hm_1,v_1) \models \varphi$ 当且仅当$(\Hm_2,v_2) \models \varphi$。
@@ -1173,7 +1422,7 @@ D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有�
 			%And if $w' \Hr^i w$, $w_2$is constructed based on $w$ and $w_2'\in \Hw_2$ is constructed based on $w'$, then $w_2' \Hr_2^i w_2$
 			%\item if $\exists w_1'\in \Hw_1$ such that $w_1' \Hr_1 w_1$, then let $w_2' \in \Hw_2$, $w_2' \Hr_2 w_2$, and if $w_1' \neq s_1$ then do (i) for $w_2'$, else let$w_2' = s_2$.
 		\end{itemize}
-		\item 删除 $S_2$和 $R_2$中重复的元素。
+		\item[(3)] 删除 $S_2$和 $R_2$中重复的元素。
 	\end{itemize}
 	显然，$\Hm \lrto_{\{p\}} \Hm_2$和 $\Hm_2 \lrto_V \Hm_1$。
 	%因此，$(\Hm_2, s_2) \models \Muforget(\varphi, p)$，所以 $(\Hm_1, s_1) \models \Muforget(\Muforget(\varphi, p), V)$。
@@ -1199,14 +1448,88 @@ D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有�
 
 $\Muforget$的另一个性质是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子的：形如$\ALL\NEXT \varphi$或 $\EXIST \NEXT \varphi$的$\mu$-句子的遗忘可以提到$\ALL\NEXT$和 $\EXIST \NEXT$后面计算。而对于$\mu X. \varphi$和$\nu X. \varphi$就没有这样的性质，因为$\varphi$显然不是一个$\mu$-句子。
 
+\begin{lemma}
+	\label{cor:VarInvariant}
+	令$(\Hm,s,v) \lrto_{\tuple{\{X\},V}} (\Hm',s',v')$且$\varphi$是一个$\mu$-公式。若$\IR(\varphi,V)$且$X$ 正出现在$\varphi$中，则$(\Hm,s,v) \models \varphi$ 当且仅当$(\Hm',s',v') \models \varphi$。
+\end{lemma}
+\begin{proof}
+	假设$(\Hm,s,v)$和$(\Hm',s',v')$ 之间的${\tuple{\{X\},V}}$-互模拟关系为$\Hb_X$。% and $\Hb_X(S_1) = \{t \mid (s'',t) \in \Hb_X \hbox{ and } s''\in S_1\}$ for any $S_1 \subseteq S$.
+	
+	\textbf{基始.} (a) $\varphi = p$，其中$p \in \Ha$。
+	
+	$(\Hm,s,v) \models \varphi$ \\
+	$\LRto$ $p \in L(s)$\\
+	$\LRto$ $p \in L'(s)$ \hfill ($(\Hm,s,v) \lrto_{\tuple{\{X\},V}} (\Hm',s',v')$)\\
+	$\LRto$ $(\Hm',s',v') \models \varphi$。
+	
+	(b) $\varphi = Y$，其中$Y \in {\cal V}-\{X\}$。
+	
+	$(\Hm,s,v) \models \varphi$ \\
+	$\LRto$ $s\in v(Y)$\\
+	$\LRto$ $s' \in v'(Y)$ \hfill ($(\Hm,s,v) \lrto_{\tuple{\{X\},V}} (\Hm',s',v')$)\\
+	$\LRto$ $(\Hm',s',v') \models \varphi$。
+	
+	
+	
+	
+	
+	
+	\textbf{归纳步.} (a) $\varphi = \neg \varphi_1$。
+	
+	$(\Hm,s,v) \models \varphi$\\
+	$\LRto$ $(\Hm,s,v) \not \models \varphi_1$ \\
+	$\LRto$ $(\Hm',s', v') \not \models \varphi_1$ \\
+	$\LRto$ $(\Hm',s',v') \models \varphi$。
+	
+	
+	(b) $\varphi = \varphi_1 \vee \varphi_2$容易证明。
+	
+	(c) $\varphi = \ALL \NEXT \varphi_1$。
+	
+	$(\Hm,s,v) \models \varphi$ \\
+	$\LRto$ 对任意$(s, s_1) \in R$，$(\Hm,s_1,v) \models \varphi_1$\\
+	$\LRto$ 对任意$(s',s_1') \in R'$，存在$(s,s_1)\in R$使得$(\Hm, s_1,v) \lrto_{\tuple{\{X\},V}} (\Hm',s_1',v')$\\
+	$\LRto$ 对任意$(s',s_1') \in R'$，$(\Hm',s_1',v') \models \varphi_1$ \hfill (归纳假设)\\
+	$\LRto$ $(\Hm',s',v') \models \varphi$。
+	
+	
+	(d) $\varphi = \nu Y. \varphi_1$。
+	
+	(d.1) $Y =X$。
+	$(\Hm,s,v) \models \nu X. \varphi_1$ \\
+	$\LRto$ $s \in \left\|\varphi\right\|_v^{\Hm}$\\
+	$\LRto$ $s \in \bigcup\{S_1 \subseteq S\mid S_1 \subseteq \left\|\varphi_1\right\|_{v[X:=S_1]}^{\Hm}\}$\\
+	$\LRto$ 存在$S_1 \subseteq S$，使得$S_1 \subseteq \left\|\varphi_1\right\|_{v[X:=S_1]}^{\Hm}$和$s\in S_1$\\
+	$\LRto$ 存在$S_2=S_1 \cup \{s_2\mid (s_i,t) \in \Hb_X, ~s_2\in S, \hbox{ and } s_1 \in S_1 \hbox{ with }i=1,2\}$，
+	%$S_1 \subseteq S_2 \subseteq S$ 
+	使得$S_2 \subseteq \left\|\varphi_1\right\|_{v[X:=S_2]}^{\Hm}$ 且$s\in S_2$ \hfill (看命题~\ref{pro:variB}的证明)\\
+	$\LRto$ 存在$\Hb_X(S_2) \subseteq S'$，使得$\Hb_X(S_2) \subseteq \left\|\varphi_1\right\|_{v'[X:=\Hb_X(S_2)]}^{\Hm'}$、$s'\in \Hb_X(S_2)$且 $(\Hm,v[X:=S_2]) \lrto_V (\Hm',v'[X:=\Hb_X(S_2)])$ \hfill ($(s,s') \in \Hb_X$, 不变性)\\
+	$\LRto$ $s'\in \bigcup\{S_1' \subseteq S'\mid S_1' \subseteq \left\|\varphi_1\right\|_{v'[X:=S_1']}^{\Hm'}\}$\\
+	%$\LRto$ $(\Hm,v[X:=S_1]) \models \nu X. \varphi_1$\\
+	$\LRto$ $(\Hm',s',v') \models \nu X. \varphi_1$。\\
+	
+	(d.2) $Y \not =X$。
+	$(\Hm,s,v) \models \nu Y. \varphi_1$ \\
+	$\LRto$ $s \in \left\|\varphi\right\|_v^{\Hm}$\\
+	$\LRto$ $s \in \bigcup\{S_1 \subseteq S\mid S_1 \subseteq \left\|\varphi_1\right\|_{v[Y:=S_1]}^{\Hm}\}$\\
+	$\LRto$ 存在$S_1 \subseteq S$，使得$S_1 \subseteq \left\|\varphi_1\right\|_{v[Y:=S_1]}^{\Hm}$且$s\in S_1$\\
+	$\LRto$ 存在$S_2=S_1 \cup \{s_2\mid (s_i,t) \in \Hb_X, ~s_2\in S, \hbox{ and } s_1 \in S_1 \hbox{ with }i=1,2\}$，
+	%$S_1 \subseteq S_2 \subseteq S$ 
+	使得$S_2 \subseteq \left\|\varphi_1\right\|_{v[Y:=S_2]}^{\Hm}$ 且$s\in S_2$ \hfill (see the proof of Prop.~\ref{pro:variB})\\
+	$\LRto$ 存在$\Hb_X(S_2) \subseteq S'$，使得$\Hb_X(S_2) \subseteq \left\|\varphi_1\right\|_{v'[Y:=\Hb_X(S_2)]}^{\Hm'}$、$s'\in \Hb_X(S_2)$且 $(\Hm,v[Y:=S_2]) \lrto_{\tuple{\{X\}, V}} (\Hm',v'[Y:=\Hb_X(S_2)])$ \hfill ($(s,s') \in \Hb_X$, 归纳假设)\\
+	$\LRto$ $s'\in \bigcup\{S_1' \subseteq S'\mid S_1' \subseteq \left\|\varphi_1\right\|_{v'[Y:=S_1']}^{\Hm'}\}$\\
+	%$\LRto$ $(\Hm,v[X:=S_1]) \models \nu X. \varphi_1$\\
+	$\LRto$ $(\Hm',s',v') \models \nu X. \varphi_1$。
+\end{proof}
+
 
 \begin{proposition}[同质性]\label{chapter06:pro:mu:forget:2}
 	给定原子命题集合$V\subseteq\cal A$和$\mu$-公式 $\varphi$，则: % and $Q\in \{\EXIST, \ALL\}$.
 	\begin{itemize}
 		\item[(i)] $\Muforget(\ALL\NEXT\varphi,V)\equiv \ALL\NEXT \Muforget(\varphi,V)$；
 		\item[(ii)] $\Muforget(\EXIST\NEXT\varphi,V)\equiv\EXIST\NEXT \Muforget(\varphi,V)$；
-		\textcolor{red}{\item[(iii)] $\Muforget(\mu X. \varphi, V) \equiv \mu X. \Muforget(\varphi, V)$；}
-		\item[(iv)] $\Muforget(\nu X. \varphi, V) \equiv \nu X. \Muforget(\varphi, V)$。
+		\item[(iii)] $\Muforget(\nu X. \varphi, V) \equiv \nu X. \Muforget(\varphi, V)$；
+		\item[(iv)] $\Muforget(\mu X. \varphi, V) \equiv \mu X. \Muforget(\varphi, V)$。
 	\end{itemize}
 \end{proposition}
 \begin{proof}
@@ -1237,9 +1560,10 @@ $\Muforget$的另一个性质是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子�
 	
 	$(\Lto)$ $(\Hm,v) \models \ALL \NEXT \Muforget(\varphi,V)$\\
 	$\Rto$ 对任意$(r, r_1) \in R$，$(\Hm,r_1,v) \models \Muforget(\varphi,V)$\\
-	$\Rto$ 对任意$(r, r_1) \in R$，存在$(\Hm,r_1,v) \lrto_V (\Hm', r', v')$ 且$(\Hm', r', v') \models \varphi$\\
-	$\Rto$ 对任意$i \geq 0$，存在$(\Hm,r_i,v) \lrto_V (\Hm_i', r_i',v_i')$ 且$(\Hm_i', r_i', v_i') \models \varphi$，其中$\{r_0, r_1, \dots\} = \{s\mid (r, s) \in R\}$，$\Hm_i' = (S_i', R_i', L_i', r_i')$（假定当$i \not = j$时，$S_i' \cap S_j'= \emptyset$） %, $v'(X) = \Hb_i(v(X))$ for every $X \in {\cal V}$, 
-	，$\Hb_i$是$(\Hm,r_i,v)$ 和$(\Hm_i', r_i', v_i')$之间的Var-$V$-互模拟关系\\
+	$\Rto$ 对任意$(r, r_1) \in R$，$(\Hm_{r_1}, r_1,v) \models \Muforget(\varphi,V)$\\
+	$\Rto$ 对任意$(r, r_1) \in R$，存在$(\Hm_{r_1},r_1,v) \lrto_V (\Hm', r', v')$ 且$(\Hm', r', v') \models \varphi$\\
+	$\Rto$ 对任意$i \geq 0$，存在$(\Hm_{r_i},r_i,v) \lrto_V (\Hm_i', r_i',v_i')$ 且$(\Hm_i', r_i', v_i') \models \varphi$，其中$\{r_0, r_1, \dots\} = \{s\mid (r, s) \in R\}$，$\Hm_i' = (S_i', R_i', L_i', r_i')$（假定当$i \not = j$时，$S_i' \cap S_j'= \emptyset$） %, $v'(X) = \Hb_i(v(X))$ for every $X \in {\cal V}$, 
+	，$\Hb_i$是$(\Hm_{r_i},r_i,v)$ 和$(\Hm_i', r_i', v_i')$之间的Var-$V$-互模拟关系\\
 	$\Rto$ $(\Hm^*, v^*) \lrto_V (\Hm,v)$ 且$(\Hm^*, v^*) \models \ALL\NEXT \varphi$，其中$\Hm^* = (S^*, R^*,L^*, r)$且
 	\begin{itemize}
 		\item $S^* = \{r\} \cup \bigcup_{i\geq 0} S_i'$,
@@ -1284,9 +1608,8 @@ $\Muforget$的另一个性质是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子�
 	%	\end{itemize}
 	%	$\Rto$ $(\Hm,s)\models \CTLforget(\EXIST\NEXT\phi,V)$。
 	
-	\textcolor{red}{(iii)} 
 	
-	(iv) $(\Rto)$ $(\Hm,v) \models \Muforget(\nu X. \varphi, V)$\\
+	(iii) $(\Rto)$ $(\Hm,v) \models \Muforget(\nu X. \varphi, V)$\\
 	$\Rto$ 存在$(\Hm', v') \lrto_V (\Hm,v)$ 且$(\Hm',v') \models \nu X. \varphi$\\
 	$\Rto$ $r' \in \bigcup \{S_1 \subseteq S' \mid S_1 \subseteq \left\|\varphi\right\|_{v'[X:=S_1]}^{\Hm'}\}$\\
 	$\Rto$ 存在$S_1 \subseteq S'$ 使得$S_1 \subseteq \left\|\varphi\right\|_{v'[X:=S_1]}^{\Hm'}$、$r'\in S_1$和 $r'\in \left\|\varphi\right\|_{v'[X:=S_1]}^{\Hm'}$\\
@@ -1296,13 +1619,27 @@ $\Muforget$的另一个性质是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子�
 	$\Rto$ $(\Hm,v) \models \nu X. \Muforget(\varphi,V)$ \hfill  ($\IR(\nu X. \Muforget(\varphi,V), V)$)
 	
 	$(\Lto)$ $(\Hm,v)\models \nu X. \Muforget(\varphi,V)$\\
-	$\Rto$ $r\in \bigcup \{S_1 \subseteq S \mid S_1 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_1]}^{\Hm'}\}$\\
-	$\Rto$ 存在$S_1 \subseteq S$ 使得$S_1 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_1]}^{\Hm'}$ 且$r \in S_1$\\
-	$\Rto$ 存在$(\Hm',v'[X:=\Hb(S_1)]) \lrto_V (\Hm,v[X:=S_1])$（其Var-$V$-互模拟关系为$\Hb$）使得$(\Hm',v'$ $[X:=\Hb(S_1)]) \models \varphi$ 且$\Hb(S_1) \subseteq \left\|\varphi\right\|_{v'[X:=\Hb(S_1)]}^{\Hm'}$\\
-	$\Rto$ $r'\in \Hb(S_1)$ \hfill ($(r,r')\in \Hb$)\\
+	$\Rto$ $r\in \bigcup \{S_1 \subseteq S \mid S_1 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_1]}^{\Hm}\}$\\
+	$\Rto$ 存在$S_1 \subseteq S$，使得$S_1 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_1]}^{\Hm}$ 且$r \in S_1$\\
+	$\Rto$ 存在$S_1\subseteq S_2 \subseteq S$且$(\Hm',v') \lrto_V (\Hm,v[X:= S_2])$（有Var-$V$-互模拟关系$\Hb$），使得 $(\Hm',v')\models \varphi$且$S_2 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_2]}^{\Hm}$\\
+	$\Rto$ 存在$(\Hm',v') \lrto_V (\Hm,v[X:= S_2])$，使得$\Hb(S_2) \subseteq \left\|\varphi\right\|_{v'[X:=\Hb(S_2)]}^{\Hm'}$\\
+	$\Rto$ 存在$\Hb(S_2) \subseteq S'$，使得$\Hb(S_2) \subseteq \left\|\varphi\right\|_{v'[X:=\Hb(S_2)]}^{\Hm'}$且$r'\in \Hb(S_2)$ \hfill ($(r,r')\in \Hb$, $r \in S_2$) \\
 	$\Rto$ $r'\in \bigcup \{S_1' \subseteq S' \mid S_1' \subseteq \left\|\varphi\right\|_{v'[X:=S_1']}^{\Hm'}\}$\\
-	$\Rto$ $(\Hm',v'[X:=S_{\Hb}]) \models \nu X. \varphi$ 且$(\Hm,v) \lrto_V (\Hm',v'[X:=S_{\Hb}])$，其中$S_{\Hb} \subseteq S'$ 且对任意$(s,t)\in \Hb$， $s\in S_{\Hb}$ 当且仅当$t\in v(X)$\\
-	$\Rto$ $(\Hm, v) \models \Muforget(\nu X. \varphi, V)$。
+	$\Rto$ $(\Hm',v') \models \nu X. \varphi$ \\ %and $(\Hm',v') \lrto_{V/X} (\Hm,v)$\\
+	$\Rto$ $(\Hm',v') \models \Muforget(\nu X. \varphi, V)$且$(\Hm',v') \lrto_{\tuple{\{X\},V}} (\Hm,v)$\\
+	%$\Rto$ There is $(\Hm_1,v_1) \lrto_{V/X} (\Hm',v')$ and $(\Hm_1, v_1) \lrto_V (\Hm, v)$ s.t. $(\Hm_1,v_1)\models \nu X. \varphi$\\
+	$\Rto$ $(\Hm, v) \models \Muforget(\nu X. \varphi, V)$ \hfill (引理~\ref{cor:VarInvariant})
+	
+%	$(\Lto)$ $(\Hm,v)\models \nu X. \Muforget(\varphi,V)$\\
+%	$\Rto$ $r\in \bigcup \{S_1 \subseteq S \mid S_1 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_1]}^{\Hm'}\}$\\
+%	$\Rto$ 存在$S_1 \subseteq S$ 使得$S_1 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_1]}^{\Hm'}$ 且$r \in S_1$\\
+%	$\Rto$ 存在$(\Hm',v'[X:=\Hb(S_1)]) \lrto_V (\Hm,v[X:=S_1])$（其Var-$V$-互模拟关系为$\Hb$）使得$(\Hm',v'$ $[X:=\Hb(S_1)]) \models \varphi$ 且$\Hb(S_1) \subseteq \left\|\varphi\right\|_{v'[X:=\Hb(S_1)]}^{\Hm'}$\\
+%	$\Rto$ $r'\in \Hb(S_1)$ \hfill ($(r,r')\in \Hb$)\\
+%	$\Rto$ $r'\in \bigcup \{S_1' \subseteq S' \mid S_1' \subseteq \left\|\varphi\right\|_{v'[X:=S_1']}^{\Hm'}\}$\\
+%	$\Rto$ $(\Hm',v'[X:=S_{\Hb}]) \models \nu X. \varphi$ 且$(\Hm,v) \lrto_V (\Hm',v'[X:=S_{\Hb}])$，其中$S_{\Hb} \subseteq S'$ 且对任意$(s,t)\in \Hb$， $s\in S_{\Hb}$ 当且仅当$t\in v(X)$\\
+%	$\Rto$ $(\Hm, v) \models \Muforget(\nu X. \varphi, V)$。
+	
+	(iv) 可类似地证明。
 \end{proof}
 
 
@@ -1348,13 +1685,13 @@ $\ALL\NEXT \phi$ $(\EXIST\NEXT \phi)$ 或 $\mu X. \varphi$ 中遗忘原子命题
 	$\Rto$ $(\Hm,v) \models \Muforget(\varphi_0, V) \wedge \ALL\NEXT\Muforget(\varphi_1, V) \wedge \bigwedge_{2\leq i\leq n} \EXIST\NEXT \Muforget(\varphi_i \wedge \varphi_1, V)$ \\
 	$\Rto$ $(\Hm,r,v) \models \Muforget(\varphi_0, V)$，对任意$(r, r')\in R$，$(\Hm, r', v) \models \Muforget(\varphi_1, V)$，且对任意$2\leq i \leq n$，存在$(r, r'')\in R$ 使得$(\Hm,r'', v) \models \Muforget(\varphi_i \wedge \varphi_1, V)$\\
 	$\Rto$ 存在$(\Hm',v) \models \varphi_0$ 且$(\Hm',v) \lrto_V (\Hm,v)$，其中$\Hm'=(S,r,R,L')$； 
-	对任意$(r, r_j)\in R$，存在$(\Hm_j',r_j',v_j')$ 使得$(\Hm_j',r_j',v_j') \lrto_V (\Hm,r_j, v)$ 且$(\Hm_j',r_j',v_j') \models \varphi_1$；且对任意$(r, r_j)\in R$ 且$(\Hm,r_j, v) \models \Muforget(\varphi_i \wedge \varphi_1, V)$ ($2\leq i \leq n$)，存在$(\Hm_j', r_j', v_j') \lrto_V (\Hm,r_j,v)$ 使得$(\Hm_j', r_j', v_j')\models \varphi_i \wedge \varphi_1$  ($j\geq 0$，当 $x \not =y$时，假设$S_x \cap S_y = \emptyset$)， 其中$\{r_0, r_1, \dots\} = \{r'\mid (r,r')\in R\}$，$\Hm_j'=(S_j', R_j', L_j',r_j')$\\
-	$\Rto$ There is $(\Hm^*,v^*) \lrto_V (\Hm,v)$ s.t. $(\Hm^*, v^*) \models \varphi_0 \wedge \ALL\NEXT \varphi_1 \wedge \bigwedge_{2\leq i\leq n}  \EXIST\NEXT(\varphi_i \wedge \varphi_1)$, where $\Hm^*=(S^*, R^*, L^*,r)$
+	对任意$(r, r_j)\in R$，存在$(\Hm_j',r_j',v_j')$ 使得$(\Hm_j',r_j',v_j') \lrto_V (\Hm_{r_j},r_j, v)$ 且$(\Hm_j',r_j',v_j') \models \varphi_1$；且对任意$(r, r_j)\in R$ 且$(\Hm_{r_j},r_j, v) \models \Muforget(\varphi_i \wedge \varphi_1, V)$ ($2\leq i \leq n$)，存在$(\Hm_j', r_j', v_j') \lrto_V (\Hm_{r_j},r_j,v)$ 使得$(\Hm_j', r_j', v_j')\models \varphi_i \wedge \varphi_1$  ($j\geq 0$，当 $x \not =y$时，假设$S_x \cap S_y = \emptyset$)， 其中$\{r_0, r_1, \dots\} = \{r'\mid (r,r')\in R\}$，$\Hm_j'=(S_j', R_j', L_j',r_j')$\\
+	$\Rto$ 存在$(\Hm^*,v^*) \lrto_V (\Hm,v)$，使得 $(\Hm^*, v^*) \models \varphi_0 \wedge \ALL\NEXT \varphi_1 \wedge \bigwedge_{2\leq i\leq n}  \EXIST\NEXT(\varphi_i \wedge \varphi_1)$，其中$\Hm^*=(S^*, R^*, L^*,r)$且
 	\begin{itemize}
-		\item $S^* = \{r\} \cup \bigcup_{j\geq 0} S_j'$,
-		\item $R^* = \{(r,r_j') \mid j \geq 0\}\cup \bigcup_{j\geq 0} R_j'$,
-		\item $L^*(s) = L_j'(s)$ for $s\in S_j'$ and $L^*(r) = L'(r)$, and 
-		\item for all $X \in {\cal V}$,
+		\item $S^* = \{r\} \cup \bigcup_{j\geq 0} S_j'$，
+		\item $R^* = \{(r,r_j') \mid j \geq 0\}\cup \bigcup_{j\geq 0} R_j'$，
+		\item $L^*(r) = L'(r)$，且对任意$s\in S_j'$，$L^*(s) = L_j'(s)$，
+		\item 对任意$X \in {\cal V}$，
 		\[v^*(X) = 
 		\left\{
 		\begin{array}{ll}
@@ -1441,13 +1778,13 @@ $\ALL\NEXT \phi$ $(\EXIST\NEXT \phi)$ 或 $\mu X. \varphi$ 中遗忘原子命题
 \end{example}
 
 \subsection{计算复杂性}
-析取$\mu$-公式$\varphi$的均匀插值为 $\widetilde{\exists}p \varphi$（$p\in \Ha$），且与 $\varphi[p/\top,\neg p/\top]$等价~\cite{d2006modal}，其中$\varphi[p/\top,\neg p/\top]$表示将$\varphi$中的$p$和$\neg p$同时用$\top$替换。
+析取$\mu$-公式$\varphi$的均匀插值为 $\widetilde{\exists}p \varphi$（$p\in \Ha$），且与 $\varphi[p/\top,$ $\neg p/\top]$等价~\cite{d2006modal}，其中$\varphi[p/\top,\neg p/\top]$表示将$\varphi$中的$p$和$\neg p$同时用$\top$替换。
 正如之前说过的 $\Muforget(\varphi, V)$与均匀插值 $\widetilde{\exists}V \varphi$等价\cite{d2006modal}。因此，下面的命题容易证明。
 \begin{corollary}\label{pro:disLiT}
 	给定$\mu$-句子$\varphi$和原子命题 $p\in \Ha$。若$\varphi$是一个析取 $\mu$-句子， $\Muforget(\varphi, \{p\})$能在线性时间内计算。
 \end{corollary}
 \begin{proof}
-	content...
+	当$\varphi$为吸取公式时，$\Muforget(\varphi, \{p\})$可通过将$\varphi$中的文字$p$和$\neg p$同时替换为$\top$得到。这只需扫描一遍公式$\varphi$，因此只需要$\varphi$大小的线性时间。
 \end{proof}
 
 这种情况下，可以首先将一个$\mu$-句子转化为析取$\mu$-公式，再去计算遗忘。

@@ -74,7 +74,8 @@
 \let\endenumerate\endcompactenum 
 \let\description\compactdesc 
 \let\enddescription\endcompactdesc
-\setlength{\pltopsep}{3pt}
+\setlength{\pltopsep}{10pt}
+
 
 \DeclareMathOperator*{\argmin}{arg\,min}
 \DeclareMathOperator*{\argmax}{arg\,max}
@@ -248,36 +249,86 @@
 \newcommand{\Wanwei}[1]{\textcolor{magenta}{#1}}
 
 
+\oddyemei{\leftmark}
+\evenyemei{贵州大学博士学位论文}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 封面部分
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  % 中文封面内容
-  \classification{TP309}%分类号
-  \confidential{公开}%密级
-  \serialnumber{2016010041}%论文编号
-  \school{贵\ \ 州\ \ 大\ \ 学}
-  \degree{2022届博士}
-  \title{基于遗忘的反应式系统\\最弱充分条件研究}
-  \author{冯仁艳}
-  \advisor{王以松}
-  \xuekezhuanye{软件工程}
-  \yanjiufangxiang{软件工程技术 \\ 与人工智能}
-  \riqi{2022年5月}
-  \didian{中国$\cdot$贵州$\cdot$贵阳}
-%  请适当替换上述文字
+\titlepage
+\newpage\thispagestyle{empty}
 
+\begin{flushleft}
+	\setlength{\fboxrule}{1pt}
+	\setlength{\fboxsep}{0.1cm}
+	\fbox{\shortstack[l]{\vspace*{15pt}\\\songti\zihao{5}论文编号：\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\\vspace*{15pt}}}
+\end{flushleft}
 
- \oddyemei{\leftmark}
- \evenyemei{贵州大学博士学位论文}
+\vspace*{30pt}
+\begin{center}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=2.9cm]{gzdx_red.jpg}\\
+		\includegraphics[width=3.9cm]{gzdx_mao.jpg}\\
+	\end{figure}
+	\kaishu\zihao{-0}{\textbf{2022届博士学位论文}}
+\end{center}
 
+\vspace*{20pt}
+\begin{center}
+	\heiti\zihao{1}{基于遗忘的反应式系统\\最弱充分条件研究}
+\end{center}
 
-  % 封面
-  \maketitle
-  \frontmatter%前序页码i ii iii iv
-  % 目录
-  \tableofcontents
+\vspace*{20pt}
+\begin{center}
+	\heiti\zihao{3}{
+		学科专业：\uwave{\hbox to 52mm{~~~~~~~~~~~~~~~~~~~~~~软件工程~~~~~~~~~~~~~~~~~~~~~~~~}}\\
+		研究方向：\uwave{\hbox to 52mm{~软件工程技术与人工智能~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}
+	}
+\end{center}
+
+\vspace*{70pt}
+
+\begin{center}
+	\heiti\zihao{4}
+	{中国$\cdot$贵州$\cdot$贵阳\\2022年~3月}
+\end{center}
+
+\frontmatter%前序页码i ii iii iv
+% 目录
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 封面部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  % 中文封面内容
+%  \classification{TP309}%分类号
+%  \confidential{公开}%密级
+%  \serialnumber{2016010041}%论文编号
+%  \school{贵\ \ 州\ \ 大\ \ 学}
+%  \degree{2022届博士}
+%  \title{基于遗忘的反应式系统\\最弱充分条件研究}
+%  \author{冯仁艳}
+%  \advisor{王以松}
+%  \xuekezhuanye{软件工程}
+%  \yanjiufangxiang{软件工程技术 \\ 与人工智能}
+%  \riqi{2022年5月}
+%  \didian{中国$\cdot$贵州$\cdot$贵阳}
+%%  请适当替换上述文字
+%
+%
+% \oddyemei{\leftmark}
+% \evenyemei{贵州大学博士学位论文}
+%
+%
+%  % 封面
+%  \maketitle
+%  \frontmatter%前序页码i ii iii iv
+%  % 目录
+%  \tableofcontents
   % 表格目录
   \listoftables
   % 插图目录
