@@ -1142,8 +1142,8 @@ $\Hm\lrto_V\Hm'$但$(\Hm,v)\not\lrto_V(\Hm',v')$有时是成立的。例：例~\
 	$(\Hm,s,v) \models \varphi$ \\
 	$\Rto$ $s\in \bigcup \{S_1 \subseteq S \mid S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}\}$\\
 	$\Rto$ 存在$S_1 \subseteq S$，使得$S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$ 和$s \in S_1$\\
-	$\Rto$ 对任意$w\in S_2 = S_1 \cup \{s_2\mid (t,s_i) \in \Hb,~s_2\in S \hbox{ and } s_1\in S_1 \hbox{ with } i=1,2\}$，存在$w'\in S_1$使得$(\Hm,w,v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm,w',v)$ \hfill (命题~\ref{pro:EqUnion})\\
-	$\Rto$ 对任意$w\in S_2 = S_1 \cup \{s_2\mid (t,s_i) \in \Hb,~s_2\in S \hbox{ and } s_1\in S_1 \hbox{ with } i=1,2\}$，存在$w'\in S_1$使得 $(\Hm,w,v[X:=S_2]) \lrto_{\tuple{{\cal V}_1, V}} (\Hm,w',v[X:=S_2])$\\
+	$\Rto$ 对任意$w\in S_2 = S_1 \cup \{s_2\mid (t,s_i) \in \Hb,~s_2\in S \hbox{和} s_1\in S_1 \hbox{，其中} i=1,2\}$，存在$w'\in S_1$使得$(\Hm,w,v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm,w',v)$ \hfill (命题~\ref{pro:EqUnion})\\
+	$\Rto$ 对任意$w\in S_2 = S_1 \cup \{s_2\mid (t,s_i) \in \Hb,~s_2\in S \hbox{和} s_1\in S_1 \hbox{，其中} i=1,2\}$，存在$w'\in S_1$使得 $(\Hm,w,v[X:=S_2]) \lrto_{\tuple{{\cal V}_1, V}} (\Hm,w',v[X:=S_2])$\\
 	%	$\Rto$ For each $w\in S_1$, we have $w \in \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$ \hfill ($S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$)\\
 	%$\Rto$ For each $w\in S_2$, we have $w \in \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$ \hfill ($S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$, induction hypothesis)\\
 	$\Rto$ 对任意$w\in S_2$，有$w \in \left\|\varphi_1\right\|_{v[X:= S_2]}^{\Hm}$ \hfill ($S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$, 归纳假设, 引理~\ref{lem:boundEqu})\\
@@ -1402,7 +1402,7 @@ D'Agostino 研究了 $\mu$-演算下的均匀插值，并指出 $\mu$-算具有�
 	\]
 \end{proposition}
 \begin{proof}
-	令$(\Hm_1,v_1)$（${\cal M}_1=(S_1, R_1, L_1, s_1)$）为 $\Muforget(\varphi, \{p\} \cup V)$的模型。由遗忘的定义可知，存在$\varphi$的一个模型 $(\Hm,v)$（${\cal M} = (S, R,L, s)$） 使得 $(\Hm_1,v_1)$ $\lrto_{\{p\} \cup V}$ $(\Hm,v)$。如下构造Kripke结构 ${\cal M}_2 = (S_2, R_2, L_2, s_2)$：
+	令$(\Hm_1,v_1)$（${\cal M}_1=(S_1, R_1, L_1, s_1)$）为 $\Muforget(\varphi, \{p\} \cup V)$的模型。由遗忘的定义可知，存在$\varphi$的一个模型 $(\Hm,v)$（${\cal M} = (S, R,L, s)$） 使得 $(\Hm_1,v_1)$ $\lrto_{\{p\} \cup V}$ $(\Hm,v)$。如下构造 Kripke 结构 ${\cal M}_2 = (S_2, R_2, L_2, s_2)$：
 	\begin{itemize}
 		\item[(1)] 对于$s_2$，令$s_2$为满足下列条件的状态：
 		\begin{itemize}
@@ -1515,7 +1515,7 @@ $\Muforget$的另一个性质是关于$\ALL\NEXT$和 $\EXIST \NEXT$时序算子�
 	$\LRto$ 存在$S_1 \subseteq S$，使得$S_1 \subseteq \left\|\varphi_1\right\|_{v[Y:=S_1]}^{\Hm}$且$s\in S_1$\\
 	$\LRto$ 存在$S_2=S_1 \cup \{s_2\mid (s_i,t) \in \Hb_X, ~s_2\in S, \hbox{ and } s_1 \in S_1 \hbox{ with }i=1,2\}$，
 	%$S_1 \subseteq S_2 \subseteq S$ 
-	使得$S_2 \subseteq \left\|\varphi_1\right\|_{v[Y:=S_2]}^{\Hm}$ 且$s\in S_2$ \hfill (see the proof of Prop.~\ref{pro:variB})\\
+	使得$S_2 \subseteq \left\|\varphi_1\right\|_{v[Y:=S_2]}^{\Hm}$ 且$s\in S_2$ \hfill (看命题~\ref{pro:variB}的证明)\\
 	$\LRto$ 存在$\Hb_X(S_2) \subseteq S'$，使得$\Hb_X(S_2) \subseteq \left\|\varphi_1\right\|_{v'[Y:=\Hb_X(S_2)]}^{\Hm'}$、$s'\in \Hb_X(S_2)$且 $(\Hm,v[Y:=S_2]) \lrto_{\tuple{\{X\}, V}} (\Hm',v'[Y:=\Hb_X(S_2)])$ \hfill ($(s,s') \in \Hb_X$, 归纳假设)\\
 	$\LRto$ $s'\in \bigcup\{S_1' \subseteq S'\mid S_1' \subseteq \left\|\varphi_1\right\|_{v'[Y:=S_1']}^{\Hm'}\}$\\
 	%$\LRto$ $(\Hm,v[X:=S_1]) \models \nu X. \varphi_1$\\
