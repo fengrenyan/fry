@@ -3,7 +3,7 @@
 \label{chapter05}
 {\em 第~\ref{chapter03}章探索了$\CTL$遗忘的定义及其基本性质，本章给出两种计算$\CTL$遗忘的算法：基于模型的算法和基于归结的算法$\CTL$-forget。
 	
-	基于模型的计算方法考虑固定有限状态空间下的初始结构。本章证明这样的初始结构可由一个$\CTL$公式来表示，因而其遗忘结果可以由$\CTL$公式表示。
+	基于模型的计算考虑固定有限状态空间下的初始结构。本章证明这样的初始结构可由一个$\CTL$公式来表示，因而其遗忘结果可以由$\CTL$公式表示。
 
 基于归结的计算方法首先将$\CTL$公式转化为$\CTLsnf$子句，然后使用归结系统$R_{\CTL}^{\succ,S}$中的规则对要遗忘的原子命题归结，最后将得到的结果等价转化为$\CTL$公式。
 基于此，本章详细介绍了基于Prolog的$\CTL$-forget算法实现，并给出部分实验结果及结果分析。
@@ -12,7 +12,9 @@
 
 \section{基于模型的有界$\CTL$遗忘计算}
 \label{chapter05:sec:model}
-	遗忘与均匀插值是一对对偶概念。已有研究表明$\CTL$不具有均匀插值性质~\cite{Maksimova:JANCL:1991}，这表明$\CTL$遗忘不是封闭的\footnote{对于给定的逻辑语言${\cal L}$和该语言上的操作${\cal O}$，若$\cal O$作用到$\cal L$中的元素后得到的结果仍然在$\cal L$中，则称$\cal O$在$\cal L$下是封闭的。}。
+	遗忘与均匀插值是一对对偶概念。已有研究表明$\CTL$不具有均匀插值性质~\cite{Maksimova:JANCL:1991}，这表明$\CTL$遗忘不是封闭的
+	%\footnote{对于给定的逻辑语言${\cal L}$和该语言上的操作${\cal O}$，若$\cal O$作用到$\cal L$中的元素后得到的结果仍然在$\cal L$中，则称$\cal O$在$\cal L$下是封闭的。}
+	。
 	此时，探索$\CTL$下遗忘封闭的情形对深入应用遗忘有重要意义。
 	为此，本章首先提出有限初始结构的特征公式；其次，表明$\CTL$公式的遗忘结果在此情形下可以表示成其模型的特征公式的析取；最后，提出一种基于模型的方法计算遗忘。%，且探索了如何使用遗忘计算最弱充分条件和知识更新。
 
@@ -26,24 +28,24 @@
 
 现实情况下能处理的系统都是有限的，且在某一固定环境下所涉及到的原子命题是有限的。因此，在这部分讨论一种约束的$\CTL$，即：
 \begin{itemize}
-	\item （1）出现在$\CTL$公式中的原子命题的个数是有限的（即$\Ha$是有限的）；
-	\item  （2）初始结构的状态空间$S$是一个有限的固定状态空间${\cal S}=\{b_1,\ldots,b_m\}$的子集（即$S \subseteq {\cal S}$），且使得对于任意约束长度的$\CTL$公式$\varphi$，若$\varphi$是可满足的，则存在一个初始结构$(\Hm,s_0)$，使得$(\Hm,s_0)\models \varphi$且其状态空间是${\cal S}$的子集。
+	\item[(1)] 出现在$\CTL$公式中的原子命题的个数是有限的（即$\Ha$是有限的）；
+	\item[(2)] 初始结构的状态空间$S$是一个有限的固定状态空间${\cal S}=\{b_1,\ldots,b_m\}$的子集（即$S \subseteq {\cal S}$），且使得对于任意约束长度的$\CTL$公式$\varphi$，若$\varphi$是可满足的，则存在一个状态空间是${\cal S}$的子集的初始结构$(\Hm,s_0)$，使得$(\Hm,s_0)\models \varphi$。
 \end{itemize}
 由此可见，在这种情形下只有有限个初始结构会被考虑。
 下文表明在这一约束条件下$\CTL$中的遗忘是封闭的。
 
-本节其余部分组织如下：首先，在第\ref{chapter06:sec:des}节定义一种有界$V$-互模拟的概念，然后给出初始结构的特征公式；其次，在第\ref{chapter06:sec:close}节描述约束$\CTL$下的遗忘是封闭的，并给出计算方法；最后，在第\ref{chapter06:sec:algm}节给出基于模型的计算遗忘的算法，并分析算法的复杂性。
+本节其余部分组织如下：首先，在第\ref{chapter06:sec:des}节定义有界$V$-互模拟，然后定义初始结构的特征公式；其次，在第\ref{chapter06:sec:close}节证明约束$\CTL$下的遗忘是封闭的，并给出计算方法；最后，在第\ref{chapter06:sec:algm}节给出基于模型的计算遗忘的算法，并分析算法的复杂性。
 
 
 \subsection{描述初始结构}\label{chapter06:sec:des}%\label{sec:chapter06_chaIntC}
 本小节介绍与一个初始结构相关的$\CTL$公式——特征公式。
 %对于一个给定的有限初始结构（状态个数和$\Ha$都是有限的），其不循环的计算树（状态不重复出现）的深度最多为其状态数的个数。
 对于一个给定的初始结构，其特征公式与其计算树的特征公式密切相关。
-因此，本节首先介绍计算树之间的$V$-互模拟关系；然后，给出计算树的特征公式的定义；最后，给出初始结构的特征公式。
+因此，本小节首先介绍计算树之间的$V$-互模拟关系；然后，给出计算树的特征公式的定义；最后，给出初始结构的特征公式。
 
 \subsubsection{计算树$V$-互模拟}
-在第\ref{chapter03}章中的定义\ref{def:VInd:bisimulation}给出了$\Ind$-结构之间的$V$-互模拟定义及其相关性质，结构之间的$V$-互模拟有相同的定义，即：$\Ind$-结构之间$V$-互模拟具有的性质都可以平凡的迁移到结构之间$V$-互模拟。
-这里给出有限结构间的有界$V$-互模拟（与深度$n$关联的$V$-互模拟）的定义，并证明$V$-互模拟与有界$V$-互模拟在有限结构下等价。
+第\ref{chapter03}章中的定义\ref{def:VInd:bisimulation}给出了$\Ind$-结构之间的$V$-互模拟定义及其相关性质，结构之间的$V$-互模拟有相同的定义，即：$\Ind$-结构之间$V$-互模拟具有的性质都可以平凡的迁移到结构之间$V$-互模拟。
+这里给出有限结构间有界$V$-互模拟（与深度$n$关联的$V$-互模拟）的定义，并证明$V$-互模拟与有界$V$-互模拟在有限结构下等价。
 %本节给出结构之间的$V$-互模拟在有限结构下与下面将要给出的有界$V$-互模拟——与深度$n$关联的$V$-互模拟等价。
 %但是为了方便，本章仍然引入有界$V$-互模拟的概念。
 因此，第\ref{chapter03}章遗忘有的性质在本章约束情形下基本也有~\cite{renyansfirstpaper}，这里不再赘述。
@@ -65,7 +67,7 @@
 \begin{definition}[有界$V$-互模拟]\label{def:V-bisimulation}
 	令$V$是$\Ha$的一个子集，$i\in \{1,2\}$， ${\cal K}_1$和${\cal K}_2$是结构。
 	\begin{itemize}
-		\item ${\cal K}_1$和${\cal K}_2$是有界$V$-互模拟的，当且仅当对所有$n \ge 0$，都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若 ${\cal K}_1$和 ${\cal K}_2$是有界$V$-互模拟的，则记为${\cal K}_1 \overset{B}{\lrto}_V {\cal K}_2$。
+		\item ${\cal K}_1$和${\cal K}_2$是有界$V$-互模拟的，当且仅当对所有$n \ge 0$，都有$({\cal K}_1, {\cal K}_2)\in \Hb_n$。若 ${\cal K}_1$ 和 ${\cal K}_2$是有界$V$-互模拟的，则记为${\cal K}_1 \overset{B}{\lrto}_V {\cal K}_2$。
 		\item 对$\Hm_i$上的路径$\pi_i=(s_{i,1},s_{i,2},\dots)$，若对于任意$j\in \mathbb{N}_{\ge 1}$\footnote{$\mathbb{N}$为整数集，$\mathbb{N}_{\ge 1}$是大于等于1的整数集。}，都有${\cal K}_{1,j} \overset{B}{\lrto}_V {\cal K}_{2,j}$，则$\pi_1 \overset{B}{\lrto}_V \pi_2$。其中${\cal K}_{i, j}=(\Hm_i, s_{i,j})$。
 	\end{itemize}
 \end{definition}
@@ -85,14 +87,14 @@
 \end{lemma}
 
 \begin{proof}
-	令 $V \subseteq \Ha$、 ${\cal K}_i=({\cal M}_i,s_i)~(i\in\{1,2\})$和 $\Hm_i=(S_i, R_i,L_i, s_0^i)$为有限的初始-Kripke结构。
+	令 $V \subseteq \Ha$、 ${\cal K}_i=({\cal M}_i,s_i)~(i\in\{1,2\})$且$\Hm_i=(S_i, R_i,L_i, s_0^i)$为有限的初始-Kripke结构。
 	因为$S_i~(i=1,2)$是有限的，所以$\Hb_n\subseteq S_1\times S_2~(n\ge 0)$都是有限的。
 	由于对任意$n\geq 0$，都有 $\Hb_{n+1} \subseteq \Hb_n$。
 	因此，存在一个最小数$k$，使得
 	$\Hb_{k+1} =\Hb_k$（用 $\Hb$表示）。
 	
 	
-	下证对任意 $r_1\in S_1$和 $r_2 \in S_2$，有 $(r_1, r_2)\in \Hb$蕴涵 %if and only if
+	下证对任意 $r_1\in S_1$和 $r_2 \in S_2$，若$(r_1, r_2)\in \Hb$，则 %if and only if
 	\begin{itemize}
 		\item[(a)] $L_1(r_1)-V = L_2(r_2)-V$；
 		\item[(b)] $\forall w_1\in S_1$，若$(r_1, w_1)\in R_1$，则 $\exists w_2 \in S_2$，使得 $(r_2,w_2) \in R_2$和 $(w_1, w_2) \in \Hb$；
@@ -157,7 +159,7 @@
 	因此，$(s_1, s_2) \in \Hb_1$。同理可证$(s_1, s_2) \in \Hb_2$, \dots, $(s_1, s_2) \in \Hb_n$。
 \end{proof}
 
-命题\ref{B_to_T}表明如果任意两个初始结构中的两个状态$s_1$和$s_2$能够在$\overline{V}$上相互模拟对方直到$n$步，当且仅当分别以$s_1$和$s_2$为根的计算树能在$\overline{V}$上相互模拟直到深度为$n$。
+命题\ref{B_to_T}表明，任意两个初始结构中的两个状态$s_1$和$s_2$能够在$\overline{V}$上相互模拟对方直到$n$步，当且仅当分别以$s_1$和$s_2$为根的计算树能在$\overline{V}$上相互模拟直到深度为$n$。
 由此可知，如果同一初始结构的两个状态$s$和$s'$不是$V$-互模拟的，则存在一个数$k\in \mathbb{N}$，使得分别以$s$和$s'$为根的计算树$\Tr_k(s)$和$\Tr_k(s')$不是$V$-互模拟的。
 \begin{proposition}\label{pro:k}
 	给定原子命题集$V\subseteq \Ha$、初始Kripke结构$\Hm$和两个状态$s,s'\in S$。
@@ -169,7 +171,7 @@
 
 
 \subsubsection{计算树的特征公式}
-由上面小节的讨论可知，$V$-互模拟可以将计算树区别开\footnote{相似的方法在Mycielski等人的文章中已被使用~\cite{DBLP:conf/birthday/1997ehrenfeucht}，在这篇文章中一元公式的结构通过等价类$\equiv_{\overline{k}}$被描述为Hintikka公式~\cite{hintikka1953distributive}。另一个类似的工作是Yankov-Fine构造~\cite{yankov1968three}。}。下面讨论如何使用$\CTL$公式描述计算树，且表明具有（或没有）$V$-互模拟关系之间的计算树的特征公式之间的关系。为此，首先给出计算树特征公式的定义。
+由上面小节的讨论可知，$V$-互模拟可以将计算树区别开\footnote{相似的方法在Mycielski等人的文章中已被使用~\cite{DBLP:conf/birthday/1997ehrenfeucht}，在这篇文章中一元公式的结构通过等价类$\equiv_{\overline{k}}$被描述为Hintikka公式~\cite{hintikka1953distributive}。另一个类似的工作是Yankov-Fine构造~\cite{yankov1968three}。}。下面讨论如何使用$\CTL$公式描述计算树，且表明具有（或没有）$V$-互模拟关系的计算树的特征公式之间的关系。为此，首先给出计算树特征公式的定义。
 \begin{definition}\label{def:V:char:formula}
 	给定原子命题集$V\subseteq \Ha$、初始Kripke结构$\Hm =(S,R,L,s_0)$和状态$s\in S$。
 	定义在$V$上的计算树$\Tr_n(s)$的特征公式（记为${\cal F}_V(\Tr_n(s))$，$n\geq 0$）递归定义如下：
@@ -226,11 +228,11 @@
 		\wedge {\cal F}_V(\Tr_0(s_{k-1}')).
 	\end{align*} 
 	
-	又因为$\Tr_{n-k+1}(s_{k-1})$ $\lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$，所以，对任意$(s_{k-1}, s_k) \in R$，存在$(s_{k-1}', s_k') \in R'$，使得$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$，且对任意$(s_{k-1}', s_k') \in R'$，存在$(s_{k-1}, s_k) \in R$，使得$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$。
+	又因为$\Tr_{n-k+1}(s_{k-1})$ $\lrto_{\overline V} \Tr_{n-k+1}(s_{k-1}')$，所以，对任意$(s_{k-1}, s_k) \in R$，存在$(s_{k-1}', s_k') \in R'$，使得$\Tr_{n-k}(s_k) \lrto_{\overline V} \Tr_{n-k}(s_k')$，且对任意$(s_{k-1}', s_k') \in R'$，存在$(s_{k-1}, s_k) \in R$，使得$\Tr_{n-k}(s_k)$ $ \lrto_{\overline V}\Tr_{n-k}(s_k')$。
 	因此，由归纳假设可知${\cal F}_V(\Tr_{n-k+1}(s_{k-1})) \equiv {\cal F}_V(\Tr_{n-k+1}(s_{k-1}'))$。
 \end{proof}
 
-此外，对于初始Kripke结构$\Hm$上的状态$s$和$s'$，若$(\Hm,s)$是定义在$V$上、根为$s'$、深度为$n$的计算树特征公式的模型，则$s$和$s'$至少属于$\Hb_n$，即：$s$和$s'$能想互模拟至少到第$n$层深度。
+此外，对于初始Kripke结构$\Hm$上的状态$s$和$s'$，若$(\Hm,s)$是定义在$V$上、根为$s'$、深度为$n$的计算树特征公式的模型，则$s$和$s'$至少属于$\Hb_n$，即：$s$和$s'$能相互模拟至少到第$n$层深度。
 
 \begin{lemma}\label{Bn:to:Tn}
 	令$V\subseteq \Ha$、$\Hm=(S, R, L,s_0)$、$\Hm'=(S', R', L',s_0')$、$s\in S$、$s'\in S'$且$n\ge 0$，则：
@@ -297,7 +299,7 @@
 由$ch({\cal M},V)$定义可知，对于任意$\Hm$和$V$，$ch({\cal M},V)$总是存在的，这体现在两个方面：
 \begin{itemize}
 	\item[(1)] 若$\Hm$是$V$-可区分的，则存在两个状态$s$和$s'$是$V$-可区分的，由命题\ref{pro:k}可知，存在一个数$k$，使得$\dis_V({\cal M},s,s',k)$成立；
-	\item[(2)] 若对于任意$k\geq 0$和$\Hm$上的两个状态$s$和$s'$，都有$(s,s')\in \Hb_k$且$\Hb_k =\Hb_{k+1}$，则$ch({\cal M},V)=0$。
+	\item[(2)] 若对于任意$k\geq 0$和$\Hm$上的两个状态$s$和$s'$，都有$(s,s')\in \Hb_k$且$\Hb_k =\Hb_{k+1}$，则$ch({\cal M},$ $V)=0$。
 \end{itemize}
 
 直观上，特征数$c=ch({\cal M},V)$将$\Hm$上的状态分为两大类：第一类中的任意两个状态$s$和$s'$是$V$-可区分的，且$(s,s')\not \in \Hb_c$；第二类中的状态都是$V$-不可区分的。%这也在计算树的特征公式上：
@@ -322,7 +324,7 @@
 
 \begin{definition}[特征公式]
 	给定原子命题集$V\subseteq\cal A$和初始结构${\cal K}=({\cal M},s_0)$，其中$c=ch({\cal M},V)$。对任意$\Hm$上的状态$s' \in S$，记$T(s') = {\cal F}_V(\Tr_c(s'))$。
-	则$\cal K$关于$V$的{\em 特征公式} ${\cal F}_V({\cal K})$为：
+	$\cal K$关于$V$的{\em 特征公式} ${\cal F}_V({\cal K})$定义为：
 	\[T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
 	T(s) \rto
 	\bigwedge_{(s,s')\in R}
@@ -381,7 +383,7 @@
 \end{example}
 
 
-下面的定理表示，特征公式确实描述了一个初始结构。此时，对系统结构的操作就可转换为对其特征公式的操作，如：下文中的给定系统下的最弱充分条件计算。直观上，特征公式保持了给定初始结构在原子命题集$V$上的所有特性，即：具有$\overline{V}$-互模拟的两个初始结构关于$V$的特征公式逻辑等价。
+下面的定理表示，特征公式描述了一个初始结构。此时，对系统结构的操作就可转换为对其特征公式的操作，如：下文中给定系统下的最弱充分条件计算。直观上，特征公式保持了给定初始结构在原子命题集$V$上的所有特性，即：具有$\overline{V}$-互模拟的两个初始结构关于$V$的特征公式逻辑等价。
 
 \begin{theorem}\label{CF}
 	令$V\subseteq \Ha$、$\Hm=(S,R,L,s_0)$且$\Hm'=(S',R', L',s_0')$，则：
@@ -487,11 +489,11 @@
 	$\LRto$ 存在${\cal K}_1' \lrto_{\{sp\}} {\cal K}$和${\cal K}_1' \models {\cal F}_{V\cup \{s\}}({\cal K})$ \hfill (定理~\ref{CF})\\
 	$\LRto$ ${\cal K}_1 \models {\cal F}_{V\cup \{s\}}({\cal K})$。
 	
-	由此可知，$ \CTLforget({\cal F}_{\Ha}({\cal K}), \{sp\}) \equiv {\cal F}_{V\cup \{s\}}({\cal K})$。所以要计算$\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg s, \{s\} \cup \{sp\})$，只需计算$\neg \CTLforget({\cal F}_{V\cup \{s\}}({\cal K})\wedge \neg s, \{s\})$。令$V' = V \cup \{s\} = \{d,se,s\}$，则$\overline{V'} = \{sp\}$。
+	由此可知，$ \CTLforget({\cal F}_{\Ha}({\cal K}), \{sp\}) \equiv {\cal F}_{V\cup \{s\}}({\cal K})$。所以要计算$\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg s, \{s\}$ $\cup \{sp\})$，只需计算$\neg \CTLforget({\cal F}_{V\cup \{s\}}({\cal K})\wedge \neg s, \{s\})$。令$V' = V \cup \{s\} = \{d,se,s\}$，则$\overline{V'} = \{sp\}$。
 	
 	
 	易知，除了$s_2$和$s_4$是$\overline{V'}$-互模拟的以外，其余都是$V'$-可区分的，且$\dis_{V'}(\Hm, s_i, s_j, 0)$，其中$i\not =j$且$i$和$j$不能同时分别取值2和4。
-	因此可以计算$\Hm$关于$V'$的特征数为：
+	因此，可以计算$\Hm$关于$V'$的特征数为：
 	$$ch(\Hm, V')=\max\{k\mid s,s'\in S \text{ 且 } \dis_{V'}({\cal M},s,s',k)\} = 0\hbox{。}$$
 	
 	
@@ -561,7 +563,7 @@
 
 \subsection{遗忘封闭性及复杂性}\label{chapter06:sec:close}
 当$\CTL$公式的长度（符号的个数）为$n$时，由小模型理论可知，定义在状态个数为$k=n8^n$的状态空间${\cal S}=\{s_1,s_2,\dots, s_k\}$上的初始Kripke结构能保证公式的可满足性~\cite{DBLP:journals/jcss/EmersonH85}。
-对于其它拥有同样大小的状态空间上的任意初始结构，都能在状态空间${\cal S}$上找到一个初始结构与之互模拟，且由定理\ref{CF}可知它们有相同的特征公式。
+对于其它拥有同样大小状态空间上的任意初始结构，都能在状态空间${\cal S}$上找到一个初始结构与之互模拟，且由定理\ref{CF}可知它们有相同的特征公式。
 因此，只有有限个初始结构作为该公式的候选模型。从而下面结论成立。
 %这一事实可以用下面引理表示。
 
@@ -598,7 +600,8 @@
 	$\textsc{NP}$-难. 已经证明命题逻辑下遗忘的模型检测是$\textsc{NP}$-难的，由于命题逻辑下的遗忘是$\CTL$的一种~\cite{Zhang2008Properties}。因此，上述问题是$\textsc{NP}$-难的。
 \end{proof}
 
-关于遗忘的逻辑蕴涵问题也是值得考虑的。下面讨论$\CTL_{\ALL\FUTURE}$段下关于遗忘的逻辑蕴涵问题的复杂性。
+%关于遗忘的逻辑蕴涵问题也是值得考虑的。
+下面讨论$\CTL_{\ALL\FUTURE}$段下关于遗忘的逻辑蕴涵问题的复杂性。
 下文用记号$\alpha \models^? \beta$表示“$\alpha$是否逻辑蕴涵$\beta$”。
 
 \begin{theorem}[Entailment]
@@ -616,17 +619,17 @@
 	在co-$\textsc{NP}$中. 定理\ref{thm:exist}表明$\CTLforget(\varphi, V) \models \psi$当且仅当 $\varphi \models \psi$且 $\IR(\psi, V)$。
 	在$\CTL_{\ALL \FUTURE}$中，判定 $\varphi \models \psi$是co-$\textsc{NP}$的~\cite{meier2009complexity}。
 	这里证明 $\IR(\psi, V)$是否成立是 co-$\textsc{NP}$的。不失一般性地，假定$\psi$是可满足的，则 $\psi$有一个大小为$|\psi|$的多项式的模型。
-	这里讨论该问题的补问题：判定 $\psi$是$V$-有关的，即 $\neg \IR(\psi, V)$。显然，$\neg \IR(\psi, V)$当且仅当存在$\psi$的一个模型 $(\Hm,s_0)$和大小为$|\psi|$的多项式的初始结构 $(\Hm',s_0')$，使得 $(\Hm,s_0) \lrto_V (\Hm',s_0')$且 $(\Hm',s_0') \not \models \psi$。因此，判定$\neg \IR(\psi, V)$是否成立有如下两个步骤：(1)猜两个大小为$|\psi|$的多项式的初始结构$(\Hm,s_0)$和 $(\Hm',s_0')$，使得 $(\Hm,s_0) \models \psi$且 $(\Hm',s_0') \not \models \psi$，和(2)检查 $(\Hm,s_0) \lrto_V (\Hm',s_0')$。
+	这里讨论该问题的补问题：判定 $\psi$是$V$-有关的，即 $\neg \IR(\psi, V)$。显然，$\neg \IR(\psi, V)$当且仅当存在$\psi$的一个模型 $(\Hm,s_0)$和大小为$|\psi|$的多项式的初始结构 $(\Hm',s_0')$，使得 $(\Hm,s_0) \lrto_V (\Hm',s_0')$且 $(\Hm',s_0') \not \models \psi$。因此，判定$\neg \IR(\psi, V)$是否成立有如下两个步骤：(1)猜两个大小为$|\psi|$的多项式的初始结构$(\Hm,s_0)$和 $(\Hm',s_0')$，使得 $(\Hm,s_0) \models \psi$且 $(\Hm',s_0') \not \models \psi$；(2)检查 $(\Hm,s_0) \lrto_V (\Hm',s_0')$。
 	显然， (1)和(2)都是能在多项式时间内完成的。
 	
 	(ii) 在$\Pi_2^{\textsc{P}}$中. 考虑这一问题的补问题。猜一个大小为$|\psi|$的多项式的$\psi$的 模型 $(\Hm,s_0)$且检查 是否 $(\Hm, s_0) \not \models \CTLforget(\varphi, V)$。
 	由命题\ref{modelChecking} 可知这一问题在 $\Sigma_2^{\textsc{P}}$中。因此，原问题在$\Pi_2^{\textsc{P}}$中。
 	
-	$\Pi_2^{\textsc{P}}$-难. 令$\psi \equiv \top$。 则这一问题被规约为判定$\CTLforget(\varphi, V)$的有效性问题。 
+	$\Pi_2^{\textsc{P}}$-难. 令$\psi \equiv \top$。 则这一问题被归约为判定$\CTLforget(\varphi, V)$的有效性问题。 
 	由于命题遗忘是$\CTL$遗忘的特殊情形，因此该问题的困难属性直接来源于文献\cite{DBLP:journals/jair/LangLM03}。
 	
 	(iii) 在$\Pi_2^{\textsc{P}}$中. 假定 $\CTLforget(\varphi, V) \not \models \CTLforget(\psi, V)$。则存在一个初始结构 $(\Hm,s) 
-	\models \CTLforget(\varphi, V)$ 且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$，使得 $(\Hm_1, s_1) \models \varphi$ 但是对其它$(\Hm, s) \lrto_V (\Hm_2,s_2)$，使得 $(\Hm_2, s_2) \not \models \psi$。
+	\models \CTLforget(\varphi, V)$ 且$(\Hm,s) \not \models \CTLforget(\psi, V)$，即存在一个初始结构$(\Hm_1,s_1) \lrto_V (\Hm,s)$，使得 $(\Hm_1, s_1) \models \varphi$ 但是对任意$(\Hm, s) \lrto_V (\Hm_2,s_2)$，$(\Hm_2, s_2) \not \models \psi$。
 	由命题\ref{modelChecking}的证明可知，$(\Hm,s)$和 $(\Hm_1,s_1)$ 能在$|\varphi|$、$|\psi|$和$|V|$的多项式时间内完成。 
 	显然，猜使得$(\Hm_1,s_1) \lrto_V (\Hm,s)$ 成立的大小为$|\varphi|$多项式的 $(\Hm,s)$和 $(\Hm_1,s_1)$ 可以在多项式时间内完成，且 对任意 $(\Hm, s) \lrto_V (\Hm_2,s_2)$，检查 $(\Hm_2,s_2) \not \models \psi$可以在 $|\psi|$和 $|\Hm_2|$的多项式时间内完成。
 	因此，该问题是 $\Pi_2^{\textsc{P}}$的。
@@ -648,7 +651,7 @@
 
 
 \subsection{基于模型的遗忘算法}\label{chapter06:sec:algm}
-这里基于模型的遗忘算法，该算法与第\ref{cha4:sec:alg}节中基于语法的算法不同。本小节的算法通过计算所有可能的模型来计算遗忘，且其正确性可由引理\ref{lem:models:formula}和定理\ref{CF}保证。
+这里提出基于模型的遗忘算法，该算法与第\ref{cha4:sec:alg}节中基于语法的算法不同。本小节的算法通过计算所有可能的模型来计算遗忘，且其正确性可由引理\ref{lem:models:formula}和定理\ref{CF}保证。
 
 
 \begin{algorithm}[tb]
@@ -670,9 +673,10 @@
 
 
 
-下面的例子来源于研究背景和意义部分。这里给出如何计算从规范中遗忘一些原子命题。 
+
+这里给出如何计算从规范中遗忘一些原子命题。 
 \begin{example}\label{ex:6}
-	对于图\ref{BVM}中的 ${\cal K}_1$，假定一个已知的规范（性质）为$\alpha = \EXIST\FUTURE(se \wedge sp)$。显然 ${\cal K}_1$满足 $\alpha$。若想移除掉 $sp$，即从 $\alpha$中遗忘 $sp$，则 $\CTLforget(\alpha,\{ sp\}) \equiv \EXIST\FUTURE se$。此时，该汽车制造公司可以用新的规范$\EXIST\FUTURE se$（这保证驾车最终会被生产）引导未来汽车的生产。
+	对于图\ref{BVM}中的 ${\cal K}_1$，假定一个已知的规范（性质）为$\alpha = \EXIST\FUTURE(se \wedge sp)$。显然 ${\cal K}_1$满足 $\alpha$。若想移除 $sp$，即从 $\alpha$中遗忘 $sp$，则 $\CTLforget(\alpha,\{ sp\}) \equiv \EXIST\FUTURE se$。此时，该汽车制造公司可以用新的规范$\EXIST\FUTURE se$（这保证驾车最终会被生产）引导未来汽车的生产。
 \end{example}
 
 
@@ -680,7 +684,7 @@
 
 
 \begin{proposition}\label{pro:time:alg1}
-	令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。则使用算法\ref{alg:compute:forgetting:by:VB}计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+	令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法\ref{alg:compute:forgetting:by:VB}计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 \end{proposition}
 \begin{proof}
 	假定每个状态或原子命题占据$\log m$的空间且$n\leq m$，则一个状态对$(s,s')$占据$2\times \log m$位（bit）。对任意$B \subseteq {\cal S}$和$s_0\in B$，构造如下初始结构$(\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$，则$R$中至多有$\frac{|B|^2}{2}$个状态对且$L$中至多$|B|\times n$个$(s,A)$对（$A\subseteq \Ha$）。因此，$(\Hm,s_0)$至多占据$(|B|+|B|^2+|B|\times n)\times \log m$位。此外，对于状态集$B$，初始状态有$|B|$种选择，有$|B|^{|B|}$种关系$R$，$(2^n)^{|B|}$种标签函数$L$。
@@ -717,9 +721,9 @@
 
 \section{基于归结的遗忘计算方法}
 \label{chapter05:sec:resolution}
-	已有结果显示，任意$\CTL$公式可以转换为$\CTLsnf$子句集。归结是一种以子句为计算对象的判断可满足性的方法。本章提出一种基于归结的计算遗忘的方法，
+	已有结果显示，任意$\CTL$公式可以转换为$\CTLsnf$子句集。归结是一种以子句为计算对象的判断可满足性的方法。本节提出一种基于归结的计算遗忘的方法，
 	其主要思想是：首先，将给定的$\CTL$公式转换为$\CTLsnf$子句集（这一部分在第\ref{chapter02}章已经给出了详细的介绍；其次，在相应的原子命题集$V$上使用归结规则得到归结结果；最后，“消除”之前引入的索引和$\start$，最终得到遗忘的结果。其主要流程图如图\ref{Fig:chapter05:v1uv2}所示。
-	正如本章所要说明的那样，$\CTL$不具有均匀插值这一属性，基于归结的方法在有的情况下是不能计算出遗忘结果的。然而，在有些$\CTL$子类下，本章提出的方法能够计算出其遗忘结果。
+	$\CTL$遗忘结果不总是存在的，因此，基于归结的方法在有的情况下不能计算出遗忘结果。然而，在有些$\CTL$子类下，本章提出的方法能够计算出其遗忘结果。
 \begin{figure*}[!htb]
 	\centering
 	% Requires \usepackage{graphicx}
@@ -729,7 +733,7 @@
 \end{figure*}
 
 %虽然在第\ref{chapter02}章详细介绍了命题逻辑和模态逻辑S5下基于归结的计算遗忘的方法，但值得注意的是$\CTL$公式没有像这两种逻辑一样有标准的自身语言子句形式，而$\CTL$的子句是有索引的。这就注定了$\CTL$下基于归结的遗忘与上述两者的不同，而且也应该要复杂一些（虽有不同，但也可以借鉴）。
-本章展示如何使用第\ref{chapter02:CTLres}节中表\ref{tab:res}中的归结规则来计算$\CTL$下的遗忘。
+本章展示如何使用表\ref{tab:res}中的归结规则来计算$\CTL$遗忘。
 为了计算从$\CTL$公式$\varphi$中遗忘集合$V$中的原子命题，
 %为了实现这一目标，
 需要解决如下两个主要问题：
@@ -746,19 +750,19 @@
 本章其余部分组织如下：首先，在第\ref{cha5:subsec:resf}节详细介绍$\CTL$-forget各个过程及算法复杂性；其次，在第\label{cha5:subsec:prolog}节介绍基于Prolog的$\CTL$-算法的实现；最后，在第\ref{cha5:subsec:expriment}节给出并分析实验结果。
 \subsection{基于归结的算法$\CTL$-forget}
 \label{cha5:subsec:resf}
-通过上述分析，本节主要描述如何使用基础知识部分说的$R_{\CTL}^{\succ,S}$归结系统对要遗忘的原子命题做归结，然后如何将归结后得到的结果等价转换为$\CTL$公式。
+通过上述分析，本节讲述如何使用$R_{\CTL}^{\succ,S}$归结系统对要遗忘的原子命题做归结，然后如何将归结后得到的结果等价转换为$\CTL$公式。
 \subsubsection{$\CTL$归结$\Unfolding$}
 
-这部分给出如何使用归结规则（表\ref{tab:res}）来计算$\CTL$中的遗忘。
-这个过程的主要思想是：将转换过程中获得的$\CTLsnf$子句在表\ref{tab:res}中归结规则上做穷尽的归结，即直到不产生新的归结结果。值得注意的是，该归结过程涉及的归结原子命题包括：需要遗忘的原子命题和转换过程中引入的新的原子命题。
+%这部分给出如何使用归结规则（表\ref{tab:res}）来计算$\CTL$中的遗忘。
+这个过程的主要思想是：将转换过程中获得的$\CTLsnf$子句在表\ref{tab:res}中的归结规则上做穷尽的归结，即直到不产生新的归结结果。值得注意的是，该归结过程涉及的归结原子命题包括：需要遗忘的原子命题和转换过程中引入的新原子命题。
 
 令$T$为$\CTLsnf$子句集，$p$为原子命题。$T$在$p$上的\emph{展开}（记为$\Unfolding(T,p)$）是集合$T$和如下集合的并集：
 \[\{\alpha\mid \mbox{$\alpha$ 是 $T$ 中的公式关于文字 $l\in\{p,\neg p\}$ 的归结结果}\}.  \]
 对于原子命题集$V$，定义$\Unfolding(T,\emptyset)=T$且$\Unfolding(T,\{p\}\cup V)=\Unfolding(\Unfolding(T,p), V)$。
-直观上，$T$在$p$上的展开是对$p$做穷尽的归结，即：直到对$p$使用规则{\bf SRES1-8}不再产生新的$\CTLsnf$子句为止（即使使用了重写规则和可能规则之后也不会产生新的子句）。
+直观上，$T$在$p$ 上 的展开是对$p$做穷尽的归结，即：直到对$p$使用规则{\bf SRES1-8}不再产生新的$\CTLsnf$子句为止（即使使用了重写规则和可能规则之后也不会产生新的子句）。
 
 
-下面的命题展示了对任意$\CTL$公式$\varphi$，从 $\Unfolding(T_\varphi,V)$ 中移除掉含有$V$中元素的子句得到的结果在不考虑$V$中元素和新引入的元素的情况下是互模拟等价的。
+下面的命题展示了对任意$\CTL$公式$\varphi$，从 $\Unfolding(T_\varphi,V)$ 中移除含有$V$中元素的子句得到的结果，在不考虑$V$中元素和新引入的元素的情况下与$T_\varphi$是互模拟等价的。
 下文中记$\emph{ERes}(\varphi,V) = \{\alpha\in \Unfolding(T_\varphi,V)\mid \Var(\alpha)\cap V=\emptyset\}$。
 \begin{proposition}\label{pro:resEQ}
 	令 $\varphi$ 为一个 $\CTL$公式，$V\subseteq\cal A$为原子命题集。则
@@ -782,31 +786,36 @@
 	(2) 下证若$\Pi \rto_r R_i$且 $r=$\textbf{(ERES1)}，
 	则 $T_i \equiv_{\{l, w_{\neg l}^{\ALL}\}} T_{i+1}$，其中 $l = p$或 $l = \neg p$，$w_{\neg l}^{\ALL}$是与子句$Q \rto \ALL \FUTURE \neg l$相关的新的原子命题，$l$是文字（即：$p$或者$\neg p$）。
 	
-	已有结果表明$\Pi \models R_i$~\cite{bolotov2000clausal}，因此，$T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL}$，其中$\Lambda_{\neg l}^{\ALL}$是通过使用表\ref{tab:trans}中的转换规则作用到$R_i$上得到的$\CTLsnf$子句集~\cite{zhang2009refined}。显然，对所有$(\Hm_1,s_1) \in \Mod(T_i= X \cup \Pi)$都存在一个$(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$，使得$(\Hm_1, s_1) \lrto_{\tuple{\{p, w_{\neg l}^{\ALL}\}, {\O}}} (\Hm_2, s_2)$，且对任意$(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$，存在一个$(\Hm_1,s_1) \in \Mod(T_i= X \cup \Pi)$，使得$(\Hm_1, s_1) \lrto_{\{p, w_{\neg l}^{\ALL}\}} (\Hm_2, s_2)$。
+	已有结果表明$\Pi \models R_i$~\cite{bolotov2000clausal}，因此，$T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL}$，其中$\Lambda_{\neg l}^{\ALL}$是通过使用表\ref{tab:trans}中的转换规则作用到$R_i$上得到的$\CTLsnf$子句集~\cite{zhang2009refined}。显然，对所有$(\Hm_1,s_1) \in \Mod(T_i= X \cup \Pi)$都存在一个$(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$，使得$(\Hm_1, s_1) \lrto_{\tuple{\{p, w_{\neg l}^{\ALL}\}, {\O}}} (\Hm_2, s_2)$；且对任意$(\Hm_2, s_2)\in \Mod(T_{i+1}=T_i \cup \Lambda_{\neg l}^{\ALL})$，存在一个$(\Hm_1,s_1) \in \Mod(T_i= X \cup \Pi)$，使得$(\Hm_1, s_1) \lrto_{\{p, w_{\neg l}^{\ALL}\}} (\Hm_2, s_2)$。
 	又$\{p, w_{\neg l}^{\ALL}\} \subseteq U$，由命题\ref{prop:transform:V:EQ}可知$T_i \equiv_{U} T_{i+1}$。
 	
 	当规则为$\textbf{(ERES2)}$时可以类似地证明。
 	
-	总之，$V\subseteq U$.因此，由推论\ref{cor:eqbi}(iii)可知，对任意 $0 \leq i < n$，有$T_i \equiv_U T_{i+1}$。
+	总之，$V\subseteq U$。因此，由推论\ref{cor:eqbi}(iii)可知，对任意 $0 \leq i < n$，有$T_i \equiv_U T_{i+1}$。
 	又因为$\equiv_U$为等价关系，所以$T_{\varphi} \equiv_U \Unfolding(T_\varphi,V)$。
 	
 	
 	
-	\textbf{(F2)} 假设 $V=\{p\}$， $C_i$ ($i=1,2$)为经典子句，  $l = p$ 或 $l = \neg p$。
-	显然 $\Unfolding(T_\varphi,V) \models \emph{ERes}(\varphi,V)$，这里证明对任意 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$ （其中$\Hm=(S, R, L, [\_], s)$），存在一个初始$\Ind$-结构 ${\cal K}'=(\Hm', s')$，使得 ${\cal K} \lrto_{U} {\cal K}'$ 且 ${\cal K}' \models \Unfolding(T_\varphi,V)$。
+	\textbf{(F2)} 假设 $V=\{p\}$， $C_i$ ($i=1,2$)为经典子句，  $l = p$或 $l = \neg p$。
+	显然 $\Unfolding(T_\varphi,V) \models \emph{ERes}(\varphi,V)$。下证对任意 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$ （其中$\Hm=(S, R, L, [\_], s)$），存在一个初始$\Ind$-结构 ${\cal K}'=(\Hm', s')$，使得 ${\cal K} \lrto_{U} {\cal K}'$ 且 ${\cal K}' \models \Unfolding(T_\varphi,V)$。
 	
 	
 	因为$p$只出现在 $\CTLsnf$子句的右手边，从以下几点证明上述结论成立。
 	
-	(1) 假定 $\Unfolding(T_\varphi,V)$有全局子句，则对于任意 $C=\top\rto C_1 \vee l \in \Unfolding(T_\varphi,V)$：
+	(1) 假定 $\Unfolding(T_\varphi,V)$含有全局子句，则对于任意 $C=\top\rto C_1 \vee l \in \Unfolding(T_\varphi,V)$：
 	
-	(a) 如果不存在 $C'\in \Unfolding(T_\varphi,V)$，使得 $C$ 和 $C'$ 在 $p$上是可归结的，则 $\Unfolding(T_\varphi,V)$中不存在除了 $Pt$-某时 子句之外的子句 $C'$ 包含文字 $\neg l$，其中 $Pt\in \{\ALL, \EXIST\}$。
+	(a) 如果不存在 $C'\in \Unfolding(T_\varphi,V)$使得 $C$ 和 $C'$ 在 $p$上是可归结的，则 $\Unfolding(T_\varphi,V)$中不存在除了 $Pt$-某时 子句之外的子句 $C'$ 包含文字 $\neg l$，其中 $Pt\in \{\ALL, \EXIST\}$。
 	
-	若对任意其它的子句$C'$， $p\not \in \Var(C')$，则对任意 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，如下构造 $(\Hm',s')$：令 $\Hm'= (S, R, L',[\_], s)$ （即 $s'=s$），其中$L'$ 与 $L$ 一样，除了对任意 $s_1\in S$，若 $(\Hm, s_1) \not \models C_1 \vee l$则“若 $l=p$令 $L'(s_1) = L(s_1) \cup \{p\}$，否则令 $L'(s_1) = L(s_1) - \{p\}$”。
-	显然 $(\Hm, s) \lrto_{\{p\}} (\Hm', s')$ 和 $(\Hm', s') \models C' \wedge C$。
+	若对任意其它子句$C'$， $p\not \in \Var(C')$，则对任意 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，如下构造 $(\Hm',s')$：令 $\Hm'= (S, R, L',[\_], s)$ （即 $s'=s$），其中$L'$ 与 $L$ 一样，除了对任意 $s_1\in S$，若 $(\Hm, s_1) \not \models C_1 \vee l$，则“若 $l=p$令 $L'(s_1) = L(s_1) \cup \{p\}$，否则令 $L'(s_1) = L(s_1) - \{p\}$”。
+	显然，$(\Hm, s) \lrto_{\{p\}} (\Hm', s')$ 且$(\Hm', s') \models C' \wedge C$。
 	
 	若 $C'= Q\rto Pt \FUTURE \neg l$，不失一般性地，令 $l=p$。对任意 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,$ $V))$，如下构造 $(\Hm',s')$：令$\Hm'=(S, R, L',[\_], s)$，其中 $L'$与 $L$ 相同，除了
-	$L'(s) = L(s) \cup \{p\}$，且对任意具有$(s, s')\in R$关系的状态 $s'\in S'$，令 $L'(s) = L(s) - \{p, q\}$，其中 $q \in (\Var(\Unfolding(T_\varphi,$ $V))-\Var(\varphi))$ 是负出现在 $C_1$ 中的原子命题，且对任意其它的非初始状态 $s'' \in S$，$L'(s'') = (L(s'') - \{Q\}) \cup \{p\}$ （$Q$在 $Pt$-某时子句中是一个原子）。显然，$(\Hm, s) \lrto_{\{p,q\}} (\Hm', s')$ 和 $(\Hm', s') \models C' \wedge C$。
+	\begin{itemize}
+		\item[(1)] $L'(s) = L(s) \cup \{p\}$；
+		\item[(2)] 对任意具有$(s, s')\in R$关系的状态 $s'\in S'$，令 $L'(s) = L(s) - \{p, q\}$，其中 $q \in (\Var(\Unfolding(T_\varphi,$ $V))-\Var(\varphi))$ 是负出现在 $C_1$ 中的原子命题；
+		\item[(3)] 对任意其它的非初始状态 $s'' \in S$，$L'(s'') = (L(s'') - \{Q\}) \cup \{p\}$ （$Q$在 $Pt$-某时子句中是一个原子）。
+	\end{itemize}
+	显然，$(\Hm, s) \lrto_{\{p,q\}} (\Hm', s')$ 和 $(\Hm', s') \models C' \wedge C$。
 	%	 that for each non-initial state $s\in S'$, we have $L'(s) = (L(s) - \{Q\}) \cup \{p\}$ ($Q$ is an atom for $Pt$-sometime clause)
 	%
 	%if $Q$ is an atom (if $Q$ is a term, then we can delete the atoms which occurring in $Q$ positively and add the atoms which occurring in $Q$ negatively) 
@@ -827,10 +836,10 @@
 	
 	(2) 考虑$Pt$-步 子句的情形。令 $C\in \Unfolding(T_\varphi,V)$为 $Q \rto \ALL \NEXT(C_1 \vee  l)$。不失一般性地，假设存在某些子句$C'\in \Unfolding(T_\varphi,V)$，使得$C$和 $C'$在$p$上是可归结的（$l=p$）。
 	
-	若 $C'= Q_1\rto Pt \NEXT (C_2 \vee \neg l)$ （令$Pt=\EXIST_{ind}$，$Pt = \ALL$的情形可以类似地证明），因此，$Q \wedge Q_1 \rto \EXIST_{ind} \NEXT(C_1 \vee C_2) \in \Unfolding(T_\varphi,V)$。所以，对任意 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，如下构造 ${\cal K}'=(\Hm',s')$：令$\Hm'= (S, R, L', [\_], s)$（即 $s'=s$），其中 $L'$与 $L$一样，除了对任意 $s_1\in S$
+	若 $C'= Q_1\rto Pt \NEXT (C_2 \vee \neg l)$ （令$Pt=\EXIST_{ind}$，$Pt = \ALL$的情形可以类似地证明），则$Q \wedge Q_1 \rto \EXIST_{ind} \NEXT(C_1 \vee C_2) \in \Unfolding(T_\varphi,V)$。所以，对任意 ${\cal K}=(\Hm, s)\in \Mod(\emph{ERes}(\varphi,V))$，如下构造 ${\cal K}'=(\Hm',s')$：令$\Hm'= (S, R, L', [\_], s)$（即 $s'=s$），其中 $L'$与 $L$一样，除了对任意 $s_1\in S$
 	\begin{itemize}
 		\item[(i)] 若$(\Hm, s_1) \not \models Q \wedge Q_1$ 则 “若 $(\Hm, s_1) \models \neg Q \wedge Q_1$则（若 对 $(s_1, s_2') \in \pi_s^{\tuple{ind}}$有$(\Hm, s_2') \not \models C_2$  则令 $L'(s_2') = L(s_2') - \{p\}$否则令 $L'(s_2') = L(s_2')$），否则若 $(\Hm, s_1) \models Q \wedge \neg Q_1$则对任意 $(s_1, s_2) \in R$，（若$(\Hm, s_2) \not \models C_1$则令 $L'(s_2) = L(s_2) \cup \{p\}$，否则令 $L'(s_2') = L(s_2')$），否则令 $L'(s_2') = L(s_2')$”。
-		\item[(ii)] 否则若 $(\Hm, s_1) \models Q \wedge Q_1$，则对$(s_1, s_2') \in \pi_s^{\tuple{ind}}$有 $(\Hm,s_2') \models C_1 \vee C_2$。因此，若 $(\Hm, s_2')$ $\models C_1 \wedge \neg C_2$则 $L'(s_2') = L(s_2') - \{p\}$，否则若 $(\Hm, s_2') \models \neg C_1 \wedge C_2$则令$L'(s_2') = L(s_2') \cup \{p\}$，否则令 $L'(s_2') = L(s_2')$。对其它满足$(s_1, s_2) \in R$和 $s_2 \not = s_2'$的状态$s_2$，若 $(\Hm, s_1) \models Q$和 $(\Hm, s_2) \models \neg C_1$，则令 $L'(s_2) = L(s_2) \cup \{p\}$，否则令 $L'(s_2') = L(s_2')$。
+		\item[(ii)] 若 $(\Hm, s_1) \models Q \wedge Q_1$，则对$(s_1, s_2') \in \pi_s^{\tuple{ind}}$有 $(\Hm,s_2') \models C_1 \vee C_2$。因此，若 $(\Hm, s_2')$ $\models C_1 \wedge \neg C_2$则 $L'(s_2') = L(s_2') - \{p\}$，否则若 $(\Hm, s_2') \models \neg C_1 \wedge C_2$则令$L'(s_2') = L(s_2') \cup \{p\}$，否则令 $L'(s_2') = L(s_2')$。对其它满足$(s_1, s_2) \in R$和 $s_2 \not = s_2'$的状态$s_2$，若 $(\Hm, s_1) \models Q$和 $(\Hm, s_2) \models \neg C_1$，则令 $L'(s_2) = L(s_2) \cup \{p\}$，否则令 $L'(s_2') = L(s_2')$。
 	\end{itemize}
 	显然，${\cal K} \lrto_{\{p\}} {\cal K}'$和 ${\cal K}' \models C' \wedge C$，其中${\cal K}' = (\Hm',s')$。
 	
@@ -874,7 +883,7 @@
 		&(17)\ \start \rto f\vee m \vee q && (6, (9), \textbf{SRES5})
 	\end{align*}
 	
-	在从 $\Unfolding(T_\varphi, V\cup \{x,y,z\})$中移除掉包含 $V$中元素的子句后，得到 $\emph{ERes}(\varphi,V)$，其包含如下子句：
+	在从 $\Unfolding(T_\varphi, V\cup \{x,y,z\})$中移除包含 $V$中元素的子句后，得到 $\emph{ERes}(\varphi,V)$，其包含如下子句：
 	\begin{align*}%{llll}
 		&\start\rto z, \quad \start \rto f\vee m \vee q, \quad  \start \rto x \vee y, \quad \start \rto q \vee x, \quad	\start \rto f\vee m \vee y, \\
 		& \top \rto f \vee m \vee \neg x, \quad		\top \rto q \vee f \vee m\vee \neg z,
@@ -883,18 +892,18 @@
 		& y \rto \ALL\NEXT(q \vee f\vee m), \quad  y \rto \ALL\NEXT(x\vee q), \quad y \rto \ALL \NEXT(x\vee y),\quad 	y \rto \ALL\NEXT(f\vee m\vee y).
 	\end{align*}
 	
-	可以看出，尽管 $\emph{ERes}(\varphi,V)$中不包含具有索引的公式，但是有的子句包含出现在 $T_\varphi$中的新原子命题。
+	可以看出，尽管 $\emph{ERes}(\varphi,V)$中不包含具有索引的公式，但有的子句包含出现在 $T_\varphi$中的新原子命题。
 \end{example}
 
 
 \subsubsection{转换$\CTLsnf$子句为$\CTL$公式}
 \label{cha5:subsubsec:remIndex}
-在上一节中描述了归结过程，但是正如归结规则和转换规则所示，在这两个过程中会引入索引和新的原子命题。本节介绍如何移除掉这些新引入的元素。
+在上一节中描述了归结过程，在转换和归结过程中都会引入索引和新的原子命题。本节介绍如何移除这些新引入的元素。
 
-下面的引理表明，可以移除掉$\CTLsnf$子句集中的索引而保持互模拟等价。
+下面的引理表明，可以移除$\CTLsnf$子句集中的索引而保持互模拟等价。
 
 \begin{lemma}~\label{lem:In2NI}
-	令 $j\in {\cal I}$， $\psi_i,\varphi_i~(1\le i\le n)$为 $\CTL$公式。有：
+	如果$j\in {\cal I}$，$\psi_i,\varphi_i~(1\le i\le n)$为 $\CTL$公式，那么：
 	\begin{itemize}
 		\item[(i)] $\{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}\equiv 
 		\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST_{\tuple{j}} \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\}$，
@@ -913,14 +922,14 @@
 	\end{itemize}
 \end{lemma}
 \begin{proof}
-	(i) ($\Rto$) 对等式左边公式的任意模型 $(\Hm,s_0)$，若 $(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$（ $j_i \in \{1, \dots, n\}$，$1\leq m \leq n$），则存在$s_0$的下一个状态$s_1$，使得 $(s_0, s_1) \in [j]$和 $(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$。由$[j]$的定义可知$(s_0, s_1) \in R$，因此$(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \rto \EXIST_{\tuple{j}} \NEXT (\bigwedge_{i=1}^m \varphi_{j_i})$。 %The other side can be similarly proved as (i).
+	(i) ($\Rto$) 对等式左边公式的任意模型 $(\Hm,s_0)$，若 $(\Hm,s_0) \models \bigwedge_{i\in S}\psi_i$（ $S \subseteq  \{1, \dots, n\}$），则存在$s_0$的下一个状态$s_1$，使得 $(s_0, s_1) \in [j]$和 $(\Hm, s_1) \models \bigwedge_{i\in S} \varphi_i$。由$[j]$的定义可知$(s_0, s_1) \in R$，因此$(\Hm, s_0) \models \left(\bigwedge_{i\in S}\psi_i\right) \rto \EXIST_{\tuple{j}} \NEXT (\bigwedge_{i\in S} \varphi_i)$。 %The other side can be similarly proved as (i).
 	
 	($\Lto$)  显然等式左边集合为右边的子集，因此：
 	$\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST_{\tuple{j}} \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\} \models \{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}$。
 	
-	(ii) ($\Rto$) 对等式左边公式的任意模型$(\Hm,s_0)$，若$(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$（$j_i \in \{1, \dots, n\}$， $1\leq m \leq n$），则存在$s_0$的下一个状态 $s_1$，使得 $(s_0, s_1) \in [j]$且$(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$。由 $[j]$的定义可知$(s_0, s_1) \in R$，因此$(\Hm, s_0) \models \bigwedge_{i=1}^m P_{j_i} \rto \EXIST \NEXT (\bigwedge_{i=1}^m \varphi_{j_i})$。 % The other side can be similarly proved as (i).
+	(ii) ($\Rto$) 对等式左边公式的任意模型$(\Hm,s_0)$，若$(\Hm,s_0) \models {i\in S}$（$S \subseteq  \{1, \dots, n\}$），则存在$s_0$的下一个状态 $s_1$，使得 $(s_0, s_1) \in [j]$且$(\Hm, s_1) \models \bigwedge_{i\in S} \varphi_i$。由 $[j]$的定义可知$(s_0, s_1) \in R$，因此$(\Hm, s_0) \models \left(\bigwedge_{i\in S}\psi_i\right) \rto \EXIST \NEXT (\bigwedge_{i\in S} \varphi_i)$。 % The other side can be similarly proved as (i).
 	
-	($\Lto$) 对等式右边公式的任意模型 $(\Hm,s_0)$，若$(\Hm,s_0) \models \bigwedge_{i=1}^m P_{j_i}$（$j_i \in \{1, \dots, n\}$， $1\leq m \leq n$），则存在$s_0$的下一个状态 $s_1$，使得 $(\Hm, s_1) \models \bigwedge_{i=1}^m \varphi_{j_i}$。容易构造一个初始$\Ind$-结构 $(\Hm',s_0)$（ $\Hm'=(S,R,L,[\_]',s_0)$），使得$(\Hm', s_0)$与 $(\Hm, s_0)$相同，除了 $(s_0, s_1) \in [j]'$，即 $(\Hm,$ $s_0)$ $\lrto_{\emptyset} (\Hm', s_0)$且 $(\Hm',s_0) \models \{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}$。 
+	($\Lto$) 对等式右边公式的任意模型 $(\Hm,s_0)$，若$(\Hm,s_0) \models \bigwedge_{i\in S}\psi_i$（$S \subseteq  \{1, \dots, n\}$），则存在$s_0$的下一个状态 $s_1$，使得 $(\Hm, s_1) \models \bigwedge_{i\in S} \varphi_i$。容易构造一个初始$\Ind$-结构 $(\Hm',s_0)$（ $\Hm'=(S,R,L,[\_]',s_0)$），使得$(\Hm', s_0)$与 $(\Hm, s_0)$相同，除了 $(s_0, s_1) \in [j]'$，即 $(\Hm,$ $s_0)$ $\lrto_{\emptyset} (\Hm', s_0)$且 $(\Hm',s_0) \models \{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}$。 
 	
 	(iii)的证明与 (ii)的证明类似。
 \end{proof}
@@ -934,12 +943,12 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、$rfi(\{\beta_1,\alpha_2\})$来表示，其
 因为 $\EXIST\NEXT\varphi_1\land \EXIST\NEXT\varphi_2\not\models \EXIST\NEXT(\varphi_1\land\varphi_2)$，引理\ref{lem:In2NI}(i)的目的是为了保证若 $\psi_1$和 $\psi_2$在当前状态满足，则$\varphi_1$和 $\varphi_2$被同一条路径满足，这可以推广到多个 $\psi_i~(1\le i\le n)$的情形。 
 (iii)表示可以将每一个$\EXIST$-某时子句和一个$\EXIST$-步子句结合得到新的满足互模拟等价的$\CTL$公式。
 (ii)表明拥有相同索引的$\EXIST$-步子句可以结合成新的满足互模拟等价的$\CTL$公式。
-这一过程可由算法\ref{alg:remove:index}实现。
-下面的推论是上述引理的一个简单应用，它表明 当移除索引之后$\Sigma$和 RM-index$(\Sigma)$是互模拟等价的。
+这一过程可由算法\ref{alg:remove:index}实现，其目的是消除索引。
+下面的推论表明，当移除索引之后$\Sigma$和 RM-index$(\Sigma)$是互模拟等价的。
 
 \begin{corollary}
-	令 $\varphi$ 为一个$\CTL$公式、 $V\subseteq\cal A$为原子命题集、
-	$\Sigma=\emph{ERes}(\Unfolding(\varphi,V\cup U),V)$，其中 $U=\Var(T_\varphi)-\Var(\varphi)$。则
+	如果$\varphi$为一个$\CTL$公式、$U=\Var(T_\varphi)-\Var(\varphi)$，$V\subseteq\cal A$为原子命题集、
+	$\Sigma=\emph{ERes}(\Unfolding(\varphi,V\cup U),V)$，那么
 	RM-index$(\Sigma)\equiv_\emptyset \Sigma$。
 \end{corollary}
 
@@ -1004,14 +1013,14 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、$rfi(\{\beta_1,\alpha_2\})$来表示，其
 % 	 \]
 % 	Please note that all the \EXIST-step clauses are similar \EXIST-step clauses.
 
-通过下面的定理，可以移除掉一些新引入的原子命题而保持互模拟等价。
+通过下面的定理，可以移除一些新引入的原子命题而保持互模拟等价。
 
 \begin{lemma}[一般化的Ackermann引理，Generalised Ackermann's Lemma] \label{thm:Aclm}
 	令 $x$为一个原子命题、 
 	% 	$\Delta = \{\top \rto \neg x \vee C_1$, \dots, $\top \rto \neg x \vee C_n, x \rto B_1, \dots, x \rto B_m\}$
 	% 	be a set of $\CTLsnf$ clauses
 	$\Delta = \{\ALL\GLOBAL(\top \rto \neg x \vee C_1)$, $\dots$, $\ALL\GLOBAL(\top \rto \neg x \vee C_n), \ALL\GLOBAL(x \rto B_1), \dots, \ALL\GLOBAL(x \rto B_m)\}$为只包含一个$x$的$\CTL$公式集（$n, m \geq 1$）、
-	$\Gamma$为 $x$正出现在其中的有限个$\CTL$公式集。则有：
+	$\Gamma$为 $x$正出现在其中的有限个$\CTL$公式集。下面式子成立：
 	\begin{equation}\label{eq:Ackermann:lemma}
 		\Gamma\cup \Delta \equiv_{\{x\}}  
 		\Gamma\left[x/\bigwedge\left(\{C_i\mid 1\le i\le n\}\cup\{B_i\mid 1\le i\le m\}\right)\right].
@@ -1021,7 +1030,7 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、$rfi(\{\beta_1,\alpha_2\})$来表示，其
 	令 $\varphi = \bigwedge\left(\{C_i\mid 1\le i\le n\}\cup\{B_i\mid 1\le i\le m\}\right)$。
 	不失一般性地，令$\Gamma$为一个$\CTL$公式， $\Hm=(S,R,L,[\_],s_0)$， $\psi_i(x)~(i=\{1,2\})$为$x$正出现在其中的$\CTL$公式。
 	
-	$(\Rto)$ 对公式$\Gamma \wedge \bigwedge \Delta$的任意模型 $(\Hm, s_0)$，这里证明通过归纳公式$\Gamma$的结构证明 $(\Hm, s_0)$ $\models\Gamma\left[x/\varphi \right]$。
+	$(\Rto)$ 对公式$\Gamma \wedge \bigwedge \Delta$的任意模型 $(\Hm, s_0)$，这里通过归纳公式$\Gamma$的结构证明 $(\Hm, s_0)$ $\models\Gamma\left[x/\varphi \right]$。
 	
 	\textbf{基始}. 令 $\Gamma = x$，因为$(\Hm, s_0)\models x$，显然$(\Hm, s_0)\models \varphi$成立。
 	
@@ -1030,7 +1039,7 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、$rfi(\{\beta_1,\alpha_2\})$来表示，其
 	
 	(2) 令 $\Gamma = \EXIST\NEXT \psi_1(x)$。 \\
 	$(\Hm,s_0)\models \Gamma \wedge \bigwedge \Delta$\\
-	$\Rto$ 存在 $(s_0, s_1)\in R$，使得 $(\Hm,s_1) \models \psi_1(x)$和 $(\Hm,s_1) \models \bigwedge \Delta$成立\\
+	$\Rto$ 存在 $(s_0, s_1)\in R$，使得 $(\Hm,s_1) \models \psi_1(x)$和 $(\Hm,s_1) \models \bigwedge \Delta$\\
 	$\Rto$ 由归纳假设可知 $(\Hm,s_1) \models \psi_1(x)[x/\varphi]$\\
 	$\Rto$ $(\Hm,s_0)\models \EXIST\NEXT \psi_1(x)[x/\varphi]$\\
 	$\Rto$ $(\Hm,s_0)\models (\EXIST\NEXT \psi_1(x))[x/\varphi]$。
@@ -1094,7 +1103,7 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	\end{align*}
 	
 	不难证明$\emph{ERes}(\varphi,V)\equiv_{\{x,z\}} \Gamma''$。
-	因为$\Gamma''$包含一个公式其关于 $y$既不是正的也不是负的，因此，这里不能对$\Gamma''$和 $y$使用上述过程。 
+	因为$\Gamma''$包含一个公式，其关于$y$既不是正的也不是负的。因此，这里不能对$\Gamma''$和 $y$使用上述过程。 
 \end{example}
 
 
@@ -1146,7 +1155,7 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 
 
 \begin{theorem}\label{thm:soundness:forget:algorithm}
-	令$\varphi$为一个$\CTL$公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则
+	若$\varphi$为一个$\CTL$公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
 	\begin{itemize}
 		\item[(i)] $\Sigma\equiv_{V\cup U}\varphi$，
 		\item[(ii)] 若$U=\emptyset$，则 $\Sigma\equiv\CTLforget(\varphi,V)$。
@@ -1158,6 +1167,7 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	(ii) 若 $U=\emptyset$，则由(i)可知$\Sigma\equiv_{V}\varphi$。又由于$\Sigma$ 和 $\CTLforget(\varphi,V)$都是$V$-无关的且都不包含索引，因此，由$\CTLforget(\varphi,V) \equiv_V \varphi$可知 $\Sigma\equiv\CTLforget(\varphi,V)$。
 \end{proof}
 
+由此可知，如果引入的新原子命题能全部移除，那么得到的结果即为遗忘结果。
 
 \begin{example}[例\ref{examp:Aclm}的延续]\label{examp:forget:algorithm}
 	容易看出 \CTL-forget$(\varphi,\{p,r\})$包含下面的公式
@@ -1170,14 +1180,16 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 
 尽管如此，有的$\CTL$公式的遗忘结果总是存在的，如下面的结论所示。
 \begin{proposition} \label{pro:fogCTL}
-	给定$\CTL$公式$\varphi$，若$\varphi$满足下面约束，则$\emph{ERes}(\varphi,V) \equiv \CTLforget(\varphi, V)$：（1）$\varphi$中不包括操作符$Pt {\cal T}$（其中$Pt \in \{\ALL, \EXIST\}$且${\cal T} \in \{\UNTILL, \GLOBAL\}$）；（2）对于任意原子命题$p\in V$， 若$p$和$\neg p$出现在同一时序算子的范围内。
+	给定$\CTL$公式$\varphi$，若$\varphi$满足下面约束：
+	（1）$\varphi$中不包括操作符$Pt {\cal T}$（其中$Pt \in \{\ALL, \EXIST\}$且${\cal T} \in \{\UNTILL, \GLOBAL\}$）；（2）对于任意原子命题$p\in V$， 若$p$和$\neg p$出现在同一时序算子的范围内。
+	那么，$\emph{ERes}(\varphi,V) \equiv \CTLforget(\varphi, V)$。
 \end{proposition}
 \begin{proof}
 	不失一般性地，假设$V = \{p\}$。
 	对任意上述所说形式的$\CTL$公式$\varphi$，假定$\varphi = \varphi_1 \wedge \ALL \NEXT \EXIST \FUTURE \varphi_2$，其中$p\not \in \Var(\varphi_1)$且$\varphi_2$是一个包含子句$C_1 = \neg p \vee \psi_1$和$C_2 = p \vee \psi_2$的CNF (conjunctive normal form)公式。$\varphi$可以被转换为包含集合$\Pi = \{\top \rto \neg x \vee p \vee  \psi_1,  \top \rto \neg x \vee \neg p \vee \psi_2\}$的子句集$\Sigma$，其中$x$为新引入的原子命题，$\psi_i$（$i=1,2$）为经典子句。除此之外，$\Sigma$中不包含其它含有$p$的公式。
 	
-	由归结过程可产生子句$\top \rto \neg \vee \psi_1 \vee \psi_2$，由定理\ref{thm:Aclm}可知，$x$可以被$\psi_1 \vee \psi_2$替换。
-	又因为公式$\varphi$中不包含$Pt {\cal T}$时序算子，因而不会引入嵌套原子命题（同时出现在$\rto$两边的原子命题），此时对新引入的其余的原子命题都可使用定理\ref{thm:Aclm}。
+	由归结过程可产生子句$\top \rto \neg x \vee \psi_1 \vee \psi_2$，由定理\ref{thm:Aclm}可知，$x$可以被$\psi_1 \vee \psi_2$替换。
+	又因为公式$\varphi$中不包含$Pt {\cal T}$时序算子，因而不会引入嵌套原子命题（同时出现在$\rto$两边的原子命题）。此时，对新引入的其余的原子命题都可使用定理\ref{thm:Aclm}替换。
 	因此，由定理\ref{thm:soundness:forget:algorithm}可知\CTL-forget$(\varphi,V)\equiv \CTLforget(\varphi, V)$。
 \end{proof}
 
@@ -1216,20 +1228,20 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 
 此系统主要包括五个模块：转换模块（transCTL2SNF/6）、归结模块（两个过程：step\_resolution/3和temp\_resolution/8）、“移除”原子命题模块（removeAtom/3），“移除”索引（pro6/3）和“移除”新引入的原子命题（ackerM/3）。下面就这几个模块做详细的介绍。
 
-{\em 转换模块}：用二元谓词transCTL2SNF/6来实现将$\CTL$公式转换为$\CTLsnf$子句的过程。在使用该谓词前，谓词ctl2NNF/2将输入的$\CTL$公式$\varphi$转换其NNF形式并使用表~\ref{tab:simp}中的等式化简公式等到公式$simp(nnf(\varphi))$，并产生如下公式列表（list）：
+{\em 转换模块}：用二元谓词transCTL2SNF/6来实现将$\CTL$公式转换为$\CTLsnf$子句的过程。在使用该谓词前，谓词ctl2NNF/2将输入的$\CTL$公式$\varphi$转换为其NNF形式并使用表~\ref{tab:simp}中的等式化简公式得到公式$simp(nnf(\varphi))$，并产生如下公式列表（list）：
 $$[start-> z, z -> simp(nnf(\varphi))].$$
 transCTL2SNF/6谓词通过迭代表~\ref{tab:trans}中的每条规则将$\CTL$公式转换为$\CTLsnf$子句集，每一个子句用一个四元谓词snf\_clause(Parm1,Parm2,Parm3,Parm4)表示，其中：
 \begin{itemize}
-	\item Parm1表示子句类型，即第~\ref{chap2:subsec:snf}节中的六种字句类型，用“start”、“true”、“ef”、\\“af”、 “ex” 和 “ax” 分别表示初始子句、全局子句、$\ALL$-某时子句、$\EXIST$-某时子句、$\ALL$-步子句和$\EXIST$-步子句；
+	\item Parm1表示子句类型，即第~\ref{chap2:subsec:snf}节中的六种子句类型，用“start”、“true”、“ef”、\\“af”、 “ex” 和 “ax” 分别表示初始子句、全局子句、$\EXIST$-某时子句、$\ALL$-某时子句、$\EXIST$-步子句和$\ALL$-步子句；
 	\item Parm2为原子命题构成的列表，表示$\CTLsnf$子句的头；
 	\item Parm3为原子命题构成的列表，表示$\CTLsnf$子句的尾；
 	\item Parm4表示索引号，且如果Parm4=$nil$，则该子句不是带索引的子句。
 \end{itemize}
 
-在transCTL2SNF(Parm1,Parm2,Parm3,Parm4,Parm5,Parm6)中：参数Parm1为公式形成的列表，即：$[start-> z, z -> simp(nnf(\varphi))]$；Parm2和Parm3初始化为0，分别表示索引号和新引入的原子命题下；Parm4和Parm5分别表示转换过程结束后返回的索引号和原子命题下标的最大值；Parm6为经过转换Parm1后得到的$\CTLsnf$子句集。
+在transCTL2SNF(Parm1,Parm2,Parm3,Parm4,Parm5,Parm6)中：参数Parm1为公式形成的列表，即：$[start-> z, z -> simp(nnf(\varphi))]$；Parm2和Parm3初始化为0，分别表示索引号和新引入的原子命题下标；Parm4和Parm5分别表示转换过程结束后返回的索引号和原子命题下标的最大值；Parm6为经过转换Parm1后得到的$\CTLsnf$子句集。
 
 
-{\em 归结模块}：主要有两个过程step\_resolution/3和temp\_resolution/8。step\_resolution(List1, V, List2)从List1中选择能使用表~\ref{tab:res}中的归结规则对$V$中的元素做规约公式，并将得到结果存在列表List2中。这一过程循环执行，直到不再产生新的$\CTLsnf$子句为止。
+{\em 归结模块}：主要有两个过程step\_resolution/3和temp\_resolution/8。step\_resolution(List1, V, List2)从List1中选择能使用表~\ref{tab:res}中的归结规则对$V$中的元素做归结的公式，并将得到结果存在列表List2中。这一过程循环执行，直到不再产生新的$\CTLsnf$子句为止。
 temp\_resolution/8过程主要用于寻找归结规则\textbf{ERES1}和\textbf{ERES2}的前提（一组$\CTLsnf$子句集，参照第~\ref{chapter02:CTLres}节）。
 
 {\em “移除”原子命题模块}：主要用于将含有要遗忘的原子命题的$\CTLsnf$子句去掉，这一过程比较简单，这里不详细介绍。
@@ -1240,11 +1252,13 @@ temp\_resolution/8过程主要用于寻找归结规则\textbf{ERES1}和\textbf{E
 
 
 \subsection{实验}\label{cha5:subsec:expriment}
- 本节给出所提出的基于归结的遗忘计算的实验结果，并分析实验结果。第\ref{chapter04}章提出的算法\ref{alg:compute:forgetting:by:Resolution}用Prolog语言实现，并在Linux服务器上进行了实验，该服务器是具有8个Intel核和32GB内存的i7CPU，其锁频和主频分别为4770 K和3.50 GHz。每次计算的时间限制在1200秒以内。
+本节给出上一小节中prolog实现的CTL-forget计算系统的实验结果，并分析实验结果。
+ %本节给出所提出的基于归结的遗忘计算的实验结果，并分析实验结果。
+本实验在Linux服务器上进行，该服务器是具有8个Intel核和32GB内存的i7CPU，其锁频和主频分别为4770 K和3.50 GHz。每次计算的时间限制在1200秒以内。
 	实验分为两个部分：(1) 在随机数据集和标准数据集上的遗忘；(2) 在随机数据集上命题逻辑公式和$\CTL$公式的SNC计算。
 	所有实验数据和实验结果都可以从网上获取\footnote{ \url{https://github.com/fengrenyan/forgetting-in-CTL/tree/main/Appendix}}。
 	
-	此外，在这部分3-CNF公式$\varphi$的长度（记为$|\varphi|$）表示$\varphi$中子句的个数。
+	此外，在这部分3-CNF公式$\varphi$的长度（记为$|\varphi|$）表示$\varphi$中子句的个数，$|V|$为原子命题集$V$中的原子个数。
 
 \subsubsection{遗忘实验分析}
 这部分的实验数据分为两组：一组来源于标准数据集，令一组是随机生成的数据。
@@ -1307,7 +1321,7 @@ $|\varphi_i|=12$时的实验结果如图\ref{chapter04:fig:for12}所示，图\re
 
 \subsubsection{SNC计算结果分析}
 这部分实验分析使用基于遗忘的方法计算$\CTL$公式的SNC，分为两组实验：计算经典命题公式和$\CTL$公式的SNC，即：计算$q$在$V$和$\varphi \wedge q$上的SNC（$\CTLforget(\varphi\wedge q, \Var(\varphi)-V \cup \{q\})$），其中$V\subseteq \Var(\varphi)$、$q\in \Var(\varphi\wedge q)-V$。
-这些公式$\varphi$都是随机生成的定义在原子命题集$\Ha$上的公式、$V$也是在计算过程中随机生成的、$q\not \in \Var(\varphi)$是一个固定的原子命题且$|\Ha|=50$。
+这些公式$\varphi$都是随机生成的定义在原子命题集$\Ha$上的公式、$V$是在计算过程中随机生成的、$q\not \in \Var(\varphi)$是一个固定的原子命题且$|\Ha|=50$。
 
 首先测试随机3-CNF命题公式。令$|V|$的取值范围为$\{5,10,\dots, 40,45\}$，3-CNF公式的子句个数$nc$范围为$\{10,15,\dots, 45,50\}$。
 在每种情形当中，计算20个随机实例$(\varphi,q,V)$：$\varphi$为$\Ha$上的公式，且$V\subseteq \Var(\varphi)$。
@@ -1358,14 +1372,14 @@ $$\varphi_1 \wedge \ALL \NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$$
 	\label{chapter04:fig:CtlTime}
 \end{figure*}
 
-综上所述，算法\ref{alg:compute:forgetting:by:Resolution}大多数情况下能计算出SNC（WSC），且当需要遗忘的原子个数很少或公式长度较小的时候计算效率很高。
+综上所述，算法\ref{alg:compute:forgetting:by:Resolution}大多数情况下能计算出SNC（WSC），且当需要遗忘的原子个数很少或公式长度较小时计算效率较高。
 
 
 \section{本章小结} 
-本章第~\ref{chapter05:sec:model}讨论了一种基于模型的计算约束$\CTL$下遗忘的计算。为此，本章第一节首先提出了一种有界$V$-互模拟概念，并证明了该有界$V$-互模拟与$V$-互模拟在有限结构下是等价的。此外，定义了给定深度的计算树在给定原子命题集上的特征公式，由此定义了有限结构的特征公式。结论表明初始结构能够满足给定的特征公式当且仅当该初始结构与特征公式对应的初始结构在给定原子命题集上互模拟。基于此，得出了任意公式语义等价于其所有模型的特征公式的析取，因而可以计算遗忘的结果。最后，本章给出了基于模型的计算遗忘算法，并分析该算法关于公式的大小是指数空间的。
+本章第~\ref{chapter05:sec:model}节讨论了一种基于模型的计算约束$\CTL$下遗忘的计算。为此，本章第一节首先提出了一种有界$V$-互模拟概念，并证明了该有界$V$-互模拟与$V$-互模拟在有限结构下是等价的。此外，定义了给定深度的计算树在给定原子命题集上的特征公式，由此定义了有限结构的特征公式。结论表明初始结构能够满足给定的特征公式当且仅当该初始结构与特征公式对应的初始结构在给定原子命题集上互模拟。基于此，得出了任意公式语义等价于其所有模型的特征公式的析取，因而可以计算遗忘的结果。最后，给出了基于模型的计算遗忘算法，并分析该算法关于公式的大小是指数空间的。
 
-本章第~\ref{chapter05:sec:resolution}探索了如何使用Zhang等人提出的归结系统计算$\CTL$下的遗忘。为此，首先使用Zhang提出的转换规则将$\CTL$公式转换成$\CTLsnf$子句集，这一步骤在第\ref{chapter02}章讲述$\CTL$的标准形式时已经给出。基于此，使用归结规则在要遗忘的原子命题集上做穷尽的归结。然后给出几个互模拟等价的等式消除索引，并提出一般化的Ackermann引理用于移除一些新引入的原子命题。最后，给出计算遗忘的算法，并分析该算法的复杂性，分析表明使用该算法计算遗忘的时间和空间复杂性关于公式和要遗忘的原子命题的个数是指数时间的。
+本章第~\ref{chapter05:sec:resolution}节探索了如何使用Zhang等人提出的归结系统计算$\CTL$遗忘。为此，首先，使用Zhang提出的转换规则将$\CTL$公式转换成$\CTLsnf$子句集，并使用归结规则在要遗忘的原子命题集上做穷尽的归结；然后，给出几个互模拟等价的等式消除索引，并提出一般化的Ackermann引理用于移除一些新引入的原子命题；最后，给出计算遗忘的算法，并分析该算法的复杂性，分析表明使用该算法计算遗忘的时间和空间复杂性关于公式和要遗忘的原子命题个数是指数时间的。
 
 
-随后，第~\ref{cha5:subsec:prolog}节给出了基于Proplog的算法$\CTL$-forget实现介绍。第~\ref{cha5:subsec:expriment}节从两个角度来评估算法$\CTL$-forget的实现系统。实验结果表明，从标准数据集中获取的公式和随机产生的公式下遗忘的计算对需要遗忘的原子命题个数和公式长度都很敏感：要遗忘的原子命题越多或公式越长，计算效率越低。
-此外，关于计算SNC的实验表明，本文提出的算法在用于实验的数据集中大部分情况下是能计算出SNC的。三维图和箱线图都表示计算SNC体现了跟计算遗忘一样的规律，这与SNC是由遗忘来计算是一致的。
+随后，第~\ref{cha5:subsec:prolog}节给出了基于Proplog的算法$\CTL$-forget实现介绍。第~\ref{cha5:subsec:expriment}节从两个角度来评估算法$\CTL$-forget的系统实现。实验结果表明，从标准数据集中获取的公式和随机产生的公式下，遗忘的计算对需要遗忘的原子命题个数和公式长度都很敏感：要遗忘的原子命题越多或公式越长，计算效率越低。
+此外，关于计算SNC的实验表明，算法CTL-forget在用于实验的数据集中，大部分情况是能计算出SNC的。三维图和箱线图都表示计算SNC体现了跟计算遗忘一样的规律，这与SNC是由遗忘来计算是一致的。
