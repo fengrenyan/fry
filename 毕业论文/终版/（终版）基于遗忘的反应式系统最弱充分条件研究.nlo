@@ -56,4 +56,11 @@
 \nomenclatureentry{A\textbf{MI}@[{\textbf{MI}}]\begingroup Mutual Information\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad 互信息\nomeqref {0}|nompageref}{1}
 \nomenclatureentry{A\textbf{QIF}@[{\textbf{QIF}}]\begingroup Quantitative Information Flow\quad \quad \quad \quad  \quad \quad 量化信息流\nomeqref {0}|nompageref}{1}
 \nomenclatureentry{A\textbf{ORRP}@[{\textbf{ORRP}}]\begingroup Orderly Randomized Response Perturbation 有序随机响应扰动\nomeqref {0}|nompageref}{1}
-\nomenclatureentry{A\textbf{PPAD}@[{\textbf{PPAD}}]\begingroup Privacy-Preserving 
+\nomenclatureentry{A\textbf{PPAD}@[{\textbf{PPAD}}]\begingroup Privacy-Preserving Attack Defense\quad \quad \  \quad \quad 隐私保护攻击防御\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{A\textbf{PDP}@[{\textbf{PDP}}]\begingroup Personalized Differential Privacy\quad \quad \ \ \ \quad \quad 个性化差分隐私\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{A\textbf{MRR}@[{\textbf{MRR}}]\begingroup Multivariate Randomized Response\quad  \ \ \quad \quad 多元随机响应\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{A\textbf{PDF}@[{\textbf{PDF}}]\begingroup Probability Density Function\quad \quad \quad \quad  \ \ \quad \quad 概率密度函数\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{A\textbf{BSC}@[{\textbf{BSC}}]\begingroup Binary Symmetric Channel\quad \quad \quad \quad  \quad \quad \quad 二元对称信道\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{A\textbf{DMC}@[{\textbf{DMC}}]\begingroup Discrete Memoryless Channel\quad \quad \quad  \quad \quad \quad 离散无记忆信道\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{A\textbf{SD}@[{\textbf{SD}}]\begingroup Saddle Point\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \ \quad \quad 鞍点\nomeqref {0}|nompageref}{1}
+\nomenclatureentry{A\textbf{TPZS}@[{\textbf{TPZS}}]\begingroup Two-Person Zero-Sum\quad \quad \quad \quad \quad \quad \quad \ \quad \quad 二人零和\nomeqref {0}|nompageref}{1}

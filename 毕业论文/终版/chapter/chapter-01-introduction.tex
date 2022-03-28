@@ -184,11 +184,17 @@
 %值得注意的是这四个条件与知识遗忘形成了“当且仅当”的关系。换句话说，当知道某一个公式满足那四个条件则该公式为遗忘的结果，当知道某一结果为遗忘结果时它一定满足那四个基本条件。
 此外，模态谓词逻辑下信息不完备的知识遗忘~\cite{wenximing2019buwanbei}、模态一阶逻辑S5中的遗忘也得到了研究~\cite{Yongmei:IJCAI:2011}，Fang等人讨论了关于多模态（multi-modal）$K_n$、 $D_n$、 $T_n$、$K45_n$、 $KD45_n$情形下遗忘的存在性~\cite{DBLP:journals/ai/FangLD19,wenximing2019,wenximing2019kn}——这些逻辑里的遗忘总是存在的，其中$n$为智能体的个数。
 
-均匀插值作为遗忘的一个对偶概念，其在模态逻辑系统中取得了一系列研究成果：
+
+均匀插值作为遗忘的一个对偶概念。
+从形式上说，如果一个逻辑系统${\cal L}$中任意的公式$\varphi$和$\psi$，若$\varphi\models_{\cal L} \psi$，则存在一个公式$\xi$使得$\varphi\vdash_{\cal L}\xi$、$\xi\vdash_{\cal L}\psi$和 $\Var(\xi)\subseteq \Var(\varphi)\cap \Var(\psi)$，
+则${\cal L}$具有或Craig插值性质，若$\xi$与$\psi$无关，则${\cal L}$具有均匀插值性质。
+
+其在模态逻辑和时序逻辑系统中取得了一系列研究成果：LTL、$\CTL$和$\CTL^*$不具有均匀插值性质~\cite{Maksimova:JANCL:1991,DAgostino:synthese:2008}，
 S5、K和KD模态逻辑系统具有均匀插值性质~\cite{DBLP:journals/aml/Iemhoff19}，
 而一些模态逻辑系统没有均匀插值性质。如：\textcolor{red}{量词模态逻辑S5（quantified modal logic S5）}\cite{DBLP:journals/jsyml/Fine79}、K4、和S4及其扩展都没有均匀插值性质~\cite{DBLP:journals/ndjfl/Schumm86}，因而其遗忘也不是封闭的。
 研究具有均匀插值性质的模态逻辑遗忘可以借鉴S5系统的遗忘方法，也可以参考K系统下基于归结计算均匀插值的方法。
 对于那些没有均匀插值的模态逻辑系统，可以考虑模态逻辑下的Ackermann引理~\cite{DBLP:books/daglib/0023036}。
+
 
 
 %此外，Feng等人也研究了S5下如
