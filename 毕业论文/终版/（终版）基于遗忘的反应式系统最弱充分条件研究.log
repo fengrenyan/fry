@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  28 MAR 2022 19:05
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  28 MAR 2022 22:32
 entering extended mode
 **（终版）基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -3847,18 +3847,18 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 [90]
 Overfull \hbox (2.01115pt too wide) in paragraph at lines 269--270
 []\OT1/ptm/m/n/12.05 (ii) \C70/zhhei/bx/n/12.05/57 � \C70/zhhei/bx/n/12.05/59 �
- |\C70/zhhei/bx/n/12.05/ff |$\OML/ztmcm/m/it/12.05 n \OT1/ztmcm/m/n/12.05 = 0$
-|\C70/zhhei/bx/n/12.05/ff 	||| \C70/rm/m/n/12.05/82 �$\OT1/ztmcm/m/n/12.05 (\O
-MS/ztmcm/m/n/12.05 M\OML/ztmcm/m/it/12.05 ; s\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/
-m/n/12.05 j[]\OT1/ztmcm/m/n/12.05 = \OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/12.0
-5 ([][](\OML/ztmcm/m/it/12.05 s[]\OT1/ztmcm/m/n/12.05 ))$|\C70/rm/m/n/12.05/ff 
-| \C70/rm/m/n/12.05/52 $\OML/ztmcm/m/it/12.05 L\OT1/ztmcm/m/n/12.05 (\OML/ztm
-cm/m/it/12.05 s\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05   [] \OT1/ztmcm/m/n/
-12.05 = \OML/ztmcm/m/it/12.05 L[]\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 s[
-]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05   []$|\C70/rm/m/n/12.05/30 | \C70
-/rm/m/n/12.05/56 � \C70/rm/m/n/12.05/6b d|\C70/rm/m/n/12.05/ff | $[][]\OT1/ztm
-cm/m/n/12.05 (\OML/ztmcm/m/it/12.05 s\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.0
-5 $[]$
+ |\C70/rm/bx/n/12.05/ff |$\OML/ztmcm/m/it/12.05 n \OT1/ztmcm/m/n/12.05 = 0$|\C
+70/rm/bx/n/12.05/ff 	||| \C70/rm/m/n/12.05/82 �$\OT1/ztmcm/m/n/12.05 (\OMS/ztm
+cm/m/n/12.05 M\OML/ztmcm/m/it/12.05 ; s\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12
+.05 j[]\OT1/ztmcm/m/n/12.05 = \OMS/ztmcm/m/n/12.05 F[]\OT1/ztmcm/m/n/12.05 ([][
+](\OML/ztmcm/m/it/12.05 s[]\OT1/ztmcm/m/n/12.05 ))$|\C70/rm/m/n/12.05/ff | \C7
+0/rm/m/n/12.05/52 $\OML/ztmcm/m/it/12.05 L\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/i
+t/12.05 s\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05   [] \OT1/ztmcm/m/n/12.05 
+= \OML/ztmcm/m/it/12.05 L[]\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.05 s[]\OT1/
+ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05   []$|\C70/rm/m/n/12.05/30 | \C70/rm/m/
+n/12.05/56 � \C70/rm/m/n/12.05/6b d|\C70/rm/m/n/12.05/ff | $[][]\OT1/ztmcm/m/n
+/12.05 (\OML/ztmcm/m/it/12.05 s\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 $[]$
+
  []
 
 
@@ -4092,8 +4092,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 625--627
 
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8.36807> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 663.
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -4107,12 +4105,12 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[102] <figures/chapter04/frame.png, id=1795, 707.64375pt x 460.72125pt>
-File: figures/chapter04/frame.png Graphic file (type png)
+[102] <figures/chapter04/frame1.png, id=1789, 855.94781pt x 556.32843pt>
+File: figures/chapter04/frame1.png Graphic file (type png)
 
-<use figures/chapter04/frame.png>
-Package pdftex.def Info: figures/chapter04/frame.png used on input line 730.
-(pdftex.def)             Requested size: 426.79134pt x 277.869pt.
+<use figures/chapter04/frame1.png>
+Package pdftex.def Info: figures/chapter04/frame1.png used on input line 762.
+(pdftex.def)             Requested size: 426.79134pt x 277.39104pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -4121,14 +4119,14 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [103 <D:/（博士）我的资料/Git/fry/毕业论文/终版/figures/chapter04
-/frame.png>]
+/frame1.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 751.
+(hyperref)                removing `math shift' on input line 783.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 751.
+(hyperref)                removing `math shift' on input line 783.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -4137,7 +4135,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [104]
-Overfull \hbox (2.32625pt too wide) in paragraph at lines 772--776
+Overfull \hbox (2.32625pt too wide) in paragraph at lines 804--808
 []\C70/rm/m/n/12.05/4e � $ * \C70/rm/m/n/12.05/65 � \C70/rm/m/n/12.05/97 b \C70
 /rm/m/n/12.05/67 e \C70/rm/m/n/12.05/8b � \C70/rm/m/n/12.05/66  \C70/rm/m/n/12
 .05/8f � \C70/rm/m/n/12.05/4e   \C70/rm/m/n/12.05/7e � \C70/rm/m/n/12.05/8b �|\
@@ -4150,15 +4148,15 @@ m/n/12.05 (\OML/ztmcm/m/it/12.05 T[]; V\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 772--776
+Underfull \hbox (badness 10000) in paragraph at lines 804--808
 
  []
 
 
-LaTeX Warning: Command \O invalid in math mode on input line 789.
+LaTeX Warning: Command \O invalid in math mode on input line 821.
 
 
-Overfull \hbox (20.47337pt too wide) in paragraph at lines 789--791
+Overfull \hbox (20.47337pt too wide) in paragraph at lines 821--823
 \C70/rm/m/n/12.05/61 $\OT1/ztmcm/m/n/12.05 (\OMS/ztmcm/m/n/12.05 M[]\OML/ztmcm
 /m/it/12.05 ; s[]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 2 []\OT1/ztmcm/m/n
 /12.05 (\OML/ztmcm/m/it/12.05 T[] \OT1/ztmcm/m/n/12.05 = \OML/ztmcm/m/it/12.05 
@@ -4179,7 +4177,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [105]
-Overfull \hbox (4.64027pt too wide) in paragraph at lines 815--816
+Overfull \hbox (4.64027pt too wide) in paragraph at lines 847--848
 []\C70/rm/m/n/12.05/5b � \C70/rm/m/n/12.05/4e � \C70/rm/m/n/12.05/61  \C70/rm/
 m/n/12.05/51 w \C70/rm/m/n/12.05/67 	$\OT1/ztmcm/m/n/12.05 (\OML/ztmcm/m/it/12.
 05 s; s[]\OT1/ztmcm/m/n/12.05 ) \OMS/ztmcm/m/n/12.05 2 \OML/ztmcm/m/it/12.05 R$
@@ -4208,7 +4206,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [107]
-Overfull \hbox (0.46622pt too wide) in paragraph at lines 925--926
+Overfull \hbox (0.46622pt too wide) in paragraph at lines 957--958
 \C70/rm/m/n/12.05/52  \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.05/57 ($\OML/ztmcm
 /m/it/12.05 s[]$\C70/rm/m/n/12.05/76 � \C70/rm/m/n/12.05/4e    * \C70/rm/m/n/1
 2.05/72 � \C70/rm/m/n/12.05/60 $\OML/ztmcm/m/it/12.05 s[]$|\C70/rm/m/n/12.05/f
@@ -4245,21 +4243,21 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [110]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1125
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1157
 .
  (D:\Application\Ctex\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )<<ot1tt.cmap>>
-LaTeX Font Info:    Try loading font information for C70+tt on input line 1125.
+LaTeX Font Info:    Try loading font information for C70+tt on input line 1157.
 
 
 (D:\Application\Ctex\MiKTeX\tex\latex\ctex\fd\c70tt.fd
 File: c70tt.fd 2007/05/06 v0.8a ctexutf8 font definition file
 )
 Package CJKpunct Info: punctuation spaces for family 'zhfs' do not exist. Use f
-amily 'def' instead. on input line 1125.
+amily 'def' instead. on input line 1157.
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12.05> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 1151.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 1183.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -4270,11 +4268,11 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 [111]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1215.
+(hyperref)                removing `math shift' on input line 1248.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1215.
+(hyperref)                removing `math shift' on input line 1248.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -4284,17 +4282,17 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 
 [112]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1244.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1277.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1244.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1277.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1244.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1277.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1244.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1277.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1244.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1277.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1244.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1277.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -4303,7 +4301,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [113]
-Overfull \hbox (8.50696pt too wide) in paragraph at lines 1244--1246
+Overfull \hbox (8.50696pt too wide) in paragraph at lines 1277--1279
 []\C70/rm/bx/it/12.05/5f R \C70/rm/bx/it/12.05/7e � \C70/rm/m/it/12.05/6a ! \C7
 0/rm/bx/it/12.05/57 W|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/4e ; \C70/rm/m/
 n/12.05/89 � \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/4e $ * \C70/rm/m/n/12.05/
@@ -4318,36 +4316,36 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[114] <figures/chapter04/time_4_12.png, id=1960, 360.59718pt x 216.05719pt>
+[114] <figures/chapter04/time_4_12.png, id=1938, 360.59718pt x 216.05719pt>
 File: figures/chapter04/time_4_12.png Graphic file (type png)
 
 <use figures/chapter04/time_4_12.png>
-Package pdftex.def Info: figures/chapter04/time_4_12.png used on input line 130
-2.
+Package pdftex.def Info: figures/chapter04/time_4_12.png used on input line 133
+5.
 (pdftex.def)             Requested size: 199.16928pt x 119.33292pt.
 
-<figures/chapter04/number-4-12.png, id=1961, 365.11406pt x 194.22563pt>
+<figures/chapter04/number-4-12.png, id=1939, 365.11406pt x 194.22563pt>
 File: figures/chapter04/number-4-12.png Graphic file (type png)
 
 <use figures/chapter04/number-4-12.png>
 Package pdftex.def Info: figures/chapter04/number-4-12.png used on input line 1
-305.
+338.
 (pdftex.def)             Requested size: 199.16928pt x 105.95013pt.
 
-<figures/chapter04/time_4_16.png, id=1962, 362.10281pt x 217.5628pt>
+<figures/chapter04/time_4_16.png, id=1940, 362.10281pt x 217.5628pt>
 File: figures/chapter04/time_4_16.png Graphic file (type png)
 
 <use figures/chapter04/time_4_16.png>
-Package pdftex.def Info: figures/chapter04/time_4_16.png used on input line 131
-4.
+Package pdftex.def Info: figures/chapter04/time_4_16.png used on input line 134
+7.
 (pdftex.def)             Requested size: 199.16928pt x 119.66986pt.
 
-<figures/chapter04/number-4-16.png, id=1963, 323.70938pt x 222.07968pt>
+<figures/chapter04/number-4-16.png, id=1941, 323.70938pt x 222.07968pt>
 File: figures/chapter04/number-4-16.png Graphic file (type png)
 
 <use figures/chapter04/number-4-16.png>
 Package pdftex.def Info: figures/chapter04/number-4-16.png used on input line 1
-317.
+350.
 (pdftex.def)             Requested size: 199.16928pt x 136.64087pt.
 
 
@@ -4359,24 +4357,21 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 [115 <D:/（博士）我的资料/Git/fry/毕业论文/终版/figures/chapter04
 /time_4_12.png> <D:/（博士）我的资料/Git/fry/毕业论文/终版/figure
 s/chapter04/number-4-12.png>]
-<figures/chapter04/PRototalAveTime.png, id=1975, 462.528pt x 346.896pt>
-File: figures/chapter04/PRototalAveTime.png Graphic file (type png)
+<figures/chapter04/PRototalAveTime1.png, id=1953, 368.1253pt x 325.215pt>
+File: figures/chapter04/PRototalAveTime1.png Graphic file (type png)
 
-<use figures/chapter04/PRototalAveTime.png>
-Package pdftex.def Info: figures/chapter04/PRototalAveTime.png used on input li
-ne 1334.
-(pdftex.def)             Requested size: 213.39566pt x 160.05048pt.
+<use figures/chapter04/PRototalAveTime1.png>
+Package pdftex.def Info: figures/chapter04/PRototalAveTime1.png used on input l
+ine 1367.
+(pdftex.def)             Requested size: 213.39566pt x 188.52557pt.
 
-<figures/chapter04/ProBox(10-50)_25.png, id=1976, 479.54156pt x 265.74281pt>
-File: figures/chapter04/ProBox(10-50)_25.png Graphic file (type png)
+<figures/chapter04/ProBox(10-50)_251.png, id=1954, 616.55344pt x 340.27126pt>
+File: figures/chapter04/ProBox(10-50)_251.png Graphic file (type png)
 
-<use figures/chapter04/ProBox(10-50)_25.png>
-Package pdftex.def Info: figures/chapter04/ProBox(10-50)_25.png used on input l
-ine 1338.
-(pdftex.def)             Requested size: 199.16928pt x 110.3704pt.
-
-Underfull \vbox (badness 5607) has occurred while \output is active []
-
+<use figures/chapter04/ProBox(10-50)_251.png>
+Package pdftex.def Info: figures/chapter04/ProBox(10-50)_251.png used on input 
+line 1371.
+(pdftex.def)             Requested size: 199.16928pt x 109.91705pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -4387,23 +4382,23 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 [116 <D:/（博士）我的资料/Git/fry/毕业论文/终版/figures/chapter04
 /time_4_16.png> <D:/（博士）我的资料/Git/fry/毕业论文/终版/figure
 s/chapter04/number-4-16.png> <D:/（博士）我的资料/Git/fry/毕业论文/
-终版/figures/chapter04/PRototalAveTime.png> <D:/（博士）我的资料/Git/
-fry/毕业论文/终版/figures/chapter04/ProBox(10-50)_25.png (PNG copy)>]
-<figures/chapter04/totalAveTime.png, id=1992, 462.528pt x 346.896pt>
-File: figures/chapter04/totalAveTime.png Graphic file (type png)
+终版/figures/chapter04/PRototalAveTime1.png> <D:/（博士）我的资料/Git
+/fry/毕业论文/终版/figures/chapter04/ProBox(10-50)_251.png>]
+<figures/chapter04/totalAveTime1.png, id=1971, 368.1253pt x 304.88907pt>
+File: figures/chapter04/totalAveTime1.png Graphic file (type png)
 
-<use figures/chapter04/totalAveTime.png>
-Package pdftex.def Info: figures/chapter04/totalAveTime.png used on input line 
-1367.
-(pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
+<use figures/chapter04/totalAveTime1.png>
+Package pdftex.def Info: figures/chapter04/totalAveTime1.png used on input line
+ 1400.
+(pdftex.def)             Requested size: 199.16928pt x 164.95865pt.
 
-<figures/chapter04/numPercent.png, id=1993, 462.528pt x 346.896pt>
-File: figures/chapter04/numPercent.png Graphic file (type png)
+<figures/chapter04/numPercent1.png, id=1972, 416.30531pt x 313.9228pt>
+File: figures/chapter04/numPercent1.png Graphic file (type png)
 
-<use figures/chapter04/numPercent.png>
-Package pdftex.def Info: figures/chapter04/numPercent.png used on input line 13
-70.
-(pdftex.def)             Requested size: 199.16928pt x 149.37938pt.
+<use figures/chapter04/numPercent1.png>
+Package pdftex.def Info: figures/chapter04/numPercent1.png used on input line 1
+403.
+(pdftex.def)             Requested size: 199.16928pt x 150.18785pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -4412,8 +4407,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [117 <D:/（博士）我的资料/Git/fry/毕业论文/终版/figures/chapter04
-/totalAveTime.png> <D:/（博士）我的资料/Git/fry/毕业论文/终版/fig
-ures/chapter04/numPercent.png>])
+/totalAveTime1.png> <D:/（博士）我的资料/Git/fry/毕业论文/终版/fi
+gures/chapter04/numPercent1.png>])
 (D:\（博士）我的资料\Git\fry\毕业论文\终版\chapter/chapter-09-con
 clusion.tex
 
@@ -4554,20 +4549,20 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 555.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 555.
 Package rerunfilecheck Info: File `（终版）基于遗忘的反应式系统�
 �弱充分条件研究.out' has not changed.
-(rerunfilecheck)             Checksum: 44B7B295AF2EBBA50D85922FEAFFC262;4303.
+(rerunfilecheck)             Checksum: 707716B5D03CB69DAF9CD4529CC8D0B5;4351.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37927 strings out of 495354
- 637507 string characters out of 3183188
- 786397 words of memory out of 3000000
- 38446 multiletter control sequences out of 15000+200000
- 275423 words of font info for 797 fonts, out of 3000000 for 9000
+ 37903 strings out of 495354
+ 637233 string characters out of 3183188
+ 787383 words of memory out of 3000000
+ 38445 multiletter control sequences out of 15000+200000
+ 273797 words of font info for 795 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,2641b,2629s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,2641b,2623s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -4655,7 +4650,7 @@ kai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/F
 onts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/W
 INDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.t
 tc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/
-simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOW
+simsun.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOW
 S/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C
 :/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simka
 i.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fon
@@ -4670,15 +4665,15 @@ ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts
 WS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><
 C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simk
 ai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fo
-nts/simkai.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WI
+nts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WI
 NDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.tt
 f><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/s
 imhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS
 /Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:
-/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun
-.ttc><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Font
-s/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simkai.ttf><C:/WIND
-OWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc>
+/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simhei
+.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Fonts/simhei.ttf><C:/WINDOWS/Font
+s/simkai.ttf><C:/WINDOWS/Fonts/simkai.ttf><C:/WINDOWS/Fonts/simsun.ttc><C:/WIND
+OWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc>
 <C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/sim
 sun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/F
 onts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/WINDOWS/Fonts/simsun.ttc><C:/W
@@ -4730,9 +4725,9 @@ TeX/fonts/type1/urw/symbol/usyr.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw
 ><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/Application/C
 tex/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on （终版）基于遗忘的反应式系统最弱充分条件�
-��究.pdf (147 pages, 2871782 bytes).
+��究.pdf (147 pages, 3016455 bytes).
 PDF statistics:
- 3083 PDF objects out of 3580 (max. 8388607)
- 567 named destinations out of 1000 (max. 500000)
+ 3058 PDF objects out of 3580 (max. 8388607)
+ 545 named destinations out of 1000 (max. 500000)
  923 words of extra memory for PDF output out of 10000 (max. 10000000)
 

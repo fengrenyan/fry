@@ -653,11 +653,43 @@
 \subsection{基于模型的遗忘算法}\label{chapter06:sec:algm}
 这里提出基于模型的遗忘算法，该算法与第\ref{cha4:sec:alg}节中基于语法的算法不同。本小节的算法通过计算所有可能的模型来计算遗忘，且其正确性可由引理\ref{lem:models:formula}和定理\ref{CF}保证。
 
+%\begin{algorithm}[htbp]
+%	\small
+%	\setstretch{1.2}
+%	\caption{基于模型的$\CTL$遗忘过程}%~\cite{DBLP:journals/ai/Lin01}}
+%	\label{alg:compute:forgetting:by:VB}
+%	\begin{algorithmic}[1]
+%		\REQUIRE ~~\\
+%		\begin{tabular}[t]{p{8mm}l}
+%			$\varphi, V$：& $\CTL$公式$\varphi$和原子命题集$V$
+%		\end{tabular}
+%		\ENSURE ~~\\
+%		\begin{tabular}[t]{p{8mm}l}
+%			$\CTLforget(\varphi, V)$： & \quad  从$\varphi$中遗忘原子命题集$V$的结果
+%			%$SD$&:鞍点策略的支付量
+%		\end{tabular}
+%		\STATE $T_1=\{C\mid C\in \Gamma\hbox{是$V$上的一个子句}\}$，$T_2=\Gamma - T_1$
+%		\STATE 将出现在$T_2$中的$q$用$\top$代替，并将得到的结果和$T_1$分别转换成为子句集合的极小集$T_3$和$T_0$.
+%		\STATE 令$V'=\Var(T_3) - V$; 
+%		%\STATE 若$V' =\emptyset$，则跳转到post-processing，否则令$V'=$
+%		\IF{$V' =\emptyset$}
+%		\STATE 跳转到 post-processing;
+%		\ENDIF
+%		\STATE 从$V'$中随机选择一个原子$p$，且令$V'=V' -\{p\}$;
+%		\STATE 将$T_3[p/\top] \cup T_3[p/\bot]$转换为极小集得到结果$T_3$，跳转到4；
+%		\STATE post-processing：根据下面步骤化简$T_3$：
+%		\STATE \qquad 移除$T_3$中被$T_0$包蕴的子句；
+%		\STATE \qquad 对$T_3$中的每个子句$\alpha$，将$(T_3-\{\alpha\}) \cup T_0$转换为极小子句集$T_{\alpha}$；
+%		\STATE \qquad 如果$\alpha$被$T_{\alpha}$中的某个子句包蕴，则将$\alpha$从$T_3$中删除；
+%		\RETURN $T_3$中子句的合取
+%	\end{algorithmic}
+%\end{algorithm}
 
+%\IncMargin{1em}
 \begin{algorithm}[tb]
 	\caption{\small 基于模型的$\CTL$遗忘过程}%A Model-based \CTL\ Forgetting Procedure}
 	\label{alg:compute:forgetting:by:VB}
-	\LinesNumbered
+	%\LinesNumbered
 	\KwIn{$\CTL$公式$\varphi$和原子命题集$V$}%A \CTL formula $\varphi$ and a set $V$ of atoms}
 	\KwOut{$\CTLforget(\varphi, V)$}% ????
 	$\psi \lto \bot$\;
@@ -727,7 +759,7 @@
 \begin{figure*}[!htb]
 	\centering
 	% Requires \usepackage{graphicx}
-	\includegraphics[width=15cm]{chapter04/frame.png}\\
+	\includegraphics[width=15cm]{chapter04/frame1.png}\\
 	\caption{基于归结的遗忘的主要流程图}
 	\label{Fig:chapter05:v1uv2}
 \end{figure*}
@@ -957,9 +989,9 @@ $rxi(\{\alpha_i\mid 1\le i\le n\})$、$rfi(\{\beta_1,\alpha_2\})$来表示，其
 \begin{algorithm}[tb]
 	\caption{{RM-index}$(\Sigma)$}
 	\label{alg:remove:index}
-	\LinesNumbered
-	\KwIn{A finite set $\Sigma$ of $\CTLsnf$ clauses} %$\not\exists \{\alpha,\beta\}\subseteq\Sigma$ $\EXIST$-sometimes clauses have the same index}
-	\KwOut{A set of \CTL\ formulas}
+	%\LinesNumbered
+	\KwIn{有限$\CTLsnf$子句集$\Sigma$} %$\not\exists \{\alpha,\beta\}\subseteq\Sigma$ $\EXIST$-sometimes clauses have the same index}
+	\KwOut{$\CTL$公式集}
 	\ForEach{$\Sigma$中拥有相同索引$\tuple{i}$的$\EXIST$-子句构成的极大子集$\Delta$}{
 	%\ForEach{maximal subset $\Delta$ of $\EXIST$-step clauses in $\Sigma$ with a same index $\tuple{i}$}{
 		%$\Sigma\lto \Sigma  \cup  rei(\Delta) $\; 
@@ -1119,13 +1151,13 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 \begin{algorithm}[tb]
 	\caption{{\CTL-forget}$(\varphi, V)$}
 	\label{alg:compute:forgetting:by:Resolution}
-	\LinesNumbered
-	\KwIn{A \CTL\ formula $\varphi$ and a set $V$ of atoms}%, and a Boolean variable ri}
-	\KwOut{A conjunction of formulas}
+	%\LinesNumbered
+	\KwIn{$\CTL$公式$\varphi$和原子命题集$V$}%, and a Boolean variable ri}
+	\KwOut{公式集}
 	\lIf{$\varphi\equiv\bot$} {{\bf \Return $\bot$}}    \tcp*{若公式不可满足，则遗忘结果为$\bot$}
 	\lIf{$V=\Var(\varphi)$} {{\bf \Return  $\top$}}   \tcp*{若遗忘所有原子命题，则结果为$\top$}
 	$T_\varphi \lto \CTLsnf(\varphi)$ \tcp*{将$\varphi$转换为 $\CTLsnf$子句}
-	$\Sigma\lto \Unfolding(T_\varphi,V\cup U)$ where $U=\Var(T_\varphi)-\Var(\varphi)$\tcp*{展开}
+	$\Sigma\lto \Unfolding(T_\varphi,V\cup U)$，其中$U=\Var(T_\varphi)-\Var(\varphi)$\tcp*{展开}
 	$\Sigma\lto \emph{ERes}(\Sigma,V)$ \tcp*{移除包含 $V$中元素的子句}
 	%    $\Sigma\lto \GAL(\Sigma,\Var(\Sigma)-\Var(\varphi))$ \tcp*{Reducing the remaining fresh atoms}
 	
@@ -1148,7 +1180,8 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 	%         }
 	% %    }
 	$\Sigma\lto \GAL(\Sigma,\Var(\Sigma)-\Var(\varphi))$ \tcp*{移除留存的新的原子命题}
-	Replacing each initial clause ``$\ALL\GLOBAL(\start\rto\varphi)$'' in $\Sigma$ by $\ALL\GLOBAL\varphi$\;\tcp*{去除$\start$}
+	用$\ALL\GLOBAL\varphi$替换$\Sigma$中的初始子句“$\ALL\GLOBAL(\start\rto\varphi)$”\;\tcp*{去除$\start$}
+%	Replacing each initial clause ``$\ALL\GLOBAL(\start\rto\varphi)$'' in $\Sigma$ by $\ALL\GLOBAL\varphi$\;\tcp*{去除$\start$}
 	\Return $\Sigma$\;
 \end{algorithm}
 
@@ -1330,11 +1363,11 @@ $|\varphi_i|=12$时的实验结果如图\ref{chapter04:fig:for12}所示，图\re
 \begin{figure*}[!htb]
 	\centering
 	\subfigure[平均CPU时间(s)]{
-		\includegraphics[width=7.5cm]{chapter04/PRototalAveTime.png}
+		\includegraphics[width=7.5cm]{chapter04/PRototalAveTime1.png}
 	}
 	\subfigure[$|V|=25$时所使用CPU时间箱线图 % and $|\varphi|~\in~ \{10, 15,\dots, 50\}$
 	]{
-		\includegraphics[width=7cm]{chapter04/ProBox(10-50)_25.png}
+		\includegraphics[width=7cm]{chapter04/ProBox(10-50)_251.png}
 	}
 	\caption{%The performances of computing SNC in PL.
 		计算3-CNF公式SNC的CPU时间}
@@ -1363,10 +1396,10 @@ $$\varphi_1 \wedge \ALL \NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$$
 \begin{figure*}[!htb]
 	\centering
 	\subfigure[平均CPU时间(s)]{
-		\includegraphics[width=7cm]{chapter04/totalAveTime.png}
+		\includegraphics[width=7cm]{chapter04/totalAveTime1.png}
 	}
 	\subfigure[存在SNC的公式占比(\%)]{
-		\includegraphics[width=7cm]{chapter04/numPercent.png}
+		\includegraphics[width=7cm]{chapter04/numPercent1.png}
 	}
 	\caption{计算$\CTL$SNC的平均时间和存在SNC的公式占比.}
 	\label{chapter04:fig:CtlTime}
