@@ -12,13 +12,13 @@ WSC和SNC在智能规划和形式化验证里有重要作用，例：在2003年�
 %在第\ref{chapter02}章中详细介绍了命题逻辑和模态逻辑S5下使用遗忘计算WSC（SNC）的方法和算法。
 本章针对第\ref{chapter01}章提出的问题(2)，研究$\CTL$和$\mu$-演算中如何使用遗忘计算反应式系统的SNC（WSC），及使用遗忘定义知识更新。即：
 \begin{itemize}
-	\item 对于给定的公式$\varphi$、原子命题$q$和原子命题集合$V\subseteq \Var(\varphi)$，若满足$q \in \Var(\varphi)-V$，则$q$在$\varphi$和$V$上的SNC等价于公式$\varphi \wedge q$遗忘不在$V$中的原子命题后得到结果；WSC做为SNC的一个对偶概念，有相似的结论。而不终止的系统（包括反应是系统你）在本章看作是一个有限的初始结构，任意有限的初始结构（${\cal K}$）都能用其特征公式%（${\cal F}_{\Ha}({\cal K})$）
+	\item 对于给定的公式$\varphi$、原子命题$q$和原子命题集$V\subseteq \Var(\varphi)$，若满足$q \in \Var(\varphi)-V$，则$q$在$\varphi$和$V$上的SNC等价于公式$\varphi \wedge q$遗忘不在$V$中的原子命题后得到结果；WSC做为SNC的一个对偶概念，有相似的结论。而不终止的系统（包括反应是系统）在本章看作是一个有限的初始结构，任意有限的初始结构（${\cal K}$）都能用其特征公式%（${\cal F}_{\Ha}({\cal K})$）
 	来表示（\textbf{给定有限初始结构，如何计算其特征公式将在第\ref{chapter05}章中的介绍，本章只需认为其是一个$\CTL$公式}），因而可以使用遗忘的方法来计算其SNC（WSC）。
-	\item 基于遗忘的知识更新通过最小的改变现有知识的模型来使其适应新信息，从这个角度上可以看作是基于模型的更新，且使用这种方法的更新满足katsuno等人提出的八条基本准则\cite{katsuno91mendelzon}。
+	\item 基于遗忘的知识更新通过极小改变现有知识的模型来使其适应新信息，这可以看作是基于模型的更新，且使用这种方法的更新满足katsuno等人提出的八条基本准则\cite{katsuno91mendelzon}。
 \end{itemize}
 
 
-本章其余部分组织如下：首先，第\ref{chapter04:sec:snc}节给出最强必要条件和最弱充分条件的定义，然后探索这两个概念之间及原子命题和任意公式之间这两个概念的联系，最后给出基于遗忘的计算方法；其次，第\ref{chapter04:sec:update}节提出基于遗忘的知识更新方法，并证明其与基于偏序关系的方法等价；最后，总结本章的研究工作。}
+本章其余部分组织如下：首先，第\ref{chapter04:sec:snc}节给出最强必要条件和最弱充分条件的定义，探索这两个概念的相关性质，并给出基于遗忘的计算方法；其次，第\ref{chapter04:sec:update}节提出基于遗忘的知识更新方法，并证明其与基于偏序关系的方法等价；最后，总结本章的研究工作。}
 
 \section{最弱充分条件}
 \label{chapter04:sec:snc}
@@ -31,8 +31,8 @@ WSC和SNC在智能规划和形式化验证里有重要作用，例：在2003年�
 	\begin{itemize}
 		\item 若$\varphi \models q \rto \psi$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 必要条件（necessary condition，NC）}；
 		\item 若$\varphi \models \psi\rto q$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 充分条件（sufficient condition，SC）}；
-		\item 若$\psi$是$q$在$V$和$\varphi$上的必要条件，且对于任意$q$在$V$和$\varphi$上的必要条件$\psi'$都有$\varphi\models\psi\rto\psi'$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 最强必要条件（strongest necessary condition，SNC）}；
-		\item 若$\psi$是$q$在$V$和$\varphi$上的充分条件，且对于任意$q$在$V$和$\varphi$上的充分条件$\psi'$都有$\varphi\models\psi'\rto\psi$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 最弱充分条件（weakest sufficient condition，WSC）}；
+		\item 若$\psi$是$q$在$V$和$\varphi$上的必要条件，且对于任意$q$在$V$和$\varphi$上的必要条件$\psi'$，都有$\varphi\models\psi\rto\psi'$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 最强必要条件（strongest necessary condition，SNC）}；
+		\item 若$\psi$是$q$在$V$和$\varphi$上的充分条件，且对于任意$q$在$V$和$\varphi$上的充分条件$\psi'$，都有$\varphi\models\psi'\rto\psi$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 最弱充分条件（weakest sufficient condition，WSC）}；
 	\end{itemize}
 \end{definition}
 
@@ -79,7 +79,7 @@ WSC和SNC在智能规划和形式化验证里有重要作用，例：在2003年�
 \end{proposition}
 \begin{proof}
 	这里证明SNC的情形，WSC的情形可以类似地证明。
-	记$\emph{SNC}(\varphi,\beta,V,\Gamma)$为$\varphi$是$\beta$在$V$和$\Gamma$上的SNC，$\emph{NC}(\varphi,\beta,V,\Gamma)$为$\varphi$是$\beta$在$V$和$\Gamma$上的NC。
+	记$\emph{SNC}(\varphi,\beta,V,\Gamma)$为$\varphi$是$\beta$ 在 $V$和$\Gamma$上的SNC，$\emph{NC}(\varphi,\beta,V,\Gamma)$为$\varphi$是$\beta$在$V$和 $\Gamma$上的NC。
 	
 	($\Rto$) 下证$\emph{SNC}(\varphi,\alpha,V,\Gamma)\Rto \emph{SNC}(\varphi,q,V,\Gamma')$。假设$\varphi'$是$q$在$V$和$\Gamma'$上的NC。
 	
@@ -129,6 +129,7 @@ WSC和SNC在智能规划和形式化验证里有重要作用，例：在2003年�
 
 如何使用遗忘计算SNC（WSC）是本章讨论的关键问题。下面首先给出其理论基础，然后再做直观的解释。
 
+
 \begin{theorem}\label{thm:SNC:WSC:forget}
 	给定公式$\varphi$、原子命题集$V\subseteq\Var(\varphi)$和原子命题$q\in\Var(\varphi)- V$。
 	\begin{itemize}
@@ -140,7 +141,7 @@ WSC和SNC在智能规划和形式化验证里有重要作用，例：在2003年�
 	(i) 令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。
 	
 	
-	“NC”部分：由遗忘的定义可知$\varphi \wedge q \models {\cal F}$。因此，$\varphi\models q \rto {\cal F}$，即：${\cal F}$是 $q$在 $V$和$\varphi$上的NC。
+	“NC”部分：由遗忘的定义可知$\varphi \wedge q \models {\cal F}$。因此，$\varphi\models q \rto {\cal F}$，即：${\cal F}$是$q$在$V$和$\varphi$ 上的NC。
 	
 	“SNC”部分：假设$\psi'$为$q$在$V$和$\varphi$上的任意NC，即：$\varphi\models q \rto \psi'$。由定理\ref{thm:V-bisimulation:EQ} 和 $\emph{IR}(\psi', (\Var(\varphi) \cup \{q\})- V)$可知，若$\varphi \wedge q \models \psi'$，则${\cal F} \models \psi'$。
 	由假设可知$\varphi\models q \rto \psi'$，所以$\varphi \wedge {\cal F} \models \psi'$，因此$\varphi \models {\cal F} \rto \psi'$。
@@ -148,17 +149,19 @@ WSC和SNC在智能规划和形式化验证里有重要作用，例：在2003年�
 	由上面两部分可知，${\cal F}$是$q$在$V$和$\varphi$上的SNC。
 	
 	(ii) 令${\cal F}=\neg \CTLforget(\varphi \wedge \neg q, (\Var(\varphi) \cup \{q\})- V)$。
-	由命题\ref{dual}可知，对任意命题$q'$，$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，当且仅当
+	由命题\ref{dual}可知，对任意命题$q'$，$\CTLforget$ $(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，当且仅当
 	$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。
-	由(i)可知$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，所以$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。令$q=\neg q'$，可得${\cal F}$是 $q$在 $V$和 $\varphi$上的WSC。
+	由(i)可知$\CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$q'$在$V$和$\varphi$上的SNC，所以$\neg \CTLforget(\varphi \wedge q', (\Var(\varphi) \cup \{q'\})- V)$是$\neg q'$在$V$和$\varphi$上的WSC。令$q=\neg q'$，可得${\cal F}$是 $q$在 $V$ 和 $\varphi$上的WSC。
 \end{proof}
 
 令${\cal F}=\CTLforget(\varphi \wedge q, (\Var(\varphi) \cup \{q\})- V)$。上面的定理可以直观地解释如下：由遗忘理论的定义可知$\varphi \wedge q \models {\cal F}$，这说明
 ${\cal F}$是 $q$在 $V$和$\varphi$上的NC；对任意与$(\Var(\varphi) \cup \{q\})- V$无关的公式$\psi$，若$\varphi \wedge q \models \psi$，则由表达性定理可知${\cal F} \models \psi$。
 
+值得注意的是，定理~\ref{thm:SNC:WSC:forget}中，当考虑的公式为$\mu$-公式时，要求出现在$\varphi$中的变元都包含在$V$中。
+
 由第\ref{chapter05}章可知，任意有限的初始结构都能由一个$\CTL$公式表示，所以由上面的定理自然地就能得到给定有限初始结构下的SNC和WSC。
 \begin{corollary}\label{thm:inK:SNC}
-	令${\cal K}= (\Hm, s_0)$为初始结构，其中$\Hm=(S,R,L,s_0)$为有限原子命题集合$\Ha$上的初始-Kripke结构，$V \subseteq \Ha$且$q\in V' = \Ha - V$。则：
+	令${\cal K}= (\Hm, s_0)$为初始结构，其中$\Hm=(S,R,L,s_0)$为有限原子命题集$\Ha$上的初始-Kripke结构，$V \subseteq \Ha$且$q\in V' = \Ha - V$。则：
 	\begin{itemize}
 		\item[(i)] $\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge q, V')$是$q'$在$V$和${\cal K}$上的SNC；
 		\item[(ii)] $\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg q, V')$是$q'$在$V$和${\cal K}$上的WSC。
@@ -167,9 +170,9 @@ ${\cal F}$是 $q$在 $V$和$\varphi$上的NC；对任意与$(\Var(\varphi) \cup 
 
 \begin{example}[例~\ref{car_manufacturing}的延续]
 	\label{exam:SNCandWSC}
-令$\Ha=\{d,se,sp,s\}$和$V=\{d,se\}$，求$s$在$V$和初始结构${\cal K} = (\Hm,s_0)$上的WSC，其中$\Hm$为例~\ref{car_manufacturing}中初始状态为$s_0$的汽车制造企业模型结构。
+令$\Ha=\{d,se,sp,s\}$和$V=\{d,se\}$，求$s$在$V$和初始结构${\cal K} = (\Hm,s_0)$ 上的WSC，其中$\Hm$为例~\ref{car_manufacturing}中初始状态为$s_0$的汽车制造企业模型结构。
 
-由定理~\ref{thm:inK:SNC}可知，$s$在$V$和初始结构${\cal K} = (\Hm,s_0)$上的WSC为$\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg s, \{s\} \cup \{sp\})$。
+由定理~\ref{thm:inK:SNC}可知，$s$在$V$和初始结构${\cal K} = (\Hm,s_0)$上的WSC为$\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg s, \{s\}$ $\cup \{sp\})$。
 
 由于涉及到后文中遗忘的计算方法，本例的详细计算过程放到第~\ref{chapter05:sec:model}。
 %\begin{align*}
@@ -259,7 +262,7 @@ ${\cal F}$是 $q$在 $V$和$\varphi$上的NC；对任意与$(\Var(\varphi) \cup 
 
 \section{知识更新}\label{chapter04:sec:update}
 本小节介绍遗忘的另一个应用：知识更新（Knowledge update）。
-具体说来，本节将使用遗忘定义知识更新，使得用这种方式定义的知识更新满足下面由Katsuno和Mendelzon提出的基本条件\cite{katsuno91mendelzon}：
+具体说来，本节将使用遗忘定义知识更新，使得用这种方式定义的知识更新满足下面由Katsuno和Mende- lzon提出的基本条件\cite{katsuno91mendelzon}：
 \begin{itemize}
 	\item (U1)  $\Gamma \diamond \varphi \models \varphi$；
 	\item (U2) 若$\Gamma \models \varphi$，则$\Gamma \diamond \varphi \equiv \Gamma$；
@@ -385,7 +388,7 @@ $$\Mod(\Gamma \diamond_{pma} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi)
 	
 	(U6). $\Hm'\models \Gamma \diamond_{\CTL} \varphi$\\
 	$\LRto$ 存在$\Hm \models \Gamma$，使得对任意$\Hm'' \models \varphi$ 和$V \subseteq \Ha$，$\Hm'' \lrto_{V} \Hm$ 蕴涵$\Hm' \lrto_{V} \Hm$\\
-	$\LRto$ 存在$\Hm \models \Gamma$和$V_{min} \subseteq \Ha$，使得$\Hm' \lrto_{V_{min}} \Hm$，其中$V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \varphi$ 和 $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$是一致的 \hfill ($\Gamma \diamond_{\CTL} \varphi \models \psi$, $\Gamma \diamond_{\CTL} \psi \models \varphi$)  \qquad \qquad \textcolor[RGB]{0,134,139}{$\%$({\em Otherwise, suppose that $V\subset V_{min}$ s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V) \wedge \psi$ is consistent as well. Then, $\Muforget({\cal F}_{\Ha}(\Hm_1), V)$ $\wedge \varphi$ should also be consistent by $\Gamma \diamond_{\CTL} \varphi \models \psi$, which contradicts to the fact that $V_{min}$ is the minimal set of atoms s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \varphi$ is consistent.})} \\
+	$\LRto$ 存在$\Hm \models \Gamma$和$V_{min} \subseteq \Ha$，使得$\Hm' \lrto_{V_{min}} \Hm$，其中$V_{min}$是使得$\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \varphi$ 和 $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \psi$是一致的 \hfill ($\Gamma \diamond_{\CTL} \varphi \models \psi$, $\Gamma \diamond_{\CTL} \psi \models \varphi$) \\ % \qquad \qquad \textcolor[RGB]{0,134,139}{$\%$({\em Otherwise, suppose that $V\subset V_{min}$ s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V) \wedge \psi$ is consistent as well. Then, $\Muforget({\cal F}_{\Ha}(\Hm_1), V)$ $\wedge \varphi$ should also be consistent by $\Gamma \diamond_{\CTL} \varphi \models \psi$, which contradicts to the fact that $V_{min}$ is the minimal set of atoms s.t. $\Muforget({\cal F}_{\Ha}(\Hm_1), V_{min}) \wedge \varphi$ is consistent.})} \\
 	$\LRto$ 存在$\Hm \models \Gamma$，使得对任意$\Hm'' \models \psi$ 和$V \subseteq \Ha$，$\Hm'' \lrto_{V} \Hm$ 蕴涵$\Hm' \lrto_{V} \Hm$\\
 	$\LRto$ $\Hm' \models \Gamma \diamond_{\CTL} \psi$。
 	
@@ -396,7 +399,7 @@ $$\Mod(\Gamma \diamond_{pma} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi)
 	$\Rto$ 存在两个极小子集$V_1, V_2 \subseteq \Ha$，使得$\Hm' \models \Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge \varphi$ 和 $\Hm' \models \Muforget({\cal F}_{\Ha}(\Hm),$ $V_2) \wedge \psi$是一致的\\
 	%$\Rto$ $\Hm' \lrto_{V_1 \cap V_2} \Hm$\\
 	$\Rto$ $\Hm' \models \Muforget({\cal F}_{\Ha}(\Hm), V_1 \cap V_2)$，$\Hm' \lrto_{V_1 \cap V_2} \Hm$，$V_1 = V_2$\\
-	$\Rto$  $V_1$是使得$\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\varphi \vee \psi)$可满足的极小子集 \qquad  \textcolor[RGB]{0,134,139}{$\%$({\em Otherwise, suppose that $V_3\subset V_1$ s.t. $\Muforget({\cal F}_{\Ha}(\Hm),$ $V_3) \wedge (\varphi \vee \psi)$ is satisfiable. Then $\Muforget({\cal F}_{\Ha}(\Hm),$ $V_3) \wedge \varphi$ or $\Muforget({\cal F}_{\Ha}(\Hm),$ $V_3) \wedge \psi$ is satisfiable. Without loss of generality, suppose that $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \varphi$ is satisfiable, $V_1$ is not the minimal set, a contradiction.})}\\
+	$\Rto$  $V_1$是使得$\Muforget({\cal F}_{\Ha}(\Hm), V_1) \wedge (\varphi \vee \psi)$可满足的极小子集\\ %\qquad  \textcolor[RGB]{0,134,139}{$\%$({\em Otherwise, suppose that $V_3\subset V_1$ s.t. $\Muforget({\cal F}_{\Ha}(\Hm),$ $V_3) \wedge (\varphi \vee \psi)$ is satisfiable. Then $\Muforget({\cal F}_{\Ha}(\Hm),$ $V_3) \wedge \varphi$ or $\Muforget({\cal F}_{\Ha}(\Hm),$ $V_3) \wedge \psi$ is satisfiable. Without loss of generality, suppose that $\Muforget({\cal F}_{\Ha}(\Hm), V_3) \wedge \varphi$ is satisfiable, $V_1$ is not the minimal set, a contradiction.})}\\
 	$\Rto$ $\Hm' \models \Gamma \diamond_{\CTL} (\varphi \vee \psi)$。
 	
 	
@@ -438,6 +441,6 @@ $$\Mod(\Gamma \diamond_{pma} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi)
 
 \section{本章小结}\label{sec:chapter04-conclusion}
 
-本章讨论了如何使用遗忘计算最强必要条件（最弱充分条件）和定义知识更新。特别地，本章首先给出了SNC（WSC）的定义，表明SNC和WSC是一对对偶概念，因而只要知道其一就能知道另一个。其次，结论表明任意公式的SNC（WSC）可以转换成原子命题的SNC（WSC）来计算，并给出使用遗忘计算原子命题在给定条件下得SNC（WSC）的方法。
+本章讨论了如何使用遗忘计算最强必要条件（最弱充分条件）和定义知识更新。特别地，本章首先给出了SNC（WSC）的定义，表明SNC和WSC是一对对偶概念，因而只要知道其一就能知道另一个。其次，结论表明任意公式的SNC（WSC）可以转换成原子命题的SNC（WSC）来计算，并给出使用遗忘计算原子命题在给定条件下的SNC（WSC）的方法。
 最后，分别给出使用遗忘和偏序关系的方法定义知识更新，并证明了这两种定义等价且满足Katsuno等人提出的八条准则。
 

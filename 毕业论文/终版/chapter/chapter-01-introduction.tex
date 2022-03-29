@@ -156,7 +156,7 @@
 从这个角度看来，遗忘就是找到一个与二阶公式$\exists R \varphi[P/R]$等价的一阶公式。
 然而，二阶逻辑的表达能力严格大于一阶逻辑，因而可以容易得出FOL下的遗忘不是封闭（存在）的结论，也就是从某些一阶公式中遗忘某些谓词得到的结果不可以用一阶公式来表示。
 作为FOL的一个子类，描述逻辑公式的遗忘也不总是存在的~\cite{DBLP:journals/ai/KonevL0W13}，甚至对最基本的描述逻辑{\cal ALC}而言，遗忘的存在性问题都是不可判定的。
-尽管如此，描述逻辑作为一种在语义网领域很重要的语言，其子类\textcolor{red}{（包括{\cal ALCOHI}和{\cal ALCOIH}）}中的遗忘通常被用来抽取视图（review）~\cite{Wang:AMAI:2010,DBLP:conf/ijcai/LutzW11,Konev:JAIR:2012,DBLP:conf/ijcai/ZhaoS17,DBLP:conf/aaai/ZhaoSWZF20}。
+尽管如此，描述逻辑作为一种在语义网领域很重要的语言，其子类中的遗忘通常被用来抽取视图（review）~\cite{Wang:AMAI:2010,DBLP:conf/ijcai/LutzW11,Konev:JAIR:2012,DBLP:conf/ijcai/ZhaoS17,DBLP:conf/aaai/ZhaoSWZF20}。这些子类包括：ALCOI（the basic ALC extended with nominals and inverse roles）和ALCOIH（ALCOI extended with role hierarchies, the universal role and role conjunction）。%textcolor{red}{（包括{\cal ALCOHI}和{\cal ALCOIH}）}
 
 现有计算一阶逻辑和描述逻辑遗忘的方法有基于归结（resolution）和基于Ackermann引理的方法~\cite{DBLP:books/daglib/0023036}。
 其中基于归结的方法是一种基于子句归结的方法，其基础是归结规则。通常在这种方法中首先把公式转换为其子句形式，然后使用归结规则，最后移除含有要遗忘的谓词（原子命题）的子句，得到的结果可能就为遗忘的结果（在后文中会详细介绍与本文相关的归结规则和转换规则）。
@@ -191,7 +191,7 @@
 
 其在模态逻辑和时序逻辑系统中取得了一系列研究成果：LTL、$\CTL$和$\CTL^*$不具有均匀插值性质~\cite{Maksimova:JANCL:1991,DAgostino:synthese:2008}，
 S5、K和KD模态逻辑系统具有均匀插值性质~\cite{DBLP:journals/aml/Iemhoff19}，
-而一些模态逻辑系统没有均匀插值性质。如：\textcolor{red}{量词模态逻辑S5（quantified modal logic S5）}\cite{DBLP:journals/jsyml/Fine79}、K4、和S4及其扩展都没有均匀插值性质~\cite{DBLP:journals/ndjfl/Schumm86}，因而其遗忘也不是封闭的。
+而一些模态逻辑系统没有均匀插值性质。如：量词模态逻辑S5（quantified modal logic S5）\cite{DBLP:journals/jsyml/Fine79}、K4、和S4及其扩展都没有均匀插值性质~\cite{DBLP:journals/ndjfl/Schumm86}，因而其遗忘也不是封闭的。
 研究具有均匀插值性质的模态逻辑遗忘可以借鉴S5系统的遗忘方法，也可以参考K系统下基于归结计算均匀插值的方法。
 对于那些没有均匀插值的模态逻辑系统，可以考虑模态逻辑下的Ackermann引理~\cite{DBLP:books/daglib/0023036}。
 

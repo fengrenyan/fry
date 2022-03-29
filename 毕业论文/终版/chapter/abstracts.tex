@@ -36,7 +36,7 @@
 3. 给出了遗忘与WSC（SNC）和知识更新（knowledge update）的关系。WSC对模型的验证和修改具有重要作用，现有方法只能计算可终止模型的WSC，而不能计算像反应式系统这类不可终止系统的WSC。本文通过遗忘给出了计算WSC（SNC）的方法，利用遗忘定义了$\CTL$和$\mu$-演算下的知识更新，并证明其满足Katsuno等人提出的知识更新的八条公设。
 
 
-4. 用Prolog实现了1)中提到的基于归结的计算$\CTL$遗忘的算法，并做了相应的实验。从标准数据集和随机产生的数据集里做了两组实验，分别为计算遗忘和SNC。实验表明公式越长或遗忘的原子个数越多，效率越低；此外，在随机产生的公式中，大部分情况下能计算出SNC。
+4. 用Prolog实现了1中提到的基于归结的计算$\CTL$遗忘的算法，并做了相应的实验。从标准数据集和随机产生的数据集里做了两组实验，分别为计算遗忘和SNC。实验表明公式越长或遗忘的原子个数越多，效率越低；此外，在随机产生的公式中，大部分情况下能计算出SNC。
 
 %1. 研究了$\CTL$下遗忘的概念及其相关性质。首先，从模型在某个原子命题集合上互模拟的角度给出了遗忘的定义；其次，探讨并证明了遗忘算子的代数属性，包括模块性、交换性和同质性；第三，基于Zhang等人提出的四条公设，给出$\CTL$遗忘的四条公设，表示定理表明这四条公设对遗忘是充分且必要的，即：遗忘的结果满足四条公设，且满足这四条公设的公式为遗忘的结果。
 %
@@ -86,11 +86,14 @@ To calculate $\CTL$ forgetting, this paper proposes two approaches.
 	\item A model-based method. This paper shows that the result of forgetting in $\CTL$ does not always exist, i.e., forgetting some atoms from some formula can not be expressed by a $\CTL$ formula. However, it proves that the forgetting always exists in bounded $\CTL$, i.e., the size (the number of signatures in a formula) of formulas are limited to an integer, the set of atoms that construct the formulas, and the state space are finite. Therefore, the model of a formula can be expressed by its characterizing formula, and then the forgetting result is the disjunction of the characterizing formulas of its models. 
 \end{itemize}
 
-2. Explored the forgetting in $\mu$-calculus. $\mu$-calculus is a kind of logic which have uniform interpolation. This paper shows that the uniform interpolation and forgetting in $\mu$-calculus are equivalent, this means that the forgetting in $\mu$-calculus is closed which is the biggest difference between $\mu$-calculus and $\CTL$. Moreover, the properties and complexity results related to forgetting are given, which proposes a new point for studying uniform interpolation.
+2. Explored the forgetting in $\mu$-calculus. $\mu$-calculus is a kind of logic which have uniform interpolation. This paper shows that the uniform interpolation and forgetting  are equivalent for $\mu$-sentence.
+In addition, we define a general bisimulation on valuations, $\tuple{X,V}$-bisimulation, in which $X$ is a set of variables and $V$ is a set of atoms.  It is proved that  $\mu$-calculus is invariant under $\tuple{X,V}$-bisimulation.
+% That is to say, if two valuations behave the same when discarding  the atoms in $V$ and variables in $X$ then they satisfy the same $\mu$-formulas that are irrelevant to $X\cup V$.  
+Finally, the properties and complexity results related to forgetting are given, which proposes a new point for studying uniform interpolation.
 
 3. Given the relation between forgetting and WSC (SNC or knowledge update). WSC is important to the verification and modification of the system. However， the existing methods can only compute the WSC of a terminable system, and the WSC can not be obtained in non-terminable systems (e.g., the reactive system). This paper shows how to compute the WSC of the reactive system and define the knowledge update using forgetting to satisfy the postulates proposed by~\citeauthor{katsuno91mendelzon}.
 
-4. Implemented the algorithm proposed in 2, and some experiments are shown. Two experiments, computing forgetting, and SNC, were performed for standard and randomly generated datasets. Experiments show that the longer the formula is or the more atoms are forgotten, the lower the efficiency is. Moreover, SNC can be calculated in most cases of randomly generated formulas.
+4.  Implemented the algorithm proposed in 1, and some experiments are shown. Two experiments, computing forgetting and WSC, were performed for standard and randomly generated datasets. Experiments show that the longer the formula is, or the more atoms are forgotten, the lower the efficiency is. Moreover, SNC can be calculated in most cases of randomly generated formulas.
 
 Its significance mainly provides a framework for the study of forgetting theory under temporal logic and provides an auxiliary tool for the model update.
 
