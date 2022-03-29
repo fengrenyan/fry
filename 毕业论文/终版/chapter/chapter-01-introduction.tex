@@ -158,7 +158,7 @@
 作为FOL的一个子类，描述逻辑公式的遗忘也不总是存在的~\cite{DBLP:journals/ai/KonevL0W13}，甚至对最基本的描述逻辑{\cal ALC}而言，遗忘的存在性问题都是不可判定的。
 尽管如此，描述逻辑作为一种在语义网领域很重要的语言，其子类中的遗忘通常被用来抽取视图（review）~\cite{Wang:AMAI:2010,DBLP:conf/ijcai/LutzW11,Konev:JAIR:2012,DBLP:conf/ijcai/ZhaoS17,DBLP:conf/aaai/ZhaoSWZF20}。这些子类包括：ALCOI（the basic ALC extended with nominals and inverse roles）和ALCOIH（ALCOI extended with role hierarchies, the universal role and role conjunction）。%textcolor{red}{（包括{\cal ALCOHI}和{\cal ALCOIH}）}
 
-现有计算一阶逻辑和描述逻辑遗忘的方法有基于归结（resolution）和基于Ackermann引理的方法~\cite{DBLP:books/daglib/0023036}。
+现有计算一阶逻辑和描述逻辑遗忘的方法有基于归结（resolution）和基于Ackerm- ann引理的方法~\cite{DBLP:books/daglib/0023036}。
 其中基于归结的方法是一种基于子句归结的方法，其基础是归结规则。通常在这种方法中首先把公式转换为其子句形式，然后使用归结规则，最后移除含有要遗忘的谓词（原子命题）的子句，得到的结果可能就为遗忘的结果（在后文中会详细介绍与本文相关的归结规则和转换规则）。
 基于Ackermman引理的方法主要是直接或间接（扩展）使用下面的Ackermann引理得到的。
 \begin{lemma}[引理 6.1~\cite{DBLP:books/daglib/0023036}]
@@ -255,10 +255,10 @@ Dijkstra提出了四条规则来计算这样的规范，程序语言里的四种
 
 \section{研究目标及主要结果}
 
-相关研究工作表明，现存方法不能求解反应式系统下的WSC (SNC)。然而，WSC是一种进行系统修改的重要知识，寻求一种有效的求解方法有利于确保系统的正确性。
-在知识表示与推理中，遗忘技术可以用于计算给定理论（公式）的WSC (SNC)。
+相关研究工作表明，现存方法不能求解反应式系统下的WSC（SNC）。然而，WSC是一种进行系统修改的重要知识，寻求一种有效的求解方法有利于确保系统的正确性。
+在知识表示与推理中，遗忘技术可以用于计算给定理论（公式）的WSC（SNC）。
 但是，如上所述，时序逻辑下的遗忘理论尚处于不成熟阶段，没有一个统一的理论框架。
-此外，如何用遗忘来计算给定系统模型和性质的WSC (SNC) 也是一个重要问题。
+此外，如何用遗忘来计算给定系统模型和性质的WSC（SNC）也是一个重要问题。
 
 基于此，{\em 本文从遗忘理论的角度出发，研究反应式系统下SNC和WSC的计算方法，从而为计算不终止类系统下定义在某个符号集上的SNC和WSC提供了新的方法，架起形式化验证与KR之间的桥梁。}
 %特别地，本文将规范的描述语言限制到$\CTL$和$\mu$-演算下。
@@ -271,7 +271,7 @@ Dijkstra提出了四条规则来计算这样的规范，程序语言里的四种
 	\item \textbf{$\CTL$的遗忘理论：}
 	$\CTL$不具有Crig插值（Crig interpolation）性质，因而不具有均匀插值（uniform interpolation） 性质\cite{Maksimova:JANCL:1991}，即：存在一个两个公式$\varphi$和$\psi$，若$\varphi \models \psi$，不存在由$\varphi$和$\psi$的公共元素构成的公式$\theta$，使得$\varphi \models \theta$且$\theta \models \psi$。
 %	即：不存在一个算法使得对于任意的$\CTL$公式，其“遗忘”掉任意原子命题的集合得到的结果仍然是$\CTL$公式。
-	在这种情况下，本文除了研究上述$\CTL$遗忘的性质，还针对$\CTL$子类，特别是能保证其遗忘结果仍然是$\CTL$可表达的子类的遗忘进行了研究。在这些子类中，一个特殊的子类是约束$\CTL$ (bunded \CTL)：每个公式具有有限个模型，且每一个模型都能用一个$\CTL$公式表达。因此，其遗忘是封闭的。
+	在这种情况下，本文除了研究上述$\CTL$遗忘的性质，还针对$\CTL$子类，特别是能保证其遗忘结果仍然是$\CTL$可表达的子类的遗忘进行了研究。在这些子类中，一个特殊的子类是约束$\CTL$（bunded \CTL）：每个公式具有有限个模型，且每一个模型都能用一个$\CTL$公式表达。因此，其遗忘是封闭的。
 	
 	\item \textbf{$\mu$-演算的遗忘理论：}
 	与$\CTL$不同，$\mu$-演算虽然表达能力比$\CTL$强，其可满足性问题也比$\CTL$的复杂，但是$\mu$-演算具有均匀插值性质\cite{d2006modal}。这意味着，$\mu$-句子遗忘任意原子命题集得到的结果仍然是$\mu$-句子。本文给出了$\mu$-演算下遗忘的主要框架：包括上述遗忘的性质和计算遗忘的方法。
@@ -308,14 +308,14 @@ $\CTL$是一种分支时序逻辑，其引入了时序算子，已有文献表�
 
 (2) {\em 遗忘理论与反应式系统的SNC和WSC的关系}
 
-在经典命题逻辑和一阶逻辑中，Lin 和 Doherty 等人分别提出了遗忘与SNC (WSC) 的关系~\cite{DBLP:journals/ai/Lin01,DBLP:conf/ijcai/DohertyLS01}。特别地，经典命题逻辑中的SNC和WSC被用于计算规划问题中的后继状态公理。本文给出，给定一个有限反应式系统 (Kripke structure)，并将该系统表示为其特征公式，就可使用
+在经典命题逻辑和一阶逻辑中，Lin 和 Doherty 等人分别提出了遗忘与SNC（WSC）的关系~\cite{DBLP:journals/ai/Lin01,DBLP:conf/ijcai/DohertyLS01}。特别地，经典命题逻辑中的SNC和WSC被用于计算规划问题中的后继状态公理。本文给出，给定一个有限反应式系统（Kripke structure），并将该系统表示为其特征公式，就可使用
 上述的$\CTL$和$\mu$-演算遗忘计算SNC和WSC。
 
 
 
 (3) {\em $CTL$和$\mu$-演算的遗忘在推理问题上的复杂性}
 
-计算复杂性理论致力于将可计算问题根据它们本身的复杂性分类。研究表明，在经典命题逻辑中：CNF (Conjunctive normal form) 公式遗忘的推理问题最难是$\Pi_2^P$-完全的，DNF (Disjunctive normal form) 公式遗忘的蕴涵问题是co-NP-完全的。在命题模态逻辑S5中，遗忘的模型检测问题是NP-完全的，对应的蕴涵问题是$\Pi_2^P$-完全的。本文从现有复杂性结果和自动机理论基础上研究$\CTL$和$\mu$-演算遗忘在推理问题上的复杂性。
+计算复杂性理论致力于将可计算问题根据它们本身的复杂性分类。研究表明，在经典命题逻辑中：CNF（Conjunctive normal form）公式遗忘的推理问题最难是$\Pi_2^P$-完全的，DNF （Disjunctive normal form）公式遗忘的蕴涵问题是co-NP-完全的。在命题模态逻辑S5中，遗忘的模型检测问题是NP-完全的，对应的蕴涵问题是$\Pi_2^P$-完全的。本文从现有复杂性结果和自动机理论基础上研究$\CTL$和$\mu$-演算遗忘在推理问题上的复杂性。
 研究表明，$\mu$-演算下关于遗忘的模型检测是$\textsc{Exptime}$的，蕴涵问题都在$\textsc{Exptime}$中，且有的蕴含问题是$\textsc{Exptime}$-完全的。
 $\CTL$下关于遗忘的推理问题：当只考虑特殊段$\CTL_{\ALL \FUTURE}$（公式中只包括时态算子$\ALL \FUTURE$）时，其模型检测的复杂性为\textsc{NP}-完全的；而蕴涵问题的复杂性在co-$\textsc{NP}$-完全的和$\Pi_2^{\textsc{P}}$-完全的之间。
 

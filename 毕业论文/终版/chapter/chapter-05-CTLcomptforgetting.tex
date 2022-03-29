@@ -347,7 +347,7 @@
 	
 	同理可得：$\dis_{ V}(\Hm, s_0, s_1, 0)$、$\dis_{V}(\Hm, s_1, s_3', 1)$、$\dis_{V}(\Hm, s_0, s_2, 0)$和$\dis_{ V}(\Hm,$ $s_0, s_3', 0)$。此外，$s_2 \lrto_{\overline V} s_3'$。因此，可以计算$\Hm$关于$V$的特征数为：
 	$$ch(\Hm, V)=\max\{k\mid s,s'\in S \text{ 且 } \dis_{V}({\cal M},s,s',k)\} = 1.$$
-	
+	$\Tr_2(s_0)$ $\Tr_3(s_0)$
 	
 	所以，可以由以下步骤计算${\cal K}_2$关于$V$的特征公式：
 	\begin{align*}
@@ -368,7 +368,7 @@
 	
 	\begin{figure*}
 		\centering
-		\includegraphics[width=10cm]{chapter05/NK2Tree1.png}
+		\includegraphics[width=10cm]{chapter05/NK2Tree2.png}
 		\caption{初始结构$\mathcal{K}_2$（源于图\ref{Fig:chapter04:v1uv2}）及其计算树示意图}\label{fig:K2Tree}
 	\end{figure*}
 	
@@ -407,17 +407,17 @@
 		\item  若$(\Hm, s_0) \not \models {\cal F}_V(\Tr_c(s))$，显然$(\Hm, s_0) \models G(\Hm, s)$；
 		\item 若$(\Hm, s_0) \models {\cal F}_V(\Tr_c(s))$：\\
 		$(\Hm, s_0) \models {\cal F}_V(\Tr_c(s))$\\
-		$\Rto$  $s_0 \lrto_{\overline V} s$ \hfill （引理\ref{div_s}）
+		$\Rto$  $s_0 \lrto_{\overline V} s$ \hfill (引理\ref{div_s})
 		
 		$\forall (s, s_1)\in R$：\\
-		$(\Hm, s_1) \models {\cal F}_V(\Tr_c(s_1))$  \hfill  （$s_1 \lrto_{\overline V} s_1$）\\
+		$(\Hm, s_1) \models {\cal F}_V(\Tr_c(s_1))$  \hfill  ($s_1 \lrto_{\overline V} s_1$)\\
 		$\Rto$ $(\Hm, s) \models \bigwedge_{(s,s_1)\in R}\EXIST \NEXT {\cal F}_V(\Tr_c(s_1))$\\
-		$\Rto$ $(\Hm, s_0) \models$ $\bigwedge_{(s,s_1)\in R}\EXIST \NEXT {\cal F}_V(\Tr_c(s_1))$    \qquad  （$\IR(\bigwedge_{(s,s_1)\in R}\EXIST \NEXT {\cal F}_V(\Tr_c(s_1)), \overline V)$, $s_0 \lrto_{\overline V} s$）
+		$\Rto$ $(\Hm, s_0) \models$ $\bigwedge_{(s,s_1)\in R}\EXIST \NEXT {\cal F}_V(\Tr_c(s_1))$  \hfill ($\IR(\bigwedge_{(s,s_1)\in R}\EXIST \NEXT {\cal F}_V(\Tr_c(s_1)), \overline V)$, $s_0 \lrto_{\overline V} s$)
 		
 		$\forall (s, s_1) \in R$：\\
 		$(\Hm, s_1) \models \bigvee_{(s, s_2)\in R}{\cal F}_V(\Tr_c(s_2))$\\
 		$\Rto$ $(\Hm, s) \models \ALL \NEXT \left( \bigvee_{(s, s_2)\in R} {\cal F}_V(\Tr_c(s_2)) \right)$ \\
-		$\Rto$ $(\Hm, s_0) \models$  $\ALL \NEXT \left( \bigvee_{(s, s_2)\in R} {\cal F}_V(\Tr_c(s_2)) \right)$     （$\IR(\ALL \NEXT \left( \bigvee_{(s, s_2)\in R} {\cal F}_V(\Tr_c(s_2)) \right), \overline V)$, $s_0 \lrto_{\overline V} s$）\\
+		$\Rto$ $(\Hm, s_0) \models$  $\ALL \NEXT \left( \bigvee_{(s, s_2)\in R} {\cal F}_V(\Tr_c(s_2)) \right)$   \hfill  ($\IR(\ALL \NEXT \left( \bigvee_{(s, s_2)\in R} {\cal F}_V(\Tr_c(s_2)) \right), \overline V)$, $s_0 \lrto_{\overline V} s$)\\
 		$\Rto$ $(\Hm, s_0) \models G(\Hm, s)$。\\
 		% where $s_i$ and $s_j$ are the successors of $s$.
 	\end{itemize}
@@ -427,7 +427,7 @@
 	
 	下面从两个方面证明(i)成立：
 	
-	$(\Lto)$ 证明：若$s_0 \lrto_{\overline V} s_0'$，则$(\Hm',s_0') \models {\cal F}_V(\Hm,s_0)$。因为$(\Hm, s_0) \models {\cal F}_V($ $\Hm, s_0)$且 $\IR({\cal F}_V$ $(\Hm, s_0), \overline V)$，由定理\ref{thm:V-bisimulation:EQ}可知
+	$(\Lto)$ 证明：若$s_0 \lrto_{\overline V} s_0'$，则$(\Hm',s_0') \models {\cal F}_V(\Hm,s_0)$。因为$(\Hm, s_0) \models {\cal F}_V($ $\Hm, s_0)$且 $\IR($ ${\cal F}_V(\Hm, s_0), \overline V)$，由定理\ref{thm:V-bisimulation:EQ}可知
 	$(\Hm',s_0') \models {\cal F}_V(\Hm,s_0)$。
 	
 	$(\Rto)$ 证明：若$(\Hm',s_0') \models {\cal F}_V(\Hm,s_0)$，则$s_0 \lrto_{\overline V} s_0'$。为此，下面证明对任意$n \geq 0$，$Tr_n(s_0) \lrto_{\overline V} Tr_n(s_0')$。
@@ -577,7 +577,7 @@
 	令$(\Hm', s_0')$为$\varphi$的模型。由定理\ref{CF}可知$(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm', s_0')$，则：
 	$$(\Hm', s_0') \models \bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0).$$
 	
-	另一方面，假定$(\Hm', s_0')$为$\bigvee_{(\Hm, s_0)\in \Mod(\varphi)} {\cal F}_{\Ha}(\Hm, s_0)$的模型。则存在$(\Hm, s_0)\in \Mod(\varphi)$ ，使得 $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm,$ $s_0)$。由定理\ref{CF}可知$(\Hm, s_0) \lrto_{\emptyset} (\Hm', s_0')$，从而由定理\ref{thm:V-bisimulation:EQ}可知$(\Hm, s_0)$是 $\varphi$的一个模型。
+	另一方面，假定$(\Hm', s_0')$为$\bigvee_{(\Hm, s_0) \in \Mod(\varphi)} {\cal F}_{\Ha} (\Hm, s_0)$的模型。则存在$(\Hm, s_0)\in \Mod(\varphi)$ ，使得 $(\Hm', s_0') \models {\cal F}_{\Ha}(\Hm,$ $s_0)$。由定理\ref{CF}可知$(\Hm, s_0) \lrto_{\emptyset} (\Hm', s_0')$，从而由定理\ref{thm:V-bisimulation:EQ}可知$(\Hm, s_0)$是 $\varphi$的一个模型。
 \end{proof}
 
 该结论表明：任意$\CTL$公式都与其模型的特征公式的析取逻辑等价。这对遗忘理论的封闭性提供了重要的理论支撑，即：从公式里遗忘原子命题集$V$中的元素只需找到与给定公式的模型$V$-互模拟的那些模型就能确定遗忘的结果。形式化地，对于给定的公式$\varphi$和原子命题集$V$，从$\varphi$中遗忘$V$中的元素得到的结果为：

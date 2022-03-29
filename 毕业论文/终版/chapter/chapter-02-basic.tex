@@ -140,7 +140,7 @@ $\Hm=\tuple{W,w}$称为公式$\varphi$的$\MPK$-\emph{模型}（$\MPK$-model）�
 
 
 \subsection{Kripke结构}
-给定一个可数无限索引集$\Ind$，一个初始$\Ind$-Kripke结构是一个五元组$\Hm=(S,R,L,[\_],s_0)$，其中：
+给定一个可数无限索引集$\Ind$，一个初始$\Ind$-Kripke结构是一个五元组$\Hm=(S,R,L,$ $[\_],s_0)$，其中：
 \begin{itemize}
 	\item $S$是状态的非空集合，$s_0$是$\Hm$的初始状态（参见下文）；
 	\item $R \subseteq S \times S$是状态转换函数，且对任意$s\in S$，存在$s'\in S$使得$(s,s') \in R$；
@@ -191,7 +191,7 @@ $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^
 
 \subsection{计算树逻辑（\CTL）}
 计算树逻辑是由Clarke和Emerson等人于1986年提出的一种分支时间时序逻辑\cite{DBLP:journals/toplas/ClarkeES86}，它能很好的描述并发系统的一些性质，包括：互斥性和安全性等。
-此外，Emerson和 Halpern 证明了$\CTL$具有小模型属性：如果一个公式是可满足的，那么它在一个小的有限模型下是可满足的~\cite{DBLP:journals/jcss/EmersonH85}。
+此外，Emerson和 Ha- lpern 证明了$\CTL$具有小模型属性：如果一个公式是可满足的，那么它在一个小的有限模型下是可满足的~\cite{DBLP:journals/jcss/EmersonH85}。
 具体说来，对于给定的$\CTL$公式$\varphi$，如果公式的长度\footnote{给定公式$\varphi$，该公式里符号的个数是公式的长度，记为$|\varphi|$。}为$n$（记为：$|\varphi| = n$），则存在一个状态数为$n8^n$的初始结构$(\Hm,s_0)$使得$(\Hm,s_0)\models \varphi$。
 %$\CTL$由Clark和Emerson等人于1986年提出\cite{DBLP:journals/toplas/ClarkeES86}。
 
@@ -272,7 +272,7 @@ $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^
 		对任意 $s' \in  \pi_{s}^{\tuple{ind}}$, %occurring in $\pi_{s}^{\tuple{ind}}$,
 		$(\Hm,s') \models \psi$；
 		\item $({\cal M},s)\models \EXIST_{\tuple{ind}}(\psi_1\UNTILL\psi_2)$ 当且仅当
-		存在 $ \pi_{s}^{\tuple{ind}} = (s=s_1, s_2, \dots)$中的 $s_j$ ($1\leq j$)使得$(\Hm,s_j) \models \psi_2$且对任意 $s_k \in \pi_{s}^{\tuple{ind}}$，若$1\leq k < j$，则 $(\Hm,s_k) \models \psi_1$。
+		存在 $ \pi_{s}^{\tuple{ind}} = (s=s_1, s_2, \dots)$中的 $s_j$ ($1\leq j$)使得$(\Hm,s_j)$ $\models \psi_2$且对任意 $s_k \in \pi_{s}^{\tuple{ind}}$，若$1\leq k < j$，则 $(\Hm,s_k) \models \psi_1$。
 	\end{itemize}
 \end{definition}
 
@@ -822,7 +822,7 @@ Cover(\varphi_1, \dots, \varphi_n) \LRto \EXIST\NEXT \varphi_1 \wedge \dots \wed
 
 已有结论表明析取$\mu$-公式的均匀插值是容易计算的~\cite{d2006modal}，即：
 \begin{theorem}%[定理 3.6]
-	析取$\mu$-公式$\varphi$的均匀插值$\exists p \varphi$与$\mu$-公式$\varphi[p/\top, \neg p/ \bot]$等价，其中$\varphi[p/\top, \neg p/ \bot]$是同时将$p$及其否定$\neg p$分别用$\top$和$\bot$替换得到。
+	析取$\mu$-公式$\varphi$的均匀插值$\exists p \varphi$与$\mu$-公式$\varphi[p/\top, \neg p/ \bot]$等价，其中$\varphi[p/\top, \neg p/ \bot]$ 是同时将$p$及其否定$\neg p$分别用$\top$和$\bot$替换得到。
 \end{theorem}
 
 
@@ -956,7 +956,7 @@ $\CTLsnf$子句集$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S_1,
 
 在一阶逻辑中，一阶逻辑语言${\cal L}_f$的解释有两种：${\cal L}_f$和结构有联系或没有联系。这里考虑和结构有联系的情形，一个\emph{一阶结构}由论域（domain）、指定的个体、关系和函数构成。此时，${\cal L}_f$中的个体符合、$n$-元关系符号和$m$-元函数符号分别被解释为这个结构中指定论域中的个体、论域上的$n$-元关系和$m$-元全函数（即处处有定义的函数）。对于给定的一阶结构$M$和$X\in \{\hbox{个体符号，元组，关系符号，函数符号}\}$，$M[X]$表示结构$M$对$X$的解释，且$M[(a_1, a_2,$ $\dots,$ $a_i)]$ = $(M[a_1],$ $M[a_2],$ $\dots,$  $M[a_i])$。
 
-给定实例化（ground atom）原子$P(\vec{t})$（$\vec{t}$是一个$n$元组）、$M_1$和$M_2$为一阶结构，则$M_1 \sim_{P(\vec{t})} M_2$， 当且仅当除了$P(\vec{t})$的真值，$M_1$和$M_2$相同，即：
+给定实例化（ground atom）原子$P(\vec{t})$（$\vec{t}$是一个$n$元组）、$M_1$和$M_2$为一阶结构，则$M_1$ $\sim_{P(\vec{t})} M_2$， 当且仅当除了$P(\vec{t})$的真值，$M_1$和$M_2$相同，即：
 \begin{itemize}
 	\item[(i)] $M_1$和$M_2$有相同的论域，且每个函数符号被解释成相同的函数；
 	\item[(ii)] 对于和$P$不同的任意关系符号$Q$，$M_1[Q]=M_2[Q]$;
@@ -979,7 +979,7 @@ $\CTLsnf$子句集$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S_1,
 	\end{align*}
 %	$$\varphi[p] = (mo = mo \wedge J(mo)) \vee (mo \not = mo \wedge J(mo)) \vee (mo = fa \wedge J(mo)) \vee (mo \not = fa \wedge J(fa)) \vee B(sm)$$
 	\begin{align*}
-		\Forget(\varphi, p) & \equiv \varphi[p][p/\top] \vee \varphi[p][p/\bot]\\
+		 &\Forget(\varphi, p) \equiv \varphi[p][p/\top] \vee \varphi[p][p/\bot]\\
 		& \equiv  (mo = mo \wedge \top) \vee (mo \not = mo \wedge \top) \vee  (mo = fa \wedge \top) \vee (mo \not = fa \wedge J(fa)) \vee B(sm) \\
 		&\vee (mo = mo \wedge \bot) \vee (mo \not = mo \wedge \bot) \vee  (mo = fa \wedge \bot) \vee (mo \not = fa \wedge J(fa)) \vee B(sm)\\
 		& \equiv (mo = mo )\vee (mo \not = mo) \vee  (mo = fa ) \vee  (mo \not = fa \wedge J(fa)) \vee B(sm).
@@ -1003,7 +1003,7 @@ $\CTLsnf$子句集$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S_1,
 \begin{definition}\label{def:resforgetting}
 	给定命题公式$\varphi$和原子命题$p$，
 	$$\Forget(\varphi, p) = \{C\in CNF(\varphi)\mid \hbox{ $p$ 不出现在$C$中 }\} \cup Res(CNF(\varphi), p)$$
-	其中 $CNF(\varphi)$表示形成$\varphi$的合取范式的子句构成的集合，$Res(S, p)=\{C_1 \vee C_2 \mid C_1 \vee p , C_2 \vee \neg p \in S\}$。
+	其中 $CNF(\varphi)$表示形成$\varphi$的合取范式的子句构成的集合，$Res(S, p)=\{C_1 \vee C_2 \mid C_1 \vee p , C_2$ $\vee \neg p \in S\}$。
 \end{definition}
 
 从定义\ref{def:resforgetting}不难看出计算从$\varphi$中遗忘$p$的结果可以分为三个步骤：
@@ -1014,7 +1014,7 @@ $\CTLsnf$子句集$S$的一个\emph{反驳}是一个源于$S$的推导$S_0, S_1,
 \end{itemize}
 遗忘的定义种类很多，本文采用上述互模拟的方式。因此，这里不再赘述其它定义，感兴趣的读者可以参考Eiter的文章~\cite{eiter2019brief}。
 
-在描述逻辑中，如果遗忘的结果可以用当前讨论的描述逻辑来表示，则该结果就是一个均匀插值。而判定均匀插值是否存在通常是困难的，如：在${\cal ALC}$ 和${\cal EL}$中是双指数时间的。因此，描述逻辑遗忘通常也是很困难的。尽管如此，也有很多方法克服这些问题，其中扩展描述语言（如：从${\cal ALC}$到${\cal ALC}_v$~\cite{DBLP:conf/frocos/KoopmannS13}）或引入新的辅助符号~\cite{DBLP:phd/ethos/Zhao18a}是常用的方法。一些计算遗忘的工具是：基于skolem化和SOQE的SCAN~\footnote{http://www.mettel-prover.org/scan/index.html}、基于归结的Lethe~\cite{DBLP:phd/ethos/Koopmann15}和基于Ackermann引理的FAME~\cite{DBLP:conf/cade/ZhaoS18}。
+在描述逻辑中，如果遗忘的结果可以用当前讨论的描述逻辑来表示，则该结果就是一个均匀插值。而判定均匀插值是否存在通常是困难的，如：在ALC和EL中是双指数时间的。因此，描述逻辑遗忘通常也是很困难的。尽管如此，也有很多方法克服这些问题，其中扩展描述语言（如：从ALC到ALC$_v$~\cite{DBLP:conf/frocos/KoopmannS13}）或引入新的辅助符号~\cite{DBLP:phd/ethos/Zhao18a}是常用的方法。一些计算遗忘的工具是：基于skolem化和SOQE的SCAN~\footnote{http://www.mettel-prover.org/scan/index.html}、基于归结的Lethe~\cite{DBLP:phd/ethos/Koopmann15}和基于Ackermann引理的FAME~\cite{DBLP:conf/cade/ZhaoS18}。
 
 \subsection{模态逻辑S5的遗忘}\label{chapter:sub:s5forgetting}
 

@@ -27,12 +27,12 @@ WSC和SNC在智能规划和形式化验证里有重要作用，例：在2003年�
 下面给出其形式化定义，本章所说的公式指$\CTL$公式，且这章所有的定义和结论都可以平凡地移到$\mu$-句子下。
 \begin{definition}[充分和必要条件]\label{def:NC:SC}
 	给定两个公式$\varphi$和$\psi$，$V \subseteq \Var(\varphi)$，$q\in\Var(\varphi)- V$
-	和$\Var(\psi)\subseteq V$。
+	和$\Var(\psi)$ $\subseteq V$。
 	\begin{itemize}
 		\item 若$\varphi \models q \rto \psi$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 必要条件（necessary condition，NC）}；
 		\item 若$\varphi \models \psi\rto q$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 充分条件（sufficient condition，SC）}；
 		\item 若$\psi$是$q$在$V$和$\varphi$上的必要条件，且对于任意$q$在$V$和$\varphi$上的必要条件$\psi'$，都有$\varphi\models\psi\rto\psi'$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 最强必要条件（strongest necessary condition，SNC）}；
-		\item 若$\psi$是$q$在$V$和$\varphi$上的充分条件，且对于任意$q$在$V$和$\varphi$上的充分条件$\psi'$，都有$\varphi\models\psi'\rto\psi$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 最弱充分条件（weakest sufficient condition，WSC）}；
+		\item 若$\psi$是$q$在$V$和$\varphi$上的充分条件，且对于任意$q$在$V$和$\varphi$上的充分条件$\psi'$，都有$\varphi\models\psi'\rto\psi$，则称$\psi$是$q$在$V$和$\varphi$上的{\em 最弱充分条件（weakest sufficient condition， WSC）}。
 	\end{itemize}
 \end{definition}
 
@@ -332,13 +332,13 @@ $$\Mod(\Gamma \diamond_{pma} \psi) = \bigcup_{I \in \Mod(\Gamma)} Min(\Mod(\psi)
 
 在这种情形下，若$\Hm_1 \leq_{\Hm} \Hm_2$，则存在一个原子命题的极小集$V_{min}$使得$\Hm_1 \lrto_{V_{min}} \Hm$，且对任意$V\subseteq \Ha$，若$\Hm_2 \lrto_V \Hm$则$V_{min}\subseteq V$且$\Hm_1 \lrto_V \Hm$。
 \begin{example}
-	\textcolor{red}{令$\Hm= (S, R, L, r)$、$\Hm_1 = (S_1, R_1, L_1, r_1)$、$\Hm_2 = (S_2, R_2, L_2, r_2)$为三个初始结构（如图~\ref{fig:partialo}），其中$S = S_1 = S_2 = \{s_0, s_1\}$，$r=r_1=r_2= s_0$，$R=R_1=R_2=\{(s_0, s_1), (s_1, s_1)\}$，$L(s_0) = \{ch, j\}$，$L_1(s_0) = L_2(s_0) = \{ch\}$，$L(s_1) = L_1(s_1)=\emptyset$，$L_2(s_1) = \{j\}$。}
+	令$\Hm= (S, R, L, r)$、$\Hm_1 = (S_1, R_1, L_1, r_1)$、$\Hm_2 = (S_2, R_2, L_2, r_2)$为三个初始结构（如图~\ref{fig:partialo}），其中$S = S_1 = S_2 = \{s_0, s_1\}$，$r=r_1=r_2= s_0$，$R=R_1=R_2=\{(s_0, s_1), (s_1, s_1)\}$，$L(s_0) = \{ch, j\}$，$L_1(s_0) = L_2(s_0) = \{ch\}$，$L(s_1) = L_1(s_1)=\emptyset$，$L_2(s_1) = \{j\}$。
 	
 	可以检查$\Hm \lrto_{\{j\}} \Hm_1$，$\Hm \lrto_{\{j,ch\}} \Hm_2$，$\{j\}\subseteq \{j,ch\}$，且对任意原子命题集$V' \subset \{j\}$（或$V' \subset \{j,ch\}$），有$\Hm \not\lrto_{V'} \Hm_1$（或$\Hm \not \lrto_{V'} \Hm_2$）。
 	因此，$\Hm_1 \leq_{\Hm} \Hm_2$。
 	\begin{figure}[h]%
 		\centering
-		\includegraphics[width=12cm,height=2cm]{figures/chapter06/partial_order.png}
+		\includegraphics[width=12cm]{figures/chapter06/partial_order2.png}
 		\caption{初始结构间的$\leq_{\Hm}$关系。}\label{fig:partialo}
 		
 		% $s_0$ is labeled by $\{ch, j\}$, $t_0$ is labeled by $\{j\}$, and $s_1$, $s_2$, and $t_1$ are labeled by $\emptyset$.}\label{fig:bisim}

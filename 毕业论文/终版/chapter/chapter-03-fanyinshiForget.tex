@@ -31,7 +31,7 @@
 \end{definition}
 
 
-若$\Hm_1$和 $\Hm_2$之间存在一个 $V$-互模拟关系$\Hb_V$使得$(s_1, s_2)\in \Hb_V$，则称两个 $\Ind$-结构 ${\cal K}_1$ $= (\Hm_1, s_1)$ 和 ${\cal K}_2 = (\Hm_2, s_2)$ 是 $V$-{\em 互模拟}的（也称${\cal K}_1$和${\cal K}_2$关于$V$是互模拟的），记为${\cal K}_1 \lrto_V {\cal K}_2$。
+若$\Hm_1$和 $\Hm_2$之间存在一个 $V$-互模拟关系$\Hb_V$使得$(s_1, s_2)\in \Hb_V$，则称两个 $\Ind$-结构 ${\cal K}_1$ $= (\Hm_1, s_1)$ 和 ${\cal K}_2 = (\Hm_2, s_2)$ 是 $V$-{\em 互模拟}的（也称${\cal K}_1$和${\cal K}_2$关于$V$是互模拟的），记为${\cal K}_1$ $\lrto_V {\cal K}_2$。
 令$i\in \{1,2\}$，$\pi_i=(s_{i,1},$ $s_{i,2},\ldots)$ 为 $\Hm_i$ 上的路径，若对任意$j \ge 1$都有$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}$，则称这两条路径是$V$-{\em 互模拟}的，记为$\pi_1 \lrto_V \pi_2$，其中 ${\cal K}_{i,j}=(\Hm_i,$ $s_{i,j})$。
 
 
@@ -45,7 +45,7 @@
 	\begin{figure*}[!htb]
 		\centering
 		% Requires \usepackage{graphicx}
-		\includegraphics[width=8cm]{chapter03/NVBnewCar.png}\\
+		\includegraphics[width=8cm]{chapter03/NVBnewCar1.png}\\
 		\caption{$\MPK$-结构之间的$V$-互模拟关系示意图}
 		\label{Fig:chapter04:v1uv2}
 	\end{figure*}
@@ -109,21 +109,21 @@
 	
 	\textbf{基始.} $\Phi = p$ （$p\in \Ha -V$）。
 	
-	$(\Hm,s)\models \Phi$当且仅当$p\in L(s)$ \hfill （可满足关系的定义）\\
-	$\LRto$ $p\in L'(s')$ \hfill （$s \lrto_V s'$）\\
+	$(\Hm,s)\models \Phi$当且仅当$p\in L(s)$ \hfill (可满足关系的定义)\\
+	$\LRto$ $p\in L'(s')$ \hfill ($s \lrto_V s'$)\\
 	$\LRto$ $(\Hm',s') \models \Phi$。
 	
 	\textbf{归纳步.} (a) $\Phi = \neg \psi$。
 	
 	$(\Hm,s)\models \Phi$当且仅当$(\Hm,s) \not \models \psi$\\
-	$\LRto$ $(\Hm',s')\not \models \psi$  \hfill （归纳假设）\\
+	$\LRto$ $(\Hm',s')\not \models \psi$  \hfill (归纳假设)\\
 	$\LRto$ $(\Hm',s') \models \Phi$。
 	
 	(b) $\Phi = \psi_1 \vee \psi_2$。
 	
 	$(\Hm,s)\models \Phi$\\
 	$\LRto$ $(\Hm,s) \models \psi_1$或$(\Hm,s) \models \psi_2$\\
-	$\LRto$ $(\Hm',s')  \models \psi_1$或$(\Hm',s') \models \psi_2$ \hfill （归纳假设）\\
+	$\LRto$ $(\Hm',s')  \models \psi_1$或$(\Hm',s') \models \psi_2$ \hfill (归纳假设)\\
 	$\LRto$ $(\Hm',s') \models \Phi$。
 	
 	(c) $\Phi=\EXIST\NEXT\psi$。
@@ -132,7 +132,7 @@
 	$\Rto$ 存在一条路径$\pi=(s,s_1,\dots)$使得$(\Hm,s_1)\models \psi$\\
 	$\Rto$ 存在一条路径$\pi'=(s',s_1',\dots)$使得$\pi \lrto_V \pi'$且$(\Hm,s_1)\models \psi$\hfill ($s \lrto_V s'$，命题~\ref{prop:bisimilar:V})\\
 	$\Rto$ $s_1 \lrto_V s_1'$且$(\Hm,s_1)\models \psi$ \hfill ($\pi \lrto_V \pi'$)\\
-	$\Rto$ $(\Hm',s_1') \models \psi$   \hfill   （归纳假设）\\
+	$\Rto$ $(\Hm',s_1') \models \psi$   \hfill   (归纳假设)\\
 	$\Rto$ $(\Hm',s')\models \Phi$。
 	
 	另一个方向可类似证明。
@@ -232,7 +232,7 @@ $\psi$ $=\EXIST_{\tuple{2}}\NEXT p$，可以证明，$\varphi\equiv_\emptyset \p
 	$\Rto$ $(\Hm_1,s_1) \models X$，且对任意路径$\pi=(s_{1,1},s_{1,2},\dots)$上的状态$s_{1,j}$ $(j\geq 1)$，有$(\Hm,s_{1,j}) \not \models \neg q$，或存在一个状态$s_{1,j+1}$使得$(s_{1,j},s_{1,j+1})
 	\in R_1$且$(\Hm,s_{1,j+1}) \models \varphi$。
 	
-	由此构造一个初始$\Ind$-Kripke结构$\Hm_2$，使得$\Hm_2$与$\Hm_1$相同，除了：对使用规则 $\textbf{Trans(1)}$ 在公式$\ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$上而引入的新索引$ind$，有$[ind]_2=\bigcup_{s\in S} R_s \cup R_y$。其中：
+	由此构造一个初始$\Ind$-Kripke结构$\Hm_2$，使得$\Hm_2$与$\Hm_1$相同，除了：对使用规则 \textbf{Tra- ns(1)} 在公式$\ALL\GLOBAL(q \rto \EXIST \NEXT \varphi)$上而引入的新索引$ind$，有$[ind]_2=\bigcup_{s\in S} R_s \cup R_y$。其中：
 	\begin{itemize}
 		\item $R_{s_{1,j}}=\{(s_{1,j}, s_{1,j+1}), (s_{1,j+1}, s_{1,j+2}),\dots\}$ $(j\geq 1)$，其满足“若$(\Hm_1,s_{1,j}) \models q$，则$(\Hm_1,$ $s_{1,j+1})$ $\models \varphi$”且“对于任意$i\geq j$，若$(s_{1,i}, s') \in R_s\ (s \not= s_{1,j})$，则$s'=s_{1,i+1}$”；
 		\item $R_y=\{(s_x,s_y)\mid s_x\in S$，若对任意$(s_1',s_2') \in \bigcup_{s\in S} R_s$， 有$s_1'\not= s_x$，则找一个状态$s_y\in S_2$，使得$(s_x,s_y)\in R_2\}$。
@@ -382,7 +382,7 @@ $\psi$ $=\EXIST_{\tuple{2}}\NEXT p$，可以证明，$\varphi\equiv_\emptyset \p
 	\qquad \ALL\GLOBAL(x \rto \neg \ALL\GLOBAL p),
 	\qquad \ALL\GLOBAL(\ALL \FUTURE \ALL \GLOBAL p).
 \end{align*}
-\citeauthor{Maksimova:JANCL:1991}证明$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在$\CTL$公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)\models x\lrto \psi$，即$\CTL$不具有Beth性质。
+\citeauthor{Maksimova:JANCL:1991}证明$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在$\CTL$公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)$ $\models x\lrto \psi$，即$\CTL$不具有Beth性质。
 这一结论蕴涵如下命题：
 \begin{proposition}\label{pro:uniforget}
 	$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 $\CTL$中是不可表示的。
@@ -487,7 +487,7 @@ $\psi$ $=\EXIST_{\tuple{2}}\NEXT p$，可以证明，$\varphi\equiv_\emptyset \p
 	\end{itemize}
 	由此可知，$(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$且 $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$。 所以，$(\Hm_2, s_2) \models \CTLforget(\varphi, p)$。 因此， $(\Hm_1,$ $s_1) \models \CTLforget(\CTLforget(\varphi, p), V)$。
 	
-	另一方面，若$(\Hm_1, s_1)$是$\CTLforget(\CTLforget(\varphi, p), V)$的一个模型，则存在一个初始-$\Ind$结构 $(\Hm_2, s_2)$，使得 $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$且 $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$；且存在 $(\Hm, s)$，使得$(\Hm, s) \models \varphi$且 $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$。因此，由命题~\ref{prop:bisimilar:V}(i)可知 $(\Hm, s) \lrto_{\{p\} \cup V} (\Hm_1, s_1)$，所以， $(\Hm_1,$ $s_1)$ $\models \CTLforget(\varphi, \{p\} \cup V)$。
+	另一方面，若$(\Hm_1, s_1)$是$\CTLforget(\CTLforget(\varphi, p), V)$的一个模型，则存在一个初始-$\Ind$结构 $(\Hm_2, s_2)$，使得 $(\Hm_2, s_2) \models \CTLforget(\varphi, p)$且 $(\Hm_2, s_2) \lrto_V (\Hm_1, s_1)$；且存在 $(\Hm, s)$，使得$(\Hm,$ $s) \models \varphi$且 $(\Hm, s) \lrto_{\{p\}} (\Hm_2, s_2)$。因此，由命题~\ref{prop:bisimilar:V}(i)可知 $(\Hm, s) \lrto_{\{p\} \cup V} (\Hm_1, s_1)$，所以， $(\Hm_1,$ $s_1)$ $\models \CTLforget(\varphi, \{p\} \cup V)$。
 \end{proof}
 
 由上面的命题不难看出，从公式中遗忘原子命题集中的元素，可以将该集合拆成两个集合遗忘。
@@ -538,13 +538,13 @@ $\psi$ $=\EXIST_{\tuple{2}}\NEXT p$，可以证明，$\varphi\equiv_\emptyset \p
 	$\Rto$ 存在$(\Hm,s)\lrto_V(\Hm',s')$ 且 $(\Hm',s')\models \EXIST\NEXT\phi$\\
 	$\Rto$ 存在$(\Hm,s)\lrto_V(\Hm',s')$，且对一些 $(s',s'')\in R'$，有$(\Hm',s'')\models \phi$ \hfill  ($R'\in\Hm'$)\\
 	$\Rto$ 存在$(s,s_1)\in R$和$(s',s'_1)\in R'$，使得$(\Hm,s_1)\lrto_V(\Hm',s'_1)$，且存在$(s',s'')\in R'$，使得
-	$(\Hm',s'')\models \phi$ （$R\in \Hm$）\\
+	$(\Hm',$ $s'')\models \phi$ \hfill ($R\in \Hm$)\\
 	$\Rto$ 存在$(s,s_1)\in R$和$(\Hm,s_1)\lrto_V(\Hm',s'_1)$，使得$(\Hm',s'_1)\models\phi$\\
 	$\Rto$ 存在$(s,s_1)\in R$，使得$(\Hm,s_1)\models\CTLforget(\phi,V)$\\
 	$\Rto$ $(\Hm,s)\models\EXIST\NEXT\CTLforget(\phi,V)$。
 	
 	$(\Lto)$ $(\Hm,s)\models\EXIST \NEXT\CTLforget(\phi,V)$\\
-	$\Rto$ 对一些 $(s,s')\in R$， $(\Hm,s')\models\CTLforget(\phi,V)$ ($R\in \Hm)$\\
+	$\Rto$ 对一些 $(s,s')\in R$， $(\Hm,s')\models\CTLforget(\phi,V)$  ($R\in \Hm)$\\
 	$\Rto$ 对一些 $(s,s')\in R$，有$(\Hm,s')\lrto_V(\Hm',s'')$ 和 $(\Hm',s'')\models\phi$，其中 $\Hm'=(S',R',L',[\_]',s'')$ \\
 	%		$\Rto$ For every $i\ge 0$, there is $(\Hm,s'_i)\lrto_V(\Hm'_i,s''_i)$ and $(\Hm'_i,s''_i)\models\phi$
 	%		where $\{s'_0,s'_1,\ldots\}=\{s'\mid (s,s')\in R\}$ and $\Hm'_i=(S'_i,R'_i,L'_i,[\_]'_i,s''_i)$ (we assume $S'_i\cap S'_j=\emptyset$ when $i\neq j$)\\
@@ -665,13 +665,13 @@ $$\varphi = \nu X.(p \wedge q) \wedge \EXIST \NEXT(\neg p \wedge \neg q) \wedge 
 	 是$\varphi$的模型，其中
 	\begin{itemize}
 		\item $\Hm=(S,r,R,L)$，其中$S=\{s_0,s_1,s_2\}$，$r=s_0$，$L(s_0)=\{ch, j\}$，$L(s_1)=\{ch\}$，$L(s_2)=\emptyset$，$R=\{(s_0,s_1), (s_1,s_0), (s_0,s_2), (s_2,s_0)\}$，$v(X)=\{s_0\}$，
-		\item  $\Hm'=(S',r',R',L')$，其中$S'=\{t_0,t_1\}, r'=t_0$，$L'(t_0)=\{j\}$，$L'(t_1)=\emptyset$，$R'=\{(t_0,t_1), (t_1,$ $t_0)\}$且
+		\item  $\Hm'=(S',r',R',L')$，其中$S'=\{t_0,t_1\}, r'=t_0$，$L'(t_0)=\{j\}$，$L'(t_1)=\emptyset$，$R'=\{(t_0,t_1),$ $(t_1,$ $t_0)\}$且
 		$v'(X)=\{t_0\}$。
 	\end{itemize} 
 	
 		\begin{figure}[h]%
 		\centering
-		\includegraphics[width=4.5cm,height=2.5cm]{chapter06/chvB1.png}
+		\includegraphics[width=5cm]{chapter06/chvB3.png}
 		\caption{两个 $\{ch\}$-互模拟的Kripke结构示意图}\label{chapter06:fig:bisim}
 		
 		% $s_0$ is labeled by $\{ch, j\}$, $t_0$ is labeled by $\{j\}$, and $s_1$, $s_2$, and $t_1$ are labeled by $\emptyset$.}\label{fig:bisim}
@@ -727,10 +727,10 @@ $\mu$-句子互模拟是不变的，$\mu$-公式则不是~\cite{janin1996express
 %\end{definition}
 
 若$(\Hm,s, v)$和$(\Hm',s',v')$之间存在一个$\tuple{{\cal V}_1, V}$-互模拟关系$\Hb$，则称$(\Hm,s, v)$和$(\Hm',s',$ $v')$是$\tuple{{\cal V}_1, V}$-互模拟的，记为$(\Hm,s, v)\lrto_\tuple{{\cal V}_1, V} (\Hm',s',v')$。
-若$(\Hm,s, v)$和$(\Hm',s',v')$之间存在一个$\tuple{\emptyset, V_1}$-互模拟关系，则称$(\Hm,s, v)$和$(\Hm',s',v')$是{\em Var-$V_1$-互模拟的}，记为$(\Hm, s,v) \lrto_{V_1} (\Hm',s',v')$；称$\tuple{\emptyset, V_1}$-互模拟为Var-$V_1$-互模拟。此外，若$s=r$ 且$s'=r'$，则$(\Hm, s,v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm',s',v')$简写为$(\Hm, v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm',v')$。
+若$(\Hm,s, v)$和$(\Hm',s',v')$之间存在一个$\tuple{\emptyset, V_1}$-互模拟关系，则称$(\Hm,s, v)$和$(\Hm',s',v')$是{\em Var-$V_1$-互模拟的}，记为$(\Hm, s,v) $ $\lrto_{V_1} (\Hm',s',v')$；称$\tuple{\emptyset, V_1}$-互模拟为Var-$V_1$-互模拟。此外，若$s=r$ 且$s'=r'$，则$(\Hm, s,v) $ $\lrto_{\tuple{{\cal V}_1, V}} (\Hm',s',v')$简写为$(\Hm, v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm',v')$。
 
 显然，若$({\cal M},s,v)\lrto_V({\cal M}',s',v')$，则${\cal M}\lrto_V{\cal M}'$。
-$\Hm\lrto_V\Hm'$，但$(\Hm,v)\not\lrto_V(\Hm',v')$有时是成立的。例：例~\ref{exmp:c06:bisim}中的两个Kripke结构$\Hm$ 和 $\Hm'$ 是$\emptyset$-互模拟的。然而，由于$r_1\in v(X)$和$(r_1,r_2')\in\Hb$，但是$r_2'\not\in v'(X)$，所以$(\Hm,v)\not\lrto_\emptyset (\Hm',v')$。
+$\Hm\lrto_V\Hm'$，但$(\Hm,v)\not\lrto_V(\Hm',v')$ 有时是成立的。例：例~\ref{exmp:c06:bisim}中的两个Kripke结构$\Hm$ 和 $\Hm'$ 是$\emptyset$-互模拟的。然而，由于$r_1\in v(X)$和$(r_1,r_2')\in\Hb$，但是$r_2'\not\in v'(X)$，所以$(\Hm,v)\not\lrto_\emptyset (\Hm',v')$。
 对$S_1\subseteq S$和二元关系$\Hb\subseteq S \times S'$，记$\Hb(S_1) =\{s' \mid (s, s')\in \Hb,\ s \in S_1\}$。
 
 再者，对任意$X\in {\cal V}$，令$v(X)=S$且$v'(X)=S'$，Kripke结构${\cal M}$和${\cal M}'$之间的任意$V$-互模拟可以容易地扩展为$({\cal M},r,v)$和$({\cal M}',r',v')$之间的Var-$V$-互模拟，其中$S$和$S'$分别为$\Hm$和$\Hm'$中的状态集合。
@@ -1046,7 +1046,7 @@ $\Hm\lrto_V\Hm'$，但$(\Hm,v)\not\lrto_V(\Hm',v')$有时是成立的。例：�
 	
 	\begin{align*}
 		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \left\| \varphi_1\right\|_{v[X:= S_1]}^{\Hm} * \left\| \varphi_2\right\|_{v[X:= S_1]}^{\Hm}\\
-		& \subseteq \left\| \varphi_1\right\|_{v[X:= S_2]}^{\Hm} * \left\| \varphi_2\right\|_{v[X:= S_2]}^{\Hm} \quad \hbox{(归纳假设)}\\
+		& \subseteq \left\| \varphi_1\right\|_{v[X:= S_2]}^{\Hm} * \left\| \varphi_2\right\|_{v[X:= S_2]}^{\Hm} \quad \qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad \hbox{(归纳假设)}\\
 		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
 	\end{align*}
 	
@@ -1054,7 +1054,7 @@ $\Hm\lrto_V\Hm'$，但$(\Hm,v)\not\lrto_V(\Hm',v')$有时是成立的。例：�
 	
 	\begin{align*}
 		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \{s \mid \forall s'.(s,s') \in R \Rto s' \in \left\| \varphi_1\right\|_{v[X:= S_1]}^{\Hm}\}\\
-		& \subseteq \{s \mid \forall s'.(s,s') \in R \Rto s' \in \left\| \varphi_1\right\|_{v[X:= S_2]}^{\Hm}\} \quad \hbox{(归纳假设)}\\
+		& \subseteq \{s \mid \forall s'.(s,s') \in R \Rto s' \in \left\| \varphi_1\right\|_{v[X:= S_2]}^{\Hm}\} \qquad\qquad\qquad\qquad\qquad\qquad \hbox{(归纳假设)}\\
 		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
 	\end{align*}
 	
@@ -1062,7 +1062,7 @@ $\Hm\lrto_V\Hm'$，但$(\Hm,v)\not\lrto_V(\Hm',v')$有时是成立的。例：�
 	
 	\begin{align*}
 		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \{s \mid \exists s'.(s,s') \in R \wedge s' \in \left\| \varphi_1\right\|_{v[X:= S_1]}^{\Hm}\}\\
-		& \subseteq \{s \mid \exists s'.(s,s') \in R \wedge s' \in \left\| \varphi_1\right\|_{v[X:= S_2]}^{\Hm}\} \quad \hbox{(归纳假设)}\\
+		& \subseteq \{s \mid \exists s'.(s,s') \in R \wedge s' \in \left\| \varphi_1\right\|_{v[X:= S_2]}^{\Hm}\} \quad\qquad\qquad\qquad\qquad\qquad\qquad \hbox{(归纳假设)}\\
 		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
 	\end{align*}
 	
@@ -1079,7 +1079,7 @@ $\Hm\lrto_V\Hm'$，但$(\Hm,v)\not\lrto_V(\Hm',v')$有时是成立的。例：�
 	(d.2) $Y \not =X$.
 	\begin{align*}
 		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \bigcup\{S' \subseteq S \mid S' \subseteq \left\| \varphi_1\right\|_{v[X:= S_1][Y:= S']}^{\Hm}\}\\
-		& \subseteq \bigcup\{S' \subseteq S \mid S' \subseteq \left\| \varphi_1\right\|_{v[X:= S_2][Y:= S']}^{\Hm}\} \quad \hbox{(归纳假设)}\\
+		& \subseteq \bigcup\{S' \subseteq S \mid S' \subseteq \left\| \varphi_1\right\|_{v[X:= S_2][Y:= S']}^{\Hm}\} \qquad\qquad\qquad\qquad\qquad\qquad\qquad \hbox{(归纳假设)}\\
 		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
 	\end{align*}
 	
@@ -1097,18 +1097,18 @@ $\Hm\lrto_V\Hm'$，但$(\Hm,v)\not\lrto_V(\Hm',v')$有时是成立的。例：�
 	注意，对任意$\mu$-公式$\psi$，$\left\| \psi\right\|_{v[X:= S]}^{\Hm} \subseteq S$。
 	\begin{align*}
 		\left\| \varphi\right\|_{v[X:= S_1]}^{\Hm}& = \bigcap\{S' \subseteq S \mid \left\| \varphi_1\right\|_{v[X:= S_1][Y:= S']}^{\Hm}\subseteq S'\}\\
-		& \subseteq \bigcap\{S' \subseteq S \mid  \left\| \varphi_1\right\|_{v[X:= S_2][Y:= S']}^{\Hm} \subseteq S'\}  \quad \hbox{(归纳假设)}\\
+		& \subseteq \bigcap\{S' \subseteq S \mid  \left\| \varphi_1\right\|_{v[X:= S_2][Y:= S']}^{\Hm} \subseteq S'\}  \qquad\qquad\qquad\qquad\qquad\qquad\qquad \hbox{(归纳假设)}\\
 		& = \left\| \varphi\right\|_{v[X:= S_2]}^{\Hm}.
 	\end{align*}
 \end{proof}
 
 \begin{proposition}[不变性]
 	\label{pro:variB}
-	令$\varphi$为$\mu$-公式、${\cal V}_1\subseteq {\cal V}$且$V\subseteq \Ha$。 若$(\Hm, s, v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm', s', v')$且$\IR(\varphi, V \cup {\cal V}_1)$，则$(\Hm,s, v) \models \varphi$当且仅当$(\Hm',s', v') \models \varphi$。
+	令$\varphi$为$\mu$-公式、${\cal V}_1\subseteq {\cal V}$且$V\subseteq \Ha$。 若$(\Hm, s, v) \lrto_{\tuple{{\cal V}_1, V}} (\Hm', s', v')$且$\IR(\varphi,$ $ V \cup {\cal V}_1)$，则$(\Hm,s, v) \models \varphi$当且仅当$(\Hm',s', v') \models \varphi$。
 \end{proposition}
 \begin{proof}
 	令$\Hm=(S,r,R,L)$ 且$\Hm'=(S',r',R',L')$。
-假设$\Var(\varphi) \cap (V\cup {\cal V}_1) = \emptyset$且$(\Hm, s, v)$和$(\Hm', s', v')$之间的${\tuple{{\cal V}_1, V}}$-互模拟关系为$\Hb$。
+假设$\Var(\varphi) \cap (V\cup {\cal V}_1) = \emptyset$且$(\Hm, s, v)$和$(\Hm',$ $ s', v')$之间的${\tuple{{\cal V}_1, V}}$-互模拟关系为$\Hb$。
 	
 	\textbf{基始.} (a) $\varphi = p$，其中$p\not \in V$。
 	
@@ -1159,7 +1159,7 @@ $\Hm\lrto_V\Hm'$，但$(\Hm,v)\not\lrto_V(\Hm',v')$有时是成立的。例：�
 	%$\Rto$ For each $w\in S_2$, we have $w \in \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$ \hfill ($S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$, induction hypothesis)\\
 	$\Rto$ $s \in S_2$，且对任意$w\in S_2$，有$w \in \left\|\varphi_1\right\|_{v[X:= S_2]}^{\Hm}$ \hfill ($S_1 \subseteq \left\|\varphi_1\right\|_{v[X:= S_1]}^{\Hm}$, 归纳假设, 引理~\ref{lem:boundEqu})\\
 	$\Rto$ $s \in S_2$，且存在$S_2 \subseteq S$，使得$S_2 \subseteq \left\|\varphi_1\right\|_{v[X:= S_2]}^{\Hm}$\\
-	$\Rto$ $s \in S_2$，且对任意$u'\in \Hb(S_2)$，存在$u\in S_2$使得$(\Hm',u',v'[X:= \Hb(S_2)]) \lrto_{\tuple{{\cal V}_1, V}} (\Hm,u,v[X:=S_2])$ 且$u\in \left\|\varphi_1\right\|_{v[X:= S_2]}^{\Hm}$\\
+	$\Rto$ $s \in S_2$，且对任意$u'\in \Hb(S_2)$，存在$u\in S_2$使得$(\Hm',u',v'[X:= \Hb(S_2)]) \lrto_{\tuple{{\cal V}_1, V}} (\Hm,u,$ $v[X:=S_2])$ 且$u\in \left\|\varphi_1\right\|_{v[X:= S_2]}^{\Hm}$\\
 	$\Rto$ $s \in S_2$，且对任意$u'\in \Hb(S_2)$，有$u'\in \left\|\varphi_1\right\|_{v'[X:= \Hb(S_2)]}^{\Hm'}$ \hfill (归纳假设)\\
 	%$\Rto$ For each $u'\in \Hb(S_2)$, $u'\in \left\|\varphi_1\right\|_{v'[X:= \Hb(S_2)]}^{\Hm'}$\\
 	$\Rto$ 存在$\Hb(S_2)\subseteq S'$，使得$\Hb(S_2) \subseteq \left\|\varphi_1\right\|_{v'[X:= \Hb(S_2)]}^{\Hm'}$ 且$s'\in \Hb(S_2)$ \hfill ($(s,s')\in \Hb$)\\
@@ -1380,7 +1380,7 @@ D'Agostino 研究了 $\mu$-演算均匀插值，并指出 $\mu$-算具有均匀�
 	(iv)  $(\Hm,v)\in \Mod(\Muforget(\varphi_1 \vee \varphi_2, V))$\\
 	$\LRto$ 存在$(\Hm',v')$ $\in$  $\Mod(\varphi_1\vee \varphi_2)$使得$(\Hm,v) \lrto_V (\Hm',v')$ 和$(\Hm',v') \models \varphi_1$ 或$(\Hm',v') \models \varphi_2$ \\
 	%$\LRto$ $\exists (\Hm_1,v_1) \in \Mod(\Muforget(\varphi_1, V))$ s.t. $(\Hm',v') \lrto_V (\Hm_1,v_1)$, or $\exists(\Hm_2,v_2) \in \Mod(\Muforget(\varphi_2, V))$ s.t. $(\Hm',v') \lrto_V (\Hm_2,v_2)$ \\
-	$\LRto$ 存在$(\Hm,v) \lrto_V (\Hm',v')$ 使得$(\Hm',v') \models \varphi_1$ 或$(\Hm',v') \models \varphi_2$，则存在$(\Hm_1,v_1) \in \Mod(\Muforget(\varphi_1, V))$ 使得$(\Hm',v') \lrto_V (\Hm_1,v_1)$，或$\exists(\Hm_2,v_2) \in \Mod(\Muforget(\varphi_2, V))$ 使得$(\Hm',v') \lrto_V (\Hm_2,v_2)$\\
+	$\LRto$ 存在$(\Hm,v) \lrto_V (\Hm',v')$ 使得$(\Hm',v') \models \varphi_1$ 或$(\Hm',v') \models \varphi_2$，则存在$(\Hm_1,v_1) \in \Mod($ $\Muforget(\varphi_1, V))$ 使得$(\Hm',v') \lrto_V (\Hm_1,v_1)$，或$\exists(\Hm_2,v_2) \in \Mod(\Muforget(\varphi_2, V))$ 使得$(\Hm',v') \lrto_V (\Hm_2,$ $v_2)$\\
 	%$\Rto$ $(\Hm,s) \lrto_V (\Hm_1,s_1)$ or $(\Hm,s) \lrto_V (\Hm_2,s_2)$\\
 	$\LRto$ $(\Hm,v) \models \Muforget(\varphi_1, V)$或$(\Hm,v) \models  \Muforget(\varphi_2, V)$\\
 	%$\Rto$ $(\Hm,v) \models \Muforget(\psi_1, V) \vee \Muforget(\psi_2, V)$\\
@@ -1413,7 +1413,7 @@ D'Agostino 研究了 $\mu$-演算均匀插值，并指出 $\mu$-算具有均匀�
 	\]
 \end{proposition}
 \begin{proof}
-	令$(\Hm_1,v_1)$（${\cal M}_1=(S_1, R_1, L_1, s_1)$）为 $\Muforget(\varphi, \{p\} \cup V)$的模型。由遗忘的定义可知，存在$\varphi$的一个模型 $(\Hm,v)$（${\cal M} = (S, R,L, s)$） 使得 $(\Hm_1,v_1)$ $\lrto_{\{p\} \cup V}$ $(\Hm,v)$。如下构造 Kripke 结构 ${\cal M}_2 = (S_2, R_2, L_2, s_2)$：
+	令$(\Hm_1,v_1)$（${\cal M}_1=(S_1, R_1, L_1, s_1)$）为 $\Muforget(\varphi, \{p\} \cup V)$的模型。由遗忘的定义可知，存在$\varphi$的一个模型 $(\Hm,v)$（${\cal M} = (S, R,L, s)$） 使得 $(\Hm_1,v_1)$ $\lrto_{\{p\} \cup V}$ $(\Hm,v)$。如下构造 Krip- ke 结构 ${\cal M}_2 = (S_2, R_2, L_2, s_2)$：
 	\begin{itemize}
 		\item[(1)] 对于$s_2$，令$s_2$为满足下列条件的状态：
 		\begin{itemize}
@@ -1438,7 +1438,7 @@ D'Agostino 研究了 $\mu$-演算均匀插值，并指出 $\mu$-算具有均匀�
 	显然，$\Hm \lrto_{\{p\}} \Hm_2$和 $\Hm_2 \lrto_V \Hm_1$。
 	%因此，$(\Hm_2, s_2) \models \Muforget(\varphi, p)$，所以 $(\Hm_1, s_1) \models \Muforget(\Muforget(\varphi, p), V)$。
 	此外，对所有的 $X \in {\cal V}$，令$v_2(X) = \Hb_1(v(X))$。
-	因此，$(\Hm,v) \lrto_{\{p\}} (\Hm_2,v_2)$ 且$(\Hm_2,v_2) \lrto_V (\Hm_1,v_1)$，从而$(\Hm_2, s_2) \models \Muforget(\varphi, p)$。所以，$(\Hm_1, v_1) \models \Muforget(\Muforget(\varphi, p), V)$。
+	因此，$(\Hm,v) \lrto_{\{p\}} (\Hm_2,v_2)$ 且$(\Hm_2,v_2) \lrto_V (\Hm_1,v_1)$，从而$(\Hm_2, s_2) \models \Muforget(\varphi, p)$。所以，$(\Hm_1, v_1) $ $\models \Muforget(\Muforget(\varphi, p), V)$。
 	
 	另一方面，假设$(\Hm_1,v_1)$是$\Muforget(\Muforget(\varphi, p), V)$的一个模型\\
 	$\Rto$ 存在$(\Hm_2,v_2)$使得$(\Hm_2,v_2) \models  \Muforget(\varphi, p)$ 且$(\Hm_2,v_2) \lrto_V (\Hm_1,v_1)$ \hfill(定义\ref{chapter06:def:V:forgetting})\\
@@ -1578,7 +1578,7 @@ $\Muforget$的另一个性质是关于时序算子$\ALL\NEXT$（$\EXIST \NEXT$�
 	$\Rto$ 对任意$(r, r_1) \in R$，$(\Hm_{r_1}, r_1,v) \models \Muforget(\varphi,V)$\\
 	$\Rto$ 对任意$(r, r_1) \in R$，存在$(\Hm_{r_1},r_1,v) \lrto_V (\Hm', r', v')$ 且$(\Hm', r', v') \models \varphi$\\
 	$\Rto$ 对任意$i \geq 0$，存在$(\Hm_{r_i},r_i,v) \lrto_V (\Hm_i', r_i',v_i')$ 且$(\Hm_i', r_i', v_i') \models \varphi$，其中$\{r_0, r_1, \dots\} = \{s\mid (r, s) \in R\}$，$\Hm_i' = (S_i', R_i', L_i', r_i')$（假定当$i \not = j$时，$S_i' \cap S_j'= \emptyset$） %, $v'(X) = \Hb_i(v(X))$ for every $X \in {\cal V}$, 
-	，$\Hb_i$是$(\Hm_{r_i},r_i,v)$ 和$(\Hm_i', r_i', v_i')$之间的Var-$V$-互模拟关系\\
+	，$\Hb_i$是$(\Hm_{r_i},r_i,v)$ 和$(\Hm_i', r_i', v_i')$ 之间的Var-$V$-互模拟关系\\
 	$\Rto$ $(\Hm^*, v^*) \lrto_V (\Hm,v)$ 且$(\Hm^*, v^*) \models \ALL\NEXT \varphi$，其中$\Hm^* = (S^*, R^*,L^*, r)$且
 	\begin{itemize}
 		\item $S^* = \{r\} \cup \bigcup_{i\geq 0} S_i'$,
@@ -1636,7 +1636,7 @@ $\Muforget$的另一个性质是关于时序算子$\ALL\NEXT$（$\EXIST \NEXT$�
 	$(\Lto)$ $(\Hm,v)\models \nu X. \Muforget(\varphi,V)$\\
 	$\Rto$ $r\in \bigcup \{S_1 \subseteq S \mid S_1 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_1]}^{\Hm}\}$\\
 	$\Rto$ 存在$S_1 \subseteq S$，使得$S_1 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_1]}^{\Hm}$ 且$r \in S_1$\\
-	$\Rto$ 存在$S_1\subseteq S_2 \subseteq S$且$(\Hm',v') \lrto_V (\Hm,v[X:= S_2])$（有Var-$V$-互模拟关系$\Hb$），使得 $(\Hm',v')\models \varphi$且$S_2 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_2]}^{\Hm}$\\
+	$\Rto$ 存在$S_1\subseteq S_2 \subseteq S$且$(\Hm',v') \lrto_V (\Hm,v[X:= S_2])$（有Var-$V$-互模拟关系$\Hb$），使得 $(\Hm',v')$ $\models \varphi$且$S_2 \subseteq \left\|\Muforget(\varphi,V)\right\|_{v[X:=S_2]}^{\Hm}$\\
 	$\Rto$ 存在$(\Hm',v') \lrto_V (\Hm,v[X:= S_2])$，使得$\Hb(S_2) \subseteq \left\|\varphi\right\|_{v'[X:=\Hb(S_2)]}^{\Hm'}$\\
 	$\Rto$ 存在$\Hb(S_2) \subseteq S'$，使得$\Hb(S_2) \subseteq \left\|\varphi\right\|_{v'[X:=\Hb(S_2)]}^{\Hm'}$且$r'\in \Hb(S_2)$ \hfill ($(r,r')\in \Hb$, $r \in S_2$) \\
 	$\Rto$ $r'\in \bigcup \{S_1' \subseteq S' \mid S_1' \subseteq \left\|\varphi\right\|_{v'[X:=S_1']}^{\Hm'}\}$\\
@@ -1690,14 +1690,14 @@ $\ALL\NEXT \phi$ $(\EXIST\NEXT \phi)$ 或 $\mu X. \varphi$ 中遗忘原子命题
 	$\Rto$ 存在$(\Hm, v) \lrto_V (\Hm', v')$ 使得$(\Hm',v') \models \varphi_0 \wedge \ALL\NEXT \varphi_1 \wedge \EXIST\NEXT \varphi_2 \wedge \dots \wedge \EXIST \NEXT \varphi_n$\\
 	$\Rto$ $(\Hm',v') \models \varphi_0$、$(\Hm', v') \models \ALL\NEXT \varphi_1$和$(\Hm',v') \models \EXIST\NEXT \varphi_i$，其中$2\leq i \leq n$\\
 	$\Rto$ $(\Hm',v') \models \varphi_0$、$(\Hm', v') \models \ALL\NEXT \varphi_1$和$(\Hm',v') \models \EXIST\NEXT (\varphi_i \wedge \varphi_1)$，其中$2\leq i \leq n$ \hfill ($(\Hm,v) \models \ALL\NEXT \varphi_1$)\\
-	$\Rto$ $(\Hm,v) \models \Muforget(\varphi_0,V)$、$(\Hm, v) \models \Muforget(\ALL\NEXT \varphi_1, V)$和$(\Hm,v) \models \Muforget(\EXIST\NEXT (\varphi_i \wedge \varphi_1), V)$，其中$2\leq i \leq n$ \quad ($(\Hm, v) \lrto_V (\Hm', v')$, $\IR(\Muforget(\varphi_0,V),V)$, $\IR(\Muforget(\ALL\NEXT \varphi_1, V), V)$, $\IR(\Muforget(\EXIST\NEXT (\varphi_i \wedge \varphi_1), V), V)$)\\
+	$\Rto$ $(\Hm,v) \models \Muforget(\varphi_0,V)$、$(\Hm, v) \models \Muforget(\ALL\NEXT \varphi_1, V)$和$(\Hm,v) \models \Muforget(\EXIST\NEXT (\varphi_i \wedge \varphi_1), V)$，其中$2\leq i \leq n$ \quad ($(\Hm, v) \lrto_V (\Hm', v')$, $\IR(\Muforget(\varphi_0,V),V)$, $\IR(\Muforget(\ALL\NEXT \varphi_1, V), V)$, $\IR(\Muforget(\EXIST\NEXT (\varphi_i \wedge \varphi_1), V),$ $ V)$)\\
 	$\Rto$ $(\Hm,v) \models \Muforget(\varphi_0, V) \wedge \Muforget(\ALL\NEXT \varphi_1, V) \wedge \bigwedge_{2\leq i\leq n}  \Muforget(\EXIST\NEXT(\varphi_i \wedge \varphi_1), V)$
 	
-	$(\Lto)$ $(\Hm,v) \models \Muforget(\varphi_0, V) \wedge \Muforget(\ALL\NEXT \varphi_1, V) \wedge \bigwedge_{2\leq i\leq n}  \Muforget(\EXIST\NEXT(\varphi_i \wedge \varphi_1), V)$，其中$\Hm=(S,r, R,L)$\\
+	$(\Lto)$ $(\Hm,v) \models \Muforget(\varphi_0, V) \wedge \Muforget(\ALL\NEXT \varphi_1, V) \wedge \bigwedge_{2\leq i\leq n}  \Muforget(\EXIST\NEXT(\varphi_i \wedge \varphi_1), V)$，其中$\Hm=(S,r, R,$ $L)$\\
 	$\Rto$ $(\Hm,v) \models \Muforget(\varphi_0, V) \wedge \ALL\NEXT\Muforget(\varphi_1, V) \wedge \bigwedge_{2\leq i\leq n} \EXIST\NEXT \Muforget(\varphi_i \wedge \varphi_1, V)$ \\
 	$\Rto$ $(\Hm,r,v) \models \Muforget(\varphi_0, V)$，对任意$(r, r')\in R$，$(\Hm, r', v) \models \Muforget(\varphi_1, V)$，且对任意$2\leq i \leq n$，存在$(r, r'')\in R$ 使得$(\Hm,r'', v) \models \Muforget(\varphi_i \wedge \varphi_1, V)$\\
 	$\Rto$ 存在$(\Hm',v) \models \varphi_0$ 且$(\Hm',v) \lrto_V (\Hm,v)$，其中$\Hm'=(S,r,R,L')$； 
-	对任意$(r, r_j)\in R$，存在$(\Hm_j',r_j',v_j')$ 使得$(\Hm_j',r_j',v_j') \lrto_V (\Hm_{r_j},r_j, v)$ 且$(\Hm_j',r_j',v_j') \models \varphi_1$；且对任意$(r, r_j)\in R$ 且$(\Hm_{r_j},r_j, v) \models \Muforget(\varphi_i \wedge \varphi_1, V)$ ($2\leq i \leq n$)，存在$(\Hm_j', r_j', v_j') \lrto_V (\Hm_{r_j},r_j,v)$ 使得$(\Hm_j', r_j', v_j')\models \varphi_i \wedge \varphi_1$  ($j\geq 0$，当 $x \not =y$时，假设$S_x \cap S_y = \emptyset$)， 其中$\{r_0, r_1, \dots\} = \{r'\mid (r,r')\in R\}$，$\Hm_j'=(S_j', R_j', L_j',r_j')$\\
+	对任意$(r, r_j)\in R$，存在$(\Hm_j',r_j',v_j')$ 使得$(\Hm_j',r_j',v_j') \lrto_V (\Hm_{r_j},r_j, v)$ 且$(\Hm_j',r_j',v_j') \models \varphi_1$；且对任意$(r, r_j)\in R$ 且$(\Hm_{r_j},r_j, v) \models \Muforget(\varphi_i \wedge \varphi_1, V)$ ($2\leq i \leq n$)，存在$(\Hm_j', r_j', v_j') \lrto_V (\Hm_{r_j},r_j,v)$ 使得$(\Hm_j', r_j', v_j')$ $\models \varphi_i \wedge \varphi_1$  ($j\geq 0$，当 $x \not =y$时，假设$S_x \cap S_y = \emptyset$)， 其中$\{r_0, r_1, \dots\} = \{r'\mid (r,r')\in R\}$，$\Hm_j'=(S_j', R_j', L_j',r_j')$\\
 	$\Rto$ 存在$(\Hm^*,v^*) \lrto_V (\Hm,v)$，使得 $(\Hm^*, v^*) \models \varphi_0 \wedge \ALL\NEXT \varphi_1 \wedge \bigwedge_{2\leq i\leq n}  \EXIST\NEXT(\varphi_i \wedge \varphi_1)$，其中$\Hm^*=(S^*, R^*, L^*,r)$且
 	\begin{itemize}
 		\item $S^* = \{r\} \cup \bigcup_{j\geq 0} S_j'$，
