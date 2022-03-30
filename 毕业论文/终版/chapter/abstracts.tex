@@ -23,7 +23,7 @@
  1. 研究了$\CTL$下遗忘的概念及其相关性质。首先，从模型在某个原子命题集合上互模拟的角度给出了遗忘的定义；其次，探讨并证明了遗忘算子的代数属性，包括模块性、交换性和同质性；第三，基于Zhang等人提出的四条公设，给出$\CTL$遗忘的四条公设，表示定理表明这四条公设对遗忘是充分且必要的，即：遗忘的结果满足四条公设，且满足这四条公设的公式为遗忘的结果。为了计算$\CTL$遗忘，本文提出了两种计算方法：
 
 \begin{itemize}
- \item 基于归结的方法计算$\CTL$下的遗忘。该方法使用Zhang等人提出的归结系统$R_{\CTL}^{\succ,S}$（ clausal resolution calculus for CTL）。在这种方法中，首先将$\CTL$公式转换为$\CTLsnf$子句（separated normal form with global clauses for \CTL）的集合，最后再将$\CTLsnf$子句转换为$\CTL$公式。在这一过程中，需要计算遗忘的公式总是和各个过程的输出保持互模拟等价关系。
+ \item 基于归结的方法计算$\CTL$下的遗忘。该方法使用Zhang等人提出的归结系统$R_{\CTL}^{\succ,S}$（ clausal resolution calculus for CTL）。在此方法中，首先将$\CTL$公式转换为 $\CTLsnf$ 子句（separated normal form with global clauses for \CTL）的集合，最后再将 $\CTLsnf$ 子句转换为$\CTL$公式。在这一过程中，需要计算遗忘的公式总是和各个过程的输出保持互模拟等价关系。
  \item 基于模型的$\CTL$遗忘计算方法。本文证明了$\CTL$遗忘结果不总是存在的，即：存在一些公式遗忘原子命题集的结果不可用$\CTL$公式表示。因此，探讨了遗忘总是存在的约束$\CTL$。在这种方法中，规定了公式的长度为整数$n$、公式所依赖的模型个数为有限个及构成公式的原子命题是有限的。此时，公式的模型可以用其特征公式——$\CTL$公式来表示。因此，遗忘结果可以由其所有模型在给定原子命题集合上的特征公式的析取来表示。
 \end{itemize}
 %1) 基于归结的方法计算$\CTL$下的遗忘。该方法使用Zhang等人提出的归结系统$R_{\CTL}^{\succ,S}$（ clausal resolution calculus for CTL）。在这种方法中，首先将$\CTL$公式转换为$\CTLsnf$子句（separated normal form with global clauses for \CTL）的集合，最后再将$\CTLsnf$子句转换为$\CTL$公式。在这一过程中，需要计算遗忘的公式总是和各个过程的输出保持互模拟等价关系。
@@ -66,12 +66,12 @@
 \begin{englishabstract}
 A reactive system is a nonterminal system generated and developed on the basis of responsive, resilient, elastic, and message-driven requirements of the application program.  As the reaction system becomes more and more complex, the correctness of a system and the consistency between the system and its specification become more and more difficult to be guaranteed. 	
 Model checking is an effective method to ensure a system's correctness, and a reactive system is represented as a Kripke structure in such an environment.  However, in model checking, if a system does not meet the given specification (that is, it does not conform to the specification), it has been an important problem for a long time to find the weakest information needed to make the system meet the specification. 
-The Strongest necessary Condition (SNC) and the Strongest sufficient Condition (WSC)  are two relative concepts that correspond to the strongest post-condition (SP) and the weakest precondition (WP) in verification, respectively. However, existing methods cannot calculate the SNC and WSC of nonterminal systems, such as reactive systems. 
-In addition, as systems update and evolve, existing specifications inevitably conflict with new knowledge. In this sense, how to "remove" the previously integrated atoms without affecting other information is also an urgent problem to be solved. 
+The strongest necessary condition (SNC) and the weakest sufficient condition (WSC)  are two crucial concepts that correspond to the strongest post-condition (SP) and the weakest precondition (WP) in verification, respectively. However, existing methods cannot calculate the SNC and WSC of nonterminal systems, such as reactive systems. 
+In addition, as systems update and evolve, existing specifications inevitably conflict with new knowledge. In this sense, how to ``remove" the previously integrated atoms without affecting other information is also an urgent problem to be solved. 
 	
 	
-Temporal logic is one of the important logic describing specification.  Computation Tree Logic ($\CTL$) is an important branch-time temporal logic, which is widely used in system specification description because of its characteristic that model checking can be done in polynomial time.  However, $\mu$-calculus is a logic language with more vital expression ability but more complex model checking than $\CTL$. 
-Nevertheless, the semantics of $\CTL$and $\mu$- calculus are Kripke semantics, which is directly related to the reactive system being expressed as a Kripke structure. 
+Temporal logic is one of the important logic describing the specification of systems.   Computation tree logic ($\CTL$) is an important branch-time temporal logic, which is widely used in system specification description because of its characteristic that model checking can be done in polynomial time.  However, $\mu$-calculus is a logic language with more vital expression ability but more complex model checking than $\CTL$. 
+Nevertheless, $\CTL$and $\mu$-calculus are interpreted under Kripke semantics, which is directly related to the reactive system being expressed as a Kripke structure. 
 Therefore, this paper takes these two logical languages as the research background to explore the solutions to the above problems of reactive systems. 
 
 
@@ -79,10 +79,11 @@ Forgetting was first formally defined in propositional logic (PL) and FOL by Lin
 
 
 1. Given the definition and properties of forgetting in $\CTL$. First, this paper defines forgetting from the point of bisimulation over the given signature. Second, we explore the algebraic properties, including decomposition, slice, and homogeneity, of forgetting. Third, the expression theorem shows that there is an ``if and only if” relation between forgetting and the forgetting postulates proposed by Zhang et al., i.e., the result of forgetting satisfies the forgetting postulates, and the formula which satisfies the forgetting postulates is the result of forgetting.
-To calculate $\CTL$ forgetting, this paper proposes two approaches.
+To calculate $\CTL$ forgetting, this paper proposes two approaches:
 
 \begin{itemize}
-	\item A resolution-based method. This approach bases the resolution system proposed by Zhang et al., and the $\CTL$ formula is transformed into a set of $\CTLsnf$ clauses (separated normal form with global clauses for $\CTL$) at first. At the end of the approach, the $\CTLsnf$ clauses are transformed into a $\CTL$ formula to obtain the forgetting result. It is noteworthy that the output of each process is bisimilar equivalent of the input $\CTL$ formula.
+	\item A resolution-based method. This approach is based on the resolution system proposed by Zhang et al., and the $\CTL$ formula is transformed into a set of $\CTLsnf$ clauses (separated normal form with global clauses for $\CTL$) at first. At the end of the approach, the $\CTLsnf$ clauses are transformed into a $\CTL$ formula to obtain the forgetting result. Throughout the process, the formula to be calculated always maintains bisimilar equivalence with the output of each process. 
+	%It is noteworthy that the output of each process is bisimilar equivalent of the input $\CTL$ formula.
 	\item A model-based method. This paper shows that the result of forgetting in $\CTL$ does not always exist, i.e., forgetting some atoms from some formula can not be expressed by a $\CTL$ formula. However, it proves that the forgetting always exists in bounded $\CTL$, i.e., the size (the number of signatures in a formula) of formulas are limited to an integer, the set of atoms that construct the formulas, and the state space are finite. Therefore, the model of a formula can be expressed by its characterizing formula, and then the forgetting result is the disjunction of the characterizing formulas of its models. 
 \end{itemize}
 
@@ -93,7 +94,7 @@ Finally, the properties and complexity results related to forgetting are given, 
 
 3. Given the relation between forgetting and WSC (SNC or knowledge update). WSC is important to the verification and modification of the system. However， the existing methods can only compute the WSC of a terminable system, and the WSC can not be obtained in non-terminable systems (e.g., the reactive system). This paper shows how to compute the WSC of the reactive system and define the knowledge update using forgetting to satisfy the postulates proposed by~\citeauthor{katsuno91mendelzon}.
 
-4.  Implemented the algorithm proposed in 1, and some experiments are shown. Two experiments, computing forgetting and WSC, were performed for standard and randomly generated datasets. Experiments show that the longer the formula is, or the more atoms are forgotten, the lower the efficiency is. Moreover, SNC can be calculated in most cases of randomly generated formulas.
+4.  Implemented the algorithm proposed in 1, and some experiments are shown. Two experiments,  i.e., computing forgetting and WSC, were performed for standard and randomly generated datasets. Experiments show that the longer the formula is, or the more atoms are forgotten, the lower the efficiency is. Moreover, SNC can be calculated in most cases of randomly generated formulas.
 
 Its significance mainly provides a framework for the study of forgetting theory under temporal logic and provides an auxiliary tool for the model update.
 
