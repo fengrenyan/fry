@@ -23,15 +23,15 @@
 \end{tabular}
 \end{table}
 
-反应式系统是一种特殊的应用系统，它不终止且与环境有着持续不断的交互。
+反应式系统（reactive system）是一种特殊的应用系统，它不终止且与环境有着持续不断的交互。
 其应用十分广泛：上至航空电子等安全攸关的领域，下至生活息息相关的汽车电子。
 必须在指定时间期限内完成对外部事件的检测和目标事件的响应，是安全攸关反应式系统的核心要求。
 因而，近年来包括形式化方法在内的多种方法用于确保反应式系的正确性。
 
 
-形式化验证有两种主要的验证方法：自动定理证明（Automated theorem proving）和模型检测（Model checking)。
+形式化验证有两种主要的验证方法：自动定理证明（automated theorem proving）和模型检测（model checking)。
 在自动定理证明中，系统模型和规范（specification）被同一种形式化语言分别描述为$\varphi_{imp}$和$\varphi_{spec}$，然后证明其推理“$\varphi_{imp}\rto \varphi_{spec}$”或“$\varphi_{imp}\lrto\varphi_{spec}$”的正确性，即：证明模型系统$\varphi_{imp}$是否满足给定的规范$\varphi_{spec}$。
-常用的自动定理证明方式有归结（Resolution）\cite{DBLP:journals/jacm/Robinson65}和常用于模态逻辑的基于表推理（tableau）\cite{hughes1996new}的方法。
+常用的自动定理证明方式有归结（resolution）\cite{DBLP:journals/jacm/Robinson65}和常用于模态逻辑的基于表推理（tableau）\cite{hughes1996new}的方法。
 计算机程序和系统验证（verification of computer programs and systems）是自动定理证明的新领域，它使用基于规则的方法来验证程序的正确性。
 然而，当程序为循环语句时，验证所需要的不变式（invariant）获取是个困难的问题。
 %然而，在自动定理证明中寻找不变式（invariant）是一个相当困难的问题。
@@ -43,7 +43,7 @@
 近年来，模型检测问题在知识表示与推理（KR）领域的推进下取得了丰富的科研成果，例如：基于SAT的有界（bounded）模型检测\cite{DBLP:journals/ac/BiereCCSZ03}和基于OBDD的符号模型检测\cite{burch1992symbolic}已经使得模型检测问题在时间和空间效率上取得了很大的进步，在一定程度上缓解了其固有的状态空间爆炸问题。与此同时，大量优质的模型验证器，如：NuSMV\footnote{http://nusmv.fbk.eu/}、SPIN\footnote{http://spinroot.com/spin/whatispin.html}、Uppaal\footnote{http://www.uppaal.org/} 等，也相继发展起来，并且大部分的验证器都可以用来验证多种时态逻辑描述的公式。  
 
        
-时序逻辑（也叫时态逻辑）作为一种描述系统规范的形式化语言，其研究状态随时间变化的系统的逻辑特性。由于软件和硬件系统运行的本质是状态变化的过程，所以时态逻辑在软件和硬件系统验证中应用得相当广泛。计算树逻辑（Computation Tree Logic, \CTL）是分支时态逻辑的一种，其模型检测是多项式时间可完成的。然而，$\CTL$表达系统性质的能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径，且这条路径上处于偶数位置的状态满足特定的性质”这一规范是不能用$\CTL$来表示的\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本文主要研究$\CTL$和$\mu$-演算。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
+时序逻辑（也叫时态逻辑）作为一种描述系统规范的形式化语言，其研究状态随时间变化的系统的逻辑特性。由于软件和硬件系统运行的本质是状态变化的过程，所以时态逻辑在软件和硬件系统验证中应用得相当广泛。计算树逻辑（computation tree logic, \CTL）是分支时态逻辑的一种，其模型检测是多项式时间可完成的。然而，$\CTL$表达系统性质的能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径，且这条路径上处于偶数位置的状态满足特定的性质”这一规范是不能用$\CTL$来表示的\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本文主要研究$\CTL$和$\mu$-演算。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
 在模型检测中，反应式系统通常用Kripe结构表示~\cite{DBLP:journals/fcsc/ZhuWXX10,DBLP:series/txtcs/Schneider04}。
 当给定了反应式系统的Kripke结构模型$\Hm$和规范$\varphi$，
@@ -58,8 +58,8 @@
 \right.
 \]
 %若$\Hm$满足$\varphi$，一般的验证器都会返回“yes”以表示满足；若$\Hm$不满足$\varphi$，验证器会给出一个使得$\varphi$不被$\Hm$满足的负例。
-此时，\emph{使用什么信息对$\Hm$进行修正，使得其满足给定的规范是一个重要的问题}。
-这就是寻找{\em 最弱前件}（weakest precondition，WP）问题\cite{DBLP:journals/cacm/Dijkstra75}，在人工智能（artificial intelligence，AI）中也称为{\em 最弱充分条件}（weakest sufficient condition，SNC），与之对偶的另一个概念是最强必要条件（strongest necessary condition，SNC）\cite{DBLP:journals/ai/Lin01,DBLP:journals/jair/Lin03}。
+当$\Hm$不满足$\varphi$时，\emph{使用什么信息对$\Hm$进行修正，使得其满足给定的规范$\varphi$是一个重要的问题}。
+这就是寻找{\em 最弱前件}（weakest precondition，WP）问题\cite{DBLP:journals/cacm/Dijkstra75}，在人工智能（artificial intelligence，AI）中也称为{\em 最弱充分条件}（weakest  sufficient condition，WSC），与之对偶的另一个概念是最强必要条件（strongest necessary condition，SNC）\cite{DBLP:journals/ai/Lin01,DBLP:journals/jair/Lin03}。
 %{\em 然而现有方法不能计算使得像反应式系统这类不终止系统满足给定规范的WSC。因而}
 
 从知识抽取（或“消除”）的角度来看。出于安全考虑，查看信息时需要将有的信息隐藏而只抽取部分信息。
@@ -99,7 +99,7 @@
 \subsection{研究意义}
 最强后件（the strongest post-condition，SP）和最弱前件（WP）（分别对应于上文提到的SNC和WSC）是形式化验证中两个重要的概念，其不仅被用于汇编语言程序推理~\cite{legato2002weakest}和制定验证条件\cite{DBLP:journals/ipl/Leino05}，还被应用于形式化验证过程中的负例生成\cite{dailler2018instrumenting}和系统精化（refinement）\cite{woodcock1990refinement}。
 当模型$\Hm$不满足规范$\varphi$（$\Hm\not \models \varphi$）时，找到某个性质$\psi$，使得若$\Hm$按照此性质进行修改后得到的新模型$\Hm'$能满足$\varphi$是必要的，即$\psi$是使得$\Hm\models \varphi$成立的充分条件（$\Hm \models \psi\rto \varphi$）。
-然而，现有方法不能直接应用于如下情形：计算当$\Hm$为不终止系统（如：反应式系统（reactive system））时使得“$\Hm\models \varphi$”为真的最强必要条件和最弱充分条件
+然而，现有方法不能直接应用于如下情形：计算当$\Hm$为不终止系统（如：反应式系统）时使得“$\Hm\models \varphi$”为真的最强必要条件和最弱充分条件
 （其详细原因将在下文指出）。此时，\emph{探索如何计算“在$\Hm$下，使得$\varphi$满足的定义在某个符号集合上的SNC和WSC”将更进一步完善模型检测问题，
 同时也为基于WSC的负例生成和精化提供了理论依据和新的计算方法。}
 
@@ -158,7 +158,7 @@
 作为FOL的一个子类，描述逻辑公式的遗忘也不总是存在的~\cite{DBLP:journals/ai/KonevL0W13}，甚至对最基本的描述逻辑{\cal ALC}而言，遗忘的存在性问题都是不可判定的。
 尽管如此，描述逻辑作为一种在语义网领域很重要的语言，其子类中的遗忘通常被用来抽取视图（review）~\cite{Wang:AMAI:2010,DBLP:conf/ijcai/LutzW11,Konev:JAIR:2012,DBLP:conf/ijcai/ZhaoS17,DBLP:conf/aaai/ZhaoSWZF20}。这些子类包括：ALCOI（the basic ALC extended with nominals and inverse roles）和ALCOIH（ALCOI extended with role hierarchies, the universal role and role conjunction）。%textcolor{red}{（包括{\cal ALCOHI}和{\cal ALCOIH}）}
 
-现有计算一阶逻辑和描述逻辑遗忘的方法有基于归结（resolution）和基于Ackerm- ann引理的方法~\cite{DBLP:books/daglib/0023036}。
+现有计算一阶逻辑和描述逻辑遗忘的方法有基于归结和基于Ackerm- ann引理的方法~\cite{DBLP:books/daglib/0023036}。
 其中基于归结的方法是一种基于子句归结的方法，其基础是归结规则。通常在这种方法中首先把公式转换为其子句形式，然后使用归结规则，最后移除含有要遗忘的谓词（原子命题）的子句，得到的结果可能就为遗忘的结果（在后文中会详细介绍与本文相关的归结规则和转换规则）。
 基于Ackermman引理的方法主要是直接或间接（扩展）使用下面的Ackermann引理得到的。
 \begin{lemma}[引理 6.1~\cite{DBLP:books/daglib/0023036}]

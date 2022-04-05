@@ -1,0 +1,15 @@
+\subsection{Motivation and Introduction}
+
+\begin{frame}{Motivation and introduction}
+
+\underline{Propositional Dynamic Logic PDL} is a formal system for reasoning about programs. The most common operators are: non-deterministic choice $(\cup)$, sequential composition $(;)$, iteration $(\ast)$ and test $(?)$.
+
+\begin{itemize}
+    \item This logic's semantics is given by Labeled Transition Systems, where $R_\pi$ stand for a binary relation for each Program $\pi$.
+    
+    \item PDL can be used to prove that two programs $\pi_1$ and $\pi_2$ are logically equivalent $\models \langle \pi_1\rangle p \leftrightarrow \langle \pi_2\rangle p$ (where $\langle \pi_i \rangle p$ means that there is an execution of program $\pi_i$, such that after it, p holds). \cite{DBLP:journals/tcs/Benevides17}
+    
+    \item Try to show that there is the equivalence between bisimilar processes and logically equivalent programs in CCS.
+\end{itemize}
+
+\end{frame}

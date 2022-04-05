@@ -1,0 +1,1214 @@
+% PPT名称
+\title{Answer Set Programming: Theory and Practice}
+
+% 作者名称
+\author{Yisong Wang}
+% %\vfill
+
+% 研究机构
+\institute{Guizhou University, China\\
+Email:ys\_wang168@sina.com
+}
+
+% PPT时间
+\date{\today}%August 1st, 2012 @ Kunming, Yuannan}
+%\date[ICLP'10]{In the 26th International Conference on Logic Programming}
+
+
+% PPT 首页/标题页
+\frame{\titlepage}
+%\section*{Outline}
+% PPT大纲
+\frame{\tableofcontents}
+%Title: Answer Set Programming: Theory and Practice
+%Abstract:
+%Answer set programming (ASP) is a declarative problem solving approach, initially tailored to
+%modeling problems in the area of knowledge representation and reasoning (KRR). We will briefly
+%introduce the basic theories of ASP and problem solving practice using ASP.
+
+\section{Introduction}
+\begin{frame}{Commonsense Knowledge/Reasoning: A challenge in AI}
+  \begin{itemize}
+    \item \underline{Common sense} is a basic ability to \textbf{perceive, understand}, and \textbf{judge} things that is shared by ("common to") nearly all people and can reasonably be expected of nearly all people without need for debate.
+
+    \item \underline{Commonsense knowledge} is the collection of facts and information that an ordinary person is expected to know.
+
+    \item \underline{Commonsense Reasoning} is concerned with simulating the human ability to make presumptions about the type and essence of ordinary situations they encounter every day.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+ Progress in Commonsense:
+  \begin{itemize}
+   \item Commonsense has been identified as one of the most difficult and important problems in AI~\cite{Doyle:1984:AIM}.
+
+    \item AI has seen great advances of many kinds
+recently, but there is one critical area
+where progress has been extremely slow:
+ordinary commonsense~\cite{DBLP:journals/cacm/DavisM15}.
+%ÈÕÇ° AI ÔÚÖî¶à·½Ãæ¶¼ÒÑÈ¡µÃ³¤×ã½ø²½£¬ µ«ÔÚÒ»¸ö¹Ø¼üÁìÓòµÄ½øÕ¹¼«Îª»ºÂý£º
+% ÆÕÍ¨³£Ê¶(Ordinary Commonsense)
+  \end{itemize}
+
+  {Three well-known Commonsense Knowledge Formalisms:}
+  \begin{itemize}
+    \item Circumscription~\cite{DBLP:journals/ai/McCarthy80}.
+
+    \item Default Logic~\cite{Reiter1980}.
+
+    \item Nonmonotonic Logic I / Autoepistemic Logic~\cite{DBLP:journals/ai/McDermottD80,Moore:aij85}.
+
+    \item Answer Set Programming~\cite{GelfondLifschitz88}.
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{An Example: Graph Coloring}
+
+  %\url{http://en.wikipedia.org/wiki/Graph_coloring#Definition_and_terminology}
+  \begin{definition}
+    Given a (directed) graph $G=(V,E)$ and a set $C$ of colors. Can we
+    \underline{assign each node from $V$ a color from $C$} such that
+    \underline{no two adjoint vertices have the same color}?
+  \end{definition}
+
+ \begin{tabular}{ll}
+   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+   \begin{minipage}[h]{5.5cm}
+  {\footnotesize It is expressed in first-order logic as:
+   \begin{itemize}
+     \item[(1)] $\forall X.  v(X)\supset \exists !Y .c(Y)\land clr(X,Y)$,
+     \item[(2)] $\forall X,Y,C. e(X,Y)\supset\neg (clr(X,C)\land clr(Y,C))$ where
+   %\end{itemize}
+   %where
+   %\begin{itemize}
+     \item[] $v(X)$: $X$ is a node; \\
+      $c(Y)$: $Y$ is a color;\\
+      $e(X,Y)$: there is an edge between nodes $X$ and $Y$;\\
+      $clr(X,C)$: node $X$ is colored using color $C$.
+   \end{itemize}}
+  \end{minipage}
+  &
+  \begin{minipage}[h]{5cm}
+  {\footnotesize
+   \begin{itemize}
+     \item The problem is NP-complete.
+     \item \href{http://www.adaptivebox.net/CILib/code/gcpcodes_link.html}{\uwave{Various implementations}}:
+     \begin{itemize}
+     \item \href{http://www.cs.sunysb.edu/~algorith/files/vertex-coloring.shtml}{\uwave{The Stony Brook Algorithm Repository,}}
+     \item \href{http://webdocs.cs.ualberta.ca/~joe/Coloring/index.html\#Graph.Colorers}{\uwave{Joseph Culberson}}.
+     \end{itemize}
+   \end{itemize}}
+  \end{minipage}
+ \end{tabular}
+\end{frame}
+%
+%\begin{frame}
+%  \frametitle{A prolog solution}
+%\footnotesize{\begin{tabular}{l}
+%    \% file name: coloring1.pl
+%    \% coloring(+Graph,+Colors,-Coloring)\\
+%coloring(g(Vs,Es),Colors,Coloring):-\\
+%   \hspace{1cm} gener(Vs,Colors,Coloring),\\
+%   \hspace{1cm} test(Es,Coloring).\\
+%\% gener(+Vertices,+Colors,-Coloring)\\
+%gener([],\_,[]).\\
+%gener([V$|$Vs],Colors,[V-C$|$T]):-\\
+%   \hspace{1cm} member(C,Colors), \% non-deterministic generator of colors\\
+%   \hspace{1cm} gener(Vs,Colors,T).\\
+%\% test(+Edges,+Coloring)\\
+%test([],\_).\\
+%test([e(V1,V2)$|$Es],Coloring):-\\
+%   \hspace{1cm} member(V1-C1,Coloring), \% find color of vertex V1\\
+%   \hspace{1cm} member(V2-C2,Coloring), \% find color of vertex V2\\
+%   \hspace{1cm} C1$\setminus$=C2,                 \% test the difference of colors\\
+%   \hspace{1cm} test(Es,Coloring).\\
+%\end{tabular}}
+%\end{frame}
+%
+%\begin{frame}
+%  \begin{tabular}{rl}
+%    \begin{minipage}[h]{4.5cm}
+%     \begin{figure}
+%      % Requires \usepackage{graphicx}
+%      \includegraphics[width=4cm]{color2.pdf}\\
+%      \caption{{\footnotesize Petersen graph}}
+%     \end{figure}
+%    \end{minipage}
+%    &
+%    \begin{minipage}[h]{7cm}
+%      \begin{figure}
+%        \includegraphics[width=6cm]{color-pl.pdf}\\
+%      \end{figure}
+%    \end{minipage}
+%  \end{tabular}
+%\end{frame}
+%In SWI-prolog,
+%coloring(g([1,2,3,4,5,6,7,8,9,10],[e(1,2),e(1,6),e(1,5),e(2,7),e(2,3),e(3,8),e(3,4),e(4,9),e(4,5),e(5,10),e(6,8),e(6,9),e(7,9),e(7,10),e(8,10)]),[g,r,b],Coloring).
+
+
+% \begin{frame}
+%   %\frametitle{Graph coloring: A declarative solution}
+%   \small{  \begin{tabular}{l}
+%     \%  A declarative solution\\
+%     \% A logic program encoding in ASP: color.lp\\
+%      c(g;r;b).\\
+%      1 \{clr(X,I) : c(I)\} 1  :- v(X).\% {\color{blue}each node has exact one color}\\
+%      \hspace{3cm}:- clr(X,I), clr(Y,I), e(X,Y), c(I). \\
+%     \hspace{3cm} \% {\color{blue}adjacent nodes can not have the same color} \\
+%     hide.\\
+%     show clr(X,Y).
+%     \end{tabular}}
+%  \begin{tabular}{lr}
+%   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+%   \begin{minipage}[h]{5cm}
+%   \small{
+%   \% The input graph: p10\\
+%     e(X,Y)  :- e(Y,X), v(X;Y).\\
+%   v(1..10). \\
+%     e(1,2).
+%     e(1,5).
+%     e(1,6).
+%     e(2,7).
+%     e(2,3).
+%     e(3,8).
+%     e(3,4).
+%     e(4,9).
+%     e(4,5).
+%     e(5,10).
+%     e(6,8).
+%     e(6,9).
+%     e(7,9).
+%     e(7,10).
+%     e(8,10).}
+%   \end{minipage}
+%   &
+%   \begin{minipage}[thb]{4.5cm}
+%     \begin{figure}
+%       % Requires \usepackage{graphicx}
+%       \includegraphics[width=4.5cm]{color2.pdf}
+%     \end{figure}
+%   \end{minipage}
+%  \end{tabular}
+% \end{frame}
+
+% \begin{frame}
+%   \frametitle{Graph coloring: A running result}
+%   \begin{tabular}{lr}
+%   \begin{minipage}[h]{6cm}
+%     \mbox{lparse color.lp p10  $|$ clasp.}
+%       \begin{figure}
+%       % Requires \usepackage{graphicx}
+%       \includegraphics[width=6cm]{color3.pdf}
+%       \end{figure}
+%   \end{minipage}
+%   &
+%   \begin{minipage}[h]{5cm}
+%       \begin{figure}
+%       % Requires \usepackage{graphicx}
+%       \includegraphics<2>[width=5cm]{color4.pdf}
+%       \end{figure}
+%   \end{minipage}
+%   \end{tabular}
+% \end{frame}
+
+
+
+% \begin{frame}
+%   \frametitle{Hamiltonian cycle: A running result}
+%   \begin{tabular}{lr}
+%   \begin{minipage}[h]{6cm}
+%     \mbox{lparse hc1.lp p10y  $|$ clasp.}
+%       \begin{figure}
+%       % Requires \usepackage{graphicx}
+%       \includegraphics[width=6cm]{hc2.jpg}
+%       \end{figure}
+%   \end{minipage}
+%   &
+%   \begin{minipage}[h]{5cm}
+%       \begin{figure}
+%       % Requires \usepackage{graphicx}
+%       \includegraphics<2>[width=5cm]{hc1.jpg}
+%       \end{figure}
+%   \end{minipage}
+%   \end{tabular}
+% \end{frame}
+
+
+%\begin{frame}{Sodoku}
+%  {\footnotesize
+%  Sudoku Puzzles \--- http://www.tellmehowto.net/sudoku/veryhardsudoku.html
+%
+%  Sudoku Wikipedia \--- https://en.wikipedia.org/wiki/Sudoku
+%
+%  http://www.hakank.org/answer\_set\_programming/sudoku.lp
+%  }
+%  \begin{tabular}{lr}
+%   \begin{minipage}[h]{5cm}
+%%    \mbox{lparse sudoku.lp $|$ clasp.}
+%       \begin{figure}
+%      % Requires \usepackage{graphicx}
+%       \includegraphics[width=5cm]{sudoku-1.jpg}
+%       \end{figure}
+%   \end{minipage}
+%   &
+%   \begin{minipage}[h]{5cm}
+%       \begin{figure}
+%      % Requires \usepackage{graphicx}
+%       \includegraphics<2>[width=5cm]{sudoku-2.jpg}
+%       \end{figure}
+%   \end{minipage}
+%  \end{tabular}
+%\end{frame}
+%
+%\begin{frame}
+%  \begin{quote}
+%  {\footnotesize
+%  \begin{verbatim}
+%    val(1..9).
+%    border(1;4;7).
+%
+%% alldifferent boxes
+%1 \{ x(X,Y,N) : val(X;Y):
+%    X1<=X:X<=X1+2:Y1<=Y:Y<=Y1+2 \} 1 :- val(N), border(X1;Y1).
+%
+%% alldifferent rows, columns, values
+%1 { x(X,Y,N) : val(N) } 1 :- val(X;Y).
+%1 { x(X,Y,N) : val(X) } 1 :- val(N;Y).
+%1 { x(X,Y,N) : val(Y) } 1 :- val(N;X).
+%
+%% alternative:
+%% :- 2 { x(X,Y,N) : val(N) }, val(X;Y).
+%% :- 2 { x(X,Y,N) : val(X) }, val(N;Y).
+%% :- 2 { x(X,Y,N) : val(Y) }, val(N;X).
+%  \end{verbatim}
+%  }
+%  \end{quote}
+%
+%\end{frame}
+
+\begin{frame}
+Answer set programming (ASP) is a kind of logic programming, which is
+  \begin{itemize}
+    \item founded on the stable model semantics \cite{GelfondLifschitz88};
+    \item a paradigm for modeling and solving search problems \cite{Baral:aspbook};
+    \item accepted as a knowledge representation tool \cite{Brewka:CACM:2011};
+    \item accompanied with effective systems: smodels, clasp, DLV;
+    \item successfully applied in artificial intelligence and beyond:
+    \pause
+    \begin{itemize}
+      \item product configuration, planning \cite{Lifschitz2002},
+      \item reasoning about action, diagnosis \cite{Nogueiraetal2001};
+      \item bio-informatics \cite{Gebser:TPLP:2011}, linguistics;
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+%
+%\begin{frame}
+%  The ASP research communities:
+%  \begin{itemize}
+%    \item America \& Canada: University of Texas, Kentucky, New Mexico State, Alberta, Simon Fraser, $\ldots$
+%    \item Europe: Helsinki U. of Technology, U. of Potsdam, Vienna U. of Technology, $\ldots$
+%    \item Australia: UWS, Griffith, UNSW, $\ldots$
+%    \item China: HKUST, IOS CAS, USTC, SYSU, GZU, $\ldots$
+%  \end{itemize}
+%  The ASP distinguished researchers:
+%  \begin{itemize}
+%    \item Valadimir Lifschitz, Mirek Truszczynski, Tran Cao Son, James Delgrande, Jia-Huai You, $\ldots$
+%    \item Thomas Eiter, Illka Nielema, Torsten Schaub, $\ldots$
+%    \item Norman Foo, Yan Zhang, Kewen Wang, $\ldots$
+%    \item Fangzhen Lin, Yi-Dong Shen, Mingyi Zhang, $\ldots$
+%  \end{itemize}
+%\end{frame}
+
+\section{Theories of ASP}
+\subsection{Syntax}
+\begin{frame}[t]
+We assume a underlying propositional language $\cal L$.
+
+A {\em (normal) rule} $r$ is an expression of the form
+\begin{equation}\label{rule}
+  A\lto A_1,\ldots, A_m,\Not A_{m+1},\ldots, \Not A_n
+\end{equation}
+where $A,A_i(1\leq i\leq n)$ are atoms. The rule (\ref{rule}) is often written as
+\begin{equation}\label{rule:set}
+  \Head(r)\lto \Pos(r),\Not\Neg(r),
+\end{equation}
+where $\Head(r)=A, \Pos(r)=\{A_1,\ldots,A_m\}$, $\Neg(r) = \{A_{m+1},\ldots, A_n\}$.
+
+The rule $r$ is {\em Horn} if $m=n$.
+
+\begin{itemize}
+  \item A {\em normal logic program} is a finite set of rules.
+
+  \item A {\em Horn logic program} is a  finite set of Horn rules.
+
+  \item The {\em Herbrand base} of a program $P$ is the set of atoms occurring in $P$, denoted by $\HB_P$.
+\end{itemize}
+\end{frame}
+
+\subsection{Answer set semantics}
+\begin{frame}
+An {\em interpretation} is a set of atoms.
+
+Let $M$ be an interpretation, $A$ an atom, $r$ a rule of the form (\ref{rule:set}) and $P$ a program.
+\begin{itemize}
+  \item $M$ {\em satisfies} $A$ if $A\in M$;
+  \item $M$ {\em satisfies} $\Not A$ if $M$ does not satisfies $A$;
+  \item $A$ is extended to a set of literals of the form $A,\Not A$;
+  \item $M$ {\em satisfies} $r$ if $M$ satisfies $\Pos\cup\Not\Neg$ implies $M$ satisfies $A$;
+  \item $M$ {\em satisfies} $P$ if $M$ satisfies every rule of $P$;
+\end{itemize}
+we denote
+\begin{itemize}
+  \item satisfies: $\models$, and
+  \item not satisfies: $\not\models$.
+\end{itemize}
+
+\end{frame}
+%
+%\begin{frame}
+%\begin{definition}
+%  Let $P$ be a Horn program and $M$ a set of atoms. The {\em immediate consequence operator} $T_P:2^{\HB_P}\rto 2^{\HB_P}$ is defined as
+%  \[T_P(M)=\{A|(A\lto \Pos)\in P\ s.t\ M\models\Pos\}.\]
+%\end{definition}
+%
+%Some properties of $T_P$:
+%\begin{enumerate}
+%  \item $T_P$ is {\em monotonic}, i.e. $M_1\subseteq M_2$ implies $T_P(M_1)\subseteq T_P(M_2)$.
+%  \item The {\em least fix-point} of $T_P$ exists, denoted by $\lfp(T_P)$, and
+%    \begin{itemize}
+%      \item  $T_P^0=\emptyset$,
+%      \item $T_P^{i+1}=T_P(T_P^i)$ for $i\ge 0$.
+%      \item $\lfp(T_P)=T_P^\infty$.
+%    \end{itemize}
+%  \item $\lfp(T_P)$ is the least model of $P$.
+%\end{enumerate}
+%\end{frame}
+%
+%
+%\begin{frame}
+%Let $P$ be a logic program and $M$ a set of atoms.
+%\begin{definition}[\cite{GelfondLifschitz88}]
+% The GL-{\em reduct} of $P$ wrt $M$, written $P^M$, is
+%obtained from $P$ by
+%\begin{itemize}
+%  \item deleting each rule of the form (\ref{rule:set}) if $\Neg\cap M\neq\emptyset$,
+%  \item deleting all remaining $\Not B$.
+%\end{itemize}
+%A set $M$ is an {\em answer set} ({\em stable model}) of $P$ if $M=\lfp(T_{P^M})$.
+%\end{definition}
+%
+% Let's consider the logic program $P=\{ a\lto \Not b;\quad       b\lto \Not a\}$.
+%
+% \begin{itemize}
+%   \item $M=\{a\}$ is an answer set of $P$.% {\color{red}\textbf{why}?}
+%
+%%    \item Let $M_2=\emptyset$. We have that $P^{M_2}=\{a\lto; \quad b\lto\}$ whose least
+%%    model if $\{a,b\}$ that is different from $M_2$. So that $M_2$ is not an answer set
+%%    of $P$.
+%   \pause
+%   \item {\color{red}\textbf{Question}}: is $\emptyset$ an answer set of $P$?
+%   \end{itemize}
+%   \pause
+%   \begin{theorem}
+%   Deciding if a program $P$ has an answer set is NP-complete.
+%   \end{theorem}
+%\end{frame}
+%
+%
+%\subsection{Well-founded semantics}
+%\begin{frame}
+%  \begin{itemize}
+%  \item  A {\em literal} is of the form $A$ or $\Not A$ where $A$ is an atom.
+%  \item The {\em complement} of a literal $l$, denoted by $\bar l$, is defined as
+%  \begin{itemize}
+%    \item $\overline A=\Not A$,
+%    \item $\overline {\Not A}=A$.
+%  \end{itemize}
+%  \item A {\em partial interpretation} is a set of consistent literals.
+%  \end{itemize}
+%
+%  Let $I$ be a partial interpretation, $l$ a literal and $T$ a set of literals.
+%  \begin{itemize}
+%    \item $I$ {\em partially satisfies} $l$ if $l\in I$,
+%    \item $I$ {\em falsifies} $l$ if $\bar l\in I$,
+%    \item $I$ {\em partially satisfies} $T$ if $I$ partially satisfies each literal in $T$,
+%    \item $I$ {\em falsifies} $T$ if $I$ falsifies some literal in $T$.
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \begin{definition}[\cite{Gelderetal1991}]
+%    Let $P$ be a logic program, $U$ a set of atoms and $I$ a partial interpretation.
+%    $U$ is a {\em unfounded set} of $P$ wrt $I$ if, for every $p\in U$ and each rule $r\in P$ with
+%    $\Head(r)=p$, either
+%    \begin{enumerate}
+%      \item $I$ falsifies $\Pos(r)\cup\Not\Neg(r)$, or
+%      \item $\Pos(r)\cap U\neq\emptyset$.
+%    \end{enumerate}
+%  \end{definition}
+%
+%  Some properties:
+%  \begin{itemize}
+%    \item If $U_1$ and $U_2$ are unfounded sets of $P$ wrt $I$ then $U_1\cup U_2$ is a unfounded set of $P$ wrt $I$.
+%    \item The greatest unfounded set exists for $P$ wrt $I$.
+%    \item The greatest unfounded set for $P$ wrt $I$ can be evaluated in polynomial time.
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{definition}
+%  Let $P$ be a logic program and $I$ a partial interpretation.
+%  \begin{itemize}
+%    \item ${\cal T}_P(I)$=$\{\Head(r)|$\mbox{$I$ partially satisfies $\Pos(r)\cup\Not\Neg(r)$}\}.
+%    \item ${\cal U}_P(I)$ is the greatest unfounded set for $P$ wrt $I$.
+%    \item ${\cal W}_P(I)={\cal T}_P(I)\cup\Not{\cal U}_P(I)$.
+%  \end{itemize}
+%  All the three operators are monotonic.
+%
+%  The {\em well-founded model} of $P$ is the least fixpoint of ${\cal W}_P$, $\lfp({\cal W}_P)$.
+%\end{definition}
+%
+%For the logic program $P=\{a\lto\Not b; \quad b\lto \Not a\}$, the well-founded model is $\emptyset$.
+%
+%\pause
+%{\color{red} Question}:
+%\begin{itemize}
+%  \item ${\cal T}_P(\emptyset)=?$
+%  \item ${\cal U}_P(\emptyset)=?$
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  More properties: Let $P$ be a logic program.
+%  \begin{enumerate}
+%    \item The well-founded model of a logic program $P$ is polynomially computable.
+%    \item $M$ is an answer set of $P$ iff $M\cup\Not\overline M$ is a fixpoint of ${\cal W}_P$.
+%    \item If $p\in \lfp({\cal W}_P)$ then $p\in M$ for every answer set $M$ of $P$.
+%    \item If $\Not p\in \lfp({\cal W}_P)$ then $p\notin M$ for every answer set $M$ of $P$.
+%  \end{enumerate}
+%
+%  \begin{block}{Attention}
+%  \alert{Well-founded semantics builds up the foundation of answer set evaluation.}
+%  \end{block}
+%\end{frame}
+%
+%\subsection{Algorithms for ASP}
+%\begin{frame}
+%  \frametitle{DPLL}
+%  \begin{algorithm}[H]
+%  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+%  \Input{ A set of clauses $F$}
+%  \Output{A Truth Value.}
+%
+%    \lIf{($F$ is a consistent set of literals)}{\Return true}\;
+%    \lIf{($F$ contains an empty clause)}{\Return false}\;
+%    \ForEach{(unit clause $l$ in $F$)}{$F \lto \textit{unit-propagate}(l, F)$}
+%    \ForEach{(pure literal $l$ that occurs in $F$)}{$F \lto \textit{pure-literal-assign}(l, F)$}
+%    $l \lto  \textit{choose-literal}(F)$\;
+%    \Return{DPLL($F\land l$) or DPLL($F\land\neg l$)}
+%    \caption{DPLL($F$)}
+%  \end{algorithm}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{smodels \cite{Simonsetal2002}}
+%  \begin{algorithm}[H]
+%  \SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+%  \Input{ A program $P$ and a set $A$ of literals}
+%  \Output{A stable model.}
+%
+%  $A\lto \textit{expand}(P,A)$\;
+%  \lIf{(conflict$(P,A)$)}{\Return false}\;
+%  \lIf{($A$ covers $\textit{Atoms}(P)$)}{\Return $A^+$}\;
+% % \lElseIf{($A$ covers $\textit{Atoms}(P)$)}{\Return $A^+$}\;
+%%  \Else{
+%%    $x\lto \textit{heuristic}(P,A)$\;
+%%
+%%    %\lIf{(smodels$(P,A\cup\{x\})$)}{\Return true}\;
+%%    %\Else{\Return smodels$(P,A\cup\{\Not x\})$}
+%%  }
+%  $x\lto \textit{heuristic}(P,A)$\;
+%  \Return{smodels$(P,A\cup\{x\})$ or smodels$(P,A\cup\{\Not x\})$}
+%    \caption{smodels$(P,A)$}
+%  \end{algorithm}
+%
+%  \vspace{.5cm}
+%  \pause
+%  {\color{red} Question}: Can we use SAT solvers for ASP?
+%\end{frame}
+%
+%%\subsection{Loop formulas's approach}
+%\begin{frame}
+%  \frametitle{Completion}
+% Let $P$ be a program and $h$ an atom in $\HB_P$.
+% \begin{itemize}
+% \item
+%The {\em completion} of $h$ (relative to $P$), written
+%$\comp(h,P)$, is the following formula:
+%\begin{eqnarray*}
+%  h\lrto \bigvee_{1\leq i\leq n} \left(\bigwedge_{A\in \Pos_i} A\wedge\bigwedge_{B\in\Neg_i}\neg B\right),
+%\end{eqnarray*}
+%where  $(h\lto \Pos_1,\Not\Neg_1),\ldots,(h\lto\Pos_n,\Not\Neg_n)$
+%are all the rules in $P$ whose heads are the atom $h$;
+%
+%\item The {\em
+%completion} of $P$, written $\comp(P)$, is the
+%collection of completions of all atoms in $\HB_P$.
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Loop formulas}
+%  Let $P$ be a  program.
+%  \begin{itemize}
+%  \item The {\em positive dependency graph} of $P$, written $G_P$, is the
+%directed graph $(\HB_P,E)$ where $(u,v)\in E$ if $P$ has a rule of the form (\ref{rule})
+%s.t $A=u$ and $v=A_i$ for some $i~(1\le i\le m)$.
+%
+%  \item A nonempty subset $L$ of $\HB_P$ is a {\em loop} of $P$ if there is a cycle in $G_P$ which
+%goes through only and all the nodes in $L$.
+%  \item The {\em loop formula} of a loop $L$, written $\LF(L,P)$, is:
+%\begin{eqnarray*}
+%  \bigvee L\supset \bigvee_{1\leq i\leq n}\left(\bigwedge_{A\in\Pos_i}A\wedge\bigwedge_{B\in\Neg_i}\neg B\right)
+%\end{eqnarray*}
+%where $(h_1\lto\Pos_1,\Not\Neg_1),\ldots,
+%(h_n\lto\Pos_n,\Not\Neg_n)$ are all the rules in $P$ such that
+%$h_i\in L$ and $\Pos_i\cap L=\emptyset$.
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{theorem}[\cite{LinZhao:assat}]
+%  Let $P$ be a program. A set of atoms $M$ is an answer set of $P$ iff $M\models\comp(P)\cup\LF(P)$ where
+%  $\LF(P)$ is the set of loop formulas of $P$.
+%\end{theorem}
+%
+%For example,
+%\begin{itemize}
+%  \item Let $P_1=\{a\lto a; \quad a\lto\Not a\}$. $\comp(P_1)=\{a\lrto a\lor\neg a\}$, $L=\{a\}$ is the only loop of $P_1$,
+%  $\LF(L,P_1)=a\supset\bot.$
+%  $\comp(P_1)\cup\LF(P_1)$ is inconsistent. $P_1$ has no answer set.
+%
+%  \item Let $P_2=\{a\lto a\}$.
+%
+%  \pause
+%  {\color{red}Question:} What's the model of $\comp(P_2)\cup \LF(P_2)$? %$\comp(P_2)=\{a\lrto a\}$,
+%%  $$\LF(L,P_2)=a\supset\bot.$$
+%%  The only model of $\comp(P_2)\cup \LF(P_2)$ is $\emptyset$.
+%\end{itemize}
+%\pause
+%  \begin{block}{Good news: KR-06 best paper}The above theorem is extended for programs with variables \cite{CLWZ06}!
+%  \end{block}
+%\end{frame}
+
+\subsection{ASP language and systems}
+\begin{frame}
+  The language of ASP systems:
+
+  \begin{itemize}  {\color{blue}
+    \item \href{www.tcs.hut.fi/Software/smodels/lparse.ps}{lparse 1.1},
+    \item \href{http://potassco.sourceforge.net/}{gringo},
+    \item \href{http://www.dlvsystem.com/dlvsystem/index.php/DLV}{dlv}.}
+  \end{itemize}
+
+  The ASP systems (for both windows and linux platforms):
+  \begin{itemize}{\color{blue}
+    \item \href{http://potassco.sourceforge.net/}{clasp serials}; % Germany; lparse and gringo
+    \item \href{http://www.tcs.hut.fi/Software/smodels/}{smodels}; % Finland; lparse
+    \item \href{http://www.dlvsystem.com/dlvsystem/index.php/DLV}{DLV};} %: Italy; dlv
+    \item others: cmodels, assat, fasp, $\ldots$
+  \end{itemize}
+  \hrulefill
+  \begin{itemize}{\color{blue}
+    \item Tutorials of ASP: \href{http://potassco.sourceforge.net/teaching.html}{the website of clasp}
+    \item The ASP competitions: \href{https://www.mat.unical.it/aspcomp2013}{1-4, 5,6,7}}
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{ASP IDE}
+  \begin{itemize}{\color{blue}
+    \item \href{http://opus.bath.ac.uk/25392/}{APE}: Lparse
+    \item \href{https://www.mat.unical.it/ricca/aspide/}{ASPIDE}: DLV
+    \item \href{http://arxiv.org/abs/1109.3989}{SeaLion}: Gringo and DLV
+    \item \href{http://igrom.sourceforge.net/index.php?url=page/index/user-guide}{iGROM}: DLV and Lparse
+    \item \href{http://opus.bath.ac.uk/12628/}{ASPVIZ}
+    \item \href{https://dtai.cs.kuleuven.be/krr/software/visualisation}{IDPDraw}}
+    \item $\ldots$.
+  \end{itemize}
+\end{frame}
+%
+%\begin{frame}
+%  \frametitle{lparse}
+%  \begin{itemize}
+%    \item Term: constant (lower case), variable (upper case), functions
+%    \item Literal:
+%    \begin{itemize}
+%      \item basic literal: atom or its negation by default.
+%      \item conditional literal: $p(X): q(X)$.
+%      \item constraint literal: $lower \{l_1,\ldots,l_n\} upper$.
+%      \item weight literal: $lower [l_1=w_1,\ldots,l_n=w_n] upper$.
+%    \end{itemize}
+%    \item rule types $A\lto \Body$:
+%    \begin{itemize}
+%      \item basic rule: $A$ is an atom;
+%      \item choice rule: $A$ is a constraint literal or weight literal;
+%      \item constraint rule: $A$ is $\bot$.
+%    \end{itemize}
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  Declaration statements:
+%  \begin{itemize}
+%    \item constant declaration: \#const n=10.
+%    \item domain declaration: \#domain predicate(X).
+%    \item external declaration: \#external pred(X).
+%    \item functional declaration: \#function func\_name.
+%    \item hide declaration: \#hide. or \#hide pred(X).
+%    \item show declaration: \#show. or \#show pred(X).
+%    \item weight declaration: \#weight literal = expr. or \#weight literal\_1=lieteral\_2.
+%  \end{itemize}
+%  Optimization statements:
+%  \begin{itemize}
+%    \item maximize:
+%    \begin{itemize}
+%      \item maximize $\{l_1,\ldots, l_n\}$.
+%      \item maximize $[l_1=w_1,\ldots,l_n=w_n]$.
+%    \end{itemize}
+%    \item minimize:
+%    \begin{itemize}
+%      \item minimize $\{l_1,\ldots, l_n\}$.
+%      \item minimize $[l_1=w_1,\ldots,l_n=w_n]$.
+%    \end{itemize}
+%  \end{itemize}
+%\end{frame}
+%
+%\subsection{Extensions}
+%\begin{frame}
+%\frametitle{Disjunctive logic program}
+%A {\em disjunctive rule} has the form
+%\begin{equation}\label{dis:rule:set}
+%  A\lto \Pos,\Not\Neg
+%\end{equation}
+%where $A$ is a set of atoms.
+%
+%\begin{itemize}
+%\item  A {\em disjunctive logic program} $P$ is a finite set of disjunctive rules.
+%
+%\item The {\em Gelfond-Lifschitz reduction} is same as for normal logic programs.
+%
+%\item A set of atoms $M$ is an {\em answer set} of $P$ if $M$ is the least model of $P^M$.
+%
+%\item The problem of deciding if $P$ has an answer set is $\Sigma_2^P$-complete.
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{Extensions for atoms}
+%  Aggregate programs \cite{DBLP:Faber:AIJ:2011}:
+%  \begin{itemize}
+%    \item A {\em ground set} is a pair $\langle \vec c, conj\rangle$ where $\vec c$ is a list of constants, and $conj$ a conjunction of atoms.
+%    \item An aggregate function: $f(S)$ where $S$ a ground set and $f\in\{\#count, \#sum,\#min,\#max,\#times\}$.
+%    \item An aggregate atom: $f(S)\circ T$ where $\circ\in\{=,\neq,>,\geqslant,<,\leqslant\}$ and $T$ a constant.
+%    \item FLP-answer set semantics: $M$ is an answer set of $P$ if $M$ is the least model of $P_M$ where $P_M$ is the set of rules of $P$ whose bodies are satisfies by $M$.
+%  \end{itemize}
+%  \begin{block}
+%    {There is no agreement on the semantics of aggregate programs.}
+%  \end{block}
+%\end{frame}
+%
+%\begin{frame}
+%  Logic programs with constraint atoms \cite{Son:JAIR2007}: A constraint atom has the form $(D,C)$ where
+%  \begin{itemize}
+%    \item $D$ is a set of atoms, called {\em domain},
+%    \item $C$ a subset of $2^D$, called {\em candidate solutions},
+%    \item The {\em complement} of $(D,C)$ is $(D,2^D\setminus C)$,
+%    \item A set of atoms $M$ {\em satisfies} $(D,C)$ if $M\cap D\in C$.
+%  \end{itemize}
+%
+%   Let $S\subseteq M$ be two sets of atoms and $A=(D,C)$.
+%   \begin{itemize}
+%    \item $S$ {\em conditionally satisfies} $A$ wrt $M$, denoted by $S\models_MA$, if
+%    \begin{itemize}
+%      \item $S$ satisfies $A$, and
+%      \item $I\in C$ for every $I$ with $S\cap D\subseteq I\subseteq M\cap I$.
+%    \end{itemize}
+%    \item Two answer set semantics: one is by reduct, the other is by complement.
+%  \end{itemize}
+%  \pause
+%  \begin{block}
+%    {We proposed a well-founded semantics for basic logic programs with constraint atoms \cite{Yisong:AAAI:2012}.}
+%  \end{block}
+%\end{frame}
+%
+%\begin{frame}
+%Description logic programs \cite{DBLP:journals/ai/EiterILST08}: ${\cal K}=(O,P)$.
+%
+%A {\em dl-atom} is an expression of the form
+%\begin{equation}\label{dl:atom}
+%  \DL[S_1\ op_1\ p_1, \ldots,S_m\ op_m\ p_m;Q](\vec t),\ \  (m\ge 0)
+%\end{equation}
+%where
+%\begin{itemize}
+%  \item $op_i\in\{\uplus,\uminus,\cminus\}$;
+%  \item each $S_i$ is a concept/role name if $op_i=\uplus$, otherwise it is
+%   the negation of a  concept/role name;
+%  \item $p_i$ is a unary predicate symbol if $S_i$ is a concept, and a binary predicate symbol
+%   otherwise;
+%  \item $Q(\vec t)$ is a {\em dl-query},
+%    \begin{itemize}
+%    \item $C(a)$ where $C$ is a concept, $\vec t=a$ and $a$ a constant;
+%    \item $B\sqsubseteq C$, $\neg (B\sqsubseteq C)$, $R\sqsubseteq E$ or $\neg (R\sqsubseteq E)$;
+%    \item$E(a,b)$ where  $E$ is a role, $\vec t=(a,b)$, $a,b$ are constants.
+%    \end{itemize}
+%\end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+% An interpretation $I$ {\em satisfies} a dl-atom $A$ of the form (\ref{dl:atom}), denoted by $I\models_OA$, if $O(I;\lambda)\models Q(\vec t)$ where
+% \begin{itemize}
+%   \item    $O(I;\lambda)=O\cup\bigcup_{i=1}^{m}A_i(I)$\mbox{ and, for $1\leq i\leq m$,}
+%   \item    \[A_i(I)=\left\{
+%    \begin{array}{ll}
+%        \{S_i(\vec e)\mid p_i(\vec e)\in I\}, & \hbox{if $op_i=\uplus$;} \\
+%        \{\neg S_i(\vec e)\mid p_i(\vec e)\in I\}, & \hbox{if $op_i=\uminus$;} \\
+%        \{\neg S_i(\vec e)\mid p_i(\vec e)\notin I\}, & \hbox{if $op_i=\cminus$;}
+%    \end{array}
+%    \right.
+%    \]
+%  \end{itemize}
+%
+%   A lots of answer set semantics:
+%    \begin{itemize}
+%      \item Stong/weak answer sets,
+%      \item FLP-answer sets,
+%      \item strongly/weakly well-supported answer sets \cite{Yi-Dong:IJCAI:2011}.
+%    \end{itemize}
+%
+%
+%  \pause
+%  \begin{block}{What we did}
+%  \begin{itemize}
+%    \item the loop formulas characterization of dl-programs \cite{Yisong:TCS:2011},
+%    \item \uwave{embedding dl-programs into default logic}.
+%  \end{itemize}
+%  \end{block}
+%
+%\end{frame}
+%
+%\begin{frame}
+%  logic programs with evaluable functions \cite{LW:KR08}:
+%  \begin{itemize}
+%    \item A function of type $\tau_1\times\ldots\times\tau_n\rto \tau$ is {\em evaluable} if the domains $\tau_i~(1\le i\le n),\tau$ are
+%  finite and fixed.
+%    \item An interpretation is a set of atoms $\cal A$ associated with a function assignment $F$, $({\cal A},F)$.
+%    \item The reduction is similarly defined, iteratively replace each function with its value.
+%    \item Answer set semantics is given in a standard way.
+%  \end{itemize}
+%  \begin{block}
+%    {One advantage is that many problems can be easily encoded!}
+%    N-queens problem encoding:
+%    \begin{align*}
+%      &\lto q(x)=y,q(z)=y, x\neq z,\\
+%      &\lto |q(x)-q(y)|=|x-y|,x\neq y.
+%    \end{align*}
+%  \end{block}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{First-order answer sets \cite{DBLP:AIJ:Ferraris:2011}}
+%  Let $F$ be a first-order formula and $\textbf{p}$ a list of distinct predicate constants.
+%  \[  \textrm{SM}_{\bf p}[F]=F\land \neg \exists \textbf{u}\left((\textbf{u}<{\bf p})\land F^*(\textbf{u})\right)\]
+%  where
+%  \begin{itemize}
+%    \item $p\le q$: $\forall {\bf x}. p({\bf x})\supset q({\bf x})$; $p<q$: $(p\le q)\land \neg (q\le p)$.
+%    \item $F^*({\bf u})$ is defined as
+%    \begin{itemize}
+%      \item ${\bf p(t)}^*={\bf u(t)}$, $q({\bf t})^*=q({\bf t})$ if $q\notin {\bf p}$;
+%      \item $(F\circ G)^*=F^*\circ G^*$ where $\circ\in\{\land,\lor\}$;
+%      \item $(F\rto G)^*=(F^*\rto G^*)\land (F\rto G)$;
+%      \item $(QxF)^*=Qx(F^*)$ where $Q\in\{\forall,\exists\}$.
+%    \end{itemize}
+%  \end{itemize}
+%
+%  The {\em ${\bf p}$-stable models} of $F$ are the interpretations satisfying $\textrm{SM}_{\bf p}[F]$.
+%\end{frame}
+
+%\subsection{smodels}
+%\subsection{clasp}
+%\subsection{DLV}
+
+\section{Applications of ASP}
+\subsection{Graph domain}
+\begin{frame}
+  \frametitle{Hamiltonian circuit}
+  \textbf{Problem}: Given a graph $G=(V,E)$, find a cycle $L$ of $G$ such that it goes through every nodes of $V$ exact once.
+
+  ASP encode:
+  \begin{center}
+  \small{\begin{tabular}{rl}
+  &  \% hc1.lp\\
+  &\% {\color{blue} GENERATE }\\
+  \{in(X,Y)\} & :- e(X,Y).\\
+  &\% {\color{blue}TEST} \\
+    &:- 2 \{in(X,Y) : e(X,Y)\}, v(X).\\
+    &:- 2 \{in(X,Y) : e(X,Y)\}, v(Y).\\
+    & \% {\color{blue} DEFINE: all nodes are REACHED}\\
+    r(X) &:- in(1,X), v(X).\\
+    r(Y) &:- r(X), in(X,Y), e(X,Y).\\
+    &:- not r(X), v(X).\\
+   & \#hide.\\
+   & \#show in(X,Y).
+  \end{tabular}}
+  \end{center}
+\end{frame}
+
+% \begin{frame}
+%  \begin{tabular}{lr}
+%   % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+%   \begin{minipage}[h]{5cm}
+%   \small{
+%   \% The input graph: p10y\\
+%     e(X,Y)  :- e(Y,X), v(X;Y).\\
+%   v(1..10). \\
+%     e(1,2).
+%     e(1,5).
+%     e(1,6).
+%     e(1,7).
+%     e(2,7).
+%     e(2,3).
+%     e(3,8).
+%     e(3,4).
+%     e(4,9).
+%     e(4,5).
+%     e(5,10).
+%     e(6,8).
+%     e(6,9).
+%     e(7,9).
+%     e(7,10).
+%     e(8,10).}
+%   \end{minipage}
+%   &
+%   \begin{minipage}[h]{5cm}
+%     \begin{figure}
+%       % Requires \usepackage{graphicx}
+%       \includegraphics[width=5cm]{hc1.pdf}
+%     \end{figure}
+%   \end{minipage}
+%  \end{tabular}
+%  %\mbox{lparse hc.lp p10y | clasp}
+% \begin{figure}
+%   % Requires \usepackage{graphicx}
+%   \includegraphics[width=8cm]{hc2.pdf}
+% \end{figure}
+
+% \end{frame}
+%
+%\subsection{Planning domain}
+%\begin{frame}
+%  \frametitle{Blocks world \cite{Lifschitz2002}}
+%  \begin{definition}
+%    A set of blocks are on a table (initial state). The goal is to build one or more vertical stacks of blocks (goal state) such that
+%    \begin{itemize}
+%      \item each block can be on another block or on table,
+%      \item a block can not be moved unless nothing on it.
+%    \end{itemize}
+%     %\textit{Its optimal solution (shortest plan) is NP-complete.}
+%  \end{definition}
+%  \begin{minipage}[h]{12cm}
+%    \footnotesize{
+%    \%block.lp\\
+%  time(0..end).\\
+%  loc(table).\\
+%  loc(B) :- blk(B).\\
+%  \% {\color{blue} \textbf{GENERATE}}\\
+%  \{mv(B,L,T) : blk(B): loc(L)\}grippers :- time(T),T$<$end.\\
+%  \% {\color{blue}\textbf{DISPLAY}}\\
+%  \#hide.\\
+%  \#show mv(B,L,T).
+%}
+%  \end{minipage}
+%\end{frame}
+%
+%\begin{frame}
+%  \begin{minipage}[h]{10cm}
+%  \footnotesize{
+%  \% {\color{blue}\textbf{DEFINE}}\\
+%  \% effect of moving a block\\
+%  on(B,L,T+1) :- mv(B,L,T),blk(B),loc(L),time(T),T$<$end.  \\\\
+%  \% inertia\\
+%  %\rule[3pt]{\textwidth}{0.5pt}\\
+%  on(B,L,T+1) :- on(B,L,T),$\Not$-on(B,L,T+1),loc(L),blk(B),time(T),T$<$end.\\\\
+%  \% uniqueness of location \\
+%  -on(B,L1,T) :- on(B,L,T), L!=L1, blk(B),loc(L),loc(L1),time(T).\\\\
+%    \% {\color{blue} \textbf{TEST}}\\
+%  \% two blocks cannot be on top of the same block\\
+%  :-2 \{on(B1,B,T):blk(B1)\}, blk(B), time(T).\\\\
+%  \% a block can't be moved unless it is clear\\
+%  :- mv(B,L,T), on(B1,B,T),blk(B),blk(B1),loc(L),time(T),T$<$end.\\\\
+%  \% a block can't be moved onto a block that is being moved also\\
+%  :- mv(B,B1,T),mv(B1,L,T),blk(B),blk(B1),loc(L),time(T),T$<$end.
+%  }
+%  \end{minipage}
+%\end{frame}
+%
+%\begin{frame}
+%\begin{tabular}{rl}
+%\begin{minipage}[h]{3cm}
+%\footnotesize{
+%\%blk-1\\
+%const grippers=2.\\
+%const end=3.\\
+%blk(1..6).\\
+%\% {\color{blue} initial state}\\
+%on(1,2,0).\\
+%on(2,table,0).\\
+%on(3,4,0).\\
+%on(4,table,0).\\
+%on(5,6,0).\\
+%on(6,table,0).\\
+%\% {\color{blue} goal state}\\
+%:- not on(3,2,end).\\
+%:- not on(2,1,end).\\
+%:- not on(1,table,end).\\
+%:- not on(6,5,end).\\
+%:- not on(5,4,end).\\
+%:- not on(4,table,end).}
+%  \end{minipage}
+%  &
+%  \begin{minipage}[h]{7cm}
+%\begin{figure}
+%  % Requires \usepackage{graphicx}
+%  \includegraphics[width=7cm]{block1.pdf}\\
+%  \includegraphics[width=8cm]{block2.pdf}
+%\end{figure}
+%\end{minipage}
+%  \end{tabular}
+%\end{frame}
+%
+%\subsection{Bio-informatics}
+%\begin{frame}
+%  \frametitle{Metabolic network completion \cite{Torsten:ICLP:2009,DBLP:journals/ploscb/PrigentFDTLCGGE17}: A challenge}
+%  \begin{itemize}
+%    \item {\em Metabolic network}: a directed bipartite graph $G=(R\cup M,E)$,
+%     \begin{itemize}
+%       \item $R$: {\em reactions};
+%       \item $M$: {\em metabolites};
+%       \item $(m,r)\in E$: $m$ is a {\em reactant} of $r$, $reac(r)=\{m\in M|(m,r)\in E\}$;
+%       \item $(r,m)\in E$: $m$ is a {\em product} of $r$, $prod(r)=\{m\in M|(r,m)\in E\}$.
+%     \end{itemize}
+%     \item {\em Scope of $M'\subseteq M$}, denoted by $\Sigma_G(M')$: the closure of $M'$ under reachability from $M'$,
+%     \begin{itemize}
+%       \item a reaction $r$ is {\em reachable} from $M'$ if $reac(r)\subseteq M'$;
+%       \item a metabolite $m$ is {\em reachable} from $M'$ if either
+%       \begin{itemize}
+%         \item $m\in M'$, or
+%         \item $m\in prod(r)$ for some $r$ being reachable from $M'$.
+%       \end{itemize}
+%     \end{itemize}
+%  \end{itemize}
+%\end{frame}
+%%Metabolic networks describe the relationships between small biomolecules (metabolites) and the enzymes (proteins) that interact with them to catalyze a biochemical reaction.
+%%
+%%From: Handbook of Systems Biology, 2013
+%
+%%Metabolic Network
+%%A metabolic network is the complete set of metabolic and physical processes that determine the physiological and biochemical properties of a cell. As such, these networks comprise the chemical reactions of metabolism, the metabolic pathways, as well as the regulatory interactions that guide these reactions.
+%%Wikipedia  Wikipedia
+%
+%\begin{frame}
+%\frametitle{Completion}
+%  Given
+%  \begin{enumerate}
+%    \item a draft metabolic network $(R\cup M,E)$,
+%    \item two sets $S,T\subseteq M$ ({\em seed} and {\em target}), and
+%    \item a reference network  $(R'\cup M',E')$,
+%  \end{enumerate}
+%  $R''\subseteq R'\setminus R$ is the {\em completion} of
+%  $(R\cup M,E)$ from $(R'\cup M',E')$ wrt $(S,T)$ if $T\subseteq \Sigma_G(S)$ where
+%  \begin{itemize}
+%    \item $G=((R\cup R'')\cup (M\cup M''),E\cup E'')$,
+%    \item $M''=\{m\in M'|r\in R'', m\in reac(r)\cup prod(r)\}$, and
+%    \item $E''=\{(m,r)\in E'|r\in R'', m\in reac(r)\}\cup \{(r,m)\in E'|r\in R'',m\in prod(r)\}$.
+%  \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{The ASP encoding: I}
+%  Meneco: \url{https://bioasp.github.io/apps.html}
+%
+%
+%   Given draft and reference metabolic networks $G_d$ and $G_r$, $S, T\subseteq M$ (seed and target), \underline{${\cal C}(G_d,G_r,S,T)$}:
+%   {\small\begin{align*}
+%   & \underline{C(G_d)\cup C(G_r)\cup \{draft(d)\}\cup \{seed(s)|s\in S\}\cup \{target(t)|t\in T\}}.  \\
+%   \\
+%   &    \{xreaction(R):\Not reaction(R,N):draft(N)\}.
+%   \end{align*}
+%   \begin{align*}
+%    xscope(M)&\lto seed(M).\\
+%    xscope(M)&\lto product(M,R), reaction(R,N), draft(N), \\
+%             &  xscope(M'):reactant(M',R).\\
+%             & \mbox{\% \uwave{{\color{blue} all the rectants of R are in the scope}}}\\
+%    xscope(M)&\lto product(M,R),xreaction(R), xscope(M'):reactant(M',R).\\
+%                 &\lto target(M),\Not xscope(M).
+%   \end{align*}}
+%\end{frame}
+%%
+%%\begin{frame}
+%%\frametitle{The ASP encoding: II}
+%% {\small
+%%  \begin{align*}
+%%    &\lto xreaction(R), not ireaction(R).\\
+%%    \\
+%%    ireaction(R) &\lto interesting(M), product(M,R), reaction(R, N).\\
+%%    interesting(M) &\lto target(M), not dscope(M).\\
+%%    interesting(M) &\lto reactant(M,R), ireaction(R), not dscope(M). \\
+%%    \\
+%%    &\lto xreaction(R), not oreaction(R).\\
+%%    oreaction(R) &\lto xscope(M) : reactant(M, R),reaction(R, N), not draft(N).
+%%  \end{align*}
+%%  }
+%%\end{frame}
+%
+%\begin{frame}
+%    Given a metabolic network $G_n=(R\cup M,E)$, the $C(G_n)$ includes:
+%    \begin{itemize}
+%      \item $\{reaction(r,n)|r\in R\}$,
+%      \item $\{reactant(m,r)|m\in reac(r),r\in R\}$, and
+%      \item $\{product(m,r)|m\in prod(r), r\in R\}$.
+%    \end{itemize}
+%  \begin{theorem}
+%  $X$ is an answer set of the above ASP iff   $\{r|xreacton(r)\in X\}$ is a completion of $G_d$ from $G_r$ wrt $(S,T)$.
+%  \end{theorem}
+%  \pause
+%  \begin{block}
+%  {To minimize the number of reactions:}
+%  \[minimize\{xreaction(R): \Not reaction(R,N): draft(N)\}.\]
+%  \end{block}
+%\end{frame}
+%
+%\begin{frame}
+%  To refine the above encoding:
+%  {\small \begin{align*}
+%     &\mbox{\% {\color{blue}xreaction $R$ should be ``interesting".}}\\
+%                    & \lto xreaction(R),\Not ireaction(R).\\
+%     ireaction(R)   & \lto interesting(M), product(M,R), reaction(R,N).\\
+%     interesting(M) & \lto target(M),\Not dscope(M).\\
+%     interesting(M)&\lto reactant(M,R),ireaction(R), \Not dscope(M).\\
+%       &\mbox{\% {\color{blue}xreaction $R$ should be ``operatable".}}\\
+%                   &\lto xreaction(R), \Not oreaction(R).\\
+%     oreaction(R)  &\lto xscope(M):reactant(M,R), reaction(R,N),\Not draft(N).\\
+%     dscope(M) & \lto seed(M).\\
+%     dscope(M) & \lto product(M,R), reaction(R,N), draft(N), \\
+%     &dscope(M'):reactant(M',R).
+%  \end{align*}}
+%  {\color{red}\textbf{To run}}: gringo *.lp $|$ clasp  \% gringo is in version 2.0.2
+%\end{frame}
+%
+%\begin{frame}
+%  \frametitle{More applications}
+%  See \href{http://www.kr.tuwien.ac.at/research/projects/WASP/report.html}{``WP5 Report: Model Applications and Proofs-of-Concept"}
+%  \begin{itemize}
+%    \item agent programming;
+%    \item cryptanalysis;
+%    \item diagnosis;
+%    \item insurance industry;
+%    \item model checking;
+%    \item policies;
+%    \item security protocols;
+%    \item robot control;
+%    \item $\ldots\ldots$.
+%  \end{itemize}
+%  asparagus:\url{https://asparagus.cs.uni-potsdam.de/instanceclass}
+%\end{frame}
+%
+%\section{Some Challenges}
+%\begin{frame}
+%   \frametitle{Challenges in ASP \cite{Gebser:LPNMR:2011}}
+%   ASP solving process:
+%   \begin{enumerate}
+%     \item Modeling: it is an art with craft, experience, and knowledge.
+%     \item Grounding:
+%      \begin{itemize}
+%        \item  It leads to exponential blow up.
+%        \item  It is a bottleneck of ASP solving.
+%        \item  It leads to first-order ASP.
+%      \end{itemize}
+%     \item Solving;
+%     \item \textit{Visualizing, Software Engineering.}
+%   \end{enumerate}
+%   Other aspects:
+%   \begin{itemize}
+%     \item Extensions, such as modulo theories.
+%     \item \textsf{Standardization}
+%     \item More applications
+%     \item $\ldots$.
+%   \end{itemize}
+%
+%\end{frame}
+
+\section{Concluding Remarks and References}
+
+\begin{frame}
+\begin{itemize}
+  \item Theories of ASP
+  \begin{itemize}
+    \item syntax,
+    \item semantics,
+    \item solving.
+  \end{itemize}
+  \pause
+  \item Applications of ASP
+  \begin{itemize}
+    \item graph domain,
+    \item planning,
+    \item bio-informatics.
+  \end{itemize}
+  \pause
+  \item Challenges in ASP
+    \begin{itemize}
+      \item grounding,
+      \item engineering,
+      \item $\ldots$.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \begin{block}
+    {\centering{\Huge Questions and Discussions?}}
+  \end{block}
+  \pause
+  \vspace{2cm}
+ \begin{block}
+    {\centering{\Huge Thank you!}}
+    \begin{center}
+      {\large Thank you!}
+    \end{center}
+  \end{block}
+\end{frame}
+
+%  {\scriptsize
+%  \bibliographystyle{alpha}
+%  \bibliography{../bib/DL.bib}
+%  }
+
+\begin{frame}[allowframebreaks] %allowramebreaks 可自动分页
+        \frametitle{References}
+        %\nocite{*}
+        \bibliographystyle{alpha}
+        %此文件虽然在chapters文件夹下，但是实际运行应该是在main.tex中，所以提取bib文件的路径要尤其注意。
+        \bibliography{bib/wys_DL.bib}
+\end{frame}
+
+
+
+
+
+

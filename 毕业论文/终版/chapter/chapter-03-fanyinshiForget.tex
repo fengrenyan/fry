@@ -9,7 +9,7 @@
 
 根据上述两种互模拟，给出了$\CTL$和$\mu$-演算遗忘的定义。与后面章节将要讲述的约束$\CTL$遗忘相对应，本章探索没有约束的遗忘的一般性质。
 
-本章其余部分组织如下：第\ref{chapter03:sec:ctlforget}节首先定义$V$-互模拟和互模拟等价，并探索其性质；其次，定义$\CTL$遗忘，并探索遗忘的基本性质和公设。第\ref{chapter03:sec:muforget}节定义Var-$V$-互模拟，并证明其对$\mu$-公式具有不变性；然后给出$\mu$-公式遗忘的定义及相关性质。最后，总结本章工作。}
+本章其余部分组织如下：第\ref{chapter03:sec:ctlforget}节首先定义$V$-互模拟和互模拟等价，并探索其性质；其次，定义$\CTL$遗忘，并探索遗忘的基本性质和公设。第\ref{chapter03:sec:muforget}节定义变元-命题-互模拟，并证明其对$\mu$-公式具有不变性；然后给出$\mu$-公式遗忘的定义及相关性质。最后，总结本章工作。}
 
 \section{$\CTL$遗忘理论}
 \label{chapter03:sec:ctlforget}
@@ -171,7 +171,7 @@ $R=\{(s_0,s_1),(s_0,s_0),(s_1,s_1), (s_1,s_0)\}$ 和 $[1]=\{(s_0,s_1), (s_1,s_1)
 \end{example}
 
 \begin{definition}[互模拟等价，bisimilar equivalence]\label{def:bisimular:equivalene}
-	给定原子命题集$V\subseteq {\cal A}$，公式$\varphi$和$\psi$。若对任意${\cal K}\models \varphi$，都存在一个${\cal K}'\models\psi$，使得${\cal K}\lrto_V{\cal K}'$；且对任意${\cal K}'\models\psi$，都存在一个${\cal K}\models \varphi$，使得${\cal K}\lrto_V{\cal K}'$，则称公式$\varphi$和 $\psi$是 {\em $V$-互模拟等价的(bisimilar equivalence)}，记为 $\varphi\equiv_V\psi$。
+	给定原子命题集$V\subseteq {\cal A}$，公式$\varphi$和$\psi$。若对任意${\cal K}\models \varphi$，都存在一个${\cal K}'\models\psi$，使得${\cal K}\lrto_V{\cal K}'$；且对任意${\cal K}'\models\psi$，都存在一个${\cal K}\models \varphi$，使得${\cal K}\lrto_V{\cal K}'$，则称公式$\varphi$和 $\psi$是 {\em $V$-互模拟等价的（bisimilar equivalence）}，记为 $\varphi\equiv_V\psi$。
 \end{definition}
 
 由定义\ref{def:VInd:bisimulation}和 \ref{def:bisimular:equivalene}，和命题\ref{prop:bisimilar:V}可容易得出下列引理。
@@ -382,7 +382,7 @@ $\psi$ $=\EXIST_{\tuple{2}}\NEXT p$，可以证明，$\varphi\equiv_\emptyset \p
 	\qquad \ALL\GLOBAL(x \rto \neg \ALL\GLOBAL p),
 	\qquad \ALL\GLOBAL(\ALL \FUTURE \ALL \GLOBAL p).
 \end{align*}
-\citeauthor{Maksimova:JANCL:1991}证明$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在$\CTL$公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)$ $\models x\lrto \psi$，即$\CTL$不具有Beth性质。
+\citeauthor{Maksimova:JANCL:1991}证明了$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在$\CTL$公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)$ $\models x\lrto \psi$，即$\CTL$不具有Beth性质。
 这一结论蕴涵如下命题：
 \begin{proposition}\label{pro:uniforget}
 	$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 $\CTL$中是不可表示的。

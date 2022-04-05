@@ -160,7 +160,7 @@ $\Ind$-Kripke 结构 $\Hm=(S,R,L, [\_])$上的一条\emph{索引路径}$\pi_{s}^
 	\item $\Ind$-Kripke结构$\Hm=(S,R,L,[\_])$：从初始$\Ind$-Kripke结构$\Hm$中去掉初始状态$s_0$得到；
 	\item Kripke结构$\Hm=(S,R,L)$：从初始$\Ind$-Kripke结构$\Hm$中同时去掉$[\_]$和$s_0$得到。
 \end{itemize}
-通常一个转换系统（transition system）（包括反应式系统）能够被抽象为一个Kripke结构\cite{Baier:PMC:2008}。
+通常一个转换系统（包括反应式系统）能够被抽象为一个Kripke结构\cite{Baier:PMC:2008}。
 一个\emph{($\Ind$-)结构}是一个二元组${\cal K}=(\Hm, s)$，其中$\Hm$是一个初始($\Ind$-)Kripke结构，$s$是$\Hm$中的一个状态。
 如果$s$是$\Hm$的初始状态，则称${\cal K}$是{\em 初始 ($\Ind$-)结构}。
 在这些结构中，（索引）路径这一概念可以类似地定义。
@@ -440,7 +440,7 @@ $q$是一个原子命题, $l$是一个文字, $D$是文字的析取（即子句�
 
 给定一个$\CTL$公式$\varphi$，将其转换为一个$\CTLsnf$字句集合的主要步骤如下：
 \begin{itemize}
-	\item[(1)]  将公式$\CTL$转换为其NNF（negation normal form）
+	\item[(1)]  将公式$\CTL$转换为其NNF
 	%\footnote{如果公式中的否定符号“$\neg$”仅出现在原子命题之前，且联结符号只有“$\vee$”和“$\wedge$”这两种，则称该公式是NNF形式的公式。}
 	形式，记为$nnf(\varphi)$；
 	\item[(2)]  使用表~\ref{tab:simp}中的等值公式化简$nnf(\varphi)$，得到$simp(nnf(\varphi))$；

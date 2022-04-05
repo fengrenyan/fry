@@ -1,0 +1,475 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% package
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{amsmath}
+
+%\usepackage{beamerthemesplit}
+\usepackage{graphicx}
+\usepackage{ulem}
+\usepackage{enumerate}
+%\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage[ruled,vlined]{algorithm2e}
+%\usepackage{algorithmic}
+
+\usepackage{xspace} %弹性space，针对各种newcommand的字体变形以后的空格问题。
+
+\usepackage{ulem} %给文字添加下划线、波浪线等样式
+
+\usepackage{upgreek} % \uptau 等数学符号
+
+
+%\usepackage{ctex} %处理中文
+
+%设置ref的颜色, documentclass[xcolor=dvipsnames]{beamer}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=Tan,
+    filecolor=blue,      
+    urlcolor=blue,
+    citecolor=cyan,
+}
+% xlongleftarrow
+\usepackage{extarrows}
+
+% 输入代码
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+\lstset{morekeywords={boolean,for,all,if,then,else, do, while, begin, and,or,choose,return,end,pairs,case}}
+
+%绘图
+\usepackage{tikz}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\mode<presentation>
+{
+  %设置主题
+  %\usetheme{Singapore} % for print 
+  \usetheme{Warsaw}
+  %\usetheme{Copenhagen}
+  
+  %设置颜色主题，beaver，spruce
+  %\usecolortheme{orchid}
+  
+  %设置背景
+  \setbeamertemplate{background canvas}[vertical shading][bottom=teal!5,top=blue!5]
+  
+  %设置block特征
+  %\setbeamertemplate{blocks}[rounded][shadow=true]
+  
+  %设置footline显示页码，但是可能会覆盖掉主题footline
+  %\setbeamertemplate{footline}[frame number]
+  
+  %添加页码代码
+  \expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+  
+  \usefonttheme[onlysmall]{structurebold}
+    
+  % 设置数学公式的字体
+  \usefonttheme[onlymath]{serif}
+  % or ...
+  %设置覆盖的效果，透明
+  %\setbeamercovered{transparent}
+  % or whatever (possibly just delete it)
+  
+  %\setbeamercolor{lemma in body}{bg=black}
+  
+  %定理等 计数
+  \setbeamertemplate{theorems}[numbered] 
+  
+  % 设置beamer背景，第一个rule，改动第二个参数是高度，第二个rule，第一个参数是宽度
+  \setbeamertemplate{background canvas}{
+    \rule{0cm}{8cm}
+    \rule{3.5cm}{0cm}
+    \begin{tikzpicture}%
+        \node  [opacity=0.08]{\includegraphics[width=5cm]{pics/gzu_logo_gray.png}};%
+    \end{tikzpicture}
+  }
+  
+}
+
+% 在每一节前section有一张胶片显示目录
+\AtBeginSection[]
+{
+\begin{frame}[allowframebreaks]
+    %\setcounter{tocdepth}{1}
+    %currentsection只显示当前章节，
+    %\tableofcontents[currentsection,hideothersubsections,sectionstyle=show/hide,subsectionstyle=show/show/hide] 
+    \tableofcontents[currentsection,subsectionstyle=show/show/hide]
+\end{frame}
+}
+
+% 在每一子节前subsection有一张胶片显示目录
+\AtBeginSubsection[]
+    {
+        \begin{frame}
+        %\frametitle{#1}
+        \tableofcontents[
+        currentsection,
+        currentsubsection,
+        subsectionstyle=show/shaded/hide
+        ]
+        \end{frame}
+    }
+
+% 用于拆分内容多的theorem block到多个frame里面去
+%\newcommand*{\theorembreak}{\usebeamertemplate{theorem end}\framebreak\usebeamertemplate{theorem begin}}
+
+
+% for logo on the northeast corner.
+% \usepackage{textpos}
+% \addtobeamertemplate{headline}{}{%
+% \begin{textblock*}{100mm}(.922\textwidth,-1.36cm)
+% \includegraphics[height=1cm]{pics/gzu_logo_red.png}
+% \end{textblock*}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置自己的block
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% my Lemma block
+%一些LATEX内部命令含有@字符,如\@addtoreset,
+%如果需要在文档中使用这些内%部命令,就需要借助于
+%另两个命令\makeatletter和\makeatother.
+
+\makeatletter
+\def\th@orangeblock{%
+\normalfont % body font
+\setbeamercolor{block title example}{bg=orange,fg=white}
+\setbeamercolor{block body example}{bg=orange!20,fg=black}
+\setbeamercolor{example text}{fg=red}
+\def\inserttheoremblockenv{exampleblock}
+}
+\makeatother
+\theoremstyle{orangeblock}
+\newtheorem{mylemma}[theorem]{Lemma}%
+
+% my theorem block
+\makeatletter
+\def\th@orchidblock{%
+\normalfont % body font
+\setbeamercolor{block title example}{bg=Orchid,fg=white}
+\setbeamercolor{block body example}{bg=Orchid!20,fg=black}
+\setbeamercolor{example text}{fg=blue}
+\def\inserttheoremblockenv{exampleblock}
+}
+\makeatother
+\theoremstyle{orchidblock}
+\newtheorem{mythm}[theorem]{Theorem}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CCS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\act}{$Act$} % Actions
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\var}{\varphi}
+
+\newcommand{\D}{\:\: |\:\:}
+
+%孙子节
+\newcommand{\ttl}{\subsubsection*}
+%右箭头
+\newcommand{\rto}{\rightarrow}
+%左箭头
+\newcommand{\lt}{\leftarrow}
+\newcommand{\lto}{\leftarrow}
+%左右箭头
+\newcommand{\lrto}{\leftrightarrow}
+%粗右箭头
+\newcommand{\Rto}{\Rightarrow}
+%粗左箭头
+\newcommand{\Lto}{\Leftarrow}
+%粗左右箭头
+\newcommand{\LRto}{\Leftrightarrow}
+
+%
+\newenvironment{lprule}{\begin{center}\tt\begin{tabular}{rl}}{\end{tabular}\end{center}}
+%
+\newenvironment{smallenu}{\begin{enumerate}\setlength{\itemsep}{0.0pt}}{\end{enumerate}}
+%
+\newenvironment{smallitem}{\begin{itemize}\setlength{\itemsep}{0.0pt}}{\end{itemize}}
+
+\long\def\comment#1{}
+
+%not
+\newcommand{\Not}{not \,}
+
+\newcommand{\aligna}{\hspace{.1in}&}
+\newcommand{\tab}{\hspace*{.2in}}
+
+\newcommand{\is}{\stackrel{\triangle}{=}}
+
+%粗体if
+\newcommand{\mif}{{\bf if}}
+%粗体while
+\newcommand{\mwhile}{{\bf while}}
+%粗体then
+\newcommand{\mthen}{{\bf then}}
+%粗体else
+\newcommand{\melse}{{\bf else}}
+%粗体do
+\newcommand{\mdo}{{\bf do}}
+%\newcommand{\mand}{\!\circ\!}
+% &符号，带空格
+\newcommand{\mand}{\;\mbox{\tt\&}\;}
+%粗体!, 带空格
+\newcommand{\cut}{\mbox{\tt !}}
+%
+\newcommand{\less}{\prec}
+%
+\newcommand{\sa}{same\mbox{-}actions}
+%打字机字体
+\newcommand{\firstproof}{\mbox{\tt first-der}}
+%打字机字体
+\newcommand{\minimal}{\mbox{\tt minimal}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%特殊表达
+\newcommand{\Holds}{H}
+\newcommand{\holds}{H}
+\newcommand{\Poss}{Poss}
+\newcommand{\acc}{Acc}
+\newcommand{\caused}{Caused}
+\newcommand{\effect}{E\!f\!\!f\!ect}
+\newcommand{\fluent}{F\!luent}
+\newcommand{\complex}{Complex}
+\newcommand{\defined}{De\!f\!ined}
+\newcommand{\static}{Static}
+\newcommand{\axiom}{Axiom}
+\newcommand{\causes}{Causes}
+\newcommand{\poss}{Precond}
+\newcommand{\domain}{Domain}
+\newcommand{\Con}{Const}
+\newcommand{\Loop}{Loop}
+\newcommand{\ES}{ES}
+\newcommand{\vES}{es}
+\newcommand{\IU}{IU}
+\newcommand{\LF}{LF}
+\newcommand{\comp}{C\!O\!M\!P}
+\newcommand{\DLF}{D\!L\!F}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%功能键
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\tabx}{\tab}
+\newcommand{\tabxx}{\tab\tab}
+\newcommand{\tabxxx}{\tabxx\tab}
+\newcommand{\tabxxxx}{\tabxx\tabxx}
+\newcommand{\atom}{\emph{$\mathcal{A}$toms}}
+\newcommand{\ninf}{|\hspace{-.2cm}\sim}
+\newcommand{\nninf}{|\hspace{-.2cm}\sim\hspace{-.42cm}/}
+%?
+\newcommand{\kmn}[3]{\mbox{$#1$-$#2$-$#3$}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%斜体
+\newcommand{\ground}{\textit{ground}}
+%斜体
+\newcommand{\Th}{\textit{Th}}
+%斜体
+\newcommand{\HB}{\textit{HB}}
+%斜体
+\newcommand{\wLF}{\textit{wLF}}
+%斜体
+\newcommand{\sLF}{\textit{sLF}}
+%斜体
+\newcommand{\dLF}{\textit{dLF}}
+%斜体
+\newcommand{\cLF}{\textit{cLF}}
+%斜体
+\newcommand{\nDF}{\textit{nDF}}
+%斜体
+\newcommand{\dIF}{\textit{dIF}}
+%斜体
+\newcommand{\cl}{\textit{cl}}
+%斜体
+\newcommand{\dnf}{\textit{dnf}}
+%斜体
+\newcommand{\defa}{\textit{def}}
+%斜体
+\newcommand{\Forget}{{\sf Forget}}
+%斜体
+\newcommand{\KForget}{\textit{KForget}}
+%斜体
+\newcommand{\GK}{\textit{GK}}
+%斜体
+\newcommand{\MKNF}{\textit{MKNF}}
+%斜体
+\newcommand{\MBNF}{\textit{MBNF}}
+%斜体
+\newcommand{\MMod}{\textit{MMod}}
+%斜体
+\newcommand{\BMod}{\textit{BMod}}
+%斜体
+\newcommand{\GMod}{\textit{GMod}}
+%斜体
+\newcommand{\GForget}{\textit{GForget}}
+%斜体
+\newcommand{\MForget}{\textit{MForget}}
+%斜体
+\newcommand{\BForget}{\textit{BForget}}
+%斜体
+\newcommand{\WFS}{\textit{WFS}}
+%斜体
+\newcommand{\Pred}{\textit{Pred}}
+%斜体
+\newcommand{\wunfold}{\textit{wunfold}}
+%斜体
+\newcommand{\unfold}{\textit{unfold}}
+%斜体
+\newcommand{\DL}{\textit{DL}}
+%斜体
+\newcommand{\Pos}{\textit{Pos}}
+%斜体
+\newcommand{\Atoms}{\textit{Atoms}}
+%斜体
+\newcommand{\Neg}{\textit{Neg}}
+%斜体
+\newcommand{\Head}{\textit{Head}}
+%斜体
+\newcommand{\Body}{\textit{Body}}
+%斜体
+\newcommand{\Var}{\textit{Var}}
+%斜体
+\newcommand{\CAN}{\textit{cano}}
+%斜体
+\newcommand{\plit}{\textit{plit}}
+%斜体
+\newcommand{\vLF}{\textit{lf}}
+%斜体
+\newcommand{\vcomp}{\textit{comp}}
+%斜体
+\newcommand{\gcomp}{\textit{Comp}}
+%斜体
+\newcommand{\BLoop}[1]{\textit{BLoop}($#1$)}
+%斜体
+\newcommand{\lfp}{\textit{lfp}}
+%斜体
+\newcommand{\gfp}{\textit{gfp}}
+%斜体
+\newcommand{\NES}{\textit{NES}}
+%斜体
+\newcommand{\ins}{\textit{Ins}}
+%斜体
+\newcommand{\gr}{\textit{ground}}
+%伪造？\Vdash
+\newcommand{\falsify}{\mbox{$\,\parallel\!\!\!-\,$}}
+%\not\Vdash
+\newcommand{\nfalsify}{\mbox{$\,\parallel\!\!\!/\!\!\!-\,$}}
+
+%罗马字体
+\newcommand{\ASforget}{\textrm{Forget}_{ST}}
+%中等权重
+\newcommand{\SM}{\textmd{SM}}
+
+% 等线体
+\newcommand{\forget}{{\sf Forget}}
+% 等线体
+\newcommand{\EWForget}{{\sf EWForget}}
+% 等线体
+\newcommand{\HT}{{\sf ht}}
+% 等线体
+\newcommand{\EQ}{{\sf eq}}
+% 等线体
+\newcommand{\Reduct}{{\sf Reduct}}
+% 等线体
+\newcommand{\SForgetLP}{{\sf SForget}}
+% 等线体
+\newcommand{\WForgetLP}{{\sf WForget}}
+% 等线体
+\newcommand{\IR}{{\sf IR}}
+
+% 等线体
+\newcommand{\Mod}{{\sf Mod}}
+\newcommand{\END}{\textsf{END}\xspace}
+
+
+%特殊符号？
+\newcommand{\DNot}{\sim}
+\newcommand{\NMdash}{\mbox{$|\!\!\!\thicksim$}}
+\newcommand{\uminus}{\mbox{$\cup\!\!\!\textit{-}\,$}}
+\newcommand{\cminus}{\mbox{$\cap\!\!\!\textit{-}\,$}}
+\newcommand{\HTmodels}{\models}
+\newcommand{\vMod}{|\!\!\models}
+
+
+%命题
+\newtheorem{proposition}{Proposition}
+
+
+% 使用高亮盒子，dk mybox等
+\usepackage{tcolorbox}
+  \tcbuselibrary{listings,skins,breakable,xparse}
+% 高亮盒子, 注意：不能分行！ dk
+\newtcbox{\dk}[1][orange!70!red]{on line,before upper={\rule[-0.2ex]{0pt}{1ex}\ttfamily},
+  arc=0.8ex,colback=#1!30!white,colframe=#1!50!black,
+  boxsep=0pt,left=1.5pt,right=1.5pt,top=1pt,bottom=1pt,
+  boxrule=1pt}
+  
+% 高亮盒子，注意：不能分行！ ntb note text box  
+\newtcbox{\ntb}[1][ForestGreen!70!red]{on line,before upper={\rule[-0.2ex]{0pt}{1ex}\ttfamily},
+  arc=0.8ex,colback=#1!30!white,colframe=#1!50!black,
+  boxsep=0pt,left=1.5pt,right=1.5pt,top=1pt,bottom=1pt,
+  boxrule=1pt}
+
+
+
+% add logo to the slides
+%\logo{\includegraphics[height=1cm]{pics/gzu_logo_red.png}}
+% \usepackage{tikz}
+% \logo{
+% \begin{tikzpicture}%
+%     \node  [opacity=0.08]{\includegraphics[width=5cm]{pics/gzu_logo_gray.png}};%
+% \end{tikzpicture}
+% }
+
+
+
+
+
+

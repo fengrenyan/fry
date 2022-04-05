@@ -1,0 +1,111 @@
+% PPT名称
+\title{CCS, PDL and Bisimularity}
+
+% 作者名称
+\author{Xin Zhou}
+% %\vfill
+
+% 研究机构
+\institute{Guizhou University, China\\
+Email:zhouxinj@hotmail.com
+}
+
+% PPT时间
+\date{\today}%August 1st, 2012 @ Kunming, Yuannan}
+%\date[ICLP'10]{In the 26th International Conference on Logic Programming}
+
+
+% PPT 首页/标题页
+\frame{\titlepage}
+%\section*{Outline}
+% PPT大纲
+\begin{frame}{Outline}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+
+%Title: Answer Set Programming: Theory and Practice
+%Abstract:
+%Answer set programming (ASP) is a declarative problem solving approach, initially tailored to
+%modeling problems in the area of knowledge representation and reasoning (KRR). We will briefly
+%introduce the basic theories of ASP and problem solving practice using ASP.
+
+\section{Introduction}
+
+\begin{frame}[allowframebreaks]{Introduction}
+  \begin{itemize}
+    \item \underline{CCS} Calculus of Communication systems is a \textcolor{teal}{process calculus} which introduced by Robin Milner in the 1980's\cite{DBLP:books/daglib/0067019}. It builds a general mathematical model, and skill in manipulating terms or expressions in oder to analyse the behaviour of these systems.
+    
+
+    \item \underline{PDL} is a formal system for reasoning about programs. Besides the traditional formalizing correctness specifications and proving their rigorously in a program.
+
+    \item \underline{Forgetting} 
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{CCS}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{PDL and Bisimulation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \input{chapters/PDL/sec0}
+%  \input{chapters/PDL/sec1}
+%  \input{chapters/PDL/sec2}
+%  \input{chapters/PDL/sec3}
+% \input{chapters/PDL/sec4}
+%\input{chapters/PDL/sec5}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Forgetting and Bisimulation}
+%\subsection{F111}
+%\subsection{F2}
+%\subsection{F3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Concluding Remarks and References}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}
+%     \begin{center}
+%         \huge Thanks for your attention! \\Q \& A
+%     \end{center}
+% \end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[allowframebreaks] %allowramebreaks 可自动分页
+        \frametitle{References}
+        %\nocite{*}
+        \bibliographystyle{alpha}
+        %此文件虽然在chapters文件夹下，但是实际运行应该是在main.tex中，所以提取bib文件的路径要尤其注意。
+        \bibliography{bib/ccs.bib}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End of the main content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
