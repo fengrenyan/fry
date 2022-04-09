@@ -1,0 +1,557 @@
+%% Thesis Template of GZ.Univ
+%%   for using revised CASthesis package with LaTeX2e
+%%
+%% Created by snda.liu <thinksheng@foxmail.com>
+%%
+%% $Id: 论文盲评.tex,v 0.12 2015/12/06 19:35:46   $
+
+%%%请使用pdflatex或pdftexify编译
+%%%上述两种编译器，可以识别的图片格式有：PDF,JPG,JPEG,PNG
+
+
+
+
+
+\documentclass[pdftex,notypeinfo,twoside,openany,UTF8,fntef]{CASthesis}
+
+
+
+\graphicspath{{chapter/}{figures/}} % 设置图形文件的搜索路径
+
+\CTEXsetup[format+={\flushleft}]{section} % 小节标题靠左对齐
+
+\allowdisplaybreaks[4] %公式强制分页
+\usepackage{enumitem}
+%\usepackage[CJKbookmarks=true]{hyperref}
+%\usepackage{bbm}
+
+%\renewcommand{\baselinestretch}{1.5} %行间距，默认为1.3
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{times}
+\usepackage{mathptmx}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{relsize}
+\usepackage{colortbl}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{CJK}
+\usepackage{pgf}
+\usepackage{bm}
+\usepackage{pbox}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{balance}
+\usepackage{tablefootnote}
+\usepackage{epstopdf, epsfig}
+\usepackage{url}
+\usepackage{cleveref}[2012/02/15]
+\usepackage{arydshln}
+\usepackage[super]{gbt7714}
+\usepackage{natbib}
+%算法的工具包
+\usepackage{algorithmic}
+\usepackage[ruled]{algorithm2e}
+\usepackage{algorithm}
+\usepackage{makecell}
+\usepackage{blkarray}
+\usepackage{array}
+\usepackage{lipsum}
+%\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{diagbox}
+\newcommand{\GAL}{\textsc{gal}}
+%设置页边距
+\usepackage{geometry}
+\geometry{left=2.54cm,right=2.54cm,top=3.17cm,bottom=3.17cm}
+
+\usepackage{paralist}
+\let\itemize\compactitem
+\let\enditemize\endcompactitem
+\let\enumerate\compactenum
+\let\endenumerate\endcompactenum
+\let\description\compactdesc
+\let\enddescription\endcompactdesc
+\setlength{\pltopsep}{10pt}
+
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\newcommand{\mycite}[1]{\scalebox{1.3}[1.3]{\raisebox{-0.65ex}{\cite{#1}}}}
+\floatname{algorithm}{算法}
+
+
+\numberwithin{algorithm}{chapter}
+\renewcommand{\algorithmicrequire}{ \textbf{输入:}}     %Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{ \textbf{输出:}}    %UseOutput in the format of Algorithm
+%\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\usepackage{geometry}%设置页边距
+\geometry{left=2.54cm,right=2.54cm,top=3.17cm,bottom=3.17cm}
+
+\theoremstyle{THrm}{
+	\newtheorem{question}{问题}[section]
+    \newtheorem{problem}{问题}[section]
+	\newtheorem{property}{性质}[section]
+	\newtheorem{assumption}{假设}[section]
+	\newtheorem{claim}[lemma]{断言}
+}
+\usepackage{nomencl}%所用宏包
+\makenomenclature%必须加上，放在\begin{document}之前
+%\renewcommand{\nomname}{缩略语对照表}
+\setcounter{tocdepth}{2}%设定目录层级（通常取值0-2 之间）
+
+\renewcommand{\nomname}{}
+%% this modifies item separation:
+\setlength{\nomitemsep}{8pt}
+%% this part defines the groups:
+%----------------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+
+  \item[\large \bfseries\hspace{0.38\textwidth}
+  \ifstrequal{#1}{N}{符号对照表}{%
+  \ifstrequal{#1}{A}{缩略语对照表}}%
+]\vspace{15pt}} % this is to add vertical space between the groups.
+
+
+
+\begin{document}
+%	\lipsum[1]
+
+\newcommand{\tuple}[1]{{\langle{#1}\rangle}}
+\newcommand{\Mod}{\textit{Mod}}
+\newcommand\ie{{\it i.e. }}
+\newcommand\eg{{\it e.g.}}
+\newcommand\st{{\it s.t. }}
+%\renewcommand{\st}{s.t.}
+%\newtheorem{definition}{定义}
+%\newtheorem{examp}{例子}
+%\newenvironment{example}{\begin{examp}}{\end{examp}}
+%\newtheorem{lemma}{引理}
+%\newtheorem{proposition}{命题}
+%\newtheorem{theorem}{定理}
+%\newtheorem{corollary}[theorem]{推论}
+%\newenvironment{proof}{{\bf 证明:}}{\hfill\rule{2mm}{2mm}\\ }
+\newcommand{\rto}{\rightarrow}
+\newcommand{\Muforget}{{\textsc{F}_{\textsc{$\mu$}}}}
+\newcommand{\lto}{\leftarrow}
+\newcommand{\lrto}{\leftrightarrow}
+\newcommand{\Rto}{\Rightarrow}
+\newcommand{\Lto}{\Leftarrow}
+\newcommand{\LRto}{\Leftrightarrow}
+\newcommand{\Var}{\textit{Var}}
+\newcommand{\Forget}{\textit{Forget}}
+\newcommand{\KForget}{\textit{KForget}}
+\newcommand{\TForget}{\textit{TForget}}
+%\newcommand{\forget}{\textit{forget}}
+\newcommand{\Fst}{\textit{Fst}}
+\newcommand{\dep}{\textit{dep}}
+\newcommand{\term}{\textit{term}}
+\newcommand{\literal}{\textit{literal}}
+
+\newcommand{\Atom}{\mathcal{A}}
+\newcommand{\SFive}{\textbf{S5}}
+\newcommand{\MPK}{\textsc{k}}
+\newcommand{\MPB}{\textsc{b}}
+\newcommand{\MPT}{\textsc{t}}
+\newcommand{\MPA}{\forall}
+\newcommand{\MPE}{\exists}
+
+\newcommand{\DNF}{\textit{DNF}}
+\newcommand{\CNF}{\textit{CNF}}
+
+%\newcommand{\degree}{\textit{degree}}
+\newcommand{\sunfold}{\textit{sunfold}}
+
+\newcommand{\Pos}{\textit{Pos}}
+\newcommand{\Neg}{\textit{Neg}}
+\newcommand\wrt{{\it w.r.t.}}
+\newcommand{\Hm} {{\cal M}}
+\newcommand{\Hw} {{\cal W}}
+\newcommand{\Hr} {{\cal R}}
+\newcommand{\Hb} {{\cal B}}
+\newcommand{\Ha} {{\cal A}}
+
+\newcommand{\Dsj}{\triangledown}
+\newcommand{\Diff}{\textrm{Diff}}
+
+\newcommand{\wnext}{\widetilde{\bigcirc}}
+\newcommand{\nex}{\bigcirc}
+\newcommand{\ness}{\square}
+\newcommand{\qness}{\boxminus}
+\newcommand{\wqnext}{\widetilde{\circleddash}}
+\newcommand{\qnext}{\circleddash}
+\newcommand{\may}{\lozenge}
+\newcommand{\qmay}{\blacklozenge}
+\newcommand{\unt} {{\cal U}}
+\newcommand{\since} {{\cal S}}
+\newcommand{\SNF} {\textit{SNF$_C$}}
+\newcommand{\start}{\textbf{start}}
+\newcommand{\Elm}{\textit{Elm}}
+\newcommand{\simp}{\textbf{simp}}
+\newcommand{\nnf}{\textbf{nnf}}
+
+\newcommand{\CTL}{\textrm{CTL}}
+\newcommand{\Ind}{\textrm{Ind}}
+\newcommand{\Tran}{\textrm{Tran}}
+\newcommand{\Sub}{\textrm{Sub}}
+\newcommand{\NI}{\textrm{NI}}
+\newcommand{\Inst}{\textrm{Inst}}
+\newcommand{\Com}{\textrm{Com}}
+\newcommand{\Rp}{\textrm{Rp}}
+\newcommand{\forget}{{\textsc{f}_\CTL}}
+\newcommand{\ALL}{\textsc{a}}
+\newcommand{\EXIST}{\textsc{e}}
+\newcommand{\NEXT}{\textsc{x}}
+\newcommand{\FUTURE}{\textsc{f}}
+\newcommand{\UNTILL}{\textsc{u}}
+\newcommand{\GLOBAL}{\textsc{g}}
+\newcommand{\UNLESS}{\textsc{w}}
+\newcommand{\Def}{\textrm{def}}
+\newcommand{\IR}{\textrm{IR}}
+\newcommand{\Tr}{\textrm{Tr}}
+\newcommand{\dis}{\textrm{dis}}
+\newcommand{\Unfolding}{\textsc{uf}}
+\def\PP{\ensuremath{\textbf{PP}}}
+\def\NgP{\ensuremath{\textbf{NP}}}
+\def\W{\ensuremath{\textbf{W}}}
+\newcommand{\Pre}{\textrm{Pre}}
+\newcommand{\Post}{\textrm{Post}}
+
+
+\newcommand{\CTLsnf}{{\textsc{SNF}_{\textsc{ctl}}^g}}
+\newcommand{\ResC}{{\textsc{R}_{\textsc{ctl}}^{\succ, S}}}
+\newcommand{\CTLforget}{{\textsc{F}_{\textsc{ctl}}}}
+\newcommand{\WForget}{{\textsc{WF}_{\textsc{ctl}}}}
+\newcommand{\degex}{{\textsc{def}_{\textsc{ex}}}}
+\newcommand{\Refine}{\textsc{Refine}}
+\newcommand{\cf}{\textrm{cf.}}
+\newcommand{\NEXP}{\textmd{\rm NEXP}}
+\newcommand{\EXP}{\textmd{\rm EXP}}
+\newcommand{\coNEXP}{\textmd{\rm co-NEXP}}
+\newcommand{\NP}{\textmd{\rm NP}}
+\newcommand{\coNP}{\textmd{\rm co-NP}}
+\newcommand{\Pol}{\textmd{\rm P}}
+\newcommand{\BH}[1]{\textmd{\rm BH}_{#1}}
+\newcommand{\coBH}[1]{\textmd{\rm co-BH}_{#1}}
+\newcommand{\NLOG}{\textmd{\rm NLOG}}
+\newcommand{\DeltaP}[1]{\Delta_{#1}^{p}}
+\newcommand{\PIP}[1]{\Pi_{#1}^{p}}
+\newcommand{\SigmaP}[1]{\Sigma_{#1}^{p}}
+
+
+\newcommand{\authorComment}[3]
+{{\color{#1}\textbf{[\!\![\!\![\marginpar{\centering{\color{#1}\textbf{#2}}}~ #3 ]\!\!]\!\!]}}}
+\newcommand{\Renyan}[1]{\textcolor{red}{#1}}
+\newcommand{\Yisong}[1]{\textcolor{blue}{#1}}
+\newcommand{\Wanwei}[1]{\textcolor{magenta}{#1}}
+
+
+\oddyemei{\leftmark}
+\evenyemei{贵州大学博士学位论文}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 封面部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titlepage
+\newpage\thispagestyle{empty}
+
+\begin{flushleft}
+	\setlength{\fboxrule}{1pt}
+	\setlength{\fboxsep}{0.1cm}
+	\fbox{\shortstack[l]{\vspace*{15pt}\\\songti\zihao{5}论文编号：\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}\\\vspace*{15pt}}}
+\end{flushleft}
+
+\vspace*{30pt}
+\begin{center}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=2.9cm]{gzdx_red.jpg}\\
+		\includegraphics[width=3.9cm]{gzdx_mao.jpg}\\
+	\end{figure}
+	\kaishu\zihao{-0}{\textbf{2022届博士学位论文}}
+\end{center}
+
+\vspace*{20pt}
+\begin{center}
+	\heiti\zihao{1}{基于遗忘的反应式系统\\最弱充分条件研究}
+\end{center}
+
+\vspace*{20pt}
+\begin{center}
+	\heiti\zihao{3}{
+		学科专业：\uwave{\hbox to 70mm{~~~~~~~~~~~~~~~~软件工程~~~~~~~~~~~~~~~~~~~~~~~~}}\\
+		研究方向：\uwave{\hbox to 70mm{~~~软件工程技术与人工智能~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}}
+	}
+\end{center}
+
+\vspace*{70pt}
+
+\begin{center}
+	\heiti\zihao{4}
+	{中国$\cdot$贵州$\cdot$贵阳\\2022年~3月}
+\end{center}
+
+\frontmatter%前序页码i ii iii iv
+
+\input{chapter/abstracts.tex}
+
+% 目录
+\tableofcontents
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% 封面部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  % 中文封面内容
+%  \classification{TP309}%分类号
+%  \confidential{公开}%密级
+%  \serialnumber{2016010041}%论文编号
+%  \school{贵\ \ 州\ \ 大\ \ 学}
+%  \degree{2022届博士}
+%  \title{基于遗忘的反应式系统\\最弱充分条件研究}
+%  \author{冯仁艳}
+%  \advisor{王以松}
+%  \xuekezhuanye{软件工程}
+%  \yanjiufangxiang{软件工程技术 \\ 与人工智能}
+%  \riqi{2022年5月}
+%  \didian{中国$\cdot$贵州$\cdot$贵阳}
+%%  请适当替换上述文字
+%
+%
+% \oddyemei{\leftmark}
+% \evenyemei{贵州大学博士学位论文}
+%
+%
+%  % 封面
+%  \maketitle
+%  \frontmatter%前序页码i ii iii iv
+%  % 目录
+%  \tableofcontents
+  % 表格目录
+  \listoftables
+  % 插图目录
+  \listoffigures
+ \cleardoublepage
+
+%术语表
+%\renewcommand{\nomname}{符号对照表}
+%\nomenclature{符号}{符号说明}%
+\nomenclature[N]{$\Ha$}{原子命题的集合}
+\nomenclature[N]{$V$， $\overline{V}$}{$V\subseteq {\cal A}$，$\overline{V}={\cal A}-V$}
+\nomenclature[N]{${\cal L}^p$}{经典命题语言}
+\nomenclature[N]{$p,q,r, \dots$}{原子命题}
+\nomenclature[N]{$\neg$，$\wedge$，$\vee$，$\rto$，$\lrto$}{否定，合取，吸取，蕴涵，等值于}
+\nomenclature[N]{$\Atom({\cal L}^p)$，${\cal F}({\cal L}^p)$}{${\cal L}^p$的原子公式的集合}
+\nomenclature[N]{${\cal F}({\cal L}^p)$}{${\cal L}^p$的公式的集合（公式的集合）}
+\nomenclature[N]{$top$}{ture（1）（重言式或永真式）}
+\nomenclature[N]{$bot$}{false（0）（矛盾式或永假式）}
+\nomenclature[N]{$v:\Ha \rto \{0,1\}$}{真假赋值}
+\nomenclature[N]{${\cal F}^{\Hm}$}{命题单模态逻辑公式的集合}
+\nomenclature[N]{$\MPK$}{必然}
+\nomenclature[N]{$\MPB$}{可能}
+\nomenclature[N]{$\Hm=(S,R,L)$}{Kripke结构}
+\nomenclature[N]{$\tuple{S,s}$，$\tuple{W,w}$}{$\MPK$-解释}
+\nomenclature[N]{$\Hm=(S,R,L,s_0)$}{初始结构}
+\nomenclature[N]{${\cal K}=(\Hm,s)$}{初始$\MPK$-结构}
+\nomenclature[N]{$\Tr_{n}^{\Hm}(s)$}{定义在$\Hm$上根为$s$深度为$n$的计算树}
+\nomenclature[N]{$\cal L$}{$\CTL$语言}
+\nomenclature[N]{$\overset{def}{=}$}{定义为}
+\nomenclature[N]{$\varphi,\psi, \dots,\varphi_1, \psi_1,\dots$}{命题公式（公式）}
+\nomenclature[N]{$v\models \varphi$，$(\Hm,s)\models \varphi$}{$v$，$(\Hm,s)$满足$\varphi$}
+\nomenclature[N]{$\pi_s=(s_1=s, s_2,\dots)$}{以$s$为起点的路径}
+\nomenclature[N]{$\Mod(\varphi)$}{$\varphi$的模型的集合}
+\nomenclature[N]{$\varphi_1\models \varphi_2$}{$\varphi_1$逻辑地蕴涵$\varphi_2$}
+\nomenclature[N]{$\varphi_1\equiv \varphi_2$}{$\varphi_1$和$\varphi_2$等值公式}
+\nomenclature[N]{$\Var(\varphi)$}{出现在$\varphi$的原子命题的集合}
+\nomenclature[N]{$\IR(\varphi,V)$}{$\varphi$与$V$中的原子命题无关}
+\nomenclature[N]{$n$}{系统用户总数}
+\nomenclature[N]{$\mathcal{X},\hat{\mathcal{X}}$}{原始数据字母表，扰动数据字母表}
+\nomenclature[N]{$\mid\mathcal{X}\mid$,$\mid\hat{\mathcal{X}}\mid$}{原始与扰动字母表中不同的原子数}
+\nomenclature[N]{$p(\cdot),q(\cdot/\cdot)$}{先验概率分布，条件概率分布}
+\nomenclature[N]{$\mathcal{D},\mathcal{A}$}{防御者与攻击者的策略集合}
+\nomenclature[N]{$\Theta$}{邻接矩阵}
+\nomenclature[N]{$U(\cdot,\cdot)$}{博弈的效用函数}
+\nomenclature[N]{$d(\cdot,\cdot)$}{失真测量函数}
+\nomenclature[N]{$\lambda$}{拉格朗日乘子}
+\nomenclature[N]{$T$,$w_{ij}$}{收敛门限阈值，属性相关度门限}
+\nomenclature[N]{$\phi_{c}$}{依赖等级}
+\nomenclature[N]{$\mathcal{P},\mathcal{Q}$}{概率分布集合，隐私机制集合}
+\nomenclature[N]{$r(\cdot,\cdot)$}{联合概率分布}
+\nomenclature[N]{$P^*,Q^*$}{最优策略组合}
+\nomenclature[N]{$q(\cdot,\cdot/\cdot),p(\cdot,\cdot)$}{条件概率分布以及联合概率分布}
+\nomenclature[N]{$S_d,S_a$}{防御者与攻击者的策略}
+\nomenclature[N]{$D_{KL}(\cdot \parallel \cdot)$}{相对熵距离函数}
+\nomenclature[N]{$\delta$}{期望失真门限}
+\nomenclature[N]{$\tau$}{给定的质量损失约束}
+\nomenclature[N]{$\mathcal{Q}_{d,\tau},Q_j$}{可达的隐私机制，第j个最佳隐私机制}
+%缩略语对照表
+\nomenclature[A]{\textbf{DP}}{Differential Privacy\quad \quad \quad \quad \quad \quad  \quad \quad \quad \quad 差分隐私}
+\nomenclature[A]{\textbf{PPDP}}{Privacy-Preserving Data Publishing\quad \quad \quad \quad 隐私保护的数据发布}
+\nomenclature[A]{\textbf{PPDA}}{Privacy-Preserving Data Analysis\quad \quad \ \ \ \quad \quad 隐私保护的数据分析}
+\nomenclature[A]{\textbf{PPDM}}{Privacy-Preserving Data Mining\quad \quad \quad  \ \quad \quad 隐私保护的数据挖掘}
+\nomenclature[A]{\textbf{LDP}}{Local Differential Privacy\quad \quad \quad \quad  \quad \ \ \quad \quad 本地化差分隐私}
+\nomenclature[A]{\textbf{RR}}{Randomized Response\quad \quad \quad \quad \quad \quad \quad  \ \quad \quad 随机响应}
+\nomenclature[A]{\textbf{PM}}{Piecewise Mechanism\quad \quad \quad \quad \quad \quad \quad  \quad \quad 分段机制}
+\nomenclature[A]{\textbf{MI}}{Mutual Information\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad 互信息}
+\nomenclature[A]{\textbf{QIF}}{Quantitative Information Flow\quad \quad \quad \quad  \quad \quad 量化信息流}
+%\nomenclature[A]{\textbf{OUE}}{optimized unary encoding\quad \quad \quad \quad \quad \quad 最优一元编码}
+\nomenclature[A]{\textbf{ORRP}}{Orderly Randomized Response Perturbation 有序随机响应扰动}
+\nomenclature[A]{\textbf{PPAD}}{Privacy-Preserving Attack Defense\quad \quad \  \quad \quad 隐私保护攻击防御}
+\nomenclature[A]{\textbf{PDP}}{Personalized Differential Privacy\quad \quad \ \ \ \quad \quad 个性化差分隐私}
+\nomenclature[A]{\textbf{MRR}}{Multivariate Randomized Response\quad  \ \ \quad \quad 多元随机响应}
+\nomenclature[A]{\textbf{PDF}}{Probability Density Function\quad \quad \quad \quad  \ \ \quad \quad 概率密度函数}
+\nomenclature[A]{\textbf{BSC}}{Binary Symmetric Channel\quad \quad \quad \quad  \quad \quad \quad 二元对称信道}
+\nomenclature[A]{\textbf{DMC}}{Discrete Memoryless Channel\quad \quad \quad  \quad \quad \quad 离散无记忆信道}
+\nomenclature[A]{\textbf{SD}}{Saddle Point\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \ \quad \quad 鞍点}
+\nomenclature[A]{\textbf{TPZS}}{Two-Person Zero-Sum\quad \quad \quad \quad \quad \quad \quad \ \quad \quad 二人零和}
+%\printnomenclature[2cm]
+\printnomenclature[1.5in]%放在想输出术语表的地方，一般是段首
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 前言部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 摘要
+%\input{chapter/abstracts.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 摘要结束
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 正文部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter%正式页码1 2 3
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 第1章
+\input{chapter/chapter-01-introduction.tex}%绪论
+
+\input{chapter/chapter-02-basic} %基本模型与定义
+\input{chapter/chapter-03-fanyinshiForget.tex}
+\input{chapter/chapter-04-fanyingshiApplication.tex}
+\input{chapter/chapter-05-CTLcomptforgetting.tex}
+%\input{chapter/chapter-03-forgCTLproperty} %CTL下遗忘的定义及语义属性 //CTL下的遗忘理论的定义及其语义属性
+%\input{chapter/chapter-04-resolution.tex} %基于消解CTL遗忘的计算方法     //  基于消解CTL遗忘的计算方
+%\input{chapter/chapter-05-modelbased.tex} %基于模型的CTL遗忘的计算方法  // 差分隐私数据发布的最优化模型
+%\input{chapter/chapter-06-mucalculus.tex} %mu演算的遗忘理论   // 差分隐私策略机制的均衡优化模型
+%\input{chapter/chapter-07-WSC.tex} %基于遗忘的最弱充分条件计算
+%\input{chapter/chapter-08-experiments.tex} %实验结果展示
+\input{chapter/chapter-09-conclusion.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 附件部分
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\backmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%参考文献%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{gbt7714-unsrt}
+ \bibliography{bib/paper}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 摘要
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%攻读学位期间科研和论文情况%%%%%%%%%%%%%%%
+\newpage
+\Nchapter{攻读博士学位期间科研和论文情况}  %博士同学请注意修改此标题
+
+参与国家自然科学基金三项，发表CCF B类会议论文一篇，SCI论文两篇在审。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 致谢%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapter/thanks.tex}%结论
+
+
+
+%\begin{resumesection}{\em {一、参与科研项目}}
+%
+%%\textbf{{\em 主持科研项目}}
+%%\begin{itemize}[leftmargin=1.5em]
+%%\item [1.]贵州省研究生科研基金立项课题：开放数据发布的隐私保护关键技术及隐私量化评估，合同编号 KYJJ2017005
+%%\end{itemize}
+%
+%
+%%\textbf{{\em 参与科研项目}}
+%
+%
+%\begin{itemize}%[leftmargin=1.5em]
+%\item [1.]国家自然科学基金重点项目：数据共享应用的块数据融合分析理论与安全管控模型研究，项目基金号 U1836205
+%\item [2.]国家自然科学基金：不完全知识的遗忘理论研究及应用，项目基金号
+%\item [3.]国家自然科学基金：析取逻辑程序归纳学习研究及应用，项目基金号
+%\end{itemize}
+%
+%
+%%1. 国家自然科学基金重点项目：数据共享应用的块数据融合分析理论与安全管控模型研究(No. U1836205)\\
+%%2. 国家自然科学基金地区项目：理性隐私计算及隐私风险可控技术研究(No. 61662009)\\
+%%3.  国家自然科学基金面上项目：理性委托计算的可组合安全理论及其构造方法研究(No.61772008)\\
+%%4. 贵州省科技计划重大专项：面向多源法院数据融合的数据安全防护与隐私保护算法及模型研究(No. 黔科合重大专项字[2017]3002)\\
+%%5. 贵州省科技计划重大专项：大数据安全与隐私保护关键技术研究(No. 黔科合重大专项字[2018]3001)
+%
+%\end{resumesection}
+
+%\begin{resumesection}{\em {二、第一作者期刊论文}}
+%\begin{itemize}[leftmargin=1.5em]
+%\item [1.] \textbf{Ningbo Wu}, Changgen Peng (Corresponding author). An information theoretic approach to local differential privacy data collection [J] IEEE Transaction on Knowledge and Data Engineering (TKDE) SCI 2区，CCF推荐数据挖掘A类期刊，IF 3.856 (Major Revision, Under Review)
+% \item [2.] \textbf{Ningbo Wu}, Changgen Peng (Corresponding author), Kun Niu. A privacy-preserving game model for local differential privacy by using information-theoretic approach[J]. IEEE ACCESS,2020,8:216741-216751. DOI号 10.1109/ACCESS.2020.\\3041854. SCI 2区，IF 3.8
+% \item [3.]\textbf{吴宁博},彭长根(通信作者),田有亮,牛坤,丁红发.基于率失真的差分隐私效用优化模型[J].计算机学报,2020,43(8):1463-1478. DOI:10.11897/SP.J.1016.2020.01463, CCF推荐中文科技期刊A类,贵州大学(一级学术期刊)
+% \item [4.] \textbf{吴宁博},彭长根(通信作者),牟其林. 面向关联属性的差分隐私信息熵度量方法[J].电子学报,2019,47(11):2337-2343. DOI:10.3969/j.issn.0372-2112.2019.11.015,\\CCF推荐中文科技期刊A类,贵州大学(一级学术期刊)
+%
+%\end{itemize}
+%\end{resumesection}
+
+%\begin{resumelist}{{\em 二、发表论文}}
+%	
+%[1] ~~\textbf{Renyan Feng}, Erman Acar, Stefan Schlobach, Yisong Wang, Wanwei Liu. On Sufficient and Necessary Conditions in Bounded CTL: A Forgetting Approach [C]. KR2020, 17(1): 361-370. (CCF B类会议)
+%
+%
+%
+%\end{resumelist}
+%
+%\begin{resumelist}{二、专利}
+%
+%[1]\textbf{丁红发},彭长根,朱义杰. 基于位置景区电子讲解服务的系统[P]. 贵州：CN205029878U, 2016-02-10.
+%
+%[2]\textbf{丁红发},彭长根,朱义杰. 基于位置景区电子讲解服务的系统的设计方法及系统[P]. 贵州：CN105025442A,2015-11-04.
+%
+%[3]刘波涛,彭长根,吴睿雪,谢明明,\textbf{丁红发},袁文书,夏宗涛,杨炳钊. 一种可恢复的保留数字类型轻量级脱敏方法[P]. 贵州：CN109039586A,2018-12-18.
+%
+%[4]彭长根,吴睿雪,刘波涛,\textbf{丁红发},谢明明. 具有隐私保护功能的快递实名认证方法[P]. 贵州：CN108833351A,2018-11-16.
+%
+%[5]谢明明,彭长根,刘波涛,吴睿雪,\textbf{丁红发}. 一种基于传统分组密码的保持格式加密方法[P]. 贵州：CN108768617A,2018-11-06.
+%
+%[6]彭长根,刘波涛,吴睿雪,谢明明,\textbf{丁红发},李雪松. 一种基于手机身份的验证码短信透明加密方法[P]. 贵州：CN108599944A,2018-09-28.
+%
+%%[7]刘波涛,彭长根,吴睿雪,李雪松,\textbf{丁红发},谢明明. 加解密一致的SP网络结构轻量级LBT分组密码实现方法[P]. 贵州：CN107707343A,2018-02-16.
+%
+%\end{resumelist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 声明%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\newpage
+% \pagestyle{empty}
+%%\textwidth 14.5 true cm  %默认14.5
+%\begin{center}
+%\begin{figure}
+%  \centering
+%  \includegraphics[width=\textwidth]{shengming.pdf}
+%\end{figure}
+%\end{center}
+%
+
+
+
+\end{document}

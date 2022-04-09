@@ -45,7 +45,7 @@
        
 时序逻辑（也叫时态逻辑）作为一种描述系统规范的形式化语言，其研究状态随时间变化的系统的逻辑特性。由于软件和硬件系统运行的本质是状态变化的过程，所以时态逻辑在软件和硬件系统验证中应用得相当广泛。计算树逻辑（computation tree logic, \CTL）是分支时态逻辑的一种，其模型检测是多项式时间可完成的。然而，$\CTL$表达系统性质的能力不如$\mu$-演算（$\mu$-calculus），如：“某给定的系统中存在一条路径，且这条路径上处于偶数位置的状态满足特定的性质”这一规范是不能用$\CTL$来表示的\cite{DBLP:series/txtcs/Schneider04}。充分考虑这两种逻辑语言自身的特性，本文主要研究$\CTL$和$\mu$-演算。因此，本文所说的公式指$\CTL$（或$\mu$-演算）公式，即用来描述一个规范（或性质）的公式是$\CTL$（或$\mu$-演算）公式。
 
-在模型检测中，反应式系统通常用Kripe结构表示~\cite{DBLP:journals/fcsc/ZhuWXX10,DBLP:series/txtcs/Schneider04}。
+在模型检测中，反应式系统通常用Kripke结构表示~\cite{DBLP:journals/fcsc/ZhuWXX10,DBLP:series/txtcs/Schneider04}。
 当给定了反应式系统的Kripke结构模型$\Hm$和规范$\varphi$，
 %在实际应用中，
 就存在模型检测问题$\Hm\models^? \varphi$：
