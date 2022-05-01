@@ -1,0 +1,965 @@
+% This file is modified by Frans Oliehoek <faolieho@science.uva.nl>
+% on 2005/12/18. (original file name: conference-ornate-20min.en.tex)
+
+\documentclass[9pt, CJK]{beamer}
+
+% This file is a solution template for:
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\mode<presentation>
+{
+	%\usetheme{IAS_sidebar} 	% only a simple left side bar, frame-title box varies in size when using subtitles for frames.
+	%\usetheme{IAS_sidebar2_10pt} 	% only a simple side bar, the frame-title box has a fixed size to exactly fit a title and subtitle. For usage with 10pt font, i.e.: \documentclass[10pt]{beamer}
+	%\usetheme{IAS_sidebar2_11pt} 	% As above only changed to fit 11pt fonts.
+	%\usetheme{IAS_sidebar2_12pt} 	% As above only changed to fit 12pt fonts.
+	\usetheme{IAS_sidebarNav} 	% An IAS side bar with navigation
+	%\usetheme{IAS_topNav}		% Only top navigation with IAS colors
+	%\usetheme{IAS_topNav_bottomAuthorTitle}	%Top navigation and author/title in the bottom with IAS colors
+	%\usetheme{IAS_topNav_leftIASbar_10pt}	% both top navigation and the IAS sidebar, the frame-title box has a fixed size to exactly fit a title and subtitle. For usage with 10pt font, i.e.: \documentclass[10pt,english
+	%\usetheme{IAS_topNav_leftIASbar_11pt}	% As above only changed to fit 11pt fonts.
+	%\usetheme{IAS_topNav_leftIASbar_12pt}	% As above only changed to fit 12pt fonts.
+	\setbeamercovered{transparent}
+	%   % or whatever (possibly just delete it)
+}
+
+
+% to remove the navigation symbols:
+%\setbeamertemplate{navigation symbols}{}
+
+\usepackage[english]{babel}
+
+% or whatever
+
+\usepackage[utf8]{inputenc}
+% or whatever
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+\usepackage{colortbl}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+\usepackage{booktabs, multirow, enumerate}
+\usepackage{ctex}
+\usepackage{setspace}
+%\usepackage{CJK,CJKnumb}
+
+\usepackage{ulem}
+
+
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{color, soul} 
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>
+		\frametitle{目录}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+\beamerdefaultoverlayspecification{<+->}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}  %表格自动换行
+
+
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+\graphicspath{{figures/}}
+%\pgfdeclaremask{mymask}{figures/thu_logo2-mask}
+%\pgfdeclareimage[width=0.45\textwidth,mask=mymask]{image2}{pictures/wai1}
+\pgfdeclareimage[width=1.6cm,height=1.0cm]{institution-logo}{figures/gzulogo}
+\logo{\pgfuseimage{institution-logo}}
+
+%\includeonlyframes{mine}
+\begin{document}
+	\renewcommand{\figurename}{图}
+	\renewcommand{\tablename}{表}
+	\setulcolor{red} 
+	
+	\newcommand{\CTL}{\textrm{CTL}}
+	\newcommand{\CTLsnf}{{\textsc{SNF}_{\textsc{ctl}}^g}}
+	\newcommand{\ResC}{{\textsc{R}_{\textsc{ctl}}^{\succ, S}}}
+	\newcommand{\CTLforget}{{\textsc{F}_{\textsc{ctl}}}}
+	\newcommand{\Ind}{\textrm{Ind}}
+	\newcommand{\Pos}{\textit{Pos}}
+	\newcommand{\Neg}{\textit{Neg}}
+	\newcommand\wrt{{\it w.r.t.}}
+	\newcommand{\Hm} {{\cal M}}
+	\newcommand{\Hw} {{\cal W}}
+	\newcommand{\Hr} {{\cal R}}
+	\newcommand{\Hb} {{\cal B}}
+	\newcommand{\Ha} {{\cal A}}
+	
+	\newcommand{\rto}{\rightarrow}
+	\newcommand{\Muforget}{{\textsc{F}_{\textsc{$\mu$}}}}
+	\newcommand{\lto}{\leftarrow}
+	\newcommand{\lrto}{\leftrightarrow}
+	\newcommand{\Rto}{\Rightarrow}
+	\newcommand{\Lto}{\Leftarrow}
+	\newcommand{\LRto}{\Leftrightarrow}
+	\newcommand{\Var}{\textit{Var}}
+	\newcommand{\Forget}{\textit{Forget}}
+	\newcommand{\KForget}{\textit{KForget}}
+	\newcommand{\TForget}{\textit{TForget}}
+	%\newcommand{\forget}{\textit{forget}}
+	\newcommand{\Fst}{\textit{Fst}}
+	\newcommand{\dep}{\textit{dep}}
+	\newcommand{\term}{\textit{term}}
+	\newcommand{\literal}{\textit{literal}}
+	
+	\setbeamertemplate{caption}[numbered]
+	
+	\title{\CJKfamily{li}{基于遗忘的反应式系统最弱充分条件研究}}
+	
+	
+	
+	\begin{frame}
+		\titlepage
+		\textcolor{blue}{
+		\begin{center}
+			\heiti\zihao{5}{
+				姓名：\uwave{\hbox to 50mm{~~~~~~~~~~~~~~~~~~~冯仁艳~~~~~~~~~~~~~~~~}}\\
+				导师：\uwave{\hbox to 50mm{~~~~~~~~~~~~~~~~~~~王以松~~~~~~~~~~~~~~~~}}\\
+				联合导师：\uwave{\hbox to 50mm{~~~~~~~~~~Erman Acar\footnote[frame]{LIACS, Leiden University, The Netherlands}~~~~~~~~~~~~~~~~~}} \\
+				学科专业：\uwave{\hbox to 50mm{~~~~~~~~~~~~~~软件工程~~~~~~~~~~~~~~~~~~}}\\
+				研究方向：\uwave{\hbox to 50mm{~~~~~~~软件工程技术与人工智能~~~~~~~~~~~~~~~~~~~~}}
+			}
+		\date{\\[3ex]
+			二〇二二年六月}
+		\end{center}}
+	\end{frame}
+	
+	\section{研究背景和意义}
+	\begin{frame}  
+			\begin{figure}
+				\setlength{\abovecaptionskip}{0cm}  %段前
+				\setlength{\belowcaptionskip}{-0.2cm} %段后
+				\centering
+				\subfigure{
+				\includegraphics[scale=0.2]{figures/soft1}}\quad
+				%\subfigure{\includegraphics[scale=0.4]{figures/soft2}}
+			  \subfigure{\includegraphics[scale=0.15]{figures/soft3}}\quad
+				\subfigure{\includegraphics[scale=0.4]{figures/soft4}}
+				\caption{系统故障引起的系列灾难现场}
+			\end{figure}
+			
+
+			
+			\only<1>{\begin{table}[htbp]
+				\setlength{\abovecaptionskip}{-0.2cm}  %段前
+				\setlength{\belowcaptionskip}{-0.4cm} %段后
+				\fontsize{7pt}{\baselineskip}\selectfont
+				\caption{由系统故障引起的重大事件概览}
+				\label{tab:systemEvents_1.1}
+				\centering
+				\begin{tabular}{p{0.12\textwidth}p{0.35\textwidth}p{0.5\textwidth}}%
+					\toprule
+					\textbf{时间}&\textbf{事故原因}&\textbf{损失}\\
+					\midrule
+					1991年 & 美国爱国者导弹系统舍入错误 & 28名士兵死亡、100人受伤等\\
+					1996年 & 阿丽亚娜5火箭 代码重用 & 火箭与其它卫星毁灭\\
+					1999年 & 火星探测器用错度量单位 & 探测器坠毁并造成了3.27亿美元的损失\\
+					2011年 & 温州7.23动车\underline{信号设备}在设计上存在严重的缺陷 &动车脱节脱轨、多人失去生命\\
+					\bottomrule
+				\end{tabular}
+			\end{table}}
+		\only<2>{\begin{block}
+				系统正确对国防、太空勘测和交通运输至关重要。
+		\end{block}}
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{研究背景和意义: {\small 形式化验证为系统的正确提供了有力依据}} 
+\begin{block}{自动定理证明（Automated theorem proving）}
+		\begin{columns}
+		\column{0.5\textwidth}
+			令$\phi_{imp}$和$\phi_{spec}$分别表示系统模型和规范对应的时序逻辑公式：
+			\begin{itemize}
+				\item $\phi_{imp} \rto \phi_{spec}$，或
+				\item $\phi_{imp} \lrto \phi_{spec}$。
+			\end{itemize}
+		\column{0.5\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.3]{figures/atp}
+			\end{figure}
+		\end{columns} 
+	\begin{figure}
+		\includegraphics[scale=0.3]{figures/hoareTriple}
+	\end{figure}
+	\end{block}
+\vskip 2pt
+	\begin{block}{模型检测（Model Checking）}
+		\begin{columns}
+			\column{0.5\textwidth} 
+			\begin{itemize}
+				\item $\textcolor{red}{\Hm} \models^? \phi_{spec}$.
+				\item {\small 反应式系统(reactive system)：是指与环境有着持续不断交互的系统。}
+				\item \textcolor{red}{如何计算反应式系统的WP?}
+			\end{itemize}
+			\column{0.5\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.35]{figures/MC}
+			\end{figure}
+		\end{columns}
+	\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~研究背景和意义: {\small 知识表示与推理（KR）中的SNC和WSC}}
+		{\small\begin{block}{最强必要条件（SNC）和最弱充分条件（WSC）}
+			SNC和WSC分别用于描述给定理论下的最一般的结果（consequence）和最一般的诱因（abduction）[4]。满足下面两个条件的$\varphi$称为$q$在理论$\Sigma$下的SNC:
+			\begin{itemize}
+				\item[(1)] $\Sigma \models q \rto \varphi$;
+				\item[(2)] 对任意$\varphi'$且$\Sigma \models q \rto \varphi'$，有$\Sigma \models \varphi \rto \varphi'$。
+			\end{itemize}
+		满足下面两个条件的$\psi$称为$q$在理论$\Sigma$下的（WSC）:
+		\begin{itemize}
+			\item[(1)] $\Sigma \models \psi \rto q$; 
+			\item[(2)] 对任意$\psi'$且$\Sigma \models \psi' \rto q$，有$\Sigma \models \psi' \rto \psi$。
+		\end{itemize}
+		\end{block}}
+		\vskip 0.5pt
+		{\small\begin{block}{遗忘理论（Forgetting）}
+			\begin{columns}
+				\column{0.5\textwidth} 
+				 在一阶逻辑中，从公式$\varphi$中遗忘掉一个$n$元谓词$P$的结果是$\exists R.\varphi[P/R]$，即将公式$\varphi$中的所有$P$的出现都用一个新的$n$元谓词$R$来替代。 
+				\column{0.5\textwidth}
+				\begin{figure}
+					\includegraphics[scale=0.35]{figures/forgetting}
+				\end{figure}
+			\end{columns}
+		\end{block}}
+	\end{frame}
+	
+	\section{研究现状}
+	\subsection*{国外研究现状}
+	\begin{frame}
+		\frametitle{~国外研究现状}
+		\begin{itemize}
+			\item 完备信息博弈
+			\begin{itemize}
+				\setlength{\baselineskip}{16pt}
+				\item 1997 年超级电脑“深蓝”击败国际象棋特级大师卡斯帕罗夫
+				\item 2016年，google的AlphaGo 第一次击败人类顶级职业选手
+				\item 2017年，google的AlphaZero在无任何人类数据训练的条件下，自学习后并以100:0的战绩击败AlphaGo
+			\end{itemize}
+			\vskip 8pt 
+			\item 不完备信息博弈
+			\begin{itemize}
+				\setlength{\baselineskip}{16pt}
+				\item 2008年， Zinkevich 等提出虚拟遗憾最小化算法,并在 2009 年的世界年度扑克机器博弈大赛的三人限注德州扑克中取得冠军
+				\item 2017年卡内基梅隆大学的Libratus，在两人不限注的德州扑克中击败了人类顶级选手
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	\subsection*{国内研究现状}
+	\begin{frame}
+		\frametitle{~国内研究现状}
+		\begin{itemize}
+			\item 完备信息博弈
+			\begin{itemize}
+				\setlength{\baselineskip}{16pt}
+				\item 2006年，东北大学的象棋程序“棋天大圣”战胜了有中国象棋第一人之称的许银川
+			\end{itemize}
+			\item 不完备信息博弈
+			\begin{itemize}
+				\setlength{\baselineskip}{16pt}
+				\item 2013年哈尔滨工业大学在ACPC大赛中的三人限注德州扑克项目上获得了第四名的成绩
+				\item 2017年世界计算机桥牌锦标赛中，北京新睿桥科技有限公司的新睿桥牌程序取得了第二名的好成绩
+				\item 2019 年，上海交通大学的 You Y 等人针对“斗地主” 博弈中每次出牌时，存在可能组合牌型较多的情况，提出一种处理组合动作的新方法组合 Q 学习（CQL） 
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\section{研究内容}
+	\begin{frame}
+		\frametitle{~研究内容}
+		\begin{block}<1->{研究内容}
+			\setlength{\baselineskip}{16pt}
+			\uncover<1->{~~~本论文研究反应式系统下，$\CTL$和$\mu$-演算的遗忘理论，并使用遗忘计算WSC。具体为：}
+			\begin{itemize}
+				\vskip 8pt
+				\item<2-> $\CTL$和$\mu$-演算的遗忘理论
+				\begin{itemize}
+					\item $\CTL$的遗忘理论
+					\item $\mu$-演算的遗忘理论
+				\end{itemize}
+				\item<3-> 遗忘理论在反应式系统的形式化验证和知识更新中的应用
+				\begin{itemize}
+					\item 计算WSC和SNC
+					\item 定义知识更新
+				\end{itemize}
+				\item<4-> 计算$\CTL$遗忘的算法
+				\begin{itemize}
+					\item 基于模型的计算方法
+					\item 基于消解（resolution）的计算方法
+					\item 实现与实验分析
+				\end{itemize}
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
+\begin{frame}
+	\frametitle{~研究内容}
+	\begin{figure}
+		\includegraphics[scale=0.3]{figures/zuzhi}
+		\caption{文章组织结构示意图}
+	\end{figure}
+	
+	\begin{itemize}
+		\item  $\CTL$和$\mu$-演算的遗忘理论
+		\item 遗忘理论在反应式系统的形式化验证和知识更新中的应用
+		\item 计算$CTL$遗忘的计算方法
+	\end{itemize}
+\end{frame}
+
+\section{背景知识}
+\subsection{Kripke结构和计算树逻辑（CTL）}
+\begin{frame}
+	\begin{itemize}
+		\item $\Ha$：原子命题的集合
+		\item $\Ind$：索引的集合
+	\end{itemize}
+\end{frame}
+\subsection{$\mu$-演算}
+\begin{frame}
+	content...
+\end{frame}
+	
+	\section{CTL和mu-演算遗忘理论}
+	\subsection*{CTL遗忘理论}
+	\begin{frame}
+		\frametitle{~打开}
+		\[
+		\begin{large}\text{基于手牌拆分的蒙特卡洛树搜索模型}\end{large}
+		\begin{cases}
+			\text{手牌拆分算法} \\ \\
+			\text{蒙特卡洛树搜索算法}
+		\end{cases}
+		\]
+		\begin{itemize}
+			\item<2-> 手牌拆分算法
+			\begin{itemize}
+				\item<2-> 思想
+				\item<3-> 通过对人类玩家历史数据的分析,得出牌包含于对应长度的拆分结果中的比例：
+				\begin{table}
+					\begin{center}  
+						\begin{tabular}{|l|l|l|l|l|l|}  
+							\hline  
+							长度 & $L_{max}$ & $L_{min}$ & $L_{min}$+1  & $L_{min}$+2 &$L_{min}$ +3 \\ \hline
+							次数 & 21130 & 18289 & 20204 & 20907 & 20989 \\ \hline
+							比例 & 100\% & 85.55\% & 95.62\% & 98.94\% & 99.33\% \\ \hline
+						\end{tabular}  
+					\end{center}  
+				\end{table}
+				\begin{itemize}
+					\item $L_{min}$ 表示拆分后，所有拆分结果中牌集长度的最小值
+				\end{itemize}
+			\end{itemize}
+		\end{itemize}			
+	\end{frame}
+	
+	\begin{frame}{手牌拆分算法模块}
+		\text{{\textbf{基于“斗地主”规则的拆分Split算法}}}
+		\begin{figure}
+			\includegraphics[scale=0.28]{figures/split}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}{手牌拆分算法模块}
+		\text{{\textbf{基于“斗地主”规则的手牌较小拆分算法(LessSplit)}}}
+		\begin{figure}
+			\includegraphics[scale=0.4]{figures/jiyushoupai}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~手牌拆分算法实例}
+		\begin{itemize}
+			\item 玩家的手牌为： 34556789LB。对玩家手牌进行拆分，所有拆分结果为：
+			\begin{itemize}
+				\item<2-> $s_1$=\{3，4， 5， 5， 6，7， 8， 9， L， B\}
+				\item<2-> $s_2$=\{3， 4， 5， 5， 6， 7， 8， 9， LB\}
+				\item<2-> $s_3$=\{3， 4， 55， 6， 7， 8， 9， L， B\}
+				\item<2-> $s_4$=\{3， 4， 55， 6， 7， 8， 9， LB\}
+				\item<2-> $s_5$=\{3， 4， 5， LB， 56789\}
+				\item<2-> $s_6$=\{3， 4， 5， L， B， 56789\}
+				\item<2-> $s_7$=\{3， 5， 9， LB， 45678\}
+				\item<2-> $s_8$=\{3， 5， 9， L， B， 45678\}
+				\item<2-> $s_9$=\{3， 5， LB， 456789\}
+				\item<2-> $s_{10}$=\{3， 5， L， B， 456789\}
+				\item<2-> $s_{11}$=\{5， 8， 9， LB， 34567\}
+				\item<2-> $s_{12}$=\{5， 8， 9， L， B， 34567\}
+				\item<2-> $s_{13}$=\{5， 9， LB， 345678\}
+				\item<2-> $s_{14}$=\{5， 9， L， B， 345678\}
+				\item<2-> $s_{15}$=\{5， LB， 3456789\}
+				\item<2-> $s_{16}$=\{5， L， B， 3456789\}
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{~~手牌拆分算法实例}
+		\begin{itemize}
+			\item 玩家的手牌为： 34556789LB。对玩家手牌进行拆分，所有拆分结果为：
+			\begin{itemize}
+				\item<1-> $s_1$=\{3，4， 5， 5， 6，7， 8， 9， L， B\}
+				\item<1-> $s_2$=\{3， 4， 5， 5， 6， 7， 8， 9， LB\}
+				\item<1-> $s_3$=\{3， 4， 55， 6， 7， 8， 9， L， B\}
+				\item<1-> $s_4$=\{3， 4， 55， 6， 7， 8， 9， LB\}
+				\item<1-> $s_5$=\{3， 4， 5， LB， 56789\}
+				\item<1-> $s_6$=\{3， 4， 5， L， B， 56789\}
+				\item<1-> $s_7$=\{3， 5， 9， LB， 45678\}
+				\item<1-> $s_8$=\{3， 5， 9， L， B， 45678\}
+				\item<1-> $s_9$=\{3， 5， LB， 456789\}
+				\item<1-> $s_{10}$=\{3， 5， L， B， 456789\}
+				\item<1-> $s_{11}$=\{5， 8， 9， LB， 34567\}
+				\item<1-> $s_{12}$=\{5， 8， 9， L， B， 34567\}
+				\item<1-> $s_{13}$=\{5， 9， LB， 345678\}
+				\item<1-> $s_{14}$=\{5， 9， L， B， 345678\}
+				\item<1-> \uuline{$s_{15}$=\{5， LB， 3456789\}}
+				\item<1-> $s_{16}$=\{5， L， B， 3456789\}
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~手牌拆分算法实例}
+		\begin{itemize}
+			\item 玩家的手牌为： 34556789LB。对玩家手牌进行拆分，所有拆分结果为：
+			\begin{itemize}
+				\item<1-> \uwave{$s_1$=\{3，4， 5， 5， 6，7， 8， 9， L， B\}}
+				\item<1-> \uwave{$s_2$=\{3， 4， 5， 5， 6， 7， 8， 9， LB\}}
+				\item<1-> \uwave{$s_3$=\{3， 4， 55， 6， 7， 8， 9， L， B\}}
+				\item<1-> \uwave{$s_4$=\{3， 4， 55， 6， 7， 8， 9， LB\}}
+				\item<1-> $s_5$=\{3， 4， 5， LB， 56789\}
+				\item<1-> $s_6$=\{3， 4， 5， L， B， 56789\}
+				\item<1-> $s_7$=\{3， 5， 9， LB， 45678\}
+				\item<1-> $s_8$=\{3， 5， 9， L， B， 45678\}
+				\item<1-> $s_9$=\{3， 5， LB， 456789\}
+				\item<1-> $s_{10}$=\{3， 5， L， B， 456789\}
+				\item<1-> $s_{11}$=\{5， 8， 9， LB， 34567\}
+				\item<1-> $s_{12}$=\{5， 8， 9， L， B， 34567\}
+				\item<1-> $s_{13}$=\{5， 9， LB， 345678\}
+				\item<1-> $s_{14}$=\{5， 9， L， B， 345678\}
+				\item<1-> \uuline{$s_{15}$=\{5， LB， 3456789\}}
+				\item<1-> $s_{16}$=\{5， L， B， 3456789\}
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~手牌拆分算法实例}
+		\begin{itemize}
+			\item 玩家的手牌为： 34556789LB。对玩家手牌进行拆分，所有拆分结果为：
+			\begin{itemize}
+				\item<1-> \uwave{$s_1$=\{3，4， 5， 5， \textcolor{red}{\textbf{6}}，\textcolor{red}{\textbf{7}}， 8， 9， L， B\}}
+				\item<1-> \uwave{$s_2$=\{3， 4， 5， 5， \textcolor{red}{\textbf{6}}， \textcolor{red}{\textbf{7}}， 8， 9， LB\}}
+				\item<1-> \uwave{$s_3$=\{3， 4， \textcolor{red}{\textbf{55}}， \textcolor{red}{\textbf{6}}， \textcolor{red}{\textbf{7}}， 8， 9， L， B\}}
+				\item<1-> \uwave{$s_4$=\{3， 4， \textcolor{red}{\textbf{55}}， \textcolor{red}{\textbf{6}}， \textcolor{red}{\textbf{7}}， 8， 9， LB\}}
+				\item<1-> $s_5$=\{3， 4， 5， LB， 56789\}
+				\item<1-> $s_6$=\{3， 4， 5， L， B， 56789\}
+				\item<1-> $s_7$=\{3， 5， 9， LB， 45678\}
+				\item<1-> $s_8$=\{3， 5， 9， L， B， 45678\}
+				\item<1-> $s_9$=\{3， 5， LB， 456789\}
+				\item<1-> $s_{10}$=\{3， 5， L， B， 456789\}
+				\item<1-> $s_{11}$=\{5， 8， 9， LB， 34567\}
+				\item<1-> $s_{12}$=\{5， 8， 9， L， B， 34567\}
+				\item<1-> $s_{13}$=\{5， 9， LB， 345678\}
+				\item<1-> $s_{14}$=\{5， 9， L， B， 345678\}
+				\item<1-> \uuline{$s_{15}$=\{5， LB， 3456789\}}
+				\item<1-> $s_{16}$=\{5， L， B， 3456789\}
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	
+	\subsection*{蒙特卡洛树搜索算法}
+	\begin{frame}
+		\frametitle{~~蒙特卡洛树搜索算法}
+		\begin{block}{蒙特卡洛抽样法}
+			~~~为了求解问题，首先建立一个概率模型或随机过程，使它的参数或数字特征等于问题的解,然后通过对模型、过程的观察或者抽样试验来计算这些参数、数字特征，最后给出所求解的近似值。 \\
+		\end{block}
+		\text{如:Buffon's needle problem}
+		\begin{figure}
+			\includegraphics[scale=0.5]{figures/Buffon}
+		\end{figure}
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{~~蒙特卡洛树搜索算法}
+		\text{博弈树搜索算法:将初始状态和所有可能的后续状态通过直接先}
+		\text{后关系连接在一起形成博弈树}
+		\begin{figure}
+			\includegraphics[scale=0.5]{figures/bytree}
+		\end{figure}
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{~~蒙特卡洛树搜索算法}
+		\begin{columns}
+			\column<1->{0.5\textwidth}
+			\begin{figure}
+				\includegraphics[scale=0.5]{figures/jtree}
+			\end{figure}
+			
+			\column{0.5\textwidth}
+			\begin{block}{思想}
+				~~~利用经验平均来代替随机变量的期望。如在博弈状态$s$时期望值为$v_{\pi}(s)$,一般难以通过计
+				算直接求出该值，但是可以通过蒙特卡洛方法获得一系列收益$G_1(s)$,$\cdots$,$G_n(s)$.根据大数定律，当$n$趋于无穷大时，抽样收益的均值趋近于期望值。定义$v(s)$ 为系列收益的平均值,即
+				$$v(s)=\frac{G_1(s)+\cdots+G_n(s)}{n}$$
+				\begin{center} 当$n \to \infty$时，$v(s) \rightarrow v_{\pi}(s)$ \end{center}
+			\end{block}
+		\end{columns}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~蒙特卡洛树搜索算法}
+		\Large \text{蒙特卡洛树搜索算法过程} 
+		\begin{figure}
+			\includegraphics[scale=0.5]{figures/MCTS}
+		\end{figure}
+	\end{frame}
+	
+	\subsection*{基于手牌拆分的蒙特卡洛树搜索算法}
+	\begin{frame}{~~基于手牌拆分的蒙特卡洛树搜索算法}{~~~~(MCTSHS)}
+		\Large \text{基于手牌拆分的蒙特卡洛树搜索算法过程} 
+		\begin{figure}
+			\includegraphics[scale=0.5]{figures/MCTSCF}
+		\end{figure}
+	\end{frame}
+	
+	\subsection*{实验比较结果}
+	\begin{frame}
+		\frametitle{~~与规则算法(RB)比较}
+		\begin{block}{规则算法(RB)}
+			~~~~该算法分为主动策略和被动策略两种。主动策略中若上轮玩家取得主动权，那本轮该玩家可根据自己手牌主动选择出牌类型，而不需要考虑其他玩家的出牌类型；被动策略中玩家需要考虑本轮其他玩家的出牌， 被动选择跟牌类型。 
+		\end{block}
+		\text{不区分角色比较结果：}
+		\begin{figure}
+			\includegraphics<2->[scale=0.4]{figures/AllMvR}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~与规则算法(RB)比较}
+		\text{地主MCTSHS对农民RB：}
+		\begin{figure}
+			\includegraphics[scale=0.6]{figures/MvR}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~与规则算法(RB)比较}
+		\text{农民MCTSHS对地主RB：}
+		\begin{figure}
+			\includegraphics[scale=0.6]{figures/RvM}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~与7k7k算法比较}
+		\begin{block}{7k7k算法}
+			~~~~该算法为北京迦游网络科技有限公司开发的“斗地主”智能算法。 
+		\end{block}
+		\text{不区分角色比较结果：}
+		\begin{figure}
+			\includegraphics[scale=0.5]{figures/Mv7k7k}
+		\end{figure}
+	\end{frame}
+	
+	\subsection*{合作问题分析}
+	\begin{frame}
+		\frametitle{~~合作问题分析}
+		\text{合作问题分析：}
+		\begin{figure}
+			\includegraphics[scale=0.7]{figures/hz}
+		\end{figure}
+	\end{frame}
+	
+	\subsection*{算法缺点}
+	\begin{frame}
+		\frametitle{~~算法缺点}
+		\begin{spacing}{2.0}
+			\text{算法缺点：}
+			\begin{itemize}
+				\item 每次决策思考时间过长
+				\item 已搜索到的决策未能充分利用
+			\end{itemize}
+		\end{spacing}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~算法缺点}
+		\begin{spacing}{2.0}
+			\text{算法缺点：}
+			\begin{itemize}
+				\item<1-> 每次决策思考时间过长
+				\item<1-> 已搜索到的决策未能充分利用
+			\end{itemize}
+		\end{spacing}
+		\LARGE \text{{\LARGE 改进算法!!}}
+	\end{frame}
+	
+	\section{结合卷积神经网络的蒙特卡洛树搜索}
+	\subsection*{结合卷积神经网络的蒙特卡洛树搜索}
+	\begin{frame}
+		\frametitle{~结合卷积神经网络的蒙特卡洛树搜索模型MCM}
+		\[
+		\text{{\Large \textbf{MCM模型}}}
+		\begin{cases}
+			\text{手牌拆分的蒙特卡洛树搜索模块} \\ \\
+			\text{CNN策略学习模块}\\ \\
+			\text{改善策略模块}
+		\end{cases}
+		\]
+		\large \text{CNN策略学习模块:} 
+		\begin{figure}
+			\includegraphics[scale=0.85]{figures/cnn}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~结合卷积神经网络的蒙特卡洛树搜索模型MCM}
+		\[
+		\text{{\Large \textbf{MCM模型}}}
+		\begin{cases}
+			\text{手牌拆分的蒙特卡洛树搜索模块} \\ \\
+			\text{CNN策略学习模块}\\ \\
+			\text{改善策略模块}
+		\end{cases}
+		\]
+		\large \text{CNN策略学习模块:} 
+		\begin{figure}
+			\includegraphics[scale=0.65]{figures/cnn1}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~结合卷积神经网络的蒙特卡洛树搜索模型MCM}
+		\[
+		\text{{\Large \textbf{MCM模型}}}
+		\begin{cases}
+			\text{手牌拆分的蒙特卡洛树搜索模块} \\ \\
+			\text{CNN策略学习模块}\\ \\
+			\text{改善策略模块}
+		\end{cases}
+		\]
+		\large \text{CNN策略学习模块:} 
+		\begin{figure}
+			\includegraphics[scale=0.65]{figures/cnn2}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~结合卷积神经网络的蒙特卡洛树搜索模型MCM}
+		\[
+		\text{{\Large \textbf{MCM模型}}}
+		\begin{cases}
+			\text{手牌拆分的蒙特卡洛树搜索模块} \\ \\
+			\text{CNN策略学习模块}\\ \\
+			\text{改善策略模块}
+		\end{cases}
+		\]
+		\large \text{CNN策略学习模块:} 
+		\begin{figure}
+			\includegraphics[scale=0.65]{figures/cnn3}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~结合卷积神经网络的蒙特卡洛树搜索模型MCM}
+		\[
+		\text{{\Large \textbf{MCM模型}}}
+		\begin{cases}
+			\text{手牌拆分的蒙特卡洛树搜索模块} \\ \\
+			\text{CNN策略学习模块}\\ \\
+			\text{改善策略模块}
+		\end{cases}
+		\]
+		\large \text{CNN策略学习模块:} 
+		\begin{figure}
+			\includegraphics[scale=0.55]{figures/cnnInput}
+		\end{figure}
+	\end{frame}
+	
+	\subsection*{CNN策略学习模块}
+	\begin{frame}
+		\frametitle{~~CNN策略学习模块-----输入表示}
+		\begin{itemize}
+			\item<1-> X维度：表示15种扑克
+			\item<2-> Y维度：
+			\begin{itemize}
+				\item<3-> 0-3(下标)表示扑克的张数
+				\item<4-> 4-13(下标)表示扑克是否参与组成出牌类型
+				\item<5-> 14(下标)表示该出牌是否为地主玩家。
+			\end{itemize}
+			\item<6-> Z维度:\vspace{-0.05cm}\begin{figure}
+				\includegraphics<6->[scale=0.6]{figures/z}
+			\end{figure}
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~CNN策略学习模块}
+		\begin{spacing}{2.0}
+			\begin{itemize}
+				\item 学习样本处理
+				\begin{itemize}
+					\item 将MCTSHS决策结果的数据进行去重
+					\item 随机打乱去重后的样本顺序，并从打乱的样本中，随机选择 90\%的样本组成训练集， 10\%作为测试集
+				\end{itemize}
+			\end{itemize}
+		\end{spacing}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~CNN策略学习模块}
+		\begin{spacing}{1.5}
+			\begin{itemize}
+				\item<1-> 学习样本处理
+				\begin{itemize}
+					\item<1-> 将MCTSHS决策结果的数据进行去重
+					\item<1-> 随机打乱去重后的样本顺序，并从打乱的样本中，随机选择 90\%的样本组成训练集， 10\%作为测试集
+				\end{itemize}
+			\end{itemize}
+		\end{spacing}
+		\text{\textbf{MCTSHS学习的部分历史数据记录:}}
+		\begin{figure}
+			\includegraphics[scale=0.35]{figures/sample}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~CNN策略学习模块}
+		\text{CNN网络学习策略损失变化图:}
+		\begin{figure}
+			\includegraphics[scale=0.5]{figures/loss}
+		\end{figure}
+	\end{frame}
+	
+	\subsection*{实验结果}
+	\begin{frame}
+		\frametitle{~~实验结果-----实验比较设定}
+		\text{实验比较设定}
+		\begin{itemize}
+			\item 地主、农民使用不同的决策算法，其中农民一、农民二均使用农民的决策算法
+			\item 地主、农民一、农民二使用不同的决策算法
+			\item 地主、农民一、农民二使用不同的决策算法进行相同牌局比较
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~实验结果-----与随机算法(Random)比较}
+		\begin{block}{随机算法(Random)介绍}
+			~~~~思路为：根据玩家的手牌、 本轮其它玩家出牌等信息按照博弈规则计算出当前状态下玩家可能的所有出牌， 并从中随机选择一种可能出牌作为本轮的最终出牌。
+		\end{block}
+		\text{地主 MCM 对农民 Random 的胜率变化图:}\vspace{-0.1cm}
+		\begin{figure}
+			\includegraphics[scale=0.45]{figures/MCvR}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~实验结果-----与随机算法(Random)比较}
+		\text{农民MCM 对地主Random 的胜率变化图:}\vspace{-0.1cm}
+		\begin{figure}
+			\includegraphics[scale=0.6]{figures/RvMC}
+		\end{figure}
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{~~实验结果-----与RHCP算法比较}
+		\begin{block}{RHCP算法介绍}
+			~~~~该算法引入手牌剩余价值的概念，其总体思路是将手牌按照“斗地主”规则进行不同的组合，并选择使得出牌后手牌价值较高的出牌作为本轮最佳出牌。
+		\end{block}
+		\text{地主 MCM 对农民 RHCP 的胜率变化图:}\vspace{-0.1cm}
+		\begin{figure}
+			\includegraphics[scale=0.45]{figures/MCvRHCP}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~实验结果-----与RHCP算法比较}
+		\text{农民MCM 对地主RHCP 的胜率变化图:}\vspace{-0.1cm}
+		\begin{figure}
+			\includegraphics[scale=0.6]{figures/RHCPvMC}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~实验结果-----与CQL算法比较}
+		\begin{block}{CQL算法介绍}
+			~~~~该算法由上海交通大学 You Y 等人提出。You Y 等人针对“斗地主” 博弈中， 每次出牌时存在较多可能组合牌型的情况，提出一种处理组合动作的新方法组合Q学习(CQL)。 
+		\end{block}
+		\text{地主 MCM 对农民 CQL 的胜率变化图:}\vspace{-0.1cm}
+		\begin{figure}
+			\includegraphics[scale=0.45]{figures/MvC}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~实验结果-----与CQL算法比较}
+		\text{农民MCM 对地主CQL 的胜率变化图:}\vspace{-0.1cm}
+		\begin{figure}
+			\includegraphics[scale=0.6]{figures/CvM}
+		\end{figure}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~实验结果-----CQL、RHCP、MCM相互比较}
+		\text{CQL、RHCP以及MCM算法相互比较:}
+		\begin{center}
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline 
+				\multicolumn{2}{|c|}{地主} & \multicolumn{2}{|c|}{农民一} &  \multicolumn{2}{|c|}{农民二}  \\ 
+				\hline 
+				决策算法 & 胜率 & 决策算法 & 胜率 & 决策算法 & 胜率 \\ 
+				\hline 
+				CQL & 44.4\% & RHCP & 21.6\% & MCM & 34\% \\ 
+				\hline 
+				CQL & 44.8\% & MCM & 21.6\% & RHCP & 33.6\% \\ 
+				\hline 
+				RHCP & 52.6\% & CQL & 6.4\% & MCM & 41\% \\ 
+				\hline 
+				RHCP & 46.4\% & MCM & 28\% & CQL & 25.6\% \\ 
+				\hline 
+				MCM & 63\% & CQL & 6\% & RHCP & 31\% \\ 
+				\hline 
+				MCM & 59.2\% & RHCP & 26.6\% & CQL & 14.2\% \\ 
+				\hline 
+				MCM & 56\% & MCM & 22.4\% & MCM & 21.6\% \\ 
+				\hline 
+			\end{tabular} 
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~实验结果-----CQL、RHCP、MCM相互比较}
+		\text{CQL、RHCP以及MCM算法相互比较:}
+		\begin{center}
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline 
+				\multicolumn{2}{|c|}{地主} & \multicolumn{2}{|c|}{农民一} &  \multicolumn{2}{|c|}{农民二}  \\ 
+				\hline 
+				决策算法 & 胜率 & 决策算法 & 胜率 & 决策算法 & 胜率 \\ 
+				\hline 
+				CQL & 44.4\% & RHCP & 21.6\% & MCM & 34\% \\ 
+				\hline 
+				CQL & 44.8\% & MCM & 21.6\% & RHCP & 33.6\% \\ 
+				\hline 
+				RHCP & 52.6\% & CQL & 6.4\% & MCM & \multicolumn{1}{>{\columncolor{mycyan}}l}{{\large 41\%}} \\ 
+				\hline 
+				RHCP & 46.4\% & MCM & \multicolumn{1}{>{\columncolor{mycyan}}l}{{\large 28\%}} & CQL & 25.6\% \\ 
+				\hline 
+				MCM & \multicolumn{1}{>{\columncolor{mycyan}}l}{{\large 63\%}} & CQL & 6\% & RHCP & 31\% \\ 
+				\hline 
+				MCM & 59.2\% & RHCP & 26.6\% & CQL & 14.2\% \\ 
+				\hline 
+				MCM & 56\% & MCM & 22.4\% & MCM & 21.6\% \\ 
+				\hline 
+			\end{tabular} 
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}{~~实验结果-----CQL、RHCP、MCM相互比较}{~~~~(相同牌局)}
+		\text{CQL、RHCP以及MCM算法相互比较:}
+		\begin{center}
+			\begin{tabular}{|c|c|c|c|c|c|}
+				\hline 
+				\multicolumn{2}{|c|}{地主} & \multicolumn{2}{|c|}{农民一} &  \multicolumn{2}{|c|}{农民二}  \\ 
+				\hline 
+				决策算法 & 胜率 & 决策算法 & 胜率 & 决策算法 & 胜率 \\ 
+				\hline 
+				CQL & 42\% & RHCP & 19\% & MCM & \multicolumn{1}{>{\columncolor{mycyan}}l}{{\large 40\%}} \\ 
+				\hline 
+				CQL & 47\% & MCM & 19\% & RHCP & 34\% \\ 
+				\hline 
+				RHCP & 57\% & CQL & 10\% & MCM & 32\% \\ 
+				\hline 
+				RHCP & 52\% & MCM & \multicolumn{1}{>{\columncolor{mycyan}}l}{{\large 31\%}} & CQL & 17\% \\ 
+				\hline 
+				MCM & 66\% & CQL & 8\% & RHCP & 36\% \\ 
+				\hline 
+				MCM & \multicolumn{1}{>{\columncolor{mycyan}}l}{{\large 67\%}} & RHCP & 20\% & CQL & 13\% \\ 
+				\hline 
+			\end{tabular} 
+		\end{center}
+		\begin{itemize}
+			\item \textbf{{\large 上述实验结果详见：}}\\
+			https://github.com/StarrySky3/experimental-result-/tree/master/experimental-result
+		\end{itemize}
+	\end{frame}
+	
+	\section{总结与展望}
+	\subsection*{总结}
+	\begin{frame}
+		\frametitle{~~总结}
+		\text{{\Large 总结:}} 
+		\begin{spacing}{1.5}
+			\begin{itemize}
+				\item 论文提出MCTSHS算法对“斗地主”进行研究。实验表明该算法针对“斗地主”博弈能做出不错的决策。
+				\item 针对基于MCTSHS算法的思考时间过长且已搜索策略未能充分利用的缺点，论文提出MCM算法。实验表明，MCM算法相较于其它智能决策算法具有一定优势。
+			\end{itemize}
+		\end{spacing}
+	\end{frame}
+	
+	\subsection*{展望}
+	\begin{frame}
+		\frametitle{~~展望}
+		\text{\Large 展望:} 
+		\begin{spacing}{1.5}
+			\begin{itemize}
+				\item 后续研究对玩家手牌信息进行预测处理。
+				\item 在后续的工作中，可以对玩家进行对手建模。通过预测玩家手牌以实现对手当前状态下的可能决策，从而找到最佳的应对之策以取得游戏胜利。
+			\end{itemize}
+		\end{spacing}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{~~参与项目及成果}
+		\text{\Large 作者在攻读硕士学位期间参与项目及成果} 
+		\begin{spacing}{1.5}
+			\begin{itemize}
+				\item 发表了一篇中文核心
+				\item 申请了一项国家发明专利(在审)
+				\item 参加国家自然科学基金1项
+			\end{itemize}
+		\end{spacing}
+	\end{frame}
+	
+	\begin{frame}
+		\centering
+		\zihao{2} 敬请各位老师批评指正\\
+		\zihao{1} 谢谢!
+	\end{frame}
+\end{document}

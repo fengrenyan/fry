@@ -1,0 +1,233 @@
+% This file is modified by Frans Oliehoek <faolieho@science.uva.nl>
+% on 2005/12/18. (original file name: conference-ornate-20min.en.tex)
+
+\documentclass[11pt, CJK]{beamer}
+
+% This file is a solution template for:
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice. 
+
+\mode<presentation>
+{
+
+	\usetheme{IAS_sidebarNav} 	 
+	\setbeamercovered{transparent}
+
+}
+
+
+% to remove the navigation symbols:
+%\setbeamertemplate{navigation symbols}{}
+
+\usepackage[english]{babel}
+% or whatever
+
+\usepackage[utf8]{inputenc}
+% or whatever
+
+\usepackage{times}
+\usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\usepackage{booktabs, multirow, enumerate}
+\usepackage{ctex}
+\usepackage{setspace}
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSection[]
+{
+	\begin{frame}<beamer>
+		\frametitle{目录}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+\beamerdefaultoverlayspecification{<+->}
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}  %表格自动换行
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+\graphicspath{{figures/}}
+%\pgfdeclaremask{mymask}{figures/thu_logo2-mask}
+%\pgfdeclareimage[width=0.45\textwidth,mask=mymask]{image2}{pictures/wai1}
+\pgfdeclareimage[width=1.6cm,height=1.0cm]{institution-logo}{figures/gzulogo}
+\logo{\pgfuseimage{institution-logo}}
+
+%\includeonlyframes{mine}
+\begin{document}
+	\title[硕士中期检查答辩]{\CJKfamily{li}{基于蒙特卡洛树搜索的‘斗地主’研究}}
+	
+	\author[彭啟文]{(中期检查答辩报告){\vskip 23pt}指导教师：王以松~教授{\vskip 5pt}~~~~~答辩学生：彭啟文~~~~~~~~~~~~~~{\vskip 5pt}学~~~~号~：2017021834~~~}{\vskip 5pt}
+	\date{2019-12-9}
+	%\institute{{\vskip 15pt}\small 贵州大学计算机学院人工智能实验室}
+	
+	%\date{{\vskip -9pt}二{\fontsize{9pt}{9pt}\selectfont 〇一}九年十二月}
+	
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\section{研究方案}
+		\subsection*{研究内容}
+			\begin{frame}
+				\frametitle{~~研究内容}
+				\begin{itemize}
+					\item 研究内容:
+					\begin{itemize}
+						\setlength{\baselineskip}{20pt}
+						\item
+						本课题主要以国内比较流行的游戏‘斗地主’作为研究对象，蒙特卡洛树搜索为主要研究手段(辅以机器学习的方法)，针对‘斗地主’游戏的特点设计算法。通过不断的实验方法改进，最终目标是该智能体能和人类进行正常的比赛并取得较好的效果
+					\end{itemize}
+				\end{itemize}
+			\end{frame}
+		\subsection*{研究方案}
+			\begin{frame}
+				\frametitle{~~研究方案}
+				\begin{itemize}
+					%\setlength{\parsep}{15pt}
+					\setlength{\baselineskip}{16pt}
+					\item 博弈开始阶段，按照‘斗地主’游戏规则，对该博弈者手牌进行拆分，使用贪心思想选择其中拆分手牌数较少的几种情况进行分析，以使所选拆分情况比较合理
+					\vskip 8pt
+					\item 根据剩余手牌、玩家已出牌、每个玩家的手牌张数以及结合扑克特征等信息，进行博弈树搜索。
+					\vskip 8pt
+					\item 使用蒙特卡洛抽样的方法并结合估值函数对博弈树进行不完全展开。
+				\end{itemize}
+			\end{frame}
+	
+	\section{阶段性成果}
+		\subsection*{基于手牌拆分的蒙特卡洛树搜索}
+			\begin{frame}
+				\frametitle{~~基于手牌拆分的MCTS搜索}
+				\begin{itemize}
+					\item 基于较小拆分和MCTS实现的“斗地主”游戏流程图
+					\begin{figure}
+						\centerline{\includegraphics<1->[scale=0.4]{figures/flow}}
+					\end{figure}
+				\end{itemize}
+			\end{frame}
+			
+			\begin{frame}
+				\frametitle{~~基于手牌拆分的MCTS搜索-实验结果}
+				\begin{itemize}
+					\item 与固定规则方法比较
+					\begin{figure}
+						\centerline{\includegraphics<1->[scale=0.5]{figures/result1}}
+					\end{figure}
+				\end{itemize}
+			\end{frame}
+			
+			\begin{frame}
+				\frametitle{~~基于手牌拆分的MCTS搜索-实验结果}
+				\begin{itemize}
+					\item 与固定规则方法比较
+					\begin{figure}
+						\centerline{\includegraphics<1->[scale=0.4]{figures/result2}}
+					\end{figure}
+				\end{itemize}
+			\end{frame}
+			
+			\begin{frame}
+				\frametitle{~~基于手牌拆分的MCTS搜索-实验结果}
+				\begin{itemize}
+					\item 与固定规则方法比较
+					\begin{figure}
+						\centerline{\includegraphics<1->[scale=0.4]{figures/result3}}
+					\end{figure}
+				\end{itemize}
+			\end{frame}
+			
+			\begin{frame}
+			\frametitle{~~基于手牌拆分的MCTS搜索-实验结果}
+			\begin{itemize}
+				\item 与7k7k小游戏世界斗地主智能Agent比较
+				\begin{figure}
+					\leftline{\includegraphics<1->[scale=0.35]{figures/result4}}
+				\end{figure}
+			\end{itemize}	
+			
+		\end{frame}
+		
+		\subsection*{CNN学习博弈状态收益}
+			\begin{frame}
+				\frametitle{~~CNN学习博弈状态收益}
+				\begin{itemize}
+					\item 训练损失变化如下：
+					\begin{figure}
+						\leftline{\includegraphics<1->[scale=0.18]{figures/cnn}}
+					\end{figure}
+				\end{itemize}
+			\end{frame}
+		
+	\section{存在问题及后续安排}
+		\subsection*{存在问题}
+			\begin{frame}
+				\renewcommand{\baselinestretch}{1.5}
+				\frametitle{~~存在问题}
+				\begin{itemize}
+					\item 在对CNN学习结果进行分析中，发现针对某些情况的学习效果不佳
+					\item 部分实验结果的分析不够全面
+					\item 结果比较阶段，对于复现其他算法存在一定难度
+				\end{itemize}
+			\end{frame}
+		\subsection*{后续工作安排}
+			\begin{frame}
+				\renewcommand{\baselinestretch}{1.5}
+				\frametitle{~~后续工作安排}
+				\begin{itemize}
+					\item 解决存在的问题
+					\item 整理实验数据、思路，明确论文框架，完善实验结果分析
+					\item 根据进度安排，完成论文撰写及修改工作，完成毕业答辩等
+				\end{itemize}
+				
+			\end{frame}
+			\begin{frame}
+				\renewcommand{\baselinestretch}{1.5}
+				\frametitle{~~~后续工作安排}
+				\begin{itemize}
+					\item 进度安排如下:
+				\end{itemize}
+				\begin{table}[!htbp]
+					\centering
+					\label{jdap-table}
+					\begin{tabular}{|c|c|l|}
+						\hline
+						\scriptsize 序号 & \scriptsize 时间 & \scriptsize 任务安排\\
+						\hline
+							1 & 2019.7-2020.02 & \tabincell{l}{\scriptsize 1.完善整个‘斗地主’过程，实现与人进行博弈\\
+								\scriptsize  2.比较算法，整理数据\\
+							\scriptsize 3.撰写论文\\						
+							}\\
+						\hline
+						2 & 2020.2-2020.05 & \tabincell{l}{\scriptsize 1.修改论文\\
+							\scriptsize 2.准备答辩\\			
+						}\\
+						\hline
+					\end{tabular}
+				\end{table}
+			\end{frame}
+			\begin{frame}
+				\centering
+				\zihao{2} 欢迎各位老师指导\\
+				\zihao{1} 谢谢!
+			\end{frame}	
+\end{document}
