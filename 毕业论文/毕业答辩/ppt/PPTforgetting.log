@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2022.4.30)  1 MAY 2022 21:02
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2022.4.30)  2 MAY 2022 22:01
 entering extended mode
 **PPTforgetting.tex
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
@@ -1579,34 +1579,70 @@ Requested font "ectt1000" scaled 1000
 \SOUL@uldp=\dimen302
 \SOUL@ulht=\dimen303
 )
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\mathptmx.sty
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup6
+\symitalic=\mathgroup7
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
 g.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 100.
-LaTeX Font Info:    ... okay on input line 100.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 100.
-LaTeX Font Info:    Try loading font information for T3+cmr on input line 100.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 103.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 103.
  (D:\Application\Ctex\MiKTeX\tex\latex\tipa\t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 100.
+LaTeX Font Info:    ... okay on input line 103.
 Requested font "[lmsans9-regular]:mapping=tex-text" at 9.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans9-regular.otf
 
@@ -1645,7 +1681,7 @@ Requested font "[lmsans9-regular]:mapping=tex-text" at 9.0pt
 
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 100.
+Package hyperref Info: Link coloring OFF on input line 103.
 
 (D:\Application\Ctex\MiKTeX\tex\latex\hyperref\nameref.sty
 Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
@@ -1655,56 +1691,56 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count329
 )
-LaTeX Info: Redefining \ref on input line 100.
-LaTeX Info: Redefining \pageref on input line 100.
-LaTeX Info: Redefining \nameref on input line 100.
+LaTeX Info: Redefining \ref on input line 103.
+LaTeX Info: Redefining \pageref on input line 103.
+LaTeX Info: Redefining \nameref on input line 103.
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
 g.out) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTfo
 rgetting.out)
 \@outlinefile=\write5
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 100.
+(Font)                  OT1/ztmcm/m/n --> OT1/cmss/m/n on input line 103.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 100.
-\symnumbers=\mathgroup6
-\sympureletters=\mathgroup7
+(Font)                  OT1/ztmcm/m/n --> OT1/cmss/bx/n on input line 103.
+\symnumbers=\mathgroup8
+\sympureletters=\mathgroup9
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmr/m/n on input line 100.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 100.
+(Font)                  OT1/cmss/m/n --> EU1/ptm/m/n on input line 103.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> EU1/lmss/bx/n on input line 100.
+(Font)                  OT1/ptm/bx/n --> EU1/lmss/bx/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> EU1/lmss/bx/n on input line 100.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 100.
+(Font)                  OT1/ptm/bx/n --> EU1/lmss/bx/n on input line 103.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 100.
+(Font)                  OT1/cmss/m/n --> EU1/lmss/m/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmss/m/n on input line 100.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 100.
+(Font)                  OT1/cmss/bx/n --> EU1/lmss/m/n on input line 103.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> EU1/lmss/m/it on input line 100.
+(Font)                  OT1/ptm/m/it --> EU1/lmss/m/it on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> EU1/lmss/m/it on input line 100.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 100.
+(Font)                  OT1/ptm/m/it --> EU1/lmss/m/it on input line 103.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 100.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 100.
+(Font)                  OT1/cmtt/m/n --> EU1/lmtt/m/n on input line 103.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  EU1/lmss/m/n --> EU1/lmss/bx/n on input line 100.
+(Font)                  EU1/lmss/m/n --> EU1/lmss/bx/n on input line 103.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  EU1/lmss/m/it --> EU1/lmss/bx/it on input line 100.
+(Font)                  EU1/lmss/m/it --> EU1/lmss/bx/it on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmr/bx/n on input line 100.
+(Font)                  OT1/cmss/bx/n --> EU1/ptm/bx/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  EU1/lmss/bx/n --> EU1/lmss/bx/n on input line 100.
+(Font)                  EU1/lmss/bx/n --> EU1/lmss/bx/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  EU1/lmss/m/n --> EU1/lmss/bx/n on input line 100.
+(Font)                  EU1/lmss/m/n --> EU1/lmss/bx/n on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  EU1/lmss/m/it --> EU1/lmss/bx/it on input line 100.
+(Font)                  EU1/lmss/m/it --> EU1/lmss/bx/it on input line 103.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  EU1/lmtt/m/n --> EU1/lmtt/bx/n on input line 100.
+(Font)                  EU1/lmtt/m/n --> EU1/lmtt/bx/n on input line 103.
 
 (D:\Application\Ctex\MiKTeX\tex\latex\beamer\base\translator\dicts\translator-b
 asic-dictionary\translator-basic-dictionary-English.dict
@@ -1730,91 +1766,30 @@ Dictionary: translator-numbers-dictionary, Language: English
 heorem-dictionary\translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 100.
+LaTeX Info: Redefining \includegraphics on input line 103.
 
 *** you should *not* be loading the inputenc package
 *** XeTeX expects the source to be in UTF8 encoding
 *** some features of other encodings may conflict, resulting in poor output.
-.................................................
-. fontspec info: "setup-math"
-. 
-. Adjusting the maths setup (use [no-math] to avoid this).
-.................................................
-\symlegacymaths=\mathgroup8
-LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 100.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 100.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 100.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 100.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 100.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 100.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 100.
-LaTeX Font Info:    Redeclaring math accent \check on input line 100.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 100.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 100.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 100.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 100.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 100.
-LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `normal' on input line 100.
-
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> EU1/lmr/m/n on input line 100.
-LaTeX Font Info:    Encoding `OT1' has changed to `EU1' for symbol font
-(Font)              `operators' in the math version `bold' on input line 100.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/bx/n --> EU1/lmr/m/n on input line 100.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 100.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  EU1/lmr/m/n --> EU1/lmr/m/n on input line 100.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  EU1/lmss/m/it --> EU1/lmr/m/it on input line 100.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  EU1/lmss/bx/n --> EU1/lmr/bx/n on input line 100.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  EU1/lmss/m/n --> EU1/lmss/m/n on input line 100.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  EU1/lmtt/m/n --> EU1/lmtt/m/n on input line 100.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  EU1/lmr/m/n --> EU1/lmr/bx/n on input line 100.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  EU1/lmr/bx/n --> EU1/lmr/bx/n on input line 100.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  EU1/lmss/bx/it --> EU1/lmr/bx/it on input line 100.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  EU1/lmss/bx/n --> EU1/lmss/bx/n on input line 100.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  EU1/lmtt/bx/n --> EU1/lmtt/bx/n on input line 100.
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
 g.nav)
 Requested font "[lmsans8-regular]:mapping=tex-text" at 5.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" >
+\c@proposition=\count330
 Requested font "[lmsans10-regular]:mapping=tex-text" at 10.95pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-regular.otf
 
 
 Package xeCJK Warning: Unknown CJK family `li' is ignored.
-Use \setCJKfamilyfont to define a CJK family. on input line 156.
+Use \setCJKfamilyfont to define a CJK family. on input line 186.
 
 Requested font "SimSun" at 10.95pt
  -> C:/Windows/Fonts/simsun.ttc
 Requested font "SimSun/ICU" at 10.95pt
  -> C:/Windows/Fonts/simsun.ttc
-\g_fontspec_family_SimSun_int=\count330
+\g_fontspec_family_SimSun_int=\count331
 Requested font "SimHei/ICU" at 10.95pt
  -> C:/Windows/Fonts/simhei.ttf
 Requested font "[SIMKAI.TTF]/ICU" at 10.95pt
@@ -1854,7 +1829,7 @@ Requested font "SimHei" at 10.54pt
  -> C:/Windows/Fonts/simhei.ttf
 Requested font "SimHei/ICU" at 10.54pt
  -> C:/Windows/Fonts/simhei.ttf
-\g_fontspec_family_SimHei_int=\count331
+\g_fontspec_family_SimHei_int=\count332
 Requested font "SimHei/I/ICU" at 10.54pt
  -> C:/Windows/Fonts/simhei.ttf
 .................................................
@@ -1886,64 +1861,102 @@ Requested font "SimHei/I/ICU" at 10.54pt
 Requested font "SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;" at 10.5
 4pt
  -> C:/Windows/Fonts/simhei.ttf
-Requested font "[lmroman10-regular]:mapping=tex-text" at 10.54pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman10-regular.otf
-Requested font "[lmroman7-regular]:mapping=tex-text" at 7.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman7-regular.otf
-Requested font "[lmroman5-regular]:mapping=tex-text" at 5.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman5-regular.otf
-Requested font "cmmi10" at 10.54pt
- -> cmmi10
-Requested font "cmsy10" at 10.54pt
- -> cmsy10
-Requested font "cmex10" at 10.54pt
- -> cmex10
-Requested font "cmex7" at 7.0pt
- -> cmex7
-Requested font "cmex7" at 5.0pt
- -> cmex7
-LaTeX Font Info:    Try loading font information for U+msa on input line 156.
-(D:\Application\Ctex\MiKTeX\tex\latex\amsfonts\umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+Requested font "cmss10" at 10.54pt
+ -> cmss10
+Requested font "cmss8" at 7.0pt
+ -> cmss8
+Requested font "cmss8" at 5.0pt
+ -> cmss8
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 18
+6.
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
+Requested font "zptmcm7m" at 10.54pt
+ -> zptmcm7m
+Requested font "zptmcm7m" at 7.0pt
+ -> zptmcm7m
+Requested font "zptmcm7m" at 5.0pt
+ -> zptmcm7m
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 18
+6.
+
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+Requested font "zptmcm7y" at 10.54pt
+ -> zptmcm7y
+Requested font "zptmcm7y" at 7.0pt
+ -> zptmcm7y
+Requested font "zptmcm7y" at 5.0pt
+ -> zptmcm7y
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 18
+6.
+
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+Requested font "zptmcm7v" at 10.54pt
+ -> zptmcm7v
+Requested font "zptmcm7v" at 7.0pt
+ -> zptmcm7v
+Requested font "zptmcm7v" at 5.0pt
+ -> zptmcm7v
 Requested font "msam10" at 10.54pt
  -> msam10
-Requested font "msam7" at 7.0pt
- -> msam7
-Requested font "msam5" at 5.0pt
- -> msam5
-LaTeX Font Info:    Try loading font information for U+msb on input line 156.
-
-(D:\Application\Ctex\MiKTeX\tex\latex\amsfonts\umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
+Requested font "msam10" at 7.0pt
+ -> msam10
+Requested font "msam10" at 5.0pt
+ -> msam10
 Requested font "msbm10" at 10.54pt
  -> msbm10
-Requested font "msbm7" at 7.0pt
- -> msbm7
-Requested font "msbm5" at 5.0pt
- -> msbm5
+Requested font "msbm10" at 7.0pt
+ -> msbm10
+Requested font "msbm10" at 5.0pt
+ -> msbm10
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 186.
+
+
+(D:\Application\Ctex\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.54> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
+Requested font "ptmb7t" at 10.54pt
+ -> ptmb7t
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
+Requested font "ptmb7t" at 7.0pt
+ -> ptmb7t
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
+Requested font "ptmb7t" at 5.0pt
+ -> ptmb7t
+Requested font "ptmri7t" at 10.54pt
+ -> ptmri7t
+Requested font "ptmri7t" at 7.0pt
+ -> ptmri7t
+Requested font "ptmri7t" at 5.0pt
+ -> ptmri7t
 Requested font "[lmsans8-regular]:mapping=tex-text" at 7.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <10.54> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 156.
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 186.
 
 Requested font "[lmsans10-oblique]:mapping=tex-text" at 10.54pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-oblique.otf
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <7> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 156.
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 186.
 
 Requested font "[lmsans8-oblique]:mapping=tex-text" at 7.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <5> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 156.
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 186.
 
 Requested font "[lmsans8-oblique]:mapping=tex-text" at 5.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
-Requested font "cmr10" at 10.54pt
- -> cmr10
 
-Overfull \hbox (36.85275pt too wide) detected at line 156
+Overfull \hbox (36.85275pt too wide) detected at line 186
        \xeCJK@zhhei/m/n/10.54 软 件 工 程 技 术 与 人 工 智 能      
               
  []
@@ -1980,68 +1993,80 @@ Requested font "SimSun/ICU" at 4.0pt
 Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 4.0p
 t
  -> C:/Windows/Fonts/simsun.ttc
-LaTeX Font Info:    Calculating math sizes for size <4> on input line 156.
-Requested font "[lmroman5-regular]:mapping=tex-text" at 4.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman5-regular.otf
-Requested font "[lmroman5-regular]:mapping=tex-text" at 2.79999pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman5-regular.otf
-Requested font "[lmroman5-regular]:mapping=tex-text" at 2.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman5-regular.otf
-Requested font "cmmi5" at 4.0pt
- -> cmmi5
-Requested font "cmmi5" at 2.79999pt
- -> cmmi5
-Requested font "cmmi5" at 2.0pt
- -> cmmi5
-Requested font "cmsy5" at 4.0pt
- -> cmsy5
-Requested font "cmsy5" at 2.79999pt
- -> cmsy5
-Requested font "cmsy5" at 2.0pt
- -> cmsy5
-Requested font "cmex7" at 4.0pt
- -> cmex7
-Requested font "cmex7" at 2.79999pt
- -> cmex7
-Requested font "cmex7" at 2.0pt
- -> cmex7
-Requested font "msam5" at 4.0pt
- -> msam5
-Requested font "msam5" at 2.79999pt
- -> msam5
-Requested font "msam5" at 2.0pt
- -> msam5
-Requested font "msbm5" at 4.0pt
- -> msbm5
-Requested font "msbm5" at 2.79999pt
- -> msbm5
-Requested font "msbm5" at 2.0pt
- -> msbm5
-Requested font "[lmsans8-regular]:mapping=tex-text" at 2.79999pt
+LaTeX Font Info:    Calculating math sizes for size <4> on input line 186.
+Requested font "cmss8" at 4.0pt
+ -> cmss8
+Requested font "cmss8" at 2.96002pt
+ -> cmss8
+Requested font "cmss8" at 2.40002pt
+ -> cmss8
+Requested font "zptmcm7m" at 4.0pt
+ -> zptmcm7m
+Requested font "zptmcm7m" at 2.96002pt
+ -> zptmcm7m
+Requested font "zptmcm7m" at 2.40002pt
+ -> zptmcm7m
+Requested font "zptmcm7y" at 4.0pt
+ -> zptmcm7y
+Requested font "zptmcm7y" at 2.96002pt
+ -> zptmcm7y
+Requested font "zptmcm7y" at 2.40002pt
+ -> zptmcm7y
+Requested font "zptmcm7v" at 4.0pt
+ -> zptmcm7v
+Requested font "zptmcm7v" at 2.96002pt
+ -> zptmcm7v
+Requested font "zptmcm7v" at 2.40002pt
+ -> zptmcm7v
+Requested font "msam10" at 4.0pt
+ -> msam10
+Requested font "msam10" at 2.96002pt
+ -> msam10
+Requested font "msam10" at 2.40002pt
+ -> msam10
+Requested font "msbm10" at 4.0pt
+ -> msbm10
+Requested font "msbm10" at 2.96002pt
+ -> msbm10
+Requested font "msbm10" at 2.40002pt
+ -> msbm10
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
+Requested font "ptmb7t" at 4.0pt
+ -> ptmb7t
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <2.96002> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
+Requested font "ptmb7t" at 2.96002pt
+ -> ptmb7t
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <2.40002> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 186.
+Requested font "ptmb7t" at 2.40002pt
+ -> ptmb7t
+Requested font "ptmri7t" at 4.0pt
+ -> ptmri7t
+Requested font "ptmri7t" at 2.96002pt
+ -> ptmri7t
+Requested font "ptmri7t" at 2.40002pt
+ -> ptmri7t
+Requested font "[lmsans8-regular]:mapping=tex-text" at 2.96002pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
-Requested font "[lmsans8-regular]:mapping=tex-text" at 2.0pt
+Requested font "[lmsans8-regular]:mapping=tex-text" at 2.40002pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <4> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 156.
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 186.
 
 Requested font "[lmsans8-oblique]:mapping=tex-text" at 4.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
-LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <2.79999> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 156.
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <2.96002> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 186.
 
-Requested font "[lmsans8-oblique]:mapping=tex-text" at 2.79999pt
+Requested font "[lmsans8-oblique]:mapping=tex-text" at 2.96002pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
-LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <2> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 156.
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <2.40002> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 186.
 
-Requested font "[lmsans8-oblique]:mapping=tex-text" at 2.0pt
+Requested font "[lmsans8-oblique]:mapping=tex-text" at 2.40002pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
-Requested font "cmr5" at 4.0pt
- -> cmr5
-Requested font "cmr5" at 2.79999pt
- -> cmr5
-Requested font "cmr5" at 2.0pt
- -> cmr5
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 13.
 (D:\Application\Ctex\MiKTeX\tex\latex\psnfss\t1ptm.fd
@@ -2054,7 +2079,7 @@ Requested font "ptmr8t" at 12.0pt
 Requested font "ptmr8t" at 9.0pt
  -> ptmr8t
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
@@ -2078,43 +2103,29 @@ Requested font "SimSun/ICU" at 9.0pt
 Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 9.0p
 t
  -> C:/Windows/Fonts/simsun.ttc
-Requested font "[lmroman9-regular]:mapping=tex-text" at 9.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman9-regular.otf
-Requested font "[lmroman6-regular]:mapping=tex-text" at 6.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman6-regular.otf
-Requested font "cmmi9" at 9.0pt
- -> cmmi9
-Requested font "cmmi6" at 6.0pt
- -> cmmi6
-Requested font "cmsy9" at 9.0pt
- -> cmsy9
-Requested font "cmsy6" at 6.0pt
- -> cmsy6
-Requested font "cmex9" at 9.0pt
- -> cmex9
-Requested font "cmex7" at 6.0pt
- -> cmex7
+Requested font "zptmcm7m" at 9.0pt
+ -> zptmcm7m
+Requested font "zptmcm7y" at 9.0pt
+ -> zptmcm7y
+Requested font "zptmcm7v" at 9.0pt
+ -> zptmcm7v
 Requested font "msam10" at 9.0pt
  -> msam10
-Requested font "msam7" at 6.0pt
- -> msam7
 Requested font "msbm10" at 9.0pt
  -> msbm10
-Requested font "msbm7" at 6.0pt
- -> msbm7
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
+Requested font "ptmb7t" at 9.0pt
+ -> ptmb7t
+Requested font "ptmri7t" at 9.0pt
+ -> ptmri7t
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <9> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 8.
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 9.
 Requested font "[lmsans9-oblique]:mapping=tex-text" at 9.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans9-oblique.otf
-LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <6> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 8.
-Requested font "[lmsans8-oblique]:mapping=tex-text" at 6.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
-Requested font "cmr6" at 6.0pt
- -> cmr6
 ) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.t
 ex)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
@@ -2174,13 +2185,13 @@ Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 7.0p
 t
  -> C:/Windows/Fonts/simsun.ttc
 
-Overfull \hbox (27.2938pt too wide) in paragraph at lines 195--195
+Overfull \hbox (27.2938pt too wide) in paragraph at lines 225--225
  [] 
  []
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
@@ -2212,7 +2223,7 @@ pt
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
@@ -2226,686 +2237,18 @@ File: figures/hoareTriple.png Graphic file (type QTm)
 <use  "figures/hoareTriple.png" >
 File: figures/MC.png Graphic file (type QTm)
  <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
+Overfull \vbox (6.50879pt too high) detected at line 261
  []
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
 <use  "figures/gzulogo.jpg" > [5
 
 ]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [6
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [7
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [8
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [9
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [10
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [11
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [12
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [13
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [14
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [15
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [16
-
-]
-File: figures/atp.png Graphic file (type QTm)
- <use  "figures/atp.png" >
-File: figures/hoareTriple.png Graphic file (type QTm)
-
-<use  "figures/hoareTriple.png" >
-File: figures/MC.png Graphic file (type QTm)
- <use  "figures/MC.png" >
-Overfull \vbox (5.78372pt too high) detected at line 231
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [17
-
-]
-Requested font "[lmroman8-regular]:mapping=tex-text" at 8.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman8-regular.otf
-Requested font "cmmi8" at 8.0pt
- -> cmmi8
-Requested font "cmsy8" at 8.0pt
- -> cmsy8
-Requested font "cmex8" at 8.0pt
- -> cmex8
-Requested font "msam10" at 8.0pt
- -> msam10
-Requested font "msbm10" at 8.0pt
- -> msbm10
-LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <8> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 258.
-
-Requested font "[lmsans8-oblique]:mapping=tex-text" at 8.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
-Requested font "cmr8" at 8.0pt
- -> cmr8
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
-Overfull \vbox (3.25542pt too high) detected at line 258
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [18
-
-]
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
-Overfull \vbox (3.25542pt too high) detected at line 258
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [19
-
-]
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
-Overfull \vbox (3.25542pt too high) detected at line 258
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [20
-
-]
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
-Overfull \vbox (3.25542pt too high) detected at line 258
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [21
-
-]
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
-Overfull \vbox (3.25542pt too high) detected at line 258
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [22
-
-]
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
-Overfull \vbox (3.25542pt too high) detected at line 258
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [23
-
-]
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
-Overfull \vbox (3.25542pt too high) detected at line 258
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [24
-
-]
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
-Overfull \vbox (3.25542pt too high) detected at line 258
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [25
-
-]
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
-Overfull \vbox (3.25542pt too high) detected at line 258
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [26
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
-g.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_t
-ext.tex)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [27
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [28
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [29
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [30
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [31
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [32
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [33
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [34
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [35
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [36
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [37
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [38
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [39
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [40
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
-g.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_t
-ext.tex)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [41
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [42
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [43
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [44
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [45
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [46
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [47
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [48
-
-]
-File: figures/zuzhi.png Graphic file (type QTm)
- <use  "figures/zuzhi.png" >
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [49
-
-]
-File: figures/zuzhi.png Graphic file (type QTm)
- <use  "figures/zuzhi.png" >
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [50
-
-]
-File: figures/zuzhi.png Graphic file (type QTm)
- <use  "figures/zuzhi.png" >
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [51
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
-g.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_t
-ext.tex)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [52
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [53
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [54
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 350.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 350.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 350.
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [55
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
-g.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_t
-ext.tex)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [56
-
-]
-
-LaTeX Font Warning: Command \large invalid in math mode on input line 386.
-
 Requested font "SimSun" at 6.0pt
  -> C:/Windows/Fonts/simsun.ttc
 Requested font "SimSun/ICU" at 6.0pt
@@ -2921,50 +2264,630 @@ Requested font "SimSun/ICU" at 6.0pt
 Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 6.0p
 t
  -> C:/Windows/Fonts/simsun.ttc
+Requested font "cmss8" at 6.0pt
+ -> cmss8
+Requested font "zptmcm7m" at 6.0pt
+ -> zptmcm7m
+Requested font "zptmcm7y" at 6.0pt
+ -> zptmcm7y
+Requested font "zptmcm7v" at 6.0pt
+ -> zptmcm7v
+Requested font "msam10" at 6.0pt
+ -> msam10
+Requested font "msbm10" at 6.0pt
+ -> msbm10
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 292.
+Requested font "ptmb7t" at 6.0pt
+ -> ptmb7t
+Requested font "ptmri7t" at 6.0pt
+ -> ptmri7t
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <6> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 292.
+
+Requested font "[lmsans8-oblique]:mapping=tex-text" at 6.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
+File: figures/NnewCar.png Graphic file (type QTm)
+ <use  "figures/NnewCar.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [6
+
+]
+Requested font "cmss8" at 8.0pt
+ -> cmss8
+Requested font "zptmcm7m" at 8.0pt
+ -> zptmcm7m
+Requested font "zptmcm7y" at 8.0pt
+ -> zptmcm7y
+Requested font "zptmcm7v" at 8.0pt
+ -> zptmcm7v
+Requested font "msam10" at 8.0pt
+ -> msam10
+Requested font "msbm10" at 8.0pt
+ -> msbm10
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 320.
+Requested font "ptmb7t" at 8.0pt
+ -> ptmb7t
+Requested font "ptmri7t" at 8.0pt
+ -> ptmri7t
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <8> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 320.
+
+Requested font "[lmsans8-oblique]:mapping=tex-text" at 8.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
+File: figures/forgetting.png Graphic file (type QTm)
+ <use  "figures/forgetting.png" >
+Overfull \vbox (3.25542pt too high) detected at line 320
+ []
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [7
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_t
+ext.tex)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [8
+
+]
+File: figures/history1.png Graphic file (type QTm)
+ <use  "figures/history1.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [9
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_t
+ext.tex)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [10
+
+]
+LaTeX Font Info:    Try loading font information for EU1+ptm on input line 357.
+
+LaTeX Font Info:    No file EU1ptm.fd. on input line 357.
+
+
+LaTeX Font Warning: Font shape `EU1/ptm/m/n' undefined
+(Font)              using `EU1/lmr/m/n' instead on input line 357.
+
+Requested font "[lmroman9-regular]:mapping=tex-text" at 9.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman9-regular.otf
+Requested font "[lmroman7-regular]:mapping=tex-text" at 7.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman7-regular.otf
+Requested font "[lmroman5-regular]:mapping=tex-text" at 5.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman5-regular.otf
+Requested font "[lmroman8-regular]:mapping=tex-text" at 8.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman8-regular.otf
+Requested font "[lmroman6-regular]:mapping=tex-text" at 6.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman6-regular.otf
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [11
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [12
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [13
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [14
+
+]
+File: figures/zuzhi1.png Graphic file (type QTm)
+ <use  "figures/zuzhi1.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [15
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_t
+ext.tex)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [16
+
+]
+Requested font "cmss10" at 10.0pt
+ -> cmss10
+Requested font "cmss8" at 7.4pt
+ -> cmss8
+Requested font "zptmcm7m" at 10.0pt
+ -> zptmcm7m
+Requested font "zptmcm7m" at 7.4pt
+ -> zptmcm7m
+Requested font "zptmcm7y" at 10.0pt
+ -> zptmcm7y
+Requested font "zptmcm7y" at 7.4pt
+ -> zptmcm7y
+Requested font "zptmcm7v" at 10.0pt
+ -> zptmcm7v
+Requested font "zptmcm7v" at 7.4pt
+ -> zptmcm7v
 Requested font "msam10" at 10.0pt
+ -> msam10
+Requested font "msam10" at 7.4pt
  -> msam10
 Requested font "msbm10" at 10.0pt
  -> msbm10
+Requested font "msbm10" at 7.4pt
+ -> msbm10
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 414.
+Requested font "ptmb7t" at 10.0pt
+ -> ptmb7t
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 414.
+Requested font "ptmb7t" at 7.4pt
+ -> ptmb7t
+Requested font "ptmri7t" at 10.0pt
+ -> ptmri7t
+Requested font "ptmri7t" at 7.4pt
+ -> ptmri7t
+Requested font "[lmsans8-regular]:mapping=tex-text" at 7.4pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <10> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 386.
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 414.
 
 Requested font "[lmsans10-oblique]:mapping=tex-text" at 10.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-oblique.otf
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <7.4> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 414.
 
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [57
-
-]
-
-LaTeX Font Warning: Command \large invalid in math mode on input line 386.
+Requested font "[lmsans8-oblique]:mapping=tex-text" at 7.4pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
+Requested font "[lmroman7-regular]:mapping=tex-text" at 7.4pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman7-regular.otf
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [58
+<use  "figures/gzulogo.jpg" > [17
 
 ]
-
-LaTeX Font Warning: Command \large invalid in math mode on input line 386.
+Overfull \vbox (2.97075pt too high) detected at line 414
+ []
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [59
+<use  "figures/gzulogo.jpg" > [18
 
 ]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [19
+
+]
+Requested font "[lmsans10-bold]:mapping=tex-text" at 5.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+
+
+LaTeX Font Warning: Font shape `EU1/lmss/m/sc' in size <7> not available
+(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 474.
+
+Requested font "[lmromancaps10-regular]:mapping=tex-text" at 7.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
+tf
+Requested font "[lmromancaps10-regular]:mapping=tex-text" at 5.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
+tf
+Requested font "zptmcm7m" at 10.95pt
+ -> zptmcm7m
+Requested font "zptmcm7y" at 10.95pt
+ -> zptmcm7y
+Requested font "zptmcm7v" at 10.95pt
+ -> zptmcm7v
+Requested font "msam10" at 10.95pt
+ -> msam10
+Requested font "msbm10" at 10.95pt
+ -> msbm10
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 474.
+Requested font "ptmb7t" at 10.95pt
+ -> ptmb7t
+Requested font "ptmri7t" at 10.95pt
+ -> ptmri7t
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 474.
+
+Requested font "[lmsans10-oblique]:mapping=tex-text" at 10.95pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-oblique.otf
+Requested font "[lmroman10-regular]:mapping=tex-text" at 10.95pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman10-regular.otf
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [20
+
+]
+Overfull \vbox (12.69452pt too high) detected at line 474
+ []
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [21
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [22
+
+]
+Overfull \vbox (8.47868pt too high) detected at line 514
+ []
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [23
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [24
+
+]
+
+LaTeX Font Warning: Font shape `EU1/lmss/m/sc' in size <10> not available
+(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 588.
+
+Requested font "[lmromancaps10-regular]:mapping=tex-text" at 10.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
+tf
+Requested font "[lmromancaps10-regular]:mapping=tex-text" at 7.4pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
+tf
+Requested font "[lmromancaps10-regular]:mapping=tex-text" at 6.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
+tf
+
+LaTeX Warning: Citation `zhang2008first' on page 25 undefined on input line 588
+.
+
+
+LaTeX Warning: Citation `zhang2014resolution' on page 25 undefined on input lin
+e 588.
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [25
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [26
+
+]
+Requested font "[lmsans10-bold]:mapping=tex-text" at 8.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+Requested font "[lmsans10-bold]:mapping=tex-text" at 6.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+
+
+LaTeX Font Warning: Font shape `EU1/lmss/m/sc' in size <8> not available
+(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 588.
+
+Requested font "[lmromancaps10-regular]:mapping=tex-text" at 8.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
+tf
+Requested font "[lmsans10-bold]:mapping=tex-text" at 10.95pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+Requested font "[lmsans10-bold]:mapping=tex-text" at 4.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+Requested font "[lmsans10-bold]:mapping=tex-text" at 2.96002pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+Requested font "[lmsans10-bold]:mapping=tex-text" at 2.40002pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [27
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [28
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 626.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 626.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 626.
+
+Requested font "[lmsans10-bold]:mapping=tex-text" at 10.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+Requested font "[lmsans10-bold]:mapping=tex-text" at 7.4pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [29
+
+]
+
+LaTeX Warning: Citation `DBLP:journals/cacm/Kozen83' on page 30 undefined on in
+put line 661.
+
+
+LaTeX Warning: Citation `d1996uniform' on page 30 undefined on input line 661.
+
+
+LaTeX Warning: Citation `d2000logical' on page 30 undefined on input line 661.
+
+
+LaTeX Warning: Citation `d2000logical' on page 30 undefined on input line 661.
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [30
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [31
+
+]
+Overfull \vbox (12.83162pt too high) detected at line 688
+ []
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [32
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [33
+
+]
+
+LaTeX Warning: Citation `d2006modal' on page 34 undefined on input line 734.
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [34
+
+]
+
+LaTeX Warning: Citation `d2006modal' on page 35 undefined on input line 734.
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [35
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g.toc
 Requested font "[lmsans10-bold]:mapping=tex-text" at 9.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.t
+ex)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [36
+
+]
+File: figures/NVBnewCar1.png Graphic file (type QTm)
+ <use  "figures/NVBnewCar1.png" >
+Overfull \hbox (0.74904pt too wide) in paragraph at lines 784--784
+ [] 
+ []
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [37
+
+]
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
+. 
+. This font family consists of the following shapes:
+.................................................
+Requested font "[SIMKAI.TTF]/ICU:script=latn;language=DFLT;mapping=tex-text;" a
+t 6.0pt
+ -> C:/WINDOWS/Fonts/SIMKAI.TTF
+
+
+LaTeX Font Warning: Font shape `EU1/ptm/m/it' undefined
+(Font)              using `EU1/ptm/m/n' instead on input line 784.
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [38
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [39
+
+]
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
+. 
+. This font family consists of the following shapes:
+.................................................
+Requested font "[SIMKAI.TTF]/ICU:script=latn;language=DFLT;mapping=tex-text;" a
+t 7.0pt
+ -> C:/WINDOWS/Fonts/SIMKAI.TTF
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [40
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [41
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [42
+
+]
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -2978,235 +2901,201 @@ t
  -> C:/Windows/Fonts/simhei.ttf
 File: figures/split.png Graphic file (type QTm)
  <use  "figures/split.png" >
-Overfull \hbox (1.81996pt too wide) in paragraph at lines 393--393
+Overfull \hbox (1.81996pt too wide) in paragraph at lines 820--820
  [] 
  []
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [60
+<use  "figures/gzulogo.jpg" > [43
 
 ]
 File: figures/jiyushoupai.png Graphic file (type QTm)
  <use  "figures/jiyushoupai.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [61
+<use  "figures/gzulogo.jpg" > [44
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [62
+<use  "figures/gzulogo.jpg" > [45
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [63
+<use  "figures/gzulogo.jpg" > [46
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [64
+<use  "figures/gzulogo.jpg" > [47
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [65
+<use  "figures/gzulogo.jpg" > [48
 
 ]
-Requested font "[lmsans10-bold]:mapping=tex-text" at 8.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
-
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [66
+<use  "figures/gzulogo.jpg" > [49
 
 ]
 File: figures/Buffon.png Graphic file (type QTm)
  <use  "figures/Buffon.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [67
+<use  "figures/gzulogo.jpg" > [50
 
 ]
 File: figures/bytree.jpg Graphic file (type QTm)
  <use  "figures/bytree.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [68
+<use  "figures/gzulogo.jpg" > [51
 
 ]
 File: figures/jtree.jpg Graphic file (type QTm)
  <use  "figures/jtree.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [69
-
-]
-File: figures/jtree.jpg Graphic file (type QTm)
- <use  "figures/jtree.jpg" >
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [70
-
-]
-File: figures/jtree.jpg Graphic file (type QTm)
- <use  "figures/jtree.jpg" >
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [71
+<use  "figures/gzulogo.jpg" > [52
 
 ]
 File: figures/MCTS.jpg Graphic file (type QTm)
  <use  "figures/MCTS.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [72
+<use  "figures/gzulogo.jpg" > [53
 
 ]
 File: figures/MCTSCF.jpg Graphic file (type QTm)
  <use  "figures/MCTSCF.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [73
+<use  "figures/gzulogo.jpg" > [54
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [74
+<use  "figures/gzulogo.jpg" > [55
 
 ]
 File: figures/AllMvR.png Graphic file (type QTm)
  <use  "figures/AllMvR.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [75
+<use  "figures/gzulogo.jpg" > [56
 
 ]
 File: figures/MvR.png Graphic file (type QTm)
  <use  "figures/MvR.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [76
+<use  "figures/gzulogo.jpg" > [57
 
 ]
 File: figures/RvM.png Graphic file (type QTm)
  <use  "figures/RvM.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [77
+<use  "figures/gzulogo.jpg" > [58
 
 ]
 File: figures/Mv7k7k.png Graphic file (type QTm)
  <use  "figures/Mv7k7k.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [78
+<use  "figures/gzulogo.jpg" > [59
 
 ]
 File: figures/hz.jpg Graphic file (type QTm)
  <use  "figures/hz.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [79
+<use  "figures/gzulogo.jpg" > [60
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [80
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [81
+<use  "figures/gzulogo.jpg" > [61
 
 ]
 Requested font "[lmsans12-regular]:mapping=tex-text" at 12.0pt
@@ -3229,25 +3118,23 @@ pt
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [82
+<use  "figures/gzulogo.jpg" > [62
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
 g.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_t
 ext.tex)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [83
+<use  "figures/gzulogo.jpg" > [63
 
 ]
-Requested font "[lmsans10-bold]:mapping=tex-text" at 10.95pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -3261,281 +3148,243 @@ Requested font "SimHei/ICU:script=latn;language=DFLT;mapping=tex-text;" at 10.9
  -> C:/Windows/Fonts/simhei.ttf
 File: figures/cnn.jpg Graphic file (type QTm)
  <use  "figures/cnn.jpg" >
-Overfull \hbox (1.33333pt too wide) in paragraph at lines 648--648
+Overfull \hbox (1.33333pt too wide) in paragraph at lines 1075--1075
  [] 
  []
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [84
+<use  "figures/gzulogo.jpg" > [64
 
 ]
 File: figures/cnn1.jpg Graphic file (type QTm)
  <use  "figures/cnn1.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [85
+<use  "figures/gzulogo.jpg" > [65
 
 ]
 File: figures/cnn2.jpg Graphic file (type QTm)
  <use  "figures/cnn2.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [86
+<use  "figures/gzulogo.jpg" > [66
 
 ]
 File: figures/cnn3.jpg Graphic file (type QTm)
  <use  "figures/cnn3.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [87
+<use  "figures/gzulogo.jpg" > [67
 
 ]
 File: figures/cnnInput.jpg Graphic file (type QTm)
  <use  "figures/cnnInput.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [88
+<use  "figures/gzulogo.jpg" > [68
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [89
+<use  "figures/gzulogo.jpg" > [69
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [90
+<use  "figures/gzulogo.jpg" > [70
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [91
+<use  "figures/gzulogo.jpg" > [71
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [92
+<use  "figures/gzulogo.jpg" > [72
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [93
+<use  "figures/gzulogo.jpg" > [73
 
 ]
 File: figures/z.jpg Graphic file (type QTm)
  <use  "figures/z.jpg" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [94
+<use  "figures/gzulogo.jpg" > [74
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [95
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [96
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [97
+<use  "figures/gzulogo.jpg" > [75
 
 ]
 File: figures/sample.png Graphic file (type QTm)
  <use  "figures/sample.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [98
+<use  "figures/gzulogo.jpg" > [76
 
 ]
 File: figures/loss.png Graphic file (type QTm)
  <use  "figures/loss.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [99
+<use  "figures/gzulogo.jpg" > [77
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [100
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [101
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [102
+<use  "figures/gzulogo.jpg" > [78
 
 ]
 File: figures/MCvR.png Graphic file (type QTm)
  <use  "figures/MCvR.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [103
+<use  "figures/gzulogo.jpg" > [79
 
 ]
 File: figures/RvMC.png Graphic file (type QTm)
  <use  "figures/RvMC.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [104
+<use  "figures/gzulogo.jpg" > [80
 
 ]
 File: figures/MCvRHCP.png Graphic file (type QTm)
  <use  "figures/MCvRHCP.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [105
+<use  "figures/gzulogo.jpg" > [81
 
 ]
 File: figures/RHCPvMC.png Graphic file (type QTm)
  <use  "figures/RHCPvMC.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [106
+<use  "figures/gzulogo.jpg" > [82
 
 ]
 File: figures/MvC.png Graphic file (type QTm)
  <use  "figures/MvC.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [107
+<use  "figures/gzulogo.jpg" > [83
 
 ]
 File: figures/CvM.png Graphic file (type QTm)
  <use  "figures/CvM.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [108
+<use  "figures/gzulogo.jpg" > [84
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [109
+<use  "figures/gzulogo.jpg" > [85
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [110
+<use  "figures/gzulogo.jpg" > [86
 
 ]
-Requested font "[lmsans10-bold]:mapping=tex-text" at 10.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
 .................................................
 . fontspec info: "defining-font"
 . 
@@ -3550,84 +3399,48 @@ pt
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [111
+<use  "figures/gzulogo.jpg" > [87
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
 g.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_t
 ext.tex)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [112
+<use  "figures/gzulogo.jpg" > [88
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [113
+<use  "figures/gzulogo.jpg" > [89
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [114
+<use  "figures/gzulogo.jpg" > [90
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [115
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [116
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [117
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [118
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
-
-File: figures/gzulogo.jpg Graphic file (type QTm)
-
-<use  "figures/gzulogo.jpg" > [119
+<use  "figures/gzulogo.jpg" > [91
 
 ]
 Requested font "[lmsans17-regular]:mapping=tex-text" at 22.08pt
@@ -3667,31 +3480,54 @@ pt
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
-Overfull \vbox (93.60583pt too high) has occurred while \output is active []
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
 
 File: figures/gzulogo.jpg Graphic file (type QTm)
 
-<use  "figures/gzulogo.jpg" > [120
+<use  "figures/gzulogo.jpg" > [92
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g.bbl
+File: beamericonarticle.pdf Graphic file (type QTm)
+ <use  "beamericonarticle.pdf" >
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.t
+ex)
+Overfull \vbox (76.76979pt too high) has occurred while \output is active []
+
+File: figures/gzulogo.jpg Graphic file (type QTm)
+
+<use  "figures/gzulogo.jpg" > [93
 
 ]
 \tf@nav=\write6
 \tf@toc=\write7
 \tf@snm=\write8
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 965.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 965.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1401.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1401.
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
 g.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 965.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 965.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1401.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1401.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 32059 strings out of 430478
- 626256 string characters out of 3191202
- 685106 words of memory out of 3000000
- 34230 multiletter control sequences out of 15000+200000
- 23541 words of font info for 156 fonts, out of 3000000 for 9000
+ 32268 strings out of 430478
+ 628621 string characters out of 3191202
+ 686583 words of memory out of 3000000
+ 34469 multiletter control sequences out of 15000+200000
+ 45664 words of font info for 216 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 54i,20n,75p,846b,1141s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,23n,75p,846b,1200s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on PPTforgetting.pdf (120 pages).
+Output written on PPTforgetting.pdf (93 pages).
