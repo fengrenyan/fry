@@ -473,25 +473,25 @@
 			\item $[\_]: \Ind \rto 2^{S \times S}$是一个函数，其使得对任意$ind \in\Ind$，若$s\in S$，则存在唯一一个$s\in S$使得$(s,s')\in [ind]\cap R$。
 		\end{itemize}
 	\end{definition}
-	\only<1>{\begin{block}{相关概念}
-		\begin{itemize}
-			\item 初始Kripke结构$\Hm=(S,R,L,s_0)$：从初始$\Ind$-Kripke结构$\Hm$中去掉$[\_]$元素得到；
-			\item $\Ind$-Kripke结构$\Hm=(S,R,L,[\_])$：从初始$\Ind$-Kripke结构$\Hm$中去掉初始状态$s_0$得到；
-			\item Kripke结构$\Hm=(S,R,L)$：从初始$\Ind$-Kripke结构$\Hm$中同时去掉$[\_]$和$s_0$得到。
-		\end{itemize}
-	\end{block}}
-	\only<2>{
-		\begin{block}{相关概念}
-			令$\Hm=(S,R,L)$为Kripke结构，$\Hm'=(S,R,L, [\_])$为$\Ind$-Kripke结构 ：
-			\begin{itemize}
-				\item 路径：$\Hm$上的{\em 路径}是$\Hm$上的状态构成的无限序列$\pi=(s_0, s_{1}, s_{2},\dots)$，且满足对任意$j\ge 0$，$(s_j, s_{j+1}) \in R$；
-				\item $s'\in \pi$：表示$s'$是路径$\pi$上的一个状态；  $\pi_{s}$：表示以$s$为起点的$\Hm$上的一条路径；
-				\item 初始状态：如果对任意$s'\in S$，都存在路径$\pi_{s}$使得$s'\in \pi_{s}$，那么称$s$为\emph{初始状态}；
-				\item 索引路径：$\Hm'$上的一条\emph{索引路径}$\pi_{s}^{\tuple{ind}}$（$ind \in \Ind$）是一条路径$(s_0(=s),$ $s_{1},$ $s_{2},$ $\dots)$，且对任意$j \geq 0$，有$(s_j, s_{j+1}) \in [ind]$。
-			\end{itemize} 
-		\end{block}
-	}
-	\only<3>{
+%	\only<1>{\begin{block}{相关概念}
+%		\begin{itemize}
+%			\item 初始Kripke结构$\Hm=(S,R,L,s_0)$：从初始$\Ind$-Kripke结构$\Hm$中去掉$[\_]$元素得到；
+%			\item $\Ind$-Kripke结构$\Hm=(S,R,L,[\_])$：从初始$\Ind$-Kripke结构$\Hm$中去掉初始状态$s_0$得到；
+%			\item Kripke结构$\Hm=(S,R,L)$：从初始$\Ind$-Kripke结构$\Hm$中同时去掉$[\_]$和$s_0$得到。
+%		\end{itemize}
+%	\end{block}}
+%	\only<2>{
+%		\begin{block}{相关概念}
+%			令$\Hm=(S,R,L)$为Kripke结构，$\Hm'=(S,R,L, [\_])$为$\Ind$-Kripke结构 ：
+%			\begin{itemize}
+%				\item 路径：$\Hm$上的{\em 路径}是$\Hm$上的状态构成的无限序列$\pi=(s_0, s_{1}, s_{2},\dots)$，且满足对任意$j\ge 0$，$(s_j, s_{j+1}) \in R$；
+%				\item $s'\in \pi$：表示$s'$是路径$\pi$上的一个状态；  $\pi_{s}$：表示以$s$为起点的$\Hm$上的一条路径；
+%				\item 初始状态：如果对任意$s'\in S$，都存在路径$\pi_{s}$使得$s'\in \pi_{s}$，那么称$s$为\emph{初始状态}；
+%				\item 索引路径：$\Hm'$上的一条\emph{索引路径}$\pi_{s}^{\tuple{ind}}$（$ind \in \Ind$）是一条路径$(s_0(=s),$ $s_{1},$ $s_{2},$ $\dots)$，且对任意$j \geq 0$，有$(s_j, s_{j+1}) \in [ind]$。
+%			\end{itemize} 
+%		\end{block}
+%	}
+%	\only<3>{
 		\begin{block}{相关概念}
 			\begin{itemize}
 				\item \emph{($\Ind$-)结构}：初始($\Ind$-)Kripke结构$\Hm$和是$\Hm$中的状态$s$构成的二元组${\cal K}=(\Hm, s)$；
@@ -500,7 +500,7 @@
 		
 	%	在这些结构中，（索引）路径这一概念可以类似地定义。
 		\end{block}
-	}
+%	}
 }
 \end{frame}
 
@@ -509,7 +509,8 @@
 \begin{frame} 
 	\frametitle{~$\CTL$的语法}
 	{\footnotesize 
-		\only<1>{\begin{block}{$\CTL$的语言符号}
+	%	\only<1>{
+			\begin{block}{$\CTL$的语言符号}
 			\begin{itemize}
 				\item 原子命题集$\Ha$； \quad 可数无限索引集合$\Ind$；\quad 命题常量$\start$；
 				\item 常量符号：$\top$和$\bot$，分别表示“真”和“假”；
@@ -518,7 +519,8 @@
 				\item 时序操作符：$\NEXT$、$\FUTURE$、$\GLOBAL$、$\UNTILL$和$\UNLESS$，分别表示“下一个状态”、“将来某一个状态”、“将来所有状态”、“直到”和“除非”；
 				\item 标点符号：“(”和“)”。
 			\end{itemize}
-		\end{block}}
+		\end{block}
+	%}
 		\begin{definition}[带索引的$\CTL$]
 			带索引的$\CTL$公式的\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
 			\begin{align*}
@@ -535,36 +537,36 @@
 		
 		\textcolor{blue}{没有索引和$\start$的公式称为$\CTL$公式。}
 		\end{definition}
-	\only<2>{
-		$\CTL$中其它形式的公式可以通过如下定义（使用上述定义中的形式）得到：
-		\begin{alignat}{2}
-			\varphi \wedge \psi& \ \overset{def}{=}\ \neg (\neg \varphi \vee \neg \psi)\\
-			\varphi \rto \psi& \ \overset{def}{=}\ \neg \varphi \vee \psi\\
-			\ALL(\varphi \UNTILL \psi)& \ \overset{def}{=}\ \neg\EXIST(\neg \psi \UNTILL(\neg \varphi \wedge \neg \psi)) \wedge \neg \EXIST \GLOBAL \neg \psi\\
-			\ALL(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\EXIST((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
-			\EXIST(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\ALL((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
-			\ALL\FUTURE \varphi& \ \overset{def}{=}\ 	\ALL(\top \UNTILL \psi)\\
-			\EXIST\FUTURE \varphi& \ \overset{def}{=}\ \EXIST(\top \UNTILL \psi)\\
-			\ALL \NEXT \varphi& \ \overset{def}{=}\  \neg \EXIST \NEXT \neg \varphi\\
-			\ALL \GLOBAL \varphi& \ \overset{def}{=}\  \neg \EXIST \FUTURE \neg \varphi
-		\end{alignat}
-	}
-\only<3>{
-	\begin{block}{符号优先级}
-		带索引的$\CTL$中各类符号的优先级如下，且从左到右优先级逐渐降低：
-		\begin{align*}
-			& \neg, \EXIST\NEXT, \EXIST\FUTURE, \EXIST\GLOBAL, \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL, \EXIST_{\tuple{ind}}\NEXT, \EXIST_{\tuple{ind}}\FUTURE, \EXIST_{\tuple{ind}}\GLOBAL
-			,\land, \lor,
-			\EXIST\UNTILL, \ALL\UNTILL, \EXIST \UNLESS, \ALL\UNLESS, \EXIST_{\tuple{ind}}\UNTILL, \EXIST_{\tuple{ind}} \UNLESS, \rto.
-		\end{align*}
-	
-	此外，给定一个不包含“$\rto$”的公式$\varphi$和原子命题$p$，
-	\begin{itemize}
-		\item 若$p$的前面有偶数个否定$\neg$，则称$p$在$\varphi$中的出现为\emph{正出现}，否则为\emph{负出现}。
-		\item 若$\varphi$中所有$p$的出现都为正出现（或负出现），则称$\varphi$关于$p$是正的（或负的）。
-	\end{itemize} 
-	\end{block}
-}
+%	\only<2>{
+%		$\CTL$中其它形式的公式可以通过如下定义（使用上述定义中的形式）得到：
+%		\begin{alignat}{2}
+%			\varphi \wedge \psi& \ \overset{def}{=}\ \neg (\neg \varphi \vee \neg \psi)\\
+%			\varphi \rto \psi& \ \overset{def}{=}\ \neg \varphi \vee \psi\\
+%			\ALL(\varphi \UNTILL \psi)& \ \overset{def}{=}\ \neg\EXIST(\neg \psi \UNTILL(\neg \varphi \wedge \neg \psi)) \wedge \neg \EXIST \GLOBAL \neg \psi\\
+%			\ALL(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\EXIST((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
+%			\EXIST(\varphi \UNLESS \psi)& \ \overset{def}{=}\  \neg\ALL((\varphi \wedge \neg \psi) \UNTILL (\neg \varphi \wedge \neg \psi))\\
+%			\ALL\FUTURE \varphi& \ \overset{def}{=}\ 	\ALL(\top \UNTILL \psi)\\
+%			\EXIST\FUTURE \varphi& \ \overset{def}{=}\ \EXIST(\top \UNTILL \psi)\\
+%			\ALL \NEXT \varphi& \ \overset{def}{=}\  \neg \EXIST \NEXT \neg \varphi\\
+%			\ALL \GLOBAL \varphi& \ \overset{def}{=}\  \neg \EXIST \FUTURE \neg \varphi
+%		\end{alignat}
+%	}
+%\only<2>{
+%	\begin{block}{符号优先级}
+%		带索引的$\CTL$中各类符号的优先级如下，且从左到右优先级逐渐降低：
+%		\begin{align*}
+%			& \neg, \EXIST\NEXT, \EXIST\FUTURE, \EXIST\GLOBAL, \ALL\NEXT, \ALL\FUTURE, \ALL\GLOBAL, \EXIST_{\tuple{ind}}\NEXT, \EXIST_{\tuple{ind}}\FUTURE, \EXIST_{\tuple{ind}}\GLOBAL
+%			,\land, \lor,
+%			\EXIST\UNTILL, \ALL\UNTILL, \EXIST \UNLESS, \ALL\UNLESS, \EXIST_{\tuple{ind}}\UNTILL, \EXIST_{\tuple{ind}} \UNLESS, \rto.
+%		\end{align*}
+%	
+%	此外，给定一个不包含“$\rto$”的公式$\varphi$和原子命题$p$，
+%	\begin{itemize}
+%		\item 若$p$的前面有偶数个否定$\neg$，则称$p$在$\varphi$中的出现为\emph{正出现}，否则为\emph{负出现}。
+%		\item 若$\varphi$中所有$p$的出现都为正出现（或负出现），则称$\varphi$关于$p$是正的（或负的）。
+%	\end{itemize} 
+%	\end{block}
+%}
 	}
 \end{frame}
 
@@ -744,17 +746,17 @@
 		\]
 		其中$p\in \Ha$且$X\in {\cal V}$。
 	\end{definition}
-\pause
-%\only<1>{
-	\begin{block}{约定}
-		\begin{itemize}
-			\item 公式$\nu X.\varphi$中的$X$总是正出现在$\varphi$中，即：$\varphi$中$X$的每一次出现之前都有偶数个否定符号“$\neg$”；
-			\item 称出现在$\mu X. \varphi$和$\nu X. \varphi$中的变元$X$是\emph{受约束的}（bound），且受约束的变元称为{\em 约束变元}，不受约束的变元称为\emph{自由变元}；
-			\item 文字（literal）：原子命题和变元符号及其各自的否定；
-			\item 这里所谈到的公式指的是取名恰当的（well-named）、受保护（guarded）的$\mu$-公式。
-		\end{itemize}
-	\end{block}
-%}
+%\pause
+%%\only<1>{
+%	\begin{block}{约定}
+%		\begin{itemize}
+%			\item 公式$\nu X.\varphi$中的$X$总是正出现在$\varphi$中，即：$\varphi$中$X$的每一次出现之前都有偶数个否定符号“$\neg$”；
+%			\item 称出现在$\mu X. \varphi$和$\nu X. \varphi$中的变元$X$是\emph{受约束的}（bound），且受约束的变元称为{\em 约束变元}，不受约束的变元称为\emph{自由变元}；
+%			\item 文字（literal）：原子命题和变元符号及其各自的否定；
+%			\item 这里所谈到的公式指的是取名恰当的（well-named）、受保护（guarded）的$\mu$-公式。
+%		\end{itemize}
+%	\end{block}
+%%}
 %\only<2>{
 %	\begin{block}{注意}
 %		在$\mu$-演算公式的定义中，通常考虑动作集$Act$和一组与$a\in Act$相关的模态词“$\tuple{a}$”\cite{DBLP:journals/cacm/Kozen83,d1996uniform,d2000logical}。为了方便，这里考虑公式里只有一个动作的情形，但是这里的结论可以扩展到一般的情形。此时，模态词中的动作$a$可以省略，且公式$\EXIST\NEXT\varphi$（或$\ALL\NEXT \varphi$）与公式 $\tuple{a}\varphi$（或$[a]\varphi$）\cite{d2000logical}相同。
