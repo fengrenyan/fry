@@ -186,6 +186,7 @@ $R=\{(s_0,s_1),(s_0,s_0),(s_1,s_1), (s_1,s_0)\}$ 和 $[1]=\{(s_0,s_1), (s_1,s_1)
 	${\cal K}'\lrto_V{\cal K}''$。又因为$\lrto_V$是一个等价关系，因此，${\cal K}\lrto_V{\cal K}''$。类似地，对任意${\cal K}''\models\xi$，存在 ${\cal K}\models \varphi$ 使得${\cal K}''\lrto_V{\cal K}$。这表明$\equiv_V$是传递的。因此，$\equiv_V$是等价关系。
 \end{proof} 
 
+
 此外，由互模拟等价的定义和上述结论可得以下推论。%上面的定义和命题\ref{prop:bisimilar:V}蕴涵下面的推论。
 % 	The below corollary follows from the above definition and Proposition~\ref{prop:bisimilar:V}.
 \begin{corollary}~\label{cor:eqbi}
@@ -281,7 +282,7 @@ $\psi$ $=\EXIST_{\tuple{2}}\NEXT p$，可以证明，$\varphi\equiv_\emptyset \p
 	
 	$(\Lto)$ $(\Hm_1, s_1) \in \Mod(T_{i+1})$，即$(\Hm_1,s_1) \models X \wedge \ALL\GLOBAL(q\rto \EXIST_{\tuple{ind}} \NEXT p) \wedge \ALL\GLOBAL(p \rto \varphi)$。显然，$(\Hm_1, s_1) \models T_i$。
 \end{proof}
-
+ 
 \begin{example}
 	\label{examp:Tran}
 	令 $\varphi=\ALL((p\wedge q) \UNTILL (f\vee m)) \wedge r$。 $T_{\varphi}$是下面子句构成的集合：
@@ -320,7 +321,7 @@ $\psi$ $=\EXIST_{\tuple{2}}\NEXT p$，可以证明，$\varphi\equiv_\emptyset \p
 
 从定义\ref{def:V:forgetting}可以看出，如果两个公式$\psi$和$\psi'$都是$\Phi$遗忘$V$中元素后得到的结果，则$\Mod(\psi)\equiv \Mod(\psi')$。从这个角度来看，$\Phi$遗忘$V$中元素后得到的所有结果是语义等价的。
 将遗忘结果记为$\CTLforget(\phi,V)$，不做其它说明的情况下，这表示$\phi$遗忘$V$是$\CTL$可表示的。
-此外，当$V$中只包含一个元素时，可以省略集合符号，即：$$\CTLforget(\Phi, \{p\}) \equiv \CTLforget(\Phi, p).$$
+此外，当$V$中只包含一个元素时，可以省略集合符号，即：$$\CTLforget(\Phi, \{p\}) \equiv \CTLforget(\Phi, p).$$ 
 
 %值得指出的是，遗忘理论的定义与均匀插值的语义定义等价，也即是遗忘理论与均匀插值是一对对偶概念，这与其他逻辑（包括模态逻辑S4、S5和经典命题逻辑）中的说法一致~\cite{gfdf}。
 
@@ -751,7 +752,7 @@ $\Hm\lrto_V\Hm'$，但$(\Hm,v)\not\lrto_V(\Hm',v')$ 有时是成立的。例：�
 \begin{proposition} \label{pro:EqUnion}
 	令${\cal V}_1, {\cal V}_2\subseteq {\cal V}$、$V, V_1 \subseteq \Ha$且$\Hm_i$为Kripke结构（$i=1,2,3$），若$v_i: {\cal V}\rto 2^{S_i}$，则：
 	\begin{enumerate} [(i)]
-		\item $\lrto_{\tuple{{\cal V}_1,V}}$为赋值间的等价关系。
+		\item $\lrto_{\tuple{{\cal V}_1,V}}$为赋值间的等价关系；
 		\item 若$(\Hm_1, s_1,v_1) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_2,s_2,v_2)$、${\cal V}_1 \subseteq {\cal V}_2$且$V \subseteq V_1$，\\
 		则 $(\Hm_1, s_1, v_1) \lrto_{\tuple{{\cal V}_2,V_1}} (\Hm_2, s_2, v_2)$；
 		\item 若$(\Hm_1, s_1, v_1) \lrto_{\tuple{{\cal V}_1,V}} (\Hm_2,s_2, v_2)$且$(\Hm_2,s_2, v_2) \lrto_{\tuple{{\cal V}_2,V_1}} (\Hm_3,s_3, v_3)$，\\

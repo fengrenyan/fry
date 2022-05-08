@@ -136,7 +136,7 @@
 	\item 对任意$\Tr_n(s_2)$的子树$\Tr_{n-1}(s_2')$，都存在$\Tr_n(s_1)$的子树$\Tr_{n-1}(s_1')$，使得
 	$\Tr_{n-1}(s_1')\lrto_V\Tr_{n-1}(s_2')$；
 \end{itemize}
-则称$\Hm_1$的计算树$\Tr_n(s_1)$和$\Hm_2$的计算树$\Tr_n(s_2)$是$V$-互模拟的（记为$({\cal M}_1,\Tr_n(s_1))\lrto_V({\cal M}_2,\Tr_n(s_2))$，简写为$\Tr_n(s_1)\lrto_V\Tr_n(s_2)$）
+则称$\Hm_1$的计算树$\Tr_n(s_1)$和$\Hm_2$的计算树$\Tr_n(s_2)$是$V$-互模拟的（记为$({\cal M}_1,\Tr_n(s_1))\lrto_V({\cal M}_2,\Tr_n(s_2))$，简写为$\Tr_n(s_1)\lrto_V\Tr_n(s_2)$）。
 
 特别地，当$n=0$时，只需考虑第一个条件即可。
 
@@ -773,8 +773,7 @@
 	\item[(1)] 如何表示$\CTL$公式和带索引的$\CTL$公式之间的关系？如在第\ref{chapter02}章中所说，将一个$\CTL$公式转换为$\CTLsnf$子句集会引入新的原子命题和索引。虽然已有的研究说明，$\CTL$公式可以转换为带索引的公式集并保证其可满足性，然而并没有表明这两种形式的公式之间的模型具有怎样的联系。
 	本章从互模拟等价的角度探讨$\CTL$公式和归结等过程得到的（带索引）公式之间的联系，为计算遗忘提供理论基础。
 	%本章给出一种扩展的互模拟定义，以描述两种公式的模型之间的关系。
-	\item[(2)] 如何“移除”无关的原子命题（包括需要遗忘的原子命题和转换过程中引入的新的原子命题），以及如何“消除”索引？为此，本章给出“移除”原子命题的一般操作，并提出一种一般化的Ackermann引理。为了“消除”索引，探索几个逻辑等价关系。%，详见第\ref{cha4:sec:resf}节。
-	%对应算法\ref{alg:compute:forgetting:by:Resolution}中的$\emph{Removing\_index}(\emph{RemA})$过程。
+	\item[(2)] 如何“移除”无关的原子命题（包括需要遗忘的原子命题和转换过程中引入的新的原子命题），以及如何“消除”索引？为此，本章给出“移除”原子命题的一般操作，并提出一种一般化的Ackermann引理。为了“消除”索引，探索几个逻辑等价关系。 
 \end{itemize}
 
 %此外，详细描述基于Prolog上述算法的实现并分析实验结果。
@@ -785,7 +784,7 @@
 通过上述分析，本节讲述如何使用$R_{\CTL}^{\succ,S}$归结系统对要遗忘的原子命题做归结，然后如何将归结后得到的结果等价转换为$\CTL$公式。
 \subsubsection{$\CTL$归结$\Unfolding$}
 
-%这部分给出如何使用归结规则（表\ref{tab:res}）来计算$\CTL$中的遗忘。
+ 
 这个过程的主要思想是：将转换过程中获得的$\CTLsnf$子句在表\ref{tab:res}中的归结规则上做穷尽的归结，即直到不产生新的归结结果。值得注意的是，该归结过程涉及的归结原子命题包括：需要遗忘的原子命题和转换过程中引入的新原子命题。
 
 令$T$为$\CTLsnf$子句集，$p$为原子命题。$T$在$p$上的\emph{展开}（记为$\Unfolding(T,p)$）是集合$T$和如下集合的并集：
@@ -1215,7 +1214,7 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 \begin{proposition} \label{pro:fogCTL}
 	给定$\CTL$公式$\varphi$，若$\varphi$满足下面约束：
 	（1）$\varphi$中不包括操作符$Pt {\cal T}$（其中$Pt \in \{\ALL, \EXIST\}$且${\cal T} \in \{\UNTILL, \GLOBAL\}$）；（2）对于任意原子命题$p\in V$， 若$p$和$\neg p$出现在同一时序算子的范围内。
-	那么，$\emph{ERes}(\varphi,V) \equiv \CTLforget(\varphi, V)$。
+	那么，$\emph{CTL-forget}(\varphi,V) \equiv \CTLforget(\varphi, V)$。
 \end{proposition}
 \begin{proof}
 	不失一般性地，假设$V = \{p\}$。

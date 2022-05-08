@@ -1,0 +1,47 @@
+\begin{thebibliography}{BCG88}
+
+\bibitem[BCG88]{browne1988characterizing}
+Michael~C. Browne, Edmund~M. Clarke, and Orna Gr{\"u}mberg.
+\newblock Characterizing finite {K}ripke structures in propositional temporal
+  logic.
+\newblock {\em Theoretical Computer Science}, 59(1-2):115--131, 1988.
+
+\bibitem[DH96]{d1996uniform}
+Giovanna D'Agostino and Marco Hollenberg.
+\newblock Uniform interpolation, automata and the modal $\mu$-calculus.
+\newblock {\em Logic Group Preprint Series}, 165, 1996.
+
+\bibitem[DH00]{d2000logical}
+Giovanna D'Agostino and Marco Hollenberg.
+\newblock Logical questions concerning the {\(\mu\)}-calculus: Interpolation,
+  lyndon and los-tarski.
+\newblock {\em The Journal of Symbolic Logic}, 65(1):310--332, 2000.
+
+\bibitem[DL06]{d2006modal}
+Giovanna D'Agostino and Giacomo Lenzi.
+\newblock On modal $\mu$-calculus with explicit interpolants.
+\newblock {\em Journal of Applied Logic}, 4(3):256--278, 2006.
+
+\bibitem[Koz83]{DBLP:journals/cacm/Kozen83}
+Dexter Kozen.
+\newblock Results on the propositional $\mu$-calculus.
+\newblock {\em Theoretical Computer Science}, 27:333--354, 1983.
+
+\bibitem[Mak91]{Maksimova:JANCL:1991}
+Larisa Maksimova.
+\newblock Temporal logics of ``the next'' do not have the beth property.
+\newblock {\em Journal of Applied Non-Classical Logics}, 1:73--76, 1991.
+
+\bibitem[ZHD08]{zhang2008first}
+Lan Zhang, Ullrich Hustadt, and Clare Dixon.
+\newblock First-order resolution for {CTL}.
+\newblock Technical report, Technical Report ULCS-08-010, Department of
+  Computer Science, University of Liverpool, 2008.
+
+\bibitem[ZHD14]{zhang2014resolution}
+Lan Zhang, Ullrich Hustadt, and Clare Dixon.
+\newblock A resolution calculus for the branching-time temporal logic {CTL}.
+\newblock {\em ACM Transactions on Computational Logic (TOCL)}, 15(1):1--38,
+  2014.
+
+\end{thebibliography}
