@@ -87,6 +87,19 @@
  
  \setbeamertemplate{theorems}[numbered] 
  
+% \newtheorem{thm}{Theorem}
+% }
+%% \newtheorem{lem}[thm]{Lemma}
+% \newtheorem{examp}[thm]{Example}
+ \newtheorem{lem}{Lemma}
+ \newtheorem{thm}[lem]{Theorem}
+ \newtheorem{exm}[lem]{Example}
+ \newtheorem{defn}[lem]{Definition}
+ 	
+% \newtheorem{prop}{Proposition}[section]
+% \newtheorem{exmp}{Example}[section]
+% \newtheorem{defn}{Definition}[section]
+ 
  \setbeamerfont{section in sidebar}{size=\fontsize{4}{3.5}\selectfont}
  \setbeamerfont{subsection in sidebar}{size=\fontsize{3.5}{3}\selectfont}
  
@@ -127,6 +140,46 @@
 
 \uselanguage{chinese}
 \languagepath{chinese}
+
+
+%tikz画图设置
+\def\pgfsysdriver{pgfsys -dvipdfmx.def}
+\usepackage{tikz}
+\tikzset{
+	blueCircle/.style ={
+		circle, %矩形节点
+		%rounded corners =5pt, %圆角
+		minimum width =15pt, %最小宽度
+		minimum height =15pt, %最小高度
+	%	inner sep=2pt, %文字和边框的距离
+		draw=blue, %边框颜色}
+		fill = blue!20 %填充颜色
+	}  
+}
+\tikzset{
+	redCircle/.style ={
+		circle, %矩形节点
+		%rounded corners =5pt, %圆角
+		minimum width =15pt, %最小宽度
+		minimum height =15pt, %最小高度
+		%	inner sep=2pt, %文字和边框的距离
+		draw=red, %边框颜色}
+		fill = red!20 %填充颜色
+	}
+}
+
+\tikzset{
+	oragCircle/.style ={
+		circle, %矩形节点
+		%rounded corners =5pt, %圆角
+		minimum width =15pt, %最小宽度
+		minimum height =15pt, %最小高度
+		%	inner sep=2pt, %文字和边框的距离
+		draw=orange, %边框颜色}
+		fill = orange!20 %填充颜色
+	}
+}
+
 %\includeonlyframes{mine}
 \begin{document}
 	\setbeamertemplate{bibliography item}[text]
@@ -207,8 +260,8 @@
 	
 	\setbeamertemplate{caption}[numbered]
 %	\newcommand{引理}{lemma} 
-	\newtheorem{lem}{Lemma} 
-	\setbeamertemplate{lem}[numbered]   
+%	\newtheorem{lem}{Lemma} 
+%	\setbeamertemplate{lem}[numbered]   
 	
 	\title{\CJKfamily{li}{基于遗忘的反应式系统最弱充分条件研究}}
 	
@@ -715,7 +768,7 @@
 
 \begin{frame}
 	\frametitle{~$\CTL$的标准形式}
-	\begin{example}\label{exmp:transbot}
+	\begin{example}\label{examp:Tran}
 		\tiny
 		令$\varphi=\neg \ALL \FUTURE p \wedge \ALL\FUTURE(p \wedge \top)$，下面给出将$\varphi$转换为$\CTLsnf$子句集的详细步骤。
 		
@@ -1016,7 +1069,7 @@
 			\end{theorem}
 		}
 	\only<2>{
-		\begin{example}
+		\begin{example}\label{exp:e1}
 			令$p$和 $x$为两个不同的原子命题，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集$\Var(\varphi)=\{p,x\}$的公式。}为下面公式合取~\cite{Maksimova:JANCL:1991}：
 			\begin{align*}
 				&\ALL\GLOBAL(\neg x \wedge \neg \ALL \GLOBAL p \rto \neg \ALL \NEXT \neg x),
@@ -1432,14 +1485,45 @@
 		\end{definition}
 	
 	\only<1>{\begin{example}
-		令$\Hm= (S, R, L, r)$、$\Hm_1 = (S_1, R_1, L_1, r_1)$、$\Hm_2 = (S_2, R_2, L_2, r_2)$为三个初始结构（如图~\ref{fig:partialo}），其中$S = S_1 = S_2 = \{s_0, s_1\}$，$r=r_1=r_2= s_0$，$R=R_1=R_2=\{(s_0, s_1), (s_1, s_1)\}$，$L(s_0) = \{ch, j\}$，$L_1(s_0) = L_2(s_0) = \{ch\}$，$L(s_1) = L_1(s_1)=\emptyset$，$L_2(s_1) = \{j\}$。
+	%	令$\Hm= (S, R, L, r)$、$\Hm_1 = (S_1, R_1, L_1, r_1)$、$\Hm_2 = (S_2, R_2, L_2, r_2)$为三个初始结构（如图~\ref{fig:partialo}），其中$S = S_1 = S_2 = \{s_0, s_1\}$，$r=r_1=r_2= s_0$，$R=R_1=R_2=\{(s_0, s_1), (s_1, s_1)\}$，$L(s_0) = \{ch, j\}$，$L_1(s_0) = L_2(s_0) = \{ch\}$，$L(s_1) = L_1(s_1)=\emptyset$，$L_2(s_1) = \{j\}$。
+	如图~\ref{fig:partialo}中的三个初始结构。
 		
 		可以检查$\Hm \lrto_{\{j\}} \Hm_1$，$\Hm \lrto_{\{j,ch\}} \Hm_2$，$\{j\}\subseteq \{j,ch\}$，且对任意原子命题集$V' \subset \{j\}$（或$V' \subset \{j,ch\}$），有$\Hm \not\lrto_{V'} \Hm_1$（或$\Hm \not \lrto_{V'} \Hm_2$）。
 		因此，$\Hm_1 \leq_{\Hm} \Hm_2$。
-		\begin{figure} 
-			\includegraphics[scale=0.4]{figures/partial_order2}
-			\caption{初始结构间的$\leq_{\Hm}$关系。}\label{fig:partialo} 
-		\end{figure}
+		\begin{figure}
+			\centering
+		\begin{tikzpicture}
+			\node[blueCircle] (s0) at(0,0)  {$s_0$};
+			\node[blueCircle] (s1) at(1,0)  {$s_1$};
+			\node[blueCircle] (s10) at(3,0)  {$s_0$};
+			\node[blueCircle] (s11) at(4,0)  {$s_1$};
+			\node[blueCircle] (s20) at(6,0)  {$s_0$};
+			\node[blueCircle] (s21) at(7,0)  {$s_1$};
+			\draw[->] (s0) -- (s1);
+			\draw[<->,dashed] (s1) -- (s10);
+			\draw[->] (s10) -- (s11);
+			\draw[<->,dashed] (s11) -- (s20);
+			\draw[->] (s20) -- (s21);
+			\path (s1) edge [loop above]  (s1);
+			\path (s11) edge [loop above]  (s11);
+			\path (s21) edge [loop above]  (s21);
+			\node at(2,0.2) {$\{j\}$-互模拟};
+			\node at(5,0.2) {$\{j,ch\}$-互模拟};
+			\node at(0.5,-0.5)  {$\Hm_1$};
+			\node at(3.5,-0.5)  {$\Hm$};
+			\node at(6.5,-0.5)  {$\Hm_2$};
+			\node at(0.2,0.4) {$ch$};
+			\node at(3.2,0.4) {$ch,j$};
+			\node at(6.2,0.4) {$ch$};
+			\node at(7.2,0.4) {$j$};
+			%\draw (s1) .. (s1);
+		\end{tikzpicture} %oragCircle
+		\caption{初始结构间的$\leq_{\Hm}$关系。}\label{fig:partialo}
+	\end{figure}
+%		\begin{figure} 
+%			\includegraphics[scale=0.4]{figures/partial_order2}
+%			\caption{初始结构间的$\leq_{\Hm}$关系。}\label{fig:partialo} 
+%		\end{figure}
 	\end{example}}
 	\only<2>{
 		\begin{theorem}\label{thm:minU}
@@ -1781,6 +1865,41 @@
 \begin{frame}
 	\frametitle{基于模型的有界CTL遗忘计算——{\footnotesize 计算WSC}}
 	{\footnotesize 
+		\begin{example}[例~\ref{exam:SNCandWSC}的延续]
+			%\label{exam:SNCandWSC}
+			令$\Ha=\{d,se,sp,s\}$和$V=\{d,se\}$，求$s$在$V$和初始结构${\cal K} = (\Hm,s_0)$ 上的WSC，其中$\Hm$为例~\ref{car_manufacturing}中初始状态为$s_0$的汽车制造企业模型结构。
+			
+		$s$在$V$和初始结构${\cal K} = (\Hm,s_0)$上的WSC为$\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg s, \{s\}$ $\cup \{sp\})$。
+			{\tiny 
+			\begin{columns}
+				\column{0.5\textwidth}
+					\begin{align*}
+					&	\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg s, \{s\} \cup \{sp\})\\
+					&	\equiv \CTLforget(\CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg s, \{sp\}), \{s\})\\
+					&	\equiv \CTLforget(\CTLforget({\cal F}_{\Ha}({\cal K}), \{sp\})\wedge \neg s, \{s\}).
+				\end{align*}
+			
+			\qquad  $\CTLforget({\cal F}_{\Ha}({\cal K}), \{sp\}) \equiv {\cal F}_{V\cup \{s\}}({\cal K})$\\
+			 \qquad  所以要计算$\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg s,$ $\{s\}\cup \{sp\})$，\\
+			 \qquad  只需计算$\neg \CTLforget({\cal F}_{V\cup \{s\}}({\cal K})\wedge \neg s, \{s\})$。\\
+			 \qquad 令$V' = V \cup \{s\} = \{d,se,s\}$，\\
+			 \qquad  则$\overline{V'} = \{sp\}$。
+				\column{0.5\textwidth}
+				\begin{align*}
+					&\neg \CTLforget({\cal F}_{V\cup \{s\}}({\cal K})\wedge \neg s, \{s\}) \\
+					& \equiv \neg \CTLforget({\cal F}_{V\cup \{s\}}({\cal K}), \{s\})\\
+					& \equiv \neg \CTLforget(\psi \wedge \ALL \GLOBAL(\varphi_1 \wedge \varphi_2 \wedge \varphi_3\wedge \varphi_4),\{s\})\\	
+					& \equiv \neg(\CTLforget(\psi \wedge \varphi_1 \wedge \varphi_2 \wedge \varphi_3\wedge \varphi_4, \{s\}) \wedge \ALL \GLOBAL \CTLforget(\varphi_1 \wedge \varphi_2 \wedge \varphi_3\wedge \varphi_4, \{s\}))\\
+					& \equiv  \neg \bigg(\Big(d \vee \big((d\vee se) \wedge \ALL\NEXT(d \wedge \neg se)\big) \vee \big((d \vee se \vee \ALL\NEXT \neg d) \wedge\\
+					& \EXIST\NEXT(\neg d \wedge se) \wedge \EXIST\NEXT(\neg d \wedge \neg se)\big) \\
+					& \vee (d \wedge \ALL\NEXT(\neg d \wedge \neg se)) \vee \big((d\vee \neg se) \wedge \EXIST\NEXT\neg d\big) \Big) \wedge\\
+					& \ALL \GLOBAL\Big(\big((d \vee se) \wedge \ALL\NEXT(d \wedge \neg se)\big) \vee \big(\ALL\NEXT \neg d \wedge \EXIST\NEXT(\neg d \wedge se) \wedge\\
+					& \EXIST\NEXT(\neg d \wedge \neg se)\big) \vee \big((d\vee se) \wedge \ALL\NEXT(\neg d \wedge \neg se)\big) \vee \EXIST\NEXT \neg d\Big)
+					\bigg).
+				\end{align*}
+			\end{columns} 
+		}
+		\end{example}
 	}
 \end{frame}
 
@@ -1935,7 +2054,7 @@
 		$T_\varphi \equiv_U\emph{ERes}(\varphi,V)$，其中  $U=\Var(\Unfolding(T_\varphi,V))-(\Var(\varphi)-  V)$。
 	\end{proposition}}
 	\only<3>{\tiny
-		\begin{example}[例\ref{examp:Tran}的延续]\label{examp:Res}
+		\begin{example}[例\ref{examp:Tran}的延续]\label{examp:Res} 
 			令 $V=\{p,r\}$，则  $\Unfolding(T_\varphi, V\cup \{x,y,z\})$ 除了例\ref{examp:Tran}中的子句，还包含如下子句： 
 			\begin{align*}
 				&(1)\ \start \rto r && (1,2,\textbf{SRES5})
@@ -2056,7 +2175,8 @@
 %	}
 
 \only<3>{
-	\begin{example}[例\ref{examp:Res}的延续]\label{examp:Aclm}
+	\begin{example}[例30的延续]
+		\label{examp:Aclm}
 		首先考虑原子命题 $x$、 $\Delta=\{\top \rto f \vee m \vee \neg x\}$和 $\Gamma=\emph{ERes}(\varphi,V)-\Delta$。
 		$\Gamma$中包含$x$的公式关于$x$都为正的，因此 $\Gamma[x/(f \vee m)]$包含如下公式：
 		\begin{align*}%{llll}
@@ -2111,7 +2231,7 @@
 		\end{proposition}
 	}
 \only<2>{
-	\begin{example}[例\ref{examp:Aclm}的延续]\label{examp:forget:algorithm}
+	\begin{example}[例31的延续]\label{examp:forget:algorithm}
 		容易看出 \CTL-forget$(\varphi,\{p,r\})$包含下面的公式
 		\begin{align*}%{llll}
 			&  (q \vee f \vee m)\land (f \vee m \vee y)\land\ALL \FUTURE (f \vee m), \quad \ALL\GLOBAL ( \top \rto q\vee\neg y),  \\
