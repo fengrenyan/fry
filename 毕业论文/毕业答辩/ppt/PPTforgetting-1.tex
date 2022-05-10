@@ -1736,13 +1736,48 @@
 				\end{align*}
 				其中，四元组$((i), r= s_k, L(s_0)=V_1, L(s_1)=V_1)$表示Kripke结构$(S,r,R,L)$，其中$S=\{s_0, s_1\}$、$r=s_k$ ($r\in \{0,1\}$)、转换关系如图~\ref{fig:knoup}中的(i) ($i \in \{1,2,3,4,5,6\}$)、$s_0$ 和$s_1$分别被 $V_1 \subseteq \{ch,j\}$ 和 $V_2\subseteq \{ch,j\}$标记且${\cal C} \in \{\emptyset, \{j\}, \{ch\}, \{j,ch\}\}$。
 				\column{0.5\textwidth}
-%				\begin{figure}
-%					\centering
-%					%	\tiny
-%					\begin{tikzpicture}[scale=0.8]
-%						\tikzstyle{every node}=[font=\small,scale=0.8]
-%						\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
-%						\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+				\begin{figure}
+					\centering
+					%	\tiny
+					\begin{tikzpicture}[scale=0.8]
+						\tikzstyle{every node}=[font=\small,scale=0.8]
+						\node[blueCircle] (s0) at(0,3) {$s_0$};
+						\node[blueCircle] (s1) at(1,3) {$s_1$};
+						\node at(0.5,2.5) {(1)};
+						\draw[->] (s0) -- (s1);
+						\path (s1) edge [loop above]  (s1);
+						\node[blueCircle] (s2) at(2,3) {$s_1$};
+						\node[blueCircle] (s3) at(3,3) {$s_0$};
+						\node at(2.5,2.5) {(2)};
+						\draw[->] (s2) -- (s3);
+						\path (s3) edge [loop above]  (s3);
+						
+						\node[blueCircle] (t0) at(0,1) {$s_0$};
+						\node[blueCircle] (t1) at(1,1) {$s_1$};
+						\node at(0.5,0.5) {(3)};
+						\draw[->] (t0) -- (t1);
+					%	\path (s1) edge   (s0);
+						\path (t1) edge[->,bend right=45] (t0);
+						\node[blueCircle] (t2) at(2,1) {$s_1$};
+						\node[blueCircle] (t3) at(3,1) {$s_0$};
+						\node at(2.5,0.5) {(4)};
+						\draw[->] (t2) -- (t3);
+					%	\path (t3) edge   (t2);
+						\path (t3) edge[->,bend right=45] (t2);
+						
+						\node[blueCircle] (r0) at(0,-1) {$s_0$};
+						\node[blueCircle] (r1) at(1,-1) {$s_1$};
+						\node at(0.5,-1.5) {(5)};
+						\draw[->] (r0) -- (r1);
+						\path (r1) edge [loop above]  (r1);
+						\path (r0) edge [loop above]  (r0);
+						\node[blueCircle] (r2) at(2,-1) {$s_1$};
+						\node[blueCircle] (r3) at(3,-1) {$s_0$};
+						\node at(2.5,-1.5) {(6)};
+						\draw[->] (r2) -- (r3);
+						\path (r2) edge [loop above]  (r2);
+						\path (r3) edge [loop above]  (r3);
+%						
 %						\path (s1) edge[->,bend right=45] (s0);
 %						\path (s0) edge[->,bend left=-45] (s1);
 %						\path (s1) edge[->,bend right=-45] (s2);
@@ -1751,15 +1786,15 @@
 %						\node at(-1,0.5) {{\tiny $I/O$完成}};
 %						\node at(0.7,0.7) {{\tiny 时间片完}};
 %						\node at(-0.2,0.7) {{\tiny 进程调度}};
-%						%	\node at(0,-1.5) {${\cal K}_2$}; 
-%					\end{tikzpicture}
-%					\caption{{\tiny 进程的三种基本状态及其转换}}
-%				\end{figure}
-					\begin{figure} 
-				%	\renewcommand{\figurename}{\zihao{10}图}
-					\includegraphics[scale=0.4]{figures/knowledge_update}
-					\caption{{\tiny 状态空间为$\{s_0,s_1\}$的六个Kripke结构示意图}\footnote{这里只列出部分转换关系，其余转换关系可以容易地枚举出来。}}\label{fig:knoup} 
+						%	\node at(0,-1.5) {${\cal K}_2$}; 
+					\end{tikzpicture}
+					\caption{{\tiny 状态空间为$\{s_0,s_1\}$的六个Kripke结构示意图}\footnote{{\tiny 这里只列出部分转换关系，其余转换关系可以容易地枚举出来。}}}\label{fig:knoup} 
 				\end{figure}
+%					\begin{figure} 
+%				%	\renewcommand{\figurename}{\zihao{10}图}
+%					\includegraphics[scale=0.4]{figures/knowledge_update}
+%					\caption{{\tiny 状态空间为$\{s_0,s_1\}$的六个Kripke结构示意图}\footnote{这里只列出部分转换关系，其余转换关系可以容易地枚举出来。}}\label{fig:knoup} 
+%				\end{figure}
 			\end{columns}
 			 
 			$\Mod(\varphi \diamond_{\mu} \psi) = \bigcup_{\Hm\in \Mod(\varphi)} Min(\Mod(\psi), \leq_{\Hm})$，根据定义~\ref{def:closer}容易检查$\Mod(\varphi \diamond_{\mu} \psi) = \Mod(\psi)$。直观地说，由于在$\psi$中$j$在偶数状态不再为真、$ch$保持为真且$\psi$和$\varphi$都不知道模型偶数状态的信息，因而用$\psi$更新$\varphi$得到的结果为 $\psi$自身。 
