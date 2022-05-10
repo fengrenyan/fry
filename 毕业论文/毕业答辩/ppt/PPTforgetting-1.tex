@@ -123,9 +123,7 @@
 
 %\beamerdefaultoverlayspecification{<+->}
 \newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}  %表格自动换行
-
-
-
+ 
 
 % If you have a file called "university-logo-filename.xxx", where xxx
 % is a graphic format that can be processed by latex or pdflatex,
@@ -145,6 +143,10 @@
 %tikz画图设置
 \def\pgfsysdriver{pgfsys -dvipdfmx.def}
 \usepackage{tikz}
+%\RequirePackage{tikz}
+%\usetikzlibrary{decorations.pathreplacing,calligraphy}
+%\usetikzlibrary{positioning, calc, decorations.pathreplacing}
+ 
 \tikzset{
 	blueCircle/.style ={
 		circle, %矩形节点
@@ -156,6 +158,42 @@
 		fill = blue!20 %填充颜色
 	}  
 }
+
+\tikzset{
+	blueCircle1/.style ={
+		circle, %矩形节点
+		%rounded corners =5pt, %圆角
+		minimum width =15pt, %最小宽度
+		minimum height =15pt, %最小高度
+		%	inner sep=2pt, %文字和边框的距离
+		draw=blue, %边框颜色}
+		fill = blue!40 %填充颜色
+	}  
+}
+\tikzset{
+	blueCircle2/.style ={
+		circle, %矩形节点
+		%rounded corners =5pt, %圆角
+		minimum width =15pt, %最小宽度
+		minimum height =15pt, %最小高度
+		%	inner sep=2pt, %文字和边框的距离
+		draw=blue, %边框颜色}
+		fill = blue!60 %填充颜色
+	}  
+}
+
+\tikzset{
+	blueCircle3/.style ={
+		circle, %矩形节点
+		%rounded corners =5pt, %圆角
+		minimum width =15pt, %最小宽度
+		minimum height =15pt, %最小高度
+		%	inner sep=2pt, %文字和边框的距离
+		draw=blue, %边框颜色}
+		fill = blue!80 %填充颜色
+	}  
+}
+
 \tikzset{
 	redCircle/.style ={
 		circle, %矩形节点
@@ -377,10 +415,36 @@
 				\item $L: S \rto 2^V$为标签函数，具体地：$L(s_0) = \{d\}$、$L(s_1) = \{s\}$、 $L(s_2)=\{se\}$、 $L(s_3) = \{sp\}$和$L(s_4) = \{se,sp\}$。
 			\end{itemize}
 			\column{0.5\textwidth}  
-			 \begin{figure} 
-			 	\includegraphics[width=3cm]{figures/NnewCar}
-			 	\caption{汽车制造企业模型}\label{BVM}
-			 \end{figure} 
+			\begin{figure}
+				\centering
+			\begin{tikzpicture}[scale=0.75]
+				\tikzstyle{every node}=[font=\small,scale=0.75]
+				\node[blueCircle] (s0) at(0,1) {$s_0$};
+				\node[blueCircle1] (s1) at(0,0) {$s_1$};
+				\node[blueCircle2] (s2) at(-1,0) {$s_2$};
+				\node[blueCircle3] (s3) at(1,0) {$s_3$};
+				\node[redCircle] (s4) at(0.5,-1) {$s_4$}; 
+					\draw[->,dashed] (s0) -- (s1);
+					\draw[->,dashed] (s1) -- (s2);
+					\draw[->,dashed] (s1) -- (s3);
+					\draw[->,dashed] (s1) -- (s4);
+				%	\draw[->] (s4) -- (s0);
+					\path (s4) edge[->,bend right=45] (s0);
+					\path (s2) edge[->,bend right=-45] (s0);
+					\path (s3) edge[->,bend right=45] (s0);
+					\node at(-0.2,1.3) {$d$};
+					\node at(-1.4,0) {$se$};
+					\node at(1.4,0) {$sp$};
+					\node at(-0.2,-0.4) {$s$};
+					\node at(-0.2,-1) {$se, sp$};
+				%	\node at(0,-1.5) {${\cal K}_2$}; 
+			\end{tikzpicture}
+		\caption{{\tiny 汽车制造企业模型}}\label{BVM}
+			\end{figure}
+%			 \begin{figure} 
+%			 	\includegraphics[width=3cm]{figures/NnewCar}
+%			 	\caption{汽车制造企业模型}\label{BVM}
+%			 \end{figure} 
 		\end{columns} 
 		假定，由于经济危机或者战略调整，导致该企业不能再生产跑车。这意味着所有规范和Kripke结构都不再需要考虑$sp$的，因此应该\textcolor{blue}{“移除”}。
 	\end{example}}
@@ -421,12 +485,12 @@
 				\item 其模型检测（MC）问题能在多项时间内完成；
 				\item 能很好的表达系统要求的各种属性：
 				\begin{itemize}
-					\item 安全属性（Safety properties）：something
-					bad never happens. ($\ALL \GLOBAL \neg \varphi$)
-					\item 活性属性（Liveness	properties）：something good will eventually happen. ($\ALL \GLOBAL \ALL \FUTURE \varphi$)
-					\item 持续属性（Persistence properties）：eventually for ever a certain proposition holds. ($\ALL \FUTURE \ALL \GLOBAL \varphi$)
-					\item 公平属性（Fairness properties）：does,
-					under certain conditions, an event occur repeatedly? （一种约束：在约束$fair = \GLOBAL \FUTURE a$下$\ALL \GLOBAL(a\rto \ALL \FUTURE b)$是否成立？）
+					\item \textcolor{orange!80}{安全属性（Safety properties）}：something
+					bad never happens. \textcolor{blue!70}{($\ALL \GLOBAL \neg \varphi$)}
+					\item \textcolor{orange!80}{活性属性（Liveness	properties）}：something good will eventually happen. \textcolor{blue!70}{($\ALL \GLOBAL \ALL \FUTURE \varphi$)}
+					\item \textcolor{orange!80}{持续属性（Persistence properties）}：eventually for ever a certain proposition holds. \textcolor{blue!70}{($\ALL \FUTURE \ALL \GLOBAL \varphi$)}
+					\item \textcolor{orange!80}{公平属性（Fairness properties）}：does,
+					under certain conditions, an event occur repeatedly? \textcolor{blue!70}{（一种约束：在约束$fair = \GLOBAL \FUTURE a$下$\ALL \GLOBAL(a\rto \ALL \FUTURE b)$是否成立？）}
 				\end{itemize} 
 			\end{itemize}
 			\item $\mu$-演算（$\mu$-calculus）：是其他形式体系的机械基础
@@ -436,7 +500,7 @@
 				\item $\mu$-演算与S2S有相同的表达能力；
 				\item ......
 			\end{itemize}
-		\end{itemize} \pause
+		\end{itemize}  
 \textcolor{red}{形成时序逻辑系统遗忘理论的框架，架起形式化验证（verification）和知识表示与推理（KR）的桥梁。}}
 	}
 	\end{frame}
@@ -511,8 +575,8 @@
 			\item  $\CTL$的遗忘什么情形下存在？（CTL不具有均匀插值（uniform interpolation）性质）
 			\item 遗忘理论与反应式系统的SNC和WSC的关系
 			\begin{itemize}
-				\item 反应式系统不终止
-				\item 遗忘理论的作用对象是公式
+				\item 反应式系统{\em 不终止}
+				\item 遗忘理论的作用{\em 对象是公式}
 			\end{itemize}
 			\item $CTL$和$\mu$-演算的遗忘在推理问题上的复杂性
 		\end{itemize}
@@ -557,8 +621,8 @@
 %	\only<3>{
 		\begin{block}{相关概念}
 			\begin{itemize}
-				\item \emph{($\Ind$-)结构}：初始($\Ind$-)Kripke结构$\Hm$和是$\Hm$中的状态$s$构成的二元组${\cal K}=(\Hm, s)$；
-				\item {\em 初始 ($\Ind$-)结构}：($\Ind$-)结构${\cal K}=(\Hm, s)$中$s$为初始状态的情形。
+				\item \textcolor{blue!80}{($\Ind$-)结构}：初始($\Ind$-)Kripke结构$\Hm$和是$\Hm$中的状态$s$构成的二元组${\cal K}=(\Hm, s)$；
+				\item \textcolor{blue!80}{初始 ($\Ind$-)结构}：($\Ind$-)结构${\cal K}=(\Hm, s)$中$s$为初始状态的情形。
 			\end{itemize} 
 		
 	%	在这些结构中，（索引）路径这一概念可以类似地定义。
@@ -665,9 +729,9 @@
 \begin{block}{{\footnotesize 小贴士}}
 	\tiny{
 		\begin{itemize}
-			\item {\em 模型}：满足公式$\varphi$的初始$\Ind$-结构称为$\varphi$的一个模型；\qquad $\Mod(\varphi)$：公式$\varphi$的所有模型构成的集合； 
+			\item \textcolor{blue!80}{模型}：满足公式$\varphi$的初始$\Ind$-结构称为$\varphi$的一个模型；\qquad $\Mod(\varphi)$：公式$\varphi$的所有模型构成的集合； 
 			%\item 
-			\item $\IR(\varphi,V)$：如果存在一个公式$\psi$使得$\Var(\psi) \cap V = \emptyset$且$\varphi \equiv \psi$，则说$\varphi$与$V$中的原子命题\emph{无关}，简称为\emph{$V$-无关}；\\ $\Var(\varphi)$：出现在$\varphi$中的原子命题集；
+			\item \textcolor{blue!80}{$\IR(\varphi,V)$}：如果存在一个公式$\psi$使得$\Var(\psi) \cap V = \emptyset$且$\varphi \equiv \psi$，则说$\varphi$与$V$中的原子命题\textcolor{blue!80}{无关}，简称为\textcolor{blue!80}{$V$-无关}；\\ $\Var(\varphi)$：出现在$\varphi$中的原子命题集；
 			\item 可满足、逻辑蕴涵、逻辑等值、文字、子句等跟经典命题情形中的定义一样。
 		\end{itemize}
 	}
@@ -700,23 +764,23 @@
 			具有下面几种形式的公式称为$\CTL$全局子句分离范式（separated normal form with global clauses for \CTL，$\CTLsnf$子句）\cite{zhang2008first,zhang2014resolution}：
 			\[
 			\begin{array}{ll}
-				\ALL \GLOBAL (\start \rto \bigvee_{j=1}^{k} m_{j}) & \text{(初始句，initial clause)} \\
-				\ALL \GLOBAL (\top\rto \bigvee_{j=1}^{k} m_{j}) &\text{(全局子句，global clause)} \\
-				\ALL \GLOBAL (\bigwedge_{i=1}^{n} l_{i} \rto \ALL \NEXT \bigvee_{j=1}^{k} m_{j}) & (\ALL\text{-步子句，} \ALL\text{-step clause}) \\
-				\ALL \GLOBAL (\bigwedge_{i=1}^{n} l_{i} \rto \EXIST_\tuple{ind} \NEXT \bigvee_{j=1}^{k} m_{j}) & (\EXIST\text{-步子句，} \EXIST\text{-step clause}) \\
-				\ALL \GLOBAL (\bigwedge_{i=1}^{n} l_{i} \rto \ALL \FUTURE l) & (\ALL\text{-某时子句，} \ALL\text{-sometime clause}) \\
-				\ALL \GLOBAL (\bigwedge_{i=1}^{n} l_{i} \rto \EXIST_{\tuple{ind}} \FUTURE l) & (\EXIST\text{-某时子句，} \EXIST\text{-sometime clause})\\
+				\textcolor{blue!80}{\ALL \GLOBAL} (\start \rto \bigvee_{j=1}^{k} m_{j}) & \text{(初始句，initial clause)} \\
+				\textcolor{blue!80}{\ALL \GLOBAL} (\top\rto \bigvee_{j=1}^{k} m_{j}) &\text{(全局子句，global clause)} \\
+				\textcolor{blue!80}{\ALL \GLOBAL} (\bigwedge_{i=1}^{n} l_{i} \rto \ALL \NEXT \bigvee_{j=1}^{k} m_{j}) & (\ALL\text{-步子句，} \ALL\text{-step clause}) \\
+				\textcolor{blue!80}{\ALL \GLOBAL} (\bigwedge_{i=1}^{n} l_{i} \rto \EXIST_\tuple{ind} \NEXT \bigvee_{j=1}^{k} m_{j}) & (\EXIST\text{-步子句，} \EXIST\text{-step clause}) \\
+				\textcolor{blue!80}{\ALL \GLOBAL} (\bigwedge_{i=1}^{n} l_{i} \rto \ALL \FUTURE l) & (\ALL\text{-某时子句，} \ALL\text{-sometime clause}) \\
+				\textcolor{blue!80}{\ALL \GLOBAL} (\bigwedge_{i=1}^{n} l_{i} \rto \EXIST_{\tuple{ind}} \FUTURE l) & (\EXIST\text{-某时子句，} \EXIST\text{-sometime clause})\\
 			\end{array}
 			\]
 			其中$k$和$n$都是大于0的常量，$l_i$（$1\leq i \leq n$）、$m_j$（$1\leq j \leq k$）和$l$都是文字且$ind \in \Ind$。
 		\end{block}}
 	\only<2>{
 		\begin{block}{转换规则}
-			一个$\CTL$公式$\varphi$可以通过下表中的规则转换为一个$\CTLsnf$子句集，记为$T_{\varphi}$。
-			
-			\begin{table}%[width=.9\linewidth,cols=4,pos=h]
-				\tiny
-				\centering\caption{转换规则}\label{tab:trans}
+			一个$\CTL$公式$\varphi$可以通过下表中的规则转换为一个$\CTLsnf$子句集，记为$T_{\varphi}$。 
+			{\tiny
+			\begin{table}%[width=.9\linewidth,cols=4,pos=h] 
+				\centering 
+				\caption{{\scriptsize 转换规则}}\label{tab:trans} 
 				\begin{tabular}{c}
 					\toprule
 					$
@@ -724,7 +788,7 @@
 						& \textbf{Trans(1)}\frac{q \rto \EXIST T \varphi}{q\rto \EXIST_{\tuple{ind}} T \varphi}; \qquad
 						\textbf{Trans(2)} \frac{q \rto \EXIST (\varphi_1 \UNTILL \varphi_2)}{q\rto \EXIST_{\tuple{ind}} (\varphi_1 \UNTILL \varphi_2)};
 						&& 
-						\textbf{Trans(3)} \frac{q\rto \varphi_1 \wedge \varphi_2}{q\rto \varphi_1, q\rto \varphi_2};\\
+						\textcolor{red}{\textbf{Trans(3)} \frac{q\rto \varphi_1 \wedge \varphi_2}{q\rto \varphi_1, q\rto \varphi_2};}\\
 						&   \textbf{Trans(4)}  \frac{q\rto \varphi_1 \vee \varphi_2\ (\hbox{如果$\varphi_2$不是子句})}{ q\rto \varphi_1 \vee p, p\rto \varphi_2};
 						&&\textbf{Trans(5)}  \frac{q\rto D}{\top \rto \neg q \vee D};\ \frac{q\rto \perp}{ \top \rto \neg q};\ \frac{q \rto \top}{\{\}} \\
 						&  \textbf{Trans(6)} \frac{q\rto Q\NEXT \varphi\ (\hbox{如果$\varphi$不是子句})}{q\rto Q\NEXT p, p\rto \varphi}; 
@@ -738,7 +802,7 @@
 					$\\
 					\bottomrule
 				\end{tabular}
-			\end{table}
+			\end{table}}
 			其中，$T\in \{\NEXT, \GLOBAL, \FUTURE\}$，$ind$是规则中引入的新索引且$Q\in \{\ALL, \EXIST_{\tuple{ind}}\}$；
 			$q$是一个原子命题, $l$是一个文字, $D$是文字的析取（即子句）, $p$是新的原子命题；$\varphi$，$\varphi_1$，和$\varphi_2$都是$\CTL$公式。
 		\end{block}
@@ -782,8 +846,8 @@
 			&2.\ z \rto \EXIST\GLOBAL \neg p \wedge \ALL\FUTURE p &&  \\
 			% \end{align*}
 			% \begin{align*}
-			&3.\ z \rto  \EXIST\GLOBAL \neg p && (2, \textbf{Trans(3)})\\
-			&4.\ z \rto \ALL\FUTURE p && (2, \textbf{Trans(3)})\\
+			& 3.\ \boxed{z \rto  \EXIST\GLOBAL \neg p} && (2, \textcolor{red}{\textbf{Trans(3)}})\\
+			&4.\ \boxed{z \rto \ALL\FUTURE p} && (2, \textcolor{red}{\textbf{Trans(3)}})\\
 			&5.\ z \rto  \EXIST_{\tuple{1}}\GLOBAL \neg p  && (3, \textbf{Trans(1)})\\
 			&6.\ z \rto x && (5, \textbf{Trans(10)})\\
 			&7.\ x\rto \neg l && (5, \textbf{Trans(10)})\\
@@ -945,7 +1009,7 @@
 	\frametitle{~CTL和$\mu$遗忘理论——{\footnotesize 总体框架}}
 	\begin{figure}
 		\includegraphics[scale=0.35]{figures/ctlMuForgFrame}
-		\caption{CTL和$\mu$遗忘理论}
+		\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
 \end{frame}
 		
@@ -967,13 +1031,77 @@
 			\begin{columns}
 			\column{0.5\textwidth} 
 			\begin{itemize}
-				\item 结构互模拟：若$\Hm_1$和 $\Hm_2$之间存在一个 $V$-互模拟关系$\Hb_V$使得$(s_1, s_2)\in \Hb_V$，则称两个 $\Ind$-结构 ${\cal K}_1$ $= (\Hm_1, s_1)$ 和 ${\cal K}_2 = (\Hm_2, s_2)$ 是 $V$-{\em 互模拟}的，记为${\cal K}_1$ $\lrto_V {\cal K}_2$；
-				\item 路径互模拟：令$i\in \{1,2\}$，$\pi_i=(s_{i,1},$ $s_{i,2},\ldots)$ 为 $\Hm_i$ 上的路径，若对任意$j \ge 1$都有$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}$，则称这两条路径是$V$-{\em 互模拟}的，记为$\pi_1 \lrto_V \pi_2$，其中 ${\cal K}_{i,j}=(\Hm_i,$ $s_{i,j})$。
+				\item \textcolor{blue!80}{结构互模拟}：若$\Hm_1$和 $\Hm_2$之间存在一个 $V$-互模拟关系$\Hb_V$使得$(s_1, s_2)\in \Hb_V$，则称两个 $\Ind$-结构 ${\cal K}_1$ $= (\Hm_1, s_1)$ 和 ${\cal K}_2 = (\Hm_2, s_2)$ 是 $V$-{\em 互模拟}的，记为${\cal K}_1$ $\lrto_V {\cal K}_2$；
+				\item \textcolor{blue!80}{路径互模拟}：令$i\in \{1,2\}$，$\pi_i=(s_{i,1},$ $s_{i,2},\ldots)$ 为 $\Hm_i$ 上的路径，若对任意$j \ge 1$都有$ {\cal K}_{1,j} \lrto_V {\cal K}_{2,j}$，则称这两条路径是$V$-{\em 互模拟}的，记为$\pi_1 \lrto_V \pi_2$，其中 ${\cal K}_{i,j}=(\Hm_i,$ $s_{i,j})$。
 			\end{itemize}
 			\column{0.5\textwidth}
-			\begin{figure}
-				\includegraphics[scale=0.34]{figures/NVBnewCar1}
+				\begin{figure}
+				\centering
+				\begin{tikzpicture}[scale=0.75]
+					\tikzstyle{every node}=[font=\small,scale=0.75]
+					\begin{minipage}{.2\textwidth}
+						\node[blueCircle] (s0) at(0,1) {$s_0$};
+						\node[blueCircle1] (s1) at(0,0) {$s_1$};
+						\node[blueCircle3] (s2) at(-1,0) {$s_2$};
+						\node[redCircle] (s3) at(1,0) {$s_3$};
+						\node[redCircle] (s4) at(0.5,-1) {$s_4$}; 
+						\draw[->,dashed] (s0) -- (s1);
+						\draw[->,dashed] (s1) -- (s2);
+						\draw[->,dashed] (s1) -- (s3);
+						\draw[->,dashed] (s1) -- (s4);
+						%	\draw[->] (s4) -- (s0);
+						\path (s4) edge[->,bend right=45] (s0);
+						\path (s2) edge[->,bend right=-45] (s0);
+						\path (s3) edge[->,bend right=45] (s0);
+						\node at(-0.2,1.3) {$d$};
+						\node at(-1.4,0) {$se$};
+						\node at(1.4,0) {$sp$};
+						\node at(-0.3,-0.3) {$s$};
+						\node at(-0.2,-1) {$se, sp$};
+						\node at(-0.4, -0.6) {${\cal K}_1$};
+					\end{minipage}
+					\begin{minipage}{.2\textwidth}
+						\node[blueCircle] (s10) at(3,2) {$s_0$};
+						\node[blueCircle1] (s11) at(3,1) {$s_1$};
+						\node[blueCircle2] (s12) at(2,1) {$s_2$};
+						\node[redCircle] (s13) at(4,1) {$s_3'$};
+						\draw[->] (s10) -- (s11);
+						\draw[->] (s11) -- (s12);
+						\draw[->] (s11) -- (s13);
+						\path (s12) edge[->,bend right=-45] (s10);
+						\path (s13) edge[->,bend right=45] (s10);
+						%\draw[<->] (s0) -- (s12);
+						\node at(2.8,2.3) {$d$};
+						\node at(1.6,1.2) {$se$};
+						\node at(4.4,1) {$\emptyset$};
+						\node at(2.7,0.7) {$s$};
+						\node at(2.6,0.4) {${\cal K}_2$};
+					\end{minipage}
+				\begin{minipage}{.2\textwidth}
+					\node[blueCircle] (s20) at(3,-1) {$s_0$};
+					\node[blueCircle1] (s21) at(3,-2) {$s_1$};
+					\node[blueCircle3] (s22) at(2,-2) {$s_2'$};
+					\draw[->] (s20) -- (s21);
+					\draw[->] (s21) -- (s22);
+					\path (s22) edge[->,bend right=-45] (s20);
+					\node at(2.7,-0.7) {$d$};
+					\node at(1.6,-2) {$\emptyset$};
+					\node at(2.7,-1.4) {$s$};
+					\node at(3.4,-2) {${\cal K}_3$};
+				\end{minipage}
+			\draw[<->,dashed] (s0) -- (s12);
+			\node at(1,1.1) {{\tiny $\{j\}$-互模拟}};
+			\draw[<->,dashed] (s11) -- (s20);
+			\node at(3,0) {{\tiny $\{se\}$-互模拟}};
+			\draw[<->,dashed] (s4) -- (s22);
+			\node at(1,-1.5) {{\tiny $\{se,sp\}$-互模拟}};
+					%	\node at(0,-1.5) {${\cal K}_2$}; 
+				\end{tikzpicture}
+				\caption{{\tiny 汽车制造企业模型}} 
 			\end{figure}
+%			\begin{figure}
+%				\includegraphics[scale=0.34]{figures/NVBnewCar1}
+%			\end{figure}
 		\end{columns}
 	%}
 %	\only<2>{
@@ -1117,7 +1245,7 @@
 		\only<1>{\begin{definition}[$V$-互模拟]\label{def:VB}
 			给定原子命题集$V \subseteq \Ha$和两个Kripke结构$\Hm_1$和 $\Hm_2$，其中$\Hm_i = (S_i, R_i,L_i, r_i)~(i=1,2)$。若$\Hb\subseteq S_1 \times S_2$满足下面几个条件：
 			\begin{itemize}
-				\item \textcolor{red}{$r_1 \Hb r_2$，}
+				\item \fbox{\textcolor{red}{$r_1 \Hb r_2$，}}
 				\item 对任意$s\in S_1$和 $t\in S_2$，若$s \Hb t$，则对任意$p \in \Ha- V$，有$p \in L_1(s)$当且仅当 $p \in L_2(t)$，
 				\item 若$(s, s')\in R_1$和 $s \Hb t$，则存在一个 $t'$，使得$s' \Hb t'$和 $(t, t')\in R_2$，且
 				\item 若 $s \Hb t$和$(t, t')\in R_2$，则存在一个$s'$，使得$(s, s')\in R_1$和 $t' \Hb s'$。
@@ -1137,9 +1265,9 @@
 			\end{align*}
 			$\Hb=\{(r, r'), (r_1, r_1'), (r_1,r_2')\}$是$\Hm$和$\Hm'$之间的一个 $\emptyset$-互模拟。
 			
-			但是，{\em $(\Hm,v) \models \varphi$而$(\Hm',v') \not \models \varphi$}。 
+			但是，\fbox{$(\Hm,v) \models \varphi$而$(\Hm',v') \not \models \varphi$}。 
 			\begin{figure}
-				\includegraphics[scale=0.3]{figures/counterEVBmu}
+				\includegraphics[scale=0.35]{figures/counterEVBmu}
 			\end{figure} 
 		\end{example}
 	}
@@ -1246,7 +1374,12 @@
 	{\footnotesize
 	 \begin{block}{$\NEXT$-类}
 			不含有不定点操作的$\mu$-公式集，记为\textbf{$\NEXT$-类}。
-			通过等值式：$\ALL\NEXT \varphi_1 \wedge \ALL\NEXT \varphi_2 \equiv \ALL\NEXT (\varphi_1 \wedge \varphi_2)$ 和$\EXIST\NEXT \varphi_1 \vee \EXIST\NEXT \varphi_2 \equiv \EXIST\NEXT (\varphi_1 \vee \varphi_2)$，可以将$\NEXT$-类中的任意公式转换为具有下面形式的公式的析取：
+			通过等值式：
+			\begin{itemize}
+				\item $\ALL\NEXT \varphi_1 \wedge \ALL\NEXT \varphi_2 \equiv \ALL\NEXT (\varphi_1 \wedge \varphi_2)$；和
+				\item $\EXIST\NEXT \varphi_1 \vee \EXIST\NEXT \varphi_2 \equiv \EXIST\NEXT (\varphi_1 \vee \varphi_2)$；
+			\end{itemize}
+		可以将$\NEXT$-类中的任意公式转换为具有下面形式的公式的析取：
 			\begin{align}
 				\label{equ:form}
 				\varphi_0 \wedge \ALL\NEXT \varphi_1 \wedge \EXIST\NEXT \varphi_2 \wedge \dots \wedge \EXIST \NEXT \varphi_n\hbox{，}
@@ -1284,52 +1417,53 @@
 	}
 \end{frame}
 
-\begin{frame} 
-	\frametitle{~$\mu$-演算遗忘理论——{\footnotesize 不含不动点算子的子类}}
-{\tiny	\begin{example}
-		\label{exp:x-class}
-		令$\varphi_1 = X \wedge p$、$\varphi_2 = \ALL\NEXT(c \wedge \EXIST\NEXT d) \wedge \ALL\NEXT e$、$\varphi_3 = \EXIST\NEXT \neg d \wedge (\EXIST\NEXT \neg p \vee \EXIST\NEXT p)$、$\varphi = \varphi_1 \wedge \varphi_2 \wedge \varphi_3$且$V = \{e,d\}$，其中$X \in {\cal V}$且$p, c, d, e$为原子命题。 
-		\begin{columns}
-			\column{0.5\textwidth}
-			
-		如下计算公式$\varphi$的度：
-		
-		\begin{align*}
-			degree(\varphi) &  =  \max\{degree(\varphi_1), degree(\varphi_2 \wedge \varphi_3)\}\\
-			& = \max\{0, \max\{degree(\varphi_2), degree(\varphi_3)\}\\
-			& = 2,\\
-			degree(\varphi_1) & = 0,\\
-			degree(\varphi_2) & = \max\{degree(\ALL\NEXT(c \wedge \EXIST\NEXT d)), degree(\ALL\NEXT e)\}\\
-			& =\max\{\max\{0, 1\} + 1, 1\}\\
-			& = 2,\\
-			degree(\varphi_3) & = \max\{degree(\EXIST\NEXT \neg d), degree(\EXIST\NEXT \neg p \vee \EXIST\NEXT p)\}\\
-			& = \max\{1, \max\{1,1\}\}\\
-			& = 1.
-		\end{align*}
-		
-	\column{0.5\textwidth}
-	此外，公式$\varphi$可如下转换为具有形式(\ref{equ:form})的公式的析取：
-	\begin{align*}
-		\varphi & = \varphi_1 \wedge \varphi_2 \wedge \varphi_3\\
-		& \equiv X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge (\EXIST\NEXT \neg p \vee \EXIST\NEXT p)\\
-		& \equiv (X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge \EXIST\NEXT \neg p) \vee\\
-		& \quad\ (X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge \EXIST\NEXT  p).
-	\end{align*}
-		则从$\varphi$中遗忘$V$的结果为：
-		\begin{align*}
-			\Muforget(\varphi,V) & \equiv \Muforget(X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge \EXIST\NEXT \neg p, V) \vee \\
-			& \qquad \Muforget(X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge \EXIST\NEXT  p,V) \\
-			 \equiv (X \wedge p & \wedge \ALL\NEXT\Muforget(c \wedge e \wedge \EXIST\NEXT d, V) \wedge\\
-			&  \EXIST\NEXT\Muforget(\neg d \wedge c \wedge e \wedge \EXIST\NEXT d, V) \wedge  \EXIST\NEXT\Muforget(\neg p \wedge c \wedge e \wedge \EXIST\NEXT d, V) )\vee \\
-			&  (X \wedge p \wedge \ALL\NEXT\Muforget(c \wedge e \wedge \EXIST\NEXT d, V) \wedge\\
-			&  \EXIST\NEXT\Muforget(\neg d \wedge c \wedge e \wedge \EXIST\NEXT d, V) \wedge  \EXIST\NEXT\Muforget( p \wedge c \wedge e \wedge \EXIST\NEXT d, V)) \\
-		 \equiv 	(X \wedge p & \wedge \ALL\NEXT c \wedge \EXIST\NEXT c \wedge \EXIST\NEXT (\neg p \wedge c)) \vee 
-			(X \wedge p \wedge \ALL\NEXT c \wedge \EXIST\NEXT c \wedge \EXIST\NEXT (p \wedge c)) \\
-			 \equiv  X \wedge p & \wedge \ALL\NEXT c \wedge \EXIST\NEXT c \wedge (\EXIST\NEXT (\neg p \wedge c) \vee \EXIST\NEXT (p \wedge c)).
-		\end{align*}
-	\end{columns}
-	\end{example}}
-\end{frame}
+%\begin{frame} 
+%	\frametitle{~$\mu$-演算遗忘理论——{\footnotesize 不含不动点算子的子类}}
+%{\tiny	\begin{example}
+%		\label{exp:x-class}
+%		令$\varphi_1 = X \wedge p$、$\varphi_2 = \ALL\NEXT(c \wedge \EXIST\NEXT d) \wedge \ALL\NEXT e$、$\varphi_3 = \EXIST\NEXT \neg d \wedge (\EXIST\NEXT \neg p \vee \EXIST\NEXT p)$、$\varphi = \varphi_1 \wedge \varphi_2 \wedge \varphi_3$且$V = \{e,d\}$，其中$X \in {\cal V}$且$p, c, d, e$为原子命题。 
+%		\begin{columns}
+%			\column{0.5\textwidth}
+%			
+%		如下计算公式$\varphi$的度：
+%		
+%		\begin{align*}
+%			degree(\varphi) &  =  \max\{degree(\varphi_1), degree(\varphi_2 \wedge \varphi_3)\}\\
+%			& = \max\{0, \max\{degree(\varphi_2), degree(\varphi_3)\}\\
+%			& = 2,\\
+%			degree(\varphi_1) & = 0,\\
+%			degree(\varphi_2) & = \max\{degree(\ALL\NEXT(c \wedge \EXIST\NEXT d)), degree(\ALL\NEXT e)\}\\
+%			& =\max\{\max\{0, 1\} + 1, 1\}\\
+%			& = 2,\\
+%			degree(\varphi_3) & = \max\{degree(\EXIST\NEXT \neg d), degree(\EXIST\NEXT \neg p \vee \EXIST\NEXT p)\}\\
+%			& = \max\{1, \max\{1,1\}\}\\
+%			& = 1.
+%		\end{align*}
+%		
+%	\column{0.5\textwidth}
+%	此外，公式$\varphi$可如下转换为具有形式(\ref{equ:form})的公式的析取：
+%	\begin{align*}
+%		\varphi & = \varphi_1 \wedge \varphi_2 \wedge \varphi_3\\
+%		& \equiv X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge (\EXIST\NEXT \neg p \vee \EXIST\NEXT p)\\
+%		& \equiv (X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge \EXIST\NEXT \neg p) \vee\\
+%		& \quad\ (X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge \EXIST\NEXT  p).
+%	\end{align*}
+%		则从$\varphi$中遗忘$V$的结果为：
+%		\begin{align*}
+%			\Muforget(\varphi,V) & \equiv \Muforget(X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge \EXIST\NEXT \neg p, V) \vee \\
+%			& \qquad \Muforget(X \wedge p \wedge \ALL\NEXT(c \wedge e \wedge \EXIST\NEXT d) \wedge \EXIST\NEXT \neg d \wedge \EXIST\NEXT  p,V) \\
+%			 \equiv (X \wedge p & \wedge \ALL\NEXT\Muforget(c \wedge e \wedge \EXIST\NEXT d, V) \wedge\\
+%			&  \EXIST\NEXT\Muforget(\neg d \wedge c \wedge e \wedge \EXIST\NEXT d, V) \wedge  \EXIST\NEXT\Muforget(\neg p \wedge c \wedge e \wedge \EXIST\NEXT d, V) )\vee \\
+%			&  (X \wedge p \wedge \ALL\NEXT\Muforget(c \wedge e \wedge \EXIST\NEXT d, V) \wedge\\
+%			&  \EXIST\NEXT\Muforget(\neg d \wedge c \wedge e \wedge \EXIST\NEXT d, V) \wedge  \EXIST\NEXT\Muforget( p \wedge c \wedge e \wedge \EXIST\NEXT d, V)) \\
+%		 \equiv 	(X \wedge p & \wedge \ALL\NEXT c \wedge \EXIST\NEXT c \wedge \EXIST\NEXT (\neg p \wedge c)) \vee 
+%			(X \wedge p \wedge \ALL\NEXT c \wedge \EXIST\NEXT c \wedge \EXIST\NEXT (p \wedge c)) \\
+%			 \equiv  X \wedge p & \wedge \ALL\NEXT c \wedge \EXIST\NEXT c \wedge (\EXIST\NEXT (\neg p \wedge c) \vee \EXIST\NEXT (p \wedge c)).
+%		\end{align*}
+%	\end{columns}
+%	\end{example}
+%}
+%\end{frame}
 
 \begin{frame} 
 	\frametitle{~$\mu$-演算遗忘理论——{\footnotesize 复杂性结果}}
@@ -1385,10 +1519,30 @@
 			\item 初始Kripke结构的特征公式看作CTL公式；
 		\end{itemize}
 	\column{0.5\textwidth}
-		 \begin{figure}
-		 	\includegraphics[scale=0.28]{figures/processState}
-		 	\caption{{\scriptsize 进程的三种基本状态及其转换}}
-		 \end{figure}
+	\begin{figure}
+		\centering
+	%	\tiny
+		\begin{tikzpicture}[scale=0.8]
+			\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+			\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+			\path (s1) edge[->,bend right=45] (s0);
+			\path (s0) edge[->,bend left=-45] (s1);
+			\path (s1) edge[->,bend right=-45] (s2);
+			\path (s2) edge[->,bend right=-45] (s0); 
+			\node at(0,-0.5) {{\tiny $I/O$请求}};
+			\node at(-1,0.5) {{\tiny $I/O$完成}};
+			\node at(0.7,0.7) {{\tiny 时间片完}};
+			\node at(-0.2,0.7) {{\tiny 进程调度}};
+			%	\node at(0,-1.5) {${\cal K}_2$}; 
+		\end{tikzpicture}
+		\caption{{\scriptsize 进程的三种基本状态及其转换}}
+	\end{figure}
+%		 \begin{figure}
+%		 	\includegraphics[scale=0.28]{figures/processState}
+%		 	\caption{{\scriptsize 进程的三种基本状态及其转换}}
+%		 \end{figure}
 	\end{columns}
 }
 \begin{figure}
@@ -1445,7 +1599,7 @@
 		
 		由上面的定理可知，$s$在$V$和初始结构${\cal K} = (\Hm,s_0)$上的WSC为$\neg \CTLforget({\cal F}_{\Ha}({\cal K}) \wedge \neg s, \{s\}$ $\cup \{sp\})$。
 		
-		由于涉及到后文中遗忘的计算方法，本例的详细计算过程放到后面。
+		由于涉及到后文中遗忘的计算方法，\fbox{本例的详细计算过程放到后面}。
 	\end{example}
 %}
 	}
@@ -1458,7 +1612,7 @@
 		\begin{block}{约定}
 			\begin{itemize}
 				\item 本小节假设所有初始结构都是有限的，即：状态来源于有限状态空间且$\Ha$为有限原子命题集；
-				\item 任意$\Ha$上的有限初始结构$\Hm$（为了简化符号，本节用初始Kripke结构$\Hm$代替初始结构$(\Hm,s_0)$）都能用一个$\CTL$公式——特征公式${\cal F}_{\Ha}(\Hm)$来表示；
+				\item 任意$\Ha$上的有限初始结构$\Hm$（为了简化符号，用初始Kripke结构$\Hm$代替初始结构$(\Hm,s_0)$）都能用一个$\CTL$公式——\fbox{特征公式${\cal F}_{\Ha}(\Hm)$}来表示；
 				\item 给定公式$\varphi$和$\psi$，$V_{min}\subseteq \Ha$为使得$\CTLforget(\varphi, V_{min}) \wedge \psi$可满足的极小子集。
 				\item 记
 				$$\bigcup_{V_{min}\subseteq \Ha} \Mod(\CTLforget({\cal F}_{\Ha}(\Hm), V_{min}) \wedge \psi)$$  
@@ -1582,7 +1736,27 @@
 				\end{align*}
 				其中，四元组$((i), r= s_k, L(s_0)=V_1, L(s_1)=V_1)$表示Kripke结构$(S,r,R,L)$，其中$S=\{s_0, s_1\}$、$r=s_k$ ($r\in \{0,1\}$)、转换关系如图~\ref{fig:knoup}中的(i) ($i \in \{1,2,3,4,5,6\}$)、$s_0$ 和$s_1$分别被 $V_1 \subseteq \{ch,j\}$ 和 $V_2\subseteq \{ch,j\}$标记且${\cal C} \in \{\emptyset, \{j\}, \{ch\}, \{j,ch\}\}$。
 				\column{0.5\textwidth}
+%				\begin{figure}
+%					\centering
+%					%	\tiny
+%					\begin{tikzpicture}[scale=0.8]
+%						\tikzstyle{every node}=[font=\small,scale=0.8]
+%						\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+%						\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+%						\path (s1) edge[->,bend right=45] (s0);
+%						\path (s0) edge[->,bend left=-45] (s1);
+%						\path (s1) edge[->,bend right=-45] (s2);
+%						\path (s2) edge[->,bend right=-45] (s0); 
+%						\node at(0,-0.5) {{\tiny $I/O$请求}};
+%						\node at(-1,0.5) {{\tiny $I/O$完成}};
+%						\node at(0.7,0.7) {{\tiny 时间片完}};
+%						\node at(-0.2,0.7) {{\tiny 进程调度}};
+%						%	\node at(0,-1.5) {${\cal K}_2$}; 
+%					\end{tikzpicture}
+%					\caption{{\tiny 进程的三种基本状态及其转换}}
+%				\end{figure}
 					\begin{figure} 
+				%	\renewcommand{\figurename}{\zihao{10}图}
 					\includegraphics[scale=0.4]{figures/knowledge_update}
 					\caption{{\tiny 状态空间为$\{s_0,s_1\}$的六个Kripke结构示意图}\footnote{这里只列出部分转换关系，其余转换关系可以容易地枚举出来。}}\label{fig:knoup} 
 				\end{figure}
@@ -1609,8 +1783,97 @@
 
 \begin{frame}
 	\frametitle{基于模型的计算方法总体框架}
+%	\begin{figure}
+%		\includegraphics[scale=0.45]{figures/model-basedFrame}
+%		\caption{基于模型的有界CTL遗忘方法}
+%	\end{figure}
 	\begin{figure}
-		\includegraphics[scale=0.45]{figures/model-basedFrame}
+		\centering
+		%	\tiny
+		\begin{tikzpicture}[scale=0.8]
+			\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
+			\node at(0,4) {{\scriptsize $
+					ch({\cal M},V)=
+					\left\{
+					\begin{array}{ll}
+						\max\{k\mid s,s'\in S \text{ 且 }\dis_V({\cal M},s,s',k)\}, \qquad \hbox{${\cal M}$是 $V$-可区分的；} \\
+						\min\{k\mid {\cal B}_{k}={\cal B}_{k+1}, k\ge 0\}, \ \ \ \quad  \qquad \qquad \qquad \hbox{否则。}
+					\end{array}
+					\right.$}};
+			\draw[dashed, color=orange!40] (-3.8,4.5) rectangle (3.5,3.5);
+			
+				
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t2) at(-5.5,2.5) {{\scriptsize 初始结构的状态空间${\cal S}=\{b_1,\dots, b_m\}$}};
+		%	\draw[brace] (-3,3.5) -- (-3,2.5);
+			%\node at(-3,3.5) {$}$};
+		%	\node at(-2,3) {$\begin{array}{ll}\\ \end{array}$};
+		
+			\draw[->] (-2.7,3) -- (-3.6,3.5);
+			\draw[->] (-2.7,3) -- (-3.6,2.5);
+		 
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s2) at(0,3) {{\scriptsize 有界互模拟}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s3) at(2,3) {{\scriptsize 特征数$ch(\Hm,V)$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s4) at(0,2) {{\scriptsize 计算树互模拟}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s5) at(0,0) {{\scriptsize 计算树特征公式}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=green,fill=green!20] (s6) at(3,2) {{\scriptsize 特征公式}};
+			
+			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
+			
+			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
+			
+			\node at(1,0.5) {{\scriptsize$T(s') = {\cal F}_V(\Tr_c(s'))$}};
+			\node at(2,1) {{\scriptsize$T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
+				T(s) \rto
+				\bigwedge_{(s,s')\in R}
+				\EXIST \NEXT T(s')
+				\wedge
+				\ALL \NEXT \bigg(\bigvee_{(s,s')\in R}T(s')\bigg)
+				\right).
+				$}}; %特征公式
+			 
+			\draw[dashed, color=green!40] (-1.3,1.5) rectangle (5.2,0.3);
+			
+			\node at(-3.5,-0.2) {{\scriptsize $
+					{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
+					\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
+			}};
+			\node at(-1, -0.6) {{\scriptsize${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
+				\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
+				\wedge 
+				\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}};
+			
+			\draw[->] (s1) -- (s2);
+			\draw[->] (s2) -- (s3);
+			\draw[->] (s2) -- (s4);
+			\draw[<->] (s4) -- (s5);
+			\draw[->] (s4) -- (2,2)--(s3);
+			\draw[->] (s5) -- (2,0) -- (s3);
+			\draw[->] (s3) -- (3,3) -- (s6);
+%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+%			\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+%			\path (s1) edge[->,bend right=45] (s0);
+%			\path (s0) edge[->,bend left=-45] (s1);
+%			\path (s1) edge[->,bend right=-45] (s2);
+%			\path (s2) edge[->,bend right=-45] (s0); 
+%			\node at(0,-0.5) {{\tiny $I/O$请求}};
+%			\node at(-1,0.5) {{\tiny $I/O$完成}};
+%			\node at(0.7,0.7) {{\tiny 时间片完}};
+%			\node at(-0.2,0.7) {{\tiny 进程调度}};
+			%	\node at(0,-1.5) {${\cal K}_2$}; 
+			%框框
+			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
+			\draw[dashed, color=blue!20] (1,6) -- (5.5,5);
+			\draw[dashed, color=blue!20] (-7.5,5) rectangle (5.5,-1);
+		\end{tikzpicture}
 		\caption{基于模型的有界CTL遗忘方法}
 	\end{figure}
 \end{frame}
@@ -1633,11 +1896,11 @@
 			令$V\subseteq \Ha$是原子命题集，$i\in \{1,2\}$，$\Hm_i=(S_i,R_i,L_i,s_0^i)$是初始Kripke结构，${\cal K}_i=(\Hm_i, s_i)$是结构。$\Hb_n^V$递归定义如下：
 			\begin{itemize}
 				\item 若$L_1(s_1)-V=L_2(s_2)$，则$({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
-				\item 对任意$n\ge 0$，若满足下面几个条件，则$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^V$成立：
+				\item 对任意$n\ge 0$，若满足下面几个条件\textcolor{blue!80}{$({\cal K}_1,{\cal K}_2)\in \Hb_{n+1}^V$}成立：
 				\begin{itemize}
 					\item $({\cal K}_1,{\cal K}_2) \in \Hb_0^V$；
-					\item 对任意$(s_1,s_1')\in R_1$，存在$(s_2,s_2')\in R_2$，使得$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$；
-					\item 对任意$(s_2,s_2')\in R_2$，存在$(s_1,s_1')\in R_1$，使得$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$。
+					\item 对任意$(s_1,s_1')\in R_1$，存在$(s_2,s_2')\in R_2$，使得\textcolor{blue!80}{$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$}；
+					\item 对任意$(s_2,s_2')\in R_2$，存在$(s_1,s_1')\in R_1$，使得\textcolor{blue!80}{$({\cal K}_1',{\cal K}_2') \in \Hb_n^V$}。
 				\end{itemize}
 			\end{itemize}
 			其中${\cal K}_i'=(\Hm_i,s_i')$。
@@ -1653,7 +1916,7 @@
 	
 	\only<2>{	\begin{theorem} \label{lem:bounedToGe}
 		令 $V \subseteq \Ha$ 和 ${\cal K}_i=({\cal M}_i,s_i)$（ $i\in\{1,2\}$）。若$\Hm_i=(S_i, R_i,L_i, s_0^i)$是有限的初始Kripke 结构，则 
-		$s_1$和 $s_2$是有界 $V$-互模拟的，当且仅当$s_1 \lrto_V s_2$。
+		\textcolor{blue!80}{$s_1$和 $s_2$是有界 $V$-互模拟的，当且仅当$s_1 \lrto_V s_2$}。
 	\end{theorem} 
 }
 	}
@@ -1671,9 +1934,65 @@
 			\end{itemize}
 		\end{block} 
 	\begin{figure}
-		\includegraphics[scale=0.4]{figures/NK2Tree2}
-		\caption{{\footnotesize 初始结构$\mathcal{K}_2$及其计算树示意图}}\label{fig:K2Tree}
+		\begin{tikzpicture}[scale=0.8]
+			\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[blueCircle] (s0) at(0,1) {$s_0$};
+			\node[blueCircle1] (s1) at(0,0) {$s_1$};
+			\node[blueCircle2] (s2) at(-1,0) {$s_2$};
+			\node[blueCircle3] (s3) at(1,0) {$s_3'$};
+			\begin{minipage}{.2\textwidth}
+				\draw[->] (s0) -- (s1);
+				\draw[->] (s1) -- (s2);
+				\draw[->] (s1) -- (s3);
+				\path (s2) edge[->,bend right=-45]  (s0);
+				\path (s3) edge[->,bend right=45] (s0);
+				\node at(-0.2,1.3) {$d$};
+				\node at(-1.4,0) {$se$};
+				\node at(1.4,0) {$\emptyset$};
+				\node at(0,-1.5) {${\cal K}_2$};
+			%	\caption{${\cal K}_2$};
+			\end{minipage} 
+		\begin{minipage} {.2\textwidth}
+			\node[blueCircle] (t0) at(2,0.5) {$s_0$};
+			\node at(2,-1.5) {$\Tr_0(s_0)$};
+		\end{minipage}
+		\begin{minipage}{.2\textwidth}
+			\node[blueCircle] (t0) at(3,1) {$s_0$};
+			\node[blueCircle1] (t1) at(3,0) {$s_1$};
+			\draw[->] (t0) -- (t1);
+			\node at(3,-1.5) {$\Tr_1(s_0)$};
+		\end{minipage}
+	\begin{minipage}{.2\textwidth}
+		\node[blueCircle] (t0) at(5,2) {$s_0$};
+		\node[blueCircle1] (t1) at(5,1) {$s_1$};
+		\node[blueCircle2] (t2) at(4.5,0) {$s_2$};
+		\node[blueCircle3] (t3) at(5.5,0) {$s_3'$};
+		\draw[->] (t0) -- (t1);
+		\draw[->] (t1) -- (t2);
+		\draw[->] (t1) -- (t3);
+		\node at(5,-1.5) {$\Tr_2(s_0)$};
+	\end{minipage}
+\begin{minipage}{.2\textwidth}
+	\node[blueCircle] (t0) at(7,2) {$s_0$};
+	\node[blueCircle1] (t1) at(7,1) {$s_1$};
+	\node[blueCircle2] (t2) at(6.5,0) {$s_2$};
+	\node[blueCircle3] (t3) at(7.5,0) {$s_3'$};
+	\node[blueCircle] (t01) at(6.5,-1) {$s_0$};
+	\node[blueCircle] (t02) at(7.5,-1) {$s_0$};
+	\draw[->] (t0) -- (t1);
+	\draw[->] (t1) -- (t2);
+	\draw[->] (t1) -- (t3);
+	\draw[->] (t2) -- (t01);
+	\draw[->] (t3) -- (t02);
+	\node at(7,-1.5) {$\Tr_3(s_0)$};
+\end{minipage}
+		\end{tikzpicture}
+		\caption{{\footnotesize 初始结构$\mathcal{K}_2$及其计算树示意图}}
 	\end{figure}
+%	\begin{figure}
+%		\includegraphics[scale=0.3]{figures/NK2Tree2}
+%		\caption{{\footnotesize 初始结构$\mathcal{K}_2$及其计算树示意图}}\label{fig:K2Tree}
+%	\end{figure}
 %}
 %	\only<2>{  
 %	\begin{block}{计算树互模拟}
@@ -1720,12 +2039,12 @@
 			给定原子命题集$V\subseteq \Ha$、初始Kripke结构$\Hm =(S,R,L,s_0)$和状态$s\in S$。
 			定义在$V$上的计算树$\Tr_n(s)$的特征公式（记为${\cal F}_V(\Tr_n(s))$，$n\geq 0$）递归定义如下：
 			\begin{align*}
-				{\cal F}_V(\Tr_0(s)) &=  \bigwedge_{p \in V\cap L(s)}p
-				\wedge \bigwedge_{q\in V-L(s)} \neg q,\\
+				{\cal F}_V(\Tr_0(s)) &=  \bigwedge_{\textcolor{blue!80}{p \in V\cap L(s)}}p
+				\wedge \bigwedge_{\textcolor{blue!80}{q\in V-L(s)}} \neg q,\\
 				{\cal F}_V(\Tr_{k+1}(s))& = \bigwedge_{(s,s')\in R}
-				\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
+				\textcolor{blue!80}{\EXIST \NEXT} {\cal F}_V(\Tr_k(s')) 
 				\wedge 
-				\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s)) \hbox{ （$k\ge 0$）。}
+				\textcolor{blue!80}{\ALL \NEXT} \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s)) \hbox{ （$k\ge 0$）。}
 			\end{align*}
 		\end{definition}
 	 \begin{block}{含义}
@@ -1770,7 +2089,7 @@
 			\end{block}
 			\begin{proposition}\label{pro:k}
 				给定原子命题集$V\subseteq \Ha$、初始Kripke结构$\Hm$和两个状态$s,s'\in S$。
-				若$s\not\lrto_V s'$，则存在一个最小整数$k$，使得$\Tr_k(s)$和$\Tr_k(s')$不是$V$-互模拟的。
+				若$s\not\lrto_V s'$，则\textcolor{blue!80}{存在一个最小整数$k$}，使得$\Tr_k(s)$和$\Tr_k(s')$不是$V$-互模拟的。
 			\end{proposition}
 		}
 	\only<2>{\begin{block}{$V$-可区分}
@@ -1801,12 +2120,12 @@
 		\begin{definition}[特征公式]
 			给定原子命题集$V\subseteq\cal A$和初始结构${\cal K}=({\cal M},s_0)$，其中$c=ch({\cal M},$ $V)$。对任意$\Hm$上的状态$s' \in S$，记$T(s') = {\cal F}_V(\Tr_c(s'))$。
 			$\cal K$关于$V$的{\em 特征公式} ${\cal F}_V({\cal K})$定义为：
-			\[T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
+			\[T(s_0) \text{ } \wedge \bigwedge_{s\in S}\textcolor{blue!80}{\ALL \GLOBAL}\left(
 			T(s) \rto
 			\bigwedge_{(s,s')\in R}
-			\EXIST \NEXT T(s')
+			\textcolor{orange!80}{\EXIST \NEXT} T(s')
 			\wedge
-			\ALL \NEXT \bigg(\bigvee_{(s,s')\in R}T(s')\bigg)
+			\textcolor{orange!80}{\ALL \NEXT} \bigg(\bigvee_{(s,s')\in R}T(s')\bigg)
 			\right).
 			\]
 			
@@ -1820,7 +2139,14 @@
 			
 			\item[(ii)] 若$s_0 \lrto_{\overline V} s_0'$则${\cal F}_V(\Hm, s_0) \equiv {\cal F}_V(\Hm', s_0')$。
 		\end{itemize}
-		
+		\begin{figure}
+			\begin{tikzpicture}
+			%	\draw (0,0) rectangle (2,2);
+				\node[rectangle, rounded corners =5pt,
+					minimum width =50pt ,
+					minimum height =30pt ,draw=red, fill=red!20] {相互互模拟的结构的特征公式等价。};
+			\end{tikzpicture}
+		\end{figure}
 	\end{theorem}
 	}
 \only<4>{
@@ -1851,10 +2177,66 @@
 					& \ALL \GLOBAL(\ALL\NEXT d \wedge \neg d \rto \ALL\NEXT(\ALL\NEXT \neg d \wedge d)).
 				\end{align*}
 				\column{0.5\textwidth} 
-				\begin{figure}
-					\includegraphics[scale=0.25]{figures/NK2Tree2}
+					\begin{figure}
+					\begin{tikzpicture}[scale=0.5]
+						\tikzstyle{every node}=[font=\small,scale=0.5]
+						\node[blueCircle] (s0) at(0,1) {$s_0$};
+						\node[blueCircle1] (s1) at(0,0) {$s_1$};
+						\node[blueCircle2] (s2) at(-1,0) {$s_2$};
+						\node[blueCircle3] (s3) at(1,0) {$s_3'$};
+						\begin{minipage}{.2\textwidth}
+							\draw[->] (s0) -- (s1);
+							\draw[->] (s1) -- (s2);
+							\draw[->] (s1) -- (s3);
+							\path (s2) edge[->,bend right=-45]  (s0);
+							\path (s3) edge[->,bend right=45] (s0);
+							\node at(-0.2,1.3) {$d$};
+							\node at(-1.4,0) {$se$};
+							\node at(1.4,0) {$\emptyset$};
+							\node at(0,-1.5) {${\cal K}_2$};
+							%	\caption{${\cal K}_2$};
+						\end{minipage} 
+						\begin{minipage} {.2\textwidth}
+							\node[blueCircle] (t0) at(2,0.5) {$s_0$};
+							\node at(2,-1.5) {$\Tr_0(s_0)$};
+						\end{minipage}
+						\begin{minipage}{.2\textwidth}
+							\node[blueCircle] (t0) at(3,1) {$s_0$};
+							\node[blueCircle1] (t1) at(3,0) {$s_1$};
+							\draw[->] (t0) -- (t1);
+							\node at(3,-1.5) {$\Tr_1(s_0)$};
+						\end{minipage}
+						\begin{minipage}{.2\textwidth}
+							\node[blueCircle] (t0) at(5,2) {$s_0$};
+							\node[blueCircle1] (t1) at(5,1) {$s_1$};
+							\node[blueCircle2] (t2) at(4.5,0) {$s_2$};
+							\node[blueCircle3] (t3) at(5.5,0) {$s_3'$};
+							\draw[->] (t0) -- (t1);
+							\draw[->] (t1) -- (t2);
+							\draw[->] (t1) -- (t3);
+							\node at(5,-1.5) {$\Tr_2(s_0)$};
+						\end{minipage}
+						\begin{minipage}{.2\textwidth}
+							\node[blueCircle] (t0) at(7,2) {$s_0$};
+							\node[blueCircle1] (t1) at(7,1) {$s_1$};
+							\node[blueCircle2] (t2) at(6.5,0) {$s_2$};
+							\node[blueCircle3] (t3) at(7.5,0) {$s_3'$};
+							\node[blueCircle] (t01) at(6.5,-1) {$s_0$};
+							\node[blueCircle] (t02) at(7.5,-1) {$s_0$};
+							\draw[->] (t0) -- (t1);
+							\draw[->] (t1) -- (t2);
+							\draw[->] (t1) -- (t3);
+							\draw[->] (t2) -- (t01);
+							\draw[->] (t3) -- (t02);
+							\node at(7,-1.5) {$\Tr_3(s_0)$};
+						\end{minipage}
+					\end{tikzpicture}
 					\caption{{\tiny 初始结构$\mathcal{K}_2$及其计算树示意图}}\label{fig:K2Tree}
 				\end{figure}
+%				\begin{figure}
+%					\includegraphics[scale=0.25]{figures/NK2Tree2}
+%					\caption{{\tiny 初始结构$\mathcal{K}_2$及其计算树示意图}}\label{fig:K2Tree}
+%				\end{figure}
 			\end{columns} 
 		\end{example}
 	}
@@ -2027,7 +2409,7 @@
 					& \textbf{(SRES3)} \frac{P\rto \EXIST_{\tuple{ind}}\NEXT(C\vee l), Q \rto \EXIST_{\tuple{ind}}\NEXT(D\vee \neg l)}{P\wedge Q\rto\EXIST_{\tuple{ind}}\NEXT(C\vee D)};  
 					&&   \textbf{(SRES4)} \frac{\start \rto C\vee l, \start \rto D \vee \neg l}{\start \rto C\vee D}; \\
 					& \textbf{(SRES5)} \frac{\top \rto C\vee l, \start \rto D \vee \neg l}{\start \rto C \vee D};
-					&&  \textbf{(SRES6)} \frac{\top \rto C \vee l, Q \rto \ALL\NEXT(D \vee \neg l)}{Q\rto \ALL \NEXT(C\vee D)}; \\
+					&&  \textcolor{blue!80}{\textbf{(SRES6)} \frac{\top \rto C \vee l, Q \rto \ALL\NEXT(D \vee \neg l)}{Q\rto \ALL \NEXT(C\vee D)}}; \\
 					& \textbf{(SRES7)} \frac{\top \rto C \vee l, Q \rto \EXIST_{\tuple{ind}} \NEXT(D \vee \neg l)}{Q\rto \EXIST_{\tuple{ind}}\NEXT(C\vee D)}; 
 					&&  \textbf{(SRES8)} \frac{\top \rto C\vee l, \top \rto D \vee \neg l}{\top \rto C \vee D};\\
 					& \textbf{(RW1)} \frac{\bigwedge_{i=1}^n m_i \rto \ALL\NEXT \perp}{\top \rto \bigvee_{i=1}^n \neg m}; 
@@ -2054,31 +2436,37 @@
 		$T_\varphi \equiv_U\emph{ERes}(\varphi,V)$，其中  $U=\Var(\Unfolding(T_\varphi,V))-(\Var(\varphi)-  V)$。
 	\end{proposition}}
 	\only<3>{\tiny
-		\begin{example}[例\ref{examp:Tran}的延续]\label{examp:Res} 
-			令 $V=\{p,r\}$，则  $\Unfolding(T_\varphi, V\cup \{x,y,z\})$ 除了例\ref{examp:Tran}中的子句，还包含如下子句： 
+		\begin{example}\label{examp:Res} 
+			令 $\varphi=\ALL((p\wedge q) \UNTILL (f\vee m)) \wedge r$，\textcolor{orange!80}{$V=\{p,r\}$}，则  $\Unfolding(T_\varphi, V\cup \{x,y,z\})$ 除了$T_{\varphi}$中的子句，
+				\begin{align*}
+					&  1: \start\rto z, &&  2: \textcolor{orange!80}{\top \rto \neg z \vee r}, &&  3:\top \rto \neg x\vee f \vee m, &&
+					4: \top \rto y \vee x \vee \neg z, \\
+					&  5: \textcolor{orange!80}{\top \rto p \vee \neg y}, &&  6: \top \rto \neg y \vee q, &&  7:  z \rto \ALL \FUTURE x, &&  8: y \rto \ALL \NEXT(y \vee x).
+				\end{align*}
+				还包含如下子句： 
 			\begin{align*}
-				&(1)\ \start \rto r && (1,2,\textbf{SRES5})
+				&(1)\ \textcolor{orange!80}{\start \rto r} && (1,2,\textbf{SRES5})
 				&&(2)\ \start \rto x \vee y && (1,4,\textbf{SRES5})\\
 				% \end{align*}
 				% \begin{align*}
 				&(3)\ \top \rto \neg z \vee y \vee f \vee m && (3, 4, \textbf{SRES8})
 				&&(4)\ y \rto \ALL\NEXT(f\vee m\vee y) && (3,8, \textbf{SRES6})\\
-				&(5)\ \top \rto \neg z \vee x \vee p && (4,5, \textbf{SRES8})
+				&(5)\ \textcolor{orange!80}{\top \rto \neg z \vee x \vee p} && (4,5, \textbf{SRES8})
 				&&(6)\ \top \rto \neg z \vee x \vee q && (4,6, \textbf{SRES8})\\
-				&(7)\ y \rto \ALL\NEXT(x\vee p) && (5, 8, \textbf{SRES6})
+				&(7)\ \textcolor{orange!80}{y \rto \ALL\NEXT(x\vee p)} && (5, 8, \textbf{SRES6})
 				&&(8)\ y \rto \ALL\NEXT(x\vee q) && (6, 8, \textbf{SRES6})\\
 				&(9)\ \start \rto f\vee m \vee y && (3,(2), \textbf{SRES5})
 				% \end{align*}
 				% \begin{align*}
-				&&(10)\ \start \rto x \vee p && (5,(2),\textbf{SRES5}) \\
+				&&(10)\ \textcolor{orange!80}{\start \rto x \vee p} && (5,(2),\textbf{SRES5}) \\
 				&(11)\ \start \rto x \vee q && (6,(2), \textbf{SRES5})
-				&& (12)\ \top \rto p \vee \neg z \vee f \vee m && (5,(3), \textbf{SRES8})\\
+				&& (12)\ \textcolor{orange!80}{\top \rto p \vee \neg z \vee f \vee m} && (5,(3), \textbf{SRES8})\\
 				& (13)\ \top \rto q \vee \neg z \vee f \vee m && (6,(3), \textbf{SRES8})
-				&&(14)\ y \rto \ALL\NEXT(p \vee f\vee m) && (5, (4), \textbf{SRES6})\\
-				&(15)\ y \rto \ALL\NEXT(q \vee f\vee m) && (6, (4), \textbf{SRES6})
+				&&(14)\ \textcolor{orange!80}{y \rto \ALL\NEXT(p \vee f\vee m)} && (5, (4), \textbf{SRES6})\\
+				& (15)\ \textcolor{blue!80}{y \rto \ALL\NEXT(q \vee f\vee m)} && (6, (4), \textbf{SRES6})
 				%\end{align*}
 				%\begin{align*}
-				&&(16)\ \start \rto f\vee m \vee p && (5, (9), \textbf{SRES5}) \\
+				&&(16)\ \textcolor{orange!80}{\start \rto f\vee m \vee p} && (5, (9), \textbf{SRES5}) \\
 				&(17)\ \start \rto f\vee m \vee q && (6, (9), \textbf{SRES5})
 			\end{align*}
 			
@@ -2134,8 +2522,8 @@
 			\end{figure}
 		
 			\column{0.3\textwidth}
-			{\tiny $rei(\{\alpha_i\mid 1\le i\le n\})$、
-				$rxi(\{\alpha_i\mid 1\le i\le n\})$、$rfi(\{\beta_1,\alpha_2\})$分别表示引理30中(i)、(ii)、(iii)等号 $\equiv_*$（$* \in \{$空字符串，$\emptyset\}$）的右边，$\alpha_i=\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i$ $(1\le i\le n)$且$\beta_1=\psi_1 \rto \EXIST_{\tuple{j}}\FUTURE \varphi_1$。
+			{\tiny \textcolor{blue!80}{$rei(\{\alpha_i\mid 1\le i\le n\})$、
+				$rxi(\{\alpha_i\mid 1\le i\le n\})$、$rfi(\{\beta_1,\alpha_2\})$分别表示引理30中(i)、(ii)、(iii)等号 $\equiv_*$（$* \in \{$空字符串，$\emptyset\}$）的右边，$\alpha_i=\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i$ $(1\le i\le n)$且$\beta_1=\psi_1 \rto \EXIST_{\tuple{j}}\FUTURE \varphi_1$。}
 			}
 		\end{columns}
 %		\begin{figure}
@@ -2177,7 +2565,7 @@
 \only<3>{
 	\begin{example}[例30的延续]
 		\label{examp:Aclm}
-		首先考虑原子命题 $x$、 $\Delta=\{\top \rto f \vee m \vee \neg x\}$和 $\Gamma=\emph{ERes}(\varphi,V)-\Delta$。
+		首先考虑原子命题 \textcolor{blue!80}{$x$、 $\Delta=\{\top \rto f \vee m \vee \neg x\}$和 $\Gamma=\emph{ERes}(\varphi,V)-\Delta$}。
 		$\Gamma$中包含$x$的公式关于$x$都为正的，因此 $\Gamma[x/(f \vee m)]$包含如下公式：
 		\begin{align*}%{llll}
 			& \start\rto z, \quad \start \rto f\vee m \vee q, \quad  \start \rto f \vee m \vee y, \\
@@ -2189,9 +2577,9 @@
 			\quad 	y \rto \ALL\NEXT(f\vee m\vee y).
 		\end{align*}
 		
-		第二步考虑原子命题 $z$、
+		第二步考虑原子命题\textcolor{blue!80}{ $z$、
 		$\Delta'=\{ \top \rto q \vee f \vee m \vee \neg z, \top \rto f \vee m \vee y \vee \neg z ,z \rto \ALL \FUTURE (f \vee m)\}$
-		和 $\Gamma'=\Gamma[x/(f \vee m)] -\Delta'$，其中$z$正出现在$\Gamma'$中。因此，
+		和 $\Gamma'=\Gamma[x/(f \vee m)] -\Delta'$，其中$z$正出现在$\Gamma'$中}。因此，
 		$\Gamma''=\Gamma'[z/ (q \vee f \vee m)\land (f \vee m \vee y)\land\ALL \FUTURE (f \vee m)]$包含如下公式：
 		\begin{align*}%{llll}
 			& \start\rto  (q \vee f \vee m)\land (f \vee m \vee y)\land\ALL \FUTURE (f \vee m),
@@ -2200,7 +2588,7 @@
 		\end{align*}
 		
 		不难证明$\emph{ERes}(\varphi,V)\equiv_{\{x,z\}} \Gamma''$。
-		因为$\Gamma''$包含一个公式，其关于$y$既不是正的也不是负的。因此，这里不能对$\Gamma''$和 $y$使用上述过程。 
+		因为$\Gamma''$包含一个公式，\textcolor{orange!80}{其关于$y$既不是正的也不是负的。因此，这里不能对$\Gamma''$和 $y$使用上述过程。} 
 	\end{example}
 }
 }

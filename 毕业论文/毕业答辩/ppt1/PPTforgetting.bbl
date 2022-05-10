@@ -1,0 +1,375 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 1.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{browne1988characterizing}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Browne}{B.}%
+     {Michael~C.}{M.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Clarke}{C.}%
+     {Edmund~M.}{E.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gr{\"u}mberg}{G.}%
+     {Orna}{O.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{BMCCEMGO1}
+  \strng{fullhash}{BMCCEMGO1}
+  \field{sortinit}{B}
+  \field{number}{1-2}
+  \field{pages}{115\bibrangedash 131}
+  \field{title}{Characterizing finite {K}ripke structures in propositional
+  temporal logic}
+  \field{volume}{59}
+  \field{journaltitle}{Theoretical Computer Science}
+  \field{year}{1988}
+\endentry
+
+\entry{d2000logical}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {D'Agostino}{D.}%
+     {Giovanna}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hollenberg}{H.}%
+     {Marco}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DGHM1}
+  \strng{fullhash}{DGHM1}
+  \field{sortinit}{D}
+  \verb{doi}
+  \verb 10.2307/2586539
+  \endverb
+  \field{number}{1}
+  \field{pages}{310\bibrangedash 332}
+  \field{title}{Logical Questions Concerning The {\(\mu\)}-Calculus:
+  Interpolation, Lyndon and Los-Tarski}
+  \verb{url}
+  \verb https://doi.org/10.2307/2586539
+  \endverb
+  \field{volume}{65}
+  \field{journaltitle}{The Journal of Symbolic Logic}
+  \field{year}{2000}
+\endentry
+
+\entry{d1996uniform}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {D'Agostino}{D.}%
+     {Giovanna}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hollenberg}{H.}%
+     {Marco}{M.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DGHM1}
+  \strng{fullhash}{DGHM1}
+  \field{sortinit}{D}
+  \field{title}{Uniform interpolation, automata and the modal $\mu$-calculus}
+  \field{volume}{165}
+  \field{journaltitle}{Logic Group Preprint Series}
+  \field{year}{1996}
+\endentry
+
+\entry{d2006modal}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {D'Agostino}{D.}%
+     {Giovanna}{G.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lenzi}{L.}%
+     {Giacomo}{G.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DGLG1}
+  \strng{fullhash}{DGLG1}
+  \field{sortinit}{D}
+  \verb{doi}
+  \verb 10.1016/j.jal.2005.06.008
+  \endverb
+  \field{number}{3}
+  \field{pages}{256\bibrangedash 278}
+  \field{title}{On modal $\mu$-calculus with explicit interpolants}
+  \verb{url}
+  \verb https://doi.org/10.1016/j.jal.2005.06.008
+  \endverb
+  \field{volume}{4}
+  \field{journaltitle}{Journal of Applied Logic}
+  \field{year}{2006}
+\endentry
+
+\entry{DBLP:conf/ijcai/DohertyLS01}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Doherty}{D.}%
+     {Patrick}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lukaszewicz}{L.}%
+     {Witold}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Szalas}{S.}%
+     {Andrzej}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{1}{}{%
+    {{}%
+     {Nebel}{N.}%
+     {Bernhard}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Morgan Kaufmann}%
+  }
+  \strng{namehash}{DPLWSA1}
+  \strng{fullhash}{DPLWSA1}
+  \field{sortinit}{D}
+  \field{booktitle}{Proceedings of IJCAI'01}
+  \field{isbn}{1-55860-777-3}
+  \field{pages}{145\bibrangedash 154}
+  \field{title}{Computing Strongest Necessary and Weakest Sufficient Conditions
+  of First-Order Formulas}
+  \field{year}{2001}
+\endentry
+
+\entry{DBLP:journals/cacm/Kozen83}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Kozen}{K.}%
+     {Dexter}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{KD1}
+  \strng{fullhash}{KD1}
+  \field{sortinit}{K}
+  \verb{doi}
+  \verb 10.1016/0304-3975(82)90125-6
+  \endverb
+  \field{pages}{333\bibrangedash 354}
+  \field{title}{Results on the Propositional $\mu$-Calculus}
+  \verb{url}
+  \verb https://doi.org/10.1016/0304-3975(82)90125-6
+  \endverb
+  \field{volume}{27}
+  \field{journaltitle}{Theoretical Computer Science}
+  \field{year}{1983}
+\endentry
+
+\entry{lin2003compiling}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lin}{L.}%
+     {Fangzhen}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LF1}
+  \strng{fullhash}{LF1}
+  \field{sortinit}{L}
+  \field{pages}{279\bibrangedash 314}
+  \field{title}{Compiling causal theories to successor state axioms and
+  STRIPS-like systems}
+  \field{volume}{19}
+  \field{journaltitle}{Journal of Artificial Intelligence Research}
+  \field{year}{2003}
+\endentry
+
+\entry{DBLP:journals/ai/Lin01}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lin}{L.}%
+     {Fangzhen}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LF1}
+  \strng{fullhash}{LF1}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1016/S0004-3702(01)00070-4
+  \endverb
+  \field{number}{1-2}
+  \field{pages}{143\bibrangedash 159}
+  \field{title}{On strongest necessary and weakest sufficient conditions}
+  \verb{url}
+  \verb https://doi.org/10.1016/S0004-3702(01)00070-4
+  \endverb
+  \field{volume}{128}
+  \field{journaltitle}{Artificial Intelligence}
+  \field{year}{2001}
+\endentry
+
+\entry{Fangzhen:forgetit}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Lin}{L.}%
+     {Fangzhen}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Reiter}{R.}%
+     {Ray}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LFRR1}
+  \strng{fullhash}{LFRR1}
+  \field{sortinit}{L}
+  \field{booktitle}{In Proceedings of the AAAI Fall Symposium on Relevance}
+  \field{pages}{154\bibrangedash 159}
+  \field{title}{Forget It!}
+  \list{location}{1}{%
+    {New Orleans, US}%
+  }
+  \field{year}{1994}
+\endentry
+
+\entry{Maksimova:JANCL:1991}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Maksimova}{M.}%
+     {Larisa}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ML1}
+  \strng{fullhash}{ML1}
+  \field{sortinit}{M}
+  \field{pages}{73\bibrangedash 76}
+  \field{title}{Temporal logics of ``the next'' do not have the beth property}
+  \field{volume}{1}
+  \field{journaltitle}{Journal of Applied Non-Classical Logics}
+  \field{year}{1991}
+\endentry
+
+\entry{zhang2014resolution}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhang}{Z.}%
+     {Lan}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hustadt}{H.}%
+     {Ullrich}{U.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dixon}{D.}%
+     {Clare}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM New York, NY, USA}%
+  }
+  \strng{namehash}{ZLHUDC1}
+  \strng{fullhash}{ZLHUDC1}
+  \field{sortinit}{Z}
+  \field{number}{1}
+  \field{pages}{1\bibrangedash 38}
+  \field{title}{A resolution calculus for the branching-time temporal logic
+  {CTL}}
+  \field{volume}{15}
+  \field{journaltitle}{ACM Transactions on Computational Logic (TOCL)}
+  \field{year}{2014}
+\endentry
+
+\entry{zhang2008first}{report}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhang}{Z.}%
+     {Lan}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hustadt}{H.}%
+     {Ullrich}{U.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dixon}{D.}%
+     {Clare}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ZLHUDC1}
+  \strng{fullhash}{ZLHUDC1}
+  \field{sortinit}{Z}
+  \field{title}{First-order Resolution for {CTL}}
+  \list{institution}{1}{%
+    {Technical Report ULCS-08-010, Department of Computer Science, University
+  of Liverpool}%
+  }
+  \field{type}{techreport}
+  \field{year}{2008}
+\endentry
+
+\entry{Yan:AIJ:2009}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Zhang}{Z.}%
+     {Yan}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhou}{Z.}%
+     {Yi}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ZYZY1}
+  \strng{fullhash}{ZYZY1}
+  \field{sortinit}{Z}
+  \field{number}{16-17}
+  \field{pages}{1525\bibrangedash 1537}
+  \field{title}{Knowledge forgetting: Properties and applications}
+  \field{volume}{173}
+  \field{journaltitle}{Artificial Intelligence}
+  \field{year}{2009}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
