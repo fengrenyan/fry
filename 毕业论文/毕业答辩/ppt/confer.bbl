@@ -1,47 +1,268 @@
-\begin{thebibliography}{BCG88}
+% $ biblatex auxiliary file $
+% $ biblatex version 1.7 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem[BCG88]{browne1988characterizing}
-Michael~C. Browne, Edmund~M. Clarke, and Orna Gr{\"u}mberg.
-\newblock Characterizing finite {K}ripke structures in propositional temporal
-  logic.
-\newblock {\em Theoretical Computer Science}, 59(1-2):115--131, 1988.
+\entry{browne1988characterizing}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Browne}{B.}%
+     {Michael~C.}{M.~C.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Clarke}{C.}%
+     {Edmund~M.}{E.~M.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gr{\"u}mberg}{G.}%
+     {Orna}{O.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Elsevier}%
+  }
+  \strng{namehash}{BMCCEMGO1}
+  \strng{fullhash}{BMCCEMGO1}
+  \field{sortinit}{B}
+  \field{number}{1-2}
+  \field{pages}{115\bibrangedash 131}
+  \field{title}{Characterizing finite {K}ripke structures in propositional
+  temporal logic}
+  \field{volume}{59}
+  \field{journaltitle}{Theoretical Computer Science}
+  \field{year}{1988}
+\endentry
 
-\bibitem[DH96]{d1996uniform}
-Giovanna D'Agostino and Marco Hollenberg.
-\newblock Uniform interpolation, automata and the modal $\mu$-calculus.
-\newblock {\em Logic Group Preprint Series}, 165, 1996.
+\entry{DBLP:conf/ijcai/DohertyLS01}{inproceedings}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Doherty}{D.}%
+     {Patrick}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lukaszewicz}{L.}%
+     {Witold}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Szalas}{S.}%
+     {Andrzej}{A.}%
+     {}{}%
+     {}{}}%
+  }
+  \name{editor}{1}{}{%
+    {{}%
+     {Nebel}{N.}%
+     {Bernhard}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Morgan Kaufmann}%
+  }
+  \strng{namehash}{DPLWSA1}
+  \strng{fullhash}{DPLWSA1}
+  \field{sortinit}{D}
+  \field{booktitle}{Proceedings of IJCAI'01}
+  \field{isbn}{1-55860-777-3}
+  \field{pages}{145\bibrangedash 154}
+  \field{title}{Computing Strongest Necessary and Weakest Sufficient Conditions
+  of First-Order Formulas}
+  \field{year}{2001}
+\endentry
 
-\bibitem[DH00]{d2000logical}
-Giovanna D'Agostino and Marco Hollenberg.
-\newblock Logical questions concerning the {\(\mu\)}-calculus: Interpolation,
-  lyndon and los-tarski.
-\newblock {\em The Journal of Symbolic Logic}, 65(1):310--332, 2000.
+\entry{lin2003compiling}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lin}{L.}%
+     {Fangzhen}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LF1}
+  \strng{fullhash}{LF1}
+  \field{sortinit}{L}
+  \field{pages}{279\bibrangedash 314}
+  \field{title}{Compiling causal theories to successor state axioms and
+  STRIPS-like systems}
+  \field{volume}{19}
+  \field{journaltitle}{Journal of Artificial Intelligence Research}
+  \field{year}{2003}
+\endentry
 
-\bibitem[DL06]{d2006modal}
-Giovanna D'Agostino and Giacomo Lenzi.
-\newblock On modal $\mu$-calculus with explicit interpolants.
-\newblock {\em Journal of Applied Logic}, 4(3):256--278, 2006.
+\entry{DBLP:journals/ai/Lin01}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lin}{L.}%
+     {Fangzhen}{F.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LF1}
+  \strng{fullhash}{LF1}
+  \field{sortinit}{L}
+  \verb{doi}
+  \verb 10.1016/S0004-3702(01)00070-4
+  \endverb
+  \field{number}{1-2}
+  \field{pages}{143\bibrangedash 159}
+  \field{title}{On strongest necessary and weakest sufficient conditions}
+  \verb{url}
+  \verb https://doi.org/10.1016/S0004-3702(01)00070-4
+  \endverb
+  \field{volume}{128}
+  \field{journaltitle}{Artificial Intelligence}
+  \field{year}{2001}
+\endentry
 
-\bibitem[Koz83]{DBLP:journals/cacm/Kozen83}
-Dexter Kozen.
-\newblock Results on the propositional $\mu$-calculus.
-\newblock {\em Theoretical Computer Science}, 27:333--354, 1983.
+\entry{Fangzhen:forgetit}{inproceedings}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Lin}{L.}%
+     {Fangzhen}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Reiter}{R.}%
+     {Ray}{R.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LFRR1}
+  \strng{fullhash}{LFRR1}
+  \field{sortinit}{L}
+  \field{booktitle}{In Proceedings of the AAAI Fall Symposium on Relevance}
+  \field{pages}{154\bibrangedash 159}
+  \field{title}{Forget It!}
+  \list{location}{1}{%
+    {New Orleans, US}%
+  }
+  \field{year}{1994}
+\endentry
 
-\bibitem[Mak91]{Maksimova:JANCL:1991}
-Larisa Maksimova.
-\newblock Temporal logics of ``the next'' do not have the beth property.
-\newblock {\em Journal of Applied Non-Classical Logics}, 1:73--76, 1991.
+\entry{Maksimova:JANCL:1991}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Maksimova}{M.}%
+     {Larisa}{L.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ML1}
+  \strng{fullhash}{ML1}
+  \field{sortinit}{M}
+  \field{pages}{73\bibrangedash 76}
+  \field{title}{Temporal logics of ``the next'' do not have the beth property}
+  \field{volume}{1}
+  \field{journaltitle}{Journal of Applied Non-Classical Logics}
+  \field{year}{1991}
+\endentry
 
-\bibitem[ZHD08]{zhang2008first}
-Lan Zhang, Ullrich Hustadt, and Clare Dixon.
-\newblock First-order resolution for {CTL}.
-\newblock Technical report, Technical Report ULCS-08-010, Department of
-  Computer Science, University of Liverpool, 2008.
+\entry{zhang2014resolution}{article}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhang}{Z.}%
+     {Lan}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hustadt}{H.}%
+     {Ullrich}{U.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dixon}{D.}%
+     {Clare}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {ACM New York, NY, USA}%
+  }
+  \strng{namehash}{ZLHUDC1}
+  \strng{fullhash}{ZLHUDC1}
+  \field{sortinit}{Z}
+  \field{number}{1}
+  \field{pages}{1\bibrangedash 38}
+  \field{title}{A resolution calculus for the branching-time temporal logic
+  {CTL}}
+  \field{volume}{15}
+  \field{journaltitle}{ACM Transactions on Computational Logic (TOCL)}
+  \field{year}{2014}
+\endentry
 
-\bibitem[ZHD14]{zhang2014resolution}
-Lan Zhang, Ullrich Hustadt, and Clare Dixon.
-\newblock A resolution calculus for the branching-time temporal logic {CTL}.
-\newblock {\em ACM Transactions on Computational Logic (TOCL)}, 15(1):1--38,
-  2014.
+\entry{zhang2008first}{report}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Zhang}{Z.}%
+     {Lan}{L.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Hustadt}{H.}%
+     {Ullrich}{U.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Dixon}{D.}%
+     {Clare}{C.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ZLHUDC1}
+  \strng{fullhash}{ZLHUDC1}
+  \field{sortinit}{Z}
+  \field{title}{First-order Resolution for {CTL}}
+  \list{institution}{1}{%
+    {Technical Report ULCS-08-010, Department of Computer Science, University
+  of Liverpool}%
+  }
+  \field{type}{techreport}
+  \field{year}{2008}
+\endentry
 
-\end{thebibliography}
+\entry{Yan:AIJ:2009}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Zhang}{Z.}%
+     {Yan}{Y.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Zhou}{Z.}%
+     {Yi}{Y.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{ZYZY1}
+  \strng{fullhash}{ZYZY1}
+  \field{sortinit}{Z}
+  \field{number}{16-17}
+  \field{pages}{1525\bibrangedash 1537}
+  \field{title}{Knowledge forgetting: Properties and applications}
+  \field{volume}{173}
+  \field{journaltitle}{Artificial Intelligence}
+  \field{year}{2009}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

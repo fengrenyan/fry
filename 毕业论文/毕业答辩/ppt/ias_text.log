@@ -1,6 +1,7 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2022.4.30)  10 MAY 2022 15:40
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  16 MAY 2022 09:54
 entering extended mode
 **ias_text.tex
+
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
@@ -57,11 +58,6 @@ LaTeX Font Info:    Try loading font information for T1+ptm on input line 13.
 (D:\Application\Ctex\MiKTeX\tex\latex\psnfss\t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-Requested font "ptmr8t" at 10.0pt
- -> ptmr8t
-Requested font "ptmr8t" at 12.0pt
- -> ptmr8t
-
 
 ! LaTeX Error: The font size command \normalsize is not defined:
                there is probably something wrong with the class file.
@@ -121,11 +117,11 @@ my insertion and my current dilemma will both disappear.
 
  
 Here is how much of TeX's memory you used:
- 42 strings out of 430478
- 538 string characters out of 3191202
- 44928 words of memory out of 3000000
- 3268 multiletter control sequences out of 15000+200000
+ 45 strings out of 495354
+ 830 string characters out of 3183188
+ 44842 words of memory out of 3000000
+ 3309 multiletter control sequences out of 15000+200000
  6928 words of font info for 16 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  18i,2n,12p,144b,117s stack positions out of 5000i,500n,10000p,200000b,50000s
-No pages of output.
+!  ==> Fatal error occurred, no output PDF file produced!

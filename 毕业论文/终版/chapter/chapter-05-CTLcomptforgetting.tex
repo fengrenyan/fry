@@ -777,7 +777,7 @@
 
 %此外，详细描述基于Prolog上述算法的实现并分析实验结果。
 
-本章其余部分组织如下：首先，在第\ref{cha5:subsec:resf}节详细介绍$\CTL$-forget各个过程及算法复杂性；其次，在第\label{cha5:subsec:prolog}节介绍基于Prolog的$\CTL$-算法的实现；最后，在第\ref{cha5:subsec:expriment}节给出并分析实验结果。
+本章其余部分组织如下：首先，在第\ref{cha5:subsec:resf}节详细介绍$\CTL$-forget各个过程及算法复杂性；其次，在第\ref{cha5:subsec:prolog}节介绍基于Prolog的$\CTL$-算法的实现；最后，在第\ref{cha5:subsec:expriment}节给出并分析实验结果。
 \subsection{基于归结的算法$\CTL$-forget}
 \label{cha5:subsec:resf}
 通过上述分析，本节讲述如何使用$R_{\CTL}^{\succ,S}$归结系统对要遗忘的原子命题做归结，然后如何将归结后得到的结果等价转换为$\CTL$公式。
@@ -1243,7 +1243,8 @@ $$\GAL(\Sigma,V\cup\{x\})=\GAL(\GAL(\Sigma,\{x\}),V).$$
 
 在上述结论中值得注意的是：$m$的大小不会大于公式$\varphi$中出现的时序算子的个数。因此，可以得出算法\ref{alg:compute:forgetting:by:Resolution}的计算复杂性仅与出现在$\varphi$中的原子命题和时序算子的个数相关。
 
-\subsection{基于Prolog的$\CTL$-forget算法实现}\label{cha5:subsec:prolog}
+\subsection{基于Prolog的$\CTL$-forget算法实现}
+\label{cha5:subsec:prolog}
 基于Prolog的$\CTL$-forget算法实现系统以$\CTL$公式和原子命题集为输入，$\CTL$公式为输出。其所识别的$\CTL$公式的符号与第\ref{chapter02}章中$\CTL$的语言符号对应关系如下：
 \begin{itemize}
 	\item $x_i$和其余小写字母开头的字符串构成原子命题集，其中$i\geq 0$为自然数，且$x_i$和$z$被设定为只能是在如下描述的转换过程中引入的原子命题；%除此之外，约定$z$为保留字（即：在输入的公式中不能包含$z$为命题符号）；

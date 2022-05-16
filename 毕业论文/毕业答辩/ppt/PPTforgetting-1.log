@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2022.4.30)  10 MAY 2022 21:39
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2022.4.30)  15 MAY 2022 19:48
 entering extended mode
 **PPTforgetting-1.tex
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
@@ -1886,7 +1886,17 @@ Package biblatex Warning: 'babel' detected but 'csquotes' missing.
 \@quotelevel=\count449
 \@quotereset=\count450
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
-g-1.aux)
+g-1.aux
+
+LaTeX Warning: Label `pro:time:alg1' multiply defined.
+
+
+LaTeX Warning: Label `thm:soundness:forget:algorithm' multiply defined.
+
+
+LaTeX Warning: Label `pro:complexity' multiply defined.
+
+)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 222.
 LaTeX Font Info:    ... okay on input line 222.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 222.
@@ -2308,80 +2318,6 @@ Requested font "SimSun/ICU" at 3.5pt
 Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 3.5p
 t
  -> C:/Windows/Fonts/simsun.ttc
-LaTeX Font Info:    Calculating math sizes for size <3.5> on input line 322.
-Requested font "cmss8" at 3.5pt
- -> cmss8
-Requested font "cmss8" at 2.59001pt
- -> cmss8
-Requested font "cmss8" at 2.10002pt
- -> cmss8
-Requested font "zptmcm7m" at 3.5pt
- -> zptmcm7m
-Requested font "zptmcm7m" at 2.59001pt
- -> zptmcm7m
-Requested font "zptmcm7m" at 2.10002pt
- -> zptmcm7m
-Requested font "zptmcm7y" at 3.5pt
- -> zptmcm7y
-Requested font "zptmcm7y" at 2.59001pt
- -> zptmcm7y
-Requested font "zptmcm7y" at 2.10002pt
- -> zptmcm7y
-Requested font "zptmcm7v" at 3.5pt
- -> zptmcm7v
-Requested font "zptmcm7v" at 2.59001pt
- -> zptmcm7v
-Requested font "zptmcm7v" at 2.10002pt
- -> zptmcm7v
-Requested font "msam10" at 3.5pt
- -> msam10
-Requested font "msam10" at 2.59001pt
- -> msam10
-Requested font "msam10" at 2.10002pt
- -> msam10
-Requested font "msbm10" at 3.5pt
- -> msbm10
-Requested font "msbm10" at 2.59001pt
- -> msbm10
-Requested font "msbm10" at 2.10002pt
- -> msbm10
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <3.5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 322.
-Requested font "ptmb7t" at 3.5pt
- -> ptmb7t
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <2.59001> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 322.
-Requested font "ptmb7t" at 2.59001pt
- -> ptmb7t
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <2.10002> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 322.
-Requested font "ptmb7t" at 2.10002pt
- -> ptmb7t
-Requested font "ptmri7t" at 3.5pt
- -> ptmri7t
-Requested font "ptmri7t" at 2.59001pt
- -> ptmri7t
-Requested font "ptmri7t" at 2.10002pt
- -> ptmri7t
-Requested font "[lmsans8-regular]:mapping=tex-text" at 2.59001pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
-Requested font "[lmsans8-regular]:mapping=tex-text" at 2.10002pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
-LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <3.5> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 322.
-
-Requested font "[lmsans8-oblique]:mapping=tex-text" at 3.5pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
-LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <2.59001> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 322.
-
-Requested font "[lmsans8-oblique]:mapping=tex-text" at 2.59001pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
-LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <2.10002> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 322.
-
-Requested font "[lmsans8-oblique]:mapping=tex-text" at 2.10002pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
 LaTeX Font Info:    Calculating math sizes for size <4> on input line 322.
 Requested font "cmss8" at 4.0pt
  -> cmss8
@@ -2623,13 +2559,13 @@ Requested font "msam10" at 6.0pt
 Requested font "msbm10" at 6.0pt
  -> msbm10
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 451.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 478.
 Requested font "ptmb7t" at 6.0pt
  -> ptmb7t
 Requested font "ptmri7t" at 6.0pt
  -> ptmri7t
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <6> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 451.
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 478.
 
 Requested font "[lmsans8-oblique]:mapping=tex-text" at 6.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
@@ -2646,13 +2582,13 @@ Requested font "msam10" at 8.0pt
 Requested font "msbm10" at 8.0pt
  -> msbm10
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 451.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 478.
 Requested font "ptmb7t" at 8.0pt
  -> ptmb7t
 Requested font "ptmri7t" at 8.0pt
  -> ptmri7t
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <8> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 451.
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 478.
 
 Requested font "[lmsans8-oblique]:mapping=tex-text" at 8.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
@@ -2673,7 +2609,7 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
 ]
 
 LaTeX Font Warning: Font shape `EU1/lmss/m/sc' in size <7> not available
-(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 506.
+(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 536.
 
 Requested font "[lmromancaps10-regular]:mapping=tex-text" at 7.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -2689,7 +2625,7 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
 ]
 File: figures/history2.png Graphic file (type QTm)
  <use  "figures/history2.png" >
-Overfull \hbox (0.98631pt too wide) in paragraph at lines 515--515
+Overfull \hbox (0.98631pt too wide) in paragraph at lines 545--545
  [] 
  []
 
@@ -2701,44 +2637,475 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
 ]
 File: figures/mubiao.png Graphic file (type QTm)
  <use  "figures/mubiao.png" >
+LaTeX Font Info:    Try loading font information for EU1+ptm on input line 561.
+
+LaTeX Font Info:    No file EU1ptm.fd. on input line 561.
+
+
+LaTeX Font Warning: Font shape `EU1/ptm/m/n' undefined
+(Font)              using `EU1/lmr/m/n' instead on input line 561.
+
+Requested font "[lmroman7-regular]:mapping=tex-text" at 7.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman7-regular.otf
+Requested font "[lmroman5-regular]:mapping=tex-text" at 5.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman5-regular.otf
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [9
 
 ]
-LaTeX Font Info:    Try loading font information for EU1+ptm on input line 568.
-
-LaTeX Font Info:    No file EU1ptm.fd. on input line 568.
-
-
-LaTeX Font Warning: Font shape `EU1/ptm/m/n' undefined
-(Font)              using `EU1/lmr/m/n' instead on input line 568.
-
-Requested font "[lmroman9-regular]:mapping=tex-text" at 9.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman9-regular.otf
-Requested font "[lmroman7-regular]:mapping=tex-text" at 7.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman7-regular.otf
-Requested font "[lmroman5-regular]:mapping=tex-text" at 5.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman5-regular.otf
 File: figures/zuzhi.png Graphic file (type QTm)
-<use  "figures/zuzhi.png" > (D:\（博士）我的资料\Git\fry\毕业论文\�
-��业答辩\ppt\ias_text.tex)
+ <use  "figures/zuzhi.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [10
 
 ]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 607.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 607.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 607.
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g-1.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias
+_text.tex)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [11
+
+]
+File: figures/ctlMuForgFrame.png Graphic file (type QTm)
+
+<use  "figures/ctlMuForgFrame.png" >
+Requested font "[lmsans10-bold]:mapping=tex-text" at 5.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+Requested font "zptmcm7m" at 10.95pt
+ -> zptmcm7m
+Requested font "zptmcm7y" at 10.95pt
+ -> zptmcm7y
+Requested font "zptmcm7v" at 10.95pt
+ -> zptmcm7v
+Requested font "msam10" at 10.95pt
+ -> msam10
+Requested font "msbm10" at 10.95pt
+ -> msbm10
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 633.
+Requested font "ptmb7t" at 10.95pt
+ -> ptmb7t
+Requested font "ptmri7t" at 10.95pt
+ -> ptmri7t
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <10.95> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 633.
+
+Requested font "[lmsans10-oblique]:mapping=tex-text" at 10.95pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-oblique.otf
+
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [11
+ <use  "figures/gzulogo.jpg" > [12
+
+]
+File: figures/ctlMuForgFrame.png Graphic file (type QTm)
+ <use  "figures/ctlMuForgFrame.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [13
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
 g-1.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias
 _text.tex)
 File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [12
+ <use  "figures/gzulogo.jpg" > [14
+
+]
+File: figures/sncAndWsc.png Graphic file (type QTm)
+ <use  "figures/sncAndWsc.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [15
+
+]
+File: figures/sncAndWsc.png Graphic file (type QTm)
+ <use  "figures/sncAndWsc.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [16
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g-1.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias
+_text.tex)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [17
+
+]
+File: figures/frameF5.png Graphic file (type QTm)
+ <use  "figures/frameF5.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [18
+
+]
+Requested font "[lmroman8-regular]:mapping=tex-text" at 8.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman8-regular.otf
+Requested font "[lmroman6-regular]:mapping=tex-text" at 6.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman6-regular.otf
+
+
+LaTeX Font Warning: Font shape `EU1/lmss/m/sc' in size <6> not available
+(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 1559.
+
+
+Requested font "[lmromancaps10-regular]:mapping=tex-text" at 6.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
+tf
+
+Overfull \hbox (6.09158pt too wide) in paragraph at lines 1559--1559
+ [] 
+ []
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [19
+
+]
+File: figures/model-basedAlg.png Graphic file (type QTm)
+ <use  "figures/model-basedAlg.png" >
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
+. 
+. This font family consists of the following shapes:
+.................................................
+Requested font "[SIMKAI.TTF]/ICU:script=latn;language=DFLT;mapping=tex-text;" a
+t 7.0pt
+ -> C:/WINDOWS/Fonts/SIMKAI.TTF
+
+
+LaTeX Font Warning: Font shape `EU1/ptm/m/it' undefined
+(Font)              using `EU1/ptm/m/n' instead on input line 1594.
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [20
+
+]
+File: figures/CTL-forget1.png Graphic file (type QTm)
+ <use  "figures/CTL-forget1.png" >
+Overfull \vbox (1.92084pt too high) detected at line 1625
+ []
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [21
+
+]
+LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 166
+6.
+
+(D:\Application\Ctex\MiKTeX\tex\latex\euenc\eu1lmtt.fd
+File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Requested font "[lmmono8-regular]" at 7.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmmono8-regular.otf
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [22
+
+]
+File: figures/expTab.png Graphic file (type QTm)
+ <use  "figures/expTab.png" >
+File: figures/time_4_12_2.png Graphic file (type QTm)
+
+<use  "figures/time_4_12_2.png" >
+File: figures/number-4-12_2.png Graphic file (type QTm)
+ <use  "figures/number-4-12_2.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [23
+
+]
+File: figures/PRototalAveTime2.png Graphic file (type QTm)
+ <use  "figures/PRototalAveTime2.png" >
+
+LaTeX Warning: File `figures/ProBox(10-50)_25_2.png' not found on input line 17
+49.
+
+File: figures/ProBox(10-50)_25_2.png Graphic file (type QTm)
+<use  "figures/ProBox(10-50)_25_2.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [24
+
+]
+File: figures/totalAveTime1.png Graphic file (type QTm)
+ <use  "figures/totalAveTime1.png" >
+File: figures/numPercent1.png Graphic file (type QTm)
+
+<use  "figures/numPercent1.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [25
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g-1.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias
+_text.tex)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [26
+
+]
+Requested font "[lmroman9-regular]:mapping=tex-text" at 9.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman9-regular.otf
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [27
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [28
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [29
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [30
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [31
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [32
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [33
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [34
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [35
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [36
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [37
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [38
+
+]
+Requested font "[lmsans17-regular]:mapping=tex-text" at 22.08pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans17-regular.otf
+Requested font "SimSun" at 22.08pt
+ -> C:/Windows/Fonts/simsun.ttc
+Requested font "SimSun/ICU" at 22.08pt
+ -> C:/Windows/Fonts/simsun.ttc
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
+. 
+. This font family consists of the following shapes:
+.................................................
+Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 22.0
+8pt
+ -> C:/Windows/Fonts/simsun.ttc
+Requested font "[lmsans17-regular]:mapping=tex-text" at 26.1pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans17-regular.otf
+Requested font "SimSun" at 26.1pt
+ -> C:/Windows/Fonts/simsun.ttc
+Requested font "SimSun/ICU" at 26.1pt
+ -> C:/Windows/Fonts/simsun.ttc
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
+. 
+. This font family consists of the following shapes:
+.................................................
+Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 26.1
+pt
+ -> C:/Windows/Fonts/simsun.ttc
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [39
+
+]
+
+LaTeX Font Warning: Font shape `EU1/lmss/m/sc' in size <9> not available
+(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 1831.
+
+
+Requested font "[lmromancaps10-regular]:mapping=tex-text" at 9.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
+tf
+Requested font "[lmmono9-regular]" at 9.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmmono9-regular.otf
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [40
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [41
+
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [42
+
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g-1.toc)
+LaTeX Font Info:    Calculating math sizes for size <3.5> on input line 1835.
+Requested font "cmss8" at 3.5pt
+ -> cmss8
+Requested font "cmss8" at 2.59001pt
+ -> cmss8
+Requested font "cmss8" at 2.10002pt
+ -> cmss8
+Requested font "zptmcm7m" at 3.5pt
+ -> zptmcm7m
+Requested font "zptmcm7m" at 2.59001pt
+ -> zptmcm7m
+Requested font "zptmcm7m" at 2.10002pt
+ -> zptmcm7m
+Requested font "zptmcm7y" at 3.5pt
+ -> zptmcm7y
+Requested font "zptmcm7y" at 2.59001pt
+ -> zptmcm7y
+Requested font "zptmcm7y" at 2.10002pt
+ -> zptmcm7y
+Requested font "zptmcm7v" at 3.5pt
+ -> zptmcm7v
+Requested font "zptmcm7v" at 2.59001pt
+ -> zptmcm7v
+Requested font "zptmcm7v" at 2.10002pt
+ -> zptmcm7v
+Requested font "msam10" at 3.5pt
+ -> msam10
+Requested font "msam10" at 2.59001pt
+ -> msam10
+Requested font "msam10" at 2.10002pt
+ -> msam10
+Requested font "msbm10" at 3.5pt
+ -> msbm10
+Requested font "msbm10" at 2.59001pt
+ -> msbm10
+Requested font "msbm10" at 2.10002pt
+ -> msbm10
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <3.5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1835.
+Requested font "ptmb7t" at 3.5pt
+ -> ptmb7t
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <2.59001> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1835.
+Requested font "ptmb7t" at 2.59001pt
+ -> ptmb7t
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <2.10002> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1835.
+Requested font "ptmb7t" at 2.10002pt
+ -> ptmb7t
+Requested font "ptmri7t" at 3.5pt
+ -> ptmri7t
+Requested font "ptmri7t" at 2.59001pt
+ -> ptmri7t
+Requested font "ptmri7t" at 2.10002pt
+ -> ptmri7t
+Requested font "[lmsans8-regular]:mapping=tex-text" at 2.59001pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
+Requested font "[lmsans8-regular]:mapping=tex-text" at 2.10002pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <3.5> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 1835
+.
+Requested font "[lmsans8-oblique]:mapping=tex-text" at 3.5pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <2.59001> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 1835
+.
+Requested font "[lmsans8-oblique]:mapping=tex-text" at 2.59001pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
+LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <2.10002> not available
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 1835
+.
+Requested font "[lmsans8-oblique]:mapping=tex-text" at 2.10002pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
+ (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.te
+x)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [43
 
 ]
 Requested font "cmss10" at 10.0pt
@@ -2766,11 +3133,11 @@ Requested font "msbm10" at 10.0pt
 Requested font "msbm10" at 7.4pt
  -> msbm10
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 632.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1879.
 Requested font "ptmb7t" at 10.0pt
  -> ptmb7t
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 632.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1879.
 Requested font "ptmb7t" at 7.4pt
  -> ptmb7t
 Requested font "ptmri7t" at 10.0pt
@@ -2780,74 +3147,48 @@ Requested font "ptmri7t" at 7.4pt
 Requested font "[lmsans8-regular]:mapping=tex-text" at 7.4pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-regular.otf
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <10> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 632.
-
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 1879
+.
 Requested font "[lmsans10-oblique]:mapping=tex-text" at 10.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-oblique.otf
 LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <7.4> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 632.
-
+(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 1879
+.
 Requested font "[lmsans8-oblique]:mapping=tex-text" at 7.4pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans8-oblique.otf
 Requested font "[lmroman7-regular]:mapping=tex-text" at 7.4pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman7-regular.otf
-Requested font "[lmroman6-regular]:mapping=tex-text" at 6.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman6-regular.otf
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [13
+ <use  "figures/gzulogo.jpg" > [44
 
 ]
-Requested font "[lmsans10-bold]:mapping=tex-text" at 5.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
-Requested font "zptmcm7m" at 10.95pt
- -> zptmcm7m
-Requested font "zptmcm7y" at 10.95pt
- -> zptmcm7y
-Requested font "zptmcm7v" at 10.95pt
- -> zptmcm7v
-Requested font "msam10" at 10.95pt
- -> msam10
-Requested font "msbm10" at 10.95pt
- -> msbm10
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 698.
-Requested font "ptmb7t" at 10.95pt
- -> ptmb7t
-Requested font "ptmri7t" at 10.95pt
- -> ptmri7t
-LaTeX Font Info:    Font shape `EU1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `EU1/lmss/m/sl' tried instead on input line 698.
-
-Requested font "[lmsans10-oblique]:mapping=tex-text" at 10.95pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-oblique.otf
 Requested font "[lmroman10-regular]:mapping=tex-text" at 10.95pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman10-regular.otf
-Requested font "[lmroman8-regular]:mapping=tex-text" at 8.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmroman8-regular.otf
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [14
+ <use  "figures/gzulogo.jpg" > [45
 
 ]
 File: figures/semanticCTL.png Graphic file (type QTm)
  <use  "figures/semanticCTL.png" >
-Overfull \vbox (8.24028pt too high) detected at line 757
+Overfull \vbox (8.24028pt too high) detected at line 1937
  []
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [15
+ <use  "figures/gzulogo.jpg" > [46
 
 ]
 
 LaTeX Font Warning: Font shape `EU1/lmss/m/sc' in size <10> not available
-(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 831.
+(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 1991.
+
 
 Requested font "[lmromancaps10-regular]:mapping=tex-text" at 10.0pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
@@ -2855,333 +3196,68 @@ tf
 Requested font "[lmromancaps10-regular]:mapping=tex-text" at 7.4pt
  -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
 tf
-Requested font "[lmromancaps10-regular]:mapping=tex-text" at 6.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
-tf
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [16
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [17
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [18
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 869.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 869.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 869.
-
-
-Overfull \vbox (1.3372pt too high) detected at line 931
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [19
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1006.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 1006.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1006.
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
-g-1.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias
-_text.tex)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [20
-
-]
-File: figures/ctlMuForgFrame.png Graphic file (type QTm)
-
-<use  "figures/ctlMuForgFrame.png" >
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [21
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [22
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [23
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [24
-
-]
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(0)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
-. 
-. This font family consists of the following shapes:
-.................................................
-Requested font "[SIMKAI.TTF]/ICU:script=latn;language=DFLT;mapping=tex-text;" a
-t 7.0pt
- -> C:/WINDOWS/Fonts/SIMKAI.TTF
-
-
-LaTeX Font Warning: Font shape `EU1/ptm/m/it' undefined
-(Font)              using `EU1/ptm/m/n' instead on input line 1160.
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [25
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [26
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [27
-
-]
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(0)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
-. 
-. This font family consists of the following shapes:
-.................................................
-Requested font "[SIMKAI.TTF]/ICU:script=latn;language=DFLT;mapping=tex-text;" a
-t 5.0pt
- -> C:/WINDOWS/Fonts/SIMKAI.TTF
-LaTeX Font Info:    Font shape `EU1/lmss/bx/it' in size <7> not available
-(Font)              Font shape `EU1/lmss/bx/sl' tried instead on input line 123
-9.
-Requested font "[lmsans10-boldoblique]:mapping=tex-text" at 7.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-boldoblique.ot
-f
-Requested font "[lmsans10-boldoblique]:mapping=tex-text" at 5.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-boldoblique.ot
-f
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [28
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [29
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [30
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [31
-
-]
-File: figures/counterEVBmu.png Graphic file (type QTm)
- <use  "figures/counterEVBmu.png" >
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [32
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [33
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1338.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 1338.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1338.
-
-
-Overfull \vbox (2.55228pt too high) detected at line 1370
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [34
-
-]
-Overfull \vbox (2.55228pt too high) detected at line 1370
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [35
-
-]
-
-LaTeX Font Warning: Font shape `EU1/lmss/bx/sc' undefined
-(Font)              using `EU1/lmss/bx/n' instead on input line 1418.
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [36
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [37
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
-g-1.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias
-_text.tex)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [38
-
-]
-File: figures/applicationF4.png Graphic file (type QTm)
-
-<use  "figures/applicationF4.png" >
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [39
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [40
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [41
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [42
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [43
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [44
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [45
-
-]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
-g-1.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias
-_text.tex)
-File: figures/gzulogo.jpg Graphic file (type QTm)
- <use  "figures/gzulogo.jpg" > [46
-
-]
-File: figures/frameF5.png Graphic file (type QTm)
- <use  "figures/frameF5.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [47
 
 ]
-Overfull \hbox (6.09158pt too wide) in paragraph at lines 1914--1914
- [] 
- []
-
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [48
 
 ]
-Overfull \vbox (10.09372pt too high) detected at line 1958
- []
-
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [49
 
 ]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2029.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 2029.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2029.
+
+
+Overfull \vbox (1.3372pt too high) detected at line 2071
+ []
+
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [50
 
 ]
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2073.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 2073.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2073.
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g-1.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias
+_text.tex)
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [51
 
 ]
+File: figures/ctlMuForgFrame.png Graphic file (type QTm)
+
+<use  "figures/ctlMuForgFrame.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
@@ -3212,10 +3288,6 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [56
 
 ]
-Overfull \hbox (16.97984pt too wide) in paragraph at lines 2321--2321
-[]  
- []
-
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
@@ -3228,42 +3300,53 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [58
 
 ]
-File: figures/model-basedAlg.png Graphic file (type QTm)
- <use  "figures/model-basedAlg.png" >
+.................................................
+. fontspec info: "defining-font"
+. 
+. Font family 'SimSun(0)' created for font 'SimSun' with options
+. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
+. 
+. This font family consists of the following shapes:
+.................................................
+Requested font "[SIMKAI.TTF]/ICU:script=latn;language=DFLT;mapping=tex-text;" a
+t 5.0pt
+ -> C:/WINDOWS/Fonts/SIMKAI.TTF
+LaTeX Font Info:    Font shape `EU1/lmss/bx/it' in size <7> not available
+(Font)              Font shape `EU1/lmss/bx/sl' tried instead on input line 230
+6.
+Requested font "[lmsans10-boldoblique]:mapping=tex-text" at 7.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-boldoblique.ot
+f
+Requested font "[lmsans10-boldoblique]:mapping=tex-text" at 5.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-boldoblique.ot
+f
+
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [59
 
 ]
-Overfull \vbox (3.06528pt too high) detected at line 2395
- []
-
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [60
 
 ]
-File: figures/frame2.png Graphic file (type QTm)
- <use  "figures/frame2.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [61
 
 ]
-File: figures/frame2.png Graphic file (type QTm)
- <use  "figures/frame2.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [62
 
 ]
-Requested font "[lmsans10-bold]:mapping=tex-text" at 6.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
-
+File: figures/counterEVBmu.png Graphic file (type QTm)
+ <use  "figures/counterEVBmu.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
@@ -3276,7 +3359,20 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [64
 
 ]
-Overfull \vbox (3.28893pt too high) detected at line 2521
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2405.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mu' on input line 2405.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2405.
+
+
+Overfull \vbox (2.55228pt too high) detected at line 2437
  []
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
@@ -3285,14 +3381,19 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [65
 
 ]
+Overfull \vbox (2.55228pt too high) detected at line 2437
+ []
+
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [66
 
 ]
-File: figures/removeInd1.png Graphic file (type QTm)
- <use  "figures/removeInd1.png" >
+
+LaTeX Font Warning: Font shape `EU1/lmss/bx/sc' undefined
+(Font)              using `EU1/lmss/bx/n' instead on input line 2485.
+
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
@@ -3305,70 +3406,40 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [68
 
 ]
-File: figures/CTL-forget1.png Graphic file (type QTm)
- <use  "figures/CTL-forget1.png" >
-Overfull \vbox (7.6608pt too high) detected at line 2671
- []
-
-(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
-)
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
+g-1.toc) (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias
+_text.tex)
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [69
 
 ]
+File: figures/applicationF4.png Graphic file (type QTm)
+
+<use  "figures/applicationF4.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [70
 
 ]
-LaTeX Font Info:    Try loading font information for EU1+lmtt on input line 271
-2.
-
-(D:\Application\Ctex\MiKTeX\tex\latex\euenc\eu1lmtt.fd
-File: eu1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Requested font "[lmmono8-regular]" at 7.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmmono8-regular.otf
-
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [71
 
 ]
-File: figures/expTab.png Graphic file (type QTm)
- <use  "figures/expTab.png" >
-File: figures/time_4_12_2.png Graphic file (type QTm)
-
-<use  "figures/time_4_12_2.png" >
-File: figures/number-4-12_2.png Graphic file (type QTm)
- <use  "figures/number-4-12_2.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [72
 
 ]
-File: figures/PRototalAveTime2.png Graphic file (type QTm)
- <use  "figures/PRototalAveTime2.png" >
-
-LaTeX Warning: File `figures/ProBox(10-50)_25_2.png' not found on input line 27
-95.
-
-File: figures/ProBox(10-50)_25_2.png Graphic file (type QTm)
-<use  "figures/ProBox(10-50)_25_2.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [73
 
 ]
-File: figures/totalAveTime1.png Graphic file (type QTm)
- <use  "figures/totalAveTime1.png" >
-File: figures/numPercent1.png Graphic file (type QTm)
-
-<use  "figures/numPercent1.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
@@ -3382,18 +3453,27 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [75
 
 ]
+File: figures/frameF5.png Graphic file (type QTm)
+ <use  "figures/frameF5.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [76
 
 ]
+Overfull \hbox (6.09158pt too wide) in paragraph at lines 2899--2899
+ [] 
+ []
+
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [77
 
 ]
+Overfull \vbox (10.09372pt too high) detected at line 2969
+ []
+
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
@@ -3442,8 +3522,17 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [85
 
 ]
-Missing character: There is no μ in font [lmsans9-regular]:mapping=tex-text!
-Missing character: There is no μ in font [lmsans9-regular]:mapping=tex-text!
+Requested font "[lmsans10-bold]:mapping=tex-text" at 10.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+
+
+LaTeX Warning: Reference `exam:SNCandWSC' on page 86 undefined on input line 33
+32.
+
+
+Overfull \hbox (16.97984pt too wide) in paragraph at lines 3332--3332
+[]  
+ []
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
@@ -3457,100 +3546,134 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [87
 
 ]
-Requested font "[lmsans17-regular]:mapping=tex-text" at 22.08pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans17-regular.otf
-Requested font "SimSun" at 22.08pt
- -> C:/Windows/Fonts/simsun.ttc
-Requested font "SimSun/ICU" at 22.08pt
- -> C:/Windows/Fonts/simsun.ttc
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(0)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
-. 
-. This font family consists of the following shapes:
-.................................................
-Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 22.0
-8pt
- -> C:/Windows/Fonts/simsun.ttc
-Requested font "[lmsans17-regular]:mapping=tex-text" at 26.1pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans17-regular.otf
-Requested font "SimSun" at 26.1pt
- -> C:/Windows/Fonts/simsun.ttc
-Requested font "SimSun/ICU" at 26.1pt
- -> C:/Windows/Fonts/simsun.ttc
-.................................................
-. fontspec info: "defining-font"
-. 
-. Font family 'SimSun(0)' created for font 'SimSun' with options
-. [Ligatures=TeX,BoldFont={SimHei},ItalicFont={[SIMKAI.TTF]}].
-. 
-. This font family consists of the following shapes:
-.................................................
-Requested font "SimSun/ICU:script=latn;language=DFLT;mapping=tex-text;" at 26.1
-pt
- -> C:/Windows/Fonts/simsun.ttc
-
+File: figures/model-basedAlg.png Graphic file (type QTm)
+ <use  "figures/model-basedAlg.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [88
 
 ]
+Overfull \vbox (3.06528pt too high) detected at line 3406
+ []
 
-LaTeX Font Warning: Font shape `EU1/lmss/m/sc' in size <9> not available
-(Font)              Font shape `EU1/lmr/m/sc' tried instead on input line 2869.
-
-
-Requested font "[lmromancaps10-regular]:mapping=tex-text" at 9.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmromancaps10-regular.o
-tf
-Requested font "[lmmono9-regular]" at 9.0pt
- -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmmono9-regular.otf
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [89
 
 ]
+File: figures/frame2.png Graphic file (type QTm)
+ <use  "figures/frame2.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [90
 
-
 ]
+File: figures/frame2.png Graphic file (type QTm)
+ <use  "figures/frame2.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [91
 
+]
+Requested font "[lmsans10-bold]:mapping=tex-text" at 6.0pt
+ -> D:/Application/Ctex/MiKTeX/fonts/opentype/public/lm/lmsans10-bold.otf
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [92
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [93
+
+]
+Overfull \vbox (3.28893pt too high) detected at line 3532
+ []
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [94
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [95
+
+]
+File: figures/removeInd1.png Graphic file (type QTm)
+ <use  "figures/removeInd1.png" >
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [96
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [97
+
+]
+File: figures/CTL-forget1.png Graphic file (type QTm)
+ <use  "figures/CTL-forget1.png" >
+Overfull \hbox (91.97935pt too wide) in paragraph at lines 3682--3682
+ [] 
+ []
+
+
+Overfull \vbox (63.00052pt too high) detected at line 3682
+ []
+
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [98
+
+]
+(D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
+)
+File: figures/gzulogo.jpg Graphic file (type QTm)
+ <use  "figures/gzulogo.jpg" > [99
 
 ]
 \tf@nav=\write7
 \tf@toc=\write8
 \tf@snm=\write9
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2871.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2871.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3684.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3684.
 
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
 g-1.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2871.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2871.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3684.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3684.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'PPTforgetting-1.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
- 39247 strings out of 430478
- 759394 string characters out of 3191202
- 1025283 words of memory out of 3000000
- 41374 multiletter control sequences out of 15000+200000
- 54345 words of font info for 238 fonts, out of 3000000 for 9000
+ 39306 strings out of 430478
+ 760456 string characters out of 3191202
+ 1022283 words of memory out of 3000000
+ 41409 multiletter control sequences out of 15000+200000
+ 54353 words of font info for 239 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  54i,23n,75p,848b,2002s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on PPTforgetting-1.pdf (91 pages).
+Output written on PPTforgetting-1.pdf (99 pages).
