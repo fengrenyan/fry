@@ -1,0 +1,32 @@
+[[d,-se,-s],[-d,se,s], [d,se,-s],[d,se,s],[d,-se,s]]             psi (_1-4)
+
+[[d,-se,-s],[-d,se,s], [d,se,-s],[d,se,s]]                        psi (_1-3)
+
+[[d,-se,-s],[-d,se,s], [d,se,-s],[d,-se,s]]                    no psi_3
+
+[[d,-se,-s],[-d,se,s], [d,se,-s]]       no psi_3,4
+
+[[d,-se,-s],[-d,se,s], [d,se,s],[d,-se,s]]      no psi_2
+
+[[d,-se,-s],[-d,se,s], [d,se,s]]        no psi_2,4
+
+[[d,-se,-s],[-d,se,s],[d,-se,s]]     no psi_2,3
+
+
+
+[[d,-se,-s], [d,se,-s],[d,se,s],[d,-se,s]]   no psi_1
+
+
+
+[[d,-se,-s], [d,se,-s],[d,-se,s]]   no psi_1,3
+
+[[d,-se,-s], [d,se,-s]]   psi(_2)
+
+
+[[d,-se,-s],[d,se,s],[d,-se,s]], 	psi(_3,4)
+
+
+[[d,-se,-s],[d,se,s]]    psi(_3)
+
+[[d,-se,-s],[d,-se,s]]  	psi(_4)
+

@@ -1,0 +1,16 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: final-version.aux
+The style file: gbt7714-unsrt.bst
+Illegal, another \bibstyle command---line 603 of file final-version.aux
+ : \bibstyle
+ :          {gbt7714-unsrt}
+I'm skipping whatever remains of this command
+Database file #1: bib/paper.bib
+Repeated entry---line 2462 of file bib/paper.bib
+ : @article{meier2009complexity
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 9593 of file bib/paper.bib
+ : @incollection{visser1996uniform
+ :                                ,
+I'm skipping whatever remains of this entry
+(There were 3 error messages)

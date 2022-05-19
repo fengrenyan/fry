@@ -1,0 +1,956 @@
+\begin{thebibliography}{126}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\relax\else
+  \urlstyle{same}\fi
+\providecommand{\href}[2]{\url{#2}}
+\providecommand{\doi}[1]{\href{https://doi.org/#1}{#1}}
+
+\bibitem[Katsuno et~al.(1991)Katsuno and Mendelzon]{katsuno91mendelzon}
+KATSUNO~H, MENDELZON~A~O.
+\newblock On the difference between updating a knowledge base and revising
+  it\allowbreak[C]//\allowbreak
+ALLEN~J~F, FIKES~R, SANDEWALL~E.
+\newblock Proceedings of the 2nd International Conference on Principles of
+  Knowledge Representation and Reasoning (KR'91). Cambridge, MA, USA, April
+  22-25, 1991.
+\newblock [S.l.]: Morgan Kaufmann, 1991: 387-394.
+
+\bibitem[Lam(2007)]{lam2007}
+LAM~W~K.
+\newblock 硬件设计验证--基于模拟与形式的方法\allowbreak[M].
+\newblock 北京: 机械工业出版社, 2007.
+
+\bibitem[吕毅(2000)]{lv2000}
+吕毅.
+\newblock 时序逻辑电路的形式验证方法研究\allowbreak[D].
+\newblock 北京: 中国科学院研究生院(计算技术研究所), 2000.
+
+\bibitem[JANICK~B夏宇闻(2007)]{jani2007Verilog}
+JANICK~B夏宇闻.
+\newblock System Verilog验证方法学\allowbreak[M].
+\newblock 北京: 北京航空航天大学出版社学, 2007.
+
+\bibitem[袁志斌(2008)]{yuan2008}
+袁志斌.
+\newblock 软件开发的形式化工程方法\allowbreak[M].
+\newblock 北京: 清华大学出版社, 2008.
+
+\bibitem[古天龙(2005)]{gu2005}
+古天龙.
+\newblock 软件开发的形式化方法\allowbreak[M].
+\newblock 北京: 高等教育出版社, 2005.
+
+\bibitem[Fox(2003)]{DBLP:conf/tphol/Fox03}
+FOX~A~C~J.
+\newblock Formal specification and verification of
+  {ARM6}\allowbreak[C/OL]//\allowbreak
+BASIN~D~A, WOLFF~B.
+\newblock Lecture Notes in Computer Science: volume 2758\quad Theorem Proving
+  in Higher Order Logics, 16th International Conference, TPHOLs 2003, Rom,
+  Italy, September 8-12, 2003, Proceedings.
+\newblock Springer, 2003: 25-40.
+\newblock \url{https://doi.org/10.1007/10930755\_2}.
+
+\bibitem[Daum et~al.(2009)Daum, Schirmer, and Schmidt]{DBLP:conf/sefm/DaumSS09}
+DAUM~M, SCHIRMER~N, SCHMIDT~M.
+\newblock Implementation correctness of a real-time operating
+  system\allowbreak[C/OL]//\allowbreak
+HUNG~D~V, KRISHNAN~P.
+\newblock Seventh {IEEE} International Conference on Software Engineering and
+  Formal Methods, {SEFM} 2009, Hanoi, Vietnam, 23-27 November 2009.
+\newblock {IEEE} Computer Society, 2009: 23-32.
+\newblock \url{https://doi.org/10.1109/SEFM.2009.14}.
+
+\bibitem[Robinson(1965)]{DBLP:journals/jacm/Robinson65}
+ROBINSON~J~A.
+\newblock A machine-oriented logic based on the resolution
+  principle\allowbreak[J/OL].
+\newblock Journal of the ACM (JACM), 1965, 12\penalty0 (1):\penalty0 23-41.
+\newblock \url{http://doi.acm.org/10.1145/321250.321253}.
+
+\bibitem[Hughes et~al.(1996)Hughes, Cresswell, and Cresswell]{hughes1996new}
+HUGHES~G~E, CRESSWELL~M~J, CRESSWELL~M~M.
+\newblock A new introduction to modal logic\allowbreak[M].
+\newblock [S.l.]: Psychology Press, 1996.
+
+\bibitem[Hoare(1969)]{Hoare1969}
+HOARE~C~A~R.
+\newblock An axiomatic basis for computer programming\allowbreak[J/OL].
+\newblock Commun. {ACM}, 1969, 12\penalty0 (10):\penalty0 576-580.
+\newblock \url{https://doi.org/10.1145/363235.363259}.
+
+\bibitem[Harel(1979)]{harel1979first}
+HAREL~D.
+\newblock Lecture notes in computer science: volume~68\quad first-order dynamic
+  logic\allowbreak[M/OL].
+\newblock Springer, 1979.
+\newblock \url{https://doi.org/10.1007/3-540-09237-4}.
+
+\bibitem[Reynolds(2002)]{DBLP:conf/lics/Reynolds02}
+REYNOLDS~J~C.
+\newblock Separation logic: {A} logic for shared mutable data
+  structures\allowbreak[C/OL]//\allowbreak
+17th {IEEE} Symposium on Logic in Computer Science {(LICS} 2002), 22-25 July
+  2002, Copenhagen, Denmark, Proceedings.
+\newblock {IEEE} Computer Society, 2002: 55-74.
+\newblock \url{https://doi.org/10.1109/LICS.2002.1029817}.
+
+\bibitem[Lin(2016)]{DBLP:journals/ai/Lin16}
+LIN~F.
+\newblock A formalization of programs in first-order logic with a discrete
+  linear order\allowbreak[J/OL].
+\newblock Artificial Intelligence, 2016, 235:\penalty0 1-25.
+\newblock \url{https://doi.org/10.1016/j.artint.2016.01.014}.
+
+\bibitem[Clarke(2008)]{DBLP:conf/spin/Clarke08}
+CLARKE~E~M.
+\newblock The birth of model checking\allowbreak[C/OL]//\allowbreak
+GRUMBERG~O, VEITH~H.
+\newblock Lecture Notes in Computer Science: volume 5000\quad 25 Years of Model
+  Checking - History, Achievements, Perspectives.
+\newblock Springer, 2008: 1-26.
+\newblock \url{https://doi.org/10.1007/978-3-540-69850-0\_1}.
+
+\bibitem[Clarke et~al.(1981)Clarke and Emerson]{clarke1981design}
+CLARKE~E~M, EMERSON~E~A.
+\newblock Design and synthesis of synchronization skeletons using branching
+  time temporal logic\allowbreak[C]//\allowbreak
+Workshop on Logic of Programs.
+\newblock [S.l.]: Springer, 1981: 52-71.
+
+\bibitem[Biere et~al.(2003)Biere, Cimatti, Clarke, Strichman, and
+  Zhu]{DBLP:journals/ac/BiereCCSZ03}
+BIERE~A, CIMATTI~A, CLARKE~E~M, et~al.
+\newblock Bounded model checking\allowbreak[J/OL].
+\newblock Adv. Comput., 2003, 58:\penalty0 117-148.
+\newblock \url{https://doi.org/10.1016/S0065-2458(03)58003-2}.
+
+\bibitem[Burch et~al.(1992)Burch, Clarke, McMillan, Dill, and
+  Hwang]{burch1992symbolic}
+BURCH~J~R, CLARKE~E~M, MCMILLAN~K~L, et~al.
+\newblock Symbolic model checking: 1020 states and beyond\allowbreak[J].
+\newblock Information and computation, 1992, 98\penalty0 (2):\penalty0 142-170.
+
+\bibitem[Schneider(2004)]{DBLP:series/txtcs/Schneider04}
+SCHNEIDER~K.
+\newblock Texts in theoretical computer science. an {EATCS} series:
+  Verification of reactive systems - formal methods and
+  algorithms\allowbreak[M/OL].
+\newblock Springer, 2004.
+\newblock \url{https://doi.org/10.1007/978-3-662-10778-2}.
+
+\bibitem[Zhu et~al.(2010)Zhu, Wang, Xu, and Xu]{DBLP:journals/fcsc/ZhuWXX10}
+ZHU~J, WANG~H, XU~Z, et~al.
+\newblock A new model for model checking: cycle-weighted kripke
+  structure\allowbreak[J/OL].
+\newblock Frontiers Comput. Sci. China, 2010, 4\penalty0 (1):\penalty0 78-88.
+\newblock \url{https://doi.org/10.1007/s11704-009-0066-7}.
+
+\bibitem[Dijkstra(1975)]{DBLP:journals/cacm/Dijkstra75}
+DIJKSTRA~E~W.
+\newblock Guarded commands, {N}ondeterminacy and {F}ormal {D}erivation of
+  {P}rograms\allowbreak[J/OL].
+\newblock Commun. {ACM}, 1975, 18\penalty0 (8):\penalty0 453-457.
+\newblock \url{https://doi.org/10.1145/360933.360975}.
+
+\bibitem[Lin(2001)]{DBLP:journals/ai/Lin01}
+LIN~F.
+\newblock On strongest necessary and weakest sufficient
+  conditions\allowbreak[J/OL].
+\newblock Artificial Intelligence, 2001, 128\penalty0 (1-2):\penalty0 143-159.
+\newblock \url{https://doi.org/10.1016/S0004-3702(01)00070-4}.
+
+\bibitem[Lin(2003)]{DBLP:journals/jair/Lin03}
+LIN~F.
+\newblock Compiling causal theories to successor state axioms and strips-like
+  systems\allowbreak[J/OL].
+\newblock Journal of Artificial Intelligence Research, 2003, 19:\penalty0
+  279-314.
+\newblock \url{https://doi.org/10.1613/jair.1135}.
+
+\bibitem[Baier et~al.(2008)Baier and Katoen]{Baier:PMC:2008}
+BAIER~C, KATOEN~J.
+\newblock Principles of model checking\allowbreak[M].
+\newblock [S.l.]: {MIT} Press, 2008.
+
+\bibitem[Legato(2002)]{legato2002weakest}
+LEGATO~W~J.
+\newblock A weakest precondition model for assembly language
+  programs\allowbreak[M].
+\newblock [S.l.]: April, 2002.
+
+\bibitem[Leino(2005)]{DBLP:journals/ipl/Leino05}
+LEINO~K~R~M.
+\newblock Efficient weakest preconditions\allowbreak[J/OL].
+\newblock Information Processing Letters, 2005, 93\penalty0 (6):\penalty0
+  281-288.
+\newblock \url{https://doi.org/10.1016/j.ipl.2004.10.015}.
+
+\bibitem[Dailler et~al.(2018)Dailler, Hauzar, March{\'{e}}, and
+  Moy]{dailler2018instrumenting}
+DAILLER~S, HAUZAR~D, MARCH{\'{E}}~C, et~al.
+\newblock Instrumenting a weakest precondition calculus for counterexample
+  generation\allowbreak[J/OL].
+\newblock J. Log. Algebraic Methods Program., 2018, 99:\penalty0 97-113.
+\newblock \url{https://doi.org/10.1016/j.jlamp.2018.05.003}.
+
+\bibitem[Woodcock et~al.(1990)Woodcock and Morgan]{woodcock1990refinement}
+WOODCOCK~J, MORGAN~C.
+\newblock Refinement of state-based concurrent
+  systems\allowbreak[C/OL]//\allowbreak
+BJ{\O}RNER~D, HOARE~C~A~R, LANGMAACK~H.
+\newblock Lecture Notes in Computer Science: volume 428\quad {VDM} '90, {VDM}
+  and {Z} - Formal Methods in Software Development, Third International
+  Symposium of {VDM} Europe, Kiel, FRG, April 17-21, 1990, Proceedings.
+\newblock 1990: 340-351.
+\newblock \url{https://doi.org/10.1007/3-540-52513-0\_18}.
+
+\bibitem[简云松(2012)]{jian2012}
+简云松.
+\newblock
+  一个目标驱动的运行时需求管理框架的研究与实现\allowbreak[D].
+\newblock 北京: 清华大学, 2012.
+
+\bibitem[Harel et~al.(1984)Harel and Pnueli]{DBLP:conf/nato/HarelP84}
+HAREL~D, PNUELI~A.
+\newblock On the development of reactive systems\allowbreak[C/OL]//\allowbreak
+APT~K~R.
+\newblock {NATO} {ASI} Series: volume~13\quad Logics and Models of Concurrent
+  Systems - Conference proceedings, Colle-sur-Loup (near Nice), France, 8-19
+  October 1984.
+\newblock Springer, 1984: 477-498.
+\newblock \url{https://doi.org/10.1007/978-3-642-82453-1\_17}.
+
+\bibitem[Pnueli(1986)]{DBLP:books/sp/trends86/Pnueli86}
+PNUELI~A.
+\newblock Applications of temporal logic to the specification and verification
+  of reactive systems: {A} survey of current
+  trends\allowbreak[M/OL]//\allowbreak
+DE~BAKKER~J~W, DE~ROEVER~W~P, ROZENBERG~G.
+\newblock Lecture Notes in Computer Science: volume 224\quad Current Trends in
+  Concurrency, Overviews and Tutorials.
+\newblock Springer, 1986: 510-584.
+\newblock \url{https://doi.org/10.1007/BFb0027047}.
+
+\bibitem[王娟娟\ 等(2019)王娟娟, 乔颖, 熊金泉, and
+  王宏安]{wangjuan2019}
+王娟娟, 乔颖, 熊金泉, 等.
+\newblock
+  多核环境下基于图模型的实时规则调度方法\allowbreak[J].
+\newblock Journal of Software, 2019, 30\penalty0 (2):\penalty0 1-14.
+
+\bibitem[Clarke et~al.(2001)Clarke, Grumberg, and
+  Peled]{DBLP:books/daglib/0007403}
+CLARKE~E~M, GRUMBERG~O, PELED~D~A.
+\newblock Model checking\allowbreak[M/OL].
+\newblock {MIT} Press, 2001.
+\newblock \url{http://books.google.de/books?id=Nmc4wEaLXFEC}.
+
+\bibitem[Clarke et~al.(1996)Clarke, Grumberg, and Long]{clarke1996model}
+CLARKE~E, GRUMBERG~O, LONG~D.
+\newblock Model checking\allowbreak[C]//\allowbreak
+NATO ASI DPD.
+\newblock [S.l.: s.n.], 1996: 305-349.
+
+\bibitem[王政(2012)]{wangzhen2012}
+王政.
+\newblock 嵌入式周期控制系统的建模与分析\allowbreak[D].
+\newblock 上海: 华东师范大学, 2012.
+
+\bibitem[李书浩\ 等(2004)李书浩, 王戟, 董威, and
+  齐治昌]{lishu2004}
+李书浩, 王戟, 董威, 等.
+\newblock 反应式系统面向性质测试的方法框架\allowbreak[J].
+\newblock 电子学报, 2004, 32\penalty0 (S1):\penalty0 226-230.
+
+\bibitem[Lin et~al.(1994)Lin and Reiter]{lin1994forget}
+LIN~F, REITER~R.
+\newblock Forget it\allowbreak[C]//\allowbreak
+Working Notes of AAAI Fall Symposium on Relevance.
+\newblock [S.l.: s.n.], 1994: 154-159.
+
+\bibitem[Visser(1996)]{visser1996uniform}
+VISSER~A.
+\newblock Uniform interpolation and layered
+  bisimulation\allowbreak[M]//\allowbreak
+G{\"o}del'96: Logical foundations of mathematics, computer science and
+  physics---Kurt G{\"o}del's legacy, Brno, Czech Republic, August 1996,
+  proceedings.
+\newblock [S.l.]: Association for Symbolic Logic, 1996: 139-164.
+
+\bibitem[Konev et~al.(2009)Konev, Walther, and Wolter]{konev2009forgetting}
+KONEV~B, WALTHER~D, WOLTER~F.
+\newblock Forgetting and uniform interpolation in large-scale description logic
+  terminologies\allowbreak[C/OL]//\allowbreak
+BOUTILIER~C.
+\newblock {IJCAI} 2009, Proceedings of the 21st International Joint Conference
+  on Artificial Intelligence, Pasadena, California, USA, July 11-17, 2009.
+\newblock 2009: 830-835.
+\newblock \url{http://ijcai.org/Proceedings/09/Papers/142.pdf}.
+
+\bibitem[Ackermann(1935)]{ackermann1935untersuchungen}
+ACKERMANN~W.
+\newblock Untersuchungen {\"u}ber das eliminationsproblem der mathematischen
+  logik\allowbreak[J].
+\newblock Mathematische Annalen, 1935, 110\penalty0 (1):\penalty0 390-413.
+
+\bibitem[Konev et~al.(2013)Konev, Lutz, Walther, and
+  Wolter]{DBLP:journals/ai/KonevL0W13}
+KONEV~B, LUTZ~C, WALTHER~D, et~al.
+\newblock Model-theoretic inseparability and modularity of description logic
+  ontologies\allowbreak[J/OL].
+\newblock Artificial Intelligence, 2013, 203:\penalty0 66-103.
+\newblock \url{https://doi.org/10.1016/j.artint.2013.07.004}.
+
+\bibitem[Wang et~al.(2010)Wang, Wang, Topor, and Pan]{Wang:AMAI:2010}
+WANG~Z, WANG~K, TOPOR~R~W, et~al.
+\newblock Forgetting for knowledge bases in \textrm{DL-Lite}\allowbreak[J].
+\newblock Annuals of Mathematics and Artificial Intelligence, 2010, 58\penalty0
+  (1-2):\penalty0 117-151.
+
+\bibitem[Lutz et~al.(2011)Lutz and Wolter]{DBLP:conf/ijcai/LutzW11}
+LUTZ~C, WOLTER~F.
+\newblock Foundations for uniform interpolation and forgetting in expressive
+  description logics\allowbreak[C/OL]//\allowbreak
+WALSH~T.
+\newblock {IJCAI} 2011, Proceedings of the 22nd International Joint Conference
+  on Artificial Intelligence, Barcelona, Catalonia, Spain, July 16-22, 2011.
+\newblock {IJCAI/AAAI}, 2011: 989-995.
+\newblock \url{https://doi.org/10.5591/978-1-57735-516-8/IJCAI11-170}.
+
+\bibitem[Konev et~al.(2012)Konev, Ludwig, Walther, and Wolter]{Konev:JAIR:2012}
+KONEV~B, LUDWIG~M, WALTHER~D, et~al.
+\newblock The logical difference for the lightweight description logic
+  $\mathcal{EL}$\allowbreak[J].
+\newblock Journal of Artificial Intelligence Research, 2012, 44:\penalty0
+  633-708.
+
+\bibitem[Zhao et~al.(2017)Zhao and Schmidt]{DBLP:conf/ijcai/ZhaoS17}
+ZHAO~Y, SCHMIDT~R~A.
+\newblock Role forgetting for {ALCOQH}($\delta$)-ontologies using an
+  ackermann-based approach\allowbreak[C/OL]//\allowbreak
+SIERRA~C.
+\newblock Proceedings of the Twenty-Sixth International Joint Conference on
+  Artificial Intelligence, {IJCAI} 2017, Melbourne, Australia, August 19-25,
+  2017.
+\newblock ijcai.org, 2017: 1354-1361.
+\newblock \url{https://doi.org/10.24963/ijcai.2017/188}.
+
+\bibitem[Zhao et~al.(2020)Zhao, Schmidt, Wang, Zhang, and
+  Feng]{DBLP:conf/aaai/ZhaoSWZF20}
+ZHAO~Y, SCHMIDT~R~A, WANG~Y, et~al.
+\newblock A practical approach to forgetting in description logics with
+  nominals\allowbreak[C/OL]//\allowbreak
+The Thirty-Fourth {AAAI} Conference on Artificial Intelligence, {AAAI} 2020,
+  The Thirty-Second Innovative Applications of Artificial Intelligence
+  Conference, {IAAI} 2020, The Tenth {AAAI} Symposium on Educational Advances
+  in Artificial Intelligence, {EAAI} 2020, New York, NY, USA, February 7-12,
+  2020.
+\newblock {AAAI} Press, 2020: 3073-3079.
+\newblock \url{https://aaai.org/ojs/index.php/AAAI/article/view/5702}.
+
+\bibitem[Gabbay et~al.(2008)Gabbay, Schmidt, and
+  Szalas]{DBLP:books/daglib/0023036}
+GABBAY~D~M, SCHMIDT~R~A, SZALAS~A.
+\newblock Studies in logic : Mathematical logic and foundations: volume~12\quad
+  second-order quantifier elimination - foundations, computational aspects and
+  applications\allowbreak[M/OL].
+\newblock College Publications, 2008.
+\newblock \url{http://collegepublications.co.uk/logic/mlf/?00009}.
+
+\bibitem[Zhang et~al.(2009{\natexlab{a}})Zhang and Zhou]{Yan:AIJ:2009}
+ZHANG~Y, ZHOU~Y.
+\newblock Knowledge forgetting: Properties and applications\allowbreak[J].
+\newblock Artificial Intelligence, 2009, 173\penalty0 (16-17):\penalty0
+  1525-1537.
+
+\bibitem[Zhang et~al.(2008{\natexlab{a}})Zhang and Zhou]{Zhang2008Properties}
+ZHANG~Y, ZHOU~Y.
+\newblock Properties of knowledge forgetting\allowbreak[C]//\allowbreak
+PAGNUCCO~M, THIELSCHER~M.
+\newblock Proceedings of NMR 2008.
+\newblock Sydney, Australia: [s.n.], 2008{\natexlab{a}}: 68-75.
+
+\bibitem[文习明(2019)]{wenximing2019buwanbei}
+文习明.
+\newblock 信息不完备下的知识遗忘\allowbreak[J].
+\newblock 现代计算机 (专业版), 2019, 11:\penalty0 8-13.
+
+\bibitem[Liu et~al.(2011)Liu and Wen]{Yongmei:IJCAI:2011}
+LIU~Y, WEN~X.
+\newblock On the progression of knowledge in the situation
+  calculus\allowbreak[C]//\allowbreak
+IJCAI 2011, Proceedings of the 22nd International Joint Conference on
+  Artificial Intelligence.
+\newblock Barcelona, Catalonia, Spain: IJCAI/AAAI, 2011: 976-982.
+
+\bibitem[Fang et~al.(2019)Fang, Liu, and van
+  Ditmarsch]{DBLP:journals/ai/FangLD19}
+FANG~L, LIU~Y, VAN DITMARSCH~H.
+\newblock Forgetting in multi-agent modal logics\allowbreak[J/OL].
+\newblock Artificial Intelligence, 2019, 266:\penalty0 51-80.
+\newblock \url{https://doi.org/10.1016/j.artint.2018.08.003}.
+
+\bibitem[文习明\ 等(2019{\natexlab{a}})文习明, 方良达, 余泉,
+  常亮, and 王驹]{wenximing2019}
+文习明, 方良达, 余泉, 等.
+\newblock 多智能体模态逻辑系统 $KD45_n$
+  中的知识遗忘\allowbreak[J].
+\newblock 计算机科学, 2019, 46\penalty0 (7):\penalty0 195-205.
+
+\bibitem[文习明\ 等(2019{\natexlab{b}})文习明, 方良达, 余泉,
+  常亮, and 王驹]{wenximing2019kn}
+文习明, 方良达, 余泉, 等.
+\newblock 多智能体模态逻辑系统$K_n$中的知识遗忘\allowbreak[J].
+\newblock 逻辑学研究, 2019, 02\penalty0 (12):\penalty0 43-62.
+
+\bibitem[Maksimova(1991)]{Maksimova:JANCL:1991}
+MAKSIMOVA~L.
+\newblock Temporal logics of ``the next'' do not have the beth
+  property\allowbreak[J].
+\newblock Journal of Applied Non-Classical Logics, 1991, 1:\penalty0 73-76.
+
+\bibitem[D'Agostino(2008)]{DAgostino:synthese:2008}
+D'AGOSTINO~G.
+\newblock Interpolation in non-classical logics\allowbreak[J].
+\newblock Synthese, 2008, 164\penalty0 (3):\penalty0 421-435.
+
+\bibitem[Iemhoff(2019)]{DBLP:journals/aml/Iemhoff19}
+IEMHOFF~R.
+\newblock Uniform interpolation and sequent calculi in modal
+  logic\allowbreak[J/OL].
+\newblock Archive for Mathematical Logic, 2019, 58\penalty0 (1-2):\penalty0
+  155-181.
+\newblock \url{https://doi.org/10.1007/s00153-018-0629-0}.
+
+\bibitem[Fine(1979)]{DBLP:journals/jsyml/Fine79}
+FINE~K.
+\newblock Failures of the interpolation lemma in quantified modal
+  logic\allowbreak[J/OL].
+\newblock The Journal of Symbolic Logic, 1979, 44\penalty0 (2):\penalty0
+  201-206.
+\newblock \url{https://doi.org/10.2307/2273727}.
+
+\bibitem[Schumm(1986)]{DBLP:journals/ndjfl/Schumm86}
+SCHUMM~G~F.
+\newblock Some failures of interpolation in modal logic\allowbreak[J/OL].
+\newblock Notre Dame journal of formal logic, 1986, 27\penalty0 (1):\penalty0
+  108-110.
+\newblock \url{https://doi.org/10.1305/ndjfl/1093636529}.
+
+\bibitem[Zhang et~al.(2006)Zhang and Foo]{DBLP:Zhang:AIJ2006}
+ZHANG~Y, FOO~N~Y.
+\newblock Solving logic program conflict through strong and weak
+  forgettings\allowbreak[J].
+\newblock Artificial Intelligence, 2006, 170\penalty0 (8-9):\penalty0 739-778.
+
+\bibitem[Eiter et~al.(2008)Eiter and Wang]{DBLP:journals/ai/EiterW08}
+EITER~T, WANG~K.
+\newblock Semantic forgetting in answer set programming\allowbreak[J/OL].
+\newblock Artificial Intelligence, 2008, 172\penalty0 (14):\penalty0 1644-1672.
+\newblock \url{https://doi.org/10.1016/j.artint.2008.05.002}.
+
+\bibitem[Wong(2009)]{Wong:PhD:Thesis}
+WONG~K~S.
+\newblock Forgetting in logic programs\allowbreak[D].
+\newblock [S.l.]: The University of New South Wales, 2009.
+
+\bibitem[Wang et~al.(2014)Wang, Zhang, Zhou, and
+  Zhang]{DBLP:journals/jair/WangZZZ14}
+WANG~Y, ZHANG~Y, ZHOU~Y, et~al.
+\newblock Knowledge forgetting in answer set programming\allowbreak[J/OL].
+\newblock Journal of Artificial Intelligence Research, 2014, 50:\penalty0
+  31-70.
+\newblock \url{https://doi.org/10.1613/jair.4297}.
+
+\bibitem[Wang et~al.(2013)Wang, Wang, and Zhang]{wang2013forgetting}
+WANG~Y, WANG~K, ZHANG~M.
+\newblock Forgetting for answer set programs
+  revisited\allowbreak[C/OL]//\allowbreak
+ROSSI~F.
+\newblock {IJCAI} 2013, Proceedings of the 23rd International Joint Conference
+  on Artificial Intelligence, Beijing, China, August 3-9, 2013.
+\newblock 2013: 1162-1168.
+\newblock
+  \url{http://www.aaai.org/ocs/index.php/IJCAI/IJCAI13/paper/view/6807}.
+
+\bibitem[Wang et~al.(2015)Wang, Wang, Wang, and
+  Zhuang]{DBLP:conf/aaai/WangWWZ15}
+WANG~Y, WANG~K, WANG~Z, et~al.
+\newblock Knowledge forgetting in circumscription: {A} preliminary
+  report\allowbreak[C/OL]//\allowbreak
+BONET~B, KOENIG~S.
+\newblock Proceedings of the Twenty-Ninth {AAAI} Conference on Artificial
+  Intelligence, January 25-30, 2015, Austin, Texas, {USA}.
+\newblock {AAAI} Press, 2015: 1649-1655.
+\newblock \url{http://www.aaai.org/ocs/index.php/AAAI/AAAI15/paper/view/9866}.
+
+\bibitem[Delgrande(2017)]{DBLP:journals/jair/Delgrande17}
+DELGRANDE~J~P.
+\newblock A knowledge level account of forgetting\allowbreak[J/OL].
+\newblock Journal of Artificial Intelligence Research, 2017, 60:\penalty0
+  1165-1213.
+\newblock \url{https://doi.org/10.1613/jair.5530}.
+
+\bibitem[Gon{\c{c}}alves et~al.(2020)Gon{\c{c}}alves, Knorr, Leite, and
+  Woltran]{gonccalves2020limits}
+GON{\c{C}}ALVES~R, KNORR~M, LEITE~J, et~al.
+\newblock On the limits of forgetting in answer set programming\allowbreak[J].
+\newblock Artificial Intelligence, 2020, 286\penalty0 (0):\penalty0 103307.
+
+\bibitem[Eiter et~al.(2019)Eiter and Kern-Isberner]{eiter2019brief}
+EITER~T, KERN-ISBERNER~G.
+\newblock A brief survey on forgetting from a knowledge representation and
+  reasoning perspective\allowbreak[J].
+\newblock KI-K{\"u}nstliche Intelligenz, 2019, 33\penalty0 (1):\penalty0 9-33.
+
+\bibitem[Gon{\c{c}}alves et~al.(2021)Gon{\c{c}}alves, Knorr, and
+  Leite]{gonccalves2021forgetting}
+GON{\c{C}}ALVES~R, KNORR~M, LEITE~J.
+\newblock Forgetting in answer set programming--a survey\allowbreak[J].
+\newblock arXiv preprint arXiv:2107.07016, 2021.
+
+\bibitem[王文宇(2021)]{wangwen2021}
+王文宇.
+\newblock 基于 DataSecOps 的个人信息遗忘\allowbreak[J].
+\newblock 信息安全研究, 2021, 7\penalty0 (9):\penalty0 856-860.
+
+\bibitem[朱嘉玮(2020)]{zhujia2020}
+朱嘉玮.
+\newblock 从 “被遗忘权” 看个人信息保护\allowbreak[J].
+\newblock 现代商贸工业, 2020, 8.
+
+\bibitem[Liberatore et~al.(1998)Liberatore and
+  Schaerf]{DBLP:journals/tkde/LiberatoreS98}
+LIBERATORE~P, SCHAERF~M.
+\newblock Arbitration (or how to merge knowledge bases)\allowbreak[J/OL].
+\newblock {IEEE} Trans. Knowl. Data Eng., 1998, 10\penalty0 (1):\penalty0
+  76-90.
+\newblock \url{https://doi.org/10.1109/69.667090}.
+
+\bibitem[Konieczny et~al.(2002)Konieczny and
+  P{\'{e}}rez]{DBLP:journals/logcom/KoniecznyP02}
+KONIECZNY~S, P{\'{E}}REZ~R~P.
+\newblock Merging information under constraints: {A} logical
+  framework\allowbreak[J/OL].
+\newblock J. Log. Comput., 2002, 12\penalty0 (5):\penalty0 773-808.
+\newblock \url{https://doi.org/10.1093/logcom/12.5.773}.
+
+\bibitem[Maynard{-}Zhang et~al.(2003)Maynard{-}Zhang and
+  Lehmann]{DBLP:journals/jair/Maynard-ZhangL03}
+MAYNARD{-}ZHANG~P, LEHMANN~D.
+\newblock Representing and aggregating conflicting beliefs\allowbreak[J/OL].
+\newblock J. Artif. Intell. Res., 2003, 19:\penalty0 155-203.
+\newblock \url{https://doi.org/10.1613/jair.1206}.
+
+\bibitem[Konieczny et~al.(2004)Konieczny, Lang, and Marquis]{konieczny2004da2}
+KONIECZNY~S, LANG~J, MARQUIS~P.
+\newblock Da2 merging operators\allowbreak[J].
+\newblock Artificial Intelligence, 2004, 157\penalty0 (1-2):\penalty0 49-79.
+
+\bibitem[Everaere et~al.(2010)Everaere, Konieczny, and
+  Marquis]{DBLP:journals/ai/EveraereKM10}
+EVERAERE~P, KONIECZNY~S, MARQUIS~P.
+\newblock Disjunctive merging: Quota and gmin merging
+  operators\allowbreak[J/OL].
+\newblock Artif. Intell., 2010, 174\penalty0 (12-13):\penalty0 824-849.
+\newblock \url{https://doi.org/10.1016/j.artint.2010.05.001}.
+
+\bibitem[徐岱(2011)]{xudai2011}
+徐岱.
+\newblock 遗忘及应用\allowbreak[D].
+\newblock 北京: 北京大学, 2011.
+
+\bibitem[Sandu(1993)]{DBLP:journals/jphil/Sandu93}
+SANDU~G.
+\newblock On the logic of informational independence and its
+  applications\allowbreak[J/OL].
+\newblock J. Philos. Log., 1993, 22\penalty0 (1):\penalty0 29-60.
+\newblock \url{https://doi.org/10.1007/BF01049180}.
+
+\bibitem[Sandu(1997)]{DBLP:journals/igpl/Sandu97}
+SANDU~G.
+\newblock The logic of informational independence and finite
+  models\allowbreak[J/OL].
+\newblock Log. J. {IGPL}, 1997, 5\penalty0 (1):\penalty0 79-95.
+\newblock \url{https://doi.org/10.1093/jigpal/5.1.79}.
+
+\bibitem[V{\"{a}}{\"{a}}n{\"{a}}nen(2002)]{DBLP:journals/igpl/Vaananen02}
+V{\"{A}}{\"{A}}N{\"{A}}NEN~J~A.
+\newblock On the semantics of informational independence\allowbreak[J/OL].
+\newblock Log. J. {IGPL}, 2002, 10\penalty0 (3):\penalty0 339-352.
+\newblock \url{https://doi.org/10.1093/jigpal/10.3.339}.
+
+\bibitem[Sevenster(2006)]{DBLP:journals/synthese/Sevenster06}
+SEVENSTER~M.
+\newblock On the computational consequences of independence in propositional
+  logic\allowbreak[J/OL].
+\newblock Synth., 2006, 149\penalty0 (2):\penalty0 257-283.
+\newblock \url{https://doi.org/10.1007/s11229-005-3878-5}.
+
+\bibitem[Doherty et~al.(2001)Doherty, Lukaszewicz, and
+  Szalas]{DBLP:conf/ijcai/DohertyLS01}
+DOHERTY~P, LUKASZEWICZ~W, SZALAS~A.
+\newblock Computing strongest necessary and weakest sufficient conditions of
+  first-order formulas\allowbreak[C]//\allowbreak
+NEBEL~B.
+\newblock Proceedings of IJCAI'01.
+\newblock [S.l.]: Morgan Kaufmann, 2001: 145-154.
+
+\bibitem[D'Agostino et~al.(2006)D'Agostino and Lenzi]{d2006modal}
+D'AGOSTINO~G, LENZI~G.
+\newblock On modal $\mu$-calculus with explicit interpolants\allowbreak[J/OL].
+\newblock Journal of Applied Logic, 2006, 4\penalty0 (3):\penalty0 256-278.
+\newblock \url{https://doi.org/10.1016/j.jal.2005.06.008}.
+
+\bibitem[Schneider(2000)]{schneider2000verified}
+SCHNEIDER~K.
+\newblock A verified hardware synthesis of esterel
+  programs\allowbreak[C]//\allowbreak
+IFIP Working Conference on Distributed and Parallel Embedded Systems.
+\newblock [S.l.]: Springer, 2000: 205-214.
+
+\bibitem[Schneider(2001)]{DBLP:conf/acsd/Schneider01}
+SCHNEIDER~K.
+\newblock Embedding imperative synchronous languages in interactive theorem
+  provers\allowbreak[C/OL]//\allowbreak
+2nd International Conference on Application of Concurrency to System Design
+  {(ACSD} 2001), 25-30 June 2001, Newcastle upon Tyne, {UK}.
+\newblock {IEEE} Computer Society, 2001: 143.
+\newblock \url{https://doi.org/10.1109/CSD.2001.981772}.
+
+\bibitem[Schneider(2002)]{DBLP:conf/tphol/Schneider02}
+SCHNEIDER~K.
+\newblock Proving the equivalence of microstep and macrostep
+  semantics\allowbreak[C/OL]//\allowbreak
+CARRE{\~{N}}O~V, MU{\~{N}}OZ~C~A, TAHAR~S.
+\newblock Lecture Notes in Computer Science: volume 2410\quad Theorem Proving
+  in Higher Order Logics, 15th International Conference, TPHOLs 2002, Hampton,
+  VA, USA, August 20-23, 2002, Proceedings.
+\newblock Springer, 2002: 314-331.
+\newblock \url{https://doi.org/10.1007/3-540-45685-6\_21}.
+
+\bibitem[陆钟万(1989)]{luzhongwan1989}
+陆钟万.
+\newblock 面向计算机科学的数理逻辑\allowbreak[M].
+\newblock 北京: 北京大学出版社, 1989.
+
+\bibitem[Ben{-}Eliyahu{-}Zohary et~al.(2016)Ben{-}Eliyahu{-}Zohary, Angiulli,
+  Fassetti, and Palopoli]{DBLP:conf/ijcai/Ben-Eliyahu-Zohary16}
+BEN{-}ELIYAHU{-}ZOHARY~R, ANGIULLI~F, FASSETTI~F, et~al.
+\newblock Decomposing minimal models\allowbreak[C/OL]//\allowbreak
+BART{\'{A}}K~R, MCCLUSKEY~T~L, PONTELLI~E.
+\newblock {CEUR} Workshop Proceedings: volume 1648\quad Proceedings of the
+  Workshop on Knowledge-based Techniques for Problem Solving and Reasoning
+  co-located with 25th International Joint Conference on Artificial
+  Intelligence {(IJCAI} 2016), New York City, USA, July 10, 2016.
+\newblock CEUR-WS.org, 2016.
+\newblock \url{http://ceur-ws.org/Vol-1648/paper1.pdf}.
+
+\bibitem[Ben{-}Eliyahu{-}Zohary et~al.(2017)Ben{-}Eliyahu{-}Zohary, Angiulli,
+  Fassetti, and Palopoli]{DBLP:conf/lpnmr/Ben-Eliyahu-Zohary17}
+BEN{-}ELIYAHU{-}ZOHARY~R, ANGIULLI~F, FASSETTI~F, et~al.
+\newblock Modular construction of minimal models\allowbreak[C/OL]//\allowbreak
+BALDUCCINI~M, JANHUNEN~T.
+\newblock Lecture Notes in Computer Science: volume 10377\quad Logic
+  Programming and Nonmonotonic Reasoning - 14th International Conference,
+  {LPNMR} 2017, Espoo, Finland, July 3-6, 2017, Proceedings.
+\newblock Springer, 2017: 43-48.
+\newblock \url{https://doi.org/10.1007/978-3-319-61660-5\_5}.
+
+\bibitem[张丽\ 等(2021)张丽, 王以松, 谢仲涛, and
+  冯仁艳]{zhangli2021}
+张丽, 王以松, 谢仲涛, 等.
+\newblock 基于 MiniSAT 的命题极小模型计算方法\allowbreak[J].
+\newblock 计算机研究与发展, 2021, 58\penalty0 (11):\penalty0 2515.
+
+\bibitem[Lei et~al.(2018)Lei and Cai]{DBLP:conf/ijcai/LeiC18}
+LEI~Z, CAI~S.
+\newblock Solving (weighted) partial maxsat by dynamic local search for
+  {SAT}\allowbreak[C/OL]//\allowbreak
+LANG~J.
+\newblock Proceedings of the Twenty-Seventh International Joint Conference on
+  Artificial Intelligence, {IJCAI} 2018, July 13-19, 2018, Stockholm, Sweden.
+\newblock ijcai.org, 2018: 1346-1352.
+\newblock \url{https://doi.org/10.24963/ijcai.2018/187}.
+
+\bibitem[Lei et~al.(2020)Lei and Cai]{DBLP:conf/aaai/LeiC20}
+LEI~Z, CAI~S.
+\newblock Solving set cover and dominating set via maximum
+  satisfiability\allowbreak[C/OL]//\allowbreak
+The Thirty-Fourth {AAAI} Conference on Artificial Intelligence, {AAAI} 2020,
+  New York, NY, USA, February 7-12, 2020.
+\newblock {AAAI} Press, 2020: 1569-1576.
+\newblock \url{https://aaai.org/ojs/index.php/AAAI/article/view/5517}.
+
+\bibitem[Kripke(1963)]{kripke1963semantical}
+KRIPKE~S~A.
+\newblock Semantical analysis of modal logic i normal modal propositional
+  calculi\allowbreak[J].
+\newblock Mathematical Logic Quarterly, 1963, 9\penalty0 (5-6):\penalty0 67-96.
+
+\bibitem[Browne et~al.(1988)Browne, Clarke, and
+  Gr{\"u}mberg]{browne1988characterizing}
+BROWNE~M~C, CLARKE~E~M, GR{\"U}MBERG~O.
+\newblock Characterizing finite {K}ripke structures in propositional temporal
+  logic\allowbreak[J].
+\newblock Theoretical Computer Science, 1988, 59\penalty0 (1-2):\penalty0
+  115-131.
+
+\bibitem[Clarke et~al.(1986)Clarke, Emerson, and
+  Sistla]{DBLP:journals/toplas/ClarkeES86}
+CLARKE~E~M, EMERSON~E~A, SISTLA~A~P.
+\newblock Automatic verification of finite-state concurrent systems using
+  temporal logic specifications\allowbreak[J/OL].
+\newblock {ACM} Trans. Program. Lang. Syst., 1986, 8\penalty0 (2):\penalty0
+  244-263.
+\newblock \url{https://doi.org/10.1145/5397.5399}.
+
+\bibitem[Emerson et~al.(1985)Emerson and
+  Halpern]{DBLP:journals/jcss/EmersonH85}
+EMERSON~E~A, HALPERN~J~Y.
+\newblock Decision procedures and expressiveness in the temporal logic of
+  branching time\allowbreak[J/OL].
+\newblock Journal of computer and system sciences, 1985, 30\penalty0
+  (1):\penalty0 1-24.
+\newblock \url{https://doi.org/10.1016/0022-0000(85)90001-7}.
+
+\bibitem[Bolotov et~al.(1999)Bolotov and
+  Fisher]{DBLP:journals/jetai/BolotovF99}
+BOLOTOV~A, FISHER~M.
+\newblock A clausal resolution method for {CTL} branching-time temporal
+  logic\allowbreak[J/OL].
+\newblock Journal of Experimental \& Theoretical Artificial Intelligence, 1999,
+  11\penalty0 (1):\penalty0 77-93.
+\newblock \url{https://doi.org/10.1080/095281399146625}.
+
+\bibitem[Zhang et~al.(2008{\natexlab{b}})Zhang, Hustadt, and
+  Dixon]{zhang2008first}
+ZHANG~L, HUSTADT~U, DIXON~C.
+\newblock First-order resolution for {CTL}\allowbreak[R].
+\newblock [S.l.]: Technical Report ULCS-08-010, Department of Computer Science,
+  University of Liverpool, 2008{\natexlab{b}}.
+
+\bibitem[Zhang et~al.(2014)Zhang, Hustadt, and Dixon]{zhang2014resolution}
+ZHANG~L, HUSTADT~U, DIXON~C.
+\newblock A resolution calculus for the branching-time temporal logic
+  {CTL}\allowbreak[J].
+\newblock ACM Transactions on Computational Logic (TOCL), 2014, 15\penalty0
+  (1):\penalty0 1-38.
+
+\bibitem[Zhang et~al.(2010)Zhang, Hustadt, and
+  Dixon]{DBLP:journals/aicom/ZhangHD10}
+ZHANG~L, HUSTADT~U, DIXON~C.
+\newblock {CTL-RP:} {A} computation tree logic resolution
+  prover\allowbreak[J/OL].
+\newblock {AI} Commun., 2010, 23\penalty0 (2-3):\penalty0 111-136.
+\newblock \url{https://doi.org/10.3233/AIC-2010-0463}.
+
+\bibitem[Bradfield et~al.(2018)Bradfield and Walukiewicz]{bradfield2018mu}
+BRADFIELD~J~C, WALUKIEWICZ~I.
+\newblock The {\(\mu\)}-calculus and model
+  checking\allowbreak[M/OL]//\allowbreak
+CLARKE~E~M, HENZINGER~T~A, VEITH~H, et~al.
+\newblock Handbook of Model Checking.
+\newblock 2018: 871-919.
+\newblock \url{https://doi.org/10.1007/978-3-319-10575-8\_26}.
+
+\bibitem[Kozen(1983)]{DBLP:journals/cacm/Kozen83}
+KOZEN~D.
+\newblock Results on the propositional $\mu$-calculus\allowbreak[J/OL].
+\newblock Theoretical Computer Science, 1983, 27:\penalty0 333-354.
+\newblock \url{https://doi.org/10.1016/0304-3975(82)90125-6}.
+
+\bibitem[D'Agostino et~al.(1996)D'Agostino and Hollenberg]{d1996uniform}
+D'AGOSTINO~G, HOLLENBERG~M.
+\newblock Uniform interpolation, automata and the modal
+  $\mu$-calculus\allowbreak[J].
+\newblock Logic Group Preprint Series, 1996, 165.
+
+\bibitem[D'Agostino et~al.(2000)D'Agostino and Hollenberg]{d2000logical}
+D'AGOSTINO~G, HOLLENBERG~M.
+\newblock Logical questions concerning the {\(\mu\)}-calculus: Interpolation,
+  lyndon and los-tarski\allowbreak[J/OL].
+\newblock The Journal of Symbolic Logic, 2000, 65\penalty0 (1):\penalty0
+  310-332.
+\newblock \url{https://doi.org/10.2307/2586539}.
+
+\bibitem[Janin et~al.(1995)Janin and Walukiewicz]{janin1995automata}
+JANIN~D, WALUKIEWICZ~I.
+\newblock Automata for the modal {\(\mu\)}-calculus and related
+  results\allowbreak[C/OL]//\allowbreak
+WIEDERMANN~J, H{\'{A}}JEK~P.
+\newblock Lecture Notes in Computer Science: volume 969\quad Mathematical
+  Foundations of Computer Science 1995, 20th International Symposium, MFCS'95,
+  Prague, Czech Republic, August 28 - September 1, 1995, Proceedings.
+\newblock 1995: 552-562.
+\newblock \url{https://doi.org/10.1007/3-540-60246-1\_160}.
+
+\bibitem[Davis et~al.(1960)Davis and Putnam]{DBLP:journals/jacm/DavisP60}
+DAVIS~M, PUTNAM~H.
+\newblock A computing procedure for quantification theory\allowbreak[J/OL].
+\newblock Journal of the ACM (JACM), 1960, 7\penalty0 (3):\penalty0 201-215.
+\newblock \url{http://doi.acm.org/10.1145/321033.321034}.
+
+\bibitem[Enjalbert et~al.(1989)Enjalbert and del
+  Cerro]{DBLP:journals/tcs/EnjalbertC89}
+ENJALBERT~P, DEL CERRO~L~F.
+\newblock Modal resolution in clausal form\allowbreak[J/OL].
+\newblock Theoretical Computer Science, 1989, 65\penalty0 (1):\penalty0 1-33.
+\newblock \url{https://doi.org/10.1016/0304-3975(89)90137-0}.
+
+\bibitem[Cavalli et~al.(1984)Cavalli and del Cerro]{DBLP:conf/cade/CavalliC84}
+CAVALLI~A~R, DEL CERRO~L~F.
+\newblock A decision method for linear temporal
+  logic\allowbreak[C/OL]//\allowbreak
+SHOSTAK~R~E.
+\newblock Lecture Notes in Computer Science: volume 170\quad 7th International
+  Conference on Automated Deduction, Napa, California, USA, May 14-16, 1984,
+  Proceedings.
+\newblock Springer, 1984: 113-127.
+\newblock \url{https://doi.org/10.1007/978-0-387-34768-4\_7}.
+
+\bibitem[Delgrande(2014)]{DBLP:conf/kr/Delgrande14}
+DELGRANDE~J~P.
+\newblock Towards a knowledge level analysis of
+  forgetting\allowbreak[C/OL]//\allowbreak
+BARAL~C, GIACOMO~G~D, EITER~T.
+\newblock Principles of Knowledge Representation and Reasoning: Proceedings of
+  the Fourteenth International Conference, {KR} 2014, Vienna, Austria, July
+  20-24, 2014.
+\newblock {AAAI} Press, 2014.
+\newblock \url{http://www.aaai.org/ocs/index.php/KR/KR14/paper/view/7979}.
+
+\bibitem[Koopmann et~al.(2013)Koopmann and
+  Schmidt]{DBLP:conf/frocos/KoopmannS13}
+KOOPMANN~P, SCHMIDT~R~A.
+\newblock Uniform interpolation of -ontologies using
+  fixpoints\allowbreak[C/OL]//\allowbreak
+FONTAINE~P, RINGEISSEN~C, SCHMIDT~R~A.
+\newblock Lecture Notes in Computer Science: volume 8152\quad Frontiers of
+  Combining Systems - 9th International Symposium, FroCoS 2013, Nancy, France,
+  September 18-20, 2013. Proceedings.
+\newblock Springer, 2013: 87-102.
+\newblock \url{https://doi.org/10.1007/978-3-642-40885-4\_7}.
+
+\bibitem[Zhao(2018)]{DBLP:phd/ethos/Zhao18a}
+ZHAO~Y.
+\newblock Automated semantic forgetting for expressive description
+  logics\allowbreak[D/OL].
+\newblock The University of Manchester (United Kingdom), 2018.
+\newblock \url{http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.740373}.
+
+\bibitem[Koopmann(2015)]{DBLP:phd/ethos/Koopmann15}
+KOOPMANN~P.
+\newblock Practical uniform interpolation for expressive description
+  logics\allowbreak[D/OL].
+\newblock University of Manchester, {UK}, 2015.
+\newblock \url{http://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.674705}.
+
+\bibitem[Zhao et~al.(2018)Zhao and Schmidt]{DBLP:conf/cade/ZhaoS18}
+ZHAO~Y, SCHMIDT~R~A.
+\newblock {FAME:} an automated tool for semantic forgetting in expressive
+  description logics\allowbreak[C/OL]//\allowbreak
+GALMICHE~D, SCHULZ~S, SEBASTIANI~R.
+\newblock Lecture Notes in Computer Science: volume 10900\quad Automated
+  Reasoning - 9th International Joint Conference, {IJCAR} 2018, Held as Part of
+  the Federated Logic Conference, FloC 2018, Oxford, UK, July 14-17, 2018,
+  Proceedings.
+\newblock Springer, 2018: 19-27.
+\newblock \url{https://doi.org/10.1007/978-3-319-94205-6\_2}.
+
+\bibitem[Bienvenu(2007)]{DBLP:conf/aaai/Bienvenu07}
+BIENVENU~M.
+\newblock Prime implicates and prime implicants in modal
+  logic\allowbreak[C/OL]//\allowbreak
+Proceedings of the Twenty-Second {AAAI} Conference on Artificial Intelligence,
+  July 22-26, 2007, Vancouver, British Columbia, Canada.
+\newblock {AAAI} Press, 2007: 379-384.
+\newblock \url{http://www.aaai.org/Library/AAAI/2007/aaai07-059.php}.
+
+\bibitem[Wolper(1983)]{DBLP:journals/iandc/Wolper83}
+WOLPER~P.
+\newblock Temporal logic can be more expressive\allowbreak[J/OL].
+\newblock Information and control, 1983, 56\penalty0 (1/2):\penalty0 72-99.
+\newblock \url{https://doi.org/10.1016/S0019-9958(83)80051-5}.
+
+\bibitem[Janin et~al.(1996)Janin and Walukiewicz]{janin1996expressive}
+JANIN~D, WALUKIEWICZ~I.
+\newblock On the expressive completeness of the propositional mu-calculus with
+  respect to monadic second order logic\allowbreak[C]//\allowbreak
+International Conference on Concurrency Theory.
+\newblock [S.l.]: Springer, 1996: 263-277.
+
+\bibitem[Wang(2015)]{wang2015forgetting}
+WANG~Y.
+\newblock On forgetting in tractable propositional fragments\allowbreak[J/OL].
+\newblock CoRR, 2015, abs/1502.02799.
+\newblock \url{http://arxiv.org/abs/1502.02799}.
+
+\bibitem[Comon(1997)]{comon1997tree}
+COMON~H.
+\newblock Tree automata techniques and applications\allowbreak[M].
+\newblock [S.l.: s.n.], 1997.
+
+\bibitem[Lang et~al.(2003)Lang, Liberatore, and
+  Marquis]{DBLP:journals/jair/LangLM03}
+LANG~J, LIBERATORE~P, MARQUIS~P.
+\newblock Propositional independence: Formula-variable independence and
+  forgetting\allowbreak[J/OL].
+\newblock Journal of Artificial Intelligence Research, 2003, 18:\penalty0
+  391-443.
+\newblock \url{https://doi.org/10.1613/jair.1113}.
+
+\bibitem[Feng et~al.(2020)Feng, Acar, Schlobach, Wang, and
+  Liu]{renyansfirstpaper}
+FENG~R, ACAR~E, SCHLOBACH~S, et~al.
+\newblock On sufficient and necessary conditions in bounded {CTL}: A forgetting
+  approach\allowbreak[C]//\allowbreak
+Proceedings of the International Conference on Principles of Knowledge
+  Representation and Reasoning: volume~17.
+\newblock [S.l.: s.n.], 2020: 361-370.
+
+\bibitem[Mycielski et~al.(1997)Mycielski, Rozenberg, and
+  Salomaa]{DBLP:conf/birthday/1997ehrenfeucht}
+MYCIELSKI~J, ROZENBERG~G, SALOMAA~A.
+\newblock Lecture notes in computer science: volume 1261\quad structures in
+  logic and computer science, {A} selection of essays in honor of andrzej
+  ehrenfeucht\allowbreak[C/OL].
+\newblock Springer, 1997.
+\newblock \url{https://doi.org/10.1007/3-540-63246-8}.
+
+\bibitem[Hintikka(1953)]{hintikka1953distributive}
+HINTIKKA~J.
+\newblock Distributive normal forms in the calculus of
+  predicates\allowbreak[J].
+\newblock Cambridge University Press, 1953, 20\penalty0 (2).
+
+\bibitem[Yankov(1968)]{yankov1968three}
+YANKOV~V~A.
+\newblock Three sequences of formulas with two variables in the positive
+  propositional logic\allowbreak[J].
+\newblock Izvestiya Rossiiskoi Akademii Nauk. Seriya Matematicheskaya, 1968,
+  32\penalty0 (4):\penalty0 880-883.
+
+\bibitem[Meier et~al.(2009)Meier, Thomas, Vollmer, and
+  Mundhenk]{meier2009complexity}
+MEIER~A, THOMAS~M, VOLLMER~H, et~al.
+\newblock The complexity of satisfiability for fragments of {CTL} and
+  {CTL}*\allowbreak[J].
+\newblock International Journal of Foundations of Computer Science, 2009,
+  20\penalty0 (05):\penalty0 901-918.
+
+\bibitem[Bolotov(2000)]{bolotov2000clausal}
+BOLOTOV~A.
+\newblock Clausal resolution for branching-time temporal logic.\allowbreak[D].
+\newblock [S.l.]: Manchester Metropolitan University, 2000.
+
+\bibitem[Zhang et~al.(2009{\natexlab{b}})Zhang, Hustadt, and
+  Dixon]{zhang2009refined}
+ZHANG~L, HUSTADT~U, DIXON~C.
+\newblock A refined resolution calculus for {CTL}\allowbreak[C]//\allowbreak
+International Conference on Automated Deduction.
+\newblock [S.l.]: Springer, 2009{\natexlab{b}}: 245-260.
+
+\end{thebibliography}
