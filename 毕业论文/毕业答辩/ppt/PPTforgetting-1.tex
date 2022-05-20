@@ -515,12 +515,14 @@
 				\item 其模型检测（MC）问题能在多项时间内完成；
 				\item 能很好的表达系统要求的各种属性：
 				\begin{itemize}
-					\item \textcolor{orange!80}{安全属性（Safety properties）}：something
-					bad never happens. \textcolor{blue!70}{($\ALL \GLOBAL \neg \varphi$)}
-					\item \textcolor{orange!80}{活性属性（Liveness	properties）}：something good will eventually happen. \textcolor{blue!70}{($\ALL \GLOBAL \ALL \FUTURE \varphi$)}
-					\item \textcolor{orange!80}{持续属性（Persistence properties）}：eventually for ever a certain proposition holds. \textcolor{blue!70}{($\ALL \FUTURE \ALL \GLOBAL \varphi$)}
-					\item \textcolor{orange!80}{公平属性（Fairness properties）}：does,
-					under certain conditions, an event occur repeatedly? \textcolor{blue!70}{（一种约束：在约束$fair = \GLOBAL \FUTURE a$下$\ALL \GLOBAL(a\rto \ALL \FUTURE b)$是否成立？）}
+					\item \textcolor{orange!80}{安全属性（Safety properties）}：\textcolor{blue!70}{($\ALL \GLOBAL \neg \varphi$)}
+					%something bad never happens. \textcolor{blue!70}{($\ALL \GLOBAL \neg \varphi$)}
+					\item \textcolor{orange!80}{活性属性（Liveness	properties）}：\textcolor{blue!70}{($\ALL \GLOBAL \ALL \FUTURE \varphi$)}
+					%something good will eventually happen. \textcolor{blue!70}{($\ALL \GLOBAL \ALL \FUTURE \varphi$)}
+					\item \textcolor{orange!80}{持续属性（Persistence properties）}：\textcolor{blue!70}{($\ALL \FUTURE \ALL \GLOBAL \varphi$)}
+					%eventually for ever a certain proposition holds. \textcolor{blue!70}{($\ALL \FUTURE \ALL \GLOBAL \varphi$)}
+					\item \textcolor{orange!80}{公平属性（Fairness properties）}：\textcolor{blue!70}{（一种约束：在约束$fair = \GLOBAL \FUTURE a$下$\ALL \GLOBAL(a\rto \ALL \FUTURE b)$是否成立？）}
+				%	does, under certain conditions, an event occur repeatedly? \textcolor{blue!70}{（一种约束：在约束$fair = \GLOBAL \FUTURE a$下$\ALL \GLOBAL(a\rto \ALL \FUTURE b)$是否成立？）}
 				\end{itemize} 
 			\end{itemize}
 			\item $\mu$-演算（$\mu$-calculus）：是其他形式体系的机械基础
@@ -609,7 +611,100 @@
 \begin{frame}  
 	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
+		\includegraphics[scale=0.35]{figures/ctlMuForgFrame1}
+		\caption{CTL和$\mu$-演算遗忘理论}
+	\end{figure}
+	{\tiny 
+		\begin{columns}
+			\column{0.5\textwidth}
+			\begin{itemize} 
+				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
+				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
+			\end{itemize}
+			\column{0.5\textwidth}
+			\begin{itemize}
+				%	\item 分解性：将一个大的问题分解成小的问题；
+				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
+				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
+			\end{itemize}
+		\end{columns}
+	}
+
+\end{frame}
+
+\begin{frame}  
+	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
+	\begin{figure}
 		\includegraphics[scale=0.35]{figures/ctlMuForgFrame}
+		\caption{CTL和$\mu$-演算遗忘理论}
+	\end{figure}
+	{\tiny 
+		\begin{columns}
+			\column{0.5\textwidth}
+			\begin{itemize} 
+				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
+				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
+			\end{itemize}
+			\column{0.5\textwidth}
+			\begin{itemize}
+				%	\item 分解性：将一个大的问题分解成小的问题；
+				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
+				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
+			\end{itemize}
+		\end{columns}
+	} 
+\end{frame}
+
+\begin{frame}  
+	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
+	\begin{figure}
+		\includegraphics[scale=0.35]{figures/ctlMuForgFrame2}
+		\caption{CTL和$\mu$-演算遗忘理论}
+	\end{figure}
+	{\tiny 
+		\begin{columns}
+			\column{0.5\textwidth}
+			\begin{itemize} 
+				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
+				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
+			\end{itemize}
+			\column{0.5\textwidth}
+			\begin{itemize}
+				%	\item 分解性：将一个大的问题分解成小的问题；
+				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
+				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
+			\end{itemize}
+		\end{columns}
+	} 
+\end{frame}
+
+\begin{frame}  
+	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
+	\begin{figure}
+		\includegraphics[scale=0.35]{figures/ctlMuForgFrame3}
+		\caption{CTL和$\mu$-演算遗忘理论}
+	\end{figure}
+	{\tiny 
+		\begin{columns}
+			\column{0.5\textwidth}
+			\begin{itemize} 
+				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
+				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
+			\end{itemize}
+			\column{0.5\textwidth}
+			\begin{itemize}
+				%	\item 分解性：将一个大的问题分解成小的问题；
+				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
+				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
+			\end{itemize}
+		\end{columns}
+	} 
+\end{frame}
+
+\begin{frame}  
+	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
+	\begin{figure}
+		\includegraphics[scale=0.35]{figures/ctlMuForgFrame4}
 		\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
 {\tiny 
@@ -1128,7 +1223,7 @@
 %\end{frame}
 
 \section{研究内容（二）遗忘理论在反应式系统中的应用}
-\subsection{研究内容（二）遗忘理论在反应式系统中的应用}
+%\subsection{研究内容（二）遗忘理论在反应式系统中的应用}
 \begin{frame}
 	\frametitle{~研究内容（二）遗忘理论在反应式系统中的应用}
 	{\footnotesize
@@ -1169,10 +1264,98 @@
 	\includegraphics[scale=0.27]{figures/sncAndWsc}
 	%\includegraphics[scale=0.27]{figures/applicationF4}
 %	\caption{进程的三种基本状态及其转换}
-\end{figure}
-\pause
-\textcolor{red}{\[\hbox{从而为系统正确性和系统更新提供了理论依据！}\]}
+\end{figure} 
 \end{frame}
+
+
+\begin{frame}
+\frametitle{~研究内容（二）遗忘理论在反应式系统中的应用}
+{\footnotesize
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item 反应式系统被表示成Kripke结构；
+			\item 初始Kripke结构的特征公式看作CTL公式——${\cal F}_{\Ha}(\Hm)$；
+		\end{itemize}
+		\column{0.5\textwidth}
+		\begin{figure}
+			\centering
+			%	\tiny
+			\begin{tikzpicture}[scale=0.8]
+				\tikzstyle{every node}=[font=\small,scale=0.8]
+				\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+				\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+				\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+				\path (s1) edge[->,bend right=45] (s0);
+				\path (s0) edge[->,bend left=-45] (s1);
+				\path (s1) edge[->,bend right=-45] (s2);
+				\path (s2) edge[->,bend right=-45] (s0); 
+				\node at(0,-0.5) {{\tiny $I/O$请求}};
+				\node at(-1,0.5) {{\tiny $I/O$完成}};
+				\node at(0.7,0.5) {{\tiny 时间片完}};
+				\node at(-0.2,0.3) {{\tiny 进程调度}};
+				%	\node at(0,-1.5) {${\cal K}_2$}; 
+			\end{tikzpicture}
+			\caption{{\scriptsize 进程的三种基本状态及其转换}}
+		\end{figure}
+		%		 \begin{figure}
+		%		 	\includegraphics[scale=0.28]{figures/processState}
+		%		 	\caption{{\scriptsize 进程的三种基本状态及其转换}}
+		%		 \end{figure}
+	\end{columns}
+} 
+\begin{figure} 
+	\includegraphics[scale=0.27]{figures/sncAndWsc1}
+	%\includegraphics[scale=0.27]{figures/applicationF4}
+	%	\caption{进程的三种基本状态及其转换}
+\end{figure} 
+\end{frame}
+
+\begin{frame}
+	\frametitle{~研究内容（二）遗忘理论在反应式系统中的应用}
+	{\footnotesize
+		\begin{columns}
+			\column{0.5\textwidth}
+			\begin{itemize}
+				\item 反应式系统被表示成Kripke结构；
+				\item 初始Kripke结构的特征公式看作CTL公式——${\cal F}_{\Ha}(\Hm)$；
+			\end{itemize}
+			\column{0.5\textwidth}
+			\begin{figure}
+				\centering
+				%	\tiny
+				\begin{tikzpicture}[scale=0.8]
+					\tikzstyle{every node}=[font=\small,scale=0.8]
+					\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+					\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+					\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+					\path (s1) edge[->,bend right=45] (s0);
+					\path (s0) edge[->,bend left=-45] (s1);
+					\path (s1) edge[->,bend right=-45] (s2);
+					\path (s2) edge[->,bend right=-45] (s0); 
+					\node at(0,-0.5) {{\tiny $I/O$请求}};
+					\node at(-1,0.5) {{\tiny $I/O$完成}};
+					\node at(0.7,0.5) {{\tiny 时间片完}};
+					\node at(-0.2,0.3) {{\tiny 进程调度}};
+					%	\node at(0,-1.5) {${\cal K}_2$}; 
+				\end{tikzpicture}
+				\caption{{\scriptsize 进程的三种基本状态及其转换}}
+			\end{figure}
+			%		 \begin{figure}
+			%		 	\includegraphics[scale=0.28]{figures/processState}
+			%		 	\caption{{\scriptsize 进程的三种基本状态及其转换}}
+			%		 \end{figure}
+		\end{columns}
+	} 
+	\begin{figure} 
+		\includegraphics[scale=0.27]{figures/sncAndWsc2}
+		%\includegraphics[scale=0.27]{figures/applicationF4}
+		%	\caption{进程的三种基本状态及其转换}
+	\end{figure}
+	\pause
+	\textcolor{red}{\[\hbox{从而为系统正确性和系统更新提供了理论依据！}\]}
+\end{frame}
+
 %
 %\subsection{研究内容（二）最弱充分条件}
 %\begin{frame}
@@ -1450,10 +1633,184 @@
 \subsection{研究内容（三）（1）基于模型的计算方法}
 \begin{frame}
 	\frametitle{研究内容（三）（1）基于模型的计算方法}
-%	\begin{figure}
-%		\includegraphics[scale=0.45]{figures/model-basedFrame}
-%		\caption{基于模型的有界CTL遗忘方法}
-%	\end{figure}
+	%	\begin{figure}
+	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
+	%		\caption{基于模型的有界CTL遗忘方法}
+	%	\end{figure}
+	\begin{figure}
+		\centering
+		%	\tiny
+		\begin{tikzpicture}[scale=0.8]
+			\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+			
+			
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t2) at(-5.5,2.5) {{\scriptsize 初始结构的状态空间${\cal S}=\{b_1,\dots, b_m\}$}};
+			%	\draw[brace] (-3,3.5) -- (-3,2.5);
+			%\node at(-3,3.5) {$}$};
+			%	\node at(-2,3) {$\begin{array}{ll}\\ \end{array}$};
+			
+			\draw[->] (-2.7,3) -- (-3.6,3.5);
+			\draw[->] (-2.7,3) -- (-3.6,2.5);
+			
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s2) at(0,3) {{\scriptsize 有界互模拟}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s3) at(2,3) {{\scriptsize 特征数$ch(\Hm,V)$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s4) at(0,2) {{\scriptsize 计算树互模拟}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s5) at(0,0) {{\scriptsize 计算树特征公式}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=green,fill=green!20] (s6) at(3,2) {{\scriptsize 特征公式}};
+			
+			
+			
+			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
+			
+			
+			%			\\ 
+			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
+			
+			%	\draw[->] (alg1) -- (alg2);
+			
+			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			
+			
+			
+			
+			
+			
+			\draw[->] (s1) -- (s2);
+			\draw[->] (s2) -- (s3);
+			\draw[->] (s2) -- (s4);
+			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[->] (s4) -- (2,2)--(s3);
+			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->] (s3) -- (3,3) -- (s6);
+			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+			%			\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+			%			\path (s1) edge[->,bend right=45] (s0);
+			%			\path (s0) edge[->,bend left=-45] (s1);
+			%			\path (s1) edge[->,bend right=-45] (s2);
+			%			\path (s2) edge[->,bend right=-45] (s0); 
+			%			\node at(0,-0.5) {{\tiny $I/O$请求}};
+			%			\node at(-1,0.5) {{\tiny $I/O$完成}};
+			%			\node at(0.7,0.7) {{\tiny 时间片完}};
+			%			\node at(-0.2,0.7) {{\tiny 进程调度}};
+			%	\node at(0,-1.5) {${\cal K}_2$}; 
+			%框框
+			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
+			\draw[dashed, color=blue!20] (1,6) -- (5.5,5);
+			\draw[dashed, color=blue!20] (-7.5,5) rectangle (5.5,-1);
+		\end{tikzpicture}
+		\caption{基于模型的有界CTL遗忘方法}
+	\end{figure}
+\end{frame}
+
+%\subsection{研究内容（三）（1）基于模型的计算方法}
+\begin{frame}
+	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	%	\begin{figure}
+	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
+	%		\caption{基于模型的有界CTL遗忘方法}
+	%	\end{figure}
+	\begin{figure}
+		\centering
+		%	\tiny
+		\begin{tikzpicture}[scale=0.8]
+			\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+			 
+			
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t2) at(-5.5,2.5) {{\scriptsize 初始结构的状态空间${\cal S}=\{b_1,\dots, b_m\}$}};
+			%	\draw[brace] (-3,3.5) -- (-3,2.5);
+			%\node at(-3,3.5) {$}$};
+			%	\node at(-2,3) {$\begin{array}{ll}\\ \end{array}$};
+			
+			\draw[->] (-2.7,3) -- (-3.6,3.5);
+			\draw[->] (-2.7,3) -- (-3.6,2.5);
+			
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s2) at(0,3) {{\scriptsize 有界互模拟}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s3) at(2,3) {{\scriptsize 特征数$ch(\Hm,V)$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s4) at(0,2) {{\scriptsize 计算树互模拟}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s5) at(0,0) {{\scriptsize 计算树特征公式}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=green,fill=green!20] (s6) at(3,2) {{\scriptsize 特征公式}};
+			
+			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
+			
+			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
+			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
+			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
+				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+			%			\\ 
+			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
+			
+			%	\draw[->] (alg1) -- (alg2);
+			
+			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			
+			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
+			
+			 
+			
+		 
+			
+			\draw[->] (s1) -- (s2);
+			\draw[->] (s2) -- (s3);
+			\draw[->] (s2) -- (s4);
+			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[->] (s4) -- (2,2)--(s3);
+			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->] (s3) -- (3,3) -- (s6);
+			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+			%			\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+			%			\path (s1) edge[->,bend right=45] (s0);
+			%			\path (s0) edge[->,bend left=-45] (s1);
+			%			\path (s1) edge[->,bend right=-45] (s2);
+			%			\path (s2) edge[->,bend right=-45] (s0); 
+			%			\node at(0,-0.5) {{\tiny $I/O$请求}};
+			%			\node at(-1,0.5) {{\tiny $I/O$完成}};
+			%			\node at(0.7,0.7) {{\tiny 时间片完}};
+			%			\node at(-0.2,0.7) {{\tiny 进程调度}};
+			%	\node at(0,-1.5) {${\cal K}_2$}; 
+			%框框
+			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
+			\draw[dashed, color=blue!20] (1,6) -- (5.5,5);
+			\draw[dashed, color=blue!20] (-7.5,5) rectangle (5.5,-1);
+		\end{tikzpicture}
+		\caption{基于模型的有界CTL遗忘方法}
+	\end{figure}
+\end{frame}
+
+
+
+
+
+
+%\subsection{研究内容（三）（1）基于模型的计算方法}
+\begin{frame}
+	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	%	\begin{figure}
+	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
+	%		\caption{基于模型的有界CTL遗忘方法}
+	%	\end{figure}
 	\begin{figure}
 		\centering
 		%	\tiny
@@ -1471,22 +1828,22 @@
 					\right.$}};
 			\draw[dashed, color=orange] (-3.8,4.5) rectangle (3.5,3.5);
 			
-				
+			
 			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t2) at(-5.5,2.5) {{\scriptsize 初始结构的状态空间${\cal S}=\{b_1,\dots, b_m\}$}};
-		%	\draw[brace] (-3,3.5) -- (-3,2.5);
+			%	\draw[brace] (-3,3.5) -- (-3,2.5);
 			%\node at(-3,3.5) {$}$};
-		%	\node at(-2,3) {$\begin{array}{ll}\\ \end{array}$};
-		
+			%	\node at(-2,3) {$\begin{array}{ll}\\ \end{array}$};
+			
 			\draw[->] (-2.7,3) -- (-3.6,3.5);
 			\draw[->] (-2.7,3) -- (-3.6,2.5);
-		 
+			
 			
 			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s2) at(0,3) {{\scriptsize 有界互模拟}};
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s3) at(2,3) {{\scriptsize 特征数$ch(\Hm,V)$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!60] (s3) at(2,3) {{\scriptsize 特征数$ch(\Hm,V)$}};
 			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s4) at(0,2) {{\scriptsize 计算树互模拟}};
 			
 			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s5) at(0,0) {{\scriptsize 计算树特征公式}};
@@ -1495,40 +1852,23 @@
 			
 			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
 			
-%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
+			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
 			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
 			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
 			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
-			{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
-%			\\ 
-%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
+				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+			%			\\ 
+			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
 			
-		%	\draw[->] (alg1) -- (alg2);
+			%	\draw[->] (alg1) -- (alg2);
 			
-%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 			
 			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
 			
-			\node[color=blue!90] at(1,0.5) {{\scriptsize$T(s') = {\cal F}_V(\Tr_c(s'))$}};
-			\node[color=blue!90] at(2,1) {{\scriptsize$T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
-				T(s) \rto
-				\bigwedge_{(s,s')\in R}
-				\EXIST \NEXT T(s')
-				\wedge
-				\ALL \NEXT \bigg(\bigvee_{(s,s')\in R}T(s')\bigg)
-				\right).
-				$}}; %特征公式
 			 
-			\draw[dashed, color=green!40] (-1.3,1.5) rectangle (5.2,0.3);
 			
-			\node[color=orange!90] at(-3.5,-0.2) {{\scriptsize $
-					{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
-					\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
-			}};
-			\node[color=orange!90] at(-1, -0.6) {{\scriptsize${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
-				\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
-				\wedge  
-				\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}}; %计算树特征公式
+		 
 			
 			\draw[->] (s1) -- (s2);
 			\draw[->] (s2) -- (s3);
@@ -1537,17 +1877,17 @@
 			\draw[->] (s4) -- (2,2)--(s3);
 			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
 			\draw[->] (s3) -- (3,3) -- (s6);
-%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
-%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
-%			\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
-%			\path (s1) edge[->,bend right=45] (s0);
-%			\path (s0) edge[->,bend left=-45] (s1);
-%			\path (s1) edge[->,bend right=-45] (s2);
-%			\path (s2) edge[->,bend right=-45] (s0); 
-%			\node at(0,-0.5) {{\tiny $I/O$请求}};
-%			\node at(-1,0.5) {{\tiny $I/O$完成}};
-%			\node at(0.7,0.7) {{\tiny 时间片完}};
-%			\node at(-0.2,0.7) {{\tiny 进程调度}};
+			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+			%			\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+			%			\path (s1) edge[->,bend right=45] (s0);
+			%			\path (s0) edge[->,bend left=-45] (s1);
+			%			\path (s1) edge[->,bend right=-45] (s2);
+			%			\path (s2) edge[->,bend right=-45] (s0); 
+			%			\node at(0,-0.5) {{\tiny $I/O$请求}};
+			%			\node at(-1,0.5) {{\tiny $I/O$完成}};
+			%			\node at(0.7,0.7) {{\tiny 时间片完}};
+			%			\node at(-0.2,0.7) {{\tiny 进程调度}};
 			%	\node at(0,-1.5) {${\cal K}_2$}; 
 			%框框
 			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
@@ -1557,6 +1897,332 @@
 		\caption{基于模型的有界CTL遗忘方法}
 	\end{figure}
 \end{frame}
+
+%\subsection{研究内容（三）（1）基于模型的计算方法}
+\begin{frame}
+	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	%	\begin{figure}
+	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
+	%		\caption{基于模型的有界CTL遗忘方法}
+	%	\end{figure}
+	\begin{figure}
+		\centering
+		%	\tiny
+		\begin{tikzpicture}[scale=0.8]
+			\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+			\node at(0,4) {{\scriptsize $
+					ch({\cal M},V)=
+					\left\{
+					\begin{array}{ll}
+						\max\{k\mid s,s'\in S \text{ 且 }\dis_V({\cal M},s,s',k)\}, \qquad \hbox{${\cal M}$是 $V$-可区分的；} \\
+						\min\{k\mid {\cal B}_{k}={\cal B}_{k+1}, k\ge 0\}, \ \ \ \quad  \qquad \qquad \qquad \hbox{否则。}
+					\end{array}
+					\right.$}};
+			\draw[dashed, color=orange] (-3.8,4.5) rectangle (3.5,3.5);
+			
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t2) at(-5.5,2.5) {{\scriptsize 初始结构的状态空间${\cal S}=\{b_1,\dots, b_m\}$}};
+			%	\draw[brace] (-3,3.5) -- (-3,2.5);
+			%\node at(-3,3.5) {$}$};
+			%	\node at(-2,3) {$\begin{array}{ll}\\ \end{array}$};
+			
+			\draw[->] (-2.7,3) -- (-3.6,3.5);
+			\draw[->] (-2.7,3) -- (-3.6,2.5);
+			
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s2) at(0,3) {{\scriptsize 有界互模拟}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s3) at(2,3) {{\scriptsize 特征数$ch(\Hm,V)$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s4) at(0,2) {{\scriptsize 计算树互模拟}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!60] (s5) at(0,0) {{\scriptsize 计算树特征公式}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=green,fill=green!20] (s6) at(3,2) {{\scriptsize 特征公式}};
+			
+			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
+			
+			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
+			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
+			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
+				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+			%			\\ 
+			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
+			
+			%	\draw[->] (alg1) -- (alg2);
+			
+			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			
+			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
+			
+			 
+			
+			\node[color=orange!90] at(-3.5,-0.2) {{\scriptsize $
+					{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
+					\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
+			}};
+			\node[color=orange!90] at(-1, -0.6) {{\scriptsize${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
+					\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
+					\wedge  
+					\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}}; %计算树特征公式
+			
+			\draw[->] (s1) -- (s2);
+			\draw[->] (s2) -- (s3);
+			\draw[->] (s2) -- (s4);
+			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[->] (s4) -- (2,2)--(s3);
+			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->] (s3) -- (3,3) -- (s6);
+			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+			%			\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+			%			\path (s1) edge[->,bend right=45] (s0);
+			%			\path (s0) edge[->,bend left=-45] (s1);
+			%			\path (s1) edge[->,bend right=-45] (s2);
+			%			\path (s2) edge[->,bend right=-45] (s0); 
+			%			\node at(0,-0.5) {{\tiny $I/O$请求}};
+			%			\node at(-1,0.5) {{\tiny $I/O$完成}};
+			%			\node at(0.7,0.7) {{\tiny 时间片完}};
+			%			\node at(-0.2,0.7) {{\tiny 进程调度}};
+			%	\node at(0,-1.5) {${\cal K}_2$}; 
+			%框框
+			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
+			\draw[dashed, color=blue!20] (1,6) -- (5.5,5);
+			\draw[dashed, color=blue!20] (-7.5,5) rectangle (5.5,-1);
+		\end{tikzpicture}
+		\caption{基于模型的有界CTL遗忘方法}
+	\end{figure}
+\end{frame}
+
+%\subsection{研究内容（三）（1）基于模型的计算方法}
+\begin{frame}
+	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	%	\begin{figure}
+	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
+	%		\caption{基于模型的有界CTL遗忘方法}
+	%	\end{figure}
+	\begin{figure}
+		\centering
+		%	\tiny
+		\begin{tikzpicture}[scale=0.8]
+			\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+			\node at(0,4) {{\scriptsize $
+					ch({\cal M},V)=
+					\left\{
+					\begin{array}{ll}
+						\max\{k\mid s,s'\in S \text{ 且 }\dis_V({\cal M},s,s',k)\}, \qquad \hbox{${\cal M}$是 $V$-可区分的；} \\
+						\min\{k\mid {\cal B}_{k}={\cal B}_{k+1}, k\ge 0\}, \ \ \ \quad  \qquad \qquad \qquad \hbox{否则。}
+					\end{array}
+					\right.$}};
+			\draw[dashed, color=orange] (-3.8,4.5) rectangle (3.5,3.5);
+			
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
+			
+			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t2) at(-5.5,2.5) {{\scriptsize 初始结构的状态空间${\cal S}=\{b_1,\dots, b_m\}$}};
+			%	\draw[brace] (-3,3.5) -- (-3,2.5);
+			%\node at(-3,3.5) {$}$};
+			%	\node at(-2,3) {$\begin{array}{ll}\\ \end{array}$};
+			
+			\draw[->] (-2.7,3) -- (-3.6,3.5);
+			\draw[->] (-2.7,3) -- (-3.6,2.5);
+			
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s2) at(0,3) {{\scriptsize 有界互模拟}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s3) at(2,3) {{\scriptsize 特征数$ch(\Hm,V)$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s4) at(0,2) {{\scriptsize 计算树互模拟}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s5) at(0,0) {{\scriptsize 计算树特征公式}};
+			
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=green,fill=green!60] (s6) at(3,2) {{\scriptsize 特征公式}};
+			
+			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
+			
+			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
+			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
+			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
+				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+			%			\\ 
+			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
+			
+			%	\draw[->] (alg1) -- (alg2);
+			
+			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			
+			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
+			
+			\node[color=blue!90] at(1,0.5) {{\scriptsize$T(s') = {\cal F}_V(\Tr_c(s'))$}};
+			\node[color=blue!90] at(2,1) {{\scriptsize$T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
+					T(s) \rto
+					\bigwedge_{(s,s')\in R}
+					\EXIST \NEXT T(s')
+					\wedge
+					\ALL \NEXT \bigg(\bigvee_{(s,s')\in R}T(s')\bigg)
+					\right).
+					$}}; %特征公式
+			
+			\draw[dashed, color=green!40] (-1.3,1.5) rectangle (5.2,0.3);
+			
+			\node[color=orange!90] at(-3.5,-0.2) {{\scriptsize $
+					{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
+					\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
+			}};
+			\node[color=orange!90] at(-1, -0.6) {{\scriptsize${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
+					\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
+					\wedge  
+					\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}}; %计算树特征公式
+			
+			\draw[->] (s1) -- (s2);
+			\draw[->] (s2) -- (s3);
+			\draw[->] (s2) -- (s4);
+			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[->] (s4) -- (2,2)--(s3);
+			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->] (s3) -- (3,3) -- (s6);
+			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+			%			\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+			%			\path (s1) edge[->,bend right=45] (s0);
+			%			\path (s0) edge[->,bend left=-45] (s1);
+			%			\path (s1) edge[->,bend right=-45] (s2);
+			%			\path (s2) edge[->,bend right=-45] (s0); 
+			%			\node at(0,-0.5) {{\tiny $I/O$请求}};
+			%			\node at(-1,0.5) {{\tiny $I/O$完成}};
+			%			\node at(0.7,0.7) {{\tiny 时间片完}};
+			%			\node at(-0.2,0.7) {{\tiny 进程调度}};
+			%	\node at(0,-1.5) {${\cal K}_2$}; 
+			%框框
+			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
+			\draw[dashed, color=blue!20] (1,6) -- (5.5,5);
+			\draw[dashed, color=blue!20] (-7.5,5) rectangle (5.5,-1);
+		\end{tikzpicture}
+		\caption{基于模型的有界CTL遗忘方法}
+	\end{figure}
+\end{frame}
+
+%%%原图%%%%%%%%
+%\subsection{研究内容（三）（1）基于模型的计算方法}
+%\begin{frame}
+%	\frametitle{研究内容（三）（1）基于模型的计算方法}
+%	%	\begin{figure}
+%	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
+%	%		\caption{基于模型的有界CTL遗忘方法}
+%	%	\end{figure}
+%	\begin{figure}
+%		\centering
+%		%	\tiny
+%		\begin{tikzpicture}[scale=0.8]
+%			\tikzstyle{every node}=[font=\small,scale=0.8]
+%			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
+%			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+%			\node at(0,4) {{\scriptsize $
+%					ch({\cal M},V)=
+%					\left\{
+%					\begin{array}{ll}
+%						\max\{k\mid s,s'\in S \text{ 且 }\dis_V({\cal M},s,s',k)\}, \qquad \hbox{${\cal M}$是 $V$-可区分的；} \\
+%						\min\{k\mid {\cal B}_{k}={\cal B}_{k+1}, k\ge 0\}, \ \ \ \quad  \qquad \qquad \qquad \hbox{否则。}
+%					\end{array}
+%					\right.$}};
+%			\draw[dashed, color=orange] (-3.8,4.5) rectangle (3.5,3.5);
+%			
+%			
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+%			
+%			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
+%			
+%			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t2) at(-5.5,2.5) {{\scriptsize 初始结构的状态空间${\cal S}=\{b_1,\dots, b_m\}$}};
+%			%	\draw[brace] (-3,3.5) -- (-3,2.5);
+%			%\node at(-3,3.5) {$}$};
+%			%	\node at(-2,3) {$\begin{array}{ll}\\ \end{array}$};
+%			
+%			\draw[->] (-2.7,3) -- (-3.6,3.5);
+%			\draw[->] (-2.7,3) -- (-3.6,2.5);
+%			
+%			
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s2) at(0,3) {{\scriptsize 有界互模拟}};
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s3) at(2,3) {{\scriptsize 特征数$ch(\Hm,V)$}};
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s4) at(0,2) {{\scriptsize 计算树互模拟}};
+%			
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!20] (s5) at(0,0) {{\scriptsize 计算树特征公式}};
+%			
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=green,fill=green!20] (s6) at(3,2) {{\scriptsize 特征公式}};
+%			
+%			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
+%			
+%			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
+%			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
+%			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
+%				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+%			%			\\ 
+%			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
+%			
+%			%	\draw[->] (alg1) -- (alg2);
+%			
+%			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+%			
+%			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
+%			
+%			\node[color=blue!90] at(1,0.5) {{\scriptsize$T(s') = {\cal F}_V(\Tr_c(s'))$}};
+%			\node[color=blue!90] at(2,1) {{\scriptsize$T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
+%					T(s) \rto
+%					\bigwedge_{(s,s')\in R}
+%					\EXIST \NEXT T(s')
+%					\wedge
+%					\ALL \NEXT \bigg(\bigvee_{(s,s')\in R}T(s')\bigg)
+%					\right).
+%					$}}; %特征公式
+%			
+%			\draw[dashed, color=green!40] (-1.3,1.5) rectangle (5.2,0.3);
+%			
+%			\node[color=orange!90] at(-3.5,-0.2) {{\scriptsize $
+%					{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
+%					\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
+%			}};
+%			\node[color=orange!90] at(-1, -0.6) {{\scriptsize${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
+%					\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
+%					\wedge  
+%					\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}}; %计算树特征公式
+%			
+%			\draw[->] (s1) -- (s2);
+%			\draw[->] (s2) -- (s3);
+%			\draw[->] (s2) -- (s4);
+%			\draw[<->,dashed,color=gray] (s4) -- (s5);
+%			\draw[->] (s4) -- (2,2)--(s3);
+%			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+%			\draw[->] (s3) -- (3,3) -- (s6);
+%			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+%			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+%			%			\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+%			%			\path (s1) edge[->,bend right=45] (s0);
+%			%			\path (s0) edge[->,bend left=-45] (s1);
+%			%			\path (s1) edge[->,bend right=-45] (s2);
+%			%			\path (s2) edge[->,bend right=-45] (s0); 
+%			%			\node at(0,-0.5) {{\tiny $I/O$请求}};
+%			%			\node at(-1,0.5) {{\tiny $I/O$完成}};
+%			%			\node at(0.7,0.7) {{\tiny 时间片完}};
+%			%			\node at(-0.2,0.7) {{\tiny 进程调度}};
+%			%	\node at(0,-1.5) {${\cal K}_2$}; 
+%			%框框
+%			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
+%			\draw[dashed, color=blue!20] (1,6) -- (5.5,5);
+%			\draw[dashed, color=blue!20] (-7.5,5) rectangle (5.5,-1);
+%		\end{tikzpicture}
+%		\caption{基于模型的有界CTL遗忘方法}
+%	\end{figure}
+%\end{frame}
+
+
 
 
 %

@@ -16,48 +16,46 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {2}{研究内容（一）：CTL和$\mu $-演算的遗忘理论}{11}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {3}{研究内容（二）遗忘理论在反应式系统中的应用}{14}{0}{3}
+\beamer@sectionintoc {3}{研究内容（二）遗忘理论在反应式系统中的应用}{18}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {3}{1}{研究内容（二）遗忘理论在反应式系统中的应用}{15}{0}{3}
+\beamer@sectionintoc {4}{研究内容（三）CTL遗忘计算方法}{23}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{研究内容（三）CTL遗忘计算方法}{17}{0}{4}
+\beamer@subsectionintoc {4}{1}{研究内容（三）简介}{24}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {4}{1}{研究内容（三）简介}{18}{0}{4}
+\beamer@subsectionintoc {4}{2}{研究内容（三）（1）基于模型的计算方法}{25}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {4}{2}{研究内容（三）（1）基于模型的计算方法}{19}{0}{4}
+\beamer@subsectionintoc {4}{3}{研究内容（三）（2）基于归结的算法CTL-forget}{31}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {4}{3}{研究内容（三）（2）基于归结的算法CTL-forget}{21}{0}{4}
+\beamer@subsectionintoc {4}{4}{研究内容（三）（3）算法CTL-forget实现及实验}{32}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {4}{4}{研究内容（三）（3）算法CTL-forget实现及实验}{22}{0}{4}
+\beamer@sectionintoc {5}{总结与展望}{36}{0}{5}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{总结与展望}{26}{0}{5}
+\beamer@sectionintoc {7}{背景知识}{53}{1}{6}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {7}{背景知识}{43}{1}{6}
+\beamer@subsectionintoc {7}{1}{Kripke结构}{54}{1}{6}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {7}{1}{Kripke结构}{44}{1}{6}
+\beamer@subsectionintoc {7}{2}{CTL的语法和语义}{55}{1}{6}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {7}{2}{CTL的语法和语义}{45}{1}{6}
+\beamer@subsectionintoc {7}{3}{$\mu $-演算}{60}{1}{6}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {7}{3}{$\mu $-演算}{50}{1}{6}
+\beamer@sectionintoc {8}{研究内容（一）：CTL和$\mu $-演算的遗忘理论}{61}{1}{7}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {8}{研究内容（一）：CTL和$\mu $-演算的遗忘理论}{51}{1}{7}
+\beamer@subsectionintoc {8}{1}{CTL遗忘理论}{62}{1}{7}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {8}{1}{CTL遗忘理论}{52}{1}{7}
+\beamer@subsectionintoc {8}{2}{$\mu $-演算遗忘理论}{75}{1}{7}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {8}{2}{$\mu $-演算遗忘理论}{65}{1}{7}
+\beamer@sectionintoc {9}{研究内容（二）遗忘理论在反应式系统中的应用}{79}{1}{8}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {9}{研究内容（二）遗忘理论在反应式系统中的应用}{69}{1}{8}
+\beamer@subsectionintoc {9}{1}{研究内容（二）简介}{80}{1}{8}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {9}{1}{研究内容（二）简介}{70}{1}{8}
+\beamer@subsectionintoc {9}{2}{研究内容（二）最弱充分条件}{81}{1}{8}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {9}{2}{研究内容（二）最弱充分条件}{71}{1}{8}
+\beamer@subsectionintoc {9}{3}{研究内容（二）知识更新}{82}{1}{8}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {9}{3}{研究内容（二）知识更新}{72}{1}{8}
+\beamer@sectionintoc {10}{CTL遗忘计算方法}{85}{1}{9}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {10}{CTL遗忘计算方法}{75}{1}{9}
+\beamer@subsectionintoc {10}{1}{简介}{86}{1}{9}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {10}{1}{简介}{76}{1}{9}
+\beamer@subsectionintoc {10}{2}{基于模型的有界CTL遗忘计算}{88}{1}{9}
 \defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {10}{2}{基于模型的有界CTL遗忘计算}{78}{1}{9}
-\defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {10}{3}{基于归结的遗忘计算方法}{90}{1}{9}
+\beamer@subsectionintoc {10}{3}{基于归结的遗忘计算方法}{100}{1}{9}

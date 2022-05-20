@@ -17,7 +17,7 @@
 	%\footnote{对于给定的逻辑语言${\cal L}$和该语言上的操作${\cal O}$，若$\cal O$作用到$\cal L$中的元素后得到的结果仍然在$\cal L$中，则称$\cal O$在$\cal L$下是封闭的。}
 	。
 	此时，探索$\CTL$下遗忘封闭的情形对深入应用遗忘有重要意义。
-	为此，本章首先提出有限初始结构的特征公式；其次，表明$\CTL$公式的遗忘结果在此情形下可以表示成其模型的特征公式的析取；最后，提出一种基于模型的方法计算遗忘。%，且探索了如何使用遗忘计算最弱充分条件和知识更新。
+	为此，本节证明$\CTL$公式的遗忘结果在此情形下可以表示成其模型的特征公式的析取，并提出一种基于模型的方法计算遗忘。%，且探索了如何使用遗忘计算最弱充分条件和知识更新。
 
 
 %系统模型通常是有限的
@@ -35,7 +35,7 @@
 由此可见，在这种情形下只有有限个初始结构会被考虑。
 下文表明在这一约束条件下$\CTL$中的遗忘是封闭的。
 
-本节其余部分组织如下：首先，在第\ref{chapter06:sec:des}节定义有界$V$-互模拟，然后定义初始结构的特征公式；其次，在第\ref{chapter06:sec:close}节证明约束$\CTL$下的遗忘是封闭的，并给出计算方法；最后，在第\ref{chapter06:sec:algm}节给出基于模型的计算遗忘的算法，并分析算法的复杂性。
+%本节其余部分组织如下：首先，在第\ref{chapter06:sec:des}节定义有界$V$-互模拟，然后定义初始结构的特征公式；其次，在第\ref{chapter06:sec:close}节证明约束$\CTL$下的遗忘是封闭的，并给出计算方法；最后，在第\ref{chapter06:sec:algm}节给出基于模型的计算遗忘的算法，并分析算法的复杂性。
 
 
 %\subsection{描述初始结构}\label{chapter06:sec:des}%\label{sec:chapter06_chaIntC}
@@ -561,7 +561,7 @@
 %	\end{align*}
 %\end{example}
 
-\subsection{遗忘封闭性及复杂性}\label{chapter06:sec:close}
+%\subsection{遗忘封闭性及复杂性}\label{chapter06:sec:close}
 当$\CTL$公式的长度（符号的个数）为$n$时，由小模型理论可知，定义在状态个数为$k=n8^n$的状态空间${\cal S}=\{s_1,s_2,\dots, s_k\}$上的初始Kripke结构能保证公式的可满足性~\cite{DBLP:journals/jcss/EmersonH85}。
 对于其它拥有同样大小状态空间上的任意初始结构，都能在状态空间${\cal S}$上找到一个初始结构与之互模拟，且由定理\ref{CF}可知它们有相同的特征公式。
 因此，只有有限个初始结构作为该公式的候选模型。从而下面结论成立。
@@ -585,6 +585,103 @@
 	\bigvee_{{\cal K}\in  \{{\cal K}'\mid \exists {\cal K}''\in\Mod(\phi),\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
 \end{equation*}
 
+这里提出基于模型的遗忘算法，该算法与第\ref{cha4:sec:alg}节中基于语法的算法不同。本小节的算法通过计算所有可能的模型来计算遗忘，且其正确性可由引理\ref{lem:models:formula}和定理\ref{CF}保证。
+
+%\begin{algorithm}[htbp]
+%	\small
+%	\setstretch{1.2}
+%	\caption{基于模型的$\CTL$遗忘过程}%~\cite{DBLP:journals/ai/Lin01}}
+%	\label{alg:compute:forgetting:by:VB}
+%	\begin{algorithmic}[1]
+%		\REQUIRE ~~\\
+%		\begin{tabular}[t]{p{8mm}l}
+%			$\varphi, V$：& $\CTL$公式$\varphi$和原子命题集$V$
+%		\end{tabular}
+%		\ENSURE ~~\\
+%		\begin{tabular}[t]{p{8mm}l}
+%			$\CTLforget(\varphi, V)$： & \quad  从$\varphi$中遗忘原子命题集$V$的结果
+%			%$SD$&:鞍点策略的支付量
+%		\end{tabular}
+%		\STATE $T_1=\{C\mid C\in \Gamma\hbox{是$V$上的一个子句}\}$，$T_2=\Gamma - T_1$
+%		\STATE 将出现在$T_2$中的$q$用$\top$代替，并将得到的结果和$T_1$分别转换成为子句集合的极小集$T_3$和$T_0$.
+%		\STATE 令$V'=\Var(T_3) - V$; 
+%		%\STATE 若$V' =\emptyset$，则跳转到post-processing，否则令$V'=$
+%		\IF{$V' =\emptyset$}
+%		\STATE 跳转到 post-processing;
+%		\ENDIF
+%		\STATE 从$V'$中随机选择一个原子$p$，且令$V'=V' -\{p\}$;
+%		\STATE 将$T_3[p/\top] \cup T_3[p/\bot]$转换为极小集得到结果$T_3$，跳转到4；
+%		\STATE post-processing：根据下面步骤化简$T_3$：
+%		\STATE \qquad 移除$T_3$中被$T_0$包蕴的子句；
+%		\STATE \qquad 对$T_3$中的每个子句$\alpha$，将$(T_3-\{\alpha\}) \cup T_0$转换为极小子句集$T_{\alpha}$；
+%		\STATE \qquad 如果$\alpha$被$T_{\alpha}$中的某个子句包蕴，则将$\alpha$从$T_3$中删除；
+%		\RETURN $T_3$中子句的合取
+%	\end{algorithmic}
+%\end{algorithm}
+
+%\IncMargin{1em}
+\begin{algorithm}[tb]
+	\caption{\small 基于模型的$\CTL$遗忘过程}%A Model-based \CTL\ Forgetting Procedure}
+	\label{alg:compute:forgetting:by:VB}
+	%\LinesNumbered
+	\KwIn{$\CTL$公式$\varphi$和原子命题集$V$}%A \CTL formula $\varphi$ and a set $V$ of atoms}
+	\KwOut{$\CTLforget(\varphi, V)$}% ????
+	$\psi \lto \bot$\;
+	\ForEach{$\cal A$ 和$\cal S$上的初始结构$\cal K$}{
+		%\ForEach{initial \MPK-structure $\cal K$ (over $\cal A$ and $\cal S$)}{
+		\lIf{${\cal K}\not\models\varphi$}{{\bf continue}} \\
+		\ForEach{满足${\cal K}\lrto_{ V}{\cal K}'$的初始结构${\cal K}'$}{
+			$\psi \lto \psi \lor {\cal F}_{\overline V}({\cal K}')$\;
+		}
+	}
+	\Return $\psi$\;
+\end{algorithm}
+
+
+
+
+这里给出如何计算从规范中遗忘一些原子命题。 
+\begin{example}\label{ex:6}
+	对于图\ref{BVM}中的 ${\cal K}_1$，假定一个已知的规范（性质）为$\alpha = \EXIST\FUTURE(se \wedge sp)$。显然 ${\cal K}_1$满足 $\alpha$。若想移除 $sp$，即从 $\alpha$中遗忘 $sp$，则 $\CTLforget(\alpha,\{ sp\}) \equiv \EXIST\FUTURE se$。此时，该汽车制造公司可以用新的规范$\EXIST\FUTURE se$（这保证驾车最终会被生产）引导未来汽车的生产。
+\end{example}
+
+
+如下所述，通过计算所有可能的模型是非常低效的。但是，这为从理论的角度探索遗忘有重要作用。
+
+
+\begin{proposition}\label{pro:time:alg1}
+	令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法\ref{alg:compute:forgetting:by:VB}计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+\end{proposition}
+\begin{proof}
+	假定每个状态或原子命题占据$\log m$的空间且$n\leq m$，则一个状态对$(s,s')$占据$2\times \log m$位（bit）。对任意$B \subseteq {\cal S}$和$s_0\in B$，构造如下初始结构$(\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$，则$R$中至多有$\frac{|B|^2}{2}$个状态对且$L$中至多$|B|\times n$个$(s,A)$对（$A\subseteq \Ha$）。因此，$(\Hm,s_0)$至多占据$(|B|+|B|^2+|B|\times n)\times \log m$位。此外，对于状态集$B$，初始状态有$|B|$种选择，有$|B|^{|B|}$种关系$R$，$(2^n)^{|B|}$种标签函数$L$。
+	
+	在最坏的情形下（即$|B|=m$），可构成$m \times  (m^m \times  2^{nm} \times  m)$个初始结构。因此，最多有$m^{m+2} \times  2^{nm}$个初始结构，且最多花费$(m^{m+2} \times  2^{nm} \times  (m + m^2 + nm))\times  \log m$位。
+	
+	令 $k = n-x$，对任意有$i\geq 1$个状态的初始结构${\cal K} = (\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$。
+	在最坏的情形下（即$ch(\Hm,V) = i$时），需要$N(i) = P_i(s_0) + i \times  (P_i(s) + i \times P_i(s'))$位来存储${\cal K}$在$\overline{V}$上的特征公式。
+	其中$s',s\in B$，$P_i(y)$是存储${\cal F}_{\overline{V}}(\Tr_i(y))$（$y\in B$）所用的空间（这里假定$\EXIST\NEXT$和$\ALL\NEXT$使用了相同的存储单位）。
+	
+	${\cal F}_{\overline{V}}(\Tr_i(y))$（$0\leq n \leq i$）被递归地定义如下：
+	\begin{align*}
+		&(1) n=0,  \qquad P_0(y) = k\\
+		&(2) n=1, \qquad  P_1(y) = k + i\times k = k + i\times P_0(y)\\
+		&(3) n=2, \qquad P_2(y) = k + i\times (k + i\times k) = k+i\times P_1(y)\\
+		& \dots \qquad \qquad \dots\\
+		&(i+1) n = i, \quad P_i(y) = k + i \times  P_{i-1}(y).
+	\end{align*}
+	
+	因此，有
+	\begin{align*}
+		P_i(y) & = k + i\times k + i^2 \times  k + \dots + i^i \times  k = \frac{i^i -1}{i-1} k,\\
+		N(i) & = P_i(s_0) + i\times  (P_i(s) + i \times  P_i(s'))\\
+		& = (i^2 + i +1) P_i(y) \\
+		& = (i^2 + i+1)\frac{i^i -1}{i-1} k.
+	\end{align*}
+	
+	在最坏的情形下（即具有$m$个状态的初始结构）有$m^{m+2} \times  2^{nm}$个初始结构，需要$(m^{m+2} \times  2^{nm} \times  N(m)) \times  \log m$位来存储遗忘的结果。
+	
+	因此，空间复杂性为$O((n-x)m^{2(m+2)}2^{nm}\times  \log m)$。
+\end{proof}
 
 
 下面分析遗忘在$\CTL$段$\CTL_{\ALL\FUTURE}$下推理问题的复杂性结果，其中$\CTL_{\ALL\FUTURE}$表示$\CTL$公式只包含时序算子$\ALL \FUTURE$的子类。
@@ -650,104 +747,8 @@
 \end{corollary}
 
 
-\subsection{基于模型的遗忘算法}\label{chapter06:sec:algm}
-这里提出基于模型的遗忘算法，该算法与第\ref{cha4:sec:alg}节中基于语法的算法不同。本小节的算法通过计算所有可能的模型来计算遗忘，且其正确性可由引理\ref{lem:models:formula}和定理\ref{CF}保证。
+%\subsection{基于模型的遗忘算法}\label{chapter06:sec:algm}
 
-%\begin{algorithm}[htbp]
-%	\small
-%	\setstretch{1.2}
-%	\caption{基于模型的$\CTL$遗忘过程}%~\cite{DBLP:journals/ai/Lin01}}
-%	\label{alg:compute:forgetting:by:VB}
-%	\begin{algorithmic}[1]
-%		\REQUIRE ~~\\
-%		\begin{tabular}[t]{p{8mm}l}
-%			$\varphi, V$：& $\CTL$公式$\varphi$和原子命题集$V$
-%		\end{tabular}
-%		\ENSURE ~~\\
-%		\begin{tabular}[t]{p{8mm}l}
-%			$\CTLforget(\varphi, V)$： & \quad  从$\varphi$中遗忘原子命题集$V$的结果
-%			%$SD$&:鞍点策略的支付量
-%		\end{tabular}
-%		\STATE $T_1=\{C\mid C\in \Gamma\hbox{是$V$上的一个子句}\}$，$T_2=\Gamma - T_1$
-%		\STATE 将出现在$T_2$中的$q$用$\top$代替，并将得到的结果和$T_1$分别转换成为子句集合的极小集$T_3$和$T_0$.
-%		\STATE 令$V'=\Var(T_3) - V$; 
-%		%\STATE 若$V' =\emptyset$，则跳转到post-processing，否则令$V'=$
-%		\IF{$V' =\emptyset$}
-%		\STATE 跳转到 post-processing;
-%		\ENDIF
-%		\STATE 从$V'$中随机选择一个原子$p$，且令$V'=V' -\{p\}$;
-%		\STATE 将$T_3[p/\top] \cup T_3[p/\bot]$转换为极小集得到结果$T_3$，跳转到4；
-%		\STATE post-processing：根据下面步骤化简$T_3$：
-%		\STATE \qquad 移除$T_3$中被$T_0$包蕴的子句；
-%		\STATE \qquad 对$T_3$中的每个子句$\alpha$，将$(T_3-\{\alpha\}) \cup T_0$转换为极小子句集$T_{\alpha}$；
-%		\STATE \qquad 如果$\alpha$被$T_{\alpha}$中的某个子句包蕴，则将$\alpha$从$T_3$中删除；
-%		\RETURN $T_3$中子句的合取
-%	\end{algorithmic}
-%\end{algorithm}
-
-%\IncMargin{1em}
-\begin{algorithm}[tb]
-	\caption{\small 基于模型的$\CTL$遗忘过程}%A Model-based \CTL\ Forgetting Procedure}
-	\label{alg:compute:forgetting:by:VB}
-	%\LinesNumbered
-	\KwIn{$\CTL$公式$\varphi$和原子命题集$V$}%A \CTL formula $\varphi$ and a set $V$ of atoms}
-	\KwOut{$\CTLforget(\varphi, V)$}% ????
-	$\psi \lto \bot$\;
-	\ForEach{$\cal A$ 和$\cal S$上的初始结构$\cal K$}{
-	%\ForEach{initial \MPK-structure $\cal K$ (over $\cal A$ and $\cal S$)}{
-		\lIf{${\cal K}\not\models\varphi$}{{\bf continue}} \\
-		\ForEach{满足${\cal K}\lrto_{ V}{\cal K}'$的初始结构${\cal K}'$}{
-			$\psi \lto \psi \lor {\cal F}_{\overline V}({\cal K}')$\;
-		}
-	}
-	\Return $\psi$\;
-\end{algorithm}
-
-
-
-
-这里给出如何计算从规范中遗忘一些原子命题。 
-\begin{example}\label{ex:6}
-	对于图\ref{BVM}中的 ${\cal K}_1$，假定一个已知的规范（性质）为$\alpha = \EXIST\FUTURE(se \wedge sp)$。显然 ${\cal K}_1$满足 $\alpha$。若想移除 $sp$，即从 $\alpha$中遗忘 $sp$，则 $\CTLforget(\alpha,\{ sp\}) \equiv \EXIST\FUTURE se$。此时，该汽车制造公司可以用新的规范$\EXIST\FUTURE se$（这保证驾车最终会被生产）引导未来汽车的生产。
-\end{example}
-
-
-如下所述，通过计算所有可能的模型是非常低效的。但是，这为从理论的角度探索遗忘有重要作用。
-
-
-\begin{proposition}\label{pro:time:alg1}
-	令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法\ref{alg:compute:forgetting:by:VB}计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
-\end{proposition}
-\begin{proof}
-	假定每个状态或原子命题占据$\log m$的空间且$n\leq m$，则一个状态对$(s,s')$占据$2\times \log m$位（bit）。对任意$B \subseteq {\cal S}$和$s_0\in B$，构造如下初始结构$(\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$，则$R$中至多有$\frac{|B|^2}{2}$个状态对且$L$中至多$|B|\times n$个$(s,A)$对（$A\subseteq \Ha$）。因此，$(\Hm,s_0)$至多占据$(|B|+|B|^2+|B|\times n)\times \log m$位。此外，对于状态集$B$，初始状态有$|B|$种选择，有$|B|^{|B|}$种关系$R$，$(2^n)^{|B|}$种标签函数$L$。
-	
-	在最坏的情形下（即$|B|=m$），可构成$m \times  (m^m \times  2^{nm} \times  m)$个初始结构。因此，最多有$m^{m+2} \times  2^{nm}$个初始结构，且最多花费$(m^{m+2} \times  2^{nm} \times  (m + m^2 + nm))\times  \log m$位。
-	
-	令 $k = n-x$，对任意有$i\geq 1$个状态的初始结构${\cal K} = (\Hm,s_0)$，其中$\Hm = (B,R,L,s_0)$。
-	在最坏的情形下（即$ch(\Hm,V) = i$时），需要$N(i) = P_i(s_0) + i \times  (P_i(s) + i \times P_i(s'))$位来存储${\cal K}$在$\overline{V}$上的特征公式。
-	其中$s',s\in B$，$P_i(y)$是存储${\cal F}_{\overline{V}}(\Tr_i(y))$（$y\in B$）所用的空间（这里假定$\EXIST\NEXT$和$\ALL\NEXT$使用了相同的存储单位）。
-	
-	${\cal F}_{\overline{V}}(\Tr_i(y))$（$0\leq n \leq i$）被递归地定义如下：
-	\begin{align*}
-		&(1) n=0,  \qquad P_0(y) = k\\
-		&(2) n=1, \qquad  P_1(y) = k + i\times k = k + i\times P_0(y)\\
-		&(3) n=2, \qquad P_2(y) = k + i\times (k + i\times k) = k+i\times P_1(y)\\
-		& \dots \qquad \qquad \dots\\
-		&(i+1) n = i, \quad P_i(y) = k + i \times  P_{i-1}(y).
-	\end{align*}
-	
-	因此，有
-	\begin{align*}
-		P_i(y) & = k + i\times k + i^2 \times  k + \dots + i^i \times  k = \frac{i^i -1}{i-1} k,\\
-		N(i) & = P_i(s_0) + i\times  (P_i(s) + i \times  P_i(s'))\\
-		& = (i^2 + i +1) P_i(y) \\
-		& = (i^2 + i+1)\frac{i^i -1}{i-1} k.
-	\end{align*}
-	
-	在最坏的情形下（即具有$m$个状态的初始结构）有$m^{m+2} \times  2^{nm}$个初始结构，需要$(m^{m+2} \times  2^{nm} \times  N(m)) \times  \log m$位来存储遗忘的结果。
-	
-	因此，空间复杂性为$O((n-x)m^{2(m+2)}2^{nm}\times  \log m)$。
-\end{proof}
 
 
 
