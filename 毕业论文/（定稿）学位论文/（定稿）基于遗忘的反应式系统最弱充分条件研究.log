@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  20 MAY 2022 13:30
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  23 MAY 2022 11:03
 entering extended mode
 **（定稿）基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -3683,7 +3683,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [107]
-Overfull \hbox (0.46622pt too wide) in paragraph at lines 957--958
+Overfull \hbox (0.46622pt too wide) in paragraph at lines 956--957
 \C70/rm/m/n/12.05/52  \C70/rm/m/n/12.05/5b X \C70/rm/m/n/12.05/57 ($\OML/ztmcm
 /m/it/12.05 s[]$\C70/rm/m/n/12.05/76 � \C70/rm/m/n/12.05/4e    * \C70/rm/m/n/1
 2.05/72 � \C70/rm/m/n/12.05/60 $\OML/ztmcm/m/it/12.05 s[]$|\C70/rm/m/n/12.05/f
@@ -3720,21 +3720,21 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [110]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1157
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1156
 .
  (D:\Application\Ctex\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )<<ot1tt.cmap>>
-LaTeX Font Info:    Try loading font information for C70+tt on input line 1157.
+LaTeX Font Info:    Try loading font information for C70+tt on input line 1156.
 
 
 (D:\Application\Ctex\MiKTeX\tex\latex\ctex\fd\c70tt.fd
 File: c70tt.fd 2007/05/06 v0.8a ctexutf8 font definition file
 )
 Package CJKpunct Info: punctuation spaces for family 'zhfs' do not exist. Use f
-amily 'def' instead. on input line 1157.
+amily 'def' instead. on input line 1156.
 LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12.05> not available
-(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 1183.
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 1182.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3752,11 +3752,11 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 [112]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1248.
+(hyperref)                removing `math shift' on input line 1247.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1248.
+(hyperref)                removing `math shift' on input line 1247.
 
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
@@ -3765,7 +3765,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [113]
-Overfull \hbox (0.1323pt too wide) in paragraph at lines 1278--1280
+Overfull \hbox (0.1323pt too wide) in paragraph at lines 1277--1279
 []\C70/rm/m/it/12.05/5f R \C70/rm/m/it/12.05/7e � \C70/rm/m/it/12.05/6a ! \C70/
 rm/m/it/12.05/57 W|\C70/rm/m/n/12.05/ff | \C70/rm/m/n/12.05/4e ; \C70/rm/m/n/1
 2.05/89 � \C70/rm/m/n/12.05/67 	 \C70/rm/m/n/12.05/4e $ * \C70/rm/m/n/12.05/8f 
@@ -3780,58 +3780,59 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[114] <figures/chapter04/time_4_12_2.png, id=1930, 359.4228pt x 211.992pt>
-File: figures/chapter04/time_4_12_2.png Graphic file (type png)
-
-<use figures/chapter04/time_4_12_2.png>
-Package pdftex.def Info: figures/chapter04/time_4_12_2.png used on input line 1
-336.
-(pdftex.def)             Requested size: 199.16928pt x 117.46933pt.
-
-<figures/chapter04/number-4-12_2.png, id=1931, 364.2408pt x 204.765pt>
-File: figures/chapter04/number-4-12_2.png Graphic file (type png)
-
-<use figures/chapter04/number-4-12_2.png>
-Package pdftex.def Info: figures/chapter04/number-4-12_2.png used on input line
- 1339.
-(pdftex.def)             Requested size: 199.16928pt x 111.96806pt.
-
+[114]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[115] <figures/chapter04/time_4_16_2.png, id=1940, 367.6134pt x 225.9642pt>
+[115] <figures/chapter04/time_4_12_2.png, id=1940, 359.4228pt x 211.992pt>
+File: figures/chapter04/time_4_12_2.png Graphic file (type png)
+
+<use figures/chapter04/time_4_12_2.png>
+Package pdftex.def Info: figures/chapter04/time_4_12_2.png used on input line 1
+335.
+(pdftex.def)             Requested size: 199.16928pt x 117.46933pt.
+
+<figures/chapter04/number-4-12_2.png, id=1941, 364.2408pt x 204.765pt>
+File: figures/chapter04/number-4-12_2.png Graphic file (type png)
+
+<use figures/chapter04/number-4-12_2.png>
+Package pdftex.def Info: figures/chapter04/number-4-12_2.png used on input line
+ 1338.
+(pdftex.def)             Requested size: 199.16928pt x 111.96806pt.
+
+<figures/chapter04/time_4_16_2.png, id=1942, 367.6134pt x 225.9642pt>
 File: figures/chapter04/time_4_16_2.png Graphic file (type png)
 
 <use figures/chapter04/time_4_16_2.png>
 Package pdftex.def Info: figures/chapter04/time_4_16_2.png used on input line 1
-348.
+347.
 (pdftex.def)             Requested size: 199.16928pt x 122.42569pt.
 
-<figures/chapter04/number-4-16_2.png, id=1941, 364.2408pt x 204.765pt>
+<figures/chapter04/number-4-16_2.png, id=1943, 364.2408pt x 204.765pt>
 File: figures/chapter04/number-4-16_2.png Graphic file (type png)
 
 <use figures/chapter04/number-4-16_2.png>
 Package pdftex.def Info: figures/chapter04/number-4-16_2.png used on input line
- 1351.
+ 1350.
 (pdftex.def)             Requested size: 213.39566pt x 119.96356pt.
 
-<figures/chapter04/PRototalAveTime2.png, id=1943, 322.20375pt x 276.28218pt>
+<figures/chapter04/PRototalAveTime2.png, id=1945, 322.20375pt x 276.28218pt>
 File: figures/chapter04/PRototalAveTime2.png Graphic file (type png)
 
 <use figures/chapter04/PRototalAveTime2.png>
 Package pdftex.def Info: figures/chapter04/PRototalAveTime2.png used on input l
-ine 1368.
+ine 1367.
 (pdftex.def)             Requested size: 199.16928pt x 170.78728pt.
 
-<figures/chapter04/ProBox(10-50)_25_2.png, id=1944, 297.36093pt x 249.93375pt>
+<figures/chapter04/ProBox(10-50)_25_2.png, id=1946, 297.36093pt x 249.93375pt>
 File: figures/chapter04/ProBox(10-50)_25_2.png Graphic file (type png)
 
 <use figures/chapter04/ProBox(10-50)_25_2.png>
 Package pdftex.def Info: figures/chapter04/ProBox(10-50)_25_2.png used on input
- line 1372.
+ line 1371.
 (pdftex.def)             Requested size: 199.16928pt x 167.40135pt.
 
 
@@ -3846,20 +3847,20 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 士）我的资料/Git/fry/毕业论文/（定稿）学位论文/figures/chapte
 r04/time_4_16_2.png> <D:/（博士）我的资料/Git/fry/毕业论文/（定�
 �）学位论文/figures/chapter04/number-4-16_2.png>]
-<figures/chapter04/totalAveTime1.png, id=1962, 368.1253pt x 304.88907pt>
+<figures/chapter04/totalAveTime1.png, id=1964, 368.1253pt x 304.88907pt>
 File: figures/chapter04/totalAveTime1.png Graphic file (type png)
 
 <use figures/chapter04/totalAveTime1.png>
 Package pdftex.def Info: figures/chapter04/totalAveTime1.png used on input line
- 1401.
+ 1400.
 (pdftex.def)             Requested size: 199.16928pt x 164.95865pt.
 
-<figures/chapter04/numPercent1.png, id=1963, 416.30531pt x 313.9228pt>
+<figures/chapter04/numPercent1.png, id=1965, 416.30531pt x 313.9228pt>
 File: figures/chapter04/numPercent1.png Graphic file (type png)
 
 <use figures/chapter04/numPercent1.png>
 Package pdftex.def Info: figures/chapter04/numPercent1.png used on input line 1
-404.
+403.
 (pdftex.def)             Requested size: 199.16928pt x 150.18785pt.
 
 
@@ -4014,15 +4015,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37774 strings out of 495354
- 635621 string characters out of 3183188
- 790286 words of memory out of 3000000
- 38382 multiletter control sequences out of 15000+200000
- 274385 words of font info for 797 fonts, out of 3000000 for 9000
+ 37801 strings out of 495354
+ 636089 string characters out of 3183188
+ 790515 words of memory out of 3000000
+ 38396 multiletter control sequences out of 15000+200000
+ 277933 words of font info for 809 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  56i,20n,55p,2641b,2600s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
 t, replaced by a fixed one
@@ -4183,9 +4187,9 @@ TeX/fonts/type1/urw/symbol/usyr.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw
 ><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/Application/C
 tex/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on （定稿）基于遗忘的反应式系统最弱充分条件�
-��究.pdf (146 pages, 3101657 bytes).
+��究.pdf (146 pages, 3097479 bytes).
 PDF statistics:
- 3050 PDF objects out of 3580 (max. 8388607)
- 541 named destinations out of 1000 (max. 500000)
+ 3052 PDF objects out of 3580 (max. 8388607)
+ 542 named destinations out of 1000 (max. 500000)
  931 words of extra memory for PDF output out of 10000 (max. 10000000)
 

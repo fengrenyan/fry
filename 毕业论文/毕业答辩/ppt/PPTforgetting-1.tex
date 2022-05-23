@@ -394,7 +394,7 @@
 	\end{frame}
 
 \begin{frame}
-	\frametitle{~研究背景和意义：{\small 简单的例子}}
+	\frametitle{~研究背景和意义：{\small 例子}}
 	{\scriptsize \begin{example}[汽车制造企业模型]\label{car_manufacturing}
 		
 			一个汽车制造企业能够生产两种汽车：小轿车($se$)和跑车($sp$)。每隔一段时间，该企业都会做一个生产决策($d$)，即：合理的生产计划。
@@ -404,7 +404,7 @@
 				\item[(2)] 先生产足够的$sp$，然后再生产$se$；
 				\item[(3)] 同时生产$se$和$sp$。
 			\end{itemize}
-		这一过程可以由图~\ref{BVM}中的Kripke结构（带标签的状态转换图）$\Hm=(S,R,L)$形式化地展现出来。
+		这一过程可以由图~\ref{BVM}中的Kripke结构（带标签的状态转换图）$\Hm=(S,R,L)$模拟。
 		\begin{columns}
 			\column{0.5\textwidth}
 %			\begin{itemize}
@@ -442,7 +442,7 @@
 	\end{figure} 
 			\column{0.5\textwidth}  
 			\pause
-			由于经济危机或者战略调整，导致该企业不能再生产跑车。这意味着所有规范和Kripke结构都不再需要考虑$sp$的，因此应该\textcolor{blue}{“移除”}。
+			由于经济危机或者战略调整，导致该企业不能再生产跑车。这意味着所有规范和Kripke结构都不再需要考虑$sp$，因此应该\textcolor{blue}{“移除”}。
 %			\begin{figure}
 %				\centering
 %			\begin{tikzpicture}[scale=0.75]
@@ -510,30 +510,33 @@
 			\end{columns}
 		\end{block}}
 	\only<2>{
-		\begin{itemize}
-			\item CTL（Computation tree logic）：计算树逻辑，是一种分支时序逻辑
-			\begin{itemize}
-				\item 其模型检测（MC）问题能在多项时间内完成；
-				\item 能很好的表达系统要求的各种属性：
-				\begin{itemize}
-					\item \textcolor{orange!80}{安全属性（Safety properties）}：\textcolor{blue!70}{($\ALL \GLOBAL \neg \varphi$)}
-					%something bad never happens. \textcolor{blue!70}{($\ALL \GLOBAL \neg \varphi$)}
-					\item \textcolor{orange!80}{活性属性（Liveness	properties）}：\textcolor{blue!70}{($\ALL \GLOBAL \ALL \FUTURE \varphi$)}
-					%something good will eventually happen. \textcolor{blue!70}{($\ALL \GLOBAL \ALL \FUTURE \varphi$)}
-					\item \textcolor{orange!80}{持续属性（Persistence properties）}：\textcolor{blue!70}{($\ALL \FUTURE \ALL \GLOBAL \varphi$)}
-					%eventually for ever a certain proposition holds. \textcolor{blue!70}{($\ALL \FUTURE \ALL \GLOBAL \varphi$)}
-					\item \textcolor{orange!80}{公平属性（Fairness properties）}：\textcolor{blue!70}{（一种约束：在约束$fair = \GLOBAL \FUTURE a$下$\ALL \GLOBAL(a\rto \ALL \FUTURE b)$是否成立？）}
-				%	does, under certain conditions, an event occur repeatedly? \textcolor{blue!70}{（一种约束：在约束$fair = \GLOBAL \FUTURE a$下$\ALL \GLOBAL(a\rto \ALL \FUTURE b)$是否成立？）}
-				\end{itemize} 
-			\end{itemize}
-			\item $\mu$-演算（$\mu$-calculus）：是其他形式体系的机械基础
-			\begin{itemize}
-				\item LTL、CTL、$L_w$等时态逻辑都能用$\mu$-演算表示；
-				\item S1S表达能力严格不如$\mu$-演算；
-				\item $\mu$-演算与S2S有相同的表达能力；
-				\item ......
-			\end{itemize}
-		\end{itemize}  
+		\begin{figure}
+			\includegraphics[scale=0.35]{figures/CTLmu}
+		\end{figure}
+%		\begin{itemize}
+%			\item CTL（Computation tree logic）：计算树逻辑，是一种分支时序逻辑
+%			\begin{itemize}
+%				\item 其模型检测（MC）问题能在多项时间内完成；
+%				\item 能很好的表达系统要求的各种属性：安全属性（Safety properties）、活性属性（Liveness	properties）、持续属性（Persistence properties）和公平属性（Fairness properties）。
+%				\begin{itemize}
+%					\item \textcolor{orange!80}{安全属性（Safety properties）}：\textcolor{blue!70}{($\ALL \GLOBAL \neg \varphi$)}
+%					%something bad never happens. \textcolor{blue!70}{($\ALL \GLOBAL \neg \varphi$)}
+%					\item \textcolor{orange!80}{活性属性（Liveness	properties）}：\textcolor{blue!70}{($\ALL \GLOBAL \ALL \FUTURE \varphi$)}
+%					%something good will eventually happen. \textcolor{blue!70}{($\ALL \GLOBAL \ALL \FUTURE \varphi$)}
+%					\item \textcolor{orange!80}{持续属性（Persistence properties）}：\textcolor{blue!70}{($\ALL \FUTURE \ALL \GLOBAL \varphi$)}
+%					%eventually for ever a certain proposition holds. \textcolor{blue!70}{($\ALL \FUTURE \ALL \GLOBAL \varphi$)}
+%					\item \textcolor{orange!80}{公平属性（Fairness properties）}：\textcolor{blue!70}{（一种约束：在约束$fair = \GLOBAL \FUTURE a$下$\ALL \GLOBAL(a\rto \ALL \FUTURE b)$是否成立？）}
+%				%	does, under certain conditions, an event occur repeatedly? \textcolor{blue!70}{（一种约束：在约束$fair = \GLOBAL \FUTURE a$下$\ALL \GLOBAL(a\rto \ALL \FUTURE b)$是否成立？）}
+%				\end{itemize} 
+%			\end{itemize}
+%			\item $\mu$-演算（$\mu$-calculus）：是其他形式体系的机械基础
+%			\begin{itemize}
+%				\item LTL、CTL、$L_w$等时态逻辑都能用$\mu$-演算表示；
+%				\item S1S表达能力严格不如$\mu$-演算；
+%				\item $\mu$-演算与S2S有相同的表达能力；
+%				\item ......
+%			\end{itemize}
+%		\end{itemize}  
 \textcolor{red}{形成时序逻辑系统遗忘理论的框架，架起形式化验证（verification）和知识表示与推理（KR）的桥梁。}}
 	}
 	\end{frame}
@@ -2273,7 +2276,33 @@
 				\end{itemize}
 			\end{theorem}
 			
-		\begin{proposition}\label{pro:complexity}
+		\begin{proposition} 
+			给定$\CTL$公式$\varphi$和原子命题集$V \subseteq \Ha$。
+			算法5.3的时间和空间复杂性为{\em $O((m+1)2^{4(n+n')})$}，其中$n=|\Var(\varphi)|$、$n'=|V'|$为新引入的原子命题的个数、$m$为引入的索引个数。
+		\end{proposition} 
+	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{研究内容（三）（2）基于归结的算法CTL-forget}
+	{\footnotesize
+		
+		
+		
+		\begin{figure}
+			\includegraphics[scale=0.3]{figures/CTL-forget3}
+		\end{figure}
+		%		}
+		%		\only<2>{	
+		\begin{theorem}[可靠性] 
+			若$\varphi$为一个$\CTL$公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
+			\begin{itemize}
+				\item[(i)] $\Sigma\equiv_{V\cup U}\varphi$，
+				\item[(ii)] 若$U=\emptyset$，则 $\Sigma\equiv\CTLforget(\varphi,V)$。
+			\end{itemize}
+		\end{theorem}
+		
+		\begin{proposition} 
 			给定$\CTL$公式$\varphi$和原子命题集$V \subseteq \Ha$。
 			算法5.3的时间和空间复杂性为{\em $O((m+1)2^{4(n+n')})$}，其中$n=|\Var(\varphi)|$、$n'=|V'|$为新引入的原子命题的个数、$m$为引入的索引个数。
 		\end{proposition} 
@@ -2365,7 +2394,7 @@
 	%	\caption{计算{\CTL-forget}$(\varphi, V)$使用的时间和在“移除原子命题”步骤后$\CTLsnf$子句的个数，其中$\varphi_i=12$。$$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$$}
 		\label{chapter04:fig:for12}
 	\end{figure}
-	}
+	} 
 \end{frame}
 
 
@@ -2374,20 +2403,21 @@
 	{\footnotesize
 		\textcolor{blue!60}{计算$q$在$V$和$\varphi \wedge q$上的SNC（$\CTLforget(\varphi\wedge q, \Var(\varphi)-V \cup \{q\})$），其中$V\subseteq \Var(\varphi)$、$q\in \Var(\varphi\wedge q)-V$。}
 		
-	\only<1>{(1)	随机3-CNF，$|\Ha|=50$，每组20个公式。
-		\begin{figure}
-		\centering
-		\subfigure[{\scriptsize 平均CPU时间(s)}]{
-			\includegraphics[scale=0.3]{figures/PRototalAveTime2.png}
-		}\qquad
-		\subfigure[{\scriptsize $|V|=25$时所使用CPU时间箱线图}]{
-			\includegraphics[scale=0.3]{figures/ProBox(10-50)_25_2.png}
-		}
-		\caption{{\footnotesize 计算3-CNF公式SNC的CPU时间}}
-	\end{figure}
-}
-		\only<2>{	
-		(2) $\CTL$公式$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$，$\varphi_i=12~(i=1,2,3)$为$|\Ha|=50$上的3-CNF且$|\varphi_1|=|\varphi_2|=|\varphi_3|$，每组40个公式。
+%	\only<1>{(1)	随机3-CNF，$|\Ha|=50$，每组20个公式。
+%		\begin{figure}
+%		\centering
+%		\subfigure[{\scriptsize 平均CPU时间(s)}]{
+%			\includegraphics[scale=0.3]{figures/PRototalAveTime2.png}
+%		}\qquad
+%		\subfigure[{\scriptsize $|V|=25$时所使用CPU时间箱线图}]{
+%			\includegraphics[scale=0.3]{figures/ProBox(10-50)_25_2.png}
+%		}
+%		\caption{{\footnotesize 计算3-CNF公式SNC的CPU时间}}
+%	\end{figure}
+%}
+%		\only<2>{	
+%		(2) 
+		$\CTL$公式$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$，$\varphi_i=12~(i=1,2,3)$为$|\Ha|=50$上的3-CNF且$|\varphi_1|=|\varphi_2|=|\varphi_3|$，每组40个公式。
 		
 		\begin{figure}
 			\centering
@@ -2399,8 +2429,9 @@
 			}
 		\caption{{\footnotesize 计算$\CTL$SNC的平均时间和存在SNC的公式占比}}
 		\end{figure}
-	}\pause
-\textcolor{red!60}{\textbf{总结：}基于归结的算法大多数情况下能计算出SNC（WSC），且当需要遗忘的原子个数很少或公式长度较小时计算效率较高。}
+%	}
+\pause
+\textcolor{red}{\textbf{总结：}基于归结的算法大多数情况下能计算出SNC（WSC），且当需要遗忘的原子个数很少或公式长度较小时计算效率较高。}
 	}
 \end{frame}
 

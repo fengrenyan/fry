@@ -943,8 +943,7 @@
 		\item[(ii)] $\{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}\equiv_\emptyset
 		\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\}$，
 		
-		\item[(iii)] $\{(\psi_1 \rto \EXIST_{\tuple{j}}\FUTURE \varphi_1), (\psi_2 \rto \EXIST_{\tuple{j}}\NEXT \varphi_2)\}$
-		%is $\emptyset$-bisimular equivalent to %
+		\item[(iii)] $\{(\psi_1 \rto \EXIST_{\tuple{j}}\FUTURE \varphi_1), (\psi_2 \rto \EXIST_{\tuple{j}}\NEXT \varphi_2)\}$  
 		$\equiv_\emptyset$ 
 		\begin{equation*}
 			(\psi_1 \rto \varphi_1 \vee \EXIST \NEXT \EXIST \FUTURE \varphi_1)
@@ -1296,7 +1295,7 @@ temp\_resolution/8过程主要用于寻找归结规则\textbf{ERES1}和\textbf{E
 
 \subsubsection{遗忘实验分析}
 这部分的实验数据分为两组：一组来源于标准数据集，令一组是随机生成的数据。
-标准数据集来源于$\CTL$-RP~\footnote{\url{https://sourceforge.net/projects/ctlrp/}}。但是由于数据集里的大部分公式是不可满足的，这种情形下遗忘的结果总是为$\bot$。因此，这里对数据集进行了简单的处理：从标准数据集里抽取了“sample01”文件中的s001.ctl、s002.ctl、s003.ctl和s004.ctl文件，并从这些公式里取前面的两个子公式的合取构成新的公式，分别称为s001、s002、s003和s004。此外，从s001.ctl中取前三个子公式的合取构成新的公式s001-3。
+标准数据集来源于$\CTL$-RP\footnote{\url{https://sourceforge.net/projects/ctlrp/}}。但是由于数据集里的大部分公式是不可满足的，这种情形下遗忘的结果总是为$\bot$。因此，这里对数据集进行了简单的处理：从标准数据集里抽取了“sample01”文件中的s001.ctl、s002.ctl、s003.ctl和s004.ctl文件，并从这些公式里取前面的两个子公式的合取构成新的公式，分别称为s001、s002、s003和s004。此外，从s001.ctl中取前三个子公式的合取构成新的公式s001-3\footnote{\textcolor{red}{需要说明的是，本文研究的遗忘计算方法是目前唯一的计算$\CTL$遗忘的算法，因而没有计算遗忘所需要的标准数据集。这里采用用于验证$\CTL$可满足性工具$\CTL$-RP的标准数据集，主要是因为本文采用的归结规则与之使用的规则相同。然而，可满足性算法与遗忘计算有着本质的区别，使用$\CTL$-RP的数据集对遗忘算法的计算性能进行评价不太实用。因此，本文只摘取部分公式用于测试本文实现的系统在处理这些公式时的效率。}}。
 
 计算{\CTL-forget}$(\varphi, V)$所使用的CPU时间（单位：秒(s)，不指出时也默认为秒）如表\ref{chapter04:tab:sample}所示，其中$\varphi\in \{s001,s002,s003,s004,s001$-$3\}$，$|V|\in \{1,2,3,4\}$。
 从中可以看出公式长度越长、被遗忘的原子命题个数越多，则计算所需要的时间越长。
