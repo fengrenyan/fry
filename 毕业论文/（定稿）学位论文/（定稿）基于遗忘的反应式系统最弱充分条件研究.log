@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  23 MAY 2022 11:03
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  23 MAY 2022 22:07
 entering extended mode
 **（定稿）基于遗忘的反应式系统最弱充分条件研究.tex
 
@@ -3921,7 +3921,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [124]
-Underfull \hbox (badness 1158) in paragraph at lines 369--374
+Underfull \hbox (badness 1158) in paragraph at lines 368--373
 []\OT1/ptm/m/n/12.05 ZHANG Y, ZHOU Y.  Prop-er-ties of knowl-edge for-get-ting[
 C]//PAGNUCCO M,
  []
@@ -3974,16 +3974,23 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[131])
+[131]
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[132]
+[132])
+
+Package Fancyhdr Warning: \headheight is too small (10.0pt): 
+ Make it at least 12.64998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[133]
 (D:\（博士）我的资料\Git\fry\毕业论文\（定稿）学位论文\chap
-ter/thanks.tex [133
+ter/thanks.tex [134
 
 ]
 
@@ -3996,7 +4003,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
 (hyperref)                replaced by space on input line 1.
 
-) [134
+) [135
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 556.
@@ -4015,13 +4022,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37801 strings out of 495354
- 636089 string characters out of 3183188
- 790515 words of memory out of 3000000
+ 37802 strings out of 495354
+ 636097 string characters out of 3183188
+ 790463 words of memory out of 3000000
  38396 multiletter control sequences out of 15000+200000
  277933 words of font info for 809 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,2641b,2600s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,2641b,2620s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -4187,9 +4194,9 @@ TeX/fonts/type1/urw/symbol/usyr.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw
 ><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/Application/C
 tex/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
 Output written on （定稿）基于遗忘的反应式系统最弱充分条件�
-��究.pdf (146 pages, 3097479 bytes).
+��究.pdf (147 pages, 3105558 bytes).
 PDF statistics:
- 3052 PDF objects out of 3580 (max. 8388607)
- 542 named destinations out of 1000 (max. 500000)
+ 3060 PDF objects out of 3580 (max. 8388607)
+ 543 named destinations out of 1000 (max. 500000)
  931 words of extra memory for PDF output out of 10000 (max. 10000000)
 

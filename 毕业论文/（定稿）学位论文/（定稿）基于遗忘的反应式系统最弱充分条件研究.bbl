@@ -77,7 +77,8 @@ HUGHES~G~E, CRESSWELL~M~J, CRESSWELL~M~M.
 \bibitem[Hoare(1969)]{Hoare1969}
 HOARE~C~A~R.
 \newblock An axiomatic basis for computer programming\allowbreak[J/OL].
-\newblock Commun. {ACM}, 1969, 12\penalty0 (10):\penalty0 576-580.
+\newblock Communications of the {ACM}, 1969, 12\penalty0 (10):\penalty0
+  576-580.
 \newblock \url{https://doi.org/10.1145/363235.363259}.
 
 \bibitem[Harel(1979)]{harel1979first}
@@ -151,7 +152,7 @@ ZHU~J, WANG~H, XU~Z, et~al.
 DIJKSTRA~E~W.
 \newblock Guarded commands, {N}ondeterminacy and {F}ormal {D}erivation of
   {P}rograms\allowbreak[J/OL].
-\newblock Commun. {ACM}, 1975, 18\penalty0 (8):\penalty0 453-457.
+\newblock Communications of the {ACM}, 1975, 18\penalty0 (8):\penalty0 453-457.
 \newblock \url{https://doi.org/10.1145/360933.360975}.
 
 \bibitem[Lin(2001)]{DBLP:journals/ai/Lin01}
@@ -192,7 +193,8 @@ LEINO~K~R~M.
 DAILLER~S, HAUZAR~D, MARCH{\'{E}}~C, et~al.
 \newblock Instrumenting a weakest precondition calculus for counterexample
   generation\allowbreak[J/OL].
-\newblock J. Log. Algebraic Methods Program., 2018, 99:\penalty0 97-113.
+\newblock Journal of Logical \& Algebraic Methods in Programming, 2018,
+  99:\penalty0 97-113.
 \newblock \url{https://doi.org/10.1016/j.jlamp.2018.05.003}.
 
 \bibitem[Woodcock et~al.(1990)Woodcock and Morgan]{woodcock1990refinement}
@@ -343,10 +345,7 @@ ZHAO~Y, SCHMIDT~R~A, WANG~Y, et~al.
 \newblock A practical approach to forgetting in description logics with
   nominals\allowbreak[C/OL]//\allowbreak
 The Thirty-Fourth {AAAI} Conference on Artificial Intelligence, {AAAI} 2020,
-  The Thirty-Second Innovative Applications of Artificial Intelligence
-  Conference, {IAAI} 2020, The Tenth {AAAI} Symposium on Educational Advances
-  in Artificial Intelligence, {EAAI} 2020, New York, NY, USA, February 7-12,
-  2020.
+  New York, NY, USA, February 7-12, 2020.
 \newblock {AAAI} Press, 2020: 3073-3079.
 \newblock \url{https://aaai.org/ojs/index.php/AAAI/article/view/5702}.
 
@@ -509,7 +508,7 @@ EITER~T, KERN-ISBERNER~G.
   Leite]{gonccalves2021forgetting}
 GON{\c{C}}ALVES~R, KNORR~M, LEITE~J.
 \newblock Forgetting in answer set programming--a survey\allowbreak[J].
-\newblock arXiv preprint arXiv:2107.07016, 2021.
+\newblock Theory and Practice of Logic Programming, 2021:\penalty0 1-43.
 
 \bibitem[王文宇(2021)]{wangwen2021}
 王文宇.
@@ -519,14 +518,14 @@ GON{\c{C}}ALVES~R, KNORR~M, LEITE~J.
 \bibitem[朱嘉玮(2020)]{zhujia2020}
 朱嘉玮.
 \newblock 从 “被遗忘权” 看个人信息保护\allowbreak[J].
-\newblock 现代商贸工业, 2020, 8.
+\newblock 现代商贸工业, 2020, 8\penalty0 (08):\penalty0 160-162.
 
 \bibitem[Liberatore et~al.(1998)Liberatore and
   Schaerf]{DBLP:journals/tkde/LiberatoreS98}
 LIBERATORE~P, SCHAERF~M.
 \newblock Arbitration (or how to merge knowledge bases)\allowbreak[J/OL].
-\newblock {IEEE} Trans. Knowl. Data Eng., 1998, 10\penalty0 (1):\penalty0
-  76-90.
+\newblock {IEEE} Transactions on Knowledge and Data Engineering, 1998,
+  10\penalty0 (1):\penalty0 76-90.
 \newblock \url{https://doi.org/10.1109/69.667090}.
 
 \bibitem[Konieczny et~al.(2002)Konieczny and
@@ -534,14 +533,16 @@ LIBERATORE~P, SCHAERF~M.
 KONIECZNY~S, P{\'{E}}REZ~R~P.
 \newblock Merging information under constraints: {A} logical
   framework\allowbreak[J/OL].
-\newblock J. Log. Comput., 2002, 12\penalty0 (5):\penalty0 773-808.
+\newblock Journal of Logic and computation, 2002, 12\penalty0 (5):\penalty0
+  773-808.
 \newblock \url{https://doi.org/10.1093/logcom/12.5.773}.
 
 \bibitem[Maynard{-}Zhang et~al.(2003)Maynard{-}Zhang and
   Lehmann]{DBLP:journals/jair/Maynard-ZhangL03}
 MAYNARD{-}ZHANG~P, LEHMANN~D.
 \newblock Representing and aggregating conflicting beliefs\allowbreak[J/OL].
-\newblock J. Artif. Intell. Res., 2003, 19:\penalty0 155-203.
+\newblock Journal of Artificial Intelligence Research, 2003, 19:\penalty0
+  155-203.
 \newblock \url{https://doi.org/10.1613/jair.1206}.
 
 \bibitem[Konieczny et~al.(2004)Konieczny, Lang, and Marquis]{konieczny2004da2}
@@ -554,7 +555,8 @@ KONIECZNY~S, LANG~J, MARQUIS~P.
 EVERAERE~P, KONIECZNY~S, MARQUIS~P.
 \newblock Disjunctive merging: Quota and gmin merging
   operators\allowbreak[J/OL].
-\newblock Artif. Intell., 2010, 174\penalty0 (12-13):\penalty0 824-849.
+\newblock Artificial Intelligence, 2010, 174\penalty0 (12-13):\penalty0
+  824-849.
 \newblock \url{https://doi.org/10.1016/j.artint.2010.05.001}.
 
 \bibitem[徐岱(2011)]{xudai2011}
@@ -566,20 +568,21 @@ EVERAERE~P, KONIECZNY~S, MARQUIS~P.
 SANDU~G.
 \newblock On the logic of informational independence and its
   applications\allowbreak[J/OL].
-\newblock J. Philos. Log., 1993, 22\penalty0 (1):\penalty0 29-60.
+\newblock Journal of Philosophical Logic, 1993, 22\penalty0 (1):\penalty0
+  29-60.
 \newblock \url{https://doi.org/10.1007/BF01049180}.
 
 \bibitem[Sandu(1997)]{DBLP:journals/igpl/Sandu97}
 SANDU~G.
 \newblock The logic of informational independence and finite
   models\allowbreak[J/OL].
-\newblock Log. J. {IGPL}, 1997, 5\penalty0 (1):\penalty0 79-95.
+\newblock Logic Journal of {IGPL}, 1997, 5\penalty0 (1):\penalty0 79-95.
 \newblock \url{https://doi.org/10.1093/jigpal/5.1.79}.
 
 \bibitem[V{\"{a}}{\"{a}}n{\"{a}}nen(2002)]{DBLP:journals/igpl/Vaananen02}
 V{\"{A}}{\"{A}}N{\"{A}}NEN~J~A.
 \newblock On the semantics of informational independence\allowbreak[J/OL].
-\newblock Log. J. {IGPL}, 2002, 10\penalty0 (3):\penalty0 339-352.
+\newblock Logic Journal of {IGPL}, 2002, 10\penalty0 (3):\penalty0 339-352.
 \newblock \url{https://doi.org/10.1093/jigpal/10.3.339}.
 
 \bibitem[Sevenster(2006)]{DBLP:journals/synthese/Sevenster06}
@@ -617,7 +620,7 @@ SCHNEIDER~K.
   provers\allowbreak[C/OL]//\allowbreak
 2nd International Conference on Application of Concurrency to System Design
   {(ACSD} 2001), 25-30 June 2001, Newcastle upon Tyne, {UK}.
-\newblock {IEEE} Computer Society, 2001: 143.
+\newblock {IEEE} Computer Society, 2001: 143-154.
 \newblock \url{https://doi.org/10.1109/CSD.2001.981772}.
 
 \bibitem[Schneider(2002)]{DBLP:conf/tphol/Schneider02}
@@ -645,7 +648,7 @@ BART{\'{A}}K~R, MCCLUSKEY~T~L, PONTELLI~E.
   Workshop on Knowledge-based Techniques for Problem Solving and Reasoning
   co-located with 25th International Joint Conference on Artificial
   Intelligence {(IJCAI} 2016), New York City, USA, July 10, 2016.
-\newblock CEUR-WS.org, 2016.
+\newblock CEUR-WS.org, 2016: 1-7.
 \newblock \url{http://ceur-ws.org/Vol-1648/paper1.pdf}.
 
 \bibitem[Ben{-}Eliyahu{-}Zohary et~al.(2017)Ben{-}Eliyahu{-}Zohary, Angiulli,
@@ -703,8 +706,8 @@ BROWNE~M~C, CLARKE~E~M, GR{\"U}MBERG~O.
 CLARKE~E~M, EMERSON~E~A, SISTLA~A~P.
 \newblock Automatic verification of finite-state concurrent systems using
   temporal logic specifications\allowbreak[J/OL].
-\newblock {ACM} Trans. Program. Lang. Syst., 1986, 8\penalty0 (2):\penalty0
-  244-263.
+\newblock {ACM} Transactions on Programming Languages and Systems, 1986,
+  8\penalty0 (2):\penalty0 244-263.
 \newblock \url{https://doi.org/10.1145/5397.5399}.
 
 \bibitem[Emerson et~al.(1985)Emerson and
@@ -766,7 +769,7 @@ KOZEN~D.
 D'AGOSTINO~G, HOLLENBERG~M.
 \newblock Uniform interpolation, automata and the modal
   $\mu$-calculus\allowbreak[J].
-\newblock Logic Group Preprint Series, 1996, 165.
+\newblock Logic Group Preprint Series, 1996, 165:\penalty0 1-18.
 
 \bibitem[D'Agostino et~al.(2000)D'Agostino and Hollenberg]{d2000logical}
 D'AGOSTINO~G, HOLLENBERG~M.
@@ -920,11 +923,11 @@ MYCIELSKI~J, ROZENBERG~G, SALOMAA~A.
 \newblock Springer, 1997.
 \newblock \url{https://doi.org/10.1007/3-540-63246-8}.
 
-\bibitem[Hintikka(1953)]{hintikka1953distributive}
+\bibitem[Hintikka(1955)]{hintikka1953distributive}
 HINTIKKA~J.
 \newblock Distributive normal forms in the calculus of
   predicates\allowbreak[J].
-\newblock Cambridge University Press, 1953, 20\penalty0 (2).
+\newblock Journal of Symbolic Logic, 1955, 20\penalty0 (2):\penalty0 164-164.
 
 \bibitem[Yankov(1968)]{yankov1968three}
 YANKOV~V~A.
