@@ -116,9 +116,10 @@ GRUMBERG~O, VEITH~H.
 \bibitem[Clarke et~al.(1981)Clarke and Emerson]{clarke1981design}
 CLARKE~E~M, EMERSON~E~A.
 \newblock Design and synthesis of synchronization skeletons using branching
-  time temporal logic\allowbreak[C]//\allowbreak
-Workshop on Logic of Programs.
-\newblock [S.l.]: Springer, 1981: 52-71.
+  time temporal logic\allowbreak[C/OL]//\allowbreak
+25 Years of Model Checking - History, Achievements, Perspectives.
+\newblock Springer, 1981: 52-71.
+\newblock DOI: \doi{10.1007/978-3-540-69850-0$\_$12}.
 
 \bibitem[Biere et~al.(2003)Biere, Cimatti, Clarke, Strichman, and
   Zhu]{DBLP:journals/ac/BiereCCSZ03}
@@ -145,7 +146,8 @@ SCHNEIDER~K.
 ZHU~J, WANG~H, XU~Z, et~al.
 \newblock A new model for model checking: cycle-weighted kripke
   structure\allowbreak[J/OL].
-\newblock Frontiers Comput. Sci. China, 2010, 4\penalty0 (1):\penalty0 78-88.
+\newblock Frontiers of Computer Science in China, 2010, 4\penalty0
+  (1):\penalty0 78-88.
 \newblock \url{https://doi.org/10.1007/s11704-009-0066-7}.
 
 \bibitem[Dijkstra(1975)]{DBLP:journals/cacm/Dijkstra75}
@@ -172,8 +174,9 @@ LIN~F.
 
 \bibitem[Baier et~al.(2008)Baier and Katoen]{Baier:PMC:2008}
 BAIER~C, KATOEN~J.
-\newblock Principles of model checking\allowbreak[M].
-\newblock [S.l.]: {MIT} Press, 2008.
+\newblock Principles of model checking\allowbreak[M/OL].
+\newblock {MIT} Press, 2008.
+\newblock \url{https://dblp.org/rec/books/daglib/0020348.bib}.
 
 \bibitem[Legato(2002)]{legato2002weakest}
 LEGATO~W~J.
@@ -251,9 +254,10 @@ CLARKE~E~M, GRUMBERG~O, PELED~D~A.
 
 \bibitem[Clarke et~al.(1996)Clarke, Grumberg, and Long]{clarke1996model}
 CLARKE~E, GRUMBERG~O, LONG~D.
-\newblock Model checking\allowbreak[C]//\allowbreak
+\newblock Model checking\allowbreak[C/OL]//\allowbreak
 NATO ASI DPD.
-\newblock [S.l.: s.n.], 1996: 305-349.
+\newblock 1996: 305-349.
+\newblock DOI: \doi{http://doi.org/10.1007/bfb0058022}.
 
 \bibitem[王政(2012)]{wangzhen2012}
 王政.
@@ -268,18 +272,21 @@ NATO ASI DPD.
 
 \bibitem[Lin et~al.(1994)Lin and Reiter]{lin1994forget}
 LIN~F, REITER~R.
-\newblock Forget it\allowbreak[C]//\allowbreak
-Working Notes of AAAI Fall Symposium on Relevance.
-\newblock [S.l.: s.n.], 1994: 154-159.
+\newblock Forget it!\allowbreak[C/OL]//\allowbreak
+In Proceedings of the AAAI Fall Symposium on Relevance.
+\newblock New Orleans, US, 1994: 154-159.
+\newblock
+  \url{http://www.researchgate.net/publication/2338197_Forget_it_in_Chinese}.
 
 \bibitem[Visser(1996)]{visser1996uniform}
 VISSER~A.
 \newblock Uniform interpolation and layered
-  bisimulation\allowbreak[M]//\allowbreak
+  bisimulation\allowbreak[M/OL]//\allowbreak
 G{\"o}del'96: Logical foundations of mathematics, computer science and
   physics---Kurt G{\"o}del's legacy, Brno, Czech Republic, August 1996,
   proceedings.
-\newblock [S.l.]: Association for Symbolic Logic, 1996: 139-164.
+\newblock Association for Symbolic Logic, 1996: 139-164.
+\newblock \url{http://projecteuclid.org/euclid.lnl/1235417019}.
 
 \bibitem[Konev et~al.(2009)Konev, Walther, and Wolter]{konev2009forgetting}
 KONEV~B, WALTHER~D, WOLTER~F.
@@ -366,10 +373,12 @@ ZHANG~Y, ZHOU~Y.
 
 \bibitem[Zhang et~al.(2008{\natexlab{a}})Zhang and Zhou]{Zhang2008Properties}
 ZHANG~Y, ZHOU~Y.
-\newblock Properties of knowledge forgetting\allowbreak[C]//\allowbreak
+\newblock Properties of knowledge forgetting\allowbreak[C/OL]//\allowbreak
 PAGNUCCO~M, THIELSCHER~M.
 \newblock Proceedings of NMR 2008.
-\newblock Sydney, Australia: [s.n.], 2008{\natexlab{a}}: 68-75.
+\newblock Sydney, Australia, 2008{\natexlab{a}}: 68-75.
+\newblock
+  \url{http://www.researchgate.net/publication/254211487_Properties_of_Knowledge_Forgetting}.
 
 \bibitem[文习明(2019)]{wenximing2019buwanbei}
 文习明.
@@ -452,8 +461,10 @@ EITER~T, WANG~K.
 
 \bibitem[Wong(2009)]{Wong:PhD:Thesis}
 WONG~K~S.
-\newblock Forgetting in logic programs\allowbreak[D].
-\newblock [S.l.]: The University of New South Wales, 2009.
+\newblock Forgetting in logic programs\allowbreak[D/OL].
+\newblock The University of New South Wales, 2009.
+\newblock
+  \url{http://unsworks.unsw.edu.au/fapi/datastream/unsworks:5003/SOURCE02}.
 
 \bibitem[Wang et~al.(2014)Wang, Zhang, Zhou, and
   Zhang]{DBLP:journals/jair/WangZZZ14}
@@ -596,10 +607,11 @@ SEVENSTER~M.
   Szalas]{DBLP:conf/ijcai/DohertyLS01}
 DOHERTY~P, LUKASZEWICZ~W, SZALAS~A.
 \newblock Computing strongest necessary and weakest sufficient conditions of
-  first-order formulas\allowbreak[C]//\allowbreak
+  first-order formulas\allowbreak[C/OL]//\allowbreak
 NEBEL~B.
 \newblock Proceedings of IJCAI'01.
-\newblock [S.l.]: Morgan Kaufmann, 2001: 145-154.
+\newblock Morgan Kaufmann, 2001: 145-154.
+\newblock \url{http://dl.acm.org/doi/abs/10.5555/1642090.1642110}.
 
 \bibitem[D'Agostino et~al.(2006)D'Agostino and Lenzi]{d2006modal}
 D'AGOSTINO~G, LENZI~G.
@@ -610,9 +622,11 @@ D'AGOSTINO~G, LENZI~G.
 \bibitem[Schneider(2000)]{schneider2000verified}
 SCHNEIDER~K.
 \newblock A verified hardware synthesis of esterel
-  programs\allowbreak[C]//\allowbreak
+  programs\allowbreak[C/OL]//\allowbreak
 IFIP Working Conference on Distributed and Parallel Embedded Systems.
-\newblock [S.l.]: Springer, 2000: 205-214.
+\newblock Springer, 2000: 205-214.
+\newblock
+  \url{http://www.researchgate.net/publication/237106190_A_Verified_Hardware_Synthesis_for_Esterel}.
 
 \bibitem[Schneider(2001)]{DBLP:conf/acsd/Schneider01}
 SCHNEIDER~K.
@@ -731,9 +745,10 @@ BOLOTOV~A, FISHER~M.
 \bibitem[Zhang et~al.(2008{\natexlab{b}})Zhang, Hustadt, and
   Dixon]{zhang2008first}
 ZHANG~L, HUSTADT~U, DIXON~C.
-\newblock First-order resolution for {CTL}\allowbreak[R].
-\newblock [S.l.]: Technical Report ULCS-08-010, Department of Computer Science,
-  University of Liverpool, 2008{\natexlab{b}}.
+\newblock First-order resolution for {CTL}\allowbreak[R/OL].
+\newblock Technical Report ULCS-08-010, Department of Computer Science,
+  University of Liverpool, 2008.
+\newblock DOI: \doi{http://dx.doi.org/}.
 
 \bibitem[Zhang et~al.(2014)Zhang, Hustadt, and Dixon]{zhang2014resolution}
 ZHANG~L, HUSTADT~U, DIXON~C.
@@ -881,9 +896,10 @@ WOLPER~P.
 \bibitem[Janin et~al.(1996)Janin and Walukiewicz]{janin1996expressive}
 JANIN~D, WALUKIEWICZ~I.
 \newblock On the expressive completeness of the propositional mu-calculus with
-  respect to monadic second order logic\allowbreak[C]//\allowbreak
+  respect to monadic second order logic\allowbreak[C/OL]//\allowbreak
 International Conference on Concurrency Theory.
-\newblock [S.l.]: Springer, 1996: 263-277.
+\newblock Springer, 1996: 263-277.
+\newblock DOI: \doi{http://dx.doi.org/10.1007/3-540-61604-7_60}.
 
 \bibitem[Wang(2015)]{wang2015forgetting}
 WANG~Y.

@@ -1,7 +1,7 @@
 % This file is modified by Frans Oliehoek <faolieho@science.uva.nl>
 % on 2005/12/18. (original file name: conference-ornate-20min.en.tex)
 
-\documentclass[9pt, CJK]{beamer}
+\documentclass[aspectratio=1610, 9pt, CJK]{beamer}
 
 % This file is a solution template for:
 % - Talk at a conference/colloquium.
@@ -37,6 +37,7 @@
 	%\usetheme{IAS_topNav_leftIASbar_11pt}	% As above only changed to fit 11pt fonts.
 	%\usetheme{IAS_topNav_leftIASbar_12pt}	% As above only changed to fit 12pt fonts.
 	\setbeamercovered{transparent}
+%	\setbeamertemplate{sidebar}{}
 	%   % or whatever (possibly just delete it)
 }
 
@@ -100,8 +101,8 @@
 % \newtheorem{exmp}{Example}[section]
 % \newtheorem{defn}{Definition}[section]
  
- \setbeamerfont{section in sidebar}{size=\fontsize{4}{3.5}\selectfont}
- \setbeamerfont{subsection in sidebar}{size=\fontsize{3.5}{3}\selectfont}
+ \setbeamerfont{section in sidebar}{size=\fontsize{5}{4.5}\selectfont}
+ \setbeamerfont{subsection in sidebar}{size=\fontsize{4}{3.5}\selectfont}
  
 % \setbeamercolor{block body} {bg = gray}
 % \setbeamercolor{block title}{fg = white,bg = red}
@@ -114,7 +115,7 @@
 {
 	\begin{frame}<beamer>
 		\frametitle{目录}
-		\tiny
+		\footnotesize
 		\tableofcontents[currentsection]
 	\end{frame}
 }
@@ -308,6 +309,7 @@
 	
 	\begin{frame}
 		\titlepage
+		\frametitle{~~~~~~~~~~~~~~~2018级计算机科学与技术学院博士学位论文答辩}
 	%	\textcolor{lightblue}{
 		\begin{center}
 			\heiti\zihao{5}{
@@ -340,7 +342,7 @@
 			\begin{table}[htbp]
 				\setlength{\abovecaptionskip}{-0.2cm}  %段前
 				\setlength{\belowcaptionskip}{-0.4cm} %段后
-				\fontsize{7pt}{\baselineskip}\selectfont
+				\fontsize{9pt}{\baselineskip}\selectfont
 				\caption{由系统故障引起的重大事件概览}
 				\label{tab:systemEvents_1.1}
 				\centering
@@ -349,7 +351,7 @@
 					\textbf{时间}&\textbf{事故原因}&\textbf{损失}\\
 					\midrule
 					1991年 & 美国爱国者导弹系统舍入错误 & 28名士兵死亡、100人受伤等\\
-					1996年 & 阿丽亚娜5火箭 代码重用 & 火箭与其它卫星毁灭\\
+				%	1996年 & 阿丽亚娜5火箭 代码重用 & 火箭与其它卫星毁灭\\
 					1999年 & 火星探测器用错度量单位 & 探测器坠毁并造成了3.27亿美元的损失\\
 					2011年 & 温州7.23动车\underline{信号设备}在设计上存在严重的缺陷 &动车脱节脱轨、多人失去生命\\
 					\bottomrule
@@ -359,7 +361,7 @@
 
 	\begin{frame}
 		\frametitle{研究背景和意义: {\small 形式化验证为系统的正确提供了有力依据}} 
-		{\footnotesize
+%		{\footnotesize
 \begin{block}{自动定理证明（Automated theorem proving）}
 		\begin{columns}
 		\column{0.5\textwidth}
@@ -368,6 +370,7 @@
 				\item $\phi_{imp} \rto \phi_{spec}$，或
 				\item $\phi_{imp} \lrto \phi_{spec}$。
 			\end{itemize}
+		%最弱前件：$\{P\} S \{Q\}$
 		\column{0.5\textwidth}
 			\begin{figure}
 				\includegraphics[scale=0.3]{figures/atp}
@@ -382,8 +385,8 @@
 		\begin{columns}
 			\column{0.5\textwidth} 
 			\begin{itemize}
-				\item $\textcolor{red}{\Hm} \models^? \phi_{spec}$.
-				\item {\small 反应式系统(reactive system)：是指与环境有着持续不断交互的系统。}
+				\item $\textcolor{red}{\Hm} \models^? \phi_{spec}$
+				\item 反应式系统(reactive system)：是指与环境有着持续不断交互的系统
 				\item \textcolor{red}{如何计算反应式系统的WP?}
 			\end{itemize}
 			\column{0.5\textwidth}
@@ -392,12 +395,12 @@
 			\end{figure}
 		\end{columns}
 	\end{block}
-}
+
 	\end{frame}
 
 \begin{frame}
 	\frametitle{~研究背景和意义：{\small 例子}}
-	{\scriptsize \begin{example}[汽车制造企业模型]\label{car_manufacturing}
+  \begin{example}[汽车制造企业模型]\label{car_manufacturing}
 		
 			一个汽车制造企业能够生产两种汽车：小轿车($se$)和跑车($sp$)。每隔一段时间，该企业都会做一个生产决策($d$)，即：合理的生产计划。
 			刚开始的时候，该企业做出了具有三个选择($s$)的方案：
@@ -440,11 +443,16 @@
 			\node at(-0.2,-1) {$se, sp$};
 			%	\node at(0,-1.5) {${\cal K}_2$}; 
 		\end{tikzpicture}
-		\caption{{\tiny 汽车制造企业模型}}\label{BVM}
+		\caption{汽车制造企业模型}\label{BVM}
 	\end{figure} 
-			\column{0.5\textwidth}  
+			\column{0.5\textwidth} 
 			\pause
-			由于经济危机或者战略调整，导致该企业不能再生产跑车。这意味着所有规范和Kripke结构都不再需要考虑$sp$，因此应该\textcolor{blue}{“移除”}。
+			\begin{itemize} 
+				\item 经济危机或者战略调整，导致该企业不能再生产跑车（$sp$），因此应该\textcolor{blue}{“移除”};
+				\item 时间顺序。
+			\end{itemize} 
+%			\pause
+%			由于经济危机或者战略调整，导致该企业不能再生产跑车。这意味着所有规范和Kripke结构都不再需要考虑$sp$，因此应该\textcolor{blue}{“移除”}。
 %			\begin{figure}
 %				\centering
 %			\begin{tikzpicture}[scale=0.75]
@@ -477,19 +485,15 @@
 %			 \end{figure} 
 		\end{columns} 
 %		假定，由于经济危机或者战略调整，导致该企业不能再生产跑车。这意味着所有规范和Kripke结构都不再需要考虑$sp$的，因此应该\textcolor{blue}{“移除”}。
-	\end{example}}
+	\end{example}
 \end{frame}
 	
 	\begin{frame}
 		\frametitle{~研究背景和意义: {\small 知识表示与推理（KR）中的SNC和WSC}}
-		{\footnotesize 	
+%		{\footnotesize 	
 			\only<1>{
 				\begin{block}{最强必要条件（SNC）和最弱充分条件（WSC）}
-			SNC和WSC分别用于描述给定理论下的最一般的结果（consequence）和最一般的诱因（abduction）\cite{DBLP:journals/ai/Lin01}。满足下面两个条件的$\varphi$称为$q$在理论$\Sigma$下的SNC:
-			\begin{itemize}
-				\item[(1)] $\Sigma \models q \rto \varphi$;
-				\item[(2)] 对任意$\varphi'$且$\Sigma \models q \rto \varphi'$，有$\Sigma \models \varphi \rto \varphi'$。
-			\end{itemize}
+			SNC和WSC分别用于描述给定理论下的最一般的结果（consequence）和最一般的诱因（abduction）\cite{DBLP:journals/ai/Lin01}。 
 		满足下面两个条件的$\psi$称为$q$在理论$\Sigma$下的（WSC）:
 		\begin{itemize}
 			\item[(1)] $\Sigma \models \psi \rto q$; 
@@ -503,7 +507,7 @@
 				 %在一阶逻辑中，从公式$\varphi$中遗忘掉一个$n$元谓词$P$的结果是$\exists R.\varphi[P/R]$，即将公式$\varphi$中的所有$P$的出现都用一个新的$n$元谓词$R$来替代。 
 				 {\em 遗忘}是一种从理论中抽取知识的技术\cite{Fangzhen:forgetit}，被用于\underline{规划}\cite{DBLP:conf/ijcai/DohertyLS01,lin2003compiling}和\underline{知识更新}中\cite{Yan:AIJ:2009}。
 				 
-				 在一阶逻辑中，从公式$\varphi$中遗忘掉一个$n$元谓词$P$的结果是$\exists R.\varphi[P/R]$，即将公式$\varphi$中的所有$P$的出现都用一个新的$n$元谓词$R$来替代。
+%				 在一阶逻辑中，从公式$\varphi$中遗忘掉一个$n$元谓词$P$的结果是$\exists R.\varphi[P/R]$，即将公式$\varphi$中的所有$P$的出现都用一个新的$n$元谓词$R$来替代。
 				 %非形式化地，对于逻辑语言L中的任意公式和原子集合，如果从该公式中遗忘掉该原子集合后得到的结果仍然在L中，则称\textcolor{blue}{遗忘存在}，同时也称该公式和原子集合的遗忘存在。
 				\column{0.5\textwidth}
 				\begin{figure}
@@ -513,7 +517,7 @@
 		\end{block}}
 	\only<2>{
 		\begin{figure}
-			\includegraphics[scale=0.35]{figures/CTLmu}
+			\includegraphics[scale=0.45]{figures/CTLmu}
 		\end{figure}
 %		\begin{itemize}
 %			\item CTL（Computation tree logic）：计算树逻辑，是一种分支时序逻辑
@@ -540,7 +544,7 @@
 %			\end{itemize}
 %		\end{itemize}  
 \textcolor{red}{形成时序逻辑系统遗忘理论的框架，架起形式化验证（verification）和知识表示与推理（KR）的桥梁。}}
-	}
+%	}
 	\end{frame}
 	
 	\subsection{国内外研究现状} 
@@ -548,7 +552,7 @@
 	\begin{frame}
 		\frametitle{~国内外研究现状}
 		\begin{figure}
-			\includegraphics[scale=0.35]{figures/history2}
+			\includegraphics[scale=0.45]{figures/history2}
 		\end{figure}
 	\end{frame}
 
@@ -556,17 +560,23 @@
 	\begin{frame}
 		\frametitle{~研究目标}
 		\begin{figure}
-			\includegraphics[scale=0.3]{figures/mubiao}
+			\includegraphics[scale=0.45]{figures/mubiao}
 		%	\caption{文章组织结构示意图}
 		\end{figure}
-{\footnotesize
-	用人工智能只是表示与推理技术（遗忘），实现反应式系统（负例生成、系统精化等）形式化验证（最弱充分条件和更新等）的有效计算。
+%{\footnotesize
+\begin{figure}
+	\begin{tikzpicture}
+%		\node at(0,0)[draw=red,align=center]  {用人工智能知识表示与推理技术（遗忘），\\实现反应式系统（负例生成、系统精化等）\\形式化验证（最弱充分条件和更新等）的有效计算。};
+		\node at(0,0)[draw=red,align=center]  {用人工智能知识表示与推理技术（遗忘），\\实现反应式系统最弱充分条件和更新等的有效计算，\\从而实现反应式系统验证中的负例生成、系统精化等。};
+	\end{tikzpicture}
+\end{figure}
+	
 %		通过人工智能的知识表示与推理(KR)技术，从{\em 遗忘理论}出发，研究{\em 反应式系统}(在某个符号集上)SNC和WSC的表示与计算，具体为：
 %		\begin{itemize}
-%			\item $\CTL$和$\mu$-演算遗忘理论框架；
+%			\item CTL和$\mu$-演算遗忘理论框架；
 %			\item 使用遗忘计算反应式系统的SNC和WSC。
 %		\end{itemize}
-}
+%}
 	\end{frame}
 
 	
@@ -575,12 +585,12 @@
 %		\frametitle{~研究内容}
 %		\begin{block}<1->{研究内容}
 %			\setlength{\baselineskip}{16pt}
-%			\uncover<1->{~~~本论文研究反应式系统下，$\CTL$和$\mu$-演算的遗忘理论，并使用遗忘计算WSC。具体为：}
+%			\uncover<1->{~~~本论文研究反应式系统下，CTL和$\mu$-演算的遗忘理论，并使用遗忘计算WSC。具体为：}
 %			\begin{itemize}
 %				\vskip 8pt
-%				\item<2-> $\CTL$和$\mu$-演算的遗忘理论
+%				\item<2-> CTL和$\mu$-演算的遗忘理论
 %				\begin{itemize}
-%					\item $\CTL$的遗忘理论
+%					\item CTL的遗忘理论
 %					\item $\mu$-演算的遗忘理论
 %				\end{itemize}
 %				\item<3-> 遗忘理论在反应式系统的形式化验证和知识更新中的应用
@@ -588,7 +598,7 @@
 %					\item 计算WSC和SNC
 %					\item 定义知识更新
 %				\end{itemize}
-%				\item<4-> 计算$\CTL$遗忘的算法
+%				\item<4-> 计算CTL遗忘的算法
 %				\begin{itemize}
 %					\item 基于模型的计算方法
 %					\item 基于消解（resolution）的计算方法
@@ -600,17 +610,87 @@
 
 \begin{frame}
 	\frametitle{~研究内容}
-	{\footnotesize 	\begin{itemize}
-		\item  研究内容（一）：$\CTL$和$\mu$-演算的遗忘理论
+		\begin{itemize}
+		\item  研究内容（一）：CTL和$\mu$-演算的遗忘理论
 		\item 研究内容（二）：遗忘理论在反应式系统的形式化验证和知识更新中的应用
-		\item 研究内容（三）：$\CTL$遗忘的计算方法
-	\end{itemize}}
+		\item 研究内容（三）：CTL遗忘的计算方法
+	\end{itemize}
 	\begin{figure}
 		\includegraphics[scale=0.3]{figures/zuzhi}
 		\caption{文章组织结构示意图}
 	\end{figure}
 \end{frame}
 
+\section{背景知识}
+\begin{frame} 
+	\frametitle{~背景知识：CTL的语法和语义}
+%	{\footnotesize  
+		\begin{definition}[CTL的语法]
+			带索引的CTL公式\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
+			\begin{align*}
+				\phi  ::= & \ \start\mid \bot %\mid \top
+				\mid p \mid\neg\phi \mid \phi\lor\phi \mid
+				\EXIST \NEXT \phi \mid
+				\EXIST \GLOBAL \phi \mid 
+				\EXIST (\phi\ \UNTILL\ \phi)
+				%\mid 
+%				\EXIST_{\tuple{ind}}\NEXT \phi  \mid 
+%				\EXIST_{\tuple{ind}}\GLOBAL \phi \mid
+%				\EXIST_{\tuple{ind}}(\phi \UNTILL \phi)  
+			\end{align*}
+			其中，$p$为原子命题集$\Ha$中的元素。%，$ind \in \Ind$。
+		%	\textcolor{blue}{没有索引和$\start$的公式称为CTL公式。}
+		\end{definition} 
+		\begin{definition}[CTL的语义]\label{def:ctl:semantic}
+			给定公式$\varphi$，初始Kripke结构 $\Hm=(S,R,L,s_0)$ 和状态 $s\in S$。$(\Hm,s)$与$\varphi$之间的可满足关系$(\Hm,s)\models \varphi$定义如下：
+			\begin{figure}
+				\includegraphics[scale=0.3]{figures/semanticCTL1}
+			\end{figure}
+		\end{definition} 
+%	}
+\end{frame}
+
+\begin{frame} 
+	\frametitle{~背景知识：$\mu$-演算的语法和语义}
+%	{\footnotesize 
+%		不动点符号：$\mu$和$\nu$；\qquad
+%		${\cal V}$：变元符号的可数集。 
+		\begin{definition}[$\mu$-演算公式]
+			令$p\in \Ha$且$X\in {\cal V}$，$\mu$-演算公式（简称为$\mu$-公式或公式）递归定义如下：
+			\[
+			\varphi ::=   p\mid  X\mid \neg \varphi\mid \varphi \vee \varphi \mid \ALL\NEXT \varphi\mid  \nu X. \varphi.
+			\]
+		%	其中$p\in \Ha$且$X\in {\cal V}$。
+		\end{definition}
+		\begin{definition}[$\mu$-演算的语义]
+			给定$\mu$-演算公式$\varphi$、Kripke结构{\em $\Hm=(S,R,L,r)$}和一个从${\cal V}$中的变量到$\Hm$中状态的赋值函数$v: {\cal V} \rto 2^S$。公式在$\Hm$和$v$上的解释是$S$的一个子集$\left\| \varphi\right\|_v^{\Hm}$（如果在上下文中$\Hm$是明确的，则可以省去上标）：
+%			\begin{columns}
+%				\column{0.5\textwidth}
+				\begin{align*}
+					& \left \| p\right \|_v^{\Hm} = \{s\mid p \in L(s)\}, \qquad \left\| X\right\|_v^{\Hm} = v(X),\\
+					& \left\|\varphi_1 \vee \varphi_2\right\|_v^{\Hm} = \left\|\varphi_1\right\|_v^{\Hm} \cup \left\|\varphi_2\right\|_v^{\Hm},\\ 
+					& \left\|\ALL \NEXT \varphi\right\|_v^{\Hm} = \{s\mid \forall s'. (s, s') \in R \Rto s' \in \left\|\varphi\right\|_v^{\Hm}\},\\ 
+					& \left\| \nu X. \varphi\right\|_v^{\Hm} = \bigcup\{S' \subseteq S \mid S' \subseteq \left\|\varphi\right\|_{v[X:= S']}^{\Hm}\}.
+				\end{align*}
+%				\column{0.5\textwidth}
+%				{\tiny 
+%					\begin{block}{{\scriptsize 小贴士}}
+%						\begin{itemize} 
+%							\item 赋值：$(\Hm,s,v)$，$(\Hm,v)$；
+%							\item 若$s\in \left\| \varphi \right\|_v$，则称$s$“满足”$\varphi$，记为$(\Hm, s, v) \models \varphi$；
+%							\item 这里的Kripke结构不要求其二元关系是完全的；
+%							\item 当公式$\varphi$为$\mu$-句子时，可以将赋值函数$v$省略；
+%							\item 范式：析取$\mu$-公式。
+%						\end{itemize}
+%					\end{block}
+%				} 
+%			\end{columns}
+			
+			其中，$v[X:= S']$是一个赋值函数，它除了$v[X:= S'](X)=S'$之外，和$v$完全相同。
+		\end{definition}
+		
+%	}
+\end{frame}
 
 	
 \section{研究内容（一）：CTL和$\mu$-演算的遗忘理论}
@@ -618,7 +698,7 @@
 \begin{frame}  
 	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.35]{figures/ctlMuForgFrame1}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrame1}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
 	{\tiny 
@@ -642,7 +722,7 @@
 \begin{frame}  
 	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.35]{figures/ctlMuForgFrame}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrame}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
 	{\tiny 
@@ -665,7 +745,7 @@
 \begin{frame}  
 	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.35]{figures/ctlMuForgFrame2}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrame2}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
 	{\tiny 
@@ -688,7 +768,7 @@
 \begin{frame}  
 	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.35]{figures/ctlMuForgFrame3}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrame3}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
 	{\tiny 
@@ -711,7 +791,7 @@
 \begin{frame}  
 	\frametitle{~研究内容（一）：CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.35]{figures/ctlMuForgFrame4}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrame4}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
 {\tiny 
@@ -734,10 +814,10 @@
 \textcolor{red}{\[\hbox{形成了时序逻辑遗忘理论的框架！}\]}
 \end{frame}
 
-\subsection{CTL下关键定义和性质}
+\subsection{CTL遗忘及其性质}
 \begin{frame}
-	\frametitle{~研究内容（一）：CTL下关键定义和性质}
-	{\scriptsize
+	\frametitle{~研究内容（一）：CTL遗忘及其性质}
+%	{\scriptsize
 		\begin{definition}[$V$-互模拟] 
 			给定原子命题集$V\subseteq\cal A$、索引集合$I\subseteq \Ind$和初始$\Ind$-结构 $\Hm_i=(S_i, R_i,L_i, [\_]_i, s_0^i)~(i=1,2)$。
 			$\Hb_V \subseteq S_1 \times S_2$为二元关系，对任意$s_1 \in S_1$和$s_2 \in S_2$，若$(s_1, s_2)\in \Hb_V$，则：
@@ -818,18 +898,18 @@
 					\node at(1,-1.5) {{\tiny $\{se,sp\}$-互模拟}};
 					%	\node at(0,-1.5) {${\cal K}_2$};
 				\end{tikzpicture}
-				\caption{{\tiny 汽车制造企业模型互模拟}}
+%				\caption{{\tiny 汽车制造企业模型互模拟}}
 			\end{figure}
 			%			\begin{figure}
 			%				\includegraphics[scale=0.34]{figures/NVBnewCar1}
 			%			\end{figure}
 		\end{columns}
 	 
-	}
+%	}
 \end{frame}
 \begin{frame}
-	\frametitle{~研究内容（一）：CTL下关键定义和性质}
-	{\footnotesize
+	\frametitle{~研究内容（一）：CTL遗忘及其性质}
+%	{\footnotesize
 		\begin{definition}[遗忘，forgetting]\label{def:V:forgetting}
 			令$V$是$\Ha$的子集，$\Phi$是公式。如果公式$\psi$满足下面条件：
 			\begin{itemize}
@@ -839,7 +919,7 @@
 			那么，称$\psi$为从$\Phi$中遗忘$V$后得到的结果，记为$\CTLforget(\phi,V)$。
 		\end{definition}
 		\only<1>{\begin{block}{遗忘理论公设}
-				给定$\CTL$公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$、原子命题集$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，$\CTL$下遗忘理论公设如下：
+				给定CTL公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$、原子命题集$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，CTL下遗忘理论公设如下：
 				\begin{itemize}
 					\item[(\W)] 削弱：$\varphi \models \varphi'$；
 					\item[(\PP)] 正支持：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
@@ -847,13 +927,13 @@
 					\item[(\textbf{IR})] 无关性： $\IR(\varphi', V)$。
 				\end{itemize}
 		\end{block}}
-	}
+%	}
 \end{frame}
 \begin{frame}
-		\frametitle{~研究内容（一）：CTL下关键定义和性质}
-		{\footnotesize 
+		\frametitle{~研究内容（一）：CTL遗忘和性质}
+%		{\footnotesize 
 			\begin{theorem}[表达性定理，Representation Theorem]\label{thm:close}
-				给定$\CTL$公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题集。
+				给定CTL公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题集。
 				下面的陈述是等价的：
 				\begin{itemize}
 					\item[(i)] $\varphi' \equiv \CTLforget(\varphi, V)$,
@@ -871,11 +951,11 @@
 %				\qquad \ALL\GLOBAL(x \rto \neg \ALL\GLOBAL p),
 %				\qquad \ALL\GLOBAL(\ALL \FUTURE \ALL \GLOBAL p).
 %			\end{align*}
-%			Maksimova证明了$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在$\CTL$公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)$ $\models x\lrto \psi$，即$\CTL$不具有Beth性质。
+%			Maksimova证明了$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在CTL公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)$ $\models x\lrto \psi$，即CTL不具有Beth性质。
 %		\end{example}
 		 
 		\begin{proposition}\label{pro:uniforget}
-			$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 $\CTL$中是不可表示的。其中，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集$\Var(\varphi)=\{p,x\}$的公式。}为下面公式的合取~\cite{Maksimova:JANCL:1991}：
+			$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 CTL中是不可表示的。其中，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集$\Var(\varphi)=\{p,x\}$的公式。}为下面公式的合取~\cite{Maksimova:JANCL:1991}：
 			\begin{align*}
 				&\ALL\GLOBAL(\neg x \wedge \neg \ALL \GLOBAL p \rto \neg \ALL \NEXT \neg x),
 				\qquad \ALL\GLOBAL(\neg \ALL\NEXT \neg x \rto \ALL \NEXT x),\\
@@ -885,7 +965,7 @@
 			\end{align*}
 		\end{proposition}
 			
-		}
+%		}
 	
 \end{frame}
 %
@@ -894,7 +974,7 @@
 %	{\footnotesize 
 %		\only<1>{
 %			\begin{theorem}[表达性定理，Representation Theorem]\label{thm:close} 
-%				给定$\CTL$公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题集。 
+%				给定CTL公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题集。 
 %				下面的陈述是等价的：
 %				\begin{itemize}
 %					\item[(i)] $\varphi' \equiv \CTLforget(\varphi, V)$,
@@ -913,12 +993,12 @@
 %				\qquad \ALL\GLOBAL(x \rto \neg \ALL\GLOBAL p),
 %				\qquad \ALL\GLOBAL(\ALL \FUTURE \ALL \GLOBAL p).
 %			\end{align*}
-%			Maksimova证明了$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在$\CTL$公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)$ $\models x\lrto \psi$，即$\CTL$不具有Beth性质。
+%			Maksimova证明了$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在CTL公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)$ $\models x\lrto \psi$，即CTL不具有Beth性质。
 %		\end{example}
 %%	}
 %%	\only<2,3>{
 %		\begin{proposition}\label{pro:uniforget}
-%			$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 $\CTL$中是不可表示的。
+%			$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 CTL中是不可表示的。
 %		\end{proposition}
 %	\begin{theorem}\label{thm:PL:CTL}
 %		给定一个命题公式$\varphi$和原子命题集$V\subseteq \Ha$，则下面逻辑等式成立。
@@ -938,7 +1018,7 @@
 %\end{itemize} 
 %\end{proposition}
 %\begin{proposition}[同质性]\label{pro:ctl:forget:2}
-%	令${\cal T} \in \{\NEXT, \FUTURE, \GLOBAL\}$、${\cal P} \in \{\ALL, \EXIST\}$，$\phi$为$\CTL$公式，且$P\subseteq\cal A$为原子命题集，则：
+%	令${\cal T} \in \{\NEXT, \FUTURE, \GLOBAL\}$、${\cal P} \in \{\ALL, \EXIST\}$，$\phi$为CTL公式，且$P\subseteq\cal A$为原子命题集，则：
 %	$$\CTLforget({\cal P}{\cal T}\phi,P)\equiv {\cal P}{\cal T} \CTLforget(\phi,P).$$
 %\end{proposition}
 %	}
@@ -1218,7 +1298,7 @@
 \subsection{遗忘理论在反应式系统中的应用}
 \begin{frame}
 	\frametitle{~研究内容（二）遗忘理论在反应式系统中的应用}
-	{\footnotesize
+%	{\footnotesize
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{itemize}
@@ -1244,15 +1324,15 @@
 			\node at(-0.2,0.3) {{\tiny 进程调度}};
 			%	\node at(0,-1.5) {${\cal K}_2$}; 
 		\end{tikzpicture}
-		\caption{{\scriptsize 进程的三种基本状态及其转换}}
+%		\caption{{\scriptsize 进程的三种基本状态及其转换}}
 	\end{figure}
 %		 \begin{figure}
 %		 	\includegraphics[scale=0.28]{figures/processState}
 %		 	\caption{{\scriptsize 进程的三种基本状态及其转换}}
 %		 \end{figure}
 	\end{columns}
-} 
-
+%} 
+{\noindent}	 \rule[-10pt]{17.5cm}{0.1em}\\
 \begin{figure} 
 %	\begin{tikzpicture}
 %		\tikzstyle{every node}=[font=\small,scale=0.8]
@@ -1267,9 +1347,9 @@
 %		
 %	
 %		
-%	%	\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+%	%	\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
 %	\end{tikzpicture}
-	\includegraphics[scale=0.27]{figures/sncAndWsc0}
+	\includegraphics[scale=0.4]{figures/sncAndWsc0}
 	%\includegraphics[scale=0.27]{figures/applicationF4}
 %	\caption{进程的三种基本状态及其转换}
 \end{figure} 
@@ -1278,42 +1358,42 @@
 
 \begin{frame}
 \frametitle{~研究内容（二）遗忘理论在反应式系统中的应用}
-{\footnotesize
-	\begin{columns}
-		\column{0.5\textwidth}
-		\begin{itemize}
-			\item 反应式系统被表示成Kripke结构；
-			\item 初始Kripke结构的特征公式看作CTL公式——${\cal F}_{\Ha}(\Hm)$；
-		\end{itemize}
-		\column{0.5\textwidth}
-		\begin{figure}
-			\centering
-			%	\tiny
-			\begin{tikzpicture}[scale=0.8]
-				\tikzstyle{every node}=[font=\small,scale=0.8]
-				\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
-				\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
-				\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
-				\path (s1) edge[->,bend right=45] (s0);
-				\path (s0) edge[->,bend left=-45] (s1);
-				\path (s1) edge[->,bend right=-45] (s2);
-				\path (s2) edge[->,bend right=-45] (s0); 
-				\node at(0,-0.5) {{\tiny $I/O$请求}};
-				\node at(-1,0.5) {{\tiny $I/O$完成}};
-				\node at(0.7,0.5) {{\tiny 时间片完}};
-				\node at(-0.2,0.3) {{\tiny 进程调度}};
-				%	\node at(0,-1.5) {${\cal K}_2$}; 
-			\end{tikzpicture}
-			\caption{{\scriptsize 进程的三种基本状态及其转换}}
-		\end{figure}
-		%		 \begin{figure}
-		%		 	\includegraphics[scale=0.28]{figures/processState}
-		%		 	\caption{{\scriptsize 进程的三种基本状态及其转换}}
-		%		 \end{figure}
-	\end{columns}
-} 
+%{\footnotesize
+%	\begin{columns}
+%		\column{0.5\textwidth}
+%		\begin{itemize}
+%			\item 反应式系统被表示成Kripke结构；
+%			\item 初始Kripke结构的特征公式看作CTL公式——${\cal F}_{\Ha}(\Hm)$；
+%		\end{itemize}
+%		\column{0.5\textwidth}
+%		\begin{figure}
+%			\centering
+%			%	\tiny
+%			\begin{tikzpicture}[scale=0.8]
+%				\tikzstyle{every node}=[font=\small,scale=0.8]
+%				\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+%				\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+%				\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+%				\path (s1) edge[->,bend right=45] (s0);
+%				\path (s0) edge[->,bend left=-45] (s1);
+%				\path (s1) edge[->,bend right=-45] (s2);
+%				\path (s2) edge[->,bend right=-45] (s0); 
+%				\node at(0,-0.5) {{\tiny $I/O$请求}};
+%				\node at(-1,0.5) {{\tiny $I/O$完成}};
+%				\node at(0.7,0.5) {{\tiny 时间片完}};
+%				\node at(-0.2,0.3) {{\tiny 进程调度}};
+%				%	\node at(0,-1.5) {${\cal K}_2$}; 
+%			\end{tikzpicture}
+%%			\caption{{\scriptsize 进程的三种基本状态及其转换}}
+%		\end{figure}
+%		%		 \begin{figure}
+%		%		 	\includegraphics[scale=0.28]{figures/processState}
+%		%		 	\caption{{\scriptsize 进程的三种基本状态及其转换}}
+%		%		 \end{figure}
+%	\end{columns}
+%%} 
 \begin{figure} 
-	\includegraphics[scale=0.27]{figures/sncAndWsc11}
+	\includegraphics[scale=0.4]{figures/sncAndWsc11}
 	%\includegraphics[scale=0.27]{figures/applicationF4}
 	%	\caption{进程的三种基本状态及其转换}
 \end{figure} 
@@ -1321,42 +1401,42 @@
 
 \begin{frame}
 	\frametitle{~研究内容（二）遗忘理论在反应式系统中的应用}
-	{\footnotesize
-		\begin{columns}
-			\column{0.5\textwidth}
-			\begin{itemize}
-				\item 反应式系统被表示成Kripke结构；
-				\item 初始Kripke结构的特征公式看作CTL公式——${\cal F}_{\Ha}(\Hm)$；
-			\end{itemize}
-			\column{0.5\textwidth}
-			\begin{figure}
-				\centering
-				%	\tiny
-				\begin{tikzpicture}[scale=0.8]
-					\tikzstyle{every node}=[font=\small,scale=0.8]
-					\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
-					\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
-					\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
-					\path (s1) edge[->,bend right=45] (s0);
-					\path (s0) edge[->,bend left=-45] (s1);
-					\path (s1) edge[->,bend right=-45] (s2);
-					\path (s2) edge[->,bend right=-45] (s0); 
-					\node at(0,-0.5) {{\tiny $I/O$请求}};
-					\node at(-1,0.5) {{\tiny $I/O$完成}};
-					\node at(0.7,0.5) {{\tiny 时间片完}};
-					\node at(-0.2,0.3) {{\tiny 进程调度}};
-					%	\node at(0,-1.5) {${\cal K}_2$}; 
-				\end{tikzpicture}
-				\caption{{\scriptsize 进程的三种基本状态及其转换}}
-			\end{figure}
-			%		 \begin{figure}
-			%		 	\includegraphics[scale=0.28]{figures/processState}
-			%		 	\caption{{\scriptsize 进程的三种基本状态及其转换}}
-			%		 \end{figure}
-		\end{columns}
-	} 
+%%	{\footnotesize
+%		\begin{columns}
+%			\column{0.5\textwidth}
+%			\begin{itemize}
+%				\item 反应式系统被表示成Kripke结构；
+%				\item 初始Kripke结构的特征公式看作CTL公式——${\cal F}_{\Ha}(\Hm)$；
+%			\end{itemize}
+%			\column{0.5\textwidth}
+%			\begin{figure}
+%				\centering
+%				%	\tiny
+%				\begin{tikzpicture}[scale=0.8]
+%					\tikzstyle{every node}=[font=\small,scale=0.8]
+%					\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
+%					\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
+%					\node[redCircle] (s2) at(-0.8,-0.2) {{\tiny 阻塞}};  
+%					\path (s1) edge[->,bend right=45] (s0);
+%					\path (s0) edge[->,bend left=-45] (s1);
+%					\path (s1) edge[->,bend right=-45] (s2);
+%					\path (s2) edge[->,bend right=-45] (s0); 
+%					\node at(0,-0.5) {{\tiny $I/O$请求}};
+%					\node at(-1,0.5) {{\tiny $I/O$完成}};
+%					\node at(0.7,0.5) {{\tiny 时间片完}};
+%					\node at(-0.2,0.3) {{\tiny 进程调度}};
+%					%	\node at(0,-1.5) {${\cal K}_2$}; 
+%				\end{tikzpicture}
+%%				\caption{{\scriptsize 进程的三种基本状态及其转换}}
+%			\end{figure}
+%			%		 \begin{figure}
+%			%		 	\includegraphics[scale=0.28]{figures/processState}
+%			%		 	\caption{{\scriptsize 进程的三种基本状态及其转换}}
+%			%		 \end{figure}
+%		\end{columns}
+%%	} 
 	\begin{figure} 
-		\includegraphics[scale=0.27]{figures/sncAndWsc21}
+		\includegraphics[scale=0.4]{figures/sncAndWsc21}
 		%\includegraphics[scale=0.27]{figures/applicationF4}
 		%	\caption{进程的三种基本状态及其转换}
 	\end{figure}
@@ -1366,8 +1446,8 @@
 
 \subsection{关键定义和性质}
 \begin{frame}
-	\frametitle{~研究内容（二）：关键定义和性质}
-	{\footnotesize
+	\frametitle{~研究内容（二）：必要条件定义及其性质}
+%	{\footnotesize
 		\begin{definition}[充分和必要条件]\label{def:NC:SC}
 			给定两个公式$\varphi$和$\psi$，$V \subseteq \Var(\varphi)$，$q\in\Var(\varphi)- V$
 			和$\Var(\psi)$ $\subseteq V$。
@@ -1385,19 +1465,19 @@
 				\item[(ii)]  $\neg\CTLforget (\varphi \land \neg q$, $(\Var(\varphi) \cup \{q\}) - V)$是$q$在$V$和$\varphi$上的WSC。
 			\end{itemize}
 		\end{theorem} 
-	}
+%	}
 \end{frame}
 
 \begin{frame}
-	\frametitle{~研究内容（二）：关键定义和性质}
-	{\footnotesize
+	\frametitle{~研究内容（二）知识更新定义及其性质}
+%	{\footnotesize
 	  
 		\begin{definition} 
 			给定公式$\Gamma$和$\varphi$。知识更新操作$\diamond_{\CTL}$定义如下：
 			\[
 			\Mod(\Gamma \diamond_{\CTL} \varphi) = \bigcup_{\Hm \in \Mod(\Gamma)} \bigcup_{V_{min}\subseteq \Ha} \Mod(\CTLforget({\cal F}_{\Ha}(\Hm), V_{min}) \wedge \varphi),
 			\]
-			其中，${\cal F}_{\Ha}(\Hm)$是$\Hm$在$\Ha$上的特征公式，$V_{min} \subseteq \Ha$是使得$\CTLforget({\cal F}_{\Ha}(\Hm), V_{min})$可满足的极小子集。
+			其中，${\cal F}_{\Ha}(\Hm)$是$\Hm$在$\Ha$上的特征公式。%，$V_{min} \subseteq \Ha$是使得$\CTLforget({\cal F}_{\Ha}(\Hm), V_{min})$可满足的极小子集。
 		\end{definition}
 		\begin{theorem} 
 			给定$\mu$-句子$\Gamma$和$\varphi$，则：
@@ -1409,7 +1489,7 @@
 		\begin{theorem}\label{thm:U1toU8}
 			知识更新操作$\diamond_{\CTL}$满足Katsuno和Mendelzon提出的基本条件(U1)-(U8)。
 		\end{theorem}
-	}
+%	}
 \end{frame}
 
 
@@ -1482,7 +1562,7 @@
 %		\begin{block}{约定}
 %			\begin{itemize}
 %				\item 本小节假设所有初始结构都是有限的，即：状态来源于有限状态空间且$\Ha$为有限原子命题集；
-%				\item 任意$\Ha$上的有限初始结构$\Hm$（为了简化符号，用初始Kripke结构$\Hm$代替初始结构$(\Hm,s_0)$）都能用一个$\CTL$公式——\fbox{特征公式${\cal F}_{\Ha}(\Hm)$}来表示；
+%				\item 任意$\Ha$上的有限初始结构$\Hm$（为了简化符号，用初始Kripke结构$\Hm$代替初始结构$(\Hm,s_0)$）都能用一个CTL公式——\fbox{特征公式${\cal F}_{\Ha}(\Hm)$}来表示；
 %				\item 给定公式$\varphi$和$\psi$，$V_{min}\subseteq \Ha$为使得$\CTLforget(\varphi, V_{min}) \wedge \psi$可满足的极小子集。
 %				\item 记
 %				$$\bigcup_{V_{min}\subseteq \Ha} \Mod(\CTLforget({\cal F}_{\Ha}(\Hm), V_{min}) \wedge \psi)$$  
@@ -1697,14 +1777,14 @@
 	\begin{figure}
 		\centering
 		%	\tiny
-		\begin{tikzpicture}[scale=0.8]
-			\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+		\begin{tikzpicture}%[scale=0.8]
+%			\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
 			
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -1735,7 +1815,7 @@
 			
 			%	\draw[->] (alg1) -- (alg2);
 			
-			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			%			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 			
 			
 			
@@ -1780,14 +1860,14 @@
 	\begin{figure}
 		\centering
 		%	\tiny
-		\begin{tikzpicture}[scale=0.8]
-			\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+		\begin{tikzpicture}%[scale=0.8]
+		%	\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
 			 
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -1811,16 +1891,16 @@
 			\node[circle,minimum width =30pt, minimum height =30pt, fill=yellow!40] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
 			
 			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
-			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
-			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=yellow!40] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
-				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+%			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
+%			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=yellow!40] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
+%				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
 			%			\\ 
 			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
 			
 			%	\draw[->] (alg1) -- (alg2);
 			
-			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			%			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 			
 			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
 			
@@ -1871,22 +1951,22 @@
 	\begin{figure}
 		\centering
 		%	\tiny
-		\begin{tikzpicture}[scale=0.8]
-			\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
-			\node[color=red] at(0,4) {{\scriptsize $
+		\begin{tikzpicture}%[scale=0.8]
+			%\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node[color=red] at(0,4) {$
 					ch({\cal M},V)=
 					\left\{
 					\begin{array}{ll}
 						\max\{k\mid s,s'\in S \text{ 且 }\dis_V({\cal M},s,s',k)\}, \qquad \hbox{${\cal M}$是 $V$-可区分的；} \\
 						\min\{k\mid {\cal B}_{k}={\cal B}_{k+1}, k\ge 0\}, \ \ \ \quad  \qquad \qquad \qquad \hbox{否则。}
 					\end{array}
-					\right.$}};
-			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-3.8,4.5) rectangle (3.5,3.5);
+					\right.$};
+			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-5.5,4.5) rectangle (5,3.5);
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -1910,16 +1990,16 @@
 			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
 			
 			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
-			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
-			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
-				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+%			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
+%			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
+%				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
 			%			\\ 
 			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
 			
 			%	\draw[->] (alg1) -- (alg2);
 			
-			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			%			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 			
 			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
 			
@@ -1964,22 +2044,22 @@
 	\begin{figure}
 		\centering
 		%	\tiny
-		\begin{tikzpicture}[scale=0.8]
-			\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
-			\node at(0,4) {{\scriptsize $
+		\begin{tikzpicture}%[scale=0.8]
+		%	\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node at(0,4) {$
 					ch({\cal M},V)=
 					\left\{
 					\begin{array}{ll}
 						\max\{k\mid s,s'\in S \text{ 且 }\dis_V({\cal M},s,s',k)\}, \qquad \hbox{${\cal M}$是 $V$-可区分的；} \\
 						\min\{k\mid {\cal B}_{k}={\cal B}_{k+1}, k\ge 0\}, \ \ \ \quad  \qquad \qquad \qquad \hbox{否则。}
 					\end{array}
-					\right.$}};
-			\draw[dashed, color=orange] (-3.8,4.5) rectangle (3.5,3.5);
+					\right.$};
+			\draw[dashed, color=orange] (-5.5,4.5) rectangle (5,3.5);
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -2003,30 +2083,30 @@
 			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
 			
 			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
-			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
-			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
-				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+%			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
+%			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
+%				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
 			%			\\ 
 			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
 			
 			%	\draw[->] (alg1) -- (alg2);
 			
-			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			%			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 			
 			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
 			
 			
 			
-			\node[color=red] at(-3.5,-0.2) {{\scriptsize $
+			\node[color=red] at(-4.5,-0.2) {$
 					{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
 					\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
-			}};
-			\node[color=red] at(-1, -0.6) {{\scriptsize${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
+			};
+			\node[color=red] at(-1, -0.6) {${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
 					\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
 					\wedge  
-					\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}}; %计算树特征公式
-			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-5.8,0) rectangle (3.8,-1);
+					\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}; %计算树特征公式
+			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-7.4,0) rectangle (5.4,-1);
 			
 			 
 			
@@ -2057,22 +2137,22 @@
 	\begin{figure}
 		\centering
 		%	\tiny
-		\begin{tikzpicture}[scale=0.8]
-			\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
-			\node at(0,4) {{\scriptsize $
+		\begin{tikzpicture}%[scale=0.8]
+		%	\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node at(0,4) {$
 					ch({\cal M},V)=
 					\left\{
 					\begin{array}{ll}
 						\max\{k\mid s,s'\in S \text{ 且 }\dis_V({\cal M},s,s',k)\}, \qquad \hbox{${\cal M}$是 $V$-可区分的；} \\
 						\min\{k\mid {\cal B}_{k}={\cal B}_{k+1}, k\ge 0\}, \ \ \ \quad  \qquad \qquad \qquad \hbox{否则。}
 					\end{array}
-					\right.$}};
-			\draw[dashed, color=orange] (-3.8,4.5) rectangle (3.5,3.5);
+					\right.$};
+			\draw[dashed, color=orange] (-5.5,4.5) rectangle (5,3.5);
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -2093,45 +2173,45 @@
 			
 			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=green,fill=green!20] (s6) at(3,2) {{\scriptsize 特征公式}};
 			
-			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
+%			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
 			
 			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
-			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
-			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
-				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+%			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
+%			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
+%				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
 			%			\\ 
 			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
 			
 			%	\draw[->] (alg1) -- (alg2);
 			
-			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			%			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 			
-			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
+%			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
 			
 			 
 			
-			\node[color=red] at(-3.5,-0.2) {{\scriptsize $
-					{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
-					\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
-			}};
-			\node[color=red] at(-1, -0.6) {{\scriptsize${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
-					\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
-					\wedge  
-					\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}}; %计算树特征公式
-			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-5.8,0) rectangle (3.8,-1);
+			\node[color=red] at(-4.5,-0.2) {$
+				{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
+				\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
+			};
+			\node[color=red] at(-1, -0.6) {${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
+				\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
+				\wedge  
+				\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}; %计算树特征公式
+			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-7.4,0) rectangle (5.4,-1);
 			
-				\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=yellow,fill=green!50!yellow]  at(2,1.1)[draw,align=center] {{\scriptsize  只考虑$V$中的原子命题；}\\ {\scriptsize 突出了树节点的内容，即：对于任意原子命题$p\in V$，若$p$在节点} \\ {\scriptsize 的标签中，则其正出现在特征公式中，否则负出现在特征公式中；}\\
-				{\scriptsize 公式中的时序算子表示了状态之间的转换关系。}};
+				\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=yellow,fill=green!50!yellow]  at(-4,1.1)[draw,align=center] {{\scriptsize  (1) 只考虑$V$中的原子命题；}\\ {\scriptsize (2) 突出了树节点的内容，即：对于任意原子命题$p\in V$，若$p$在节点} \\ {\scriptsize 的标签中，则其正出现在特征公式中，否则负出现在特征公式中；}\\
+				{\scriptsize (3) 公式中的时序算子表示了状态之间的转换关系。}};
 			
 			 
 			
 			\draw[->] (s1) -- (s2);
 			\draw[->] (s2) -- (s3);
 			\draw[->] (s2) -- (s4);
-%			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[<->,dashed,color=gray] (s4) -- (s5);
 			\draw[->] (s4) -- (2,2)--(s3);
-%			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
 			\draw[->] (s3) -- (3,3) -- (s6); 
 			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
 			\draw[dashed, color=blue!20] (1,6) -- (5.5,5);
@@ -2151,22 +2231,22 @@
 	\begin{figure}
 		\centering
 		%	\tiny
-		\begin{tikzpicture}[scale=0.8]
-			\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
-			\node at(0,4) {{\scriptsize $
+		\begin{tikzpicture}%[scale=0.8]
+		%	\tikzstyle{every node}=[font=\small,scale=0.8]
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
+			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node at(0,4) {$
 					ch({\cal M},V)=
 					\left\{
 					\begin{array}{ll}
 						\max\{k\mid s,s'\in S \text{ 且 }\dis_V({\cal M},s,s',k)\}, \qquad \hbox{${\cal M}$是 $V$-可区分的；} \\
 						\min\{k\mid {\cal B}_{k}={\cal B}_{k+1}, k\ge 0\}, \ \ \ \quad  \qquad \qquad \qquad \hbox{否则。}
 					\end{array}
-					\right.$}};
-			\draw[dashed, color=orange] (-3.8,4.5) rectangle (3.5,3.5);
+					\right.$};
+			\draw[dashed, color=orange] (-5.5,4.5) rectangle (5,3.5);
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -2187,43 +2267,44 @@
 			
 			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=green,fill=yellow!40] (s6) at(3,2) {{\scriptsize 特征公式}};
 			
-			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
+%			\node[circle,minimum width =30pt, minimum height =30pt, fill=red!20] (alg1) at(-3,1) {{\scriptsize 可靠且完备\linebreak 的算法}};
 			
 			%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-6,1)[draw,align=center] {{\scriptsize $O((n-x)m^{2(m+2)}2^{nm}  \log m)$} \\ {\scriptsize($m=|{\cal S}|$, $n=|\Ha|$, $x=|V|$)}};
-			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
-			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
-				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
+%			\node[color=red] at(-5.7,2) {{\scriptsize$\CTL_{\ALL \FUTURE}$}};
+%			\draw[->,color=red!20,dashed] (-2.65,2.8) -- (-4.2,1.8);
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=red,fill=red!20] (alg2) at(-5.7,1)[draw,align=center] {{\tiny  $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}\\ {\tiny $(\Hm,s_0)\models^? \CTLforget(\varphi, V)~(\textsc{NP}-C)$} \\ {\tiny $\CTLforget(\varphi, V ) \models^? \psi~(\textsc{NP}-C)$}\\
+%				{\tiny $\psi \models^? \CTLforget(\varphi, V)~(\Pi_2^{\textsc{P}}-C)$}};
 			%			\\ 
 			%		{\scriptsize $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)~(\Pi_2^{\textsc{P}}-C)$}; 
 			
 			%	\draw[->] (alg1) -- (alg2);
 			
-			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			%			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 			
-			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
+%			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
 			
-			\node[color=red] at(1,0.5) {{\scriptsize$T(s') = {\cal F}_V(\Tr_c(s'))$}};
-			\node[color=red] at(2,1) {{\scriptsize$T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
+			\node[color=red] at(-3,0.5) {$T(s') = {\cal F}_V(\Tr_c(s'))$};
+			\node[color=red] at(0,1) {$T(s_0) \text{ } \wedge \bigwedge_{s\in S}\ALL \GLOBAL\left(
 					T(s) \rto
 					\bigwedge_{(s,s')\in R}
 					\EXIST \NEXT T(s')
 					\wedge
 					\ALL \NEXT \bigg(\bigvee_{(s,s')\in R}T(s')\bigg)
 					\right).
-					$}}; %特征公式
+					$}; %特征公式
 			
 			%\draw[dashed, color=green!40] (-1.3,1.5) rectangle (5.2,0.3);
-			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-1.3,1.5) rectangle (5.2,0.3);
+			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-5,1.5) rectangle (5,0.3);
 			
-			\node at(-3.5,-0.2) {{\scriptsize $
-					{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
-					\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
-			}};
-			\node at(-1, -0.6) {{\scriptsize${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
-					\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
-					\wedge  
-					\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}}; %计算树特征公式
+			\node at(-4.5,-0.2) {$
+				{\cal F}_V(\Tr_0(s)) =  \bigwedge_{p \in V\cap L(s)}p
+				\wedge \bigwedge_{q\in V-L(s)} \neg q,$  
+			};
+			\node at(-1, -0.6) {${\cal F}_V(\Tr_{k+1}(s)) = \bigwedge_{(s,s')\in R}
+				\EXIST \NEXT {\cal F}_V(\Tr_k(s')) 
+				\wedge  
+				\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}; %计算树特征公式
+		%	\draw[dashed, draw=orange] (-7.4,0) rectangle (5.4,-1);
 			
 			\draw[->] (s1) -- (s2);
 			\draw[->] (s2) -- (s3);
@@ -2266,8 +2347,8 @@
 %		%	\tiny
 %		\begin{tikzpicture}[scale=0.8]
 %			\tikzstyle{every node}=[font=\small,scale=0.8]
-%			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
-%			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+%			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
+%			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
 %			\node at(0,4) {{\scriptsize $
 %					ch({\cal M},V)=
 %					\left\{
@@ -2279,7 +2360,7 @@
 %			\draw[dashed, color=orange] (-3.8,4.5) rectangle (3.5,3.5);
 %			
 %			
-%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+%			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
 %			
 %			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 %			
@@ -2312,7 +2393,7 @@
 %			
 %			%	\draw[->] (alg1) -- (alg2);
 %			
-%			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+%			%			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 %			
 %			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
 %			
@@ -2374,7 +2455,7 @@
 %	\frametitle{遗忘封闭性}
 %	{\footnotesize 
 %		\begin{lemma}\label{lem:models:formula}
-%				给定$\CTL$公式$\varphi$，下面等式成立：
+%				给定CTL公式$\varphi$，下面等式成立：
 %				\begin{equation*}
 %					\varphi\equiv \bigvee_{(\Hm, s_0)\in\Mod(\varphi)}{\cal F}_{\cal A}(\Hm, s_0).
 %				\end{equation*}
@@ -2389,24 +2470,66 @@
 %\end{frame}
 
 \begin{frame}
-	\frametitle{研究内容（三）（1）基于模型的遗忘算法}
-	{\footnotesize 
+	\frametitle{研究内容（三）（1）基于模型的CTL遗忘算法}
+%	{\footnotesize 
 		
 		\begin{block}{遗忘封闭性}
 			从$\varphi$中遗忘$V$中的元素得到的结果为：
 			\begin{equation*}
-				\bigvee_{{\cal K}\in  \{{\cal K}'\mid \exists {\cal K}''\in\Mod(\phi),\ {\cal K}''\lrto_V{\cal K}'\}} \textcolor{blue}{{\cal F}_{\overline V}({\cal K})}.
+				\bigvee_{{\cal K}\in  \{{\cal K}'\mid \exists {\cal K}''\in\Mod(\phi),\ {\cal K}''\lrto_V{\cal K}'\}} \textcolor{red}{{\cal F}_{\overline V}({\cal K})}.
 			\end{equation*}
 		\end{block}
 	
 		\begin{figure}
-			\includegraphics[scale=0.45]{figures/model-basedAlg}
+			\includegraphics[scale=0.6]{figures/model-basedAlg}
 		\end{figure}
 		
 %		\begin{proposition}\label{pro:time:alg1}
-%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+%			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 %		\end{proposition}
-	}
+%	}
+\end{frame}
+
+\begin{frame}
+	\frametitle{研究内容（三）（1）CTL遗忘复杂性结果}
+%	{\footnotesize 
+		%	\only<1>{	\begin{lemma}\label{lem:models:formula}
+		%			给定CTL公式$\varphi$，下面等式成立：
+		%			\begin{equation*}
+		%				\varphi\equiv \bigvee_{(\Hm, s_0)\in\Mod(\varphi)}{\cal F}_{\cal A}(\Hm, s_0).
+		%			\end{equation*}
+		%		\end{lemma}
+		%	\begin{block}{遗忘封闭性}
+		%		从$\varphi$中遗忘$V$中的元素得到的结果为：
+		%		\begin{equation*}
+		%			\bigvee_{{\cal K}\in  \{{\cal K}'\mid \exists {\cal K}''\in\Mod(\phi),\ {\cal K}''\lrto_V{\cal K}'\}} {\cal F}_{\overline V}({\cal K}).
+		%		\end{equation*}
+		%	\end{block}}
+		%	\only<2>{
+		$\CTL_{\ALL\FUTURE}$：表示CTL公式只包含时序算子$\ALL \FUTURE$的子类。
+		\begin{proposition}[模型检测]
+			\label{modelChecking}
+			给定一个结构 $(\Hm,s_0)$、原子命题集$V\subseteq{\cal A}$和公式 $\varphi \in \CTL_{\ALL\FUTURE}$，判定 $(\Hm,s_0)$ 是否为$\CTLforget(\varphi, V)$的模型是 \textsc{NP}-完全的。
+		\end{proposition}
+		\begin{theorem}[Entailment]
+			\label{thm:comF}
+			令 $\varphi$和 $\psi$为$\CTL_{\ALL \FUTURE}$中的两个公式， $V$为原子命题集。则：
+			\begin{itemize}
+				\item[(i)] 判定  $\CTLforget(\varphi, V ) \models^? \psi$是 co-$\textsc{NP}$-完全的，
+				\item[(ii)] 判定  $\psi \models^? \CTLforget(\varphi, V)$是 $\Pi_2^{\textsc{P}}$-完全的，
+				\item[(iii)] 判定 $\CTLforget(\varphi, V) \models^? \CTLforget(\psi, V)$是 $\Pi_2^{\textsc{P}}$-完全的。
+			\end{itemize}
+		\end{theorem}
+%		\begin{corollary}
+%			令 $\varphi$和 $\psi$为 $\CTL_{\ALL \FUTURE}$中的两个公式，$V$原子公式集。则
+%			\begin{itemize}
+%				\item[(i)] 判定 $\psi \equiv^?\CTLforget(\varphi, V)$是 $\Pi_2^{\textsc{P}}$-完全的，
+%				\item[(ii)] 判定 $\CTLforget(\varphi, V) \equiv^? \varphi$是 co-$\textsc{NP}$-完全的，
+%				\item[(iii)] 判定 $\CTLforget(\varphi, V) \equiv^? \CTLforget(\psi, V)$是$\Pi_2^{\textsc{P}}$-完全的。
+%			\end{itemize}
+%		\end{corollary}
+		%	}
+%	}
 \end{frame}
 
  
@@ -2416,17 +2539,17 @@
 
 \begin{frame}
 	\frametitle{研究内容（三）（2）基于归结的算法CTL-forget}
-	{\footnotesize
+%	{\footnotesize
 	
 	 
 			
 		\begin{figure}
-			\includegraphics[scale=0.28]{figures/CTL-forget1}
+			\includegraphics[scale=0.4]{figures/CTL-forget1}
 		\end{figure}
 %		}
 %		\only<2>{	
-			\begin{theorem}[可靠性]\label{thm:soundness:forget:algorithm}
-				若$\varphi$为一个$\CTL$公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
+			\begin{theorem}[可靠性]%\label{thm:soundness:forget:algorithm}
+				若$\varphi$为一个CTL公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
 				\begin{itemize}
 					\item[(i)] $\Sigma\equiv_{V\cup U}\varphi$，
 					\item[(ii)] 若$U=\emptyset$，则 $\Sigma\equiv\CTLforget(\varphi,V)$。
@@ -2434,25 +2557,25 @@
 			\end{theorem}
 			
 %		\begin{proposition} 
-%			给定$\CTL$公式$\varphi$和原子命题集$V \subseteq \Ha$。
+%			给定CTL公式$\varphi$和原子命题集$V \subseteq \Ha$。
 %			算法5.3的时间和空间复杂性为{\em $O((m+1)2^{4(n+n')})$}，其中$n=|\Var(\varphi)|$、$n'=|V'|$为新引入的原子命题的个数、$m$为引入的索引个数。
 %		\end{proposition} 
-	}
+%	}
 \end{frame}
 
 \begin{frame}
 	\frametitle{研究内容（三）（2）基于归结的算法CTL-forget}
-	{\footnotesize
+%	{\footnotesize
 		
 		
 		
 		\begin{figure}
-			\includegraphics[scale=0.3]{figures/CTL-forget3}
+			\includegraphics[scale=0.45]{figures/CTL-forget3}
 		\end{figure}
 		%		}
 		%		\only<2>{	
 		\begin{theorem}[可靠性] 
-			若$\varphi$为一个$\CTL$公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
+			若$\varphi$为一个CTL公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
 			\begin{itemize}
 				\item[(i)] $\Sigma\equiv_{V\cup U}\varphi$，
 				\item[(ii)] 若$U=\emptyset$，则 $\Sigma\equiv\CTLforget(\varphi,V)$。
@@ -2460,10 +2583,10 @@
 		\end{theorem}
 		
 %		\begin{proposition} 
-%			给定$\CTL$公式$\varphi$和原子命题集$V \subseteq \Ha$。
+%			给定CTL公式$\varphi$和原子命题集$V \subseteq \Ha$。
 %			算法5.3的时间和空间复杂性为{\em $O((m+1)2^{4(n+n')})$}，其中$n=|\Var(\varphi)|$、$n'=|V'|$为新引入的原子命题的个数、$m$为引入的索引个数。
 %		\end{proposition} 
-	}
+%	}
 \end{frame}
 
 \subsection{研究内容（三）（3）算法CTL-forget实现及实验} 
@@ -2472,8 +2595,8 @@
 %	{\footnotesize
 %		\begin{block}{系统描述}
 %			\begin{itemize}
-%				\item 输入输出：基于Prolog的$\CTL$-forget算法实现系统以$\CTL$公式和原子命题集为输入，$\CTL$公式为输出；
-%				\item 系统识别的$\CTL$公式的符号与第\ref{chapter02}章中$\CTL$的语言符号对应关系如下：
+%				\item 输入输出：基于Prolog的CTL-forget算法实现系统以CTL公式和原子命题集为输入，CTL公式为输出；
+%				\item 系统识别的CTL公式的符号与第\ref{chapter02}章中CTL的语言符号对应关系如下：
 %				\begin{itemize}
 %					\item $x_i$和其余小写字母开头的字符串构成原子命题集，其中$i\geq 0$为自然数，且$x_i$和$z$被设定为只能是在如下描述的转换过程中引入的原子命题；%除此之外，约定$z$为保留字（即：在输入的公式中不能包含$z$为命题符号）；
 %					\item “$false$”和“$true$”分别与常量符号“$\bot$”和“$\top$”对应；
@@ -2486,7 +2609,7 @@
 %		\end{block}
 %	
 %	\begin{example}
-%		字符串$($\textasciitilde $* ((-y1\backslash/ -y2\backslash/ -y4)\& (-y1\backslash/y2\backslash/y4)\& (y1\backslash/y2\backslash/ -y3)\& (y1\backslash/y3\backslash/ -y4)\& (-y1\backslash/y2\backslash/ -y3)))$为 $\CTL$ 公式。
+%		字符串$($\textasciitilde $* ((-y1\backslash/ -y2\backslash/ -y4)\& (-y1\backslash/y2\backslash/y4)\& (y1\backslash/y2\backslash/ -y3)\& (y1\backslash/y3\backslash/ -y4)\& (-y1\backslash/y2\backslash/ -y3)))$为 CTL 公式。
 %	\end{example}
 %	}
 %\end{frame}
@@ -2507,57 +2630,57 @@
 %	}
 %\end{frame}
 
+%\begin{frame}
+%	\frametitle{研究内容（三）（3）算法CTL-forget实验——{\footnotesize 实验 1：计算遗忘}}
+%	{\footnotesize
+%		(1)	标准数据集来源于CTL-RP： \url{https://sourceforge.net/projects/ctlrp/}
+%		\begin{figure}
+%			\includegraphics[scale=0.35]{figures/expTab}
+%%			\caption{
+%%				标准数据集来源于CTL-RP：\\ \url{https://sourceforge.net/projects/ctlrp/}}
+%		\end{figure}
+%%		\begin{block}{实验结果}
+%%			标准数据集来源于CTL-RP\footnote{\url{https://sourceforge.net/projects/ctlrp/}}
+%%%			\begin{table}%[width=.9\linewidth,cols=4,pos=h]
+%%%				\small
+%%%				\centering
+%%%				\caption{计算 {\CTL-forget}$(\varphi, V)$所使用的CPU时间（单位：秒(s)）}\label{chapter04:tab:sample}
+%%%				\setlength{\tabcolsep}{5mm}{
+%%%					\begin{tabular}{l|llll}%{@{} L|LLLL@{} }
+%%%						\toprule
+%%%						%\diagbox[width=6em]{$\varphi$}{$|V|$}&
+%%%						$\varphi$, $|V$ & 1        & 2       & 3        & 4   \\
+%%%						\midrule
+%%%						\texttt{s001}         & 0.0505 & 0.1053 & 0.2259 & 0.3680 \\ 
+%%%						\texttt{s002}         & 0.3645          & 1.0416          & 5.6372          & 10.0184          \\ 
+%%%						\texttt{s003}         & 97.5341          & 71.5396          & 190.1157          & 423.5793          \\ 
+%%%						\texttt{s004}         & 77.5086          & 77.4246          & 101.1284          & 118.7461          \\ 
+%%%						\texttt{s001-3} & 681.2883   & 613.1859 & 1617.047 & 2356.949 \\
+%%%						\bottomrule
+%%%				\end{tabular}}
+%%%			\end{table}
+%%		\end{block}
+%
+%(2) 计算{\CTL-forget}$(\varphi, V)$使用的时间和在“移除原子命题”步骤后$\CTLsnf$子句的个数，其中$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$，$\varphi_i=12~(i=1,2,3)$。
+%
+%	\begin{figure}
+%		\centering
+%		\subfigure[{\scriptsize 计算遗忘需要的CUP时间}]{
+%			\includegraphics[scale=0.3]{figures/time_4_12_2.png}
+%		}\qquad
+%		\subfigure[{\scriptsize $\CTLsnf$子句的个数}]{
+%			\includegraphics[scale=0.3]{figures/number-4-12_2.png}
+%		}
+%	%	\caption{计算{\CTL-forget}$(\varphi, V)$使用的时间和在“移除原子命题”步骤后$\CTLsnf$子句的个数，其中$\varphi_i=12$。$$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$$}
+%		\label{chapter04:fig:for12}
+%	\end{figure}
+%	} 
+%\end{frame}
+
+
 \begin{frame}
-	\frametitle{研究内容（三）（3）算法CTL-forget实验——{\footnotesize 实验 1：计算遗忘}}
-	{\footnotesize
-		(1)	标准数据集来源于$\CTL$-RP： \url{https://sourceforge.net/projects/ctlrp/}
-		\begin{figure}
-			\includegraphics[scale=0.35]{figures/expTab}
-%			\caption{
-%				标准数据集来源于$\CTL$-RP：\\ \url{https://sourceforge.net/projects/ctlrp/}}
-		\end{figure}
-%		\begin{block}{实验结果}
-%			标准数据集来源于$\CTL$-RP\footnote{\url{https://sourceforge.net/projects/ctlrp/}}
-%%			\begin{table}%[width=.9\linewidth,cols=4,pos=h]
-%%				\small
-%%				\centering
-%%				\caption{计算 {\CTL-forget}$(\varphi, V)$所使用的CPU时间（单位：秒(s)）}\label{chapter04:tab:sample}
-%%				\setlength{\tabcolsep}{5mm}{
-%%					\begin{tabular}{l|llll}%{@{} L|LLLL@{} }
-%%						\toprule
-%%						%\diagbox[width=6em]{$\varphi$}{$|V|$}&
-%%						$\varphi$, $|V$ & 1        & 2       & 3        & 4   \\
-%%						\midrule
-%%						\texttt{s001}         & 0.0505 & 0.1053 & 0.2259 & 0.3680 \\ 
-%%						\texttt{s002}         & 0.3645          & 1.0416          & 5.6372          & 10.0184          \\ 
-%%						\texttt{s003}         & 97.5341          & 71.5396          & 190.1157          & 423.5793          \\ 
-%%						\texttt{s004}         & 77.5086          & 77.4246          & 101.1284          & 118.7461          \\ 
-%%						\texttt{s001-3} & 681.2883   & 613.1859 & 1617.047 & 2356.949 \\
-%%						\bottomrule
-%%				\end{tabular}}
-%%			\end{table}
-%		\end{block}
-
-(2) 计算{\CTL-forget}$(\varphi, V)$使用的时间和在“移除原子命题”步骤后$\CTLsnf$子句的个数，其中$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$，$\varphi_i=12~(i=1,2,3)$。
-
-	\begin{figure}
-		\centering
-		\subfigure[{\scriptsize 计算遗忘需要的CUP时间}]{
-			\includegraphics[scale=0.3]{figures/time_4_12_2.png}
-		}\qquad
-		\subfigure[{\scriptsize $\CTLsnf$子句的个数}]{
-			\includegraphics[scale=0.3]{figures/number-4-12_2.png}
-		}
-	%	\caption{计算{\CTL-forget}$(\varphi, V)$使用的时间和在“移除原子命题”步骤后$\CTLsnf$子句的个数，其中$\varphi_i=12$。$$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$$}
-		\label{chapter04:fig:for12}
-	\end{figure}
-	} 
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{研究内容（三）（3）算法CTL-forget实验——{\footnotesize 实验 2：计算SNC}}
-	{\footnotesize
+	\frametitle{研究内容（三）（3）算法CTL-forget实验}
+%	{\footnotesize
 		\textcolor{blue!60}{计算$q$在$V$和$\varphi \wedge q$上的SNC（$\CTLforget(\varphi\wedge q, \Var(\varphi)-V \cup \{q\})$），其中$V\subseteq \Var(\varphi)$、$q\in \Var(\varphi\wedge q)-V$。}
 		
 %	\only<1>{(1)	随机3-CNF，$|\Ha|=50$，每组20个公式。
@@ -2574,7 +2697,7 @@
 %}
 %		\only<2>{	
 %		(2) 
-		$\CTL$公式$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$，$\varphi_i=12~(i=1,2,3)$为$|\Ha|=50$上的3-CNF且$|\varphi_1|=|\varphi_2|=|\varphi_3|$，每组40个公式。
+		CTL公式$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$，$\varphi_i=12~(i=1,2,3)$为$|\Ha|=50$上的3-CNF且$|\varphi_1|=|\varphi_2|=|\varphi_3|$，每组40个公式。
 		
 		\begin{figure}
 			\centering
@@ -2584,12 +2707,12 @@
 			\subfigure[{\scriptsize 存在SNC的公式占比(\%)}]{
 				\includegraphics[scale=0.3]{figures/numPercent1.png}
 			}
-		\caption{{\footnotesize 计算$\CTL$SNC的平均时间和存在SNC的公式占比}}
+		\caption{{\footnotesize CTL中计算SNC的平均时间和存在SNC的公式占比}}
 		\end{figure}
 %	}
 %\pause
 \textcolor{red}{\textbf{总结：}基于归结的算法在给定的数据集中大多数情况下能计算出SNC（WSC），且当需要遗忘的原子个数很少或公式长度较小时计算效率较高。}
-	}
+%	}
 \end{frame}
 
 
@@ -2598,13 +2721,13 @@
 %	\subsection*{总结}
 	\begin{frame}
 		\frametitle{~~总结与展望}
-		{\footnotesize
+%		{\footnotesize
 		\begin{block}{总结}
 		\begin{itemize}%[<+-| alert@+>]
 		%	\vskip 8pt
-			\item $\CTL$和$\mu$-演算的遗忘理论：基本性质（表达性理论、代数属性和封闭性等）、复杂性和互模拟不变性等
+			\item CTL和$\mu$-演算的遗忘理论：基本性质（表达性理论、代数属性和封闭性等）、复杂性和互模拟不变性等
 %			\begin{itemize}
-%				\item $\CTL$的遗忘理论：基本性质（表达性理论、代数属性和封闭性等）
+%				\item CTL的遗忘理论：基本性质（表达性理论、代数属性和封闭性等）
 %				\item $\mu$-演算的遗忘理论：基本性质、复杂性和互模拟不变性等
 %			\end{itemize}
 			\item 遗忘理论在反应式系统的形式化验证和知识更新中的应用：定义及其基本性质
@@ -2612,7 +2735,7 @@
 %				\item 计算WSC和SNC：定义、基本性质和基于遗忘的计算方法等
 %				\item 定义知识更新：两种知识更新定义和基本性质
 %			\end{itemize}
-			\item 计算$\CTL$遗忘的算法
+			\item 计算CTL遗忘的算法
 			\begin{itemize}
 				\item 基于模型的计算方法：有界互模拟、特征值、特征公式、封闭性、复杂性和算法等
 				\item 基于消解（resolution）的遗忘算法及实现：算法及其可靠性、遗忘存在的子类
@@ -2633,7 +2756,7 @@
 				\item 遗忘与WSC（SNC）之间的相互关系与应用
 			\end{itemize}
 		\end{block}	
-	}
+%	}
 	\end{frame}
 	
 %	\subsection*{展望}
@@ -2674,6 +2797,15 @@
 %		\end{spacing}
 %	\end{frame}
 	
+	\begin{frame}[allowframebreaks] %allowramebreaks 可自动分页
+		\frametitle{参考文献}
+		%\nocite{*}
+		\printbibliography[title=参考文献]
+		%\bibliographystyle{alpha}
+		%此文件虽然在chapters文件夹下，但是实际运行应该是在main.tex中，所以提取bib文件的路径要尤其注意。
+		%\bibliography{paper}
+	\end{frame}
+
 	\begin{frame}
 		\centering{
 		\zihao{2} 敬请各位专家批评指正}\\
@@ -2682,14 +2814,7 @@
 		\]
 	\end{frame}
 
-\begin{frame}[allowframebreaks] %allowramebreaks 可自动分页
-	\frametitle{参考文献}
-	%\nocite{*}
-	\printbibliography[title=参考文献]
-	%\bibliographystyle{alpha}
-	%此文件虽然在chapters文件夹下，但是实际运行应该是在main.tex中，所以提取bib文件的路径要尤其注意。
-	%\bibliography{paper}
-\end{frame}
+
 
 \appendix
 
@@ -2742,10 +2867,10 @@
 
 \subsection{CTL的语法和语义}
 \begin{frame} 
-	\frametitle{~$\CTL$的语法}
+	\frametitle{~CTL的语法}
 	{\footnotesize 
 		%	\only<1>{
-		\begin{block}{$\CTL$的语言符号}
+		\begin{block}{CTL的语言符号}
 			\begin{itemize}
 				\item 原子命题集$\Ha$； \quad 可数无限索引集合$\Ind$；\quad 命题常量$\start$；
 				\item 常量符号：$\top$和$\bot$，分别表示“真”和“假”；
@@ -2756,8 +2881,8 @@
 			\end{itemize}
 		\end{block}
 		%}
-		\begin{definition}[带索引的$\CTL$]
-			带索引的$\CTL$公式的\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
+		\begin{definition}[带索引的CTL]
+			带索引的CTL公式的\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
 			\begin{align*}
 				\phi  ::= & \ \start\mid \bot %\mid \top
 				\mid p \mid\neg\phi \mid \phi\lor\phi \mid
@@ -2770,15 +2895,15 @@
 			\end{align*}
 			其中，$p\in \Ha$，$ind \in \Ind$。
 			
-			\textcolor{blue}{没有索引和$\start$的公式称为$\CTL$公式。}
+			\textcolor{blue}{没有索引和$\start$的公式称为CTL公式。}
 		\end{definition} 
 	}
 \end{frame}
 
 \begin{frame} 
-	\frametitle{~$\CTL$的语义}
+	\frametitle{~CTL的语义}
 	{\footnotesize  
-		\begin{definition}[带索引的$\CTL$的语义]\label{def:ctl:semantic}
+		\begin{definition}[带索引的CTL的语义]\label{def:ctl:semantic}
 			给定公式$\varphi$，初始$\Ind$-Kripke结构 $\Hm=(S,R,L,[\_],s_0)$ 和状态 $s\in S$。$(\Hm,s)$与$\varphi$之间的可满足关系$(\Hm,s)\models \varphi$定义如下：
 			\begin{figure}
 				\includegraphics[scale=0.3]{figures/semanticCTL}
@@ -2799,10 +2924,10 @@
 
 
 \begin{frame} 
-	\frametitle{~$\CTL$的标准形式}
+	\frametitle{~CTL的标准形式}
 	{\footnotesize 
 		\only<1>{\begin{block}{$\CTLsnf$子句}
-				具有下面几种形式的公式称为$\CTL$全局子句分离范式（separated normal form with global clauses for \CTL，$\CTLsnf$子句）\cite{zhang2008first,zhang2014resolution}：
+				具有下面几种形式的公式称为CTL全局子句分离范式（separated normal form with global clauses for \CTL，$\CTLsnf$子句）\cite{zhang2008first,zhang2014resolution}：
 				\[
 				\begin{array}{ll}
 					\textcolor{blue!80}{\ALL \GLOBAL} (\start \rto \bigvee_{j=1}^{k} m_{j}) & \text{(初始句，initial clause)} \\
@@ -2817,7 +2942,7 @@
 		\end{block}}
 		\only<2>{
 			\begin{block}{转换规则}
-				一个$\CTL$公式$\varphi$可以通过下表中的规则转换为一个$\CTLsnf$子句集，记为$T_{\varphi}$。 
+				一个CTL公式$\varphi$可以通过下表中的规则转换为一个$\CTLsnf$子句集，记为$T_{\varphi}$。 
 				{\tiny
 					\begin{table}%[width=.9\linewidth,cols=4,pos=h] 
 						\centering 
@@ -2845,14 +2970,14 @@
 						\end{tabular}
 				\end{table}}
 				其中，$T\in \{\NEXT, \GLOBAL, \FUTURE\}$，$ind$是规则中引入的新索引且$Q\in \{\ALL, \EXIST_{\tuple{ind}}\}$；
-				$q$是一个原子命题, $l$是一个文字, $D$是文字的析取（即子句）, $p$是新的原子命题；$\varphi$，$\varphi_1$，和$\varphi_2$都是$\CTL$公式。
+				$q$是一个原子命题, $l$是一个文字, $D$是文字的析取（即子句）, $p$是新的原子命题；$\varphi$，$\varphi_1$，和$\varphi_2$都是CTL公式。
 			\end{block}
 		} 
 	}
 \end{frame}
 
 \begin{frame}
-	\frametitle{~$\CTL$的标准形式}
+	\frametitle{~CTL的标准形式}
 	\begin{example}\label{examp:Tran}
 		\tiny
 		令$\varphi=\neg \ALL \FUTURE p \wedge \ALL\FUTURE(p \wedge \top)$，下面给出将$\varphi$转换为$\CTLsnf$子句集的详细步骤。
@@ -3049,7 +3174,7 @@
 		%	}
 		%	\only<2>{
 		%		\begin{theorem}[互模拟不变性]\label{thm:V-bisimulation:EQ}
-		%			令$V\subseteq \Ha$是原子命题集，${\cal K}_i$ $(i=1,2)$是两个具有$V$-互模拟关系的$\Ind$-结构，即：${\cal K}_1 \lrto_V {\cal K}_2$。若$\Phi$是一个$\CTL$公式且$\IR(\Phi, V)$，则有${\cal K}_1\models \Phi$当且仅当${\cal K}_2\models \Phi$。
+		%			令$V\subseteq \Ha$是原子命题集，${\cal K}_i$ $(i=1,2)$是两个具有$V$-互模拟关系的$\Ind$-结构，即：${\cal K}_1 \lrto_V {\cal K}_2$。若$\Phi$是一个CTL公式且$\IR(\Phi, V)$，则有${\cal K}_1\models \Phi$当且仅当${\cal K}_2\models \Phi$。
 		%		\end{theorem}
 		%	}
 	}
@@ -3059,7 +3184,7 @@
 	\frametitle{~CTL遗忘理论——{\footnotesize 互模拟等价}}
 	{\footnotesize
 		%			\begin{theorem}[互模拟不变性]\label{thm:V-bisimulation:EQ}
-		%			令$V\subseteq \Ha$是原子命题集，${\cal K}_i$ $(i=1,2)$是两个具有$V$-互模拟关系的$\Ind$-结构，即：${\cal K}_1 \lrto_V {\cal K}_2$。若$\Phi$是一个$\CTL$公式且$\IR(\Phi, V)$，则有${\cal K}_1\models \Phi$当且仅当${\cal K}_2\models \Phi$。
+		%			令$V\subseteq \Ha$是原子命题集，${\cal K}_i$ $(i=1,2)$是两个具有$V$-互模拟关系的$\Ind$-结构，即：${\cal K}_1 \lrto_V {\cal K}_2$。若$\Phi$是一个CTL公式且$\IR(\Phi, V)$，则有${\cal K}_1\models \Phi$当且仅当${\cal K}_2\models \Phi$。
 		%		\end{theorem}\pause
 		\begin{definition}[互模拟等价，bisimilar equivalence]\label{def:bisimular:equivalene}
 			给定原子命题集$V\subseteq {\cal A}$，公式$\varphi$和$\psi$。若对任意${\cal K}\models \varphi$，都存在一个${\cal K}'\models\psi$，使得${\cal K}\lrto_V{\cal K}'$；且对任意${\cal K}'\models\psi$，都存在一个${\cal K}\models \varphi$，使得${\cal K}\lrto_V{\cal K}'$，则称公式$\varphi$和 $\psi$是 {\em $V$-互模拟等价的（bisimilar equivalence）}，记为 $\varphi\equiv_V\psi$。
@@ -3081,7 +3206,7 @@
 		%}
 		\pause
 		\begin{proposition}\label{prop:transform:V:EQ}
-			令 $\varphi$为一个$\CTL$公式。则$\varphi\equiv_UT_\varphi$，其中 $T_\varphi=\CTLsnf(\varphi)$和
+			令 $\varphi$为一个CTL公式。则$\varphi\equiv_UT_\varphi$，其中 $T_\varphi=\CTLsnf(\varphi)$和
 			$U=\Var(T_\varphi)-\Var(\varphi)$。
 		\end{proposition}
 	}
@@ -3099,7 +3224,7 @@
 			那么，称$\psi$为从$\Phi$中遗忘$V$后得到的结果，记为$\CTLforget(\phi,V)$。
 		\end{definition}
 		\only<1>{\begin{block}{遗忘理论公设}
-				给定$\CTL$公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$、原子命题集$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，$\CTL$下遗忘理论公设如下：
+				给定CTL公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$、原子命题集$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，CTL下遗忘理论公设如下：
 				\begin{itemize}
 					\item[(\W)] 削弱：$\varphi \models \varphi'$；
 					\item[(\PP)] 正支持：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
@@ -3115,7 +3240,7 @@
 	{\footnotesize 
 		\only<1>{
 			\begin{theorem}[表达性定理，Representation Theorem]\label{thm:close} 
-				给定$\CTL$公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题集。 
+				给定CTL公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题集。 
 				下面的陈述是等价的：
 				\begin{itemize}
 					\item[(i)] $\varphi' \equiv \CTLforget(\varphi, V)$,
@@ -3134,12 +3259,12 @@
 					\qquad \ALL\GLOBAL(x \rto \neg \ALL\GLOBAL p),
 					\qquad \ALL\GLOBAL(\ALL \FUTURE \ALL \GLOBAL p).
 				\end{align*}
-				Maksimova证明了$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在$\CTL$公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)$ $\models x\lrto \psi$，即$\CTL$不具有Beth性质。
+				Maksimova证明了$\varphi(p,x)\land \varphi(p,y)\models x\lrto y$，且不存在CTL公式 $\psi$使得 $\Var(\psi)=\{p\}$且$\varphi(p,x)$ $\models x\lrto \psi$，即CTL不具有Beth性质。
 			\end{example}
 			%	}
 			%	\only<2,3>{
 			\begin{proposition}\label{pro:uniforget}
-				$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 $\CTL$中是不可表示的。
+				$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 CTL中是不可表示的。
 			\end{proposition}
 			\begin{theorem}\label{thm:PL:CTL}
 				给定一个命题公式$\varphi$和原子命题集$V\subseteq \Ha$，则下面逻辑等式成立。
@@ -3159,7 +3284,7 @@
 				\end{itemize} 
 			\end{proposition}
 			\begin{proposition}[同质性]\label{pro:ctl:forget:2}
-				令${\cal T} \in \{\NEXT, \FUTURE, \GLOBAL\}$、${\cal P} \in \{\ALL, \EXIST\}$，$\phi$为$\CTL$公式，且$P\subseteq\cal A$为原子命题集，则：
+				令${\cal T} \in \{\NEXT, \FUTURE, \GLOBAL\}$、${\cal P} \in \{\ALL, \EXIST\}$，$\phi$为CTL公式，且$P\subseteq\cal A$为原子命题集，则：
 				$$\CTLforget({\cal P}{\cal T}\phi,P)\equiv {\cal P}{\cal T} \CTLforget(\phi,P).$$
 			\end{proposition}
 		}
@@ -3548,7 +3673,7 @@
 		\begin{block}{约定}
 			\begin{itemize}
 				\item 本小节假设所有初始结构都是有限的，即：状态来源于有限状态空间且$\Ha$为有限原子命题集；
-				\item 任意$\Ha$上的有限初始结构$\Hm$（为了简化符号，用初始Kripke结构$\Hm$代替初始结构$(\Hm,s_0)$）都能用一个$\CTL$公式——\fbox{特征公式${\cal F}_{\Ha}(\Hm)$}来表示；
+				\item 任意$\Ha$上的有限初始结构$\Hm$（为了简化符号，用初始Kripke结构$\Hm$代替初始结构$(\Hm,s_0)$）都能用一个CTL公式——\fbox{特征公式${\cal F}_{\Ha}(\Hm)$}来表示；
 				\item 给定公式$\varphi$和$\psi$，$V_{min}\subseteq \Ha$为使得$\CTLforget(\varphi, V_{min}) \wedge \psi$可满足的极小子集。
 				\item 记
 				$$\bigcup_{V_{min}\subseteq \Ha} \Mod(\CTLforget({\cal F}_{\Ha}(\Hm), V_{min}) \wedge \psi)$$  
@@ -3661,7 +3786,7 @@
 		%	\tiny
 		\begin{tikzpicture}[scale=0.8]
 			\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$计算方法};
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
 			\node at(0,4) {{\scriptsize $
 					ch({\cal M},V)=
 					\left\{
@@ -3673,7 +3798,7 @@
 			\draw[dashed, color=orange] (-3.8,4.5) rectangle (3.5,3.5);
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -3706,7 +3831,7 @@
 			
 			%	\draw[->] (alg1) -- (alg2);
 			
-			%			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			%			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 			
 			\draw[->,line width =5pt,color=red!60] (-1.3,2.2) -- (-2, 1.5);
 			
@@ -3760,7 +3885,7 @@
 \end{frame}
 
 
-%	$\CTL_{\ALL\FUTURE}$：表示$\CTL$公式只包含时序算子$\ALL \FUTURE$的子类。
+%	$\CTL_{\ALL\FUTURE}$：表示CTL公式只包含时序算子$\ALL \FUTURE$的子类。
 %\begin{proposition}[模型检测]
 %	\label{modelChecking}
 %	给定一个结构 $(\Hm,s_0)$、原子命题集$V\subseteq{\cal A}$和公式 $\varphi \in \CTL_{\ALL\FUTURE}$，判定 $(\Hm,s_0)$ 是否为$\CTLforget(\varphi, V)$的模型是 \textsc{NP}-完全的。
@@ -3790,8 +3915,8 @@
 %	\frametitle{基于模型的有界CTL遗忘计算——{\footnotesize 有界CTL}}
 %	 \begin{block}{约束}
 %		\begin{itemize}
-%			\item[(1)] 出现在$\CTL$公式中的原子命题的个数是有限的（即$\Ha$是有限的）；
-%			\item[(2)] 初始结构的状态空间$S$是一个有限的固定状态空间${\cal S}=\{b_1,\ldots,b_m\}$的子集（即$S \subseteq {\cal S}$），且使得对于任意约束长度的$\CTL$公式$\varphi$，若$\varphi$是可满足的，则存在一个状态空间是${\cal S}$的子集的初始结构$(\Hm,s_0)$，使得$(\Hm,s_0)\models \varphi$。
+%			\item[(1)] 出现在CTL公式中的原子命题的个数是有限的（即$\Ha$是有限的）；
+%			\item[(2)] 初始结构的状态空间$S$是一个有限的固定状态空间${\cal S}=\{b_1,\ldots,b_m\}$的子集（即$S \subseteq {\cal S}$），且使得对于任意约束长度的CTL公式$\varphi$，若$\varphi$是可满足的，则存在一个状态空间是${\cal S}$的子集的初始结构$(\Hm,s_0)$，使得$(\Hm,s_0)\models \varphi$。
 %		\end{itemize}
 %	\end{block} 
 %\end{frame}
@@ -4197,7 +4322,7 @@
 	\frametitle{遗忘封闭性}
 	{\footnotesize 
 		\begin{lemma}\label{lem:models:formula}
-			给定$\CTL$公式$\varphi$，下面等式成立：
+			给定CTL公式$\varphi$，下面等式成立：
 			\begin{equation*}
 				\varphi\equiv \bigvee_{(\Hm, s_0)\in\Mod(\varphi)}{\cal F}_{\cal A}(\Hm, s_0).
 			\end{equation*}
@@ -4219,7 +4344,7 @@
 		\end{figure}
 		
 		\begin{proposition}\label{pro:time:alg1}
-			令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 		\end{proposition}
 	}
 \end{frame}
@@ -4228,7 +4353,7 @@
 	\frametitle{遗忘复杂性}
 	{\footnotesize 
 		%	\only<1>{	\begin{lemma}\label{lem:models:formula}
-		%			给定$\CTL$公式$\varphi$，下面等式成立：
+		%			给定CTL公式$\varphi$，下面等式成立：
 		%			\begin{equation*}
 		%				\varphi\equiv \bigvee_{(\Hm, s_0)\in\Mod(\varphi)}{\cal F}_{\cal A}(\Hm, s_0).
 		%			\end{equation*}
@@ -4240,7 +4365,7 @@
 		%		\end{equation*}
 		%	\end{block}}
 		%	\only<2>{
-		$\CTL_{\ALL\FUTURE}$：表示$\CTL$公式只包含时序算子$\ALL \FUTURE$的子类。
+		$\CTL_{\ALL\FUTURE}$：表示CTL公式只包含时序算子$\ALL \FUTURE$的子类。
 		\begin{proposition}[模型检测]
 			\label{modelChecking}
 			给定一个结构 $(\Hm,s_0)$、原子命题集$V\subseteq{\cal A}$和公式 $\varphi \in \CTL_{\ALL\FUTURE}$，判定 $(\Hm,s_0)$ 是否为$\CTLforget(\varphi, V)$的模型是 \textsc{NP}-完全的。
@@ -4274,7 +4399,7 @@
 %		\end{figure}
 %	
 %	\begin{proposition}\label{pro:time:alg1}
-%		令 $\varphi$为$\CTL$公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
+%		令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 %	\end{proposition}
 %	}
 %\end{frame}
@@ -4292,7 +4417,7 @@
 		\end{figure}
 		\pause
 		\begin{itemize}
-			\item 如何表示$\CTL$公式和带索引的$\CTL$公式之间的关系？
+			\item 如何表示CTL公式和带索引的CTL公式之间的关系？
 			\item 如何“移除”无关的原子命题（包括需要遗忘的原子命题和转换过程中引入的新的原子命题），以及如何“消除”索引？
 		\end{itemize}
 	}
@@ -4339,7 +4464,7 @@
 				\end{itemize}
 			\end{block}
 			\begin{proposition}\label{pro:resEQ}
-				令 $\varphi$ 为一个 $\CTL$公式，$V\subseteq\cal A$为原子命题集。则
+				令 $\varphi$ 为一个 CTL公式，$V\subseteq\cal A$为原子命题集。则
 				$T_\varphi \equiv_U\emph{ERes}(\varphi,V)$，其中  $U=\Var(\Unfolding(T_\varphi,V))-(\Var(\varphi)-  V)$。
 		\end{proposition}}
 		\only<3>{\tiny
@@ -4403,7 +4528,7 @@
 				\end{itemize} 
 			\end{block} 
 			\begin{lemma} 
-				如果$j\in {\cal I}$，$\psi_i,\varphi_i~(1\le i\le n)$为 $\CTL$公式，那么：
+				如果$j\in {\cal I}$，$\psi_i,\varphi_i~(1\le i\le n)$为 CTL公式，那么：
 				\begin{itemize}
 					\item[(i)] $\{\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i \mid 1\le i\le n\}\equiv 
 					\{\left(\bigwedge_{i\in S}\psi_i\right)\rto \EXIST_{\tuple{j}} \NEXT \left(\bigwedge_{i\in S}\varphi_i\right)\mid S\subseteq\{1,\dots, n\}\}$，
@@ -4439,7 +4564,7 @@
 			%	{\tiny 其中，$rei(\{\alpha_i\mid 1\le i\le n\})$、
 			%	$rxi(\{\alpha_i\mid 1\le i\le n\})$、$rfi(\{\beta_1,\alpha_2\})$分别表示引理33中(i)、(ii)、(iii)等号 $\equiv_*$（$* \in \{$空字符串，$\emptyset\}$）的右边，$\alpha_i=\psi_i\rto \EXIST_{\tuple{j}} \NEXT \varphi_i$ $(1\le i\le n)$且$\beta_1=\psi_1 \rto \EXIST_{\tuple{j}}\FUTURE \varphi_1$。}
 			\begin{corollary}
-				如果$\varphi$为一个$\CTL$公式、$U=\Var(T_\varphi)-\Var(\varphi)$，$V\subseteq\cal A$为原子命题集、
+				如果$\varphi$为一个CTL公式、$U=\Var(T_\varphi)-\Var(\varphi)$，$V\subseteq\cal A$为原子命题集、
 				$\Sigma=\emph{ERes}(\Unfolding(\varphi,V\cup U),V)$，那么
 				RM-index$(\Sigma)\equiv_\emptyset \Sigma$。
 			\end{corollary}
@@ -4447,8 +4572,8 @@
 				令 $x$为一个原子命题、 
 				% 	$\Delta = \{\top \rto \neg x \vee C_1$, \dots, $\top \rto \neg x \vee C_n, x \rto B_1, \dots, x \rto B_m\}$
 				% 	be a set of $\CTLsnf$ clauses
-				$\Delta = \{\ALL\GLOBAL(\top \rto \neg x \vee C_1)$, $\dots$, $\ALL\GLOBAL(\top \rto \neg x \vee C_n), \ALL\GLOBAL(x \rto B_1), \dots, \ALL\GLOBAL(x \rto B_m)\}$为只包含一个$x$的$\CTL$公式集（$n, m \geq 1$）、
-				$\Gamma$为 $x$正出现在其中的有限个$\CTL$公式集。下面式子成立：
+				$\Delta = \{\ALL\GLOBAL(\top \rto \neg x \vee C_1)$, $\dots$, $\ALL\GLOBAL(\top \rto \neg x \vee C_n), \ALL\GLOBAL(x \rto B_1), \dots, \ALL\GLOBAL(x \rto B_m)\}$为只包含一个$x$的CTL公式集（$n, m \geq 1$）、
+				$\Gamma$为 $x$正出现在其中的有限个CTL公式集。下面式子成立：
 				\begin{equation}\label{eq:Ackermann:lemma}
 					\Gamma\cup \Delta \equiv_{\{x\}}  
 					\Gamma\left[x/\bigwedge\left(\{C_i\mid 1\le i\le n\}\cup\{B_i\mid 1\le i\le m\}\right)\right].
@@ -4460,8 +4585,8 @@
 		%		令 $x$为一个原子命题、 
 		%		% 	$\Delta = \{\top \rto \neg x \vee C_1$, \dots, $\top \rto \neg x \vee C_n, x \rto B_1, \dots, x \rto B_m\}$
 		%		% 	be a set of $\CTLsnf$ clauses
-		%		$\Delta = \{\ALL\GLOBAL(\top \rto \neg x \vee C_1)$, $\dots$, $\ALL\GLOBAL(\top \rto \neg x \vee C_n), \ALL\GLOBAL(x \rto B_1), \dots, \ALL\GLOBAL(x \rto B_m)\}$为只包含一个$x$的$\CTL$公式集（$n, m \geq 1$）、
-		%		$\Gamma$为 $x$正出现在其中的有限个$\CTL$公式集。下面式子成立：
+		%		$\Delta = \{\ALL\GLOBAL(\top \rto \neg x \vee C_1)$, $\dots$, $\ALL\GLOBAL(\top \rto \neg x \vee C_n), \ALL\GLOBAL(x \rto B_1), \dots, \ALL\GLOBAL(x \rto B_m)\}$为只包含一个$x$的CTL公式集（$n, m \geq 1$）、
+		%		$\Gamma$为 $x$正出现在其中的有限个CTL公式集。下面式子成立：
 		%		\begin{equation}\label{eq:Ackermann:lemma}
 		%			\Gamma\cup \Delta \equiv_{\{x\}}  
 		%			\Gamma\left[x/\bigwedge\left(\{C_i\mid 1\le i\le n\}\cup\{B_i\mid 1\le i\le m\}\right)\right].
@@ -4513,7 +4638,7 @@
 			%		}
 			%		\only<2>{	
 			\begin{theorem}[可靠性]\label{thm:soundness:forget:algorithm}
-				若$\varphi$为一个$\CTL$公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
+				若$\varphi$为一个CTL公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
 				\begin{itemize}
 					\item[(i)] $\Sigma\equiv_{V\cup U}\varphi$，
 					\item[(ii)] 若$U=\emptyset$，则 $\Sigma\equiv\CTLforget(\varphi,V)$。
@@ -4521,7 +4646,7 @@
 			\end{theorem}
 			
 			\begin{proposition}\label{pro:complexity}
-				给定$\CTL$公式$\varphi$和原子命题集$V \subseteq \Ha$。
+				给定CTL公式$\varphi$和原子命题集$V \subseteq \Ha$。
 				算法5.3的时间和空间复杂性为{\em $O((m+1)2^{4(n+n')})$}，其中$n=|\Var(\varphi)|$、$n'=|V'|$为新引入的原子命题的个数、$m$为引入的索引个数。
 			\end{proposition}
 		}
@@ -4534,7 +4659,7 @@
 				\end{align*}
 			\end{example}
 			\begin{proposition}[遗忘存在的子类]\label{pro:fogCTL}
-				给定$\CTL$公式$\varphi$，若$\varphi$满足下面约束：
+				给定CTL公式$\varphi$，若$\varphi$满足下面约束：
 				（1）$\varphi$中不包括操作符$Pt {\cal T}$（其中$Pt \in \{\ALL, \EXIST\}$且${\cal T} \in \{\UNTILL, \GLOBAL\}$）；（2）对于任意原子命题$p\in V$， 若$p$和$\neg p$出现在同一时序算子的范围内。
 				那么，$\emph{CTL-forget}(\varphi,V) \equiv \CTLforget(\varphi, V)$。
 			\end{proposition}

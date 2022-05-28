@@ -1,45 +1,130 @@
 
 
-\begin{abstract}
-信息化的快速发展和深度应用所引发的隐私安全挑战，成为了制约数据开放、共享、交换和应用的瓶颈，并引起了法律界和学术界的高度关注。从技术的角度，差分隐私保护算法作为一种重要的隐私保护技术，在面向多维及其复杂关联的数据隐私保护方面的研究还不够成熟。首先，由于数据类型混合、稀疏性、域值空间大等原因，差分隐私的多维数据处理面临隐私脆弱性、计算效率低等方面的挑战；其次，数据融合的关联性、背景知识攻击和策略型敌手攻击，数据的隐私性和可用性的矛盾成为了突出问题。针对上述问题，从博弈的角度探讨隐私与效用的均衡及优化，不失为一种较好的解决方案。本文重点围绕隐私与效用均衡这一核心问题，基于信息熵、优化理论和博弈均衡等相关理论和方法，以构建均衡、优化模型为主线，在隐私量化方法设计、隐私与效用博弈模型构建及均衡求解、优化模型建立及求解等方面，取得了一系列的成果，为从技术和管理相结合的视角解决隐私保护问题提供了借鉴。本文所取得的主要研究成果包括：
+%\begin{abstract}
+反应式系统是在对应用程序的即时响应（responsive）、回弹性（resilient）、弹性（elastic）以及消息驱动（message driven）要求的基础上产生和发展起来的不终止系统。
+随着反应式系统越来越复杂，系统正确性、系统及其系统规范（specification）之间的一致性越来越难以得到保证。
+模型检测是一个保证系统正确性行之有效的方法之一，此时反应式系统被表示为一个Kripke结构。然而在模型检测中，若系统不满足给定的规范（即与规范不一致），寻找使得系统满足规范所需的最弱信息是长时间以来的一个重要问题。与这个问题密切相关的两个概念是最强必要条件（the strongest necessary condition, SNC）和最弱充分条件（the weakest sufficient condition, WSC），其分别对应于形式化验证中的最强后件（the strongest post-condition, SP）和最弱前件（the weakest precondition, WP）。
+然而，现有的方法不能计算像反应式系统这样不终止系统的SNC和WSC。
+此外，随着系统的更新和演化，现有的规范不可避免地会与新的知识相冲突。
+此时，如何将之前融入的元素在不影响其它信息的情况下“移除”也是个亟待解决的问题。
 
-1. 提出了差分隐私的信息熵度量模型及方法。针对隐私量化问题，基于Shannon基本通信模型，结合差分隐私的随机扰动原理，给出了有噪声信道的差分隐私通信模型及其形式化描述；进一步通过定义差分隐私保护模型中的信息熵、条件熵、联合熵、互信息量以及条件互信息量等概念，设计了以信息熵为核心的隐私度量模型；针对多维属性及其关联问题，基于图模型和马尔可夫模型等提出了面向多关联属性的差分隐私信息熵度量模型及方法，并基于数据处理不等式和Fano 不等式给出了信息泄露量的上下界。理论分析与实验结果表明，所提出的量化模型和方法能够有效地实现差分隐私量化目标，为隐私泄露风险评估和隐私保护机制设计提供了基础支撑。
+系统规范的描述语言以时序逻辑为主。其中计算树逻辑（computation tree logic，$\CTL$）是一种重要的分支时间时序逻辑，其具有模型检测能多项式时间完成的特性，因此被广泛用于系统规范描述中。但是$\CTL$具有表达能力不够强的缺陷，$\mu$-演算（$\mu$-calculus）是一种比$\CTL$表达能力更强但模型检测更加复杂的逻辑语言。
+尽管如此，$\CTL$和$\mu$-演算的语义都是Kripke语义，这与反应式系统被表示为Kripke结构有着直接的联系。
+因而，本文以这两种逻辑语言为研究背景，探索这两种语言下反应式系统上述问题的解决方法。
 
-2. 提出了含背景知识攻击的差分隐私优化模型。在所建立的差分隐私通信模型的基础上，结合所提出的隐私度量模型与方法和损失压缩理论，建立含背景知识的敌手模型，以此为基础提出了含背景知识攻击的差分隐私通信模型；在基于条件互信息量设计的隐私率失真函数基础上，提出了含背景知识攻击的最优化模型；进一步针对所提出优化模型的求解问题，利用Blahut-Arimoto交替最小化方法设计和实现了权衡隐私与效用的迭代最小化算法，并给出了其计算复杂度分析。
-理论分析和实验仿真结果表明，所提出的相关方法相对于对称信道隐私保护机制具有明显优势。
+遗忘是一种知识抽取技术，其被应用于信息隐藏、冲突解决、多智能体中的知识融合、本体摘要提取和计算逻辑差等领域。特别地，在情景演算中，遗忘被用于求解WSC和SNC，从而计算智能规划中的后继状态公理。
+本文从遗忘的角度出发解决上述提到的问题，
+主要研究成果如下：
 
-3. 提出了有序随机响应扰动方案(Orderly Randomized Response Perturbation，ORRP)。针对多维数据差分隐私保护所面临的隐私脆弱性和效率低问题，面向数据收集场景的隐私保护需求，提出了一种有序随机响应扰动方案，有效解决了现有隐私保护机制忽视数据分布的影响、处理域值空间大和数据稀疏导致计算效率低的问题。该方案以所提出的隐私度量模型为基础，通过对隐私保护与数据可用性之间矛盾的分析和量化，给出了满足数据质量约束下最小化隐私泄露的互信息优化模型的形式化描述，以此实现最优隐私机制的概率密度函数计算并实现随机扰动。同时，参考独立并联信道模型，将上述结果推广到了多维数据情形。最后，从隐私泄露、数据可用性质量、关联度损失等方面给予了理论分析和实验仿真。结果表明，所提出的ORRP方案在数据语义完整性、隐私性和数据可用质量等方面比现有的结果更具有优势。
-
-4. 提出了隐私保护的攻防博弈(Privacy-Preserving Attack Defense，PPAD)模型。针对差分隐私系统中存在消息灵通的策略型敌手问题，围绕数据收集场景设计了差分隐私保护的选择策略，以此为基础提出了隐私保护的攻防博弈模型，并通过均衡求解实现了差分隐私保护中隐私与效用之间的平衡。该方案基于所建立的差分隐私基本通信模型，在分析隐私保护方和策略型敌手方各自目标的基础上，构建了隐私极小极大优化模型，给出了包含参与者集合、策略空间、收益函数等的隐私攻防博弈模型的形式化描述。论文巧妙地利用了隐私互信息量的内涵与外延，构造了隐私保护的效用函数，最终具体实现了一个两方零和对策博弈模型的构建。论文利用极小极大定理和凹凸博弈理论给出了该攻防博弈模型的均衡分析，并进一步基于最优策略响应设计了均衡求解的策略优化选择算法。理论分析与数值实验结果表明，所提出的模型及方法能有效解决等价隐私保护机制之间的比较问题，同时可用于隐私保护程度最差情况下的隐私泄露风险评估。
-
-
+%遗忘是一种知识抽取的技术，其被应用于信息隐藏、冲突解决和计算逻辑差等领域。本文从遗忘的角度出发解决上述提到的问题，
+%主要研究成果如下：
 
 
+ 1. 研究了$\CTL$下遗忘的概念及其相关性质。首先，从模型在某个原子命题集合上互模拟的角度给出了遗忘的定义；其次，探讨并证明了遗忘算子的代数属性，包括模块性、交换性和同质性；第三，基于Zhang等人提出的四条公设，给出$\CTL$遗忘的四条公设，表示定理表明这四条公设对遗忘是充分且必要的，即：遗忘的结果满足四条公设，且满足这四条公设的公式为遗忘的结果。为了计算$\CTL$遗忘，本文提出了两种计算方法：
 
-\keywords{信息熵，隐私度量，差分隐私保护，率失真函数，博弈均衡，优化模型}
+\begin{itemize}
+ \item 基于归结的方法计算$\CTL$下的遗忘。该方法使用Zhang等人提出的归结系统$R_{\CTL}^{\succ,S}$（ clausal resolution calculus for CTL）。在此方法中，首先将$\CTL$公式转换为 $\CTLsnf$ 子句（separated normal form with global clauses for \CTL）的集合，最后再将 $\CTLsnf$ 子句转换为$\CTL$公式。在这一过程中，需要计算遗忘的公式总是和各个过程的输出保持互模拟等价关系。
+ \item 基于模型的$\CTL$遗忘计算方法。本文证明了$\CTL$遗忘结果不总是存在的，即：存在一些公式遗忘原子命题集的结果不可用$\CTL$公式表示。因此，探讨了遗忘总是存在的约束$\CTL$。在这种方法中，规定了公式的长度为整数$n$、公式所依赖的模型个数为有限个及构成公式的原子命题是有限的。此时，公式的模型可以用其特征公式——$\CTL$公式来表示。因此，遗忘结果可以由其所有模型在给定原子命题集合上的特征公式的析取来表示。
+\end{itemize}
+%1) 基于归结的方法计算$\CTL$下的遗忘。该方法使用Zhang等人提出的归结系统$R_{\CTL}^{\succ,S}$（ clausal resolution calculus for CTL）。在这种方法中，首先将$\CTL$公式转换为$\CTLsnf$子句（separated normal form with global clauses for \CTL）的集合，最后再将$\CTLsnf$子句转换为$\CTL$公式。在这一过程中，需要计算遗忘的公式总是和各个过程的输出保持互模拟等价关系。
+%
+%2) 基于模型的$\CTL$遗忘计算方法。本文证明了$\CTL$遗忘结果不总是存在的，即：存在一些公式遗忘原子命题集的结果不可用$\CTL$公式表示。因此，探讨了遗忘总是存在的约束$\CTL$。在这种方法中，规定了公式的长度为整数$n$、公式所依赖的模型个数为有限个及构成公式的原子命题是有限的。此时，公式的模型可以用其特征公式——$\CTL$公式来表示。因此，遗忘结果可以由其所有模型在给定原子命题集合上的特征公式的析取来表示。
+
+2. 研究了$\mu$-演算遗忘。$\mu$-演算具有均匀插值（uniform  interpolation）性质，本文证明了$\mu$-句子遗忘与均匀插值是等价的。此外，提出一种新的互模拟，并证明$\mu$-公式对这种互模拟是{\em 不变的}（invariant）。
+最后，研究了$\mu$-演算下遗忘的基本属性和复杂性，为均匀插值的研究提供了新的思路。
+
+3. 给出了遗忘与WSC（SNC）和知识更新（knowledge update）的关系。WSC对模型的验证和修改具有重要作用，现有方法只能计算可终止模型的WSC，而不能计算像反应式系统这类不可终止系统的WSC。本文通过遗忘给出了计算WSC（SNC）的方法，利用遗忘定义了$\CTL$和$\mu$-演算下的知识更新，并证明其满足Katsuno等人提出的知识更新的八条公设。
+
+
+4. 用Prolog实现了1中提到的基于归结的计算$\CTL$遗忘的算法，并做了相应的实验。从标准数据集和随机产生的数据集里做了两组实验，分别为计算遗忘和SNC。实验表明公式越长或遗忘的原子个数越多，效率越低；此外，在随机产生的公式中，大部分情况下能计算出SNC。
+
+%1. 研究了$\CTL$下遗忘的概念及其相关性质。首先，从模型在某个原子命题集合上互模拟的角度给出了遗忘的定义；其次，探讨并证明了遗忘算子的代数属性，包括模块性、交换性和同质性；第三，基于Zhang等人提出的四条公设，给出$\CTL$遗忘的四条公设，表示定理表明这四条公设对遗忘是充分且必要的，即：遗忘的结果满足四条公设，且满足这四条公设的公式为遗忘的结果。
+%
+%2. 研究了$\mu$-演算遗忘。$\mu$-演算具有均匀插值（uniform  interpolation）性质，本文证明了$\mu$-句子遗忘与均匀插值是等价的。此外，提出一种新的互模拟，并证明$\mu$-公式对这种互模拟是{\em 不变的}（invariant）。
+%最后，研究了$\mu$-演算下遗忘的基本属性和复杂性，为均匀插值的研究提供了新的思路。
+%
+%3. 给出了遗忘与WSC（SNC）和知识更新（knowledge update）的关系。WSC对模型的验证和修改具有重要作用，现有方法只能计算可终止模型的WSC，而不能计算像反应式系统这类不可终止系统的WSC。本文通过遗忘给出了计算WSC（SNC）的方法，利用遗忘定义了$\CTL$和$\mu$-演算下的知识更新，并证明其满足Katsuno等人提出的知识更新的八条公设。
+%
+%
+%4. 提出一种基于模型的$\CTL$遗忘计算方法。在这种方法中，规定了公式的长度为整数$n$、公式所依赖的模型个数为有限个及构成公式的原子命题是有限的。此时，公式的模型可以用其特征公式——$\CTL$公式来表示。因此，遗忘结果可以由其所有模型在给定原子命题集合上的特征公式的析取来表示。%，显然该公式是一个$\CTL$公式（即：遗忘在这种情形下是封闭的）。
+%
+%
+%5. 提出一种基于归结的方法计算$\CTL$下的遗忘。该方法使用Zhang等人提出的归结系统$R_{\CTL}^{\succ,S}$（ clausal resolution calculus for CTL）。在这种方法中，首先将$\CTL$公式转换为$\CTLsnf$子句（separated normal form with global clauses for \CTL）的集合，最后再将$\CTLsnf$子句转换为$\CTL$公式。在这一过程中，需要计算遗忘的公式总是和各个过程的输出保持互模拟等价关系。
+%
+%
+%6. 利用Prolog实现了5中提到的基于归结的计算$\CTL$遗忘的方法，并做了相应的实验。从标准数据集和随机产生的数据集里做了两组实验，分别为计算遗忘和SNC。实验表明公式越长或遗忘的原子个数越多，效率越低；此外，在随机产生的公式中，大部分情况下能计算出SNC。
+
+这些结果为时序逻辑下的遗忘理论的研究提供了框架，并为模型更新提供了辅助工具——WSC。
+
+
+
+
+\keywords{遗忘理论，最强必要条件，最弱充分条件，知识更新，人工智能}
 \end{abstract}
 
 
 \begin{englishabstract}
-The challenges of privacy and security caused by the rapid development of informatization and in-depth applications, have become a bottleneck restricting data opening, sharing, exchange, and application, and have attracted great attention from the legal and academic communities. From the perspective of technology, the differential privacy (DP) protection algorithm, as an important privacy protection technology, is not mature enough in the research of data privacy protection for multi-dimensional and complex associations. Firstly, due to the mixed data types, sparseness, and large domain value space etc, the multi-dimensional data processing of DP is faced with the challenges such as privacy vulnerability and low computational efficiency. Secondly, the relevance of data fusion, background knowledge attacks and strategic adversary attacks, and the contradiction between data privacy and usability have become prominent issues. For the problems mentioned above, it is a better solution to investigate the trade-off and optimization of privacy and utility from the perspective of the game theory. Thus, this article mainly focuses on the crucial problem of the trade-off between privacy and utility. Based on information entropy, optimization theory and game equilibrium and other related theories and methods, the equilibrium and optimization models are constructed as the main line of this research. A series of results have been achieved in designing of privacy quantification methods, constructing and solving game model between privacy and utility, optimization model establishment and solving, etc., which provide a reference for solving privacy protection issues from the perspective of combining technology and management. The major contributions can be summarized as follows.
-
-1. The information entropy metric models and methods of DP are proposed. For the quantitative problem of privacy, the noisy DP communication model and formalization statement are defined based on the Shannon's fundamental communication model and the randomized perturbation principle of DP. Further, the notions of information entropy, conditional entropy, joint entropy, mutual information and conditional mutual information, etc., are defined under the differential privacy model, and then, the privacy metric models with information entropy as the core are designed. For the problem of multi-dimensional and correlated attributes, based on the graph and Markov model, etc., a privacy metric model and method for multi-dimensional and correlated attributes is proposed. Then, the upper and lower bounds of privacy leakage are quantified by using data processing inequality and Fano's inequality. Theoretic analysis and experimental results are demonstrating the proposed metric model and method can effectively achieve the goal of DP quantification, and further provide basic support for privacy leakage risk assessment and privacy protection mechanism design.
-
-
-2. The differential privacy optimization model with background knowledge attacks is proposed. Based on the established fundamental communication model of the DP, lossy compression theory and the proposed privacy metric model, the adversary model which has relevant background knowledge is established, and further the DP communication model with background knowledge attacks is proposed. By using conditional mutual information measures privacy, this paper updates the form of the well-known rate distortion function, and proposes the differential privacy optimization model with background knowledge attacks. Further, the alternating minimization iteration algorithm solving the proposed optimization model is designed and implemented based on the Blahut-Arimoto alternating minimization method, and the computation complexity analysis is provided. Theoretic analysis and experimental results are demonstrating the proposed method have significant advantages in data quality and privacy leakage when compared with the existing symmetrical channel mechanism.
-
-
-3. The orderly randomized response perturbation (ORRP) scheme is proposed. For the problem of low efficiency and privacy vulnerability when deal with multi-dimensional data using local differential privacy, and facing the privacy protection requirements of data collection scenarios, this paper proposes an orderly randomized response perturbation scheme. The proposed ORRP scheme effectively solves the impact of the existing privacy protection mechanisms ignoring data distribution, and the problem of low computing efficiency caused by the large processing domain value space and sparse data. To be specific, the proposed ORRP scheme based on the prior proposed privacy metric model. A mutual information optimization model subjects to a given data quality loss constraint to minimize privacy leakage, is proposed by analyzing and quantifying the requirements of privacy and data quality. Further, the probability density function (PDF) of the optimal privacy mechanism is computed by the means above, and it is used to achieve randomized perturbation. Meanwhile, referring to the independent parallel channel model, the above methods are extended to the case of multi-dimensional data. Finally, theoretical analysis and experimental simulations are given in terms of privacy leakage, data usability quality, and correlation loss. The results demonstrate that the proposed ORRP has more advantages than the existing methods in terms of data semantic integrity, privacy and data availability quality.
- 
-
-4. The privacy-preserving attack and defense (PPAD) game model is proposed. For the problem of informed and strategic adversary in the differential privacy system, the selection strategy of differential privacy protection is designed around the data collection scenarios. On the basis of the above, the PPAD game model is proposed, and the trade-off between privacy and utility in the protection of differential privacy is achieved by solving the equilibrium. The proposed scheme is based on the established differential privacy basic communication model. The privacy minimax optimization model is established by analyzing the privacy goals of defender and strategic attacker, and further the formalization statement of PPAD is provided, which includes players' sets, strategic spaces and payoff functions etc. This paper cleverly uses the connotation and extension of private mutual information to construct the utility function of privacy protection, and finally realized the construction of a two-person zero-sum (TPZS) game model. Then, this paper provides the game analysis by using von Neumann's minimax theorem and concave-convex game, and further designs a strategy optimization selection algorithm to calculate saddle point based on the optimal strategy response. Theoretic analysis and numeric simulation results show that the proposed model and method can effectively solve the problem of comparison between equivalent privacy mechanisms, and also can be used for privacy leakage risk assessment in the worst case of privacy protection.
- 
+A reactive system is a nonterminal system generated and developed on the basis of responsive, resilient, elastic, and message-driven requirements of the application program.  As the reaction system becomes more and more complex, the correctness of a system and the consistency between the system and its specification become more and more difficult to be guaranteed. 	
+Model checking is an effective method to ensure a system's correctness, and a reactive system is represented as a Kripke structure in such an environment.  However, in model checking, if a system does not meet the given specification (that is, it does not conform to the specification), it has been an important problem for a long time to find the weakest information needed to make the system meet the specification.
+The strongest necessary condition (SNC) and the weakest sufficient condition (WSC)  are two crucial concepts that correspond to the strongest post-condition (SP) and the weakest precondition (WP) in verification, respectively. However, existing methods cannot calculate the SNC and WSC of nonterminal systems, such as reactive systems.
+In addition, as systems update and evolve, existing specifications inevitably conflict with new knowledge. In this sense, how to ``remove" the previously integrated atoms without affecting other information is also an urgent problem to be solved.
+	
+	
+Temporal logic is one of the important logic describing the specification of systems.   Computation tree logic ($\CTL$) is an important branch-time temporal logic, which is widely used in system specification description because of its characteristic that model checking can be done in polynomial time.  However, $\mu$-calculus is a logic language with more vital expression ability but more complex model checking than $\CTL$.
+Nevertheless, $\CTL$ and $\mu$-calculus are interpreted under Kripke semantics, which is directly related to the reactive system being expressed as a Kripke structure.
+Therefore, this paper takes these two logical languages as the research background to explore the solutions to the above problems of reactive systems.
 
 
+Forgetting was first formally defined in propositional logic (PL) and FOL by Lin and Reiter. As a technique for distilling knowledge, it has been explored in various logic languages and is widely used in AI, such as information hiding, conflict resolving, knowledge integration in multi-agent, ontology abstract extraction, and logical difference computation. In particular, forgetting is used to solve WSC and SNC in a scenario of situation calculus to compute the successor state axioms in planning. This paper aims to solve the above-mentioned problems from the perspective of forgetting. The main contributions of the paper are as follows:
 
 
+1. Given the definition and properties of forgetting in $\CTL$. First, this paper defines forgetting from the point of bisimulation over the given signature. Second, we explore the algebraic properties, including decomposition, slice, and homogeneity, of forgetting. Third, the expression theorem shows that there is an ``if and only if” relation between forgetting and the forgetting postulates proposed by Zhang et al., i.e., the result of forgetting satisfies the forgetting postulates, and the formula which satisfies the forgetting postulates is the result of forgetting.
+To calculate $\CTL$ forgetting, this paper proposes two approaches:
+
+\begin{itemize}
+	\item A resolution-based method. This approach is based on the resolution system proposed by Zhang et al., and the $\CTL$ formula is transformed into a set of $\CTLsnf$ clauses (separated normal form with global clauses for $\CTL$) at first. At the end of the approach, the $\CTLsnf$ clauses are transformed into a $\CTL$ formula to obtain the forgetting result. Throughout the process, the formula to be calculated always maintains bisimilar equivalence with the output of each process.
+	%It is noteworthy that the output of each process is bisimilar equivalent of the input $\CTL$ formula.
+	\item A model-based method. This paper shows that the result of forgetting in $\CTL$ does not always exist, i.e., forgetting some atoms from some formula can not be expressed by a $\CTL$ formula. However, it proves that the forgetting always exists in bounded $\CTL$, i.e., the size (the number of signatures in a formula) of formulas are limited to an integer, the set of atoms that construct the formulas, and the state space are finite. Therefore, the model of a formula can be expressed by its characterizing formula, and then the forgetting result is the disjunction of the characterizing formulas of its models.
+\end{itemize}
+
+2. Explored the forgetting in $\mu$-calculus. $\mu$-calculus is a kind of logic which have uniform interpolation. This paper shows that the uniform interpolation and forgetting  are equivalent for $\mu$-sentence.
+In addition, we define a general bisimulation on valuations, $\tuple{X,V}$-bisimulation, in which $X$ is a set of variables and $V$ is a set of atoms.  It is proved that  $\mu$-calculus is invariant under $\tuple{X,V}$-bisimulation.
+% That is to say, if two valuations behave the same when discarding  the atoms in $V$ and variables in $X$ then they satisfy the same $\mu$-formulas that are irrelevant to $X\cup V$.
+Finally, the properties and complexity results related to forgetting are given, which proposes a new point for studying uniform interpolation.
+
+3. Given the relation between forgetting and WSC (SNC or knowledge update). WSC is important to the verification and modification of the system. However， the existing methods can only compute the WSC of a terminable system, and the WSC can not be obtained in non-terminable systems (e.g., the reactive system). This paper shows how to compute the WSC of the reactive system and define the knowledge update using forgetting to satisfy the postulates proposed by~\citeauthor{katsuno91mendelzon}.
+
+4.  Implemented the algorithm proposed in 1, and some experiments are shown. Two experiments,  i.e., computing forgetting and WSC, were performed for standard and randomly generated datasets. Experiments show that the longer the formula is, or the more atoms are forgotten, the lower the efficiency is. Moreover, SNC can be calculated in most cases of randomly generated formulas.
+
+Its significance mainly provides a framework for the study of forgetting theory under temporal logic and provides an auxiliary tool for the model update.
 
 
-\englishkeywords{Information entropy, privacy metric, differential privacy protection, rate-distortion function, game equilibrium, optimization model
-}
+\englishkeywords{forgetting，the strongest necessary condition，the weakest sufficient condition，knowledge update}
+
+
+	
+%	
+% With the software (hardware) systems of a computer becoming more and more complex, it gets hard to guarantee the correctness of systems and the consistency between systems and its specification.
+%Model checking is a valid method to ensure the correctness of systems. However, it is an important problem in model checking to fix the system to make it consistent with its specification when the system does not satisfy the given specification.
+%Moreover, in such a scenario, two logical notions introduced by E. Dijkstra are highly informative: the \emph{strongest necessary condition} (SNC) and the \emph{weakest sufficient condition}  (WSC)  of a given specification. These correspond to the \emph{strongest post-condition} (SP) and the \emph{weakest precondition} (WP) of such specification, respectively.
+%Besides, the specification at hand is an unavoidable conflict with the new knowledge when the information of the system becomes clearer. In this case, another problem that needs to solve is to ``\emph{eliminate}” the containing elements without affecting the other information.
+%
+%\emph{Forgetting}, a technique to distill knowledge, was used to hide information, solve the conflict, compute logic differences, and so on. This paper solves the above problems from the point of forgetting. The major contributions are as follows:
+%
+%1. Given the definition and properties of forgetting in $\CTL$. First, this paper defines forgetting from the point of bisimulation over the given signature. Second, we explore the algebraic properties, including modularity, commutativity, and homogeneity, of forgetting. Third, the expression theorem shows that there is an ``if and only if” relation between forgetting and the forgetting postulates proposed by Zhang et al., i.e., the result of forgetting satisfies the forgetting postulates, and the formula which satisfies the forgetting postulates is the result of forgetting.
+%
+%2. Proposed a resolution-based method to compute the forgetting in $\CTL$. This approach bases the resolution system proposed by Zhang et al., and the $\CTL$ formula is transformed into a set of $\CTLsnf$ clauses (separated normal form with global clauses for $\CTL$) at first. At the end of the approach, the $\CTLsnf$ clauses are transformed into a $\CTL$ formula to obtain the forgetting result. It is noteworthy that the output of each process is bisimilar equivalent of the input $\CTL$ formula.
+%
+%3. We outline a situation in which the forgetting is closed. In this case, the length of formulas are limited to integer $n$, and the number of atoms for formulas and Kripke structures is finite. To prove that it is closed, we define the characterizing formula (i.e., a \CTL\ formula) of the (finite) initial \MPK-structure and show that each \CTL\ formula is equivalent to a disjunction of the characterizing formulas of its models.  This fact means that the result of forgetting some atoms from a \CTL\ formula always exists.
+%
+%4. Explored the forgetting in $\mu$-calculus. $\mu$-calculus is a kind of logic which have uniform interpolation. This paper shows that the uniform interpolation and forgetting in $\mu$-calculus are equivalent, this means that the forgetting in $\mu$-calculus is closed which is the biggest difference between $\mu$-calculus and $\CTL$. Moreover, the properties and complexity results related to forgetting are given, which proposes a new point for studying uniform interpolation.
+%
+%5. Given the relation between forgetting and WSC (SNC or knowledge update). WSC is important to the verification and modification of the system. However， the existing methods can only compute the WSC of a terminable system, and the WSC can not be obtained in non-terminable systems (e.g., the reactive system). This paper shows how to compute the WSC of the reactive system and define the knowledge update using forgetting to satisfy the postulates proposed by~\citeauthor{katsuno91mendelzon}.
+%
+%6. Implemented the algorithm proposed in 2, and some experiments are shown. Two experiments, computing forgetting, and SNC, were performed for standard and randomly generated datasets. Experiments show that the longer the formula is or the more atoms are forgotten, the lower the efficiency is. Moreover, SNC can be calculated in most cases of randomly generated formulas.
+%
+%Its significance mainly provides a framework for the study of forgetting theory under temporal logic and provides an auxiliary tool for the model update.
+%
+%
+%\englishkeywords{forgetting，the strongest necessary condition，the weakest sufficient condition，knowledge update}
 \end{englishabstract}

@@ -192,16 +192,16 @@
     \begin{tabular}{llcrl}
 
     \CAST@label@xuekezhuanye &
-      \multicolumn{4}{l}{\CASTunderline[150pt]{\CAST@value@xuekezhuanye}}
+      \multicolumn{4}{l}{\CASTunderline[200pt]{\CAST@value@xuekezhuanye}}
     \\
      \CAST@label@yanjiufangxiang &
-      \multicolumn{4}{l}{\CASTunderline[150pt]{\CAST@value@yanjiufangxiang}}
+      \multicolumn{4}{l}{\CASTunderline[200pt]{\CAST@value@yanjiufangxiang}}
     \\
      \CAST@label@advisor &
-      \multicolumn{4}{l}{\CASTunderline[150pt]{\CAST@value@advisor}}
+      \multicolumn{4}{l}{\CASTunderline[200pt]{\CAST@value@advisor}}
     \\
      \CAST@label@author &
-      \multicolumn{4}{l}{\CASTunderline[150pt]{\CAST@value@author}}
+      \multicolumn{4}{l}{\CASTunderline[200pt]{\CAST@value@author}}
     \\
 
 %      \CAST@label@institute &
@@ -301,12 +301,12 @@
 %\end{center}
 %  \CAST@label@abstract}
 %  }
-{\Nchapter{\CAST@label@abstract}}
+ {\chapter*{\CAST@label@abstract}}
   {}
 \newcommand\keywords[1]{%
   \vspace{2ex}\noindent{\heiti \CAST@label@keywords} #1}
 \newenvironment{englishabstract}
-  {\Nchapter{\CAST@label@englishabstract}}
+  {\chapter*{\CAST@label@englishabstract}}
   {}
 \newcommand\englishkeywords[1]{%
   \vspace{2ex}\noindent{\bf \CAST@label@englishkeywords} #1}
@@ -316,7 +316,8 @@
     \else
       \@restonecolfalse
     \fi
-    \Nchapter{\contentsname}%
+    %\Nchapter{\contentsname}%
+    \chapter*{\contentsname}%
     \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
     \@starttoc{toc}%
     \if@restonecol\twocolumn\fi
