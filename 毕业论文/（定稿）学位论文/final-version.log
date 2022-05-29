@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  28 MAY 2022 21:52
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.4.3)  29 MAY 2022 13:38
 entering extended mode
 **final-version.tex
 
@@ -2000,14 +2000,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 (D:\（博士）我的资料\Git\fry\毕业论文\（定稿）学位论文\fina
 l-version.toc [6
 
-]
-
-Package Fancyhdr Warning: \headheight is too small (10.0pt): 
- Make it at least 12.64998pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[7])
+])
 \tf@toc=\write6
 
 
@@ -2016,17 +2009,19 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
+[7]
 (D:\（博士）我的资料\Git\fry\毕业论文\（定稿）学位论文\fina
 l-version.lot)
 \tf@lot=\write7
- [9
+ [8
 
 ]
 (D:\（博士）我的资料\Git\fry\毕业论文\（定稿）学位论文\fina
 l-version.lof)
 \tf@lof=\write8
- [10
+ [9
+
+] [10
 
 ]
 No file final-version.nls.
@@ -2049,7 +2044,6 @@ l.32 形
 [1
 
 
-
 ]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
@@ -2065,7 +2059,7 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.47 
-      [2] <NnewCar.png, id=697, 181.67876pt x 169.63374pt>
+      [2] <NnewCar.png, id=692, 181.67876pt x 169.63374pt>
 File: NnewCar.png Graphic file (type png)
  <use NnewCar.png>
 Package pdftex.def Info: NnewCar.png used on input line 85.
@@ -2130,7 +2124,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10] <figures/chapter01/zuzhi.png, id=878, 955.8912pt x 492.8814pt>
+[10] <figures/chapter01/zuzhi.png, id=873, 955.8912pt x 492.8814pt>
 File: figures/chapter01/zuzhi.png Graphic file (type png)
 
 <use figures/chapter01/zuzhi.png>
@@ -2544,7 +2538,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 [40
 
-] <figures/chapter03/NVBnewCar1.png, id=1226, 415.5525pt x 319.94531pt>
+] <figures/chapter03/NVBnewCar1.png, id=1221, 415.5525pt x 319.94531pt>
 File: figures/chapter03/NVBnewCar1.png Graphic file (type png)
 
 <use figures/chapter03/NVBnewCar1.png>
@@ -2737,7 +2731,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[54] <figures/chapter06/chvB3.png, id=1340, 475.7775pt x 255.95625pt>
+[54] <figures/chapter06/chvB3.png, id=1335, 475.7775pt x 255.95625pt>
 File: figures/chapter06/chvB3.png Graphic file (type png)
 
 <use figures/chapter06/chvB3.png>
@@ -3216,7 +3210,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[85] <figures/chapter05/NK2Tree2.png, id=1607, 821.31844pt x 358.33875pt>
+[85] <figures/chapter05/NK2Tree2.png, id=1602, 821.31844pt x 358.33875pt>
 File: figures/chapter05/NK2Tree2.png Graphic file (type png)
 
 <use figures/chapter05/NK2Tree2.png>
@@ -3381,7 +3375,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[94] <figures/chapter06/partial_order2.png, id=1682, 691.08188pt x 102.3825pt>
+[94] <figures/chapter06/partial_order2.png, id=1677, 691.08188pt x 102.3825pt>
 File: figures/chapter06/partial_order2.png Graphic file (type png)
 
 <use figures/chapter06/partial_order2.png>
@@ -3432,7 +3426,7 @@ S \OT1/ztmcm/m/n/12.05 = \OMS/ztmcm/m/n/12.05 f\OML/ztmcm/m/it/12.05 s[]; s[]\O
 MS/ztmcm/m/n/12.05 g$|\C70/rm/m/n/12.05/30 |
  []
 
-<knowledge_update.png, id=1702, 408.02437pt x 290.58563pt>
+<knowledge_update.png, id=1697, 408.02437pt x 290.58563pt>
 File: knowledge_update.png Graphic file (type png)
 
 <use knowledge_update.png>
@@ -3526,7 +3520,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[102] <figures/chapter04/frame2.png, id=1766, 855.195pt x 557.08125pt>
+[102] <figures/chapter04/frame2.png, id=1761, 855.195pt x 557.08125pt>
 File: figures/chapter04/frame2.png Graphic file (type png)
 
 <use figures/chapter04/frame2.png>
@@ -3723,7 +3717,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[115] <figures/chapter04/time_4_12_2.png, id=1924, 359.4228pt x 211.992pt>
+[115] <figures/chapter04/time_4_12_2.png, id=1920, 359.4228pt x 211.992pt>
 File: figures/chapter04/time_4_12_2.png Graphic file (type png)
 
 <use figures/chapter04/time_4_12_2.png>
@@ -3731,7 +3725,7 @@ Package pdftex.def Info: figures/chapter04/time_4_12_2.png used on input line 1
 335.
 (pdftex.def)             Requested size: 199.16928pt x 117.46933pt.
 
-<figures/chapter04/number-4-12_2.png, id=1925, 364.2408pt x 204.765pt>
+<figures/chapter04/number-4-12_2.png, id=1921, 364.2408pt x 204.765pt>
 File: figures/chapter04/number-4-12_2.png Graphic file (type png)
 
 <use figures/chapter04/number-4-12_2.png>
@@ -3739,7 +3733,7 @@ Package pdftex.def Info: figures/chapter04/number-4-12_2.png used on input line
  1338.
 (pdftex.def)             Requested size: 199.16928pt x 111.96806pt.
 
-<figures/chapter04/time_4_16_2.png, id=1926, 367.6134pt x 225.9642pt>
+<figures/chapter04/time_4_16_2.png, id=1922, 367.6134pt x 225.9642pt>
 File: figures/chapter04/time_4_16_2.png Graphic file (type png)
 
 <use figures/chapter04/time_4_16_2.png>
@@ -3747,7 +3741,7 @@ Package pdftex.def Info: figures/chapter04/time_4_16_2.png used on input line 1
 347.
 (pdftex.def)             Requested size: 199.16928pt x 122.42569pt.
 
-<figures/chapter04/number-4-16_2.png, id=1927, 364.2408pt x 204.765pt>
+<figures/chapter04/number-4-16_2.png, id=1923, 364.2408pt x 204.765pt>
 File: figures/chapter04/number-4-16_2.png Graphic file (type png)
 
 <use figures/chapter04/number-4-16_2.png>
@@ -3755,7 +3749,7 @@ Package pdftex.def Info: figures/chapter04/number-4-16_2.png used on input line
  1350.
 (pdftex.def)             Requested size: 213.39566pt x 119.96356pt.
 
-<figures/chapter04/PRototalAveTime2.png, id=1929, 322.20375pt x 276.28218pt>
+<figures/chapter04/PRototalAveTime2.png, id=1925, 322.20375pt x 276.28218pt>
 File: figures/chapter04/PRototalAveTime2.png Graphic file (type png)
 
 <use figures/chapter04/PRototalAveTime2.png>
@@ -3763,7 +3757,7 @@ Package pdftex.def Info: figures/chapter04/PRototalAveTime2.png used on input l
 ine 1367.
 (pdftex.def)             Requested size: 199.16928pt x 170.78728pt.
 
-<figures/chapter04/ProBox(10-50)_25_2.png, id=1930, 297.36093pt x 249.93375pt>
+<figures/chapter04/ProBox(10-50)_25_2.png, id=1926, 297.36093pt x 249.93375pt>
 File: figures/chapter04/ProBox(10-50)_25_2.png Graphic file (type png)
 
 <use figures/chapter04/ProBox(10-50)_25_2.png>
@@ -3783,7 +3777,7 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
 士）我的资料/Git/fry/毕业论文/（定稿）学位论文/figures/chapte
 r04/time_4_16_2.png> <D:/（博士）我的资料/Git/fry/毕业论文/（定�
 �）学位论文/figures/chapter04/number-4-16_2.png>]
-<figures/chapter04/totalAveTime1.png, id=1948, 368.1253pt x 304.88907pt>
+<figures/chapter04/totalAveTime1.png, id=1944, 368.1253pt x 304.88907pt>
 File: figures/chapter04/totalAveTime1.png Graphic file (type png)
 
 <use figures/chapter04/totalAveTime1.png>
@@ -3791,7 +3785,7 @@ Package pdftex.def Info: figures/chapter04/totalAveTime1.png used on input line
  1400.
 (pdftex.def)             Requested size: 199.16928pt x 164.95865pt.
 
-<figures/chapter04/numPercent1.png, id=1949, 416.30531pt x 313.9228pt>
+<figures/chapter04/numPercent1.png, id=1945, 416.30531pt x 313.9228pt>
 File: figures/chapter04/numPercent1.png Graphic file (type png)
 
 <use figures/chapter04/numPercent1.png>
@@ -3913,6 +3907,8 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [132])
+(D:\（博士）我的资料\Git\fry\毕业论文\（定稿）学位论文\chap
+ter/thanks.tex
 
 Package Fancyhdr Warning: \headheight is too small (10.0pt): 
  Make it at least 12.64998pt.
@@ -3920,10 +3916,6 @@ Package Fancyhdr Warning: \headheight is too small (10.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [133]
-(D:\（博士）我的资料\Git\fry\毕业论文\（定稿）学位论文\chap
-ter/thanks.tex [134
-
-]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                \hskip 12.05pt
@@ -3939,15 +3931,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 pdfTeX warning: pdflatex.exe (file D:/（博士）我的资料/Git/fry/毕业�
 �文/（定稿）学位论文/figures/shengming.pdf): PDF inclusion: found PDF 
 version <1.7>, but at most version <1.5> allowed
-<figures/shengming.pdf, id=2188, 597.50829pt x 845.0471pt>
+<figures/shengming.pdf, id=2180, 597.50829pt x 845.0471pt>
 File: figures/shengming.pdf Graphic file (type pdf)
 
 <use figures/shengming.pdf>
 Package pdftex.def Info: figures/shengming.pdf used on input line 559.
 (pdftex.def)             Requested size: 452.96826pt x 640.63068pt.
- [135
+ [134
 
-] [136 <D:/（博士）我的资料/Git/fry/毕业论文/（定稿）学位论�
+] [135 <D:/（博士）我的资料/Git/fry/毕业论文/（定稿）学位论�
 ��/figures/shengming.pdf>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 566.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 566.
@@ -3957,20 +3949,20 @@ l-version.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 566.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 566.
 Package rerunfilecheck Info: File `final-version.out' has not changed.
-(rerunfilecheck)             Checksum: FB80C90DA83FC76805231C7BEA6E2BA8;4291.
+(rerunfilecheck)             Checksum: 6245EF00660D3B4AE23ABA36DFA926CF;4207.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 37778 strings out of 495354
- 634437 string characters out of 3183188
- 791000 words of memory out of 3000000
- 38368 multiletter control sequences out of 15000+200000
- 282795 words of font info for 820 fonts, out of 3000000 for 9000
+ 37750 strings out of 495354
+ 633909 string characters out of 3183188
+ 790962 words of memory out of 3000000
+ 38346 multiletter control sequences out of 15000+200000
+ 281616 words of font info for 816 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,2588b,2640s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,2588b,2642s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not ex
 ist, replaced by a fixed one
 
@@ -4134,9 +4126,9 @@ D:/Application/Ctex/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><D:/Application/Ctex
 /urw/times/utmb8a.pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmbi8a
 .pfb><D:/Application/Ctex/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><D:/Applicati
 on/Ctex/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on final-version.pdf (148 pages, 2968106 bytes).
+Output written on final-version.pdf (147 pages, 2965276 bytes).
 PDF statistics:
- 3089 PDF objects out of 3580 (max. 8388607)
- 544 named destinations out of 1000 (max. 500000)
- 902 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3081 PDF objects out of 3580 (max. 8388607)
+ 542 named destinations out of 1000 (max. 500000)
+ 894 words of extra memory for PDF output out of 10000 (max. 10000000)
 
