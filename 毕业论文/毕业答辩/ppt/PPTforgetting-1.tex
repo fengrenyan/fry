@@ -219,6 +219,7 @@
 	}
 }
 
+
 %\includeonlyframes{mine}
 \begin{document}
 	\setbeamertemplate{bibliography item}[text]
@@ -296,7 +297,7 @@
 	\newtheorem{proposition}{命题}
 
   
-	
+	\setbeamerfont{title}{size=\Huge}
 	\setbeamertemplate{caption}[numbered]
 %	\newcommand{引理}{lemma} 
 %	\newtheorem{lem}{Lemma} 
@@ -309,18 +310,19 @@
 	
 	\begin{frame}
 		\titlepage
+%		{\Huge
 		\frametitle{~~~~~~~~~~~~~~~2018级计算机科学与技术学院博士学位论文答辩}
-	%	\textcolor{lightblue}{
+%		\textcolor{blue}{
 		\begin{center}
 			\heiti\zihao{5}{
-				姓名：\uwave{\hbox to 50mm{~~~~~~~~~~~~~~~~~~~冯仁艳~~~~~~~~~~~~~~~~}}\\
-				导师：\uwave{\hbox to 50mm{~~~~~~~~~~~~~~~~~~~王以松~~~~~~~~~~~~~~~~}}\\
-				合作导师：\uwave{\hbox to 50mm{~~~~~~~~~~Erman Acar\footnote[frame]{University of Amsterdam, The Netherlands}~~~~~~~~~~~~~~~~~}} \\
+				姓\quad \ \ \ 名：\underline{\hbox to 50mm{~~~~~~~~~~~~~~~~~冯\ 仁\ 艳~~~~~~~~~~~~~~~~}}\\
+				导\quad\ \ \ 师：\underline{\hbox to 50mm{~~~~~~~~~~~~~~~~~王\ 以\ 松~~~~~~~~~~~~~~~~}}\\
+				合作导师：\underline{\hbox to 50mm{~~~~~~~~~~~~~~~~~Erman Acar~~~~~~~~~~~~~~~~}} \\
 			%	学科专业：\uwave{\hbox to 50mm{~~~~~~~~~~~~~~软件工程~~~~~~~~~~~~~~~~~~}}\\
-				研究方向：\uwave{\hbox to 50mm{~~~~~~~软件工程技术与人工智能~~~~~~~~~~~~~~~~~~~~}}
+				研究方向：\underline{\hbox to 50mm{~~~~~~软件工程技术与人工智能~~~~~~~~~~~~~~~~~~~}}
 			}
 		\end{center}
-	%}
+%	}
 	\end{frame}
 	
 	\section{绪论}
@@ -372,12 +374,18 @@
 			\end{itemize}
 		%最弱前件：$\{P\} S \{Q\}$
 		\column{0.5\textwidth}
-			\begin{figure}
-				\includegraphics[scale=0.3]{figures/atp}
-			\end{figure}
+%			\begin{figure}
+%				\includegraphics[scale=0.3]{figures/atp}
+%			\end{figure}
+	\textcolor{blue}{\qquad 三种证明方法：
+		\begin{itemize}\setlength{\itemsep}{0.1pt }
+			\item 消解（Resolution）；
+			\item 表推理（Tableau）；
+			\item Hore三元组。
+		\end{itemize}}
 		\end{columns} 
 	\begin{figure}
-		\includegraphics[scale=0.3]{figures/hoareTriple}
+		\includegraphics[scale=0.35]{figures/hoareTriple}
 	\end{figure}
 	\end{block}
 \vskip 0.5pt
@@ -391,7 +399,7 @@
 			\end{itemize}
 			\column{0.5\textwidth}
 			\begin{figure}
-				\includegraphics[scale=0.35]{figures/MC}
+				\includegraphics[scale=0.4]{figures/MC}
 			\end{figure}
 		\end{columns}
 	\end{block}
@@ -424,14 +432,14 @@
 		\begin{tikzpicture}[scale=0.75]
 			\tikzstyle{every node}=[font=\small,scale=0.75]
 			\node[blueCircle] (s0) at(0,1) {$s_0$};
-			\node[blueCircle1] (s1) at(0,0) {$s_1$};
-			\node[blueCircle2] (s2) at(-1,0) {$s_2$};
-			\node[blueCircle3] (s3) at(1,0) {$s_3$};
+			\node[blueCircle] (s1) at(0,0) {$s_1$};
+			\node[blueCircle] (s2) at(-1,0) {$s_2$};
+			\node[redCircle] (s3) at(1,0) {$s_3$};
 			\node[redCircle] (s4) at(0.5,-1) {$s_4$}; 
-			\draw[->,dashed] (s0) -- (s1);
-			\draw[->,dashed] (s1) -- (s2);
-			\draw[->,dashed] (s1) -- (s3);
-			\draw[->,dashed] (s1) -- (s4);
+			\draw[->] (s0) -- (s1);
+			\draw[->] (s1) -- (s2);
+			\draw[->] (s1) -- (s3);
+			\draw[->] (s1) -- (s4);
 			%	\draw[->] (s4) -- (s0);
 			\path (s4) edge[->,bend right=45] (s0);
 			\path (s2) edge[->,bend right=-45] (s0);
@@ -511,7 +519,7 @@
 				 %非形式化地，对于逻辑语言L中的任意公式和原子集合，如果从该公式中遗忘掉该原子集合后得到的结果仍然在L中，则称\textcolor{blue}{遗忘存在}，同时也称该公式和原子集合的遗忘存在。
 				\column{0.5\textwidth}
 				\begin{figure}
-					\includegraphics[scale=0.35]{figures/forgetting}
+					\includegraphics[scale=0.4]{figures/forgetting}
 				\end{figure}
 			\end{columns}
 		\end{block}}
@@ -552,7 +560,7 @@
 	\begin{frame}
 		\frametitle{~国内外研究现状}
 		\begin{figure}
-			\includegraphics[scale=0.45]{figures/history2}
+			\includegraphics[scale=0.45]{figures/history3}
 		\end{figure}
 	\end{frame}
 
@@ -611,9 +619,9 @@
 \begin{frame}
 	\frametitle{~研究内容}
 		\begin{itemize}
-		\item  研究内容（一）：CTL和$\mu$-演算的遗忘理论
+		\item  研究内容（一）：$\CTL$和$\mu$-演算的遗忘理论
 		\item 研究内容（二）：遗忘理论在反应式系统的形式化验证和知识更新中的应用
-		\item 研究内容（三）：CTL遗忘的计算方法
+		\item 研究内容（三）：$\CTL$遗忘的计算方法
 	\end{itemize}
 	\begin{figure}
 		\includegraphics[scale=0.3]{figures/zuzhi}
@@ -625,8 +633,8 @@
 \begin{frame} 
 	\frametitle{~背景知识：CTL的语法和语义}
 %	{\footnotesize  
-		\begin{definition}[CTL的语法]
-			带索引的CTL公式\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
+		\begin{definition}[$\CTL$的语法]
+			带索引的$\CTL$公式\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
 			\begin{align*}
 				\phi  ::= & \ \start\mid \bot %\mid \top
 				\mid p \mid\neg\phi \mid \phi\lor\phi \mid
@@ -641,7 +649,7 @@
 			其中，$p$为原子命题集$\Ha$中的元素。%，$ind \in \Ind$。
 		%	\textcolor{blue}{没有索引和$\start$的公式称为CTL公式。}
 		\end{definition} 
-		\begin{definition}[CTL的语义]\label{def:ctl:semantic}
+		\begin{definition}[$\CTL$的语义]\label{def:ctl:semantic}
 			给定公式$\varphi$，初始Kripke结构 $\Hm=(S,R,L,s_0)$ 和状态 $s\in S$。$(\Hm,s)$与$\varphi$之间的可满足关系$(\Hm,s)\models \varphi$定义如下：
 			\begin{figure}
 				\includegraphics[scale=0.3]{figures/semanticCTL1}
@@ -843,13 +851,13 @@
 					\begin{minipage}{.2\textwidth}
 						\node[blueCircle] (s0) at(0,1) {$s_0$};
 						\node[blueCircle1] (s1) at(0,0) {$s_1$};
-						\node[blueCircle3] (s2) at(-1,0) {$s_2$};
+						\node[blueCircle2] (s2) at(-1,0) {$s_2$};
 						\node[redCircle] (s3) at(1,0) {$s_3$};
 						\node[redCircle] (s4) at(0.5,-1) {$s_4$};
-						\draw[->,dashed] (s0) -- (s1);
-						\draw[->,dashed] (s1) -- (s2);
-						\draw[->,dashed] (s1) -- (s3);
-						\draw[->,dashed] (s1) -- (s4);
+						\draw[->] (s0) -- (s1);
+						\draw[->] (s1) -- (s2);
+						\draw[->] (s1) -- (s3);
+						\draw[->] (s1) -- (s4);
 						%	\draw[->] (s4) -- (s0);
 						\path (s4) edge[->,bend right=45] (s0);
 						\path (s2) edge[->,bend right=-45] (s0);
@@ -881,7 +889,7 @@
 					\begin{minipage}{.2\textwidth}
 						\node[blueCircle] (s20) at(3,-1) {$s_0$};
 						\node[blueCircle1] (s21) at(3,-2) {$s_1$};
-						\node[blueCircle3] (s22) at(2,-2) {$s_2'$};
+						\node[blueCircle2] (s22) at(2,-2) {$s_2'$};
 						\draw[->] (s20) -- (s21);
 						\draw[->] (s21) -- (s22);
 						\path (s22) edge[->,bend right=-45] (s20);
@@ -919,7 +927,7 @@
 			那么，称$\psi$为从$\Phi$中遗忘$V$后得到的结果，记为$\CTLforget(\phi,V)$。
 		\end{definition}
 		\only<1>{\begin{block}{遗忘理论公设}
-				给定CTL公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$、原子命题集$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，CTL下遗忘理论公设如下：
+				给定$\CTL$公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$、原子命题集$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，$\CTL$下遗忘理论公设如下：
 				\begin{itemize}
 					\item[(\W)] 削弱：$\varphi \models \varphi'$；
 					\item[(\PP)] 正支持：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
@@ -933,7 +941,7 @@
 		\frametitle{~研究内容（一）CTL遗忘和性质}
 %		{\footnotesize 
 			\begin{theorem}[表达性定理，Representation Theorem]\label{thm:close}
-				给定CTL公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题集。
+				给定$\CTL$公式$\varphi$和$\varphi'$，$V \subseteq \Ha$为原子命题集。
 				下面的陈述是等价的：
 				\begin{itemize}
 					\item[(i)] $\varphi' \equiv \CTLforget(\varphi, V)$,
@@ -955,7 +963,7 @@
 %		\end{example}
 		 
 		\begin{proposition}\label{pro:uniforget}
-			$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 CTL中是不可表示的。其中，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集$\Var(\varphi)=\{p,x\}$的公式。}为下面公式的合取~\cite{Maksimova:JANCL:1991}：
+			$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 $\CTL$中是不可表示的。其中，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集$\Var(\varphi)=\{p,x\}$的公式。}为下面公式的合取~\cite{Maksimova:JANCL:1991}：
 			\begin{align*}
 				&\ALL\GLOBAL(\neg x \wedge \neg \ALL \GLOBAL p \rto \neg \ALL \NEXT \neg x),
 				\qquad \ALL\GLOBAL(\neg \ALL\NEXT \neg x \rto \ALL \NEXT x),\\
@@ -1303,7 +1311,7 @@
 		\column{0.5\textwidth}
 		\begin{itemize}
 			\item 反应式系统被表示成Kripke结构；
-			\item 初始Kripke结构的特征公式看作CTL公式——${\cal F}_{\Ha}(\Hm)$；
+			\item 初始Kripke结构的特征公式看作$\CTL$公式——${\cal F}_{\Ha}(\Hm)$；
 		\end{itemize}
 	\column{0.5\textwidth}
 	\begin{figure}
@@ -1769,7 +1777,7 @@
 
 \subsection{研究内容（三）（1）基于模型的计算方法}
 \begin{frame}
-	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	\frametitle{研究内容（三）（1）基于模型的CTL遗忘}
 	%	\begin{figure}
 	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
 	%		\caption{基于模型的有界CTL遗忘方法}
@@ -1779,12 +1787,12 @@
 		%	\tiny
 		\begin{tikzpicture}%[scale=0.8]
 %			\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$遗忘};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
 			
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -1825,9 +1833,9 @@
 			\draw[->] (s1) -- (s2);
 			\draw[->] (s2) -- (s3);
 			\draw[->] (s2) -- (s4);
-			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[<->,color=gray] (s4) -- (s5);
 			\draw[->] (s4) -- (2,2)--(s3);
-			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->,color=gray] (s5) -- (3,0) -- (s6);
 			\draw[->] (s3) -- (3,3) -- (s6);
 			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
 			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
@@ -1852,7 +1860,7 @@
 
 %\subsection{研究内容（三）（1）基于模型的计算方法}
 \begin{frame}
-	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	\frametitle{研究内容（三）（1）基于模型的CTL遗忘}
 	%	\begin{figure}
 	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
 	%		\caption{基于模型的有界CTL遗忘方法}
@@ -1862,12 +1870,12 @@
 		%	\tiny
 		\begin{tikzpicture}%[scale=0.8]
 		%	\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$遗忘};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
 			 
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -1911,9 +1919,9 @@
 			\draw[->] (s1) -- (s2);
 			\draw[->] (s2) -- (s3);
 			\draw[->] (s2) -- (s4);
-			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[<->,color=gray] (s4) -- (s5);
 			\draw[->] (s4) -- (2,2)--(s3);
-			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->,color=gray] (s5) -- (3,0) -- (s6);
 			\draw[->] (s3) -- (3,3) -- (s6);
 			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
 			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
@@ -1943,7 +1951,7 @@
 
 %\subsection{研究内容（三）（1）基于模型的计算方法}
 \begin{frame}
-	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	\frametitle{研究内容（三）（1）基于模型的CTL遗忘}
 	%	\begin{figure}
 	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
 	%		\caption{基于模型的有界CTL遗忘方法}
@@ -1953,8 +1961,8 @@
 		%	\tiny
 		\begin{tikzpicture}%[scale=0.8]
 			%\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$遗忘};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
 			\node[color=red] at(0,4) {$
 					ch({\cal M},V)=
 					\left\{
@@ -1966,7 +1974,7 @@
 			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-5.5,4.5) rectangle (5,3.5);
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -2010,9 +2018,9 @@
 			\draw[->] (s1) -- (s2);
 			\draw[->] (s2) -- (s3);
 			\draw[->] (s2) -- (s4);
-			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[<->,color=gray] (s4) -- (s5);
 			\draw[->] (s4) -- (2,2)--(s3);
-			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->,color=gray] (s5) -- (3,0) -- (s6);
 			\draw[->] (s3) -- (3,3) -- (s6);
 			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
 			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
@@ -2036,7 +2044,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	\frametitle{研究内容（三）（1）基于模型的CTL遗忘}
 	%	\begin{figure}
 	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
 	%		\caption{基于模型的有界CTL遗忘方法}
@@ -2046,8 +2054,8 @@
 		%	\tiny
 		\begin{tikzpicture}%[scale=0.8]
 		%	\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$遗忘};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
 			\node at(0,4) {$
 					ch({\cal M},V)=
 					\left\{
@@ -2059,7 +2067,7 @@
 			\draw[dashed, color=orange] (-5.5,4.5) rectangle (5,3.5);
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -2110,15 +2118,15 @@
 			
 			 
 			
-			
-			
 			\draw[->] (s1) -- (s2);
 			\draw[->] (s2) -- (s3);
 			\draw[->] (s2) -- (s4);
-			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[<->,color=gray] (s4) -- (s5);
 			\draw[->] (s4) -- (2,2)--(s3);
-			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
-			\draw[->] (s3) -- (3,3) -- (s6); 
+			\draw[->,color=gray] (s5) -- (3,0) -- (s6);
+			\draw[->] (s3) -- (3,3) -- (s6);
+			
+			 
 			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
 			\draw[dashed, color=blue!20] (1,6) -- (5.5,5);
 			\draw[dashed, color=blue!20] (-7.5,5) rectangle (5.5,-1);
@@ -2129,7 +2137,7 @@
 
 %\subsection{研究内容（三）（1）基于模型的计算方法}
 \begin{frame}
-	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	\frametitle{研究内容（三）（1）基于模型的CTL遗忘}
 	%	\begin{figure}
 	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
 	%		\caption{基于模型的有界CTL遗忘方法}
@@ -2139,8 +2147,8 @@
 		%	\tiny
 		\begin{tikzpicture}%[scale=0.8]
 		%	\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$遗忘};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
 			\node at(0,4) {$
 					ch({\cal M},V)=
 					\left\{
@@ -2152,7 +2160,7 @@
 			\draw[dashed, color=orange] (-5.5,4.5) rectangle (5,3.5);
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -2201,7 +2209,7 @@
 				\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}; %计算树特征公式
 			\draw[dashed, color=yellow,fill=yellow!40,opacity=0.2] (-7.4,0) rectangle (5.4,-1);
 			
-				\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=yellow,fill=green!50!yellow]  at(-4,1.1)[draw,align=center] {{\scriptsize  (1) 只考虑$V$中的原子命题；}\\ {\scriptsize (2) 突出了树节点的内容，即：对于任意原子命题$p\in V$，若$p$在节点} \\ {\scriptsize 的标签中，则其正出现在特征公式中，否则负出现在特征公式中；}\\
+				\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=orange,fill=orange!60]  at(-4,1.1)[draw,align=center] {{\scriptsize  (1) 只考虑$V$中的原子命题；}\\ {\scriptsize (2) 突出了树节点的内容，即：对于任意原子命题$p\in V$，若$p$在节点} \\ {\scriptsize 的标签中，则其正出现在特征公式中，否则负出现在特征公式中；}\\
 				{\scriptsize (3) 公式中的时序算子表示了状态之间的转换关系。}};
 			
 			 
@@ -2209,9 +2217,9 @@
 			\draw[->] (s1) -- (s2);
 			\draw[->] (s2) -- (s3);
 			\draw[->] (s2) -- (s4);
-			\draw[<->,dashed,color=gray] (s4) -- (s5);
+			\draw[<->,color=gray] (s4) -- (s5);
 			\draw[->] (s4) -- (2,2)--(s3);
-			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->,color=gray] (s5) -- (3,0) -- (s6);
 			\draw[->] (s3) -- (3,3) -- (s6); 
 			\draw[dashed, color=blue!20] (-3,6) -- (-7.5,5);
 			\draw[dashed, color=blue!20] (1,6) -- (5.5,5);
@@ -2223,7 +2231,7 @@
 
 %\subsection{研究内容（三）（1）基于模型的计算方法}
 \begin{frame}
-	\frametitle{研究内容（三）（1）基于模型的计算方法}
+	\frametitle{研究内容（三）（1）基于模型的CTL遗忘}
 	%	\begin{figure}
 	%		\includegraphics[scale=0.45]{figures/model-basedFrame}
 	%		\caption{基于模型的有界CTL遗忘方法}
@@ -2233,8 +2241,8 @@
 		%	\tiny
 		\begin{tikzpicture}%[scale=0.8]
 		%	\tikzstyle{every node}=[font=\small,scale=0.8]
-			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界CTL计算方法};
-			\node[color=orange] at(-1, 5.2) {遗忘总是CTL可表示的};
+			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$遗忘};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
 			\node at(0,4) {$
 					ch({\cal M},V)=
 					\left\{
@@ -2246,7 +2254,7 @@
 			\draw[dashed, color=orange] (-5.5,4.5) rectangle (5,3.5);
 			
 			
-			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界CTL}};
+			\node[rectangle,rounded corners =4pt,minimum width =40pt, minimum height =15pt,draw=blue,fill=blue!20] (s1) at(-2,3) {{\scriptsize 有界$\CTL$}};
 			
 			\node[rectangle, minimum width =50pt, minimum height =15pt,draw=blue,fill=blue!10] (t1) at(-5,3.5) {{\scriptsize 构成公式的原子命题集有限}};
 			
@@ -2306,12 +2314,13 @@
 				\ALL \NEXT \bigg( \bigvee_{(s,s')\in R} {\cal F}_V(\Tr_k(s')) \bigg) \wedge {\cal F}_V(\Tr_0(s))$ （$k\ge 0$）}; %计算树特征公式
 		%	\draw[dashed, draw=orange] (-7.4,0) rectangle (5.4,-1);
 			
+			 
 			\draw[->] (s1) -- (s2);
 			\draw[->] (s2) -- (s3);
 			\draw[->] (s2) -- (s4);
 			\draw[<->,dashed,color=gray] (s4) -- (s5);
 			\draw[->] (s4) -- (2,2)--(s3);
-			\draw[->,dashed,color=gray] (s5) -- (2,0) -- (s3);
+			\draw[->,dashed,color=gray] (s5) -- (3,0) -- (s6);
 			\draw[->] (s3) -- (3,3) -- (s6);
 			%			\node[blueCircle] (s0) at(0,1) {{\tiny 就绪}};
 			%			\node[blueCircle1] (s1) at(0.8,-0.2) {{\tiny 执行}};
@@ -2506,7 +2515,7 @@
 		%		\end{equation*}
 		%	\end{block}}
 		%	\only<2>{
-		$\CTL_{\ALL\FUTURE}$：表示CTL公式只包含时序算子$\ALL \FUTURE$的子类。
+		$\CTL_{\ALL\FUTURE}$：表示$\CTL$公式只包含时序算子$\ALL \FUTURE$的子类。
 		\begin{proposition}[模型检测]
 			\label{modelChecking}
 			给定一个结构 $(\Hm,s_0)$、原子命题集$V\subseteq{\cal A}$和公式 $\varphi \in \CTL_{\ALL\FUTURE}$，判定 $(\Hm,s_0)$ 是否为$\CTLforget(\varphi, V)$的模型是 \textsc{NP}-完全的。
@@ -2544,12 +2553,12 @@
 	 
 			
 		\begin{figure}
-			\includegraphics[scale=0.4]{figures/CTL-forget1}
+			\includegraphics[scale=0.4]{figures/CTL-forget11}
 		\end{figure}
 %		}
 %		\only<2>{	
 			\begin{theorem}[可靠性]%\label{thm:soundness:forget:algorithm}
-				若$\varphi$为一个CTL公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
+				若$\varphi$为一个$\CTL$公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
 				\begin{itemize}
 					\item[(i)] $\Sigma\equiv_{V\cup U}\varphi$，
 					\item[(ii)] 若$U=\emptyset$，则 $\Sigma\equiv\CTLforget(\varphi,V)$。
@@ -2570,12 +2579,12 @@
 		
 		
 		\begin{figure}
-			\includegraphics[scale=0.45]{figures/CTL-forget3}
+			\includegraphics[scale=0.4]{figures/CTL-forget31}
 		\end{figure}
 		%		}
 		%		\only<2>{	
 		\begin{theorem}[可靠性] 
-			若$\varphi$为一个CTL公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
+			若$\varphi$为一个$\CTL$公式、 $V\subseteq\cal A$、 $\Sigma=$\CTL-forget$(\varphi,V)$且$U=\Var(\Sigma)-\Var(\varphi)$，则：
 			\begin{itemize}
 				\item[(i)] $\Sigma\equiv_{V\cup U}\varphi$，
 				\item[(ii)] 若$U=\emptyset$，则 $\Sigma\equiv\CTLforget(\varphi,V)$。
@@ -2697,7 +2706,7 @@
 %}
 %		\only<2>{	
 %		(2) 
-		CTL公式$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$，$\varphi_i=12~(i=1,2,3)$为$|\Ha|=50$上的3-CNF且$|\varphi_1|=|\varphi_2|=|\varphi_3|$，每组40个公式。
+		$\CTL$公式$\varphi=\varphi_1 \wedge \ALL\NEXT \varphi_2 \wedge \EXIST\NEXT \varphi_3$，$\varphi_i=12~(i=1,2,3)$为$|\Ha|=50$上的3-CNF且$|\varphi_1|=|\varphi_2|=|\varphi_3|$，每组40个公式。
 		
 		\begin{figure}
 			\centering
@@ -2707,7 +2716,7 @@
 			\subfigure[{\scriptsize 存在SNC的公式占比(\%)}]{
 				\includegraphics[scale=0.3]{figures/numPercent1.png}
 			}
-		\caption{{\footnotesize CTL中计算SNC的平均时间和存在SNC的公式占比}}
+		\caption{{\footnotesize $\CTL$中计算SNC的平均时间和存在SNC的公式占比}}
 		\end{figure}
 %	}
 %\pause
@@ -2725,7 +2734,7 @@
 		\begin{block}{总结}
 		\begin{itemize}%[<+-| alert@+>]
 		%	\vskip 8pt
-			\item CTL和$\mu$-演算的遗忘理论：基本性质（表达性理论、代数属性和封闭性等）、复杂性和互模拟不变性等
+			\item $\CTL$和$\mu$-演算的遗忘理论：基本性质（表达性理论、代数属性和封闭性等）、复杂性和互模拟不变性等
 %			\begin{itemize}
 %				\item CTL的遗忘理论：基本性质（表达性理论、代数属性和封闭性等）
 %				\item $\mu$-演算的遗忘理论：基本性质、复杂性和互模拟不变性等
@@ -2735,7 +2744,7 @@
 %				\item 计算WSC和SNC：定义、基本性质和基于遗忘的计算方法等
 %				\item 定义知识更新：两种知识更新定义和基本性质
 %			\end{itemize}
-			\item 计算CTL遗忘的算法
+			\item 计算$\CTL$遗忘的算法
 			\begin{itemize}
 				\item 基于模型的计算方法：有界互模拟、特征值、特征公式、封闭性、复杂性和算法等
 				\item 基于消解（resolution）的遗忘算法及实现：算法及其可靠性、遗忘存在的子类
@@ -2746,13 +2755,13 @@
 	
 		\begin{block}{展望}
 			\begin{itemize}
-				\item CTL和$\mu$-演算的遗忘存在的子类，及两者之间的关系
+				\item $\CTL$和$\mu$-演算的遗忘存在的子类，及两者之间的关系
 %				\begin{itemize}
 %					\item 遗忘结果总是存在的子类；
 %					\item 遗忘相关问题复杂性分析；
 %					\item CTL和$\mu$-演算遗忘之间的关系。
 %				\end{itemize}
-				\item “CTL和$\mu$-演算公式的遗忘结果是否分别是CTL和$\mu$-演算可表示”这一问题的可判定性研究
+				\item “$\CTL$和$\mu$-演算公式的遗忘结果是否分别是$\CTL$和$\mu$-演算可表示”这一问题的可判定性研究
 				\item 遗忘与WSC（SNC）之间的相互关系与应用
 			\end{itemize}
 		\end{block}	
