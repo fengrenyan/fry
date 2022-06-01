@@ -334,9 +334,9 @@
 				\setlength{\belowcaptionskip}{-0.2cm} %段后
 				\centering
 				\subfigure{
-				\includegraphics[scale=0.2]{figures/soft1}}\quad
+				\includegraphics[scale=0.23]{figures/soft1}}\qquad
 				%\subfigure{\includegraphics[scale=0.4]{figures/soft2}}
-			  \subfigure{\includegraphics[scale=0.15]{figures/soft3}}\quad
+			  \subfigure{\includegraphics[scale=0.17]{figures/soft3}}\qquad
 				\subfigure{\includegraphics[scale=0.4]{figures/soft4}}
 				\caption{系统故障引起的系列灾难现场}
 			\end{figure}
@@ -379,9 +379,9 @@
 %			\end{figure}
 	\textcolor{blue}{\qquad 三种证明方法：
 		\begin{itemize}\setlength{\itemsep}{0.1pt }
-			\item 消解（Resolution）；
+			\item 归结（Resolution）；
 			\item 表推理（Tableau）；
-			\item Hore三元组。
+			\item Hoare三元组。
 		\end{itemize}}
 		\end{columns} 
 	\begin{figure}
@@ -410,8 +410,8 @@
 	\frametitle{~研究背景和意义：{\small 例子}}
   \begin{example}[汽车制造企业模型]\label{car_manufacturing}
 		
-			一个汽车制造企业能够生产两种汽车：小轿车($se$)和跑车($sp$)。每隔一段时间，该企业都会做一个生产决策($d$)，即：合理的生产计划。
-			刚开始的时候，该企业做出了具有三个选择($s$)的方案：
+			一个汽车制造企业能够生产两种汽车：小轿车（$se$）和跑车（$sp$）。每隔一段时间，该企业都会做一个生产决策（$d$），即：合理的生产计划。
+			刚开始的时候，该企业做出了具有三个选择（$s$）的方案：
 			\begin{itemize}
 				\item[(1)] 先生产足够的$se$，然后在再生产$sp$；
 				\item[(2)] 先生产足够的$sp$，然后再生产$se$；
@@ -557,10 +557,28 @@
 	
 	\subsection{国内外研究现状} 
 	%\subsection*{国内研究现状}
+		\begin{frame}
+		\frametitle{~国内外研究现状}
+		\begin{figure}
+			\includegraphics[scale=0.45]{figures/historya}
+		\end{figure}
+	\end{frame}
+	\begin{frame}
+	\frametitle{~国内外研究现状}
+	\begin{figure}
+		\includegraphics[scale=0.45]{figures/historyb}
+	\end{figure}
+\end{frame}
+	\begin{frame}
+	\frametitle{~国内外研究现状}
+	\begin{figure}
+		\includegraphics[scale=0.45]{figures/historyc}
+	\end{figure}
+\end{frame}
 	\begin{frame}
 		\frametitle{~国内外研究现状}
 		\begin{figure}
-			\includegraphics[scale=0.45]{figures/history3}
+			\includegraphics[scale=0.45]{figures/historyd}
 		\end{figure}
 	\end{frame}
 
@@ -634,9 +652,9 @@
 	\frametitle{~背景知识：CTL的语法和语义}
 %	{\footnotesize  
 		\begin{definition}[$\CTL$的语法]
-			带索引的$\CTL$公式\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
+			$\CTL$公式的\emph{存在范式(existential normal form, ENF)}可以用巴科斯范式递归定义如下：
 			\begin{align*}
-				\phi  ::= & \ \start\mid \bot %\mid \top
+				\phi  ::= & \  \bot %\mid \top
 				\mid p \mid\neg\phi \mid \phi\lor\phi \mid
 				\EXIST \NEXT \phi \mid
 				\EXIST \GLOBAL \phi \mid 
@@ -650,7 +668,7 @@
 		%	\textcolor{blue}{没有索引和$\start$的公式称为CTL公式。}
 		\end{definition} 
 		\begin{definition}[$\CTL$的语义]\label{def:ctl:semantic}
-			给定公式$\varphi$，初始Kripke结构 $\Hm=(S,R,L,s_0)$ 和状态 $s\in S$。$(\Hm,s)$与$\varphi$之间的可满足关系$(\Hm,s)\models \varphi$定义如下：
+			给定公式$\phi$，初始Kripke结构 $\Hm=(S,R,L,s_0)$ 和状态 $s\in S$。$(\Hm,s)$与$\phi$之间的可满足关系$(\Hm,s)\models \phi$定义如下：
 			\begin{figure}
 				\includegraphics[scale=0.3]{figures/semanticCTL1}
 			\end{figure}
@@ -706,117 +724,117 @@
 \begin{frame}  
 	\frametitle{~研究内容（一）CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.45]{figures/ctlMuForgFrame1}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrame111}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
-	{\tiny 
-		\begin{columns}
-			\column{0.5\textwidth}
-			\begin{itemize} 
-				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
-				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
-			\end{itemize}
-			\column{0.5\textwidth}
-			\begin{itemize}
-				%	\item 分解性：将一个大的问题分解成小的问题；
-				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
-				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
-			\end{itemize}
-		\end{columns}
-	}
+%	{\tiny 
+%		\begin{columns}
+%			\column{0.5\textwidth}
+%			\begin{itemize} 
+%				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
+%				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
+%			\end{itemize}
+%			\column{0.5\textwidth}
+%			\begin{itemize}
+%				%	\item 分解性：将一个大的问题分解成小的问题；
+%				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
+%				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
+%			\end{itemize}
+%		\end{columns}
+%	}
 
 \end{frame}
 
 \begin{frame}  
 	\frametitle{~研究内容（一）CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.45]{figures/ctlMuForgFrame}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrameh}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
-	{\tiny 
-		\begin{columns}
-			\column{0.5\textwidth}
-			\begin{itemize} 
-				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
-				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
-			\end{itemize}
-			\column{0.5\textwidth}
-			\begin{itemize}
-				%	\item 分解性：将一个大的问题分解成小的问题；
-				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
-				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
-			\end{itemize}
-		\end{columns}
-	} 
+%	{\tiny 
+%		\begin{columns}
+%			\column{0.5\textwidth}
+%			\begin{itemize} 
+%				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
+%				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
+%			\end{itemize}
+%			\column{0.5\textwidth}
+%			\begin{itemize}
+%				%	\item 分解性：将一个大的问题分解成小的问题；
+%				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
+%				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
+%			\end{itemize}
+%		\end{columns}
+%	} 
 \end{frame}
 
 \begin{frame}  
 	\frametitle{~研究内容（一）CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.45]{figures/ctlMuForgFrame2}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrame21}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
-	{\tiny 
-		\begin{columns}
-			\column{0.5\textwidth}
-			\begin{itemize} 
-				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
-				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
-			\end{itemize}
-			\column{0.5\textwidth}
-			\begin{itemize}
-				%	\item 分解性：将一个大的问题分解成小的问题；
-				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
-				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
-			\end{itemize}
-		\end{columns}
-	} 
+%	{\tiny 
+%		\begin{columns}
+%			\column{0.5\textwidth}
+%			\begin{itemize} 
+%				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
+%				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
+%			\end{itemize}
+%			\column{0.5\textwidth}
+%			\begin{itemize}
+%				%	\item 分解性：将一个大的问题分解成小的问题；
+%				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
+%				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
+%			\end{itemize}
+%		\end{columns}
+%	} 
 \end{frame}
 
 \begin{frame}  
 	\frametitle{~研究内容（一）CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.45]{figures/ctlMuForgFrame3}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrame31}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
-	{\tiny 
-		\begin{columns}
-			\column{0.5\textwidth}
-			\begin{itemize} 
-				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
-				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
-			\end{itemize}
-			\column{0.5\textwidth}
-			\begin{itemize}
-				%	\item 分解性：将一个大的问题分解成小的问题；
-				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
-				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
-			\end{itemize}
-		\end{columns}
-	} 
+%	{\tiny 
+%		\begin{columns}
+%			\column{0.5\textwidth}
+%			\begin{itemize} 
+%				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
+%				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
+%			\end{itemize}
+%			\column{0.5\textwidth}
+%			\begin{itemize}
+%				%	\item 分解性：将一个大的问题分解成小的问题；
+%				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
+%				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
+%			\end{itemize}
+%		\end{columns}
+%	} 
 \end{frame}
 
 \begin{frame}  
 	\frametitle{~研究内容（一）CTL和$\mu$-演算的遗忘理论}
 	\begin{figure}
-		\includegraphics[scale=0.45]{figures/ctlMuForgFrame4}
+		\includegraphics[scale=0.45]{figures/ctlMuForgFrame41}
 		%\caption{CTL和$\mu$-演算遗忘理论}
 	\end{figure}
-{\tiny 
-	\begin{columns}
-		\column{0.5\textwidth}
-			\begin{itemize} 
-				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
-				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
-			\end{itemize}
-		\column{0.5\textwidth}
-			\begin{itemize}
-			%	\item 分解性：将一个大的问题分解成小的问题；
-				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
-				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
-			\end{itemize}
-	\end{columns}
-}
+%{\tiny 
+%	\begin{columns}
+%		\column{0.5\textwidth}
+%			\begin{itemize} 
+%				\item 互模拟不变性：相互互模拟的结构满足相同的公式；
+%				\item (\W)、(\PP)、(\NgP)和(\IR)：为遗忘理论公设；
+%			\end{itemize}
+%		\column{0.5\textwidth}
+%			\begin{itemize}
+%			%	\item 分解性：将一个大的问题分解成小的问题；
+%				\item 遗忘存在性：遗忘结果总是同一逻辑语言可表达的；
+%				\item $\varphi \models^? \psi$: 表示“$\varphi$是否逻辑蕴涵$\psi$”。
+%			\end{itemize}
+%	\end{columns}
+%}
 \pause
 
 \textcolor{red}{\[\hbox{形成了时序逻辑遗忘理论的框架！}\]}
@@ -850,8 +868,8 @@
 					\tikzstyle{every node}=[font=\small,scale=0.75]
 					\begin{minipage}{.2\textwidth}
 						\node[blueCircle] (s0) at(0,1) {$s_0$};
-						\node[blueCircle1] (s1) at(0,0) {$s_1$};
-						\node[blueCircle2] (s2) at(-1,0) {$s_2$};
+						\node[blueCircle] (s1) at(0,0) {$s_1$};
+						\node[blueCircle1] (s2) at(-1,0) {$s_2$};
 						\node[redCircle] (s3) at(1,0) {$s_3$};
 						\node[redCircle] (s4) at(0.5,-1) {$s_4$};
 						\draw[->] (s0) -- (s1);
@@ -871,8 +889,8 @@
 					\end{minipage}
 					\begin{minipage}{.2\textwidth}
 						\node[blueCircle] (s10) at(3,2) {$s_0$};
-						\node[blueCircle1] (s11) at(3,1) {$s_1$};
-						\node[blueCircle2] (s12) at(2,1) {$s_2$};
+						\node[blueCircle] (s11) at(3,1) {$s_1$};
+						\node[blueCircle1] (s12) at(2,1) {$s_2$};
 						\node[redCircle] (s13) at(4,1) {$s_3'$};
 						\draw[->] (s10) -- (s11);
 						\draw[->] (s11) -- (s12);
@@ -888,8 +906,8 @@
 					\end{minipage}
 					\begin{minipage}{.2\textwidth}
 						\node[blueCircle] (s20) at(3,-1) {$s_0$};
-						\node[blueCircle1] (s21) at(3,-2) {$s_1$};
-						\node[blueCircle2] (s22) at(2,-2) {$s_2'$};
+						\node[blueCircle] (s21) at(3,-2) {$s_1$};
+						\node[blueCircle1] (s22) at(2,-2) {$s_2'$};
 						\draw[->] (s20) -- (s21);
 						\draw[->] (s21) -- (s22);
 						\path (s22) edge[->,bend right=-45] (s20);
@@ -924,15 +942,15 @@
 				\item $\psi$与$V$中的原子命题无关（即：$\IR(\psi, V)$）；
 				\item $\Mod(\psi)=\{{\cal K}\mid {\cal K} \mbox{是一个初始$\Ind$-结构}, \exists {\cal K}'\in\Mod(\phi)\ \text{使得}\ {\cal K}'\lrto_V{\cal K}\}$。
 			\end{itemize}
-			那么，称$\psi$为从$\Phi$中遗忘$V$后得到的结果，记为$\CTLforget(\phi,V)$。
+			那么，称$\psi$为从$\Phi$中遗忘$V$后得到的结果，记为\textcolor{red}{$\CTLforget(\phi,V)$}。
 		\end{definition}
 		\only<1>{\begin{block}{遗忘理论公设}
 				给定$\CTL$公式$\varphi$、$\varphi'=\CTLforget(\varphi, V)$、原子命题集$V\subseteq \Ha$和$\varphi'=\CTLforget(\varphi, V)$，$\CTL$下遗忘理论公设如下：
 				\begin{itemize}
-					\item[(\W)] 削弱：$\varphi \models \varphi'$；
-					\item[(\PP)] 正支持：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
-					\item[(\NgP)] 负支持：对任意与$V$无关的公式$\eta$，若$\varphi \not \models \eta$则$\varphi' \not \models \eta$；
-					\item[(\textbf{IR})] 无关性： $\IR(\varphi', V)$。
+					\item[] (\W)削弱：$\varphi \models \varphi'$；
+					\item[] (\PP) 正支持：对任意与$V$无关的公式$\eta$，若$\varphi \models \eta$则$\varphi' \models \eta$；
+					\item[] (\NgP) 负支持：对任意与$V$无关的公式$\eta$，若$\varphi \not \models \eta$则$\varphi' \not \models \eta$；
+					\item[] (\textbf{IR}) 无关性： $\IR(\varphi', V)$。
 				\end{itemize}
 		\end{block}}
 %	}
@@ -963,7 +981,7 @@
 %		\end{example}
 		 
 		\begin{proposition}\label{pro:uniforget}
-			$\CTLforget(x\land \varphi(p,x), \{x\})$ 在 $\CTL$中是不可表示的。其中，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集$\Var(\varphi)=\{p,x\}$的公式。}为下面公式的合取~\cite{Maksimova:JANCL:1991}：
+			$\CTLforget(\textcolor{red}{x\land \varphi(p,x)}, \{x\})$ 在 $\CTL$中是不可表示的。其中，$\varphi(p,x)$\footnote{$\varphi(p,x)$ 表示具有原子命题集$\Var(\varphi)=\{p,x\}$的公式。}为下面公式的合取~\cite{Maksimova:JANCL:1991}：
 			\begin{align*}
 				&\ALL\GLOBAL(\neg x \wedge \neg \ALL \GLOBAL p \rto \neg \ALL \NEXT \neg x),
 				\qquad \ALL\GLOBAL(\neg \ALL\NEXT \neg x \rto \ALL \NEXT x),\\
@@ -1360,7 +1378,7 @@
 	\includegraphics[scale=0.4]{figures/sncAndWsc0}
 	%\includegraphics[scale=0.27]{figures/applicationF4}
 %	\caption{进程的三种基本状态及其转换}
-\end{figure} 
+\end{figure}  
 \end{frame}
 
 
@@ -1405,6 +1423,8 @@
 	%\includegraphics[scale=0.27]{figures/applicationF4}
 	%	\caption{进程的三种基本状态及其转换}
 \end{figure} 
+
+\centering{投稿在KR 2020、AMAI和INS上的文章都有对反应式系统最弱充分条件的讨论。}
 \end{frame}
 
 \begin{frame}
@@ -1448,6 +1468,7 @@
 		%\includegraphics[scale=0.27]{figures/applicationF4}
 		%	\caption{进程的三种基本状态及其转换}
 	\end{figure}
+\centering{知识更新部分在AMAI的投稿中做了讨论。}
 	\pause
 	\textcolor{red}{\[\hbox{从而为系统正确性和系统更新提供了理论依据！}\]}
 \end{frame}
@@ -1456,7 +1477,7 @@
 \begin{frame}
 	\frametitle{~研究内容（二）：必要条件定义及其性质}
 %	{\footnotesize
-		\begin{definition}[充分和必要条件]\label{def:NC:SC}
+		\begin{definition}[必要条件]\label{def:NC:SC}
 			给定两个公式$\varphi$和$\psi$，$V \subseteq \Var(\varphi)$，$q\in\Var(\varphi)- V$
 			和$\Var(\psi)$ $\subseteq V$。
 			\begin{itemize}
@@ -1788,7 +1809,7 @@
 		\begin{tikzpicture}%[scale=0.8]
 %			\tikzstyle{every node}=[font=\small,scale=0.8]
 			\node[rectangle,rounded corners =10pt,minimum width =50pt, minimum height =20pt,draw=blue,fill=blue!40] (s0) at(-1,6) {基于模型的有界$\CTL$遗忘};
-			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的};
+			\node[color=orange] at(-1, 5.2) {遗忘总是$\CTL$可表示的（KR 2020）};
 			
 			
 			
@@ -2492,7 +2513,8 @@
 		\begin{figure}
 			\includegraphics[scale=0.6]{figures/model-basedAlg}
 		\end{figure}
-		
+
+% $O((n-x)m^{2(m+2)}2^{nm}  \log m)$		
 %		\begin{proposition}\label{pro:time:alg1}
 %			令 $\varphi$为CTL公式，$V\subseteq \Ha$为原子命题集，状态空间大小为 $|{\cal S}|=m$， $|\Ha|=n$，$|V|=x$。使用算法5.1计算从$\varphi$中遗忘$V$中原子的空间复杂度为 $O((n-x)m^{2(m+2)}2^{nm}  \log m)$，且时间复杂性至少与空间复杂性相同。
 %		\end{proposition}
@@ -2547,7 +2569,7 @@
  
 
 \begin{frame}
-	\frametitle{研究内容（三）（2）基于归结的算法CTL-forget}
+	\frametitle{研究内容（三）（2）基于归结的算法CTL-forget（投稿INS）}
 %	{\footnotesize
 	
 	 
