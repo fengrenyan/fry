@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2022.4.30)  1 JUN 2022 16:43
+This is XeTeX, Version 3.1415926-2.3-0.9997.5 (MiKTeX 2.9) (preloaded format=xelatex 2022.4.30)  2 JUN 2022 11:10
 entering extended mode
 **PPTforgetting-1.tex
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\PPTforgettin
@@ -2598,8 +2598,8 @@ File: figures/gzulogo.jpg Graphic file (type QTm)
  <use  "figures/gzulogo.jpg" > [6
 
 ]
-File: figures/forgetting.png Graphic file (type QTm)
- <use  "figures/forgetting.png" >
+File: figures/forgetting1.png Graphic file (type QTm)
+ <use  "figures/forgetting1.png" >
 (D:\（博士）我的资料\Git\fry\毕业论文\毕业答辩\ppt\ias_text.tex
 )
 File: figures/gzulogo.jpg Graphic file (type QTm)
@@ -3657,7 +3657,7 @@ Package logreq Info: Writing requests to 'PPTforgetting-1.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  39324 strings out of 430478
- 760097 string characters out of 3191202
+ 760099 string characters out of 3191202
  1022300 words of memory out of 3000000
  41400 multiletter control sequences out of 15000+200000
  45632 words of font info for 212 fonts, out of 3000000 for 9000

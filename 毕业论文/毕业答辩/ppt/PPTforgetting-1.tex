@@ -311,7 +311,7 @@
 	\begin{frame}
 		\titlepage
 %		{\Huge
-		\frametitle{~~~~~~~~~~~~~~~2018级计算机科学与技术学院博士学位论文答辩}
+		\frametitle{~~~~~~~~~~~~~~~~计算机科学与技术学院博士学位论文答辩}
 %		\textcolor{blue}{
 		\begin{center}
 			\heiti\zihao{5}{
@@ -502,7 +502,7 @@
 			\only<1>{
 				\begin{block}{最强必要条件（SNC）和最弱充分条件（WSC）}
 			SNC和WSC分别用于描述给定理论下的最一般的结果（consequence）和最一般的诱因（abduction）\cite{DBLP:journals/ai/Lin01}。 
-		满足下面两个条件的$\psi$称为$q$在理论$\Sigma$下的（WSC）:
+		满足下面两个条件的$\psi$称为$q$在理论$\Sigma$下的WSC:
 		\begin{itemize}
 			\item[(1)] $\Sigma \models \psi \rto q$; 
 			\item[(2)] 对任意$\psi'$且$\Sigma \models \psi' \rto q$，有$\Sigma \models \psi' \rto \psi$。
@@ -519,7 +519,7 @@
 				 %非形式化地，对于逻辑语言L中的任意公式和原子集合，如果从该公式中遗忘掉该原子集合后得到的结果仍然在L中，则称\textcolor{blue}{遗忘存在}，同时也称该公式和原子集合的遗忘存在。
 				\column{0.5\textwidth}
 				\begin{figure}
-					\includegraphics[scale=0.4]{figures/forgetting}
+					\includegraphics[scale=0.4]{figures/forgetting1}
 				\end{figure}
 			\end{columns}
 		\end{block}}
@@ -593,7 +593,7 @@
 \begin{figure}
 	\begin{tikzpicture}
 %		\node at(0,0)[draw=red,align=center]  {用人工智能知识表示与推理技术（遗忘），\\实现反应式系统（负例生成、系统精化等）\\形式化验证（最弱充分条件和更新等）的有效计算。};
-		\node at(0,0)[draw=red,align=center]  {用人工智能知识表示与推理技术（遗忘），\\实现反应式系统最弱充分条件和更新等的有效计算，\\从而实现反应式系统验证中的负例生成、系统精化等。};
+		\node at(0,0)[draw=blue!50,align=center,fill=blue!30]  {用人工智能知识表示与推理技术（遗忘），\\实现反应式系统最弱充分条件和更新等的有效计算，\\从而实现反应式系统验证中的负例生成、系统精化等。};
 	\end{tikzpicture}
 \end{figure}
 	
@@ -656,9 +656,9 @@
 			\begin{align*}
 				\phi  ::= & \  \bot %\mid \top
 				\mid p \mid\neg\phi \mid \phi\lor\phi \mid
-				\EXIST \NEXT \phi \mid
+				\textcolor{red}{\EXIST \NEXT \phi \mid
 				\EXIST \GLOBAL \phi \mid 
-				\EXIST (\phi\ \UNTILL\ \phi)
+				\EXIST (\phi\ \UNTILL\ \phi)}
 				%\mid 
 %				\EXIST_{\tuple{ind}}\NEXT \phi  \mid 
 %				\EXIST_{\tuple{ind}}\GLOBAL \phi \mid
@@ -684,19 +684,19 @@
 		\begin{definition}[$\mu$-演算公式]
 			令$p\in \Ha$且$X\in {\cal V}$，$\mu$-演算公式（简称为$\mu$-公式或公式）递归定义如下：
 			\[
-			\varphi ::=   p\mid  X\mid \neg \varphi\mid \varphi \vee \varphi \mid \ALL\NEXT \varphi\mid  \nu X. \varphi.
+			\varphi ::=   p\mid  \textcolor{red}{X} \mid \neg \varphi\mid \varphi \vee \varphi \mid \ALL\NEXT \varphi\mid  \textcolor{red}{\nu X. \varphi}.
 			\]
 		%	其中$p\in \Ha$且$X\in {\cal V}$。
 		\end{definition}
 		\begin{definition}[$\mu$-演算的语义]
-			给定$\mu$-演算公式$\varphi$、Kripke结构{\em $\Hm=(S,R,L,r)$}和一个从${\cal V}$中的变量到$\Hm$中状态的赋值函数$v: {\cal V} \rto 2^S$。公式在$\Hm$和$v$上的解释是$S$的一个子集$\left\| \varphi\right\|_v^{\Hm}$（如果在上下文中$\Hm$是明确的，则可以省去上标）：
+			给定$\mu$-演算公式$\varphi$、Kripke结构{\em $\Hm=(S,R,L,r)$}和一个从${\cal V}$中的变量到$\Hm$中状态的赋值函数\textcolor{red}{$v: {\cal V} \rto 2^S$}。公式在$\Hm$和$v$上的解释是$S$的一个子集$\left\| \varphi\right\|_v^{\Hm}$（如果在上下文中$\Hm$是明确的，则可以省去上标）：
 %			\begin{columns}
 %				\column{0.5\textwidth}
 				\begin{align*}
 					& \left \| p\right \|_v^{\Hm} = \{s\mid p \in L(s)\}, \qquad \left\| X\right\|_v^{\Hm} = v(X),\\
 					& \left\|\varphi_1 \vee \varphi_2\right\|_v^{\Hm} = \left\|\varphi_1\right\|_v^{\Hm} \cup \left\|\varphi_2\right\|_v^{\Hm},\\ 
 					& \left\|\ALL \NEXT \varphi\right\|_v^{\Hm} = \{s\mid \forall s'. (s, s') \in R \Rto s' \in \left\|\varphi\right\|_v^{\Hm}\},\\ 
-					& \left\| \nu X. \varphi\right\|_v^{\Hm} = \bigcup\{S' \subseteq S \mid S' \subseteq \left\|\varphi\right\|_{v[X:= S']}^{\Hm}\}.
+					& \textcolor{red}{\left\| \nu X. \varphi\right\|_v^{\Hm} = \bigcup\{S' \subseteq S \mid S' \subseteq \left\|\varphi\right\|_{v[X:= S']}^{\Hm}\}.}
 				\end{align*}
 %				\column{0.5\textwidth}
 %				{\tiny 
@@ -905,9 +905,9 @@
 						\node at(2.6,0.4) {${\cal K}_2$};
 					\end{minipage}
 					\begin{minipage}{.2\textwidth}
-						\node[blueCircle] (s20) at(3,-1) {$s_0$};
-						\node[blueCircle] (s21) at(3,-2) {$s_1$};
-						\node[blueCircle1] (s22) at(2,-2) {$s_2'$};
+						\node[blueCircle] (s20) at(3,-1) {$t_0$};
+						\node[blueCircle] (s21) at(3,-2) {$t_1$};
+						\node[blueCircle1] (s22) at(2,-2) {$t_2'$};
 						\draw[->] (s20) -- (s21);
 						\draw[->] (s21) -- (s22);
 						\path (s22) edge[->,bend right=-45] (s20);
